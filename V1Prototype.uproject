@@ -7,14 +7,17 @@
 		{
 			"Name": "V1Prototype",
 			"Type": "Runtime",
-			"LoadingPhase": "Default"
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"DirGravity"
+			]
 		}
 	],
 	"Plugins": [
 		{
-			"Name": "NinjaCharacter",
-			"Enabled": true,
-			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/d91461c6f5544d118198d6acaddb48e8"
+			"Name": "DirGravity",
+			"Enabled": false,
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/1e8883ab1e2f44f0984006d4ab67acd4"
 		}
 	]
 }
