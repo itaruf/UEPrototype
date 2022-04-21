@@ -11,6 +11,8 @@
 					</ReferenceList>
 					<ObjectLists/>
 				</Bus>
+				<WorkUnit Name="Jules" ID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}" PersistMode="Reference"/>
+				<WorkUnit Name="Alexis" ID="{F7976E49-D36E-4DFE-A036-A0A91C0D3D47}" PersistMode="Reference"/>
 			</ChildrenList>
 		</WorkUnit>
 	</Busses>
