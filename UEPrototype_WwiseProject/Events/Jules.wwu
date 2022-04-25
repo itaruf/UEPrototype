@@ -74,6 +74,13 @@
 										</Reference>
 									</ReferenceList>
 								</Action>
+								<Action Name="" ID="{A70B5690-0544-4661-9111-9C9360E57540}" ShortID="987380250">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MC_FOL_Jump" ID="{4F953C74-2A3F-4A73-A5CB-EC5E5B6ADD2A}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 							</ChildrenList>
 						</Event>
 						<Event Name="MC_FT_Land" ID="{56274120-77E8-4774-84C0-C5BB7FA1F1BB}">
