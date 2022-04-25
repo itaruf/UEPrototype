@@ -12,10 +12,43 @@
 					</ChildrenList>
 				</SwitchGroup>
 				<SwitchGroup Name="PlayerSpeed" ID="{C322E38C-C54E-4826-8239-004827EC3649}">
+					<PropertyList>
+						<Property Name="UseGameParameter" Type="bool" Value="True"/>
+					</PropertyList>
 					<ChildrenList>
 						<Switch Name="Run" ID="{957E5E0D-5BDC-45B0-922E-A83CFC456697}"/>
 						<Switch Name="Walk" ID="{D3358156-8287-45E1-B229-DE4AF5C38541}"/>
 					</ChildrenList>
+					<SwitchOnRTPC>
+						<GameParameterRef Name="RTPC_PlayerSpeed" ID="{E81B3401-03B0-4FBF-A942-900B5FB3AA30}"/>
+						<Curve Name="" ID="{DA03D4D0-EC8C-4092-BE76-A11FD7B96A92}">
+							<PropertyList>
+								<Property Name="Flags" Type="int32" Value="65537"/>
+							</PropertyList>
+							<PointList>
+								<Point>
+									<XPos>0</XPos>
+									<YPos>0</YPos>
+									<Flags>5</Flags>
+								</Point>
+								<Point>
+									<XPos>2.25</XPos>
+									<YPos>2</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>300</XPos>
+									<YPos>1</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>600</XPos>
+									<YPos>1</YPos>
+									<Flags>37</Flags>
+								</Point>
+							</PointList>
+						</Curve>
+					</SwitchOnRTPC>
 				</SwitchGroup>
 			</ChildrenList>
 		</WorkUnit>
