@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{AA551EFF-E94E-4365-A3E2-33546A641F46}" SchemaVersion="103" RootDocumentID="{86F02D78-61F5-4B61-9758-2E7DD1C23882}" ParentDocumentID="{86F02D78-61F5-4B61-9758-2E7DD1C23882}">
+	<Events>
+		<WorkUnit Name="Jules" ID="{AA551EFF-E94E-4365-A3E2-33546A641F46}" OwnerID="{86F02D78-61F5-4B61-9758-2E7DD1C23882}" PersistMode="Nested">
+			<ChildrenList>
+				<Folder Name="AMB" ID="{623629A1-9443-450C-BC77-C3554540C0E4}" ShortID="197270641">
+					<ChildrenList>
+						<Event Name="SP_Waterfall_Play" ID="{FF28433B-F9E6-4A5A-8E26-36E90AF89380}">
+							<ChildrenList>
+								<Action Name="" ID="{16DA060E-927B-461D-97C2-D0D09944C68A}" ShortID="721030382">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="AMB_SP_Waterfall_Blend" ID="{5F6A136D-D2E0-47BF-88E9-54225CDFE964}" WorkUnitID="{A90EA6B0-FD8B-46D3-9B35-71A92B2A6346}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="RFX_Birds_Play" ID="{4905F7CA-E5A5-4084-8A13-C855EDB1A4CB}"/>
+						<Event Name="RFX_GroundRumble_Play" ID="{475D7614-02E8-4D28-BAB4-9E3E35028144}">
+							<ChildrenList>
+								<Action Name="" ID="{C55FA40C-8558-4D14-802C-31FDCC35F7C3}" ShortID="756696926">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="AMB_RFX_GroundRumble" ID="{BF9674B1-88D8-4ED7-B998-F6AEDB065183}" WorkUnitID="{A90EA6B0-FD8B-46D3-9B35-71A92B2A6346}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="RFX_DirtFall_Play" ID="{78C4B7CE-5F0D-4AA6-9146-66EDF982E824}">
+							<ChildrenList>
+								<Action Name="" ID="{BE539061-2158-49DA-82BB-0815986912EB}" ShortID="977627319">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="AMB_RFX_DirtFall" ID="{1C3C8262-F5F9-49B1-9D0D-4059C97F6A8A}" WorkUnitID="{A90EA6B0-FD8B-46D3-9B35-71A92B2A6346}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="MC" ID="{0FAE6D46-D663-41A9-8E75-E2ACF42A16B3}" ShortID="517842377">
+					<ChildrenList>
+						<Event Name="MC_FT" ID="{8E7E8E1F-BC05-4921-9475-B21AC48B0931}">
+							<ChildrenList>
+								<Action Name="" ID="{7318E265-341F-4F14-A103-B27F923BBF3E}" ShortID="317047247">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MC_FT_SpeedSwitch" ID="{2ED4D6B0-7770-4A7E-878D-EEC6F24E1278}" WorkUnitID="{A90EA6B0-FD8B-46D3-9B35-71A92B2A6346}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="MC_FT_Wet" ID="{D7FBE7C3-0C36-4EB3-AA8F-DA518BB8EBD9}">
+							<ChildrenList>
+								<Action Name="" ID="{5FFB328E-FA13-4E18-A5A5-8FD09E7D7074}" ShortID="245898">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MC_FT_WetStep" ID="{9FD445B9-B973-4183-BCEF-ACBBF2A569CF}" WorkUnitID="{A90EA6B0-FD8B-46D3-9B35-71A92B2A6346}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="MC_FT_Jump" ID="{AC988322-30DB-4ECF-8BEC-C87B4F2242A5}">
+							<ChildrenList>
+								<Action Name="" ID="{7F3E9078-3E25-4C27-A3C1-86F1B5BD64DD}" ShortID="783591198">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MC_FT_Jump_GroundSwitch" ID="{4D3567D7-4DE4-4321-884C-4016EBA8976C}" WorkUnitID="{A90EA6B0-FD8B-46D3-9B35-71A92B2A6346}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{A70B5690-0544-4661-9111-9C9360E57540}" ShortID="987380250">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MC_FOL_Jump" ID="{4F953C74-2A3F-4A73-A5CB-EC5E5B6ADD2A}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="MC_FT_Land" ID="{56274120-77E8-4774-84C0-C5BB7FA1F1BB}">
+							<ChildrenList>
+								<Action Name="" ID="{4085B02C-53B3-4C7C-9D10-E50D54290C31}" ShortID="267178296">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MC_FT_Land_GroundSwitch" ID="{86C8D5AC-D304-42FF-B3B3-42774BF0423D}" WorkUnitID="{A90EA6B0-FD8B-46D3-9B35-71A92B2A6346}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="MC_FT_WallRun" ID="{DAA3A681-01AE-4746-9AAD-669C5DA9858A}">
+							<ChildrenList>
+								<Action Name="" ID="{E0F29719-906F-45C3-B660-EF5B3D34BA4B}" ShortID="80915460">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MC_FT_WallRun_GroundSwitch" ID="{261F0B73-8815-4C3B-A936-1E53A89942B5}" WorkUnitID="{A90EA6B0-FD8B-46D3-9B35-71A92B2A6346}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="SFX" ID="{9E4C8CB0-8FD9-4485-87AA-5071D532A40C}" ShortID="655332299">
+					<ChildrenList>
+						<Event Name="SFX_Wind_Play" ID="{EA712D2D-B210-4632-8897-4D067A8FB958}">
+							<ChildrenList>
+								<Action Name="" ID="{F4EB9792-E982-4B45-8656-AF7AB8E08D05}" ShortID="776349172">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_Wind_Blend" ID="{4FE5E99D-AF51-4EFA-B39B-6BACE6194EA3}" WorkUnitID="{A90EA6B0-FD8B-46D3-9B35-71A92B2A6346}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="SFX_Waterfall_Impact" ID="{52DCB6EE-020E-4EA3-B05E-2835CAEE53BE}">
+							<ChildrenList>
+								<Action Name="" ID="{01D49E09-6C28-4A0E-9312-5A5345C0B354}" ShortID="991799517">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_Waterfall_Impact" ID="{CEF1ACFE-A866-4CC0-8376-75DD28A6A336}" WorkUnitID="{A90EA6B0-FD8B-46D3-9B35-71A92B2A6346}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>
