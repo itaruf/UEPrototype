@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{AA551EFF-E94E-4365-A3E2-33546A641F46}" SchemaVersion="103" RootDocumentID="{86F02D78-61F5-4B61-9758-2E7DD1C23882}" ParentDocumentID="{86F02D78-61F5-4B61-9758-2E7DD1C23882}">
+	<Events>
+		<WorkUnit Name="Jules" ID="{AA551EFF-E94E-4365-A3E2-33546A641F46}" OwnerID="{86F02D78-61F5-4B61-9758-2E7DD1C23882}" PersistMode="Nested">
+			<ChildrenList>
+				<Folder Name="AMB" ID="{623629A1-9443-450C-BC77-C3554540C0E4}" ShortID="197270641">
+					<ChildrenList>
+						<Event Name="SP_Waterfall_Play" ID="{FF28433B-F9E6-4A5A-8E26-36E90AF89380}">
+							<ChildrenList>
+								<Action Name="" ID="{16DA060E-927B-461D-97C2-D0D09944C68A}" ShortID="721030382">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="AMB_SP_Waterfall_Blend" ID="{5F6A136D-D2E0-47BF-88E9-54225CDFE964}" WorkUnitID="{A90EA6B0-FD8B-46D3-9B35-71A92B2A6346}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="MC" ID="{0FAE6D46-D663-41A9-8E75-E2ACF42A16B3}" ShortID="517842377">
+					<ChildrenList>
+						<Event Name="MC_FT_Play" ID="{8E7E8E1F-BC05-4921-9475-B21AC48B0931}">
+							<ChildrenList>
+								<Action Name="" ID="{7318E265-341F-4F14-A103-B27F923BBF3E}" ShortID="317047247">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MC_FT_SpeedSwitch" ID="{2ED4D6B0-7770-4A7E-878D-EEC6F24E1278}" WorkUnitID="{A90EA6B0-FD8B-46D3-9B35-71A92B2A6346}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="MC_FT_Wet" ID="{D7FBE7C3-0C36-4EB3-AA8F-DA518BB8EBD9}">
+							<ChildrenList>
+								<Action Name="" ID="{5FFB328E-FA13-4E18-A5A5-8FD09E7D7074}" ShortID="245898">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MC_FT_WetStep" ID="{9FD445B9-B973-4183-BCEF-ACBBF2A569CF}" WorkUnitID="{A90EA6B0-FD8B-46D3-9B35-71A92B2A6346}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{F7976E49-D36E-4DFE-A036-A0A91C0D3D47}" SchemaVersion="103" RootDocumentID="{1B6F5921-F647-4065-8004-B5EFE7036339}" ParentDocumentID="{1B6F5921-F647-4065-8004-B5EFE7036339}">
+	<Busses>
+		<WorkUnit Name="Alexis" ID="{F7976E49-D36E-4DFE-A036-A0A91C0D3D47}" OwnerID="{1B6F5921-F647-4065-8004-B5EFE7036339}" PersistMode="Nested"/>
+	</Busses>
+</WwiseDocument>
