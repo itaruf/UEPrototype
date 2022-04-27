@@ -65,14 +65,36 @@
 										</Reference>
 									</ReferenceList>
 								</Action>
+								<Action Name="" ID="{AD28F70A-9DB8-4651-9B16-DB90C431400A}" ShortID="482336611">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="36"/>
+										<Property Name="SeekPercent" Type="Real64" Value="80"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MC_FOL_FreeFall_LP" ID="{83440EC0-3E5F-4A4F-BE99-D13BDAECBF93}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{EA01B322-59DE-4AC2-8E7F-188D15A67336}" ShortID="294492154">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MC_FOL_FreeFall_LP" ID="{83440EC0-3E5F-4A4F-BE99-D13BDAECBF93}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 							</ChildrenList>
 						</Event>
 						<Event Name="SFX_Freefall_End" ID="{289DDCC6-05C5-4F7E-9B67-32563448FEAE}">
 							<ChildrenList>
-								<Action Name="" ID="{4D600803-E9DB-4D4B-8B25-627A5A13989C}" ShortID="506040559">
+								<Action Name="" ID="{CB5D26E3-2E6D-4B39-9F0D-1D0338FD2F30}" ShortID="187263522">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="SFX_Freefall_End" ID="{03AD6D5D-7DE7-4658-B387-6D95D7CA8D42}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
+											<ObjectRef Name="MC_FOL_FreeFall_LP" ID="{83440EC0-3E5F-4A4F-BE99-D13BDAECBF93}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

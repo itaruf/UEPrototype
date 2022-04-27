@@ -5,18 +5,18 @@
   "SchemaVersion": "12",
   "SoundbankVersion": "140",
   "RootPaths": {
-   "ProjectRoot": "C:\\2021 Formation\\Projet\\IIM4 - Yin Yang\\01. Projet\\UEPrototype\\UEPrototype_WwiseProject\\",
-   "SourceFilesRoot": "C:\\2021 Formation\\Projet\\IIM4 - Yin Yang\\01. Projet\\UEPrototype\\UEPrototype_WwiseProject\\.cache\\Mac\\",
-   "SoundBanksRoot": "C:\\2021 Formation\\Projet\\IIM4 - Yin Yang\\01. Projet\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Mac\\",
+   "ProjectRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\",
+   "SourceFilesRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\.cache\\Mac\\",
+   "SoundBanksRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Mac\\",
    "ExternalSourcesInputFile": "",
-   "ExternalSourcesOutputRoot": "C:\\2021 Formation\\Projet\\IIM4 - Yin Yang\\01. Projet\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Mac"
+   "ExternalSourcesOutputRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Mac"
   },
   "SoundBanks": [
    {
     "Id": "1584861542",
     "GUID": "{A1A37E9D-0EFE-41CE-8DCA-07C077AFE473}",
     "Language": "SFX",
-    "Hash": "574799122",
+    "Hash": "2743466189",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\SB",
     "ShortName": "SB",
     "Path": "SB.bnk",
@@ -2328,38 +2328,17 @@
       "Name": "SFX_Freefall_End",
       "ObjectPath": "\\Events\\Default Work Unit\\Alexis\\SFX\\SFX_Freefall_End",
       "GUID": "{289DDCC6-05C5-4F7E-9B67-32563448FEAE}",
+      "MaxAttenuation": "0.",
       "DurationType": "OneShot",
-      "DurationMin": "1.000875",
-      "DurationMax": "1.392365",
-      "IncludedMemoryFiles": [
-       {
-        "Id": "313831465",
-        "Language": "SFX",
-        "ShortName": "SFX_Freefall_End_03.wav",
-        "Path": "SFX\\SFX_Freefall_End_03_10C4C929.wem"
-       },
-       {
-        "Id": "646476854",
-        "Language": "SFX",
-        "ShortName": "SFX_Freefall_End_01.wav",
-        "Path": "SFX\\SFX_Freefall_End_01_10C4C929.wem"
-       },
-       {
-        "Id": "1049805985",
-        "Language": "SFX",
-        "ShortName": "SFX_Freefall_End_02.wav",
-        "Path": "SFX\\SFX_Freefall_End_02_10C4C929.wem"
-       }
-      ]
+      "DurationMin": "0.",
+      "DurationMax": "0."
      },
      {
       "Id": "1052199365",
       "Name": "SFX_Freefall_Start",
       "ObjectPath": "\\Events\\Default Work Unit\\Alexis\\SFX\\SFX_Freefall_Start",
       "GUID": "{842A5543-F79B-4E66-8E98-34B8B487ADD2}",
-      "DurationType": "OneShot",
-      "DurationMin": "1.087399",
-      "DurationMax": "1.21027",
+      "DurationType": "Infinite",
       "IncludedMemoryFiles": [
        {
         "Id": "583227034",
@@ -2372,6 +2351,12 @@
         "Language": "SFX",
         "ShortName": "SFX_Freefall_Start_02.wav",
         "Path": "SFX\\SFX_Freefall_Start_02_10C4C929.wem"
+       },
+       {
+        "Id": "1013223247",
+        "Language": "SFX",
+        "ShortName": "MC_Foley_Cape_Turn_Long_Medium_LP.wav",
+        "Path": "SFX\\MC_Foley_Cape_Turn_Long_Medium_LP_D79FB2B7.wem"
        },
        {
         "Id": "1032188994",

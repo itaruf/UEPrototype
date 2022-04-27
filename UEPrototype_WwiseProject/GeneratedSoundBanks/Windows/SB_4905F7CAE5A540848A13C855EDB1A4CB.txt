@@ -1,0 +1,3 @@
+Event	ID	Name			Wwise Object Path	Notes
+	2394188391	RFX_Birds_Play			\Default Work Unit\Jules\AMB\RFX_Birds_Play	
+
