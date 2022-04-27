@@ -13,13 +13,13 @@
   },
   "SoundBanks": [
    {
-    "Id": "1355168291",
-    "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
+    "Id": "1115576461",
+    "GUID": "{427E588D-588D-188D-8D8D-8D8D8D8D8D8D}",
     "Language": "SFX",
-    "Hash": "1400787026",
-    "ObjectPath": "Init",
-    "ShortName": "Init",
-    "Path": "Init.bnk"
+    "Hash": "3927253590",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\SB_8E7E8E1FBC0549219475B21AC48B0931",
+    "ShortName": "SB_8E7E8E1FBC0549219475B21AC48B0931",
+    "Path": "SB_8E7E8E1FBC0549219475B21AC48B0931.bnk"
    }
   ]
  }

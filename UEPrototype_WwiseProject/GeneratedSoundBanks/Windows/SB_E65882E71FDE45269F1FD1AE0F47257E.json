@@ -13,13 +13,25 @@
   },
   "SoundBanks": [
    {
-    "Id": "1355168291",
-    "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
+    "Id": "2852998749",
+    "GUID": "{AA0D4E5D-4E5D-1E5D-5D5D-5D5D5D5D5D5D}",
     "Language": "SFX",
-    "Hash": "1400787026",
-    "ObjectPath": "Init",
-    "ShortName": "Init",
-    "Path": "Init.bnk"
+    "Hash": "3189980017",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\SB_E65882E71FDE45269F1FD1AE0F47257E",
+    "ShortName": "SB_E65882E71FDE45269F1FD1AE0F47257E",
+    "Path": "SB_E65882E71FDE45269F1FD1AE0F47257E.bnk",
+    "IncludedEvents": [
+     {
+      "Id": "1750724204",
+      "Name": "Stop_MC_FOL_FreeFall",
+      "ObjectPath": "\\Events\\Default Work Unit\\Alexis\\MC\\Stop_MC_FOL_FreeFall",
+      "GUID": "{E65882E7-1FDE-4526-9F1F-D1AE0F47257E}",
+      "MaxAttenuation": "0.",
+      "DurationType": "OneShot",
+      "DurationMin": "0.",
+      "DurationMax": "0."
+     }
+    ]
    }
   ]
  }

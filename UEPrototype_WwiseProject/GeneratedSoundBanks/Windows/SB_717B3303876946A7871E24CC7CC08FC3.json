@@ -1,0 +1,43 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "12",
+  "SoundbankVersion": "140",
+  "RootPaths": {
+   "ProjectRoot": "D:\\Cours\\DiamondProject\\UEPrototype\\UEPrototype_WwiseProject\\",
+   "SourceFilesRoot": "D:\\Cours\\DiamondProject\\UEPrototype\\UEPrototype_WwiseProject\\.cache\\Windows\\",
+   "SoundBanksRoot": "D:\\Cours\\DiamondProject\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Windows\\",
+   "ExternalSourcesInputFile": "",
+   "ExternalSourcesOutputRoot": "D:\\Cours\\DiamondProject\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Windows"
+  },
+  "SoundBanks": [
+   {
+    "Id": "3557962243",
+    "GUID": "{D4123203-3203-1203-0303-030303030303}",
+    "Language": "SFX",
+    "Hash": "2732483668",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\SB_717B3303876946A7871E24CC7CC08FC3",
+    "ShortName": "SB_717B3303876946A7871E24CC7CC08FC3",
+    "Path": "SB_717B3303876946A7871E24CC7CC08FC3.bnk",
+    "IncludedEvents": [
+     {
+      "Id": "513838466",
+      "Name": "Play_MC_FOL_FreeFall",
+      "ObjectPath": "\\Events\\Default Work Unit\\Alexis\\MC\\Play_MC_FOL_FreeFall",
+      "GUID": "{717B3303-8769-46A7-871E-24CC7CC08FC3}",
+      "DurationType": "Infinite",
+      "ExcludedMemoryFiles": [
+       {
+        "Id": "1013223247",
+        "Language": "SFX",
+        "ShortName": "MC_Foley_Cape_Turn_Long_Medium_LP.wav",
+        "Path": "SFX\\MC_Foley_Cape_Turn_Long_Medium_LP_D79FB2B7.wem"
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}
