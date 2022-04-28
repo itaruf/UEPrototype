@@ -1,0 +1,38 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "SchemaVersion": "12",
+  "SoundbankVersion": "140",
+  "RootPaths": {
+   "ProjectRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\",
+   "SourceFilesRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\.cache\\Mac\\",
+   "SoundBanksRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Mac\\",
+   "ExternalSourcesInputFile": "",
+   "ExternalSourcesOutputRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Mac"
+  },
+  "SoundBanks": [
+   {
+    "Id": "2113024054",
+    "GUID": "{7DF23036-3036-1036-3636-363636363636}",
+    "Language": "SFX",
+    "Hash": "272696040",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\SB_4905F7CAE5A540848A13C855EDB1A4CB",
+    "ShortName": "SB_4905F7CAE5A540848A13C855EDB1A4CB",
+    "Path": "SB_4905F7CAE5A540848A13C855EDB1A4CB.bnk",
+    "IncludedEvents": [
+     {
+      "Id": "2394188391",
+      "Name": "RFX_Birds_Play",
+      "ObjectPath": "\\Events\\Default Work Unit\\Jules\\AMB\\RFX_Birds_Play",
+      "GUID": "{4905F7CA-E5A5-4084-8A13-C855EDB1A4CB}",
+      "MaxAttenuation": "0.",
+      "DurationType": "OneShot",
+      "DurationMin": "0.",
+      "DurationMax": "0."
+     }
+    ]
+   }
+  ]
+ }
+}

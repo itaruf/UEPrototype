@@ -1,0 +1,63 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "SchemaVersion": "12",
+  "SoundbankVersion": "140",
+  "RootPaths": {
+   "ProjectRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\",
+   "SourceFilesRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\.cache\\Mac\\",
+   "SoundBanksRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Mac\\",
+   "ExternalSourcesInputFile": "",
+   "ExternalSourcesOutputRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Mac"
+  },
+  "SoundBanks": [
+   {
+    "Id": "106928809",
+    "GUID": "{065F9AA9-9AA9-1AA9-A9A9-A9A9A9A9A9A9}",
+    "Language": "SFX",
+    "Hash": "4097509502",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\SB_FF28433BF9E64A5A8E2636E90AF89380",
+    "ShortName": "SB_FF28433BF9E64A5A8E2636E90AF89380",
+    "Path": "SB_FF28433BF9E64A5A8E2636E90AF89380.bnk",
+    "IncludedEvents": [
+     {
+      "Id": "3104863632",
+      "Name": "SP_Waterfall_Play",
+      "ObjectPath": "\\Events\\Default Work Unit\\Jules\\AMB\\SP_Waterfall_Play",
+      "GUID": "{FF28433B-F9E6-4A5A-8E26-36E90AF89380}",
+      "DurationType": "Infinite",
+      "ReferencedStreamedFiles": [
+       {
+        "Id": "39914743",
+        "Language": "SFX",
+        "ShortName": "AMB_WaterFall_MidRange_ST_LP.wav",
+        "Path": "SFX\\AMB_WaterFall_MidRange_ST_LP_D79FB2B7.wem"
+       },
+       {
+        "Id": "437553770",
+        "Language": "SFX",
+        "ShortName": "AMB_WaterFall_Close_ST_LP.wav",
+        "Path": "SFX\\AMB_WaterFall_Close_ST_LP_D79FB2B7.wem"
+       },
+       {
+        "Id": "573836452",
+        "Language": "SFX",
+        "ShortName": "AMB_WaterFall_Far_ST_LP.wav",
+        "Path": "SFX\\AMB_WaterFall_Far_ST_LP_D79FB2B7.wem"
+       }
+      ]
+     }
+    ],
+    "GameParameters": [
+     {
+      "Id": "262290038",
+      "Name": "RTPC_Distance",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Jules\\RTPC_Distance",
+      "GUID": "{3EBDAF7B-F3C9-4BBD-B245-745987FDAE47}"
+     }
+    ]
+   }
+  ]
+ }
+}
