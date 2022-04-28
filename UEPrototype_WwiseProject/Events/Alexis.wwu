@@ -3,112 +3,53 @@
 	<Events>
 		<WorkUnit Name="Alexis" ID="{3CCB1755-091C-41C1-949D-FC6E03473F44}" OwnerID="{86F02D78-61F5-4B61-9758-2E7DD1C23882}" PersistMode="Nested">
 			<ChildrenList>
-				<Folder Name="MC" ID="{FCF04241-0176-4AE0-A35C-0B8DC2B31DE2}" ShortID="1025645995">
+				<Event Name="MC_FOL_Run" ID="{6A61AAA8-C318-44A1-B963-E64DCB3C77C9}">
 					<ChildrenList>
-						<Event Name="Play_MC_FOL_FreeFall" ID="{717B3303-8769-46A7-871E-24CC7CC08FC3}">
-							<ChildrenList>
-								<Action Name="" ID="{85CAD843-70BD-413B-8FB2-E051B664C8E4}" ShortID="1067899287">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="MC_FOL_FreeFall_LP" ID="{83440EC0-3E5F-4A4F-BE99-D13BDAECBF93}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="MC_FOL_Run" ID="{6A61AAA8-C318-44A1-B963-E64DCB3C77C9}">
-							<ChildrenList>
-								<Action Name="" ID="{4AFAD026-9BF4-4499-BE34-0D8F1706B534}" ShortID="645651507">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="MC_FOL_Run" ID="{508FD4D3-C805-4B2C-9F65-914E40FC4914}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="Stop_MC_FOL_FreeFall" ID="{E65882E7-1FDE-4526-9F1F-D1AE0F47257E}">
-							<ChildrenList>
-								<Action Name="" ID="{372915FA-6295-4EF1-A753-94B9825CFC0E}" ShortID="983412924">
-									<PropertyList>
-										<Property Name="ActionType" Type="int16" Value="2"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="MC_FOL_FreeFall_LP" ID="{83440EC0-3E5F-4A4F-BE99-D13BDAECBF93}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="MC_FOL_Jump" ID="{A212AF9F-2C27-4797-BBC0-9646A045376F}">
-							<ChildrenList>
-								<Action Name="" ID="{094AE458-0B53-444F-9F8F-597822641D85}" ShortID="882223352">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="MC_FOL_Jump" ID="{4F953C74-2A3F-4A73-A5CB-EC5E5B6ADD2A}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
+						<Action Name="" ID="{4AFAD026-9BF4-4499-BE34-0D8F1706B534}" ShortID="645651507">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MC_FOL_Run" ID="{508FD4D3-C805-4B2C-9F65-914E40FC4914}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
 					</ChildrenList>
-				</Folder>
-				<Folder Name="SFX" ID="{3ABC570E-3936-4A48-AE41-A01984BA11BE}" ShortID="116214221">
+				</Event>
+				<Event Name="MC_FOL_Jump" ID="{A212AF9F-2C27-4797-BBC0-9646A045376F}">
 					<ChildrenList>
-						<Event Name="SFX_Freefall_Start" ID="{842A5543-F79B-4E66-8E98-34B8B487ADD2}">
-							<ChildrenList>
-								<Action Name="" ID="{61F946F4-CCD3-488A-A1D3-3DA3A6E2E3B3}" ShortID="504919038">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="SFX_Freefall_Start" ID="{E088CACA-A151-4BFA-A370-C494D9207E19}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="SFX_Freefall_End" ID="{289DDCC6-05C5-4F7E-9B67-32563448FEAE}">
-							<ChildrenList>
-								<Action Name="" ID="{4D600803-E9DB-4D4B-8B25-627A5A13989C}" ShortID="506040559">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="SFX_Freefall_End" ID="{03AD6D5D-7DE7-4658-B387-6D95D7CA8D42}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
+						<Action Name="" ID="{094AE458-0B53-444F-9F8F-597822641D85}" ShortID="882223352">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MC_FOL_Jump" ID="{4F953C74-2A3F-4A73-A5CB-EC5E5B6ADD2A}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
 					</ChildrenList>
-				</Folder>
-				<Folder Name="AMB" ID="{E6F43FC4-7B11-4A4D-81F8-8DAC14F00D82}" ShortID="6154887">
+				</Event>
+				<Event Name="Play_MC_FOL_FreeFall" ID="{717B3303-8769-46A7-871E-24CC7CC08FC3}">
 					<ChildrenList>
-						<Event Name="Stop_AMB_Bed_lvl1" ID="{CE3C769B-BB7A-4936-B31C-A291704DCF7C}">
-							<ChildrenList>
-								<Action Name="" ID="{9D853C89-1342-497F-B61C-36F2CB14405F}" ShortID="427561587">
-									<PropertyList>
-										<Property Name="ActionType" Type="int16" Value="2"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="AMB_Bed_lvl1_LP" ID="{F1ECC593-1D3B-46E1-8243-C53A480CE087}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="Play_AMB_Bed_lvl1" ID="{4451A411-DE72-4F14-8F94-64731FF465B2}">
-							<ChildrenList>
-								<Action Name="" ID="{257CBB7C-B8DD-4826-AAEE-C18668836204}" ShortID="899353500">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="AMB_Bed_lvl1_LP" ID="{F1ECC593-1D3B-46E1-8243-C53A480CE087}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
+						<Action Name="" ID="{85CAD843-70BD-413B-8FB2-E051B664C8E4}" ShortID="1067899287">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MC_FOL_FreeFall_LP" ID="{83440EC0-3E5F-4A4F-BE99-D13BDAECBF93}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
 					</ChildrenList>
-				</Folder>
+				</Event>
+				<Event Name="Stop_MC_FOL_FreeFall" ID="{E65882E7-1FDE-4526-9F1F-D1AE0F47257E}">
+					<ChildrenList>
+						<Action Name="" ID="{372915FA-6295-4EF1-A753-94B9825CFC0E}" ShortID="983412924">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MC_FOL_FreeFall_LP" ID="{83440EC0-3E5F-4A4F-BE99-D13BDAECBF93}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
