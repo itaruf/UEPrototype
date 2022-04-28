@@ -16,15 +16,6 @@
 *.dylib
 *.dll
 
-# Wwise
-.cache/
-*.validationcache
-*.wsettings
-*.prof
-*.akd
-!**\Plugins\Wwise\ThirdParty*.lib
-*.wem
-*/Wwise/Editor/ProjectData/AkWwiseProjectData.asset
 # Fortran module files
 *.mod
 
