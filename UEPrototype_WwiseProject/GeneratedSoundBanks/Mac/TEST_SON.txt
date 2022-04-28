@@ -1,6 +1,0 @@
-Event	ID	Name			Wwise Object Path	Notes
-	907865718	OUITEST			\Default Work Unit\OUITEST	
-
-Streamed Audio	ID	Name	Audio source file	Generated audio file	Wwise Object Path	Notes
-	826116116	Sound_AMB_Valley_Air_WindHowling_ST_LP	C:\2021 Formation\Projet\IIM4 - Yin Yang\Projet\UEPrototype\UEPrototype_WwiseProject\.cache\Mac\SFX\Sound_AMB_Valley_Air_WindHowling_ST_LP_D79FB2B7.wem	826116116.wem	\Actor-Mixer Hierarchy\Default Work Unit\New Actor-Mixer\Sound_AMB_Valley_Air_WindHowling_ST_LP	
-
