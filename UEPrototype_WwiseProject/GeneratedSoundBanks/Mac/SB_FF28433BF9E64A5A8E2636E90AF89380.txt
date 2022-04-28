@@ -1,0 +1,11 @@
+Event	ID	Name			Wwise Object Path	Notes
+	3104863632	SP_Waterfall_Play			\Default Work Unit\Jules\AMB\SP_Waterfall_Play	
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	262290038	RTPC_Distance			\Default Work Unit\Jules\RTPC_Distance	
+
+Streamed Audio	ID	Name	Audio source file	Generated audio file	Wwise Object Path	Notes
+	39914743	AMB_WaterFall_MidRange_ST_LP	D:\Sessions Unreal\Git\UEPrototype\UEPrototype_WwiseProject\.cache\Mac\SFX\AMB_WaterFall_MidRange_ST_LP_D79FB2B7.wem	39914743.wem	\Actor-Mixer Hierarchy\Default Work Unit\Jules\Master\AMB\SP\AMB_SP_Waterfall_Blend\AMB_WaterFall_MidRange_ST_LP	
+	437553770	AMB_WaterFall_Close_ST_LP	D:\Sessions Unreal\Git\UEPrototype\UEPrototype_WwiseProject\.cache\Mac\SFX\AMB_WaterFall_Close_ST_LP_D79FB2B7.wem	437553770.wem	\Actor-Mixer Hierarchy\Default Work Unit\Jules\Master\AMB\SP\AMB_SP_Waterfall_Blend\AMB_WaterFall_Close_ST_LP	
+	573836452	AMB_WaterFall_Far_ST_LP	D:\Sessions Unreal\Git\UEPrototype\UEPrototype_WwiseProject\.cache\Mac\SFX\AMB_WaterFall_Far_ST_LP_D79FB2B7.wem	573836452.wem	\Actor-Mixer Hierarchy\Default Work Unit\Jules\Master\AMB\SP\AMB_SP_Waterfall_Blend\AMB_WaterFall_Far_ST_LP	
+
