@@ -177,7 +177,7 @@
 																			</Point>
 																			<Point>
 																				<XPos>15000</XPos>
-																				<YPos>-8.62727</YPos>
+																				<YPos>-3.84963</YPos>
 																				<Flags>37</Flags>
 																			</Point>
 																		</PointList>
@@ -197,14 +197,14 @@
 															<CrossfadingInfo>
 																<LeftEdgePos>0</LeftEdgePos>
 																<LeftFadingMode>Automatic</LeftFadingMode>
-																<RightEdgePos>3205.52147239264</RightEdgePos>
+																<RightEdgePos>7500</RightEdgePos>
 																<RightFadingMode>Automatic</RightFadingMode>
 															</CrossfadingInfo>
 														</BlendTrackAssoc>
 														<BlendTrackAssoc>
 															<ItemRef Name="AMB_WaterFall_MidRange_ST_LP" ID="{4A70E5ED-7495-4711-95B8-FB1F744E6F56}"/>
 															<CrossfadingInfo>
-																<LeftEdgePos>543.622991824189</LeftEdgePos>
+																<LeftEdgePos>2292.0892494929</LeftEdgePos>
 																<LeftFadingMode>Automatic</LeftFadingMode>
 																<RightEdgePos>12500</RightEdgePos>
 																<RightFadingMode>Automatic</RightFadingMode>
@@ -213,7 +213,7 @@
 														<BlendTrackAssoc>
 															<ItemRef Name="AMB_WaterFall_Far_ST_LP" ID="{994ECD00-8A10-437C-9ADA-CF417D2E07C2}"/>
 															<CrossfadingInfo>
-																<LeftEdgePos>4309.3181846464</LeftEdgePos>
+																<LeftEdgePos>7560.85192697769</LeftEdgePos>
 																<LeftFadingMode>Automatic</LeftFadingMode>
 																<RightEdgePos>15000</RightEdgePos>
 																<RightFadingMode>Automatic</RightFadingMode>
