@@ -1,0 +1,6 @@
+Event	ID	Name			Wwise Object Path	Notes
+	907865718	OUITEST			\Default Work Unit\OUITEST	
+
+Streamed Audio	ID	Name	Audio source file	Generated audio file	Wwise Object Path	Notes
+	329868685	AMB_Fire_ST_LP_01	C:\2021 Formation\Projet\IIM4 - Yin Yang\Projet\UEPrototype\UEPrototype_WwiseProject\.cache\Mac\SFX\AMB_Fire_ST_LP_01_D79FB2B7.wem	329868685.wem	\Actor-Mixer Hierarchy\Default Work Unit\New Actor-Mixer\AMB_Fire_ST_LP_01	
+

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}" SchemaVersion="103" RootDocumentID="{1B6F5921-F647-4065-8004-B5EFE7036339}" ParentDocumentID="{1B6F5921-F647-4065-8004-B5EFE7036339}">
+	<Busses>
+		<WorkUnit Name="Jules" ID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}" OwnerID="{1B6F5921-F647-4065-8004-B5EFE7036339}" PersistMode="Nested">
+			<ChildrenList>
+				<Bus Name="Master" ID="{79F8941E-A12D-453A-AF2B-6E06EF122136}">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="10"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="AudioDevice">
+							<ObjectRef Name="System" ID="{6B7432B9-C029-45FA-A9AB-3F872EC98FE0}" WorkUnitID="{5958FD67-625C-43DB-BE52-F7A0C375F380}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Bus Name="AMB" ID="{CDAACF0F-C751-406F-9073-3F6016218135}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="15"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ObjectLists/>
+						</Bus>
+						<Bus Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="9"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ObjectLists/>
+						</Bus>
+						<Bus Name="UI" ID="{810B9E20-27DC-44EE-82C9-184684B56A94}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="19"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ObjectLists/>
+						</Bus>
+						<Bus Name="NPC" ID="{B955C7C1-6C5F-4379-8FB3-DD13E36B5A38}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="25"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ObjectLists/>
+						</Bus>
+						<Bus Name="SFX" ID="{F425DD9C-4B7D-40B0-B495-D58654E0B77E}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="16"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ObjectLists/>
+						</Bus>
+					</ChildrenList>
+					<ObjectLists/>
+				</Bus>
+			</ChildrenList>
+		</WorkUnit>
+	</Busses>
+</WwiseDocument>
