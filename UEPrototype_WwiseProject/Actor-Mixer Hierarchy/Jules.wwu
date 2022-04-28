@@ -381,7 +381,7 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<Sound Name="AMB_RFX_DustFall_01" ID="{0A0C5ED2-46B4-400C-94E6-3E3C7C2764D9}" ShortID="403960159">
+												<Sound Name="AMB_RFX_DustFall_01" ID="{5EA0BACF-3866-4419-A8AC-4C48DF1F3ED7}" ShortID="508996821">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -391,7 +391,7 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="AMB_RFX_DustFall_01" ID="{25449502-3FD2-4D24-89E3-A263FE52F4C9}">
+														<AudioFileSource Name="AMB_RFX_DustFall_01" ID="{85CC5825-2C71-4F7F-BC5F-636B356E4489}">
 															<Language>SFX</Language>
 															<AudioFile>AMB_RFX_DustFall_01.wav</AudioFile>
 															<MediaIDList>
@@ -401,10 +401,10 @@
 													</ChildrenList>
 													<ObjectLists/>
 													<ActiveSourceList>
-														<ActiveSource Name="AMB_RFX_DustFall_01" ID="{25449502-3FD2-4D24-89E3-A263FE52F4C9}" Platform="Linked"/>
+														<ActiveSource Name="AMB_RFX_DustFall_01" ID="{85CC5825-2C71-4F7F-BC5F-636B356E4489}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
-												<Sound Name="AMB_RFX_DustFall_02" ID="{6D87B595-CA9E-4838-99D9-6813A1F9FA0B}" ShortID="540589648">
+												<Sound Name="AMB_RFX_DustFall_02" ID="{A22EE422-BA16-43C6-9E17-B8BBBBFFBE21}" ShortID="506740415">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -414,7 +414,7 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="AMB_RFX_DustFall_02" ID="{4F7FC354-8134-40BC-B3A9-A86B7131D32E}">
+														<AudioFileSource Name="AMB_RFX_DustFall_02" ID="{2A544922-09AB-4891-AA05-B09DC34750BE}">
 															<Language>SFX</Language>
 															<AudioFile>AMB_RFX_DustFall_02.wav</AudioFile>
 															<MediaIDList>
@@ -424,10 +424,10 @@
 													</ChildrenList>
 													<ObjectLists/>
 													<ActiveSourceList>
-														<ActiveSource Name="AMB_RFX_DustFall_02" ID="{4F7FC354-8134-40BC-B3A9-A86B7131D32E}" Platform="Linked"/>
+														<ActiveSource Name="AMB_RFX_DustFall_02" ID="{2A544922-09AB-4891-AA05-B09DC34750BE}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
-												<Sound Name="AMB_RFX_DustFall_03" ID="{7E40EA6F-C0B5-4810-B838-34F2354E78EB}" ShortID="847028337">
+												<Sound Name="AMB_RFX_DustFall_03" ID="{5C8032CD-DB2E-4FE3-853B-558159F001AC}" ShortID="450220720">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -437,7 +437,7 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="AMB_RFX_DustFall_03" ID="{A673BDFB-F8E5-41CC-897F-A68CF6C74C58}">
+														<AudioFileSource Name="AMB_RFX_DustFall_03" ID="{ABBDCA61-4F2E-419E-B83B-FDCD066E03EA}">
 															<Language>SFX</Language>
 															<AudioFile>AMB_RFX_DustFall_03.wav</AudioFile>
 															<MediaIDList>
@@ -447,10 +447,10 @@
 													</ChildrenList>
 													<ObjectLists/>
 													<ActiveSourceList>
-														<ActiveSource Name="AMB_RFX_DustFall_03" ID="{A673BDFB-F8E5-41CC-897F-A68CF6C74C58}" Platform="Linked"/>
+														<ActiveSource Name="AMB_RFX_DustFall_03" ID="{ABBDCA61-4F2E-419E-B83B-FDCD066E03EA}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
-												<Sound Name="AMB_RFX_DustFall_04" ID="{D375A4F5-FBDD-42FB-93AE-2897BE59B7C2}" ShortID="960700209">
+												<Sound Name="AMB_RFX_DustFall_04" ID="{8D966543-3546-45EE-99A0-597214EF1042}" ShortID="82605508">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -460,7 +460,7 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="AMB_RFX_DustFall_04" ID="{5F61E21E-D2CE-47A3-8A28-876085BA14C0}">
+														<AudioFileSource Name="AMB_RFX_DustFall_04" ID="{DF2E9A27-FCCE-49B2-AFD7-C793C49F9A53}">
 															<Language>SFX</Language>
 															<AudioFile>AMB_RFX_DustFall_04.wav</AudioFile>
 															<MediaIDList>
@@ -470,10 +470,10 @@
 													</ChildrenList>
 													<ObjectLists/>
 													<ActiveSourceList>
-														<ActiveSource Name="AMB_RFX_DustFall_04" ID="{5F61E21E-D2CE-47A3-8A28-876085BA14C0}" Platform="Linked"/>
+														<ActiveSource Name="AMB_RFX_DustFall_04" ID="{DF2E9A27-FCCE-49B2-AFD7-C793C49F9A53}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
-												<Sound Name="AMB_RFX_DustFall_05" ID="{4A096765-1021-4BDC-9C8E-49DB8453C471}" ShortID="961548423">
+												<Sound Name="AMB_RFX_DustFall_05" ID="{1E88F14A-527A-492C-BABA-5F4EC056075C}" ShortID="169071356">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -483,7 +483,7 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="AMB_RFX_DustFall_05" ID="{FE254398-1E20-4EE6-A9B8-52D37685C6FB}">
+														<AudioFileSource Name="AMB_RFX_DustFall_05" ID="{B79719FE-7C51-4FA4-8FE9-011D88D0F50E}">
 															<Language>SFX</Language>
 															<AudioFile>AMB_RFX_DustFall_05.wav</AudioFile>
 															<MediaIDList>
@@ -493,10 +493,10 @@
 													</ChildrenList>
 													<ObjectLists/>
 													<ActiveSourceList>
-														<ActiveSource Name="AMB_RFX_DustFall_05" ID="{FE254398-1E20-4EE6-A9B8-52D37685C6FB}" Platform="Linked"/>
+														<ActiveSource Name="AMB_RFX_DustFall_05" ID="{B79719FE-7C51-4FA4-8FE9-011D88D0F50E}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
-												<Sound Name="AMB_RFX_DustFall_06" ID="{A16427B4-9914-4178-84F1-80B2EFA1E21A}" ShortID="1026266619">
+												<Sound Name="AMB_RFX_DustFall_06" ID="{ED387478-290D-4D8B-B921-33F55B095456}" ShortID="485541467">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -506,7 +506,7 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="AMB_RFX_DustFall_06" ID="{92E91B0A-F046-42AF-9D8C-971A1F11A83E}">
+														<AudioFileSource Name="AMB_RFX_DustFall_06" ID="{60E77BC2-AEA8-4D29-A252-6EB347983B93}">
 															<Language>SFX</Language>
 															<AudioFile>AMB_RFX_DustFall_06.wav</AudioFile>
 															<MediaIDList>
@@ -516,10 +516,10 @@
 													</ChildrenList>
 													<ObjectLists/>
 													<ActiveSourceList>
-														<ActiveSource Name="AMB_RFX_DustFall_06" ID="{92E91B0A-F046-42AF-9D8C-971A1F11A83E}" Platform="Linked"/>
+														<ActiveSource Name="AMB_RFX_DustFall_06" ID="{60E77BC2-AEA8-4D29-A252-6EB347983B93}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
-												<Sound Name="AMB_RFX_DustFall_07" ID="{98FFAAA2-5DF1-4ABB-894E-A432DA7417A7}" ShortID="475544445">
+												<Sound Name="AMB_RFX_DustFall_07" ID="{0B7BE843-628B-4560-99E1-FFD7DA5B6142}" ShortID="155377715">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -529,7 +529,7 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="AMB_RFX_DustFall_07" ID="{EC28F37C-1ED7-44EC-B293-BC0178EEB526}">
+														<AudioFileSource Name="AMB_RFX_DustFall_07" ID="{CDE66EA3-F755-4B61-BF86-D8A201A137D7}">
 															<Language>SFX</Language>
 															<AudioFile>AMB_RFX_DustFall_07.wav</AudioFile>
 															<MediaIDList>
@@ -539,10 +539,10 @@
 													</ChildrenList>
 													<ObjectLists/>
 													<ActiveSourceList>
-														<ActiveSource Name="AMB_RFX_DustFall_07" ID="{EC28F37C-1ED7-44EC-B293-BC0178EEB526}" Platform="Linked"/>
+														<ActiveSource Name="AMB_RFX_DustFall_07" ID="{CDE66EA3-F755-4B61-BF86-D8A201A137D7}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
-												<Sound Name="AMB_RFX_DustFall_08" ID="{CC4535DC-3562-45F1-871F-0C99AB0DF9E2}" ShortID="244405007">
+												<Sound Name="AMB_RFX_DustFall_08" ID="{C37CF1E5-7362-4982-8F0C-F1C27D4709EA}" ShortID="114843152">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -552,7 +552,7 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="AMB_RFX_DustFall_08" ID="{EC5EED04-A07F-4272-8E26-E5A52EE2917A}">
+														<AudioFileSource Name="AMB_RFX_DustFall_08" ID="{79F1CDB3-0EB6-4C5F-AF04-25BEDE96CF41}">
 															<Language>SFX</Language>
 															<AudioFile>AMB_RFX_DustFall_08.wav</AudioFile>
 															<MediaIDList>
@@ -562,10 +562,10 @@
 													</ChildrenList>
 													<ObjectLists/>
 													<ActiveSourceList>
-														<ActiveSource Name="AMB_RFX_DustFall_08" ID="{EC5EED04-A07F-4272-8E26-E5A52EE2917A}" Platform="Linked"/>
+														<ActiveSource Name="AMB_RFX_DustFall_08" ID="{79F1CDB3-0EB6-4C5F-AF04-25BEDE96CF41}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
-												<Sound Name="AMB_RFX_DustFall_09" ID="{E1BD2394-9836-45E3-835B-E6EA7D378FCC}" ShortID="697887031">
+												<Sound Name="AMB_RFX_DustFall_09" ID="{B636997A-EE34-4889-A67C-161A2B1B42E8}" ShortID="818290335">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -575,7 +575,7 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="AMB_RFX_DustFall_09" ID="{067BDF3A-ECCF-408C-8000-2D2C415D1506}">
+														<AudioFileSource Name="AMB_RFX_DustFall_09" ID="{511D6139-A718-4671-BA98-9B90E39BA28D}">
 															<Language>SFX</Language>
 															<AudioFile>AMB_RFX_DustFall_09.wav</AudioFile>
 															<MediaIDList>
@@ -585,10 +585,10 @@
 													</ChildrenList>
 													<ObjectLists/>
 													<ActiveSourceList>
-														<ActiveSource Name="AMB_RFX_DustFall_09" ID="{067BDF3A-ECCF-408C-8000-2D2C415D1506}" Platform="Linked"/>
+														<ActiveSource Name="AMB_RFX_DustFall_09" ID="{511D6139-A718-4671-BA98-9B90E39BA28D}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
-												<Sound Name="AMB_RFX_DustFall_10" ID="{32120A4E-FEAE-4EE1-B09D-0067FE3AB8F9}" ShortID="1013792138">
+												<Sound Name="AMB_RFX_DustFall_10" ID="{FBC8F9DE-EE85-47C2-9BA6-544902B26ADF}" ShortID="328398011">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -598,7 +598,7 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="AMB_RFX_DustFall_10" ID="{93A8096F-C59B-499B-A7C2-1FD3C7D6031B}">
+														<AudioFileSource Name="AMB_RFX_DustFall_10" ID="{F3897B26-62F4-429C-A786-FA8CE51C189D}">
 															<Language>SFX</Language>
 															<AudioFile>AMB_RFX_DustFall_10.wav</AudioFile>
 															<MediaIDList>
@@ -608,10 +608,10 @@
 													</ChildrenList>
 													<ObjectLists/>
 													<ActiveSourceList>
-														<ActiveSource Name="AMB_RFX_DustFall_10" ID="{93A8096F-C59B-499B-A7C2-1FD3C7D6031B}" Platform="Linked"/>
+														<ActiveSource Name="AMB_RFX_DustFall_10" ID="{F3897B26-62F4-429C-A786-FA8CE51C189D}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
-												<Sound Name="AMB_RFX_DustFall_11" ID="{1C7BAC4B-DC18-477D-9E70-76F09687A4B0}" ShortID="1045462930">
+												<Sound Name="AMB_RFX_DustFall_11" ID="{647E8E46-355D-4B36-8CFB-E90CD3D54B72}" ShortID="701626838">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -621,7 +621,7 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="AMB_RFX_DustFall_11" ID="{161E63FB-4510-480B-9629-9D79110ACD62}">
+														<AudioFileSource Name="AMB_RFX_DustFall_11" ID="{18B80ED1-8216-485E-8E42-FC432775B30E}">
 															<Language>SFX</Language>
 															<AudioFile>AMB_RFX_DustFall_11.wav</AudioFile>
 															<MediaIDList>
@@ -631,10 +631,10 @@
 													</ChildrenList>
 													<ObjectLists/>
 													<ActiveSourceList>
-														<ActiveSource Name="AMB_RFX_DustFall_11" ID="{161E63FB-4510-480B-9629-9D79110ACD62}" Platform="Linked"/>
+														<ActiveSource Name="AMB_RFX_DustFall_11" ID="{18B80ED1-8216-485E-8E42-FC432775B30E}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
-												<Sound Name="AMB_RFX_DustFall_12" ID="{2854325F-4FC2-4E51-BE60-62E36BDD9DD8}" ShortID="628557274">
+												<Sound Name="AMB_RFX_DustFall_12" ID="{57ADE087-3391-4370-BF41-AA48364520CD}" ShortID="60313774">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -644,7 +644,7 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="AMB_RFX_DustFall_12" ID="{56F4D433-847D-4BE4-8354-B7EEF9DE32FB}">
+														<AudioFileSource Name="AMB_RFX_DustFall_12" ID="{F3EB6416-D5A1-4883-977B-36AF4B933790}">
 															<Language>SFX</Language>
 															<AudioFile>AMB_RFX_DustFall_12.wav</AudioFile>
 															<MediaIDList>
@@ -654,10 +654,10 @@
 													</ChildrenList>
 													<ObjectLists/>
 													<ActiveSourceList>
-														<ActiveSource Name="AMB_RFX_DustFall_12" ID="{56F4D433-847D-4BE4-8354-B7EEF9DE32FB}" Platform="Linked"/>
+														<ActiveSource Name="AMB_RFX_DustFall_12" ID="{F3EB6416-D5A1-4883-977B-36AF4B933790}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
-												<Sound Name="AMB_RFX_DustFall_13" ID="{662005FD-0EC2-4C7F-93E0-7DCE7A53B37A}" ShortID="106272586">
+												<Sound Name="AMB_RFX_DustFall_13" ID="{153482BC-26A6-4894-9A49-82EC2F90B7D1}" ShortID="751104434">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -667,7 +667,7 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="AMB_RFX_DustFall_13" ID="{AAE75520-2E0F-4DFE-911F-0A6D63DD536C}">
+														<AudioFileSource Name="AMB_RFX_DustFall_13" ID="{67944E82-237B-4E9D-95FA-A6C9E136E279}">
 															<Language>SFX</Language>
 															<AudioFile>AMB_RFX_DustFall_13.wav</AudioFile>
 															<MediaIDList>
@@ -677,7 +677,7 @@
 													</ChildrenList>
 													<ObjectLists/>
 													<ActiveSourceList>
-														<ActiveSource Name="AMB_RFX_DustFall_13" ID="{AAE75520-2E0F-4DFE-911F-0A6D63DD536C}" Platform="Linked"/>
+														<ActiveSource Name="AMB_RFX_DustFall_13" ID="{67944E82-237B-4E9D-95FA-A6C9E136E279}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
 											</ChildrenList>
@@ -715,6 +715,13 @@
 									</ReferenceList>
 									<ChildrenList>
 										<SwitchContainer Name="MC_FT_SpeedSwitch" ID="{2ED4D6B0-7770-4A7E-878D-EEC6F24E1278}" ShortID="171005289">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-12</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -4194,6 +4201,13 @@
 											<ObjectLists/>
 										</RandomSequenceContainer>
 										<SwitchContainer Name="MC_FT_Jump_GroundSwitch" ID="{4D3567D7-4DE4-4321-884C-4016EBA8976C}" ShortID="276952300">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-9</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -4368,6 +4382,11 @@
 												</RandomSequenceContainer>
 												<RandomSequenceContainer Name="MC_FT_Grass_Jump" ID="{A446B056-DE36-44A3-9CF6-64BBE426EAED}" ShortID="506186046">
 													<PropertyList>
+														<Property Name="MaxSoundPerInstance" Type="int16">
+															<ValueList>
+																<Value>1</Value>
+															</ValueList>
+														</Property>
 														<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
 														<Property Name="Pitch" Type="int32">
 															<ModifierList>
@@ -4883,6 +4902,13 @@
 											</GroupingInfo>
 										</SwitchContainer>
 										<SwitchContainer Name="MC_FT_Land_GroundSwitch" ID="{86C8D5AC-D304-42FF-B3B3-42774BF0423D}" ShortID="1014263997">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-5</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -6610,7 +6636,7 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<Sound Name="SFX_Wind_Soft_RFX_01" ID="{5E734411-1AC5-4256-956D-18D09AD857B1}" ShortID="470341527">
+												<Sound Name="SFX_Wind_Soft_RFX_01" ID="{A7335368-0B8B-4EDB-8699-E4D963A80CB1}" ShortID="768126021">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -6620,7 +6646,7 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="SFX_Wind_Soft_RFX_01" ID="{D75928BD-73C5-46B5-8F41-EE6AF2FDE982}">
+														<AudioFileSource Name="SFX_Wind_Soft_RFX_01" ID="{3B29642D-D468-4B10-A5FF-A1051576A722}">
 															<Language>SFX</Language>
 															<AudioFile>SFX_Wind_Soft_RFX_01.wav</AudioFile>
 															<MediaIDList>
@@ -6630,10 +6656,10 @@
 													</ChildrenList>
 													<ObjectLists/>
 													<ActiveSourceList>
-														<ActiveSource Name="SFX_Wind_Soft_RFX_01" ID="{D75928BD-73C5-46B5-8F41-EE6AF2FDE982}" Platform="Linked"/>
+														<ActiveSource Name="SFX_Wind_Soft_RFX_01" ID="{3B29642D-D468-4B10-A5FF-A1051576A722}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
-												<Sound Name="SFX_Wind_Soft_RFX_02" ID="{F53A57A5-6F4F-4476-BBE6-AD58C0A93B97}" ShortID="35253503">
+												<Sound Name="SFX_Wind_Soft_RFX_02" ID="{9D86C407-EC50-41DE-AE10-1AC821E5AE1D}" ShortID="179691212">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -6643,7 +6669,7 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="SFX_Wind_Soft_RFX_02" ID="{011A366D-C3F2-43AC-BCBA-40B8096D3E73}">
+														<AudioFileSource Name="SFX_Wind_Soft_RFX_02" ID="{9B2A9AC2-0D0A-414A-98F4-D219A533895C}">
 															<Language>SFX</Language>
 															<AudioFile>SFX_Wind_Soft_RFX_02.wav</AudioFile>
 															<MediaIDList>
@@ -6653,10 +6679,10 @@
 													</ChildrenList>
 													<ObjectLists/>
 													<ActiveSourceList>
-														<ActiveSource Name="SFX_Wind_Soft_RFX_02" ID="{011A366D-C3F2-43AC-BCBA-40B8096D3E73}" Platform="Linked"/>
+														<ActiveSource Name="SFX_Wind_Soft_RFX_02" ID="{9B2A9AC2-0D0A-414A-98F4-D219A533895C}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
-												<Sound Name="SFX_Wind_Soft_RFX_03" ID="{A39C8697-DC37-4589-8777-DEF87120F1D1}" ShortID="534802953">
+												<Sound Name="SFX_Wind_Soft_RFX_03" ID="{D3C48753-3423-43CF-B9CA-0D305409F7E0}" ShortID="667623686">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -6666,7 +6692,7 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="SFX_Wind_Soft_RFX_03" ID="{2E86E352-08BD-4D70-BD22-3ACA93693F29}">
+														<AudioFileSource Name="SFX_Wind_Soft_RFX_03" ID="{F954C935-93DD-4B85-BF96-55B57AA2AFF1}">
 															<Language>SFX</Language>
 															<AudioFile>SFX_Wind_Soft_RFX_03.wav</AudioFile>
 															<MediaIDList>
@@ -6676,10 +6702,10 @@
 													</ChildrenList>
 													<ObjectLists/>
 													<ActiveSourceList>
-														<ActiveSource Name="SFX_Wind_Soft_RFX_03" ID="{2E86E352-08BD-4D70-BD22-3ACA93693F29}" Platform="Linked"/>
+														<ActiveSource Name="SFX_Wind_Soft_RFX_03" ID="{F954C935-93DD-4B85-BF96-55B57AA2AFF1}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
-												<Sound Name="SFX_Wind_Soft_RFX_04" ID="{CFBDA070-E1C7-402F-816F-D4D2995CA07F}" ShortID="29991055">
+												<Sound Name="SFX_Wind_Soft_RFX_04" ID="{5F1B18F1-3E76-4749-AC5B-CBA1B8A154DB}" ShortID="675322084">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -6689,7 +6715,7 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="SFX_Wind_Soft_RFX_04" ID="{50C48582-87FA-49EE-8A8B-DFB5C9897B5E}">
+														<AudioFileSource Name="SFX_Wind_Soft_RFX_04" ID="{7339F0EE-B930-4DF7-986E-89880E8F27AF}">
 															<Language>SFX</Language>
 															<AudioFile>SFX_Wind_Soft_RFX_04.wav</AudioFile>
 															<MediaIDList>
@@ -6699,10 +6725,10 @@
 													</ChildrenList>
 													<ObjectLists/>
 													<ActiveSourceList>
-														<ActiveSource Name="SFX_Wind_Soft_RFX_04" ID="{50C48582-87FA-49EE-8A8B-DFB5C9897B5E}" Platform="Linked"/>
+														<ActiveSource Name="SFX_Wind_Soft_RFX_04" ID="{7339F0EE-B930-4DF7-986E-89880E8F27AF}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
-												<Sound Name="SFX_Wind_Soft_RFX_05" ID="{249DD009-A937-4619-B0B6-862A86D908D3}" ShortID="14030398">
+												<Sound Name="SFX_Wind_Soft_RFX_05" ID="{309606D4-8425-49F5-BA56-9AF4903BFD99}" ShortID="153095541">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -6712,7 +6738,7 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="SFX_Wind_Soft_RFX_05" ID="{7DDFE554-EA2F-4110-A0F8-CD965466A110}">
+														<AudioFileSource Name="SFX_Wind_Soft_RFX_05" ID="{8516EAB1-835A-4DA8-8107-BB8498B1A736}">
 															<Language>SFX</Language>
 															<AudioFile>SFX_Wind_Soft_RFX_05.wav</AudioFile>
 															<MediaIDList>
@@ -6722,10 +6748,10 @@
 													</ChildrenList>
 													<ObjectLists/>
 													<ActiveSourceList>
-														<ActiveSource Name="SFX_Wind_Soft_RFX_05" ID="{7DDFE554-EA2F-4110-A0F8-CD965466A110}" Platform="Linked"/>
+														<ActiveSource Name="SFX_Wind_Soft_RFX_05" ID="{8516EAB1-835A-4DA8-8107-BB8498B1A736}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
-												<Sound Name="SFX_Wind_Soft_RFX_06" ID="{ADEA8EDF-8B13-427D-AF63-479523D5C31B}" ShortID="774896174">
+												<Sound Name="SFX_Wind_Soft_RFX_06" ID="{60310DB2-C663-40FC-B503-AE94A36A6937}" ShortID="411821318">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -6735,7 +6761,7 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="SFX_Wind_Soft_RFX_06" ID="{F61A4313-CC08-43B9-952A-E0B966CE26E8}">
+														<AudioFileSource Name="SFX_Wind_Soft_RFX_06" ID="{9001DAFE-F8A2-43D4-9466-92E459A782CB}">
 															<Language>SFX</Language>
 															<AudioFile>SFX_Wind_Soft_RFX_06.wav</AudioFile>
 															<MediaIDList>
@@ -6745,7 +6771,7 @@
 													</ChildrenList>
 													<ObjectLists/>
 													<ActiveSourceList>
-														<ActiveSource Name="SFX_Wind_Soft_RFX_06" ID="{F61A4313-CC08-43B9-952A-E0B966CE26E8}" Platform="Linked"/>
+														<ActiveSource Name="SFX_Wind_Soft_RFX_06" ID="{9001DAFE-F8A2-43D4-9466-92E459A782CB}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
 											</ChildrenList>
@@ -6821,7 +6847,7 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<Sound Name="SFX_Wind_Medium_RFX_01" ID="{D3F63F1C-5D1F-4DE4-B696-AB2268FD9CB4}" ShortID="599618069">
+												<Sound Name="SFX_Wind_Medium_RFX_01" ID="{F14D9917-A768-4A46-B467-8749F1CB5C99}" ShortID="179803370">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -6831,7 +6857,7 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="SFX_Wind_Medium_RFX_01" ID="{F3152D5B-C805-49D8-97D3-ADD3CC8BA850}">
+														<AudioFileSource Name="SFX_Wind_Medium_RFX_01" ID="{2781BF0F-3153-43B7-B6C3-E972AA0BEDBB}">
 															<Language>SFX</Language>
 															<AudioFile>SFX_Wind_Medium_RFX_01.wav</AudioFile>
 															<MediaIDList>
@@ -6841,10 +6867,10 @@
 													</ChildrenList>
 													<ObjectLists/>
 													<ActiveSourceList>
-														<ActiveSource Name="SFX_Wind_Medium_RFX_01" ID="{F3152D5B-C805-49D8-97D3-ADD3CC8BA850}" Platform="Linked"/>
+														<ActiveSource Name="SFX_Wind_Medium_RFX_01" ID="{2781BF0F-3153-43B7-B6C3-E972AA0BEDBB}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
-												<Sound Name="SFX_Wind_Medium_RFX_02" ID="{E25CD47E-7FFC-4467-8A79-2B46D2B191EF}" ShortID="898712469">
+												<Sound Name="SFX_Wind_Medium_RFX_02" ID="{7D8C3FC3-7BF7-4BFF-BCB3-1583E0C3CDE5}" ShortID="273024038">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -6854,7 +6880,7 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="SFX_Wind_Medium_RFX_02" ID="{51790E2E-F4C2-4E2E-AB0C-CDDF16A27590}">
+														<AudioFileSource Name="SFX_Wind_Medium_RFX_02" ID="{FC1889A5-8FCA-4782-BB50-1F4D7981A538}">
 															<Language>SFX</Language>
 															<AudioFile>SFX_Wind_Medium_RFX_02.wav</AudioFile>
 															<MediaIDList>
@@ -6864,10 +6890,10 @@
 													</ChildrenList>
 													<ObjectLists/>
 													<ActiveSourceList>
-														<ActiveSource Name="SFX_Wind_Medium_RFX_02" ID="{51790E2E-F4C2-4E2E-AB0C-CDDF16A27590}" Platform="Linked"/>
+														<ActiveSource Name="SFX_Wind_Medium_RFX_02" ID="{FC1889A5-8FCA-4782-BB50-1F4D7981A538}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
-												<Sound Name="SFX_Wind_Medium_RFX_03" ID="{C2C2D664-EB3A-48B3-87B3-6A9027C0FC74}" ShortID="80130409">
+												<Sound Name="SFX_Wind_Medium_RFX_03" ID="{55A1312A-10FC-4E8C-8A81-ECBCC51E97EB}" ShortID="196251270">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -6877,7 +6903,7 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="SFX_Wind_Medium_RFX_03" ID="{759219B6-550C-439A-9B2C-A9E8CA0F3475}">
+														<AudioFileSource Name="SFX_Wind_Medium_RFX_03" ID="{11F4E331-6A1E-4518-B391-23629F1A72A3}">
 															<Language>SFX</Language>
 															<AudioFile>SFX_Wind_Medium_RFX_03.wav</AudioFile>
 															<MediaIDList>
@@ -6887,10 +6913,10 @@
 													</ChildrenList>
 													<ObjectLists/>
 													<ActiveSourceList>
-														<ActiveSource Name="SFX_Wind_Medium_RFX_03" ID="{759219B6-550C-439A-9B2C-A9E8CA0F3475}" Platform="Linked"/>
+														<ActiveSource Name="SFX_Wind_Medium_RFX_03" ID="{11F4E331-6A1E-4518-B391-23629F1A72A3}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
-												<Sound Name="SFX_Wind_Medium_RFX_04" ID="{29C3C3CF-20AB-4B30-8880-3DA153B89F9B}" ShortID="325423668">
+												<Sound Name="SFX_Wind_Medium_RFX_04" ID="{EBF1B69E-6A1A-43D0-86CF-0C4E05E08B73}" ShortID="698659730">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -6900,7 +6926,7 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="SFX_Wind_Medium_RFX_04" ID="{5A184710-49C4-4BC6-B49A-5A1863E6466D}">
+														<AudioFileSource Name="SFX_Wind_Medium_RFX_04" ID="{539D1B25-B9C3-416C-8193-20D53EF9C0B0}">
 															<Language>SFX</Language>
 															<AudioFile>SFX_Wind_Medium_RFX_04.wav</AudioFile>
 															<MediaIDList>
@@ -6910,10 +6936,10 @@
 													</ChildrenList>
 													<ObjectLists/>
 													<ActiveSourceList>
-														<ActiveSource Name="SFX_Wind_Medium_RFX_04" ID="{5A184710-49C4-4BC6-B49A-5A1863E6466D}" Platform="Linked"/>
+														<ActiveSource Name="SFX_Wind_Medium_RFX_04" ID="{539D1B25-B9C3-416C-8193-20D53EF9C0B0}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
-												<Sound Name="SFX_Wind_Medium_RFX_05" ID="{8092C4DA-4790-45D3-8481-85F119C2BD83}" ShortID="1007464166">
+												<Sound Name="SFX_Wind_Medium_RFX_05" ID="{DB6F5A28-C14F-4CC0-82C3-C463B05D5491}" ShortID="65729986">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -6923,7 +6949,7 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="SFX_Wind_Medium_RFX_05" ID="{A0F01EFC-B857-457D-802E-CE1671ACC0F4}">
+														<AudioFileSource Name="SFX_Wind_Medium_RFX_05" ID="{FCEE34B3-0865-4AEF-8594-3DA7A40282D9}">
 															<Language>SFX</Language>
 															<AudioFile>SFX_Wind_Medium_RFX_05.wav</AudioFile>
 															<MediaIDList>
@@ -6933,10 +6959,10 @@
 													</ChildrenList>
 													<ObjectLists/>
 													<ActiveSourceList>
-														<ActiveSource Name="SFX_Wind_Medium_RFX_05" ID="{A0F01EFC-B857-457D-802E-CE1671ACC0F4}" Platform="Linked"/>
+														<ActiveSource Name="SFX_Wind_Medium_RFX_05" ID="{FCEE34B3-0865-4AEF-8594-3DA7A40282D9}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
-												<Sound Name="SFX_Wind_Medium_RFX_06" ID="{38901E3D-B35F-4CA2-9B12-C377B4023AF9}" ShortID="635491552">
+												<Sound Name="SFX_Wind_Medium_RFX_06" ID="{26C1FDF0-51DC-4C89-ABEF-4F4A4B579797}" ShortID="685751314">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -6946,7 +6972,7 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="SFX_Wind_Medium_RFX_06" ID="{22C8DD5E-661C-4144-9A11-39A658F2EFB9}">
+														<AudioFileSource Name="SFX_Wind_Medium_RFX_06" ID="{4E0584DD-D402-4F90-8F96-45D33DB0367D}">
 															<Language>SFX</Language>
 															<AudioFile>SFX_Wind_Medium_RFX_06.wav</AudioFile>
 															<MediaIDList>
@@ -6956,7 +6982,7 @@
 													</ChildrenList>
 													<ObjectLists/>
 													<ActiveSourceList>
-														<ActiveSource Name="SFX_Wind_Medium_RFX_06" ID="{22C8DD5E-661C-4144-9A11-39A658F2EFB9}" Platform="Linked"/>
+														<ActiveSource Name="SFX_Wind_Medium_RFX_06" ID="{4E0584DD-D402-4F90-8F96-45D33DB0367D}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
 											</ChildrenList>
@@ -7032,7 +7058,7 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<Sound Name="SFX_Wind_Strong_RFX_01" ID="{D7579DA6-55CA-4179-9D1E-1B4E58BAEDA6}" ShortID="285831087">
+												<Sound Name="SFX_Wind_Strong_RFX_01" ID="{2A4BC492-6219-44AF-81A1-71D41BC51C09}" ShortID="343091253">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -7042,7 +7068,7 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="SFX_Wind_Strong_RFX_01" ID="{4B9CD8F6-5DAE-4F24-9E49-B0FF942D3692}">
+														<AudioFileSource Name="SFX_Wind_Strong_RFX_01" ID="{67FD6182-E60C-41AC-ACDC-437E5A115E6D}">
 															<Language>SFX</Language>
 															<AudioFile>SFX_Wind_Strong_RFX_01.wav</AudioFile>
 															<MediaIDList>
@@ -7052,10 +7078,10 @@
 													</ChildrenList>
 													<ObjectLists/>
 													<ActiveSourceList>
-														<ActiveSource Name="SFX_Wind_Strong_RFX_01" ID="{4B9CD8F6-5DAE-4F24-9E49-B0FF942D3692}" Platform="Linked"/>
+														<ActiveSource Name="SFX_Wind_Strong_RFX_01" ID="{67FD6182-E60C-41AC-ACDC-437E5A115E6D}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
-												<Sound Name="SFX_Wind_Strong_RFX_02" ID="{D8117CD8-ADCD-4294-8444-0F08CBC9052C}" ShortID="937588571">
+												<Sound Name="SFX_Wind_Strong_RFX_02" ID="{DE02D91E-19B6-4F41-A7E8-EC73EDFB5B3A}" ShortID="261163418">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -7065,7 +7091,7 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="SFX_Wind_Strong_RFX_02" ID="{E78B5D0F-4667-499E-AF3D-6EF8ED3134A5}">
+														<AudioFileSource Name="SFX_Wind_Strong_RFX_02" ID="{88430754-D5BC-42EF-B4AE-9848B8BB1328}">
 															<Language>SFX</Language>
 															<AudioFile>SFX_Wind_Strong_RFX_02.wav</AudioFile>
 															<MediaIDList>
@@ -7075,10 +7101,10 @@
 													</ChildrenList>
 													<ObjectLists/>
 													<ActiveSourceList>
-														<ActiveSource Name="SFX_Wind_Strong_RFX_02" ID="{E78B5D0F-4667-499E-AF3D-6EF8ED3134A5}" Platform="Linked"/>
+														<ActiveSource Name="SFX_Wind_Strong_RFX_02" ID="{88430754-D5BC-42EF-B4AE-9848B8BB1328}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
-												<Sound Name="SFX_Wind_Strong_RFX_03" ID="{D57D3077-C596-4481-8338-DBA0CA9D1BA3}" ShortID="662278885">
+												<Sound Name="SFX_Wind_Strong_RFX_03" ID="{B8C560C9-A226-423A-96D2-F616513A3DBC}" ShortID="346465383">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -7088,7 +7114,7 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="SFX_Wind_Strong_RFX_03" ID="{041D3CCB-B666-4AC1-A185-ABFF5CBB9FB1}">
+														<AudioFileSource Name="SFX_Wind_Strong_RFX_03" ID="{49647FE7-90F8-4B08-A32F-019403072F05}">
 															<Language>SFX</Language>
 															<AudioFile>SFX_Wind_Strong_RFX_03.wav</AudioFile>
 															<MediaIDList>
@@ -7098,10 +7124,10 @@
 													</ChildrenList>
 													<ObjectLists/>
 													<ActiveSourceList>
-														<ActiveSource Name="SFX_Wind_Strong_RFX_03" ID="{041D3CCB-B666-4AC1-A185-ABFF5CBB9FB1}" Platform="Linked"/>
+														<ActiveSource Name="SFX_Wind_Strong_RFX_03" ID="{49647FE7-90F8-4B08-A32F-019403072F05}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
-												<Sound Name="SFX_Wind_Strong_RFX_04" ID="{6AE05F5C-7250-4E87-A502-0A7DB00C4AB5}" ShortID="520355090">
+												<Sound Name="SFX_Wind_Strong_RFX_04" ID="{32DC27D9-5488-4C7B-BF94-B4D96AF0941B}" ShortID="400475965">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -7111,7 +7137,7 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="SFX_Wind_Strong_RFX_04" ID="{31655CCB-6D0A-439E-B4BE-ACD94E7A2DC0}">
+														<AudioFileSource Name="SFX_Wind_Strong_RFX_04" ID="{DE7FE2FE-77CB-4A3D-A822-6E074EF73A6C}">
 															<Language>SFX</Language>
 															<AudioFile>SFX_Wind_Strong_RFX_04.wav</AudioFile>
 															<MediaIDList>
@@ -7121,10 +7147,10 @@
 													</ChildrenList>
 													<ObjectLists/>
 													<ActiveSourceList>
-														<ActiveSource Name="SFX_Wind_Strong_RFX_04" ID="{31655CCB-6D0A-439E-B4BE-ACD94E7A2DC0}" Platform="Linked"/>
+														<ActiveSource Name="SFX_Wind_Strong_RFX_04" ID="{DE7FE2FE-77CB-4A3D-A822-6E074EF73A6C}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
-												<Sound Name="SFX_Wind_Strong_RFX_05" ID="{CCA43DA7-D97F-4D16-8A98-87B677AD798B}" ShortID="648440521">
+												<Sound Name="SFX_Wind_Strong_RFX_05" ID="{3EB4E982-4753-4C99-8177-D68EB6184AE2}" ShortID="322889831">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -7134,7 +7160,7 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="SFX_Wind_Strong_RFX_05" ID="{88FC11AE-38E9-4405-AC8B-C616EDF059C8}">
+														<AudioFileSource Name="SFX_Wind_Strong_RFX_05" ID="{A9DCDD1B-231E-4CA4-BA6D-CC5112148700}">
 															<Language>SFX</Language>
 															<AudioFile>SFX_Wind_Strong_RFX_05.wav</AudioFile>
 															<MediaIDList>
@@ -7144,10 +7170,10 @@
 													</ChildrenList>
 													<ObjectLists/>
 													<ActiveSourceList>
-														<ActiveSource Name="SFX_Wind_Strong_RFX_05" ID="{88FC11AE-38E9-4405-AC8B-C616EDF059C8}" Platform="Linked"/>
+														<ActiveSource Name="SFX_Wind_Strong_RFX_05" ID="{A9DCDD1B-231E-4CA4-BA6D-CC5112148700}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
-												<Sound Name="SFX_Wind_Strong_RFX_06" ID="{6C5649BB-7BCD-477D-9F66-3E6066896E40}" ShortID="1071886969">
+												<Sound Name="SFX_Wind_Strong_RFX_06" ID="{343FDE03-BCE1-4324-958A-AAFE0124FA3F}" ShortID="1055688527">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -7157,7 +7183,7 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="SFX_Wind_Strong_RFX_06" ID="{4BE70C18-D784-41DD-9E29-2B2E9737FE2A}">
+														<AudioFileSource Name="SFX_Wind_Strong_RFX_06" ID="{0DEAEFF5-5B41-488F-9A35-AAC1EF67B2A5}">
 															<Language>SFX</Language>
 															<AudioFile>SFX_Wind_Strong_RFX_06.wav</AudioFile>
 															<MediaIDList>
@@ -7167,10 +7193,10 @@
 													</ChildrenList>
 													<ObjectLists/>
 													<ActiveSourceList>
-														<ActiveSource Name="SFX_Wind_Strong_RFX_06" ID="{4BE70C18-D784-41DD-9E29-2B2E9737FE2A}" Platform="Linked"/>
+														<ActiveSource Name="SFX_Wind_Strong_RFX_06" ID="{0DEAEFF5-5B41-488F-9A35-AAC1EF67B2A5}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
-												<Sound Name="SFX_Wind_Strong_RFX_07" ID="{09647F2B-055A-47E4-92B9-9E968994A785}" ShortID="948826901">
+												<Sound Name="SFX_Wind_Strong_RFX_07" ID="{B14B63CA-FA65-45A4-B347-DB1612E78847}" ShortID="913967829">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -7180,7 +7206,7 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="SFX_Wind_Strong_RFX_07" ID="{11DA873D-63A3-46E2-A7CB-054208EAB73A}">
+														<AudioFileSource Name="SFX_Wind_Strong_RFX_07" ID="{D052AAA0-9E71-4F82-AAE4-5A02EABF667C}">
 															<Language>SFX</Language>
 															<AudioFile>SFX_Wind_Strong_RFX_07.wav</AudioFile>
 															<MediaIDList>
@@ -7190,10 +7216,10 @@
 													</ChildrenList>
 													<ObjectLists/>
 													<ActiveSourceList>
-														<ActiveSource Name="SFX_Wind_Strong_RFX_07" ID="{11DA873D-63A3-46E2-A7CB-054208EAB73A}" Platform="Linked"/>
+														<ActiveSource Name="SFX_Wind_Strong_RFX_07" ID="{D052AAA0-9E71-4F82-AAE4-5A02EABF667C}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
-												<Sound Name="SFX_Wind_Strong_RFX_08" ID="{7C3E5BC2-3963-4A1B-B618-9EDBB6CBB3C5}" ShortID="176293241">
+												<Sound Name="SFX_Wind_Strong_RFX_08" ID="{63879B88-7268-4899-88B8-01ECDB40C598}" ShortID="499626235">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -7203,7 +7229,7 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="SFX_Wind_Strong_RFX_08" ID="{9C388D3C-67EC-4F03-81AE-7B0BD6018D07}">
+														<AudioFileSource Name="SFX_Wind_Strong_RFX_08" ID="{656E287A-66C0-4481-A097-8F5DAFEF7144}">
 															<Language>SFX</Language>
 															<AudioFile>SFX_Wind_Strong_RFX_08.wav</AudioFile>
 															<MediaIDList>
@@ -7213,10 +7239,10 @@
 													</ChildrenList>
 													<ObjectLists/>
 													<ActiveSourceList>
-														<ActiveSource Name="SFX_Wind_Strong_RFX_08" ID="{9C388D3C-67EC-4F03-81AE-7B0BD6018D07}" Platform="Linked"/>
+														<ActiveSource Name="SFX_Wind_Strong_RFX_08" ID="{656E287A-66C0-4481-A097-8F5DAFEF7144}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
-												<Sound Name="SFX_Wind_Strong_RFX_09" ID="{15FA73BB-E5FC-42B3-8FA7-F5091EFC9CD2}" ShortID="636857689">
+												<Sound Name="SFX_Wind_Strong_RFX_09" ID="{E5D7D21A-11F4-49CD-BC42-E406A7DEB3EA}" ShortID="316906047">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -7226,7 +7252,7 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="SFX_Wind_Strong_RFX_09" ID="{5968127F-3602-45BA-ADA0-DEB785750026}">
+														<AudioFileSource Name="SFX_Wind_Strong_RFX_09" ID="{C52B27CA-693F-4D9A-860D-A5BAEDA0070E}">
 															<Language>SFX</Language>
 															<AudioFile>SFX_Wind_Strong_RFX_09.wav</AudioFile>
 															<MediaIDList>
@@ -7236,10 +7262,10 @@
 													</ChildrenList>
 													<ObjectLists/>
 													<ActiveSourceList>
-														<ActiveSource Name="SFX_Wind_Strong_RFX_09" ID="{5968127F-3602-45BA-ADA0-DEB785750026}" Platform="Linked"/>
+														<ActiveSource Name="SFX_Wind_Strong_RFX_09" ID="{C52B27CA-693F-4D9A-860D-A5BAEDA0070E}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
-												<Sound Name="SFX_Wind_Strong_RFX_10" ID="{B3846053-467B-4A56-A4BA-BD025D9CD716}" ShortID="643829245">
+												<Sound Name="SFX_Wind_Strong_RFX_10" ID="{7DBA00FE-1629-4C74-AC0C-58F25576F5EA}" ShortID="448238273">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -7249,7 +7275,7 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="SFX_Wind_Strong_RFX_10" ID="{49E67328-3164-47A5-A407-FB45BABF1286}">
+														<AudioFileSource Name="SFX_Wind_Strong_RFX_10" ID="{501A32A3-16A8-4FFD-8830-0C27D3BC2C60}">
 															<Language>SFX</Language>
 															<AudioFile>SFX_Wind_Strong_RFX_10.wav</AudioFile>
 															<MediaIDList>
@@ -7259,7 +7285,7 @@
 													</ChildrenList>
 													<ObjectLists/>
 													<ActiveSourceList>
-														<ActiveSource Name="SFX_Wind_Strong_RFX_10" ID="{49E67328-3164-47A5-A407-FB45BABF1286}" Platform="Linked"/>
+														<ActiveSource Name="SFX_Wind_Strong_RFX_10" ID="{501A32A3-16A8-4FFD-8830-0C27D3BC2C60}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
 											</ChildrenList>
@@ -7389,19 +7415,13 @@
 																		<SegmentShape>Log1</SegmentShape>
 																	</Point>
 																	<Point>
-																		<XPos>5</XPos>
+																		<XPos>0.833333333333333</XPos>
 																		<YPos>-200</YPos>
 																		<Flags>0</Flags>
 																		<SegmentShape>Log1</SegmentShape>
 																	</Point>
 																	<Point>
-																		<XPos>599.999</XPos>
-																		<YPos>0</YPos>
-																		<Flags>0</Flags>
-																		<SegmentShape>Exp1</SegmentShape>
-																	</Point>
-																	<Point>
-																		<XPos>600</XPos>
+																		<XPos>100</XPos>
 																		<YPos>0</YPos>
 																		<Flags>37</Flags>
 																	</Point>
@@ -7422,25 +7442,25 @@
 													<CrossfadingInfo>
 														<LeftEdgePos>0</LeftEdgePos>
 														<LeftFadingMode>Automatic</LeftFadingMode>
-														<RightEdgePos>240</RightEdgePos>
+														<RightEdgePos>33.3333333333333</RightEdgePos>
 														<RightFadingMode>Automatic</RightFadingMode>
 													</CrossfadingInfo>
 												</BlendTrackAssoc>
 												<BlendTrackAssoc>
 													<ItemRef Name="SFX_Wind_Medium_LP" ID="{2906ABA3-479E-4340-9B16-27DD5C67DC64}"/>
 													<CrossfadingInfo>
-														<LeftEdgePos>150</LeftEdgePos>
+														<LeftEdgePos>33.3333333333333</LeftEdgePos>
 														<LeftFadingMode>Automatic</LeftFadingMode>
-														<RightEdgePos>450</RightEdgePos>
+														<RightEdgePos>66.6666666666667</RightEdgePos>
 														<RightFadingMode>Automatic</RightFadingMode>
 													</CrossfadingInfo>
 												</BlendTrackAssoc>
 												<BlendTrackAssoc>
 													<ItemRef Name="SFX_Wind_Strong_LP" ID="{682F25AB-9E4F-43F3-ACB9-9F0AB18D5C13}"/>
 													<CrossfadingInfo>
-														<LeftEdgePos>360</LeftEdgePos>
+														<LeftEdgePos>66.6666666666667</LeftEdgePos>
 														<LeftFadingMode>Automatic</LeftFadingMode>
-														<RightEdgePos>600</RightEdgePos>
+														<RightEdgePos>100</RightEdgePos>
 														<RightFadingMode>Automatic</RightFadingMode>
 													</CrossfadingInfo>
 												</BlendTrackAssoc>
@@ -7469,35 +7489,35 @@
 																		<SegmentShape>Exp1</SegmentShape>
 																	</Point>
 																	<Point>
-																		<XPos>5</XPos>
+																		<XPos>0.833333333333333</XPos>
 																		<YPos>-200</YPos>
 																		<Flags>0</Flags>
 																		<SegmentShape>Exp2</SegmentShape>
 																	</Point>
 																	<Point>
-																		<XPos>150</XPos>
+																		<XPos>25</XPos>
 																		<YPos>0</YPos>
 																		<Flags>0</Flags>
 																	</Point>
 																	<Point>
-																		<XPos>240</XPos>
+																		<XPos>40</XPos>
 																		<YPos>-8</YPos>
 																		<Flags>0</Flags>
 																		<SegmentShape>Exp1</SegmentShape>
 																	</Point>
 																	<Point>
-																		<XPos>360</XPos>
+																		<XPos>60</XPos>
 																		<YPos>0</YPos>
 																		<Flags>0</Flags>
 																	</Point>
 																	<Point>
-																		<XPos>450</XPos>
+																		<XPos>75</XPos>
 																		<YPos>-5</YPos>
 																		<Flags>0</Flags>
 																		<SegmentShape>Exp1</SegmentShape>
 																	</Point>
 																	<Point>
-																		<XPos>600</XPos>
+																		<XPos>100</XPos>
 																		<YPos>0</YPos>
 																		<Flags>37</Flags>
 																	</Point>
@@ -7518,25 +7538,25 @@
 													<CrossfadingInfo>
 														<LeftEdgePos>0</LeftEdgePos>
 														<LeftFadingMode>Automatic</LeftFadingMode>
-														<RightEdgePos>240</RightEdgePos>
+														<RightEdgePos>33.3333333333333</RightEdgePos>
 														<RightFadingMode>Automatic</RightFadingMode>
 													</CrossfadingInfo>
 												</BlendTrackAssoc>
 												<BlendTrackAssoc>
 													<ItemRef Name="SFX_Wind_Medium_RFX" ID="{869EFC3F-2193-4422-96CF-2F792B240FAB}"/>
 													<CrossfadingInfo>
-														<LeftEdgePos>150</LeftEdgePos>
+														<LeftEdgePos>33.3333333333333</LeftEdgePos>
 														<LeftFadingMode>Automatic</LeftFadingMode>
-														<RightEdgePos>450</RightEdgePos>
+														<RightEdgePos>66.6666666666667</RightEdgePos>
 														<RightFadingMode>Automatic</RightFadingMode>
 													</CrossfadingInfo>
 												</BlendTrackAssoc>
 												<BlendTrackAssoc>
 													<ItemRef Name="SFX_Wind_Strong_RFX" ID="{D885F784-4807-4D34-93ED-A80B0CA88593}"/>
 													<CrossfadingInfo>
-														<LeftEdgePos>360</LeftEdgePos>
+														<LeftEdgePos>66.6666666666667</LeftEdgePos>
 														<LeftFadingMode>Automatic</LeftFadingMode>
-														<RightEdgePos>600</RightEdgePos>
+														<RightEdgePos>100</RightEdgePos>
 														<RightFadingMode>Automatic</RightFadingMode>
 													</CrossfadingInfo>
 												</BlendTrackAssoc>
