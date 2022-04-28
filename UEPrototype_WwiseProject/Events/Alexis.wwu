@@ -58,13 +58,6 @@
 					<ChildrenList>
 						<Event Name="SFX_Freefall_Start" ID="{842A5543-F79B-4E66-8E98-34B8B487ADD2}">
 							<ChildrenList>
-								<Action Name="" ID="{61F946F4-CCD3-488A-A1D3-3DA3A6E2E3B3}" ShortID="504919038">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="SFX_Freefall_Start" ID="{E088CACA-A151-4BFA-A370-C494D9207E19}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
 								<Action Name="" ID="{AD28F70A-9DB8-4651-9B16-DB90C431400A}" ShortID="482336611">
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="36"/>
@@ -104,31 +97,8 @@
 				</Folder>
 				<Folder Name="AMB" ID="{E6F43FC4-7B11-4A4D-81F8-8DAC14F00D82}" ShortID="6154887">
 					<ChildrenList>
-						<Event Name="Stop_AMB_Bed_lvl1" ID="{CE3C769B-BB7A-4936-B31C-A291704DCF7C}">
-							<ChildrenList>
-								<Action Name="" ID="{9D853C89-1342-497F-B61C-36F2CB14405F}" ShortID="427561587">
-									<PropertyList>
-										<Property Name="ActionType" Type="int16" Value="2"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="AMB_Bed_lvl1_LP" ID="{F1ECC593-1D3B-46E1-8243-C53A480CE087}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="Play_AMB_Bed_lvl1" ID="{4451A411-DE72-4F14-8F94-64731FF465B2}">
-							<ChildrenList>
-								<Action Name="" ID="{257CBB7C-B8DD-4826-AAEE-C18668836204}" ShortID="899353500">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="AMB_Bed_lvl1_LP" ID="{F1ECC593-1D3B-46E1-8243-C53A480CE087}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
+						<Event Name="Stop_AMB_Bed_lvl1" ID="{CE3C769B-BB7A-4936-B31C-A291704DCF7C}"/>
+						<Event Name="Play_AMB_Bed_lvl1" ID="{4451A411-DE72-4F14-8F94-64731FF465B2}"/>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>
