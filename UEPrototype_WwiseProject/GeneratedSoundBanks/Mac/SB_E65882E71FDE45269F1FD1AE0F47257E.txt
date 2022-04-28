@@ -1,0 +1,3 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1750724204	Stop_MC_FOL_FreeFall			\Default Work Unit\Alexis\MC\Stop_MC_FOL_FreeFall	
+

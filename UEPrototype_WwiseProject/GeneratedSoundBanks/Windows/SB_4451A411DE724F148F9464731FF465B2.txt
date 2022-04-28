@@ -1,0 +1,6 @@
+Event	ID	Name			Wwise Object Path	Notes
+	729786298	Play_AMB_Bed_lvl1			\Default Work Unit\Alexis\AMB\Play_AMB_Bed_lvl1	
+
+Streamed Audio	ID	Name	Audio source file	Generated audio file	Wwise Object Path	Notes
+	544454328	AMB_Bed_lvl1_LP	D:\Sessions Unreal\Git\UEPrototype\UEPrototype_WwiseProject\.cache\Windows\SFX\AMB_Bed_lvl1_LP_D79FB2B7.wem	544454328.wem	\Actor-Mixer Hierarchy\Default Work Unit\Alexis\Master\AMB\AMB_Bed_lvl1_LP	
+
