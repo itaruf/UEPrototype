@@ -5,18 +5,18 @@
   "SchemaVersion": "12",
   "SoundbankVersion": "140",
   "RootPaths": {
-   "ProjectRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\",
-   "SourceFilesRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\.cache\\Windows\\",
-   "SoundBanksRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Windows\\",
+   "ProjectRoot": "C:\\2021 Formation\\Projet\\IIM4 - Yin Yang\\01. Projet\\UEPrototype\\UEPrototype_WwiseProject\\",
+   "SourceFilesRoot": "C:\\2021 Formation\\Projet\\IIM4 - Yin Yang\\01. Projet\\UEPrototype\\UEPrototype_WwiseProject\\.cache\\Windows\\",
+   "SoundBanksRoot": "C:\\2021 Formation\\Projet\\IIM4 - Yin Yang\\01. Projet\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Windows\\",
    "ExternalSourcesInputFile": "",
-   "ExternalSourcesOutputRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Windows"
+   "ExternalSourcesOutputRoot": "C:\\2021 Formation\\Projet\\IIM4 - Yin Yang\\01. Projet\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Windows"
   },
   "SoundBanks": [
    {
     "Id": "1584861542",
     "GUID": "{A1A37E9D-0EFE-41CE-8DCA-07C077AFE473}",
     "Language": "SFX",
-    "Hash": "309967126",
+    "Hash": "178708030",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\SB",
     "ShortName": "SB",
     "Path": "SB.bnk",
@@ -1347,17 +1347,11 @@
       "Id": "397094465",
       "Name": "MC_FT_Jump",
       "ObjectPath": "\\Events\\Default Work Unit\\Jules\\MC\\MC_FT_Jump",
-      "GUID": "{AC988322-30DB-4ECF-8BEC-C87B4F2242A5}",
+      "GUID": "{09415A2F-7044-41AF-A061-2D0E199B46F4}",
       "DurationType": "OneShot",
-      "DurationMin": "0.678667",
-      "DurationMax": "0.810667",
+      "DurationMin": "0.",
+      "DurationMax": "0.608727",
       "IncludedMemoryFiles": [
-       {
-        "Id": "43278628",
-        "Language": "SFX",
-        "ShortName": "MC_FOL_Jump_02.wav",
-        "Path": "SFX\\MC_FOL_Jump_02_10C4C929.wem"
-       },
        {
         "Id": "47502075",
         "Language": "SFX",
@@ -1375,12 +1369,6 @@
         "Language": "SFX",
         "ShortName": "MC_FT_Stone_Jump_03.wav",
         "Path": "SFX\\MC_FT_Stone_Jump_03_10C4C929.wem"
-       },
-       {
-        "Id": "134709595",
-        "Language": "SFX",
-        "ShortName": "MC_FOL_Jump_05.wav",
-        "Path": "SFX\\MC_FOL_Jump_05_10C4C929.wem"
        },
        {
         "Id": "187087893",
@@ -1423,18 +1411,6 @@
         "Language": "SFX",
         "ShortName": "MC_FT_Water_Jump_05.wav",
         "Path": "SFX\\MC_FT_Water_Jump_05_10C4C929.wem"
-       },
-       {
-        "Id": "606680872",
-        "Language": "SFX",
-        "ShortName": "MC_FOL_Jump_04.wav",
-        "Path": "SFX\\MC_FOL_Jump_04_10C4C929.wem"
-       },
-       {
-        "Id": "613920068",
-        "Language": "SFX",
-        "ShortName": "MC_FOL_Jump_03.wav",
-        "Path": "SFX\\MC_FOL_Jump_03_10C4C929.wem"
        },
        {
         "Id": "635330870",
@@ -1483,12 +1459,6 @@
         "Language": "SFX",
         "ShortName": "MC_FT_Dirt_Jump_01.wav",
         "Path": "SFX\\MC_FT_Dirt_Jump_01_10C4C929.wem"
-       },
-       {
-        "Id": "1040240713",
-        "Language": "SFX",
-        "ShortName": "MC_FOL_Jump_01.wav",
-        "Path": "SFX\\MC_FOL_Jump_01_10C4C929.wem"
        },
        {
         "Id": "1043084669",
@@ -1591,9 +1561,9 @@
       "Id": "1496578974",
       "Name": "MC_FT_Land",
       "ObjectPath": "\\Events\\Default Work Unit\\Jules\\MC\\MC_FT_Land",
-      "GUID": "{56274120-77E8-4774-84C0-C5BB7FA1F1BB}",
+      "GUID": "{488B1B77-8269-4FDB-8527-E9D60A8E5509}",
       "DurationType": "OneShot",
-      "DurationMin": "0.36141",
+      "DurationMin": "0.",
       "DurationMax": "1.048363",
       "IncludedMemoryFiles": [
        {
@@ -1805,10 +1775,10 @@
       "Id": "1716018476",
       "Name": "MC_FT_WallRun",
       "ObjectPath": "\\Events\\Default Work Unit\\Jules\\MC\\MC_FT_WallRun",
-      "GUID": "{DAA3A681-01AE-4746-9AAD-669C5DA9858A}",
+      "GUID": "{6D2EBAF7-DC3E-42C2-B75E-887F38161E51}",
       "DurationType": "OneShot",
-      "DurationMin": "0.164277",
-      "DurationMax": "0.267692",
+      "DurationMin": "0.",
+      "DurationMax": "0.202909",
       "IncludedMemoryFiles": [
        {
         "Id": "42553690",
@@ -2194,15 +2164,10 @@
       "Name": "Play_AMB_Bed_lvl1",
       "ObjectPath": "\\Events\\Default Work Unit\\Alexis\\AMB\\Play_AMB_Bed_lvl1",
       "GUID": "{4451A411-DE72-4F14-8F94-64731FF465B2}",
-      "DurationType": "Infinite",
-      "ReferencedStreamedFiles": [
-       {
-        "Id": "544454328",
-        "Language": "SFX",
-        "ShortName": "AMB_Bed_lvl1_LP.wav",
-        "Path": "SFX\\AMB_Bed_lvl1_LP_D79FB2B7.wem"
-       }
-      ]
+      "MaxAttenuation": "0.",
+      "DurationType": "OneShot",
+      "DurationMin": "0.",
+      "DurationMax": "0."
      },
      {
       "Id": "513838466",
@@ -2220,20 +2185,10 @@
       ]
      },
      {
-      "Id": "2394188391",
-      "Name": "RFX_Birds_Play",
-      "ObjectPath": "\\Events\\Default Work Unit\\Jules\\AMB\\RFX_Birds_Play",
-      "GUID": "{4905F7CA-E5A5-4084-8A13-C855EDB1A4CB}",
-      "MaxAttenuation": "0.",
-      "DurationType": "OneShot",
-      "DurationMin": "0.",
-      "DurationMax": "0."
-     },
-     {
-      "Id": "1798340995",
-      "Name": "RFX_DirtFall_Play",
-      "ObjectPath": "\\Events\\Default Work Unit\\Jules\\AMB\\RFX_DirtFall_Play",
-      "GUID": "{78C4B7CE-5F0D-4AA6-9146-66EDF982E824}",
+      "Id": "3665420474",
+      "Name": "RFX_DirtFall",
+      "ObjectPath": "\\Events\\Default Work Unit\\Jules\\AMB\\RFX_DirtFall",
+      "GUID": "{4422A52E-1B39-482E-9099-8E91601CFD0F}",
       "DurationType": "Infinite",
       "IncludedMemoryFiles": [
        {
@@ -2317,13 +2272,6 @@
       ]
      },
      {
-      "Id": "2310173293",
-      "Name": "RFX_GroundRumble_Play",
-      "ObjectPath": "\\Events\\Default Work Unit\\Jules\\AMB\\RFX_GroundRumble_Play",
-      "GUID": "{475D7614-02E8-4D28-BAB4-9E3E35028144}",
-      "DurationType": "Infinite"
-     },
-     {
       "Id": "1920976302",
       "Name": "SFX_Freefall_End",
       "ObjectPath": "\\Events\\Default Work Unit\\Alexis\\SFX\\SFX_Freefall_End",
@@ -2341,36 +2289,18 @@
       "DurationType": "Infinite",
       "IncludedMemoryFiles": [
        {
-        "Id": "583227034",
-        "Language": "SFX",
-        "ShortName": "SFX_Freefall_Start_01.wav",
-        "Path": "SFX\\SFX_Freefall_Start_01_10C4C929.wem"
-       },
-       {
-        "Id": "683009960",
-        "Language": "SFX",
-        "ShortName": "SFX_Freefall_Start_02.wav",
-        "Path": "SFX\\SFX_Freefall_Start_02_10C4C929.wem"
-       },
-       {
         "Id": "1013223247",
         "Language": "SFX",
         "ShortName": "MC_Foley_Cape_Turn_Long_Medium_LP.wav",
         "Path": "SFX\\MC_Foley_Cape_Turn_Long_Medium_LP_D79FB2B7.wem"
-       },
-       {
-        "Id": "1032188994",
-        "Language": "SFX",
-        "ShortName": "SFX_Freefall_Start_03.wav",
-        "Path": "SFX\\SFX_Freefall_Start_03_10C4C929.wem"
        }
       ]
      },
      {
-      "Id": "4190862346",
-      "Name": "SFX_Waterfall_Impact",
-      "ObjectPath": "\\Events\\Default Work Unit\\Jules\\SFX\\SFX_Waterfall_Impact",
-      "GUID": "{52DCB6EE-020E-4EA3-B05E-2835CAEE53BE}",
+      "Id": "2082442955",
+      "Name": "SFX_WaterFallImpact",
+      "ObjectPath": "\\Events\\Default Work Unit\\Jules\\SFX\\SFX_WaterFallImpact",
+      "GUID": "{CAC85376-D0E8-4673-99D5-487BD51B540E}",
       "DurationType": "OneShot",
       "DurationMin": "2.817014",
       "DurationMax": "3.486749",
@@ -2390,10 +2320,10 @@
       ]
      },
      {
-      "Id": "3456260868",
-      "Name": "SFX_Wind_Play",
-      "ObjectPath": "\\Events\\Default Work Unit\\Jules\\SFX\\SFX_Wind_Play",
-      "GUID": "{EA712D2D-B210-4632-8897-4D067A8FB958}",
+      "Id": "1398508531",
+      "Name": "SFX_Wind",
+      "ObjectPath": "\\Events\\Default Work Unit\\Jules\\SFX\\SFX_Wind",
+      "GUID": "{9F29A3D7-4B2F-4C43-A096-ABB70E88BAB4}",
       "DurationType": "Infinite",
       "ReferencedStreamedFiles": [
        {
