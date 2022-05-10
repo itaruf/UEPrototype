@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{B33E0AE4-683A-4118-98EA-BBEFCBF7E5A5}" SchemaVersion="103" RootDocumentID="{2E3B1270-9C0A-453D-8324-D76519F899C5}" ParentDocumentID="{2E3B1270-9C0A-453D-8324-D76519F899C5}">
+	<GameParameters>
+		<WorkUnit Name="Jules" ID="{B33E0AE4-683A-4118-98EA-BBEFCBF7E5A5}" OwnerID="{2E3B1270-9C0A-453D-8324-D76519F899C5}" PersistMode="Nested">
+			<ChildrenList>
+				<GameParameter Name="RTPC_Distance" ID="{3EBDAF7B-F3C9-4BBD-B245-745987FDAE47}">
+					<PropertyList>
+						<Property Name="BindToBuiltInParam" Type="int16" Value="1"/>
+						<Property Name="InitialValue" Type="Real64" Value="15000"/>
+						<Property Name="Max" Type="Real64" Value="15000"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="RTPC_PlayerSpeed" ID="{E81B3401-03B0-4FBF-A942-900B5FB3AA30}"/>
+			</ChildrenList>
+		</WorkUnit>
+	</GameParameters>
+</WwiseDocument>

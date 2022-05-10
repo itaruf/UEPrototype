@@ -1,0 +1,62 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "12",
+  "SoundbankVersion": "140",
+  "RootPaths": {
+   "ProjectRoot": "C:\\2021 Formation\\Projet\\IIM4 - Yin Yang\\Projet\\UEPrototype\\UEPrototype_WwiseProject\\",
+   "SourceFilesRoot": "C:\\2021 Formation\\Projet\\IIM4 - Yin Yang\\Projet\\UEPrototype\\UEPrototype_WwiseProject\\.cache\\Windows\\",
+   "SoundBanksRoot": "C:\\2021 Formation\\Projet\\IIM4 - Yin Yang\\Projet\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Windows\\",
+   "ExternalSourcesInputFile": "",
+   "ExternalSourcesOutputRoot": "C:\\2021 Formation\\Projet\\IIM4 - Yin Yang\\Projet\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Windows"
+  },
+  "DialogueEvents": [],
+  "StreamedFiles": [
+   {
+    "Id": "329868685",
+    "Language": "SFX",
+    "ShortName": "AMB_Fire_ST_LP_01.wav",
+    "Path": "SFX\\AMB_Fire_ST_LP_01_D79FB2B7.wem"
+   }
+  ],
+  "MediaFilesNotInAnyBank": [],
+  "SoundBanks": [
+   {
+    "Id": "1355168291",
+    "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
+    "Language": "SFX",
+    "Hash": "3690994985",
+    "ObjectPath": "Init",
+    "ShortName": "Init",
+    "Path": "Init.bnk"
+   },
+   {
+    "Id": "1584861542",
+    "GUID": "{A1A37E9D-0EFE-41CE-8DCA-07C077AFE473}",
+    "Language": "SFX",
+    "Hash": "1747616691",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\SB",
+    "ShortName": "SB",
+    "Path": "SB.bnk",
+    "IncludedEvents": [
+     {
+      "Id": "907865718",
+      "Name": "OUITEST",
+      "ObjectPath": "\\Events\\Default Work Unit\\OUITEST",
+      "GUID": "{57913DA8-B2F7-4E70-8ABF-473A599DAEF1}",
+      "DurationType": "Infinite",
+      "ReferencedStreamedFiles": [
+       {
+        "Id": "329868685",
+        "Language": "SFX",
+        "ShortName": "AMB_Fire_ST_LP_01.wav",
+        "Path": "SFX\\AMB_Fire_ST_LP_01_D79FB2B7.wem"
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}
