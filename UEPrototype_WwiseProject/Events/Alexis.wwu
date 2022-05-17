@@ -58,6 +58,13 @@
 					<ChildrenList>
 						<Event Name="SFX_Freefall_Start" ID="{842A5543-F79B-4E66-8E98-34B8B487ADD2}">
 							<ChildrenList>
+								<Action Name="" ID="{B6D2A888-6100-4ABC-B52C-1054C6E230A9}" ShortID="215320803">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_Freefall_Start" ID="{130CB51F-A96B-4F85-940E-16879C5A12B9}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 								<Action Name="" ID="{AD28F70A-9DB8-4651-9B16-DB90C431400A}" ShortID="482336611">
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="36"/>
@@ -97,8 +104,31 @@
 				</Folder>
 				<Folder Name="AMB" ID="{E6F43FC4-7B11-4A4D-81F8-8DAC14F00D82}" ShortID="6154887">
 					<ChildrenList>
-						<Event Name="Stop_AMB_Bed_lvl1" ID="{CE3C769B-BB7A-4936-B31C-A291704DCF7C}"/>
-						<Event Name="Play_AMB_Bed_lvl1" ID="{4451A411-DE72-4F14-8F94-64731FF465B2}"/>
+						<Event Name="Stop_AMB_Bed_lvl1" ID="{CE3C769B-BB7A-4936-B31C-A291704DCF7C}">
+							<ChildrenList>
+								<Action Name="" ID="{B0508B7B-6B4E-4B27-AC0A-379B36FB2A06}" ShortID="190129801">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="AMB_Bed_lvl1_LP" ID="{A411F9C6-A752-46AF-ABA9-C4603C74214C}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_AMB_Bed_lvl1" ID="{4451A411-DE72-4F14-8F94-64731FF465B2}">
+							<ChildrenList>
+								<Action Name="" ID="{4E496011-7483-4919-9534-414A68BF4D8B}" ShortID="1035229224">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="AMB_Bed_lvl1_LP" ID="{A411F9C6-A752-46AF-ABA9-C4603C74214C}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>
