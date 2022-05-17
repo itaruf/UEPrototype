@@ -177,7 +177,7 @@
 																			</Point>
 																			<Point>
 																				<XPos>15000</XPos>
-																				<YPos>-3.84963</YPos>
+																				<YPos>-8.0667</YPos>
 																				<Flags>37</Flags>
 																			</Point>
 																		</PointList>
@@ -771,6 +771,9 @@
 																</Property>
 																<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="10"/>
 																<Property Name="Volume" Type="Real64">
+																	<ValueList>
+																		<Value>-8</Value>
+																	</ValueList>
 																	<ModifierList>
 																		<ModifierInfo>
 																			<Modifier Name="" ID="{401E1A8F-1C9E-4238-8D2B-51F6BAE19FF7}">
@@ -2901,6 +2904,9 @@
 																</Property>
 																<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="20"/>
 																<Property Name="Volume" Type="Real64">
+																	<ValueList>
+																		<Value>-8</Value>
+																	</ValueList>
 																	<ModifierList>
 																		<ModifierInfo>
 																			<Modifier Name="" ID="{8F61F338-1528-46BE-9359-81F55ABCF980}">
@@ -7739,13 +7745,13 @@
 																		<SegmentShape>Log1</SegmentShape>
 																	</Point>
 																	<Point>
-																		<XPos>0.833333333333333</XPos>
+																		<XPos>13.3333333333333</XPos>
 																		<YPos>-200</YPos>
 																		<Flags>0</Flags>
 																		<SegmentShape>Log1</SegmentShape>
 																	</Point>
 																	<Point>
-																		<XPos>100</XPos>
+																		<XPos>1600</XPos>
 																		<YPos>0</YPos>
 																		<Flags>37</Flags>
 																	</Point>
@@ -7766,25 +7772,25 @@
 													<CrossfadingInfo>
 														<LeftEdgePos>0</LeftEdgePos>
 														<LeftFadingMode>Automatic</LeftFadingMode>
-														<RightEdgePos>33.3333333333333</RightEdgePos>
+														<RightEdgePos>640</RightEdgePos>
 														<RightFadingMode>Automatic</RightFadingMode>
 													</CrossfadingInfo>
 												</BlendTrackAssoc>
 												<BlendTrackAssoc>
 													<ItemRef Name="SFX_Wind_Medium_LP" ID="{2906ABA3-479E-4340-9B16-27DD5C67DC64}"/>
 													<CrossfadingInfo>
-														<LeftEdgePos>33.3333333333333</LeftEdgePos>
+														<LeftEdgePos>320</LeftEdgePos>
 														<LeftFadingMode>Automatic</LeftFadingMode>
-														<RightEdgePos>66.6666666666667</RightEdgePos>
+														<RightEdgePos>1280</RightEdgePos>
 														<RightFadingMode>Automatic</RightFadingMode>
 													</CrossfadingInfo>
 												</BlendTrackAssoc>
 												<BlendTrackAssoc>
 													<ItemRef Name="SFX_Wind_Strong_LP" ID="{682F25AB-9E4F-43F3-ACB9-9F0AB18D5C13}"/>
 													<CrossfadingInfo>
-														<LeftEdgePos>66.6666666666667</LeftEdgePos>
+														<LeftEdgePos>960</LeftEdgePos>
 														<LeftFadingMode>Automatic</LeftFadingMode>
-														<RightEdgePos>100</RightEdgePos>
+														<RightEdgePos>1600</RightEdgePos>
 														<RightFadingMode>Automatic</RightFadingMode>
 													</CrossfadingInfo>
 												</BlendTrackAssoc>
@@ -7813,35 +7819,35 @@
 																		<SegmentShape>Exp1</SegmentShape>
 																	</Point>
 																	<Point>
-																		<XPos>0.833333333333333</XPos>
+																		<XPos>13.3333333333333</XPos>
 																		<YPos>-200</YPos>
 																		<Flags>0</Flags>
 																		<SegmentShape>Exp2</SegmentShape>
 																	</Point>
 																	<Point>
-																		<XPos>25</XPos>
+																		<XPos>400</XPos>
 																		<YPos>0</YPos>
 																		<Flags>0</Flags>
 																	</Point>
 																	<Point>
-																		<XPos>40</XPos>
+																		<XPos>640</XPos>
 																		<YPos>-8</YPos>
 																		<Flags>0</Flags>
 																		<SegmentShape>Exp1</SegmentShape>
 																	</Point>
 																	<Point>
-																		<XPos>60</XPos>
+																		<XPos>960</XPos>
 																		<YPos>0</YPos>
 																		<Flags>0</Flags>
 																	</Point>
 																	<Point>
-																		<XPos>75</XPos>
+																		<XPos>1200</XPos>
 																		<YPos>-5</YPos>
 																		<Flags>0</Flags>
 																		<SegmentShape>Exp1</SegmentShape>
 																	</Point>
 																	<Point>
-																		<XPos>100</XPos>
+																		<XPos>1600</XPos>
 																		<YPos>0</YPos>
 																		<Flags>37</Flags>
 																	</Point>
@@ -7862,25 +7868,25 @@
 													<CrossfadingInfo>
 														<LeftEdgePos>0</LeftEdgePos>
 														<LeftFadingMode>Automatic</LeftFadingMode>
-														<RightEdgePos>33.3333333333333</RightEdgePos>
+														<RightEdgePos>640</RightEdgePos>
 														<RightFadingMode>Automatic</RightFadingMode>
 													</CrossfadingInfo>
 												</BlendTrackAssoc>
 												<BlendTrackAssoc>
 													<ItemRef Name="SFX_Wind_Medium_RFX" ID="{869EFC3F-2193-4422-96CF-2F792B240FAB}"/>
 													<CrossfadingInfo>
-														<LeftEdgePos>33.3333333333333</LeftEdgePos>
+														<LeftEdgePos>320</LeftEdgePos>
 														<LeftFadingMode>Automatic</LeftFadingMode>
-														<RightEdgePos>66.6666666666667</RightEdgePos>
+														<RightEdgePos>1280</RightEdgePos>
 														<RightFadingMode>Automatic</RightFadingMode>
 													</CrossfadingInfo>
 												</BlendTrackAssoc>
 												<BlendTrackAssoc>
 													<ItemRef Name="SFX_Wind_Strong_RFX" ID="{D885F784-4807-4D34-93ED-A80B0CA88593}"/>
 													<CrossfadingInfo>
-														<LeftEdgePos>66.6666666666667</LeftEdgePos>
+														<LeftEdgePos>960</LeftEdgePos>
 														<LeftFadingMode>Automatic</LeftFadingMode>
-														<RightEdgePos>100</RightEdgePos>
+														<RightEdgePos>1600</RightEdgePos>
 														<RightFadingMode>Automatic</RightFadingMode>
 													</CrossfadingInfo>
 												</BlendTrackAssoc>
