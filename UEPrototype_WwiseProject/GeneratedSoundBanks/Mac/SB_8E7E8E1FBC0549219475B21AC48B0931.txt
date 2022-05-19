@@ -13,6 +13,3 @@ Switch	ID	Name	Switch Group			Notes
 	2654748154	Water	GroundMaterial			
 	4248645337	Grass	GroundMaterial			
 
-Game Parameter	ID	Name			Wwise Object Path	Notes
-	2653406601	RTPC_PlayerSpeed			\Default Work Unit\Jules\RTPC_PlayerSpeed	
-
