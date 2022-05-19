@@ -1,0 +1,38 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "12",
+  "SoundbankVersion": "140",
+  "RootPaths": {
+   "ProjectRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\",
+   "SourceFilesRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\.cache\\Windows\\",
+   "SoundBanksRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Windows\\",
+   "ExternalSourcesInputFile": "",
+   "ExternalSourcesOutputRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Windows"
+  },
+  "SoundBanks": [
+   {
+    "Id": "2590453847",
+    "GUID": "{9A673057-3057-1057-5757-575757575757}",
+    "Language": "SFX",
+    "Hash": "1409153366",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\SB_413B43DBF8ED42C784A7FCFA1FB5D0E3",
+    "ShortName": "SB_413B43DBF8ED42C784A7FCFA1FB5D0E3",
+    "Path": "SB_413B43DBF8ED42C784A7FCFA1FB5D0E3.bnk",
+    "IncludedEvents": [
+     {
+      "Id": "1063826023",
+      "Name": "SFX_Freefall_Stop",
+      "ObjectPath": "\\Events\\Default Work Unit\\Alexis\\SFX\\SFX_Freefall_Stop",
+      "GUID": "{413B43DB-F8ED-42C7-84A7-FCFA1FB5D0E3}",
+      "MaxAttenuation": "0.",
+      "DurationType": "OneShot",
+      "DurationMin": "0.",
+      "DurationMax": "0."
+     }
+    ]
+   }
+  ]
+ }
+}
