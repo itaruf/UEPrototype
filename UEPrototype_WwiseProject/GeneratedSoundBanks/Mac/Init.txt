@@ -1,10 +1,3 @@
-Switch Group	ID	Name			Wwise Object Path	Notes
-	1493153371	PlayerSpeed			\Default Work Unit\Jules\PlayerSpeed	
-
-Switch	ID	Name	Switch Group			Notes
-	712161704	Run	PlayerSpeed			
-	2108779966	Walk	PlayerSpeed			
-
 Audio Bus	ID	Name			Wwise Object Path	Notes
 	393239870	SFX			\Default Work Unit\Jules\Master\SFX	
 	662417162	NPC			\Default Work Unit\Jules\Master\NPC	

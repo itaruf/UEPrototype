@@ -1,0 +1,11 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1398508531	SFX_Wind			\Default Work Unit\Jules\SFX\SFX_Wind	
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	2653406601	RTPC_PlayerSpeed			\Default Work Unit\Jules\RTPC_PlayerSpeed	
+
+Streamed Audio	ID	Name	Audio source file	Generated audio file	Wwise Object Path	Notes
+	249120019	SFX_Wind_Soft_LP	D:\Sessions Unreal\Git\UEPrototype\UEPrototype_WwiseProject\.cache\Mac\SFX\SFX_Wind_Soft_LP_D79FB2B7.wem	249120019.wem	\Actor-Mixer Hierarchy\Default Work Unit\Jules\Master\SFX\SFX_Wind_Blend\SFX_Wind_Soft_LP	
+	344385240	SFX_Wind_Strong_LP	D:\Sessions Unreal\Git\UEPrototype\UEPrototype_WwiseProject\.cache\Mac\SFX\SFX_Wind_Strong_LP_D79FB2B7.wem	344385240.wem	\Actor-Mixer Hierarchy\Default Work Unit\Jules\Master\SFX\SFX_Wind_Blend\SFX_Wind_Strong_LP	
+	832249830	SFX_Wind_Medium_LP	D:\Sessions Unreal\Git\UEPrototype\UEPrototype_WwiseProject\.cache\Mac\SFX\SFX_Wind_Medium_LP_D79FB2B7.wem	832249830.wem	\Actor-Mixer Hierarchy\Default Work Unit\Jules\Master\SFX\SFX_Wind_Blend\SFX_Wind_Medium_LP	
+

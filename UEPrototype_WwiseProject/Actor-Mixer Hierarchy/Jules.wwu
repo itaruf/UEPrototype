@@ -177,7 +177,7 @@
 																			</Point>
 																			<Point>
 																				<XPos>15000</XPos>
-																				<YPos>-3.84963</YPos>
+																				<YPos>-8.0667</YPos>
 																				<Flags>37</Flags>
 																			</Point>
 																		</PointList>
@@ -718,7 +718,7 @@
 											<PropertyList>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-12</Value>
+														<Value>-15</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -771,6 +771,9 @@
 																</Property>
 																<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="10"/>
 																<Property Name="Volume" Type="Real64">
+																	<ValueList>
+																		<Value>-8</Value>
+																	</ValueList>
 																	<ModifierList>
 																		<ModifierInfo>
 																			<Modifier Name="" ID="{401E1A8F-1C9E-4238-8D2B-51F6BAE19FF7}">
@@ -2901,6 +2904,9 @@
 																</Property>
 																<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="20"/>
 																<Property Name="Volume" Type="Real64">
+																	<ValueList>
+																		<Value>-8</Value>
+																	</ValueList>
 																	<ModifierList>
 																		<ModifierInfo>
 																			<Modifier Name="" ID="{8F61F338-1528-46BE-9359-81F55ABCF980}">
@@ -6939,6 +6945,9 @@
 												<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
 												<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="6"/>
 												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-5</Value>
+													</ValueList>
 													<ModifierList>
 														<ModifierInfo>
 															<Modifier Name="" ID="{3FB88BDE-9045-4E20-847E-347D7363BF04}">
@@ -7101,7 +7110,7 @@
 											</ChildrenList>
 											<ObjectLists/>
 										</RandomSequenceContainer>
-										<RandomSequenceContainer Name="SFX_Wind_Medium_RFX" ID="{869EFC3F-2193-4422-96CF-2F792B240FAB}" ShortID="214116223">
+										<RandomSequenceContainer Name="SFX_Wind_Strong_RFX" ID="{869EFC3F-2193-4422-96CF-2F792B240FAB}" ShortID="214116223">
 											<PropertyList>
 												<Property Name="InitialDelay" Type="Real64">
 													<ValueList>
@@ -7150,6 +7159,9 @@
 												<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
 												<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="6"/>
 												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-5</Value>
+													</ValueList>
 													<ModifierList>
 														<ModifierInfo>
 															<Modifier Name="" ID="{6B4CCD3B-232A-4050-8A9C-62AD0240A571}">
@@ -7312,322 +7324,9 @@
 											</ChildrenList>
 											<ObjectLists/>
 										</RandomSequenceContainer>
-										<RandomSequenceContainer Name="SFX_Wind_Strong_RFX" ID="{D885F784-4807-4D34-93ED-A80B0CA88593}" ShortID="382729523">
-											<PropertyList>
-												<Property Name="InitialDelay" Type="Real64">
-													<ValueList>
-														<Value>0.2</Value>
-													</ValueList>
-													<ModifierList>
-														<ModifierInfo>
-															<Modifier Name="" ID="{AF307579-3484-47D6-A46B-73CD8A8D8F1F}">
-																<PropertyList>
-																	<Property Name="Enabled" Type="bool" Value="True"/>
-																	<Property Name="Max" Type="Real64" Value="1"/>
-																</PropertyList>
-															</Modifier>
-														</ModifierInfo>
-													</ModifierList>
-												</Property>
-												<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
-												<Property Name="Pitch" Type="int32">
-													<ModifierList>
-														<ModifierInfo>
-															<Modifier Name="" ID="{EB6A45AD-EC98-49EE-A101-93B0A4828E90}">
-																<PropertyList>
-																	<Property Name="Enabled" Type="bool" Value="True"/>
-																	<Property Name="Max" Type="Real64" Value="25"/>
-																	<Property Name="Min" Type="Real64" Value="-25"/>
-																</PropertyList>
-															</Modifier>
-														</ModifierInfo>
-													</ModifierList>
-												</Property>
-												<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
-												<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
-												<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="2">
-													<ModifierList>
-														<ModifierInfo>
-															<Modifier Name="" ID="{2BF8A0A1-B297-4EE6-8591-7650B3C2CC76}">
-																<PropertyList>
-																	<Property Name="Enabled" Type="bool" Value="True"/>
-																	<Property Name="Max" Type="Real64" Value="1"/>
-																	<Property Name="Min" Type="Real64" Value="-2"/>
-																</PropertyList>
-															</Modifier>
-														</ModifierInfo>
-													</ModifierList>
-												</Property>
-												<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
-												<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="10"/>
-												<Property Name="Volume" Type="Real64">
-													<ModifierList>
-														<ModifierInfo>
-															<Modifier Name="" ID="{D84EC293-5444-49DB-802D-128E0AE8C28C}">
-																<PropertyList>
-																	<Property Name="Enabled" Type="bool" Value="True"/>
-																	<Property Name="Min" Type="Real64" Value="-10"/>
-																</PropertyList>
-															</Modifier>
-														</ModifierInfo>
-													</ModifierList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="SFX" ID="{F425DD9C-4B7D-40B0-B495-D58654E0B77E}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<Sound Name="SFX_Wind_Strong_RFX_01" ID="{2A4BC492-6219-44AF-81A1-71D41BC51C09}" ShortID="343091253">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="SFX_Wind_Strong_RFX_01" ID="{67FD6182-E60C-41AC-ACDC-437E5A115E6D}">
-															<Language>SFX</Language>
-															<AudioFile>SFX_Wind_Strong_RFX_01.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="39471772"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ObjectLists/>
-													<ActiveSourceList>
-														<ActiveSource Name="SFX_Wind_Strong_RFX_01" ID="{67FD6182-E60C-41AC-ACDC-437E5A115E6D}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="SFX_Wind_Strong_RFX_02" ID="{DE02D91E-19B6-4F41-A7E8-EC73EDFB5B3A}" ShortID="261163418">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="SFX_Wind_Strong_RFX_02" ID="{88430754-D5BC-42EF-B4AE-9848B8BB1328}">
-															<Language>SFX</Language>
-															<AudioFile>SFX_Wind_Strong_RFX_02.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="718900011"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ObjectLists/>
-													<ActiveSourceList>
-														<ActiveSource Name="SFX_Wind_Strong_RFX_02" ID="{88430754-D5BC-42EF-B4AE-9848B8BB1328}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="SFX_Wind_Strong_RFX_03" ID="{B8C560C9-A226-423A-96D2-F616513A3DBC}" ShortID="346465383">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="SFX_Wind_Strong_RFX_03" ID="{49647FE7-90F8-4B08-A32F-019403072F05}">
-															<Language>SFX</Language>
-															<AudioFile>SFX_Wind_Strong_RFX_03.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="185536631"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ObjectLists/>
-													<ActiveSourceList>
-														<ActiveSource Name="SFX_Wind_Strong_RFX_03" ID="{49647FE7-90F8-4B08-A32F-019403072F05}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="SFX_Wind_Strong_RFX_04" ID="{32DC27D9-5488-4C7B-BF94-B4D96AF0941B}" ShortID="400475965">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="SFX_Wind_Strong_RFX_04" ID="{DE7FE2FE-77CB-4A3D-A822-6E074EF73A6C}">
-															<Language>SFX</Language>
-															<AudioFile>SFX_Wind_Strong_RFX_04.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="702400513"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ObjectLists/>
-													<ActiveSourceList>
-														<ActiveSource Name="SFX_Wind_Strong_RFX_04" ID="{DE7FE2FE-77CB-4A3D-A822-6E074EF73A6C}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="SFX_Wind_Strong_RFX_05" ID="{3EB4E982-4753-4C99-8177-D68EB6184AE2}" ShortID="322889831">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="SFX_Wind_Strong_RFX_05" ID="{A9DCDD1B-231E-4CA4-BA6D-CC5112148700}">
-															<Language>SFX</Language>
-															<AudioFile>SFX_Wind_Strong_RFX_05.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="833676991"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ObjectLists/>
-													<ActiveSourceList>
-														<ActiveSource Name="SFX_Wind_Strong_RFX_05" ID="{A9DCDD1B-231E-4CA4-BA6D-CC5112148700}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="SFX_Wind_Strong_RFX_06" ID="{343FDE03-BCE1-4324-958A-AAFE0124FA3F}" ShortID="1055688527">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="SFX_Wind_Strong_RFX_06" ID="{0DEAEFF5-5B41-488F-9A35-AAC1EF67B2A5}">
-															<Language>SFX</Language>
-															<AudioFile>SFX_Wind_Strong_RFX_06.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="376702739"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ObjectLists/>
-													<ActiveSourceList>
-														<ActiveSource Name="SFX_Wind_Strong_RFX_06" ID="{0DEAEFF5-5B41-488F-9A35-AAC1EF67B2A5}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="SFX_Wind_Strong_RFX_07" ID="{B14B63CA-FA65-45A4-B347-DB1612E78847}" ShortID="913967829">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="SFX_Wind_Strong_RFX_07" ID="{D052AAA0-9E71-4F82-AAE4-5A02EABF667C}">
-															<Language>SFX</Language>
-															<AudioFile>SFX_Wind_Strong_RFX_07.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="508484113"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ObjectLists/>
-													<ActiveSourceList>
-														<ActiveSource Name="SFX_Wind_Strong_RFX_07" ID="{D052AAA0-9E71-4F82-AAE4-5A02EABF667C}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="SFX_Wind_Strong_RFX_08" ID="{63879B88-7268-4899-88B8-01ECDB40C598}" ShortID="499626235">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="SFX_Wind_Strong_RFX_08" ID="{656E287A-66C0-4481-A097-8F5DAFEF7144}">
-															<Language>SFX</Language>
-															<AudioFile>SFX_Wind_Strong_RFX_08.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="33755882"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ObjectLists/>
-													<ActiveSourceList>
-														<ActiveSource Name="SFX_Wind_Strong_RFX_08" ID="{656E287A-66C0-4481-A097-8F5DAFEF7144}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="SFX_Wind_Strong_RFX_09" ID="{E5D7D21A-11F4-49CD-BC42-E406A7DEB3EA}" ShortID="316906047">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="SFX_Wind_Strong_RFX_09" ID="{C52B27CA-693F-4D9A-860D-A5BAEDA0070E}">
-															<Language>SFX</Language>
-															<AudioFile>SFX_Wind_Strong_RFX_09.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="938078867"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ObjectLists/>
-													<ActiveSourceList>
-														<ActiveSource Name="SFX_Wind_Strong_RFX_09" ID="{C52B27CA-693F-4D9A-860D-A5BAEDA0070E}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="SFX_Wind_Strong_RFX_10" ID="{7DBA00FE-1629-4C74-AC0C-58F25576F5EA}" ShortID="448238273">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="SFX_Wind_Strong_RFX_10" ID="{501A32A3-16A8-4FFD-8830-0C27D3BC2C60}">
-															<Language>SFX</Language>
-															<AudioFile>SFX_Wind_Strong_RFX_10.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="364952449"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ObjectLists/>
-													<ActiveSourceList>
-														<ActiveSource Name="SFX_Wind_Strong_RFX_10" ID="{501A32A3-16A8-4FFD-8830-0C27D3BC2C60}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-											</ChildrenList>
-											<ObjectLists/>
-										</RandomSequenceContainer>
 										<Sound Name="SFX_Wind_Soft_LP" ID="{D74A756B-230A-4BB3-859B-30A367B758AD}" ShortID="1023053546">
 											<PropertyList>
 												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-												<Property Name="IsStreamingEnabled" Type="bool">
-													<ValueList>
-														<Value>True</Value>
-													</ValueList>
-												</Property>
-												<Property Name="Volume" Type="Real64">
-													<ValueList>
-														<Value>-12</Value>
-													</ValueList>
-												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
@@ -7638,7 +7337,7 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="SFX_Wind_Soft_LP" ID="{ABE1BFF0-ABF7-4ABB-A237-1FB2BC3D3471}">
+												<AudioFileSource Name="SFX_Wind_Soft_LP" ID="{F41CFABF-D7F3-4D19-B6A3-480137BE99BC}">
 													<Language>SFX</Language>
 													<AudioFile>SFX_Wind_Soft_LP.wav</AudioFile>
 													<MediaIDList>
@@ -7648,48 +7347,12 @@
 											</ChildrenList>
 											<ObjectLists/>
 											<ActiveSourceList>
-												<ActiveSource Name="SFX_Wind_Soft_LP" ID="{ABE1BFF0-ABF7-4ABB-A237-1FB2BC3D3471}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="SFX_Wind_Medium_LP" ID="{2906ABA3-479E-4340-9B16-27DD5C67DC64}" ShortID="618782871">
-											<PropertyList>
-												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-												<Property Name="IsStreamingEnabled" Type="bool">
-													<ValueList>
-														<Value>True</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="SFX_Wind_Medium_LP" ID="{EBFDF03D-2565-4BBD-A7EE-A4E33F6A98D1}">
-													<Language>SFX</Language>
-													<AudioFile>SFX_Wind_Medium_LP.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="832249830"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ObjectLists/>
-											<ActiveSourceList>
-												<ActiveSource Name="SFX_Wind_Medium_LP" ID="{EBFDF03D-2565-4BBD-A7EE-A4E33F6A98D1}" Platform="Linked"/>
+												<ActiveSource Name="SFX_Wind_Soft_LP" ID="{F41CFABF-D7F3-4D19-B6A3-480137BE99BC}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
 										<Sound Name="SFX_Wind_Strong_LP" ID="{682F25AB-9E4F-43F3-ACB9-9F0AB18D5C13}" ShortID="499878331">
 											<PropertyList>
 												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-												<Property Name="IsStreamingEnabled" Type="bool">
-													<ValueList>
-														<Value>True</Value>
-													</ValueList>
-												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
@@ -7700,7 +7363,7 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="SFX_Wind_Strong_LP" ID="{10ED75B9-1C66-4115-8CD3-964ADBF6898E}">
+												<AudioFileSource Name="SFX_Wind_Strong_LP" ID="{E36A9350-C889-4158-9341-23FA83C92BA1}">
 													<Language>SFX</Language>
 													<AudioFile>SFX_Wind_Strong_LP.wav</AudioFile>
 													<MediaIDList>
@@ -7710,7 +7373,7 @@
 											</ChildrenList>
 											<ObjectLists/>
 											<ActiveSourceList>
-												<ActiveSource Name="SFX_Wind_Strong_LP" ID="{10ED75B9-1C66-4115-8CD3-964ADBF6898E}" Platform="Linked"/>
+												<ActiveSource Name="SFX_Wind_Strong_LP" ID="{E36A9350-C889-4158-9341-23FA83C92BA1}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
 									</ChildrenList>
@@ -7724,7 +7387,7 @@
 														<RTPC Name="" ID="{4154292C-E226-4B96-BE57-19CCFA7F8D50}" ShortID="701967798">
 															<ReferenceList>
 																<Reference Name="ControlInput">
-																	<ObjectRef Name="RTPC_PlayerSpeed" ID="{E81B3401-03B0-4FBF-A942-900B5FB3AA30}" WorkUnitID="{B33E0AE4-683A-4118-98EA-BBEFCBF7E5A5}"/>
+																	<ObjectRef Name="RTPC_WindSpeed" ID="{AEFD0C2B-4F71-404D-BB40-2112CF08A532}" WorkUnitID="{B33E0AE4-683A-4118-98EA-BBEFCBF7E5A5}"/>
 																</Reference>
 															</ReferenceList>
 															<Curve Name="" ID="{ECC695D3-C630-43F0-BED9-0AE11AD020A9}">
@@ -7739,13 +7402,19 @@
 																		<SegmentShape>Log1</SegmentShape>
 																	</Point>
 																	<Point>
-																		<XPos>0.833333333333333</XPos>
+																		<XPos>24.9999999999999</XPos>
 																		<YPos>-200</YPos>
 																		<Flags>0</Flags>
-																		<SegmentShape>Log1</SegmentShape>
+																		<SegmentShape>Exp2</SegmentShape>
 																	</Point>
 																	<Point>
-																		<XPos>100</XPos>
+																		<XPos>1600</XPos>
+																		<YPos>0</YPos>
+																		<Flags>0</Flags>
+																		<SegmentShape>Exp1</SegmentShape>
+																	</Point>
+																	<Point>
+																		<XPos>3000</XPos>
 																		<YPos>0</YPos>
 																		<Flags>37</Flags>
 																	</Point>
@@ -7757,7 +7426,7 @@
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="LayerCrossFadeControlInput">
-													<ObjectRef Name="RTPC_PlayerSpeed" ID="{E81B3401-03B0-4FBF-A942-900B5FB3AA30}" WorkUnitID="{B33E0AE4-683A-4118-98EA-BBEFCBF7E5A5}"/>
+													<ObjectRef Name="RTPC_WindSpeed" ID="{AEFD0C2B-4F71-404D-BB40-2112CF08A532}" WorkUnitID="{B33E0AE4-683A-4118-98EA-BBEFCBF7E5A5}"/>
 												</Reference>
 											</ReferenceList>
 											<BlendTrackAssocList>
@@ -7766,25 +7435,16 @@
 													<CrossfadingInfo>
 														<LeftEdgePos>0</LeftEdgePos>
 														<LeftFadingMode>Automatic</LeftFadingMode>
-														<RightEdgePos>33.3333333333333</RightEdgePos>
-														<RightFadingMode>Automatic</RightFadingMode>
-													</CrossfadingInfo>
-												</BlendTrackAssoc>
-												<BlendTrackAssoc>
-													<ItemRef Name="SFX_Wind_Medium_LP" ID="{2906ABA3-479E-4340-9B16-27DD5C67DC64}"/>
-													<CrossfadingInfo>
-														<LeftEdgePos>33.3333333333333</LeftEdgePos>
-														<LeftFadingMode>Automatic</LeftFadingMode>
-														<RightEdgePos>66.6666666666667</RightEdgePos>
+														<RightEdgePos>1000</RightEdgePos>
 														<RightFadingMode>Automatic</RightFadingMode>
 													</CrossfadingInfo>
 												</BlendTrackAssoc>
 												<BlendTrackAssoc>
 													<ItemRef Name="SFX_Wind_Strong_LP" ID="{682F25AB-9E4F-43F3-ACB9-9F0AB18D5C13}"/>
 													<CrossfadingInfo>
-														<LeftEdgePos>66.6666666666667</LeftEdgePos>
+														<LeftEdgePos>500</LeftEdgePos>
 														<LeftFadingMode>Automatic</LeftFadingMode>
-														<RightEdgePos>100</RightEdgePos>
+														<RightEdgePos>3000</RightEdgePos>
 														<RightFadingMode>Automatic</RightFadingMode>
 													</CrossfadingInfo>
 												</BlendTrackAssoc>
@@ -7798,7 +7458,7 @@
 														<RTPC Name="" ID="{DE090CDF-A611-4741-99A4-2A3DA90BE501}" ShortID="642071387">
 															<ReferenceList>
 																<Reference Name="ControlInput">
-																	<ObjectRef Name="RTPC_PlayerSpeed" ID="{E81B3401-03B0-4FBF-A942-900B5FB3AA30}" WorkUnitID="{B33E0AE4-683A-4118-98EA-BBEFCBF7E5A5}"/>
+																	<ObjectRef Name="RTPC_WindSpeed" ID="{AEFD0C2B-4F71-404D-BB40-2112CF08A532}" WorkUnitID="{B33E0AE4-683A-4118-98EA-BBEFCBF7E5A5}"/>
 																</Reference>
 															</ReferenceList>
 															<Curve Name="" ID="{DE6BA5DC-29FE-48FE-B648-1698DF67CAA6}">
@@ -7813,35 +7473,31 @@
 																		<SegmentShape>Exp1</SegmentShape>
 																	</Point>
 																	<Point>
-																		<XPos>0.833333333333333</XPos>
+																		<XPos>24.9999999999999</XPos>
 																		<YPos>-200</YPos>
 																		<Flags>0</Flags>
 																		<SegmentShape>Exp2</SegmentShape>
 																	</Point>
 																	<Point>
-																		<XPos>25</XPos>
-																		<YPos>0</YPos>
+																		<XPos>500</XPos>
+																		<YPos>-3.68418</YPos>
 																		<Flags>0</Flags>
+																		<SegmentShape>SCurve</SegmentShape>
 																	</Point>
 																	<Point>
-																		<XPos>40</XPos>
-																		<YPos>-8</YPos>
-																		<Flags>0</Flags>
-																		<SegmentShape>Exp1</SegmentShape>
-																	</Point>
-																	<Point>
-																		<XPos>60</XPos>
-																		<YPos>0</YPos>
-																		<Flags>0</Flags>
-																	</Point>
-																	<Point>
-																		<XPos>75</XPos>
-																		<YPos>-5</YPos>
+																		<XPos>750</XPos>
+																		<YPos>-2</YPos>
 																		<Flags>0</Flags>
 																		<SegmentShape>Exp1</SegmentShape>
 																	</Point>
 																	<Point>
-																		<XPos>100</XPos>
+																		<XPos>1600</XPos>
+																		<YPos>0</YPos>
+																		<Flags>0</Flags>
+																		<SegmentShape>Log1</SegmentShape>
+																	</Point>
+																	<Point>
+																		<XPos>3000</XPos>
 																		<YPos>0</YPos>
 																		<Flags>37</Flags>
 																	</Point>
@@ -7853,7 +7509,7 @@
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="LayerCrossFadeControlInput">
-													<ObjectRef Name="RTPC_PlayerSpeed" ID="{E81B3401-03B0-4FBF-A942-900B5FB3AA30}" WorkUnitID="{B33E0AE4-683A-4118-98EA-BBEFCBF7E5A5}"/>
+													<ObjectRef Name="RTPC_WindSpeed" ID="{AEFD0C2B-4F71-404D-BB40-2112CF08A532}" WorkUnitID="{B33E0AE4-683A-4118-98EA-BBEFCBF7E5A5}"/>
 												</Reference>
 											</ReferenceList>
 											<BlendTrackAssocList>
@@ -7862,25 +7518,16 @@
 													<CrossfadingInfo>
 														<LeftEdgePos>0</LeftEdgePos>
 														<LeftFadingMode>Automatic</LeftFadingMode>
-														<RightEdgePos>33.3333333333333</RightEdgePos>
+														<RightEdgePos>1000</RightEdgePos>
 														<RightFadingMode>Automatic</RightFadingMode>
 													</CrossfadingInfo>
 												</BlendTrackAssoc>
 												<BlendTrackAssoc>
-													<ItemRef Name="SFX_Wind_Medium_RFX" ID="{869EFC3F-2193-4422-96CF-2F792B240FAB}"/>
+													<ItemRef Name="SFX_Wind_Strong_RFX" ID="{869EFC3F-2193-4422-96CF-2F792B240FAB}"/>
 													<CrossfadingInfo>
-														<LeftEdgePos>33.3333333333333</LeftEdgePos>
+														<LeftEdgePos>500</LeftEdgePos>
 														<LeftFadingMode>Automatic</LeftFadingMode>
-														<RightEdgePos>66.6666666666667</RightEdgePos>
-														<RightFadingMode>Automatic</RightFadingMode>
-													</CrossfadingInfo>
-												</BlendTrackAssoc>
-												<BlendTrackAssoc>
-													<ItemRef Name="SFX_Wind_Strong_RFX" ID="{D885F784-4807-4D34-93ED-A80B0CA88593}"/>
-													<CrossfadingInfo>
-														<LeftEdgePos>66.6666666666667</LeftEdgePos>
-														<LeftFadingMode>Automatic</LeftFadingMode>
-														<RightEdgePos>100</RightEdgePos>
+														<RightEdgePos>3000</RightEdgePos>
 														<RightFadingMode>Automatic</RightFadingMode>
 													</CrossfadingInfo>
 												</BlendTrackAssoc>
