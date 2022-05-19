@@ -16,7 +16,7 @@
     "Id": "1584861542",
     "GUID": "{A1A37E9D-0EFE-41CE-8DCA-07C077AFE473}",
     "Language": "SFX",
-    "Hash": "2743466189",
+    "Hash": "2041237993",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\SB",
     "ShortName": "SB",
     "Path": "SB.bnk",
@@ -145,7 +145,7 @@
       "ObjectPath": "\\Events\\Default Work Unit\\Jules\\MC\\MC_FT",
       "GUID": "{8E7E8E1F-BC05-4921-9475-B21AC48B0931}",
       "DurationType": "OneShot",
-      "DurationMin": "0.",
+      "DurationMin": "0.164277",
       "DurationMax": "0.913091",
       "IncludedMemoryFiles": [
        {
@@ -167,6 +167,12 @@
         "Path": "SFX\\MC_FOL_Run_03_10C4C929.wem"
        },
        {
+        "Id": "46128115",
+        "Language": "SFX",
+        "ShortName": "MC_FT_Grass_Walk_12.wav",
+        "Path": "SFX\\MC_FT_Grass_Walk_12_10C4C929.wem"
+       },
+       {
         "Id": "46352865",
         "Language": "SFX",
         "ShortName": "MC_FOL_Run_10.wav",
@@ -185,16 +191,34 @@
         "Path": "SFX\\MC_FT_Water_Run_11_10C4C929.wem"
        },
        {
+        "Id": "57473053",
+        "Language": "SFX",
+        "ShortName": "MC_FT_Grass_Walk_08.wav",
+        "Path": "SFX\\MC_FT_Grass_Walk_08_10C4C929.wem"
+       },
+       {
         "Id": "58102682",
         "Language": "SFX",
         "ShortName": "MC_FT_Dirt_Run_11.wav",
         "Path": "SFX\\MC_FT_Dirt_Run_11_10C4C929.wem"
        },
        {
+        "Id": "58398655",
+        "Language": "SFX",
+        "ShortName": "MC_FT_Grass_Walk_01.wav",
+        "Path": "SFX\\MC_FT_Grass_Walk_01_10C4C929.wem"
+       },
+       {
         "Id": "58920415",
         "Language": "SFX",
         "ShortName": "MC_FT_Water_Run_13.wav",
         "Path": "SFX\\MC_FT_Water_Run_13_10C4C929.wem"
+       },
+       {
+        "Id": "77188689",
+        "Language": "SFX",
+        "ShortName": "MC_FT_Grass_Walk_11.wav",
+        "Path": "SFX\\MC_FT_Grass_Walk_11_10C4C929.wem"
        },
        {
         "Id": "82661150",
@@ -237,6 +261,12 @@
         "Language": "SFX",
         "ShortName": "MC_FT_Dirt_Run_04.wav",
         "Path": "SFX\\MC_FT_Dirt_Run_04_10C4C929.wem"
+       },
+       {
+        "Id": "134877270",
+        "Language": "SFX",
+        "ShortName": "MC_FT_Grass_Walk_09.wav",
+        "Path": "SFX\\MC_FT_Grass_Walk_09_10C4C929.wem"
        },
        {
         "Id": "140825122",
@@ -305,6 +335,12 @@
         "Path": "SFX\\MC_FT_Dirt_Run_05_10C4C929.wem"
        },
        {
+        "Id": "234712200",
+        "Language": "SFX",
+        "ShortName": "MC_FT_Grass_Walk_06.wav",
+        "Path": "SFX\\MC_FT_Grass_Walk_06_10C4C929.wem"
+       },
+       {
         "Id": "241730097",
         "Language": "SFX",
         "ShortName": "MC_FT_Dirt_Run_15.wav",
@@ -321,6 +357,12 @@
         "Language": "SFX",
         "ShortName": "MC_FOL_Run_08.wav",
         "Path": "SFX\\MC_FOL_Run_08_10C4C929.wem"
+       },
+       {
+        "Id": "285034127",
+        "Language": "SFX",
+        "ShortName": "MC_FT_Grass_Walk_04.wav",
+        "Path": "SFX\\MC_FT_Grass_Walk_04_10C4C929.wem"
        },
        {
         "Id": "287415833",
@@ -509,6 +551,12 @@
         "Path": "SFX\\MC_FT_Stone_Run_02_10C4C929.wem"
        },
        {
+        "Id": "547574211",
+        "Language": "SFX",
+        "ShortName": "MC_FT_Grass_Walk_07.wav",
+        "Path": "SFX\\MC_FT_Grass_Walk_07_10C4C929.wem"
+       },
+       {
         "Id": "550854075",
         "Language": "SFX",
         "ShortName": "MC_FOL_Run_07.wav",
@@ -587,6 +635,12 @@
         "Path": "SFX\\MC_FT_Dirt_Walk_08_10C4C929.wem"
        },
        {
+        "Id": "669483258",
+        "Language": "SFX",
+        "ShortName": "MC_FT_Grass_Walk_10.wav",
+        "Path": "SFX\\MC_FT_Grass_Walk_10_10C4C929.wem"
+       },
+       {
         "Id": "676863001",
         "Language": "SFX",
         "ShortName": "MC_FT_Stone_Run_18.wav",
@@ -617,6 +671,12 @@
         "Path": "SFX\\MC_FT_Water_Run_02_10C4C929.wem"
        },
        {
+        "Id": "744374554",
+        "Language": "SFX",
+        "ShortName": "MC_FT_Grass_Walk_02.wav",
+        "Path": "SFX\\MC_FT_Grass_Walk_02_10C4C929.wem"
+       },
+       {
         "Id": "747814663",
         "Language": "SFX",
         "ShortName": "MC_FT_Water_Run_18.wav",
@@ -635,6 +695,12 @@
         "Path": "SFX\\MC_FOL_Run_02_10C4C929.wem"
        },
        {
+        "Id": "755235786",
+        "Language": "SFX",
+        "ShortName": "MC_FT_Grass_Walk_14.wav",
+        "Path": "SFX\\MC_FT_Grass_Walk_14_10C4C929.wem"
+       },
+       {
         "Id": "758789104",
         "Language": "SFX",
         "ShortName": "MC_FT_Water_Walk_03.wav",
@@ -651,6 +717,12 @@
         "Language": "SFX",
         "ShortName": "MC_FT_Water_Run_07.wav",
         "Path": "SFX\\MC_FT_Water_Run_07_10C4C929.wem"
+       },
+       {
+        "Id": "786441218",
+        "Language": "SFX",
+        "ShortName": "MC_FT_Grass_Walk_03.wav",
+        "Path": "SFX\\MC_FT_Grass_Walk_03_10C4C929.wem"
        },
        {
         "Id": "788525555",
@@ -803,6 +875,12 @@
         "Path": "SFX\\MC_FT_Water_Walk_07_10C4C929.wem"
        },
        {
+        "Id": "983372054",
+        "Language": "SFX",
+        "ShortName": "MC_FT_Grass_Walk_05.wav",
+        "Path": "SFX\\MC_FT_Grass_Walk_05_10C4C929.wem"
+       },
+       {
         "Id": "993315034",
         "Language": "SFX",
         "ShortName": "MC_FT_Stone_Run_06.wav",
@@ -825,6 +903,12 @@
         "Language": "SFX",
         "ShortName": "MC_FT_Grass_Run_13.wav",
         "Path": "SFX\\MC_FT_Grass_Run_13_10C4C929.wem"
+       },
+       {
+        "Id": "1050784248",
+        "Language": "SFX",
+        "ShortName": "MC_FT_Grass_Walk_13.wav",
+        "Path": "SFX\\MC_FT_Grass_Walk_13_10C4C929.wem"
        },
        {
         "Id": "1063480693",
@@ -1235,6 +1319,53 @@
         "DefaultSwitchValue": "{FBA5D6FC-BB79-43BA-80B2-ABEA585C003B}",
         "Children": [
          {
+          "SwitchValue": "{AF0B5F0B-9DBE-4ADD-BBCA-EF6F1BD0E3B0}",
+          "Media": [
+           {
+            "Id": "46128115"
+           },
+           {
+            "Id": "57473053"
+           },
+           {
+            "Id": "58398655"
+           },
+           {
+            "Id": "77188689"
+           },
+           {
+            "Id": "134877270"
+           },
+           {
+            "Id": "234712200"
+           },
+           {
+            "Id": "285034127"
+           },
+           {
+            "Id": "547574211"
+           },
+           {
+            "Id": "669483258"
+           },
+           {
+            "Id": "744374554"
+           },
+           {
+            "Id": "755235786"
+           },
+           {
+            "Id": "786441218"
+           },
+           {
+            "Id": "983372054"
+           },
+           {
+            "Id": "1050784248"
+           }
+          ]
+         },
+         {
           "SwitchValue": "{A008443E-3AE0-4101-9B6D-5F65FD589FD6}",
           "Media": [
            {
@@ -1347,17 +1478,11 @@
       "Id": "397094465",
       "Name": "MC_FT_Jump",
       "ObjectPath": "\\Events\\Default Work Unit\\Jules\\MC\\MC_FT_Jump",
-      "GUID": "{AC988322-30DB-4ECF-8BEC-C87B4F2242A5}",
+      "GUID": "{09415A2F-7044-41AF-A061-2D0E199B46F4}",
       "DurationType": "OneShot",
-      "DurationMin": "0.678667",
-      "DurationMax": "0.810667",
+      "DurationMin": "0.197133",
+      "DurationMax": "0.608727",
       "IncludedMemoryFiles": [
-       {
-        "Id": "43278628",
-        "Language": "SFX",
-        "ShortName": "MC_FOL_Jump_02.wav",
-        "Path": "SFX\\MC_FOL_Jump_02_10C4C929.wem"
-       },
        {
         "Id": "47502075",
         "Language": "SFX",
@@ -1375,12 +1500,6 @@
         "Language": "SFX",
         "ShortName": "MC_FT_Stone_Jump_03.wav",
         "Path": "SFX\\MC_FT_Stone_Jump_03_10C4C929.wem"
-       },
-       {
-        "Id": "134709595",
-        "Language": "SFX",
-        "ShortName": "MC_FOL_Jump_05.wav",
-        "Path": "SFX\\MC_FOL_Jump_05_10C4C929.wem"
        },
        {
         "Id": "187087893",
@@ -1423,18 +1542,6 @@
         "Language": "SFX",
         "ShortName": "MC_FT_Water_Jump_05.wav",
         "Path": "SFX\\MC_FT_Water_Jump_05_10C4C929.wem"
-       },
-       {
-        "Id": "606680872",
-        "Language": "SFX",
-        "ShortName": "MC_FOL_Jump_04.wav",
-        "Path": "SFX\\MC_FOL_Jump_04_10C4C929.wem"
-       },
-       {
-        "Id": "613920068",
-        "Language": "SFX",
-        "ShortName": "MC_FOL_Jump_03.wav",
-        "Path": "SFX\\MC_FOL_Jump_03_10C4C929.wem"
        },
        {
         "Id": "635330870",
@@ -1483,12 +1590,6 @@
         "Language": "SFX",
         "ShortName": "MC_FT_Dirt_Jump_01.wav",
         "Path": "SFX\\MC_FT_Dirt_Jump_01_10C4C929.wem"
-       },
-       {
-        "Id": "1040240713",
-        "Language": "SFX",
-        "ShortName": "MC_FOL_Jump_01.wav",
-        "Path": "SFX\\MC_FOL_Jump_01_10C4C929.wem"
        },
        {
         "Id": "1043084669",
@@ -1591,7 +1692,7 @@
       "Id": "1496578974",
       "Name": "MC_FT_Land",
       "ObjectPath": "\\Events\\Default Work Unit\\Jules\\MC\\MC_FT_Land",
-      "GUID": "{56274120-77E8-4774-84C0-C5BB7FA1F1BB}",
+      "GUID": "{488B1B77-8269-4FDB-8527-E9D60A8E5509}",
       "DurationType": "OneShot",
       "DurationMin": "0.36141",
       "DurationMax": "1.048363",
@@ -1805,7 +1906,7 @@
       "Id": "1716018476",
       "Name": "MC_FT_WallRun",
       "ObjectPath": "\\Events\\Default Work Unit\\Jules\\MC\\MC_FT_WallRun",
-      "GUID": "{DAA3A681-01AE-4746-9AAD-669C5DA9858A}",
+      "GUID": "{6D2EBAF7-DC3E-42C2-B75E-887F38161E51}",
       "DurationType": "OneShot",
       "DurationMin": "0.164277",
       "DurationMax": "0.267692",
@@ -2197,7 +2298,7 @@
       "DurationType": "Infinite",
       "ReferencedStreamedFiles": [
        {
-        "Id": "544454328",
+        "Id": "876070072",
         "Language": "SFX",
         "ShortName": "AMB_Bed_lvl1_LP.wav",
         "Path": "SFX\\AMB_Bed_lvl1_LP_D79FB2B7.wem"
@@ -2205,35 +2306,10 @@
       ]
      },
      {
-      "Id": "513838466",
-      "Name": "Play_MC_FOL_FreeFall",
-      "ObjectPath": "\\Events\\Default Work Unit\\Alexis\\MC\\Play_MC_FOL_FreeFall",
-      "GUID": "{717B3303-8769-46A7-871E-24CC7CC08FC3}",
-      "DurationType": "Infinite",
-      "IncludedMemoryFiles": [
-       {
-        "Id": "1013223247",
-        "Language": "SFX",
-        "ShortName": "MC_Foley_Cape_Turn_Long_Medium_LP.wav",
-        "Path": "SFX\\MC_Foley_Cape_Turn_Long_Medium_LP_D79FB2B7.wem"
-       }
-      ]
-     },
-     {
-      "Id": "2394188391",
-      "Name": "RFX_Birds_Play",
-      "ObjectPath": "\\Events\\Default Work Unit\\Jules\\AMB\\RFX_Birds_Play",
-      "GUID": "{4905F7CA-E5A5-4084-8A13-C855EDB1A4CB}",
-      "MaxAttenuation": "0.",
-      "DurationType": "OneShot",
-      "DurationMin": "0.",
-      "DurationMax": "0."
-     },
-     {
-      "Id": "1798340995",
-      "Name": "RFX_DirtFall_Play",
-      "ObjectPath": "\\Events\\Default Work Unit\\Jules\\AMB\\RFX_DirtFall_Play",
-      "GUID": "{78C4B7CE-5F0D-4AA6-9146-66EDF982E824}",
+      "Id": "3665420474",
+      "Name": "RFX_DirtFall",
+      "ObjectPath": "\\Events\\Default Work Unit\\Jules\\AMB\\RFX_DirtFall",
+      "GUID": "{4422A52E-1B39-482E-9099-8E91601CFD0F}",
       "DurationType": "Infinite",
       "IncludedMemoryFiles": [
        {
@@ -2317,23 +2393,6 @@
       ]
      },
      {
-      "Id": "2310173293",
-      "Name": "RFX_GroundRumble_Play",
-      "ObjectPath": "\\Events\\Default Work Unit\\Jules\\AMB\\RFX_GroundRumble_Play",
-      "GUID": "{475D7614-02E8-4D28-BAB4-9E3E35028144}",
-      "DurationType": "Infinite"
-     },
-     {
-      "Id": "1920976302",
-      "Name": "SFX_Freefall_End",
-      "ObjectPath": "\\Events\\Default Work Unit\\Alexis\\SFX\\SFX_Freefall_End",
-      "GUID": "{289DDCC6-05C5-4F7E-9B67-32563448FEAE}",
-      "MaxAttenuation": "0.",
-      "DurationType": "OneShot",
-      "DurationMin": "0.",
-      "DurationMax": "0."
-     },
-     {
       "Id": "1052199365",
       "Name": "SFX_Freefall_Start",
       "ObjectPath": "\\Events\\Default Work Unit\\Alexis\\SFX\\SFX_Freefall_Start",
@@ -2341,36 +2400,46 @@
       "DurationType": "Infinite",
       "IncludedMemoryFiles": [
        {
-        "Id": "583227034",
+        "Id": "455645569",
+        "Language": "SFX",
+        "ShortName": "SFX_Freefall_Start_02.wav",
+        "Path": "SFX\\SFX_Freefall_Start_02_10C4C929.wem"
+       },
+       {
+        "Id": "529536216",
         "Language": "SFX",
         "ShortName": "SFX_Freefall_Start_01.wav",
         "Path": "SFX\\SFX_Freefall_Start_01_10C4C929.wem"
        },
        {
-        "Id": "683009960",
+        "Id": "901264287",
         "Language": "SFX",
-        "ShortName": "SFX_Freefall_Start_02.wav",
-        "Path": "SFX\\SFX_Freefall_Start_02_10C4C929.wem"
+        "ShortName": "SFX_Freefall_Start_03.wav",
+        "Path": "SFX\\SFX_Freefall_Start_03_10C4C929.wem"
        },
        {
         "Id": "1013223247",
         "Language": "SFX",
         "ShortName": "MC_Foley_Cape_Turn_Long_Medium_LP.wav",
         "Path": "SFX\\MC_Foley_Cape_Turn_Long_Medium_LP_D79FB2B7.wem"
-       },
-       {
-        "Id": "1032188994",
-        "Language": "SFX",
-        "ShortName": "SFX_Freefall_Start_03.wav",
-        "Path": "SFX\\SFX_Freefall_Start_03_10C4C929.wem"
        }
       ]
      },
      {
-      "Id": "4190862346",
-      "Name": "SFX_Waterfall_Impact",
-      "ObjectPath": "\\Events\\Default Work Unit\\Jules\\SFX\\SFX_Waterfall_Impact",
-      "GUID": "{52DCB6EE-020E-4EA3-B05E-2835CAEE53BE}",
+      "Id": "1063826023",
+      "Name": "SFX_Freefall_Stop",
+      "ObjectPath": "\\Events\\Default Work Unit\\Alexis\\SFX\\SFX_Freefall_Stop",
+      "GUID": "{413B43DB-F8ED-42C7-84A7-FCFA1FB5D0E3}",
+      "MaxAttenuation": "0.",
+      "DurationType": "OneShot",
+      "DurationMin": "0.",
+      "DurationMax": "0."
+     },
+     {
+      "Id": "2082442955",
+      "Name": "SFX_WaterFallImpact",
+      "ObjectPath": "\\Events\\Default Work Unit\\Jules\\SFX\\SFX_WaterFallImpact",
+      "GUID": "{CAC85376-D0E8-4673-99D5-487BD51B540E}",
       "DurationType": "OneShot",
       "DurationMin": "2.817014",
       "DurationMax": "3.486749",
@@ -2390,10 +2459,10 @@
       ]
      },
      {
-      "Id": "3456260868",
-      "Name": "SFX_Wind_Play",
-      "ObjectPath": "\\Events\\Default Work Unit\\Jules\\SFX\\SFX_Wind_Play",
-      "GUID": "{EA712D2D-B210-4632-8897-4D067A8FB958}",
+      "Id": "1398508531",
+      "Name": "SFX_Wind",
+      "ObjectPath": "\\Events\\Default Work Unit\\Jules\\SFX\\SFX_Wind",
+      "GUID": "{9F29A3D7-4B2F-4C43-A096-ABB70E88BAB4}",
       "DurationType": "Infinite",
       "ReferencedStreamedFiles": [
        {
@@ -2582,16 +2651,6 @@
       "Name": "Stop_AMB_Bed_lvl1",
       "ObjectPath": "\\Events\\Default Work Unit\\Alexis\\AMB\\Stop_AMB_Bed_lvl1",
       "GUID": "{CE3C769B-BB7A-4936-B31C-A291704DCF7C}",
-      "MaxAttenuation": "0.",
-      "DurationType": "OneShot",
-      "DurationMin": "0.",
-      "DurationMax": "0."
-     },
-     {
-      "Id": "1750724204",
-      "Name": "Stop_MC_FOL_FreeFall",
-      "ObjectPath": "\\Events\\Default Work Unit\\Alexis\\MC\\Stop_MC_FOL_FreeFall",
-      "GUID": "{E65882E7-1FDE-4526-9F1F-D1AE0F47257E}",
       "MaxAttenuation": "0.",
       "DurationType": "OneShot",
       "DurationMin": "0.",
