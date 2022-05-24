@@ -40,6 +40,13 @@
 										</Reference>
 									</ReferenceList>
 								</Action>
+								<Action Name="" ID="{CE3F3398-1235-484F-8DA0-964CC5CDC39F}" ShortID="553926938">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MC_FOL_Run" ID="{508FD4D3-C805-4B2C-9F65-914E40FC4914}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 							</ChildrenList>
 						</Event>
 						<Event Name="MC_FT_Wet" ID="{D7FBE7C3-0C36-4EB3-AA8F-DA518BB8EBD9}">
@@ -59,6 +66,13 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="MC_FT_Jump_GroundSwitch" ID="{4D3567D7-4DE4-4321-884C-4016EBA8976C}" WorkUnitID="{A90EA6B0-FD8B-46D3-9B35-71A92B2A6346}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{77145DE4-5E14-4AE7-816F-93745F401393}" ShortID="275199591">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MC_FOL_Jump" ID="{4F953C74-2A3F-4A73-A5CB-EC5E5B6ADD2A}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

@@ -4276,6 +4276,9 @@
 												</Property>
 												<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="10"/>
 												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-16</Value>
+													</ValueList>
 													<ModifierList>
 														<ModifierInfo>
 															<Modifier Name="" ID="{B0B73A36-1C84-4A84-829F-55AC5566FA79}">
@@ -4543,7 +4546,7 @@
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 												</Reference>
 												<Reference Name="DefaultSwitchOrState">
-													<ObjectRef Name="Stone" ID="{FBA5D6FC-BB79-43BA-80B2-ABEA585C003B}" WorkUnitID="{FAF60658-236D-4A53-8DE3-BED411FEA1DF}"/>
+													<ObjectRef Name="Grass" ID="{AF0B5F0B-9DBE-4ADD-BBCA-EF6F1BD0E3B0}" WorkUnitID="{FAF60658-236D-4A53-8DE3-BED411FEA1DF}"/>
 												</Reference>
 												<Reference Name="OutputBus">
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
@@ -4824,6 +4827,13 @@
 															</ActiveSourceList>
 														</Sound>
 														<Sound Name="MC_FT_Grass_Jump_01" ID="{71D1458D-A9F2-4BC9-97D2-D19B9906AFE3}" ShortID="143359901">
+															<PropertyList>
+																<Property Name="Volume" Type="Real64">
+																	<ValueList>
+																		<Value>-4</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
 															<ReferenceList>
 																<Reference Name="Conversion">
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -5928,6 +5938,13 @@
 											</GroupingInfo>
 										</SwitchContainer>
 										<SwitchContainer Name="MC_FT_WallRun_GroundSwitch" ID="{261F0B73-8815-4C3B-A936-1E53A89942B5}" ShortID="1023433653">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-16</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -6883,7 +6900,7 @@
 										<Property Name="BlendBehavior" Type="int16" Value="1"/>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-11</Value>
+												<Value>-17</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>

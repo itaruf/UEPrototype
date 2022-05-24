@@ -99,39 +99,6 @@
 											</ReferenceList>
 											<ObjectLists/>
 										</RandomSequenceContainer>
-										<Sound Name="MC_FT_WallRun_Scrape_LP" ID="{227DEF3F-3002-4F3E-83FC-A212F703F653}" ShortID="768039935">
-											<PropertyList>
-												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-												<Property Name="Volume" Type="Real64">
-													<ValueList>
-														<Value>-19</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="MC_FT_WallRun_Scrape_LP" ID="{E197DB41-DFB4-4F78-B182-B90AAC220508}">
-													<Comment>A changer
-</Comment>
-													<Language>SFX</Language>
-													<AudioFile>MC_FT_WallRun_Scrape_LP.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="585672262"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ObjectLists/>
-											<ActiveSourceList>
-												<ActiveSource Name="MC_FT_WallRun_Scrape_LP" ID="{E197DB41-DFB4-4F78-B182-B90AAC220508}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
 									</ChildrenList>
 								</Folder>
 								<Folder Name="Presence" ID="{E0CCA823-9ABC-428F-8827-5C0986AC8650}" ShortID="569551066">
@@ -142,7 +109,7 @@
 												<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="7"/>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-20</Value>
+														<Value>-31</Value>
 													</ValueList>
 													<ModifierList>
 														<ModifierInfo>
@@ -428,7 +395,7 @@
 												<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="3"/>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-20</Value>
+														<Value>-23</Value>
 													</ValueList>
 													<ModifierList>
 														<ModifierInfo>
