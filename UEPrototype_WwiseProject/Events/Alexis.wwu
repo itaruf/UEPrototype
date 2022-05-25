@@ -102,6 +102,20 @@
 										</Reference>
 									</ReferenceList>
 								</Action>
+								<Action Name="" ID="{EA291A5A-DD5C-45A7-B1DE-BDAEE7E92F97}" ShortID="162857580">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="AMB_RFX_EagleBeg" ID="{A93B5E2E-0EE6-47EC-BA82-BB5989AD8D8F}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{752B419D-D2AA-439F-AE28-93DE6DD7D315}" ShortID="465976956">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="AMB_RFX_Falcon" ID="{80E78C3A-F302-4C99-9A0C-A81A360E2EFC}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 							</ChildrenList>
 						</Event>
 					</ChildrenList>

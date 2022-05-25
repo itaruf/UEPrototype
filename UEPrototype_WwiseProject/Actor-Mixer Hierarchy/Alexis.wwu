@@ -32,20 +32,7 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<Sound Name="AMB_Bed_lvl1_LP" ID="{A411F9C6-A752-46AF-ABA9-C4603C74214C}" ShortID="319663824">
-									<PropertyList>
-										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-										<Property Name="IsStreamingEnabled" Type="bool">
-											<ValueList>
-												<Value>True</Value>
-											</ValueList>
-										</Property>
-										<Property Name="Volume" Type="Real64">
-											<ValueList>
-												<Value>-20</Value>
-											</ValueList>
-										</Property>
-									</PropertyList>
+								<BlendContainer Name="AMB_Lvl1_blend" ID="{068779EA-CEA0-42BC-91BA-4ACAA643FDE1}" ShortID="311977689">
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -55,19 +42,596 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<AudioFileSource Name="AMB_Bed_lvl1_LP" ID="{D21C41C6-808C-4A92-B86E-F3256E6801AA}">
-											<Language>SFX</Language>
-											<AudioFile>AMB_Bed_lvl1_LP.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="876070072"/>
-											</MediaIDList>
-										</AudioFileSource>
+										<RandomSequenceContainer Name="AMB_RFX_EagleBeg" ID="{A93B5E2E-0EE6-47EC-BA82-BB5989AD8D8F}" ShortID="1060531461">
+											<PropertyList>
+												<Property Name="3DPosition" Type="int16" Value="1"/>
+												<Property Name="3DSpatialization" Type="int16" Value="1"/>
+												<Property Name="InitialDelay" Type="Real64">
+													<ValueList>
+														<Value>4</Value>
+													</ValueList>
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{3BE4EBB4-866A-46F4-9C28-4C784D1FBC63}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="0.5"/>
+																	<Property Name="Min" Type="Real64" Value="-0.5"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+												<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+												<Property Name="OverridePositioning" Type="bool" Value="True"/>
+												<Property Name="Pitch" Type="int32">
+													<ValueList>
+														<Value>-1920</Value>
+													</ValueList>
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{6FB38F04-09CE-4F41-B248-0455DA49911F}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="75"/>
+																	<Property Name="Min" Type="Real64" Value="-75"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+												<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+												<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+												<Property Name="PlayMechanismSpecialTransitionsType" Type="int16" Value="1"/>
+												<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="7">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{DA9CF7D6-02DC-4095-AD4E-720957D922BB}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="1"/>
+																	<Property Name="Min" Type="Real64" Value="-3"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+												<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+												<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="4"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-20</Value>
+													</ValueList>
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{8A0AE408-CBA5-4902-A0DF-2E9E92F4C82F}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Min" Type="Real64" Value="-10"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="ATT_Birds" ID="{528A0506-8C3F-44C8-9E44-5E2F76B78D62}" WorkUnitID="{9493D104-BDD0-462A-8CB7-A95DD41418B5}"/>
+												</Reference>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="AMB" ID="{CDAACF0F-C751-406F-9073-3F6016218135}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="AMB_RFX_EagleBeg_01" ID="{3F05906B-6C73-424B-A4FC-E25606AA60F7}" ShortID="241854444">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="AMB_RFX_EagleBeg_01" ID="{9CC2EDEE-6A82-4DBE-B68F-2D26A35FB4E0}">
+															<Language>SFX</Language>
+															<AudioFile>AMB_RFX_EagleBeg_01.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="7103549"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="AMB_RFX_EagleBeg_01" ID="{9CC2EDEE-6A82-4DBE-B68F-2D26A35FB4E0}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="AMB_RFX_EagleBeg_02" ID="{3983BE9B-F695-4FBE-9FB4-A3A80DD23937}" ShortID="224201933">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="AMB_RFX_EagleBeg_02" ID="{170C5835-3033-45C6-806D-30084EE5003F}">
+															<Language>SFX</Language>
+															<AudioFile>AMB_RFX_EagleBeg_02.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="78102221"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="AMB_RFX_EagleBeg_02" ID="{170C5835-3033-45C6-806D-30084EE5003F}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="AMB_RFX_EagleBeg_03" ID="{85502323-85C1-44CC-8C29-AF6B2E82DF52}" ShortID="314298069">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="AMB_RFX_EagleBeg_03" ID="{C97A74F9-DF11-4615-94BF-BCBFF041D8FE}">
+															<Language>SFX</Language>
+															<AudioFile>AMB_RFX_EagleBeg_03.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="391842912"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="AMB_RFX_EagleBeg_03" ID="{C97A74F9-DF11-4615-94BF-BCBFF041D8FE}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="AMB_RFX_EagleBeg_04" ID="{F02CEA13-E6C9-40A3-9938-44E490EE222D}" ShortID="564291665">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="AMB_RFX_EagleBeg_04" ID="{B8DA69CF-8731-439C-AA0E-2A8F60B39721}">
+															<Language>SFX</Language>
+															<AudioFile>AMB_RFX_EagleBeg_04.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="5410128"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="AMB_RFX_EagleBeg_04" ID="{B8DA69CF-8731-439C-AA0E-2A8F60B39721}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="AMB_RFX_EagleBeg_05" ID="{9B5526BE-22A4-4281-9AA0-89D8166E84B9}" ShortID="934688256">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="AMB_RFX_EagleBeg_05" ID="{1FECAFA6-288F-4576-A111-C85BA10D9205}">
+															<Language>SFX</Language>
+															<AudioFile>AMB_RFX_EagleBeg_05.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="508831913"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="AMB_RFX_EagleBeg_05" ID="{1FECAFA6-288F-4576-A111-C85BA10D9205}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="AMB_RFX_EagleBeg_06" ID="{58317603-A3BD-41BC-B744-0FCC73EF0075}" ShortID="418636313">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="AMB_RFX_EagleBeg_06" ID="{F3098770-3439-4161-9536-03AAD3DCC11D}">
+															<Language>SFX</Language>
+															<AudioFile>AMB_RFX_EagleBeg_06.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="733915951"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="AMB_RFX_EagleBeg_06" ID="{F3098770-3439-4161-9536-03AAD3DCC11D}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+											<PositioningInfo>
+												<Position Name="" ID="{FC20772E-D33F-40C3-AFFE-3CD598935096}">
+													<PropertyList>
+														<Property Name="NewPathForEachSound" Type="bool" Value="True"/>
+														<Property Name="PlayMechanismRandomOrSequence" Type="int16" Value="1"/>
+													</PropertyList>
+													<ChildrenList>
+														<Path2D Name="AMB_RFX_EagleBeg_Path" ID="{8019B718-0660-45E7-81EB-8551912FC4F2}">
+															<PointList>
+																<Point>
+																	<XPos>-47.20812</XPos>
+																	<YPos>51.12994</YPos>
+																	<Flags>12</Flags>
+																	<Time>0</Time>
+																</Point>
+															</PointList>
+														</Path2D>
+														<Path2D Name="AMB_RFX_EagleBeg_Path_01" ID="{5BDE27B6-9F05-4798-BE77-AEB9BF1C285B}">
+															<PointList>
+																<Point>
+																	<XPos>47.20812</XPos>
+																	<YPos>52.25989</YPos>
+																	<Flags>12</Flags>
+																	<Time>0</Time>
+																</Point>
+															</PointList>
+														</Path2D>
+														<Path2D Name="AMB_RFX_EagleBeg_Path_02" ID="{FC773D8C-A648-4676-B7B9-3F989586D4E2}">
+															<PointList>
+																<Point>
+																	<XPos>-72.08122</XPos>
+																	<YPos>-44.91525</YPos>
+																	<Flags>12</Flags>
+																	<Time>0</Time>
+																</Point>
+															</PointList>
+														</Path2D>
+														<Path2D Name="AMB_RFX_EagleBeg_Path_03" ID="{E693F79C-4C6F-442A-ADE2-F398909B20E0}">
+															<PointList>
+																<Point>
+																	<XPos>74.11168</XPos>
+																	<YPos>-65.25424</YPos>
+																	<Flags>12</Flags>
+																	<Time>0</Time>
+																</Point>
+															</PointList>
+														</Path2D>
+														<Path2D Name="AMB_RFX_EagleBeg_Path_04" ID="{B0620E0C-989B-4E23-9446-C4E71CCCDE84}">
+															<PointList>
+																<Point>
+																	<XPos>-3.5533</XPos>
+																	<YPos>52.25989</YPos>
+																	<Flags>12</Flags>
+																	<Time>0</Time>
+																</Point>
+															</PointList>
+														</Path2D>
+														<Path2D Name="AMB_RFX_EagleBeg_Path_05" ID="{22BB596F-5BD7-441A-B0F5-AA7BFA1BDEDD}">
+															<PointList>
+																<Point>
+																	<XPos>-3.5533</XPos>
+																	<YPos>-57.34463</YPos>
+																	<Flags>12</Flags>
+																	<Time>0</Time>
+																</Point>
+															</PointList>
+														</Path2D>
+													</ChildrenList>
+												</Position>
+											</PositioningInfo>
+											<ObjectLists/>
+										</RandomSequenceContainer>
+										<RandomSequenceContainer Name="AMB_RFX_Falcon" ID="{80E78C3A-F302-4C99-9A0C-A81A360E2EFC}" ShortID="741707995">
+											<PropertyList>
+												<Property Name="3DPosition" Type="int16" Value="1"/>
+												<Property Name="InitialDelay" Type="Real64">
+													<ValueList>
+														<Value>5</Value>
+													</ValueList>
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{02AE7BE3-3744-4B07-8282-6202E80CF6F2}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="2"/>
+																	<Property Name="Min" Type="Real64" Value="-2"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+												<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+												<Property Name="OverridePositioning" Type="bool" Value="True"/>
+												<Property Name="Pitch" Type="int32">
+													<ValueList>
+														<Value>-1720</Value>
+													</ValueList>
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{59134F29-E0AC-4CD5-96FC-780C51CFC399}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="75"/>
+																	<Property Name="Min" Type="Real64" Value="-75"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+												<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+												<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+												<Property Name="PlayMechanismSpecialTransitionsType" Type="int16" Value="1"/>
+												<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="7">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{80694AE9-32D9-4843-8071-69CDDAB7C493}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="1"/>
+																	<Property Name="Min" Type="Real64" Value="-3"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+												<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+												<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-20</Value>
+													</ValueList>
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{333E1D48-54B9-4833-AEE8-066173462D1A}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Min" Type="Real64" Value="-10"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="AMB" ID="{CDAACF0F-C751-406F-9073-3F6016218135}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="AMB_RFX_Falcon_01" ID="{65AE0F04-64E8-43F4-AD68-8F501C10EB2B}" ShortID="155193625">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="AMB_RFX_Falcon_01" ID="{F4EAEAF0-1465-4C2A-95E9-6F55AAEB05DA}">
+															<Language>SFX</Language>
+															<AudioFile>AMB_RFX_Falcon_01.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="823338431"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="AMB_RFX_Falcon_01" ID="{F4EAEAF0-1465-4C2A-95E9-6F55AAEB05DA}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="AMB_RFX_Falcon_02" ID="{1503965A-9955-430E-9144-819A9A699512}" ShortID="122537341">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="AMB_RFX_Falcon_02" ID="{A6C40750-C8E2-484D-9B40-28AC4E15108B}">
+															<Language>SFX</Language>
+															<AudioFile>AMB_RFX_Falcon_02.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="556680837"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="AMB_RFX_Falcon_02" ID="{A6C40750-C8E2-484D-9B40-28AC4E15108B}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="AMB_RFX_Falcon_03" ID="{6850180D-88E7-4FA9-9AC5-B48297615336}" ShortID="1053492657">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="AMB_RFX_Falcon_03" ID="{FD903951-9BEF-4747-84A3-8A7F305ED176}">
+															<Language>SFX</Language>
+															<AudioFile>AMB_RFX_Falcon_03.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="418196482"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="AMB_RFX_Falcon_03" ID="{FD903951-9BEF-4747-84A3-8A7F305ED176}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="AMB_RFX_Falcon_04" ID="{BBC7E4E4-3DB4-4FDA-91F5-4B71A31BB1C7}" ShortID="462699761">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="AMB_RFX_Falcon_04" ID="{C55BF58B-A4DA-49AA-B99A-096C45EC4BB0}">
+															<Language>SFX</Language>
+															<AudioFile>AMB_RFX_Falcon_04.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="480143367"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="AMB_RFX_Falcon_04" ID="{C55BF58B-A4DA-49AA-B99A-096C45EC4BB0}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+											<PositioningInfo>
+												<Position Name="" ID="{8DAEF014-7CEC-42F8-A5A6-6CA8E138A438}">
+													<ChildrenList>
+														<Path2D Name="AMB_RFX_Falcon_Path" ID="{4E6F90F9-2B5A-43F1-A128-6960A4DFA854}">
+															<PointList>
+																<Point>
+																	<XPos>-38.57868</XPos>
+																	<YPos>50.56498</YPos>
+																	<Flags>12</Flags>
+																	<Time>0</Time>
+																</Point>
+															</PointList>
+														</Path2D>
+														<Path2D Name="AMB_RFX_Falcon_Path_01" ID="{1EA9B870-F730-4671-86DB-7D95A20F682C}">
+															<PointList>
+																<Point>
+																	<XPos>47.71574</XPos>
+																	<YPos>55.64972</YPos>
+																	<Flags>12</Flags>
+																	<Time>0</Time>
+																</Point>
+															</PointList>
+														</Path2D>
+														<Path2D Name="AMB_RFX_Falcon_Path_02" ID="{A561515A-FA09-4525-9D8B-3CF7C9126EB7}">
+															<PointList>
+																<Point>
+																	<XPos>-47.20812</XPos>
+																	<YPos>-47.17514</YPos>
+																	<Flags>12</Flags>
+																	<Time>0</Time>
+																</Point>
+															</PointList>
+														</Path2D>
+														<Path2D Name="AMB_RFX_Falcon_Path_03" ID="{E08A2836-25D3-4639-86FB-5F56700679F8}">
+															<PointList>
+																<Point>
+																	<XPos>61.42132</XPos>
+																	<YPos>-59.60452</YPos>
+																	<Flags>12</Flags>
+																	<Time>0</Time>
+																</Point>
+															</PointList>
+														</Path2D>
+														<Path2D Name="AMB_RFX_Falcon_Path_04" ID="{9E0EF95D-4ACF-4FB6-88B6-F12F1951AEDC}">
+															<PointList>
+																<Point>
+																	<XPos>-2.53807</XPos>
+																	<YPos>52.82486</YPos>
+																	<Flags>12</Flags>
+																	<Time>0</Time>
+																</Point>
+															</PointList>
+														</Path2D>
+														<Path2D Name="AMB_RFX_Falcon_Path_05" ID="{3A59821A-B804-4DFC-8EEC-ECEF0B982E44}">
+															<PointList>
+																<Point>
+																	<XPos>0.50761</XPos>
+																	<YPos>-41.52542</YPos>
+																	<Flags>12</Flags>
+																	<Time>0</Time>
+																</Point>
+															</PointList>
+														</Path2D>
+													</ChildrenList>
+												</Position>
+											</PositioningInfo>
+											<ObjectLists/>
+										</RandomSequenceContainer>
+										<Sound Name="AMB_Bed_lvl1_LP" ID="{A411F9C6-A752-46AF-ABA9-C4603C74214C}" ShortID="319663824">
+											<PropertyList>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+												<Property Name="IsStreamingEnabled" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-29</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="AMB" ID="{CDAACF0F-C751-406F-9073-3F6016218135}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="AMB_Bed_lvl1_LP" ID="{D21C41C6-808C-4A92-B86E-F3256E6801AA}">
+													<Language>SFX</Language>
+													<AudioFile>AMB_Bed_lvl1_LP.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="876070072"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="AMB_Bed_lvl1_LP" ID="{D21C41C6-808C-4A92-B86E-F3256E6801AA}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
 									</ChildrenList>
 									<ObjectLists/>
-									<ActiveSourceList>
-										<ActiveSource Name="AMB_Bed_lvl1_LP" ID="{D21C41C6-808C-4A92-B86E-F3256E6801AA}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
+									<BlendTrackList>
+										<BlendTrack Name="AMB_Lvl1" ID="{1D4E3F17-1397-4098-907A-A80ADF3EFC83}" ShortID="47269811">
+											<BlendTrackAssocList>
+												<BlendTrackAssoc>
+													<ItemRef Name="AMB_Bed_lvl1_LP" ID="{A411F9C6-A752-46AF-ABA9-C4603C74214C}"/>
+												</BlendTrackAssoc>
+												<BlendTrackAssoc>
+													<ItemRef Name="AMB_RFX_EagleBeg" ID="{A93B5E2E-0EE6-47EC-BA82-BB5989AD8D8F}"/>
+												</BlendTrackAssoc>
+												<BlendTrackAssoc>
+													<ItemRef Name="AMB_RFX_Falcon" ID="{80E78C3A-F302-4C99-9A0C-A81A360E2EFC}"/>
+												</BlendTrackAssoc>
+											</BlendTrackAssocList>
+										</BlendTrack>
+									</BlendTrackList>
+								</BlendContainer>
 							</ChildrenList>
 							<ObjectLists/>
 						</ActorMixer>
