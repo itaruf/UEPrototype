@@ -9,6 +9,15 @@
 						<Property Name="Max" Type="Real64" Value="1"/>
 					</PropertyList>
 				</GameParameter>
+				<GameParameter Name="RTPC_DiveSpeed" ID="{B98CCC5A-4AF4-4F1E-B1E1-E0E932C8530E}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+						<Property Name="Max" Type="Real64" Value="3000"/>
+						<Property Name="RTPCRamping" Type="int16" Value="1"/>
+						<Property Name="SlewRateDown" Type="Real64" Value="2500"/>
+						<Property Name="SlewRateUp" Type="Real64" Value="3000"/>
+					</PropertyList>
+				</GameParameter>
 			</ChildrenList>
 		</WorkUnit>
 	</GameParameters>

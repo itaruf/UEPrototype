@@ -1272,6 +1272,133 @@
 									</ChildrenList>
 									<ObjectLists/>
 								</RandomSequenceContainer>
+								<Sound Name="SFX_Glide_Magic_LP" ID="{7D362448-02D9-469B-95B8-4882F3F4AAF3}" ShortID="235704752">
+									<PropertyList>
+										<Property Name="Highpass" Type="int16">
+											<ValueList>
+												<Value>22</Value>
+											</ValueList>
+											<RTPCList>
+												<RTPC Name="" ID="{8EB353B8-08A2-471E-9B51-78EE90D5AE29}" ShortID="808635478">
+													<ReferenceList>
+														<Reference Name="ControlInput">
+															<ObjectRef Name="RTPC_DiveSpeed" ID="{B98CCC5A-4AF4-4F1E-B1E1-E0E932C8530E}" WorkUnitID="{2267CC50-2CB3-43FF-AD07-2C2C8FCF4501}"/>
+														</Reference>
+													</ReferenceList>
+													<Curve Name="" ID="{173FA782-F01D-4120-9334-4EA74E46196B}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="65537"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>36</YPos>
+																<Flags>5</Flags>
+																<SegmentShape>Log1</SegmentShape>
+															</Point>
+															<Point>
+																<XPos>1260.65411</XPos>
+																<YPos>9</YPos>
+																<Flags>0</Flags>
+																<SegmentShape>Exp1</SegmentShape>
+															</Point>
+															<Point>
+																<XPos>3000</XPos>
+																<YPos>1</YPos>
+																<Flags>37</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</RTPC>
+											</RTPCList>
+										</Property>
+										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+										<Property Name="OverrideEffect" Type="bool" Value="True"/>
+										<Property Name="Pitch" Type="int32">
+											<ValueList>
+												<Value>-530</Value>
+											</ValueList>
+											<RTPCList>
+												<RTPC Name="" ID="{EF0136BA-536E-4D22-A700-B75D4362D1D4}" ShortID="516056982">
+													<ReferenceList>
+														<Reference Name="ControlInput">
+															<ObjectRef Name="RTPC_DiveSpeed" ID="{B98CCC5A-4AF4-4F1E-B1E1-E0E932C8530E}" WorkUnitID="{2267CC50-2CB3-43FF-AD07-2C2C8FCF4501}"/>
+														</Reference>
+													</ReferenceList>
+													<Curve Name="" ID="{4A6CA2F2-6E93-431C-8409-D8BA7C9943B3}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="65537"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>-455</YPos>
+																<Flags>5</Flags>
+															</Point>
+															<Point>
+																<XPos>3000</XPos>
+																<YPos>497</YPos>
+																<Flags>37</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</RTPC>
+											</RTPCList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-10</Value>
+											</ValueList>
+											<RTPCList>
+												<RTPC Name="" ID="{0D5F4FD6-1F40-482B-BEF3-AFF450B01C56}" ShortID="543454338">
+													<ReferenceList>
+														<Reference Name="ControlInput">
+															<ObjectRef Name="RTPC_DiveSpeed" ID="{B98CCC5A-4AF4-4F1E-B1E1-E0E932C8530E}" WorkUnitID="{2267CC50-2CB3-43FF-AD07-2C2C8FCF4501}"/>
+														</Reference>
+													</ReferenceList>
+													<Curve Name="" ID="{1FAF29A8-3944-442C-AC8A-E90BCF04A032}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="3"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>-3.33662</YPos>
+																<Flags>5</Flags>
+															</Point>
+															<Point>
+																<XPos>3000</XPos>
+																<YPos>0</YPos>
+																<Flags>37</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</RTPC>
+											</RTPCList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="SFX_Glide_Magic_LP" ID="{4B24E505-70A1-44CA-A939-A25830F1377A}">
+											<Language>SFX</Language>
+											<AudioFile>SFX_Glide_Magic_LP.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="702119425"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="SFX_Glide_Magic_LP" ID="{4B24E505-70A1-44CA-A939-A25830F1377A}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
 							</ChildrenList>
 							<ObjectLists/>
 						</ActorMixer>
@@ -1289,6 +1416,114 @@
 									<ObjectRef Name="UI" ID="{810B9E20-27DC-44EE-82C9-184684B56A94}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 								</Reference>
 							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="UI_Menu_Cancel" ID="{90C2276D-0F80-4AEB-9AC9-9343D33E7A05}" ShortID="443521680">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_Menu_Cancel" ID="{62F94F09-82E2-4A3D-9B95-214F7EDBB01B}">
+											<Language>SFX</Language>
+											<AudioFile>UI_Menu_Cancel.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1007776104"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_Menu_Cancel" ID="{62F94F09-82E2-4A3D-9B95-214F7EDBB01B}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="UI_Menu_Hover" ID="{E8C3DEEC-2183-4106-A02E-C4E82243BB6D}" ShortID="780518886">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-11</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_Menu_Hover" ID="{0809C3EB-685B-4031-AB9B-0E906344FAA2}">
+											<Language>SFX</Language>
+											<AudioFile>UI_Menu_Hover.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="628120774"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_Menu_Hover" ID="{0809C3EB-685B-4031-AB9B-0E906344FAA2}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="UI_Menu_Select" ID="{591CCE5B-FF3C-473B-A8EE-A1BFF0F06556}" ShortID="558558544">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_Menu_Select" ID="{3249A034-9BBF-4EB4-A311-55D526C897CB}">
+											<Language>SFX</Language>
+											<AudioFile>UI_Menu_Select.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="902815189"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_Menu_Select" ID="{3249A034-9BBF-4EB4-A311-55D526C897CB}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="UI_Menu_Slider" ID="{1C972AD9-9A29-41C0-A0C4-0E1224844954}" ShortID="767584399">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-5</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_Menu_Slider" ID="{445123C1-27A0-4F86-805C-FD8E08A84CF6}">
+											<Language>SFX</Language>
+											<AudioFile>UI_Menu_Slider.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="143264601"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_Menu_Slider" ID="{445123C1-27A0-4F86-805C-FD8E08A84CF6}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
 							<ObjectLists/>
 						</ActorMixer>
 					</ChildrenList>
