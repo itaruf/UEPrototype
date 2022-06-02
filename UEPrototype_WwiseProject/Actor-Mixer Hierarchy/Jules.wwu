@@ -6858,6 +6858,240 @@
 												</GroupingList>
 											</GroupingInfo>
 										</SwitchContainer>
+										<RandomSequenceContainer Name="MC_FT_MagicLayer" ID="{53DD9E2D-9A76-4EDB-B309-11E2954146B5}" ShortID="433426513">
+											<PropertyList>
+												<Property Name="Lowpass" Type="int16">
+													<ValueList>
+														<Value>15</Value>
+													</ValueList>
+												</Property>
+												<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{06C124B7-FE36-4089-8572-9661F095A76F}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="25"/>
+																	<Property Name="Min" Type="Real64" Value="-25"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+												<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="8"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>3</Value>
+													</ValueList>
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{9345E281-9EC7-4650-88AF-42492C2DF32F}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Min" Type="Real64" Value="-5"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="MC_FT_MagicLayer_01" ID="{F656C871-9B9D-472A-A28B-3FA4A3684EFC}" ShortID="915198392">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="MC_FT_MagicLayer_01" ID="{32F855D8-3830-44F8-B9BB-11EED2FBEA3D}">
+															<Language>SFX</Language>
+															<AudioFile>MC_FT_MagicLayer_01.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="767323193"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="MC_FT_MagicLayer_01" ID="{32F855D8-3830-44F8-B9BB-11EED2FBEA3D}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="MC_FT_MagicLayer_02" ID="{695285AB-225B-4C33-B2A2-09CDF8CE3F5D}" ShortID="332288111">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="MC_FT_MagicLayer_02" ID="{F42EC4DF-2307-4B96-9E87-53889F3067F4}">
+															<Language>SFX</Language>
+															<AudioFile>MC_FT_MagicLayer_02.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="490216797"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="MC_FT_MagicLayer_02" ID="{F42EC4DF-2307-4B96-9E87-53889F3067F4}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="MC_FT_MagicLayer_03" ID="{C3F3B983-8649-4E6F-909E-3F125E29FA5A}" ShortID="466755402">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="MC_FT_MagicLayer_03" ID="{DAABC757-AC7F-4DF5-AE30-91A9CFAAB4EA}">
+															<Language>SFX</Language>
+															<AudioFile>MC_FT_MagicLayer_03.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="729093755"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="MC_FT_MagicLayer_03" ID="{DAABC757-AC7F-4DF5-AE30-91A9CFAAB4EA}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="MC_FT_MagicLayer_04" ID="{98377D52-25FB-4E0A-A2D4-7022385FA801}" ShortID="169293710">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="MC_FT_MagicLayer_04" ID="{65F406B3-0CFE-4EEE-804C-59A61D826DD3}">
+															<Language>SFX</Language>
+															<AudioFile>MC_FT_MagicLayer_04.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="1037060123"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="MC_FT_MagicLayer_04" ID="{65F406B3-0CFE-4EEE-804C-59A61D826DD3}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="MC_FT_MagicLayer_05" ID="{20B98857-2F52-48FE-B644-018D0F1F4FF5}" ShortID="682709654">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="MC_FT_MagicLayer_05" ID="{E6BE58DC-DD22-4572-BDBD-7DDD02AC5724}">
+															<Language>SFX</Language>
+															<AudioFile>MC_FT_MagicLayer_05.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="573696104"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="MC_FT_MagicLayer_05" ID="{E6BE58DC-DD22-4572-BDBD-7DDD02AC5724}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="MC_FT_MagicLayer_06" ID="{B61BBE50-046B-4F9A-A833-112A89175C85}" ShortID="951159864">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="MC_FT_MagicLayer_06" ID="{DA8C9A76-AC5A-4D64-B240-CB686B5ECF67}">
+															<Language>SFX</Language>
+															<AudioFile>MC_FT_MagicLayer_06.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="775399352"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="MC_FT_MagicLayer_06" ID="{DA8C9A76-AC5A-4D64-B240-CB686B5ECF67}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="MC_FT_MagicLayer_07" ID="{18147F45-78C3-49B6-9EA8-CDC182F1CFD1}" ShortID="939980780">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="MC_FT_MagicLayer_07" ID="{865F2966-FE70-4553-8527-C58911A0C1DF}">
+															<Language>SFX</Language>
+															<AudioFile>MC_FT_MagicLayer_07.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="725866459"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="MC_FT_MagicLayer_07" ID="{865F2966-FE70-4553-8527-C58911A0C1DF}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="MC_FT_MagicLayer_08" ID="{609404CA-A4EE-42CE-807A-3D57F4218A66}" ShortID="972380877">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="MC_FT_MagicLayer_08" ID="{A2F7D73E-E9DA-4435-A94C-9E4CFB7E02AC}">
+															<Language>SFX</Language>
+															<AudioFile>MC_FT_MagicLayer_08.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="4671407"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="MC_FT_MagicLayer_08" ID="{A2F7D73E-E9DA-4435-A94C-9E4CFB7E02AC}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+											<ObjectLists/>
+										</RandomSequenceContainer>
 									</ChildrenList>
 									<ObjectLists/>
 								</ActorMixer>

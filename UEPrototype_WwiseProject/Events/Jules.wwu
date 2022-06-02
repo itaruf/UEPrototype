@@ -47,6 +47,13 @@
 										</Reference>
 									</ReferenceList>
 								</Action>
+								<Action Name="" ID="{92D4F225-66AE-46C2-A5F3-D6F8F6353DA2}" ShortID="657295453">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MC_FT_MagicLayer" ID="{53DD9E2D-9A76-4EDB-B309-11E2954146B5}" WorkUnitID="{A90EA6B0-FD8B-46D3-9B35-71A92B2A6346}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 							</ChildrenList>
 						</Event>
 						<Event Name="MC_FT_Wet" ID="{D7FBE7C3-0C36-4EB3-AA8F-DA518BB8EBD9}">
