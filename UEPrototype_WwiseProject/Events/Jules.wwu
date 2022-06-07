@@ -83,6 +83,13 @@
 										</Reference>
 									</ReferenceList>
 								</Action>
+								<Action Name="" ID="{BD1D8A2F-EE68-4E17-8BAA-EDEFF0970E41}" ShortID="278116233">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MC_FT_Jump_MagicLayer" ID="{4B6F1162-B6C1-4C8F-8C50-F60E7D67F068}" WorkUnitID="{A90EA6B0-FD8B-46D3-9B35-71A92B2A6346}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 							</ChildrenList>
 						</Event>
 						<Event Name="MC_FT_Land" ID="{488B1B77-8269-4FDB-8527-E9D60A8E5509}">
@@ -94,6 +101,13 @@
 										</Reference>
 									</ReferenceList>
 								</Action>
+								<Action Name="" ID="{4B780F51-7DC8-4938-887B-265303DF35C0}" ShortID="176521297">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MC_FT_Land_MagicLayer" ID="{053A5CA1-D6BB-450F-B38C-2E04BD5EDD6A}" WorkUnitID="{A90EA6B0-FD8B-46D3-9B35-71A92B2A6346}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 							</ChildrenList>
 						</Event>
 						<Event Name="MC_FT_WallRun" ID="{6D2EBAF7-DC3E-42C2-B75E-887F38161E51}">
@@ -102,6 +116,13 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="MC_FT_WallRun_GroundSwitch" ID="{261F0B73-8815-4C3B-A936-1E53A89942B5}" WorkUnitID="{A90EA6B0-FD8B-46D3-9B35-71A92B2A6346}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{C92ABD1E-C9ED-4815-B0A8-9367076BEE2E}" ShortID="321335214">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MC_FT_MagicLayer" ID="{53DD9E2D-9A76-4EDB-B309-11E2954146B5}" WorkUnitID="{A90EA6B0-FD8B-46D3-9B35-71A92B2A6346}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
