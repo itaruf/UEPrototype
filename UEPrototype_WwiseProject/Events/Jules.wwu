@@ -5,17 +5,6 @@
 			<ChildrenList>
 				<Folder Name="AMB" ID="{623629A1-9443-450C-BC77-C3554540C0E4}" ShortID="197270641">
 					<ChildrenList>
-						<Event Name="SP_Waterfall_Play" ID="{FF28433B-F9E6-4A5A-8E26-36E90AF89380}">
-							<ChildrenList>
-								<Action Name="" ID="{16DA060E-927B-461D-97C2-D0D09944C68A}" ShortID="721030382">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="AMB_SP_Waterfall_Blend" ID="{5F6A136D-D2E0-47BF-88E9-54225CDFE964}" WorkUnitID="{A90EA6B0-FD8B-46D3-9B35-71A92B2A6346}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
 						<Event Name="RFX_DirtFall" ID="{4422A52E-1B39-482E-9099-8E91601CFD0F}">
 							<ChildrenList>
 								<Action Name="" ID="{B1026053-9700-4781-A42D-0AD0C5AA8E07}" ShortID="868215280">
@@ -27,6 +16,19 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="SP_WaterFallSmall" ID="{B2A9D75A-C3C7-4C42-8DCA-B7A4D7AF9D33}">
+							<ChildrenList>
+								<Action Name="" ID="{A3B94BC4-2518-4088-B708-9574495B27E5}" ShortID="507924674">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="AMB_SP_WaterFallSmall_Blend" ID="{D753DC15-7C1A-45B5-9BA1-D2DF96400256}" WorkUnitID="{A90EA6B0-FD8B-46D3-9B35-71A92B2A6346}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="SP_WaterFallMed" ID="{44FD23A1-F917-4E26-8EF9-34E98C653B2B}"/>
+						<Event Name="SP_WaterFallBig" ID="{49FCB4E9-F4D9-4E9C-A9D9-B1B632F3F221}"/>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="MC" ID="{0FAE6D46-D663-41A9-8E75-E2ACF42A16B3}" ShortID="517842377">
@@ -149,6 +151,28 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="SFX_Waterfall_Impact" ID="{CEF1ACFE-A866-4CC0-8376-75DD28A6A336}" WorkUnitID="{A90EA6B0-FD8B-46D3-9B35-71A92B2A6346}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="SFX_SlowMoActivation" ID="{323FED34-9F62-4446-8080-5F88B57E7ACF}">
+							<ChildrenList>
+								<Action Name="" ID="{6FCFEEE8-F502-4864-8847-1ECE85025FAB}" ShortID="585730351">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_SlowMoEffect" ID="{178B97D6-F58A-4210-9068-63FE556F5B9D}" WorkUnitID="{A90EA6B0-FD8B-46D3-9B35-71A92B2A6346}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="SFX_SlowMoDesactivation" ID="{D889DB18-2A06-41A5-BB0E-8E346E963B4B}">
+							<ChildrenList>
+								<Action Name="" ID="{75307B72-ABFA-42FF-82D1-D4BFFE7752D3}" ShortID="980747683">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_SlowMoBackEffect" ID="{66E152AF-76D0-4A36-8DC3-D949154F55EA}" WorkUnitID="{A90EA6B0-FD8B-46D3-9B35-71A92B2A6346}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

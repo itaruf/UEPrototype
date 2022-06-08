@@ -43,6 +43,13 @@
 									</ReferenceList>
 									<ChildrenList>
 										<BlendContainer Name="AMB_SP_Waterfall_Blend" ID="{5F6A136D-D2E0-47BF-88E9-54225CDFE964}" ShortID="827444230">
+											<PropertyList>
+												<Property Name="Inclusion" Type="bool">
+													<ValueList>
+														<Value>False</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -217,6 +224,237 @@
 																<LeftFadingMode>Automatic</LeftFadingMode>
 																<RightEdgePos>15000</RightEdgePos>
 																<RightFadingMode>Automatic</RightFadingMode>
+															</CrossfadingInfo>
+														</BlendTrackAssoc>
+													</BlendTrackAssocList>
+												</BlendTrack>
+											</BlendTrackList>
+										</BlendContainer>
+										<BlendContainer Name="AMB_SP_WaterFallSmall_Blend" ID="{D753DC15-7C1A-45B5-9BA1-D2DF96400256}" ShortID="248975390">
+											<PropertyList>
+												<Property Name="3DSpatialization" Type="int16" Value="2"/>
+												<Property Name="EnableAttenuation" Type="bool" Value="False"/>
+												<Property Name="OverridePositioning" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="ATT_WaterFallSmall" ID="{49ED90B8-43F8-44B9-9998-9AD192B26ADB}" WorkUnitID="{9493D104-BDD0-462A-8CB7-A95DD41418B5}"/>
+												</Reference>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="AMB_SP_WaterFallSmallClose_LP" ID="{B7848B1B-FD70-4FC6-8392-4132A24BE51F}" ShortID="518923319">
+													<PropertyList>
+														<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+														<Property Name="IsStreamingEnabled" Type="bool">
+															<ValueList>
+																<Value>True</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="AMB_SP_WaterFallSmallClose_LP" ID="{70D09F03-3D49-4BAC-8176-2A5D0C17C21D}">
+															<Language>SFX</Language>
+															<AudioFile>AMB_SP_WaterFallSmallClose_LP.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="89149906"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="AMB_SP_WaterFallSmallClose_LP" ID="{70D09F03-3D49-4BAC-8176-2A5D0C17C21D}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="AMB_SP_WaterFallSmallDistant_LP" ID="{8AB920FB-4574-46A1-8D54-1766A94DEF87}" ShortID="403632430">
+													<PropertyList>
+														<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+														<Property Name="IsStreamingEnabled" Type="bool">
+															<ValueList>
+																<Value>True</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="AMB_SP_WaterFallSmallDistant_LP" ID="{A6A9A667-E305-441C-8D81-9BBDBB6C2BF0}">
+															<Language>SFX</Language>
+															<AudioFile>AMB_SP_WaterFallSmallDistant_LP.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="300715388"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="AMB_SP_WaterFallSmallDistant_LP" ID="{A6A9A667-E305-441C-8D81-9BBDBB6C2BF0}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="AMB_SP_WaterFallSmallMid_LP" ID="{B4D8E7E9-15D2-4E67-92A2-6CF57A7FA076}" ShortID="762771079">
+													<PropertyList>
+														<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+														<Property Name="IsStreamingEnabled" Type="bool">
+															<ValueList>
+																<Value>True</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="AMB_SP_WaterFallSmallMid_LP" ID="{F1FA129B-B3EE-4CC8-9DE6-A3825CC55E0D}">
+															<Language>SFX</Language>
+															<AudioFile>AMB_SP_WaterFallSmallMid_LP.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="119492835"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="AMB_SP_WaterFallSmallMid_LP" ID="{F1FA129B-B3EE-4CC8-9DE6-A3825CC55E0D}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="AMB_SP_WaterFallSmallVeryDistant_LP" ID="{DDFF85EB-F1E9-4C74-B093-223F3063AD14}" ShortID="634858762">
+													<PropertyList>
+														<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+														<Property Name="IsStreamingEnabled" Type="bool">
+															<ValueList>
+																<Value>True</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="AMB_SP_WaterFallSmallVeryDistant_LP" ID="{C1BA360D-8BC5-4986-B6D9-14205B4D14AE}">
+															<Language>SFX</Language>
+															<AudioFile>AMB_SP_WaterFallSmallVeryDistant_LP.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="101453379"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="AMB_SP_WaterFallSmallVeryDistant_LP" ID="{C1BA360D-8BC5-4986-B6D9-14205B4D14AE}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+											<ObjectLists/>
+											<BlendTrackList>
+												<BlendTrack Name="WaterFall_Blend" ID="{9773E604-92D5-4177-89C6-AC1FBD55ADED}" ShortID="192935168">
+													<PropertyList>
+														<Property Name="EnableCrossFading" Type="bool" Value="True"/>
+														<Property Name="Volume" Type="Real64">
+															<RTPCList>
+																<RTPC Name="" ID="{74DC47D4-02D2-4428-874E-5E622941CFC6}" ShortID="774313015">
+																	<ReferenceList>
+																		<Reference Name="ControlInput">
+																			<ObjectRef Name="RTPC_Distance" ID="{3EBDAF7B-F3C9-4BBD-B245-745987FDAE47}" WorkUnitID="{B33E0AE4-683A-4118-98EA-BBEFCBF7E5A5}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<Curve Name="" ID="{8EA0EAFE-7701-4303-9EB3-6FD2F04D1579}">
+																		<PropertyList>
+																			<Property Name="Flags" Type="int32" Value="3"/>
+																		</PropertyList>
+																		<PointList>
+																			<Point>
+																				<XPos>0</XPos>
+																				<YPos>-0</YPos>
+																				<Flags>5</Flags>
+																				<SegmentShape>SCurve</SegmentShape>
+																			</Point>
+																			<Point>
+																				<XPos>1000</XPos>
+																				<YPos>0</YPos>
+																				<Flags>0</Flags>
+																				<SegmentShape>SCurve</SegmentShape>
+																			</Point>
+																			<Point>
+																				<XPos>15000</XPos>
+																				<YPos>-6.1285</YPos>
+																				<Flags>37</Flags>
+																			</Point>
+																		</PointList>
+																	</Curve>
+																</RTPC>
+															</RTPCList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="LayerCrossFadeControlInput">
+															<ObjectRef Name="RTPC_Distance" ID="{3EBDAF7B-F3C9-4BBD-B245-745987FDAE47}" WorkUnitID="{B33E0AE4-683A-4118-98EA-BBEFCBF7E5A5}"/>
+														</Reference>
+													</ReferenceList>
+													<BlendTrackAssocList>
+														<BlendTrackAssoc>
+															<ItemRef Name="AMB_SP_WaterFallSmallClose_LP" ID="{B7848B1B-FD70-4FC6-8392-4132A24BE51F}"/>
+															<CrossfadingInfo>
+																<LeftEdgePos>0</LeftEdgePos>
+																<LeftFadingMode>Automatic</LeftFadingMode>
+																<RightEdgePos>5870.18756169793</RightEdgePos>
+																<RightFadingMode>Automatic</RightFadingMode>
+															</CrossfadingInfo>
+														</BlendTrackAssoc>
+														<BlendTrackAssoc>
+															<ItemRef Name="AMB_SP_WaterFallSmallMid_LP" ID="{B4D8E7E9-15D2-4E67-92A2-6CF57A7FA076}"/>
+															<CrossfadingInfo>
+																<LeftEdgePos>1005.42941757157</LeftEdgePos>
+																<LeftFadingMode>Automatic</LeftFadingMode>
+																<RightEdgePos>9370.18781169793</RightEdgePos>
+																<RightFadingMode>Automatic</RightFadingMode>
+															</CrossfadingInfo>
+														</BlendTrackAssoc>
+														<BlendTrackAssoc>
+															<ItemRef Name="AMB_SP_WaterFallSmallDistant_LP" ID="{8AB920FB-4574-46A1-8D54-1766A94DEF87}"/>
+															<CrossfadingInfo>
+																<LeftEdgePos>6133.26752221125</LeftEdgePos>
+																<LeftFadingMode>Automatic</LeftFadingMode>
+																<RightEdgePos>14314.7832607971</RightEdgePos>
+																<RightFadingMode>Automatic</RightFadingMode>
+															</CrossfadingInfo>
+														</BlendTrackAssoc>
+														<BlendTrackAssoc>
+															<ItemRef Name="AMB_SP_WaterFallSmallVeryDistant_LP" ID="{DDFF85EB-F1E9-4C74-B093-223F3063AD14}"/>
+															<CrossfadingInfo>
+																<LeftEdgePos>9577.49284624876</LeftEdgePos>
+																<LeftFadingMode>Automatic</LeftFadingMode>
+																<RightEdgePos>15000</RightEdgePos>
+																<RightFadingMode>Manual</RightFadingMode>
+																<RightFadingPos>14314.7832607971</RightFadingPos>
 															</CrossfadingInfo>
 														</BlendTrackAssoc>
 													</BlendTrackAssocList>
@@ -5303,7 +5541,7 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<Sound Name="MC_FT_Water_Land_01" ID="{CBAE653D-0474-4798-9CB3-0A3E68177559}" ShortID="614651609">
+														<Sound Name="MC_FT_Water_Land_01" ID="{703DD06D-8BF7-4209-B442-7155ED260036}" ShortID="400830418">
 															<ReferenceList>
 																<Reference Name="Conversion">
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -5313,7 +5551,7 @@
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
-																<AudioFileSource Name="MC_FT_Water_Land_01" ID="{C240F3E4-936F-4473-91AB-ECEE09F7DEF0}">
+																<AudioFileSource Name="MC_FT_Water_Land_01" ID="{9F94718C-D9BC-4729-9E54-1ACACB1506FB}">
 																	<Language>SFX</Language>
 																	<AudioFile>MC_FT_Water_Land_01.wav</AudioFile>
 																	<MediaIDList>
@@ -5323,10 +5561,10 @@
 															</ChildrenList>
 															<ObjectLists/>
 															<ActiveSourceList>
-																<ActiveSource Name="MC_FT_Water_Land_01" ID="{C240F3E4-936F-4473-91AB-ECEE09F7DEF0}" Platform="Linked"/>
+																<ActiveSource Name="MC_FT_Water_Land_01" ID="{9F94718C-D9BC-4729-9E54-1ACACB1506FB}" Platform="Linked"/>
 															</ActiveSourceList>
 														</Sound>
-														<Sound Name="MC_FT_Water_Land_02" ID="{FA1130EE-EFF3-4D6E-889A-19FE47290DA5}" ShortID="473554457">
+														<Sound Name="MC_FT_Water_Land_02" ID="{07DEDABD-5560-4ED1-A93B-9EFF9EE4BFDC}" ShortID="530822085">
 															<ReferenceList>
 																<Reference Name="Conversion">
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -5336,7 +5574,7 @@
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
-																<AudioFileSource Name="MC_FT_Water_Land_02" ID="{9FCD29B6-BC99-4DDC-A45E-2123FD313D91}">
+																<AudioFileSource Name="MC_FT_Water_Land_02" ID="{8E4D53EB-743B-45EE-B4A7-BC9C7358A3E3}">
 																	<Language>SFX</Language>
 																	<AudioFile>MC_FT_Water_Land_02.wav</AudioFile>
 																	<MediaIDList>
@@ -5346,10 +5584,10 @@
 															</ChildrenList>
 															<ObjectLists/>
 															<ActiveSourceList>
-																<ActiveSource Name="MC_FT_Water_Land_02" ID="{9FCD29B6-BC99-4DDC-A45E-2123FD313D91}" Platform="Linked"/>
+																<ActiveSource Name="MC_FT_Water_Land_02" ID="{8E4D53EB-743B-45EE-B4A7-BC9C7358A3E3}" Platform="Linked"/>
 															</ActiveSourceList>
 														</Sound>
-														<Sound Name="MC_FT_Water_Land_03" ID="{2C1CE75B-DC58-4268-8438-A36D6526B425}" ShortID="178390739">
+														<Sound Name="MC_FT_Water_Land_03" ID="{39E9DC02-6AB8-4997-8860-CB7B35BCFCE6}" ShortID="810994762">
 															<ReferenceList>
 																<Reference Name="Conversion">
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -5359,7 +5597,7 @@
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
-																<AudioFileSource Name="MC_FT_Water_Land_03" ID="{86061891-4E0A-437A-9ECF-D7783AAADE85}">
+																<AudioFileSource Name="MC_FT_Water_Land_03" ID="{363B17FD-F1A1-4FA8-B120-53A9199C60B4}">
 																	<Language>SFX</Language>
 																	<AudioFile>MC_FT_Water_Land_03.wav</AudioFile>
 																	<MediaIDList>
@@ -5369,10 +5607,10 @@
 															</ChildrenList>
 															<ObjectLists/>
 															<ActiveSourceList>
-																<ActiveSource Name="MC_FT_Water_Land_03" ID="{86061891-4E0A-437A-9ECF-D7783AAADE85}" Platform="Linked"/>
+																<ActiveSource Name="MC_FT_Water_Land_03" ID="{363B17FD-F1A1-4FA8-B120-53A9199C60B4}" Platform="Linked"/>
 															</ActiveSourceList>
 														</Sound>
-														<Sound Name="MC_FT_Water_Land_04" ID="{3718C019-006E-4B47-9862-6A7E4C145916}" ShortID="456451040">
+														<Sound Name="MC_FT_Water_Land_04" ID="{E4A3374D-B18D-4B4B-A591-9996BAED2941}" ShortID="367099701">
 															<ReferenceList>
 																<Reference Name="Conversion">
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -5382,7 +5620,7 @@
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
-																<AudioFileSource Name="MC_FT_Water_Land_04" ID="{0B894B7B-5F76-47B3-BFC0-8D0A1D45C84A}">
+																<AudioFileSource Name="MC_FT_Water_Land_04" ID="{8C98773A-341A-4772-A4B1-281B65366020}">
 																	<Language>SFX</Language>
 																	<AudioFile>MC_FT_Water_Land_04.wav</AudioFile>
 																	<MediaIDList>
@@ -5392,10 +5630,10 @@
 															</ChildrenList>
 															<ObjectLists/>
 															<ActiveSourceList>
-																<ActiveSource Name="MC_FT_Water_Land_04" ID="{0B894B7B-5F76-47B3-BFC0-8D0A1D45C84A}" Platform="Linked"/>
+																<ActiveSource Name="MC_FT_Water_Land_04" ID="{8C98773A-341A-4772-A4B1-281B65366020}" Platform="Linked"/>
 															</ActiveSourceList>
 														</Sound>
-														<Sound Name="MC_FT_Water_Land_05" ID="{EE77A11A-C238-4A30-8E13-554D88E02B52}" ShortID="812566409">
+														<Sound Name="MC_FT_Water_Land_05" ID="{B9E9E3D1-578F-44F1-8ED1-3F1E3E8E01CD}" ShortID="254847412">
 															<ReferenceList>
 																<Reference Name="Conversion">
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -5405,7 +5643,7 @@
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
-																<AudioFileSource Name="MC_FT_Water_Land_05" ID="{14AB772C-722B-4EC1-862C-E1D6327FE671}">
+																<AudioFileSource Name="MC_FT_Water_Land_05" ID="{9A3DAE05-9F73-455B-9DB6-4DFCF3E67BB7}">
 																	<Language>SFX</Language>
 																	<AudioFile>MC_FT_Water_Land_05.wav</AudioFile>
 																	<MediaIDList>
@@ -5415,7 +5653,7 @@
 															</ChildrenList>
 															<ObjectLists/>
 															<ActiveSourceList>
-																<ActiveSource Name="MC_FT_Water_Land_05" ID="{14AB772C-722B-4EC1-862C-E1D6327FE671}" Platform="Linked"/>
+																<ActiveSource Name="MC_FT_Water_Land_05" ID="{9A3DAE05-9F73-455B-9DB6-4DFCF3E67BB7}" Platform="Linked"/>
 															</ActiveSourceList>
 														</Sound>
 													</ChildrenList>
@@ -5617,7 +5855,7 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<Sound Name="MC_FT_Stone_Land_01" ID="{CB70C26A-500A-42AB-BB9C-1E781E8CC79D}" ShortID="51825752">
+														<Sound Name="MC_FT_Stone_Land_01" ID="{40939BBC-C14A-4489-BF17-6FDE7976BBB0}" ShortID="354595913">
 															<ReferenceList>
 																<Reference Name="Conversion">
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -5627,7 +5865,7 @@
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
-																<AudioFileSource Name="MC_FT_Stone_Land_01" ID="{EE33F921-34B0-47ED-9831-4A9956462933}">
+																<AudioFileSource Name="MC_FT_Stone_Land_01" ID="{60CAF1BD-6C67-4C51-9F14-5F1DE406C599}">
 																	<Language>SFX</Language>
 																	<AudioFile>MC_FT_Stone_Land_01.wav</AudioFile>
 																	<MediaIDList>
@@ -5637,10 +5875,10 @@
 															</ChildrenList>
 															<ObjectLists/>
 															<ActiveSourceList>
-																<ActiveSource Name="MC_FT_Stone_Land_01" ID="{EE33F921-34B0-47ED-9831-4A9956462933}" Platform="Linked"/>
+																<ActiveSource Name="MC_FT_Stone_Land_01" ID="{60CAF1BD-6C67-4C51-9F14-5F1DE406C599}" Platform="Linked"/>
 															</ActiveSourceList>
 														</Sound>
-														<Sound Name="MC_FT_Stone_Land_02" ID="{163C329B-DA46-4802-8B21-764EEA2CA7E6}" ShortID="323431034">
+														<Sound Name="MC_FT_Stone_Land_02" ID="{8A294CFA-2FF8-4719-884B-4F19772B2743}" ShortID="156289112">
 															<ReferenceList>
 																<Reference Name="Conversion">
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -5650,7 +5888,7 @@
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
-																<AudioFileSource Name="MC_FT_Stone_Land_02" ID="{500A05FD-C9D9-47E0-8087-652A6A2835CC}">
+																<AudioFileSource Name="MC_FT_Stone_Land_02" ID="{8A3E4E7B-7EDD-43E3-93C7-CE0F5C72DC6B}">
 																	<Language>SFX</Language>
 																	<AudioFile>MC_FT_Stone_Land_02.wav</AudioFile>
 																	<MediaIDList>
@@ -5660,10 +5898,10 @@
 															</ChildrenList>
 															<ObjectLists/>
 															<ActiveSourceList>
-																<ActiveSource Name="MC_FT_Stone_Land_02" ID="{500A05FD-C9D9-47E0-8087-652A6A2835CC}" Platform="Linked"/>
+																<ActiveSource Name="MC_FT_Stone_Land_02" ID="{8A3E4E7B-7EDD-43E3-93C7-CE0F5C72DC6B}" Platform="Linked"/>
 															</ActiveSourceList>
 														</Sound>
-														<Sound Name="MC_FT_Stone_Land_03" ID="{E4602B4F-C7AB-4937-8A5D-029380180804}" ShortID="339507836">
+														<Sound Name="MC_FT_Stone_Land_03" ID="{B88DC565-093D-457A-9F54-8F1DB8AB5800}" ShortID="679826851">
 															<ReferenceList>
 																<Reference Name="Conversion">
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -5673,7 +5911,7 @@
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
-																<AudioFileSource Name="MC_FT_Stone_Land_03" ID="{5E774422-1F23-4838-8AAD-1EE53835DA01}">
+																<AudioFileSource Name="MC_FT_Stone_Land_03" ID="{53BCBF49-CC97-46B2-8C8A-B1CDD9ACEDCD}">
 																	<Language>SFX</Language>
 																	<AudioFile>MC_FT_Stone_Land_03.wav</AudioFile>
 																	<MediaIDList>
@@ -5683,10 +5921,10 @@
 															</ChildrenList>
 															<ObjectLists/>
 															<ActiveSourceList>
-																<ActiveSource Name="MC_FT_Stone_Land_03" ID="{5E774422-1F23-4838-8AAD-1EE53835DA01}" Platform="Linked"/>
+																<ActiveSource Name="MC_FT_Stone_Land_03" ID="{53BCBF49-CC97-46B2-8C8A-B1CDD9ACEDCD}" Platform="Linked"/>
 															</ActiveSourceList>
 														</Sound>
-														<Sound Name="MC_FT_Stone_Land_04" ID="{53F6F978-1494-4BBE-B1D4-17F75F57A02C}" ShortID="694579965">
+														<Sound Name="MC_FT_Stone_Land_04" ID="{B44B0AA8-D391-46ED-9FBA-25B09038104A}" ShortID="1029937443">
 															<ReferenceList>
 																<Reference Name="Conversion">
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -5696,7 +5934,7 @@
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
-																<AudioFileSource Name="MC_FT_Stone_Land_04" ID="{396ABBDD-422C-44E2-B54C-28197CA2B0D3}">
+																<AudioFileSource Name="MC_FT_Stone_Land_04" ID="{30702DF7-23E1-44AD-BA22-37AF8C989570}">
 																	<Language>SFX</Language>
 																	<AudioFile>MC_FT_Stone_Land_04.wav</AudioFile>
 																	<MediaIDList>
@@ -5706,10 +5944,10 @@
 															</ChildrenList>
 															<ObjectLists/>
 															<ActiveSourceList>
-																<ActiveSource Name="MC_FT_Stone_Land_04" ID="{396ABBDD-422C-44E2-B54C-28197CA2B0D3}" Platform="Linked"/>
+																<ActiveSource Name="MC_FT_Stone_Land_04" ID="{30702DF7-23E1-44AD-BA22-37AF8C989570}" Platform="Linked"/>
 															</ActiveSourceList>
 														</Sound>
-														<Sound Name="MC_FT_Stone_Land_05" ID="{08B6384D-607A-465A-AE66-14CD36890DF7}" ShortID="460736746">
+														<Sound Name="MC_FT_Stone_Land_05" ID="{7E260FE2-B9FF-4E0A-B1A9-F24D4B870139}" ShortID="124220022">
 															<ReferenceList>
 																<Reference Name="Conversion">
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -5719,7 +5957,7 @@
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
-																<AudioFileSource Name="MC_FT_Stone_Land_05" ID="{3A8CD8F1-374C-4394-B3B3-5225D3B66D53}">
+																<AudioFileSource Name="MC_FT_Stone_Land_05" ID="{61B4FE42-07D1-494D-9242-F6AE3E58F5BF}">
 																	<Language>SFX</Language>
 																	<AudioFile>MC_FT_Stone_Land_05.wav</AudioFile>
 																	<MediaIDList>
@@ -5729,7 +5967,7 @@
 															</ChildrenList>
 															<ObjectLists/>
 															<ActiveSourceList>
-																<ActiveSource Name="MC_FT_Stone_Land_05" ID="{3A8CD8F1-374C-4394-B3B3-5225D3B66D53}" Platform="Linked"/>
+																<ActiveSource Name="MC_FT_Stone_Land_05" ID="{61B4FE42-07D1-494D-9242-F6AE3E58F5BF}" Platform="Linked"/>
 															</ActiveSourceList>
 														</Sound>
 													</ChildrenList>
@@ -5774,7 +6012,7 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<Sound Name="MC_FT_Dirt_Land_01" ID="{E1935009-B821-4193-B153-17FE8D987C05}" ShortID="269247095">
+														<Sound Name="MC_FT_Dirt_Land_01" ID="{AA68AA29-EFD3-4C40-96D1-3927026FAA6D}" ShortID="873983893">
 															<ReferenceList>
 																<Reference Name="Conversion">
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -5784,7 +6022,7 @@
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
-																<AudioFileSource Name="MC_FT_Dirt_Land_01" ID="{71313B4E-92D6-411B-9D94-D1CC45A7EB53}">
+																<AudioFileSource Name="MC_FT_Dirt_Land_01" ID="{13F0549A-2A98-4191-893F-BD3C04F9E40F}">
 																	<Language>SFX</Language>
 																	<AudioFile>MC_FT_Dirt_Land_01.wav</AudioFile>
 																	<MediaIDList>
@@ -5794,10 +6032,10 @@
 															</ChildrenList>
 															<ObjectLists/>
 															<ActiveSourceList>
-																<ActiveSource Name="MC_FT_Dirt_Land_01" ID="{71313B4E-92D6-411B-9D94-D1CC45A7EB53}" Platform="Linked"/>
+																<ActiveSource Name="MC_FT_Dirt_Land_01" ID="{13F0549A-2A98-4191-893F-BD3C04F9E40F}" Platform="Linked"/>
 															</ActiveSourceList>
 														</Sound>
-														<Sound Name="MC_FT_Dirt_Land_02" ID="{A6F9D43A-3BBF-42F7-9435-D99CFB08D8F4}" ShortID="753753598">
+														<Sound Name="MC_FT_Dirt_Land_02" ID="{9521C172-E5E4-4C01-947D-CCF30F7812EF}" ShortID="1014316763">
 															<ReferenceList>
 																<Reference Name="Conversion">
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -5807,7 +6045,7 @@
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
-																<AudioFileSource Name="MC_FT_Dirt_Land_02" ID="{F57BE4F8-20BB-4E10-B693-1D0C703A65B4}">
+																<AudioFileSource Name="MC_FT_Dirt_Land_02" ID="{97446291-4C05-434E-A6E9-69BD2DCF8C57}">
 																	<Language>SFX</Language>
 																	<AudioFile>MC_FT_Dirt_Land_02.wav</AudioFile>
 																	<MediaIDList>
@@ -5817,10 +6055,10 @@
 															</ChildrenList>
 															<ObjectLists/>
 															<ActiveSourceList>
-																<ActiveSource Name="MC_FT_Dirt_Land_02" ID="{F57BE4F8-20BB-4E10-B693-1D0C703A65B4}" Platform="Linked"/>
+																<ActiveSource Name="MC_FT_Dirt_Land_02" ID="{97446291-4C05-434E-A6E9-69BD2DCF8C57}" Platform="Linked"/>
 															</ActiveSourceList>
 														</Sound>
-														<Sound Name="MC_FT_Dirt_Land_03" ID="{A5592A0C-81C5-40E6-818D-3597723987A2}" ShortID="883777732">
+														<Sound Name="MC_FT_Dirt_Land_03" ID="{0F42FA4F-690B-484E-BC47-F0B45C20D364}" ShortID="616694642">
 															<ReferenceList>
 																<Reference Name="Conversion">
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -5830,7 +6068,7 @@
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
-																<AudioFileSource Name="MC_FT_Dirt_Land_03" ID="{A394373A-C05D-4D51-89A1-421B5BA5BBD7}">
+																<AudioFileSource Name="MC_FT_Dirt_Land_03" ID="{6B981473-AF90-4769-9F8C-A1890A1F5DF9}">
 																	<Language>SFX</Language>
 																	<AudioFile>MC_FT_Dirt_Land_03.wav</AudioFile>
 																	<MediaIDList>
@@ -5840,10 +6078,10 @@
 															</ChildrenList>
 															<ObjectLists/>
 															<ActiveSourceList>
-																<ActiveSource Name="MC_FT_Dirt_Land_03" ID="{A394373A-C05D-4D51-89A1-421B5BA5BBD7}" Platform="Linked"/>
+																<ActiveSource Name="MC_FT_Dirt_Land_03" ID="{6B981473-AF90-4769-9F8C-A1890A1F5DF9}" Platform="Linked"/>
 															</ActiveSourceList>
 														</Sound>
-														<Sound Name="MC_FT_Dirt_Land_04" ID="{2753806A-A47A-404E-8F71-4959CDC56B21}" ShortID="993236630">
+														<Sound Name="MC_FT_Dirt_Land_04" ID="{2D21C1FB-D6F9-478C-8E4C-00B90A620C3D}" ShortID="603200077">
 															<ReferenceList>
 																<Reference Name="Conversion">
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -5853,7 +6091,7 @@
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
-																<AudioFileSource Name="MC_FT_Dirt_Land_04" ID="{7783422A-12C6-45E9-9622-305F2567DA3E}">
+																<AudioFileSource Name="MC_FT_Dirt_Land_04" ID="{86BFA592-3729-4CD5-B753-771DDA6F888A}">
 																	<Language>SFX</Language>
 																	<AudioFile>MC_FT_Dirt_Land_04.wav</AudioFile>
 																	<MediaIDList>
@@ -5863,10 +6101,10 @@
 															</ChildrenList>
 															<ObjectLists/>
 															<ActiveSourceList>
-																<ActiveSource Name="MC_FT_Dirt_Land_04" ID="{7783422A-12C6-45E9-9622-305F2567DA3E}" Platform="Linked"/>
+																<ActiveSource Name="MC_FT_Dirt_Land_04" ID="{86BFA592-3729-4CD5-B753-771DDA6F888A}" Platform="Linked"/>
 															</ActiveSourceList>
 														</Sound>
-														<Sound Name="MC_FT_Dirt_Land_05" ID="{4CD7D08B-E3E3-4D12-8642-3DDA7831CD0E}" ShortID="686324798">
+														<Sound Name="MC_FT_Dirt_Land_05" ID="{F77DA646-C8AD-4DD8-8BF9-323BB12D1C91}" ShortID="710136686">
 															<ReferenceList>
 																<Reference Name="Conversion">
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -5876,7 +6114,7 @@
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
-																<AudioFileSource Name="MC_FT_Dirt_Land_05" ID="{F829877A-CE5B-4A50-8CCD-AE065D6C6DE2}">
+																<AudioFileSource Name="MC_FT_Dirt_Land_05" ID="{52701C48-41D5-4C48-BADD-A50E567EEADE}">
 																	<Language>SFX</Language>
 																	<AudioFile>MC_FT_Dirt_Land_05.wav</AudioFile>
 																	<MediaIDList>
@@ -5886,7 +6124,7 @@
 															</ChildrenList>
 															<ObjectLists/>
 															<ActiveSourceList>
-																<ActiveSource Name="MC_FT_Dirt_Land_05" ID="{F829877A-CE5B-4A50-8CCD-AE065D6C6DE2}" Platform="Linked"/>
+																<ActiveSource Name="MC_FT_Dirt_Land_05" ID="{52701C48-41D5-4C48-BADD-A50E567EEADE}" Platform="Linked"/>
 															</ActiveSourceList>
 														</Sound>
 													</ChildrenList>
@@ -8140,6 +8378,52 @@
 									</ChildrenList>
 									<ObjectLists/>
 								</RandomSequenceContainer>
+								<Sound Name="SFX_SlowMoBackEffect" ID="{66E152AF-76D0-4A36-8DC3-D949154F55EA}" ShortID="198764641">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="SFX_SlowMoBackEffect" ID="{559497C3-B0E8-44F7-9F93-4A07A5AB43E5}">
+											<Language>SFX</Language>
+											<AudioFile>SFX_SlowMoBackEffect.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="130344194"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="SFX_SlowMoBackEffect" ID="{559497C3-B0E8-44F7-9F93-4A07A5AB43E5}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="SFX_SlowMoEffect" ID="{178B97D6-F58A-4210-9068-63FE556F5B9D}" ShortID="397668444">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="SFX_SlowMoEffect" ID="{A2D4E305-1A35-46AC-9D22-9E29D0E9E6B8}">
+											<Language>SFX</Language>
+											<AudioFile>SFX_SlowMoEffect_V2.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="265292219"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="SFX_SlowMoEffect" ID="{A2D4E305-1A35-46AC-9D22-9E29D0E9E6B8}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
 							</ChildrenList>
 							<ObjectLists/>
 						</ActorMixer>
