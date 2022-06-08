@@ -16,7 +16,7 @@
     "Id": "3043908648",
     "GUID": "{B56E5C28-5C28-1C28-2828-282828282828}",
     "Language": "SFX",
-    "Hash": "1851739136",
+    "Hash": "2073614535",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\SB_9F29A3D74B2F4C43A096ABB70E88BAB4",
     "ShortName": "SB_9F29A3D74B2F4C43A096ABB70E88BAB4",
     "Path": "SB_9F29A3D74B2F4C43A096ABB70E88BAB4.bnk",
@@ -27,7 +27,19 @@
       "ObjectPath": "\\Events\\Default Work Unit\\Jules\\SFX\\SFX_Wind",
       "GUID": "{9F29A3D7-4B2F-4C43-A096-ABB70E88BAB4}",
       "DurationType": "Infinite",
-      "ReferencedStreamedFiles": [
+      "ExcludedMemoryFiles": [
+       {
+        "Id": "46034468",
+        "Language": "SFX",
+        "ShortName": "SFX_Wind_Medium_RFX_05.wav",
+        "Path": "SFX\\SFX_Wind_Medium_RFX_05_10C4C929.wem"
+       },
+       {
+        "Id": "235036861",
+        "Language": "SFX",
+        "ShortName": "SFX_Wind_Soft_RFX_02.wav",
+        "Path": "SFX\\SFX_Wind_Soft_RFX_02_10C4C929.wem"
+       },
        {
         "Id": "249120019",
         "Language": "SFX",
@@ -41,56 +53,6 @@
         "Path": "SFX\\SFX_Wind_Strong_LP_D79FB2B7.wem"
        },
        {
-        "Id": "832249830",
-        "Language": "SFX",
-        "ShortName": "SFX_Wind_Medium_LP.wav",
-        "Path": "SFX\\SFX_Wind_Medium_LP_D79FB2B7.wem"
-       }
-      ],
-      "ExcludedMemoryFiles": [
-       {
-        "Id": "33755882",
-        "Language": "SFX",
-        "ShortName": "SFX_Wind_Strong_RFX_08.wav",
-        "Path": "SFX\\SFX_Wind_Strong_RFX_08_10C4C929.wem"
-       },
-       {
-        "Id": "39471772",
-        "Language": "SFX",
-        "ShortName": "SFX_Wind_Strong_RFX_01.wav",
-        "Path": "SFX\\SFX_Wind_Strong_RFX_01_10C4C929.wem"
-       },
-       {
-        "Id": "46034468",
-        "Language": "SFX",
-        "ShortName": "SFX_Wind_Medium_RFX_05.wav",
-        "Path": "SFX\\SFX_Wind_Medium_RFX_05_10C4C929.wem"
-       },
-       {
-        "Id": "185536631",
-        "Language": "SFX",
-        "ShortName": "SFX_Wind_Strong_RFX_03.wav",
-        "Path": "SFX\\SFX_Wind_Strong_RFX_03_10C4C929.wem"
-       },
-       {
-        "Id": "235036861",
-        "Language": "SFX",
-        "ShortName": "SFX_Wind_Soft_RFX_02.wav",
-        "Path": "SFX\\SFX_Wind_Soft_RFX_02_10C4C929.wem"
-       },
-       {
-        "Id": "364952449",
-        "Language": "SFX",
-        "ShortName": "SFX_Wind_Strong_RFX_10.wav",
-        "Path": "SFX\\SFX_Wind_Strong_RFX_10_10C4C929.wem"
-       },
-       {
-        "Id": "376702739",
-        "Language": "SFX",
-        "ShortName": "SFX_Wind_Strong_RFX_06.wav",
-        "Path": "SFX\\SFX_Wind_Strong_RFX_06_10C4C929.wem"
-       },
-       {
         "Id": "435306876",
         "Language": "SFX",
         "ShortName": "SFX_Wind_Soft_RFX_03.wav",
@@ -101,12 +63,6 @@
         "Language": "SFX",
         "ShortName": "SFX_Wind_Medium_RFX_04.wav",
         "Path": "SFX\\SFX_Wind_Medium_RFX_04_10C4C929.wem"
-       },
-       {
-        "Id": "508484113",
-        "Language": "SFX",
-        "ShortName": "SFX_Wind_Strong_RFX_07.wav",
-        "Path": "SFX\\SFX_Wind_Strong_RFX_07_10C4C929.wem"
        },
        {
         "Id": "529209859",
@@ -127,28 +83,10 @@
         "Path": "SFX\\SFX_Wind_Medium_RFX_03_10C4C929.wem"
        },
        {
-        "Id": "702400513",
-        "Language": "SFX",
-        "ShortName": "SFX_Wind_Strong_RFX_04.wav",
-        "Path": "SFX\\SFX_Wind_Strong_RFX_04_10C4C929.wem"
-       },
-       {
-        "Id": "718900011",
-        "Language": "SFX",
-        "ShortName": "SFX_Wind_Strong_RFX_02.wav",
-        "Path": "SFX\\SFX_Wind_Strong_RFX_02_10C4C929.wem"
-       },
-       {
         "Id": "757726340",
         "Language": "SFX",
         "ShortName": "SFX_Wind_Medium_RFX_02.wav",
         "Path": "SFX\\SFX_Wind_Medium_RFX_02_10C4C929.wem"
-       },
-       {
-        "Id": "833676991",
-        "Language": "SFX",
-        "ShortName": "SFX_Wind_Strong_RFX_05.wav",
-        "Path": "SFX\\SFX_Wind_Strong_RFX_05_10C4C929.wem"
        },
        {
         "Id": "884564194",
@@ -169,12 +107,6 @@
         "Path": "SFX\\SFX_Wind_Medium_RFX_01_10C4C929.wem"
        },
        {
-        "Id": "938078867",
-        "Language": "SFX",
-        "ShortName": "SFX_Wind_Strong_RFX_09.wav",
-        "Path": "SFX\\SFX_Wind_Strong_RFX_09_10C4C929.wem"
-       },
-       {
         "Id": "1013501366",
         "Language": "SFX",
         "ShortName": "SFX_Wind_Medium_RFX_06.wav",
@@ -185,10 +117,10 @@
     ],
     "GameParameters": [
      {
-      "Id": "2653406601",
-      "Name": "RTPC_PlayerSpeed",
-      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Jules\\RTPC_PlayerSpeed",
-      "GUID": "{E81B3401-03B0-4FBF-A942-900B5FB3AA30}"
+      "Id": "1367533990",
+      "Name": "RTPC_WindSpeed",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Jules\\RTPC_WindSpeed",
+      "GUID": "{AEFD0C2B-4F71-404D-BB40-2112CF08A532}"
      }
     ]
    }

@@ -16,7 +16,7 @@
     "Id": "1115576461",
     "GUID": "{427E588D-588D-188D-8D8D-8D8D8D8D8D8D}",
     "Language": "SFX",
-    "Hash": "3848553514",
+    "Hash": "2561667593",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\SB_8E7E8E1FBC0549219475B21AC48B0931",
     "ShortName": "SB_8E7E8E1FBC0549219475B21AC48B0931",
     "Path": "SB_8E7E8E1FBC0549219475B21AC48B0931.bnk",
@@ -1355,6 +1355,14 @@
         ]
        }
       ]
+     }
+    ],
+    "GameParameters": [
+     {
+      "Id": "2653406601",
+      "Name": "RTPC_PlayerSpeed",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Jules\\RTPC_PlayerSpeed",
+      "GUID": "{E81B3401-03B0-4FBF-A942-900B5FB3AA30}"
      }
     ],
     "SwitchGroups": [
