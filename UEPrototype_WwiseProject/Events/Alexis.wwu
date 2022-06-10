@@ -58,16 +58,6 @@
 										</Reference>
 									</ReferenceList>
 								</Action>
-								<Action Name="" ID="{18B2760E-5BD0-47B8-8B42-6B9B5E9D055B}" ShortID="605401754">
-									<PropertyList>
-										<Property Name="FadeTime" Type="Real64" Value="0.5"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="SFX_Glide_Magic_LP" ID="{7D362448-02D9-469B-95B8-4882F3F4AAF3}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
 							</ChildrenList>
 						</Event>
 						<Event Name="SFX_Freefall_Stop" ID="{413B43DB-F8ED-42C7-84A7-FCFA1FB5D0E3}">
@@ -80,17 +70,6 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="MC_FOL_FreeFall_LP" ID="{83440EC0-3E5F-4A4F-BE99-D13BDAECBF93}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-								<Action Name="" ID="{DC9E608F-C04D-4F96-8409-50348BDF5283}" ShortID="475927201">
-									<PropertyList>
-										<Property Name="ActionType" Type="int16" Value="2"/>
-										<Property Name="FadeTime" Type="Real64" Value="0.3"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="SFX_Glide_Magic_LP" ID="{7D362448-02D9-469B-95B8-4882F3F4AAF3}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
