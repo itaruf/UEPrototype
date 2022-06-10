@@ -8046,6 +8046,13 @@
 											<ObjectLists/>
 										</RandomSequenceContainer>
 										<RandomSequenceContainer Name="MC_FT_WallJump_MagicLayer" ID="{5F0430D8-4478-41E9-8C16-C7BE4F183CCD}" ShortID="210793967">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-3</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -8054,6 +8061,100 @@
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 												</Reference>
 											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="MC_FT_WallJump_MagicLayer_01" ID="{F2FFF239-DF42-4369-92C8-F314CB41B7C6}" ShortID="582605999">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="MC_FT_WallJump_MagicLayer_01" ID="{C5E6B2B0-E9A4-40B4-8BAC-55AC83919BCD}">
+															<Language>SFX</Language>
+															<AudioFile>MC_FT_WallJump_MagicLayer_01.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="296492558"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="MC_FT_WallJump_MagicLayer_01" ID="{C5E6B2B0-E9A4-40B4-8BAC-55AC83919BCD}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="MC_FT_WallJump_MagicLayer_02" ID="{5D829647-A1A8-48D8-A2F1-22B73A99553B}" ShortID="682125200">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="MC_FT_WallJump_MagicLayer_02" ID="{0D6978B8-22AB-453E-821A-DF3B1952BEA6}">
+															<Language>SFX</Language>
+															<AudioFile>MC_FT_WallJump_MagicLayer_02.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="527072885"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="MC_FT_WallJump_MagicLayer_02" ID="{0D6978B8-22AB-453E-821A-DF3B1952BEA6}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="MC_FT_WallJump_MagicLayer_03" ID="{E2B430C5-2542-4C1E-9309-7AEA7E90E3FF}" ShortID="585393094">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="MC_FT_WallJump_MagicLayer_03" ID="{A540CA1D-2042-429D-B84F-230DD64340B2}">
+															<Language>SFX</Language>
+															<AudioFile>MC_FT_WallJump_MagicLayer_03.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="190266913"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="MC_FT_WallJump_MagicLayer_03" ID="{A540CA1D-2042-429D-B84F-230DD64340B2}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="MC_FT_WallJump_MagicLayer_04" ID="{86DB8044-EEEF-4EB0-A05A-9ECBE9A590C9}" ShortID="537554156">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="MC_FT_WallJump_MagicLayer_04" ID="{F1A58548-E9C9-4498-B149-B952869D6369}">
+															<Language>SFX</Language>
+															<AudioFile>MC_FT_WallJump_MagicLayer_04.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="560282434"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="MC_FT_WallJump_MagicLayer_04" ID="{F1A58548-E9C9-4498-B149-B952869D6369}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
 											<ObjectLists/>
 										</RandomSequenceContainer>
 									</ChildrenList>

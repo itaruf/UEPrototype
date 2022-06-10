@@ -150,6 +150,24 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="MC_FT_WallJump" ID="{27C1EB19-6DDA-4365-A9D0-4F95E986689B}">
+							<ChildrenList>
+								<Action Name="" ID="{037D31C9-4075-463E-BB0E-649C3C777D27}" ShortID="669856200">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MC_FT_Jump_GroundSwitch" ID="{4D3567D7-4DE4-4321-884C-4016EBA8976C}" WorkUnitID="{A90EA6B0-FD8B-46D3-9B35-71A92B2A6346}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{E19568C4-8331-4306-9EE1-9F547F0DF7E2}" ShortID="488038152">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MC_FT_WallJump_MagicLayer" ID="{5F0430D8-4478-41E9-8C16-C7BE4F183CCD}" WorkUnitID="{A90EA6B0-FD8B-46D3-9B35-71A92B2A6346}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="SFX" ID="{3A2D3504-E639-421F-BD2F-2DBEB80A0D4F}" ShortID="620179445">
@@ -193,6 +211,17 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="SFX_SlowMoBackEffect" ID="{66E152AF-76D0-4A36-8DC3-D949154F55EA}" WorkUnitID="{A90EA6B0-FD8B-46D3-9B35-71A92B2A6346}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="SFX_WallJumpMagic" ID="{BC9F9EFA-C4AE-48E3-99B2-0C028EC8550F}">
+							<ChildrenList>
+								<Action Name="" ID="{AAE0D30D-0181-433E-8B16-CFD9AE0CE841}" ShortID="763870276">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MC_FT_WallJump_MagicLayer" ID="{5F0430D8-4478-41E9-8C16-C7BE4F183CCD}" WorkUnitID="{A90EA6B0-FD8B-46D3-9B35-71A92B2A6346}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
