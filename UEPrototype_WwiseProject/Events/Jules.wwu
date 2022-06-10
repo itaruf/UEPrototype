@@ -27,8 +27,28 @@
 								</Action>
 							</ChildrenList>
 						</Event>
-						<Event Name="SP_WaterFallMed" ID="{44FD23A1-F917-4E26-8EF9-34E98C653B2B}"/>
-						<Event Name="SP_WaterFallBig" ID="{49FCB4E9-F4D9-4E9C-A9D9-B1B632F3F221}"/>
+						<Event Name="SP_WaterFallMed" ID="{44FD23A1-F917-4E26-8EF9-34E98C653B2B}">
+							<ChildrenList>
+								<Action Name="" ID="{F2B0222C-4589-49AF-A166-149F635B313F}" ShortID="322327946">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="AMB_SP_WaterFallMed_Blend" ID="{9BDACA8E-0A1A-476E-B000-F3ACE5F478FC}" WorkUnitID="{A90EA6B0-FD8B-46D3-9B35-71A92B2A6346}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="SP_WaterFallBig" ID="{49FCB4E9-F4D9-4E9C-A9D9-B1B632F3F221}">
+							<ChildrenList>
+								<Action Name="" ID="{224AC3D4-4E42-49B6-B947-5CE374252EC5}" ShortID="296821411">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="AMB_SP_WaterFallBig_Blend" ID="{98A63FC9-7411-4144-A499-F119109E5059}" WorkUnitID="{A90EA6B0-FD8B-46D3-9B35-71A92B2A6346}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="MC" ID="{0FAE6D46-D663-41A9-8E75-E2ACF42A16B3}" ShortID="517842377">
