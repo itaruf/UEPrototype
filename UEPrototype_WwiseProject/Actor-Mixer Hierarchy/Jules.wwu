@@ -163,7 +163,7 @@
 																<RTPC Name="" ID="{8BED14FD-ED41-47B5-974E-1CEDDB3BB15A}" ShortID="180091462">
 																	<ReferenceList>
 																		<Reference Name="ControlInput">
-																			<ObjectRef Name="RTPC_Distance" ID="{3EBDAF7B-F3C9-4BBD-B245-745987FDAE47}" WorkUnitID="{B33E0AE4-683A-4118-98EA-BBEFCBF7E5A5}"/>
+																			<ObjectRef Name="RTPC_WaterFallSmallDistance" ID="{3EBDAF7B-F3C9-4BBD-B245-745987FDAE47}" WorkUnitID="{B33E0AE4-683A-4118-98EA-BBEFCBF7E5A5}"/>
 																		</Reference>
 																	</ReferenceList>
 																	<Curve Name="" ID="{A84227D0-2EF8-469C-BD7C-9B9CE1BF2E8A}">
@@ -195,7 +195,7 @@
 													</PropertyList>
 													<ReferenceList>
 														<Reference Name="LayerCrossFadeControlInput">
-															<ObjectRef Name="RTPC_Distance" ID="{3EBDAF7B-F3C9-4BBD-B245-745987FDAE47}" WorkUnitID="{B33E0AE4-683A-4118-98EA-BBEFCBF7E5A5}"/>
+															<ObjectRef Name="RTPC_WaterFallSmallDistance" ID="{3EBDAF7B-F3C9-4BBD-B245-745987FDAE47}" WorkUnitID="{B33E0AE4-683A-4118-98EA-BBEFCBF7E5A5}"/>
 														</Reference>
 													</ReferenceList>
 													<BlendTrackAssocList>
@@ -393,7 +393,7 @@
 																<RTPC Name="" ID="{6AB89C18-AD8E-418D-A249-A8652B096F8C}" ShortID="984446159">
 																	<ReferenceList>
 																		<Reference Name="ControlInput">
-																			<ObjectRef Name="RTPC_Distance" ID="{3EBDAF7B-F3C9-4BBD-B245-745987FDAE47}" WorkUnitID="{B33E0AE4-683A-4118-98EA-BBEFCBF7E5A5}"/>
+																			<ObjectRef Name="RTPC_WaterFallSmallDistance" ID="{3EBDAF7B-F3C9-4BBD-B245-745987FDAE47}" WorkUnitID="{B33E0AE4-683A-4118-98EA-BBEFCBF7E5A5}"/>
 																		</Reference>
 																	</ReferenceList>
 																	<Curve Name="" ID="{53E13BC9-4CBE-4BF1-9E9F-EC34D25A7C8F}">
@@ -420,7 +420,7 @@
 													</PropertyList>
 													<ReferenceList>
 														<Reference Name="LayerCrossFadeControlInput">
-															<ObjectRef Name="RTPC_Distance" ID="{3EBDAF7B-F3C9-4BBD-B245-745987FDAE47}" WorkUnitID="{B33E0AE4-683A-4118-98EA-BBEFCBF7E5A5}"/>
+															<ObjectRef Name="RTPC_WaterFallSmallDistance" ID="{3EBDAF7B-F3C9-4BBD-B245-745987FDAE47}" WorkUnitID="{B33E0AE4-683A-4118-98EA-BBEFCBF7E5A5}"/>
 														</Reference>
 													</ReferenceList>
 													<BlendTrackAssocList>
@@ -444,7 +444,7 @@
 																<RTPC Name="" ID="{1BA83D5C-0FEE-4658-92B0-051DDA3F9819}" ShortID="554290704">
 																	<ReferenceList>
 																		<Reference Name="ControlInput">
-																			<ObjectRef Name="RTPC_Distance" ID="{3EBDAF7B-F3C9-4BBD-B245-745987FDAE47}" WorkUnitID="{B33E0AE4-683A-4118-98EA-BBEFCBF7E5A5}"/>
+																			<ObjectRef Name="RTPC_WaterFallSmallDistance" ID="{3EBDAF7B-F3C9-4BBD-B245-745987FDAE47}" WorkUnitID="{B33E0AE4-683A-4118-98EA-BBEFCBF7E5A5}"/>
 																		</Reference>
 																	</ReferenceList>
 																	<Curve Name="" ID="{B83E2671-0683-4844-9C31-1F9A359B27A5}">
@@ -477,7 +477,7 @@
 													</PropertyList>
 													<ReferenceList>
 														<Reference Name="LayerCrossFadeControlInput">
-															<ObjectRef Name="RTPC_Distance" ID="{3EBDAF7B-F3C9-4BBD-B245-745987FDAE47}" WorkUnitID="{B33E0AE4-683A-4118-98EA-BBEFCBF7E5A5}"/>
+															<ObjectRef Name="RTPC_WaterFallSmallDistance" ID="{3EBDAF7B-F3C9-4BBD-B245-745987FDAE47}" WorkUnitID="{B33E0AE4-683A-4118-98EA-BBEFCBF7E5A5}"/>
 														</Reference>
 													</ReferenceList>
 													<BlendTrackAssocList>
@@ -500,7 +500,7 @@
 																<RTPC Name="" ID="{822FBF93-22EC-4AA8-A4CB-9227A4A38588}" ShortID="439834593">
 																	<ReferenceList>
 																		<Reference Name="ControlInput">
-																			<ObjectRef Name="RTPC_Distance" ID="{3EBDAF7B-F3C9-4BBD-B245-745987FDAE47}" WorkUnitID="{B33E0AE4-683A-4118-98EA-BBEFCBF7E5A5}"/>
+																			<ObjectRef Name="RTPC_WaterFallSmallDistance" ID="{3EBDAF7B-F3C9-4BBD-B245-745987FDAE47}" WorkUnitID="{B33E0AE4-683A-4118-98EA-BBEFCBF7E5A5}"/>
 																		</Reference>
 																	</ReferenceList>
 																	<Curve Name="" ID="{6DED5CE0-89F2-4E3C-822E-134262E529AC}">
@@ -526,7 +526,7 @@
 													</PropertyList>
 													<ReferenceList>
 														<Reference Name="LayerCrossFadeControlInput">
-															<ObjectRef Name="RTPC_Distance" ID="{3EBDAF7B-F3C9-4BBD-B245-745987FDAE47}" WorkUnitID="{B33E0AE4-683A-4118-98EA-BBEFCBF7E5A5}"/>
+															<ObjectRef Name="RTPC_WaterFallSmallDistance" ID="{3EBDAF7B-F3C9-4BBD-B245-745987FDAE47}" WorkUnitID="{B33E0AE4-683A-4118-98EA-BBEFCBF7E5A5}"/>
 														</Reference>
 													</ReferenceList>
 													<BlendTrackAssocList>
@@ -551,7 +551,7 @@
 																<RTPC Name="" ID="{7EF10AA1-2CC5-4C58-8A45-F2B6737B7F3B}" ShortID="890312290">
 																	<ReferenceList>
 																		<Reference Name="ControlInput">
-																			<ObjectRef Name="RTPC_Distance" ID="{3EBDAF7B-F3C9-4BBD-B245-745987FDAE47}" WorkUnitID="{B33E0AE4-683A-4118-98EA-BBEFCBF7E5A5}"/>
+																			<ObjectRef Name="RTPC_WaterFallSmallDistance" ID="{3EBDAF7B-F3C9-4BBD-B245-745987FDAE47}" WorkUnitID="{B33E0AE4-683A-4118-98EA-BBEFCBF7E5A5}"/>
 																		</Reference>
 																	</ReferenceList>
 																	<Curve Name="" ID="{FD4F74DD-3AED-44C8-850C-C320A7CA55E5}">
@@ -583,7 +583,7 @@
 													</PropertyList>
 													<ReferenceList>
 														<Reference Name="LayerCrossFadeControlInput">
-															<ObjectRef Name="RTPC_Distance" ID="{3EBDAF7B-F3C9-4BBD-B245-745987FDAE47}" WorkUnitID="{B33E0AE4-683A-4118-98EA-BBEFCBF7E5A5}"/>
+															<ObjectRef Name="RTPC_WaterFallSmallDistance" ID="{3EBDAF7B-F3C9-4BBD-B245-745987FDAE47}" WorkUnitID="{B33E0AE4-683A-4118-98EA-BBEFCBF7E5A5}"/>
 														</Reference>
 													</ReferenceList>
 													<BlendTrackAssocList>
@@ -658,6 +658,16 @@
 																<Value>True</Value>
 															</ValueList>
 														</Property>
+														<Property Name="Lowpass" Type="int16">
+															<ValueList>
+																<Value>21</Value>
+															</ValueList>
+														</Property>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-6</Value>
+															</ValueList>
+														</Property>
 													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Conversion">
@@ -715,7 +725,7 @@
 											</ChildrenList>
 											<ObjectLists/>
 											<BlendTrackList>
-												<BlendTrack Name="WaterFallSmall_Close" ID="{F53204AC-4B6D-447B-82DF-E5ED7B5A18F6}" ShortID="65787052">
+												<BlendTrack Name="WaterFallMed_Close" ID="{F53204AC-4B6D-447B-82DF-E5ED7B5A18F6}" ShortID="65787052">
 													<PropertyList>
 														<Property Name="EnableCrossFading" Type="bool" Value="True"/>
 														<Property Name="Volume" Type="Real64">
@@ -723,7 +733,7 @@
 																<RTPC Name="" ID="{B82154B0-8F8B-4906-9ADD-2B337913B75F}" ShortID="467412569">
 																	<ReferenceList>
 																		<Reference Name="ControlInput">
-																			<ObjectRef Name="RTPC_Distance" ID="{3EBDAF7B-F3C9-4BBD-B245-745987FDAE47}" WorkUnitID="{B33E0AE4-683A-4118-98EA-BBEFCBF7E5A5}"/>
+																			<ObjectRef Name="RTPC_WaterFallMedDistance" ID="{30BBCABF-1EE6-465D-8559-10DB16449DC6}" WorkUnitID="{B33E0AE4-683A-4118-98EA-BBEFCBF7E5A5}"/>
 																		</Reference>
 																	</ReferenceList>
 																	<Curve Name="" ID="{F135A585-363C-4843-99AD-E6CE746945E9}">
@@ -738,7 +748,7 @@
 																				<SegmentShape>SCurve</SegmentShape>
 																			</Point>
 																			<Point>
-																				<XPos>15000</XPos>
+																				<XPos>20000</XPos>
 																				<YPos>-200</YPos>
 																				<Flags>37</Flags>
 																			</Point>
@@ -750,7 +760,7 @@
 													</PropertyList>
 													<ReferenceList>
 														<Reference Name="LayerCrossFadeControlInput">
-															<ObjectRef Name="RTPC_Distance" ID="{3EBDAF7B-F3C9-4BBD-B245-745987FDAE47}" WorkUnitID="{B33E0AE4-683A-4118-98EA-BBEFCBF7E5A5}"/>
+															<ObjectRef Name="RTPC_WaterFallMedDistance" ID="{30BBCABF-1EE6-465D-8559-10DB16449DC6}" WorkUnitID="{B33E0AE4-683A-4118-98EA-BBEFCBF7E5A5}"/>
 														</Reference>
 													</ReferenceList>
 													<BlendTrackAssocList>
@@ -758,14 +768,15 @@
 															<ItemRef Name="AMB_SP_WaterFallMedClose_LP" ID="{534A78F2-37A7-4F33-B7D5-E81AEDE8B692}"/>
 															<CrossfadingInfo>
 																<LeftEdgePos>0</LeftEdgePos>
-																<LeftFadingMode>Automatic</LeftFadingMode>
-																<RightEdgePos>15000</RightEdgePos>
-																<RightFadingMode>Automatic</RightFadingMode>
+																<LeftFadingMode>None</LeftFadingMode>
+																<RightEdgePos>12500</RightEdgePos>
+																<RightFadingMode>Manual</RightFadingMode>
+																<RightFadingPos>5000</RightFadingPos>
 															</CrossfadingInfo>
 														</BlendTrackAssoc>
 													</BlendTrackAssocList>
 												</BlendTrack>
-												<BlendTrack Name="WaterFallSmall_Mid" ID="{DFC593E8-C8F9-4C98-8A3D-806A6BA2DE7A}" ShortID="153822704">
+												<BlendTrack Name="WaterFallMed_Mid" ID="{DFC593E8-C8F9-4C98-8A3D-806A6BA2DE7A}" ShortID="153822704">
 													<PropertyList>
 														<Property Name="EnableCrossFading" Type="bool" Value="True"/>
 														<Property Name="Volume" Type="Real64">
@@ -773,7 +784,7 @@
 																<RTPC Name="" ID="{E1DFC936-C02A-46C7-9C02-1AD25A4EC224}" ShortID="223719032">
 																	<ReferenceList>
 																		<Reference Name="ControlInput">
-																			<ObjectRef Name="RTPC_Distance" ID="{3EBDAF7B-F3C9-4BBD-B245-745987FDAE47}" WorkUnitID="{B33E0AE4-683A-4118-98EA-BBEFCBF7E5A5}"/>
+																			<ObjectRef Name="RTPC_WaterFallMedDistance" ID="{30BBCABF-1EE6-465D-8559-10DB16449DC6}" WorkUnitID="{B33E0AE4-683A-4118-98EA-BBEFCBF7E5A5}"/>
 																		</Reference>
 																	</ReferenceList>
 																	<Curve Name="" ID="{EDBD2DEF-DED8-455D-83FB-A2C1E2F8A965}">
@@ -783,18 +794,18 @@
 																		<PointList>
 																			<Point>
 																				<XPos>0</XPos>
-																				<YPos>-2.18289</YPos>
+																				<YPos>-4.0183</YPos>
 																				<Flags>5</Flags>
 																				<SegmentShape>SCurve</SegmentShape>
 																			</Point>
 																			<Point>
-																				<XPos>5000</XPos>
+																				<XPos>10000</XPos>
 																				<YPos>0</YPos>
 																				<Flags>0</Flags>
 																				<SegmentShape>SCurve</SegmentShape>
 																			</Point>
 																			<Point>
-																				<XPos>15000</XPos>
+																				<XPos>20000</XPos>
 																				<YPos>-200</YPos>
 																				<Flags>37</Flags>
 																			</Point>
@@ -806,7 +817,7 @@
 													</PropertyList>
 													<ReferenceList>
 														<Reference Name="LayerCrossFadeControlInput">
-															<ObjectRef Name="RTPC_Distance" ID="{3EBDAF7B-F3C9-4BBD-B245-745987FDAE47}" WorkUnitID="{B33E0AE4-683A-4118-98EA-BBEFCBF7E5A5}"/>
+															<ObjectRef Name="RTPC_WaterFallMedDistance" ID="{30BBCABF-1EE6-465D-8559-10DB16449DC6}" WorkUnitID="{B33E0AE4-683A-4118-98EA-BBEFCBF7E5A5}"/>
 														</Reference>
 													</ReferenceList>
 													<BlendTrackAssocList>
@@ -814,14 +825,15 @@
 															<ItemRef Name="AMB_SP_WaterFallMedMid_LP" ID="{8A6AFC05-9918-4B12-8A13-6E9C7624432A}"/>
 															<CrossfadingInfo>
 																<LeftEdgePos>0</LeftEdgePos>
-																<LeftFadingMode>Automatic</LeftFadingMode>
-																<RightEdgePos>15000</RightEdgePos>
-																<RightFadingMode>Automatic</RightFadingMode>
+																<LeftFadingMode>None</LeftFadingMode>
+																<RightEdgePos>20000</RightEdgePos>
+																<RightFadingMode>Manual</RightFadingMode>
+																<RightFadingPos>12500</RightFadingPos>
 															</CrossfadingInfo>
 														</BlendTrackAssoc>
 													</BlendTrackAssocList>
 												</BlendTrack>
-												<BlendTrack Name="WaterFallSmall_Distant" ID="{60CD079A-2875-4915-BE41-4AB1BF1CA3DB}" ShortID="801344212">
+												<BlendTrack Name="WaterFallMed_Distant" ID="{60CD079A-2875-4915-BE41-4AB1BF1CA3DB}" ShortID="801344212">
 													<PropertyList>
 														<Property Name="EnableCrossFading" Type="bool" Value="True"/>
 														<Property Name="Volume" Type="Real64">
@@ -829,7 +841,7 @@
 																<RTPC Name="" ID="{8699E2FF-C247-47B3-9094-7B10A35BF243}" ShortID="944596321">
 																	<ReferenceList>
 																		<Reference Name="ControlInput">
-																			<ObjectRef Name="RTPC_Distance" ID="{3EBDAF7B-F3C9-4BBD-B245-745987FDAE47}" WorkUnitID="{B33E0AE4-683A-4118-98EA-BBEFCBF7E5A5}"/>
+																			<ObjectRef Name="RTPC_WaterFallMedDistance" ID="{30BBCABF-1EE6-465D-8559-10DB16449DC6}" WorkUnitID="{B33E0AE4-683A-4118-98EA-BBEFCBF7E5A5}"/>
 																		</Reference>
 																	</ReferenceList>
 																	<Curve Name="" ID="{039755A7-284B-4253-A464-90552A8F6644}">
@@ -844,7 +856,13 @@
 																			</Point>
 																			<Point>
 																				<XPos>15000</XPos>
-																				<YPos>0</YPos>
+																				<YPos>-0</YPos>
+																				<Flags>0</Flags>
+																				<SegmentShape>SCurve</SegmentShape>
+																			</Point>
+																			<Point>
+																				<XPos>20000</XPos>
+																				<YPos>-9.87023</YPos>
 																				<Flags>37</Flags>
 																			</Point>
 																		</PointList>
@@ -855,16 +873,318 @@
 													</PropertyList>
 													<ReferenceList>
 														<Reference Name="LayerCrossFadeControlInput">
-															<ObjectRef Name="RTPC_Distance" ID="{3EBDAF7B-F3C9-4BBD-B245-745987FDAE47}" WorkUnitID="{B33E0AE4-683A-4118-98EA-BBEFCBF7E5A5}"/>
+															<ObjectRef Name="RTPC_WaterFallMedDistance" ID="{30BBCABF-1EE6-465D-8559-10DB16449DC6}" WorkUnitID="{B33E0AE4-683A-4118-98EA-BBEFCBF7E5A5}"/>
 														</Reference>
 													</ReferenceList>
 													<BlendTrackAssocList>
 														<BlendTrackAssoc>
 															<ItemRef Name="AMB_SP_WaterFallMedDistant_LP" ID="{3174FCD2-CFCD-4D9E-A2C5-1C1DD2D31DD1}"/>
 															<CrossfadingInfo>
+																<LeftEdgePos>5000</LeftEdgePos>
+																<LeftFadingMode>Manual</LeftFadingMode>
+																<LeftFadingPos>12500</LeftFadingPos>
+																<RightEdgePos>20000</RightEdgePos>
+																<RightFadingMode>Manual</RightFadingMode>
+																<RightFadingPos>17500</RightFadingPos>
+															</CrossfadingInfo>
+														</BlendTrackAssoc>
+													</BlendTrackAssocList>
+												</BlendTrack>
+											</BlendTrackList>
+										</BlendContainer>
+										<BlendContainer Name="AMB_SP_WaterFallBig_Blend" ID="{98A63FC9-7411-4144-A499-F119109E5059}" ShortID="577579625">
+											<PropertyList>
+												<Property Name="3DSpatialization" Type="int16" Value="2"/>
+												<Property Name="EnableAttenuation" Type="bool" Value="False"/>
+												<Property Name="OverridePositioning" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="ATT_WaterFallSmall" ID="{49ED90B8-43F8-44B9-9998-9AD192B26ADB}" WorkUnitID="{9493D104-BDD0-462A-8CB7-A95DD41418B5}"/>
+												</Reference>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="AMB" ID="{CDAACF0F-C751-406F-9073-3F6016218135}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="AMB_SP_WaterFallBigClose_LP" ID="{5A106B11-6C32-4802-BC53-8E6BF6A2D547}" ShortID="500207339">
+													<PropertyList>
+														<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+														<Property Name="IsStreamingEnabled" Type="bool">
+															<ValueList>
+																<Value>True</Value>
+															</ValueList>
+														</Property>
+														<Property Name="Lowpass" Type="int16">
+															<ValueList>
+																<Value>16</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="AMB_SP_WaterFallBigClose_LP" ID="{3D0EF141-B9A7-4078-A5FE-6E2F6EDBA6CC}">
+															<Language>SFX</Language>
+															<AudioFile>AMB_SP_WaterFallBigClose_LP.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="642854615"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="AMB_SP_WaterFallBigClose_LP" ID="{3D0EF141-B9A7-4078-A5FE-6E2F6EDBA6CC}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="AMB_SP_WaterFallBigDistant_LP" ID="{092C18C4-B18F-44F9-8A45-19111F7D9271}" ShortID="668349290">
+													<PropertyList>
+														<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+														<Property Name="IsStreamingEnabled" Type="bool">
+															<ValueList>
+																<Value>True</Value>
+															</ValueList>
+														</Property>
+														<Property Name="Lowpass" Type="int16">
+															<ValueList>
+																<Value>20</Value>
+															</ValueList>
+														</Property>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-3</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="AMB_SP_WaterFallBigDistant_LP" ID="{F1838A9D-8CD0-4DD3-9C7F-E1CEEEFB8CAF}">
+															<Language>SFX</Language>
+															<AudioFile>AMB_SP_WaterFallBigDistant_LP.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="765821890"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="AMB_SP_WaterFallBigDistant_LP" ID="{F1838A9D-8CD0-4DD3-9C7F-E1CEEEFB8CAF}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="AMB_SP_WaterFallBigMid_LP" ID="{4F4E393E-A73B-49F3-8F33-9565E08DF213}" ShortID="347347440">
+													<PropertyList>
+														<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+														<Property Name="IsStreamingEnabled" Type="bool">
+															<ValueList>
+																<Value>True</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="AMB_SP_WaterFallBigMid_LP" ID="{E9B18964-BF60-40D1-AAE7-9339CD582CC9}">
+															<Language>SFX</Language>
+															<AudioFile>AMB_SP_WaterFallBigMid_LP.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="762086237"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="AMB_SP_WaterFallBigMid_LP" ID="{E9B18964-BF60-40D1-AAE7-9339CD582CC9}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+											<ObjectLists/>
+											<BlendTrackList>
+												<BlendTrack Name="WaterFallSmall_Close" ID="{87967E06-7526-42B4-9885-B5921757567E}" ShortID="17193110">
+													<PropertyList>
+														<Property Name="EnableCrossFading" Type="bool" Value="True"/>
+														<Property Name="Volume" Type="Real64">
+															<RTPCList>
+																<RTPC Name="" ID="{42A9AE14-EB3F-41FB-A778-B70A67145A67}" ShortID="751528476">
+																	<ReferenceList>
+																		<Reference Name="ControlInput">
+																			<ObjectRef Name="RTPC_WaterFallBigDistance" ID="{E44C6EE4-B46F-45ED-8B1E-1CE323B3070D}" WorkUnitID="{B33E0AE4-683A-4118-98EA-BBEFCBF7E5A5}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<Curve Name="" ID="{009A6011-7709-4E78-AD3D-0B43EE3C7538}">
+																		<PropertyList>
+																			<Property Name="Flags" Type="int32" Value="3"/>
+																		</PropertyList>
+																		<PointList>
+																			<Point>
+																				<XPos>0</XPos>
+																				<YPos>0</YPos>
+																				<Flags>5</Flags>
+																				<SegmentShape>SCurve</SegmentShape>
+																			</Point>
+																			<Point>
+																				<XPos>25439.28923</XPos>
+																				<YPos>-200</YPos>
+																				<Flags>0</Flags>
+																				<SegmentShape>SCurve</SegmentShape>
+																			</Point>
+																			<Point>
+																				<XPos>30000</XPos>
+																				<YPos>-200</YPos>
+																				<Flags>37</Flags>
+																			</Point>
+																		</PointList>
+																	</Curve>
+																</RTPC>
+															</RTPCList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="LayerCrossFadeControlInput">
+															<ObjectRef Name="RTPC_WaterFallBigDistance" ID="{E44C6EE4-B46F-45ED-8B1E-1CE323B3070D}" WorkUnitID="{B33E0AE4-683A-4118-98EA-BBEFCBF7E5A5}"/>
+														</Reference>
+													</ReferenceList>
+													<BlendTrackAssocList>
+														<BlendTrackAssoc>
+															<ItemRef Name="AMB_SP_WaterFallBigClose_LP" ID="{5A106B11-6C32-4802-BC53-8E6BF6A2D547}"/>
+															<CrossfadingInfo>
+																<LeftEdgePos>0</LeftEdgePos>
+																<LeftFadingMode>None</LeftFadingMode>
+																<RightEdgePos>17500</RightEdgePos>
+																<RightFadingMode>Manual</RightFadingMode>
+																<RightFadingPos>7500</RightFadingPos>
+															</CrossfadingInfo>
+														</BlendTrackAssoc>
+													</BlendTrackAssocList>
+												</BlendTrack>
+												<BlendTrack Name="WaterFallSmall_Mid" ID="{39AFC30C-5276-4DEA-9638-3B40C7A1A206}" ShortID="509756113">
+													<PropertyList>
+														<Property Name="EnableCrossFading" Type="bool" Value="True"/>
+														<Property Name="Volume" Type="Real64">
+															<RTPCList>
+																<RTPC Name="" ID="{D5ED2773-72AB-49CD-95F5-B14FD318ECA4}" ShortID="614250900">
+																	<ReferenceList>
+																		<Reference Name="ControlInput">
+																			<ObjectRef Name="RTPC_WaterFallBigDistance" ID="{E44C6EE4-B46F-45ED-8B1E-1CE323B3070D}" WorkUnitID="{B33E0AE4-683A-4118-98EA-BBEFCBF7E5A5}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<Curve Name="" ID="{2C870B55-9FCB-4C9A-AB35-F8C5E63FDA71}">
+																		<PropertyList>
+																			<Property Name="Flags" Type="int32" Value="3"/>
+																		</PropertyList>
+																		<PointList>
+																			<Point>
+																				<XPos>0</XPos>
+																				<YPos>-5.10545</YPos>
+																				<Flags>5</Flags>
+																				<SegmentShape>SCurve</SegmentShape>
+																			</Point>
+																			<Point>
+																				<XPos>12500</XPos>
+																				<YPos>0</YPos>
+																				<Flags>0</Flags>
+																				<SegmentShape>SCurve</SegmentShape>
+																			</Point>
+																			<Point>
+																				<XPos>30000</XPos>
+																				<YPos>-200</YPos>
+																				<Flags>37</Flags>
+																			</Point>
+																		</PointList>
+																	</Curve>
+																</RTPC>
+															</RTPCList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="LayerCrossFadeControlInput">
+															<ObjectRef Name="RTPC_WaterFallBigDistance" ID="{E44C6EE4-B46F-45ED-8B1E-1CE323B3070D}" WorkUnitID="{B33E0AE4-683A-4118-98EA-BBEFCBF7E5A5}"/>
+														</Reference>
+													</ReferenceList>
+													<BlendTrackAssocList>
+														<BlendTrackAssoc>
+															<ItemRef Name="AMB_SP_WaterFallBigMid_LP" ID="{4F4E393E-A73B-49F3-8F33-9565E08DF213}"/>
+															<CrossfadingInfo>
 																<LeftEdgePos>0</LeftEdgePos>
 																<LeftFadingMode>Automatic</LeftFadingMode>
-																<RightEdgePos>15000</RightEdgePos>
+																<RightEdgePos>30000</RightEdgePos>
+																<RightFadingMode>Automatic</RightFadingMode>
+															</CrossfadingInfo>
+														</BlendTrackAssoc>
+													</BlendTrackAssocList>
+												</BlendTrack>
+												<BlendTrack Name="WaterFallSmall_Distant" ID="{2E0D93B7-0AB4-41FF-9F43-EB6CED082168}" ShortID="347739099">
+													<PropertyList>
+														<Property Name="EnableCrossFading" Type="bool" Value="True"/>
+														<Property Name="Volume" Type="Real64">
+															<RTPCList>
+																<RTPC Name="" ID="{2D1E805F-E99E-4F83-A68D-FBB314FB4BDC}" ShortID="274331123">
+																	<ReferenceList>
+																		<Reference Name="ControlInput">
+																			<ObjectRef Name="RTPC_WaterFallBigDistance" ID="{E44C6EE4-B46F-45ED-8B1E-1CE323B3070D}" WorkUnitID="{B33E0AE4-683A-4118-98EA-BBEFCBF7E5A5}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<Curve Name="" ID="{897439AC-8F03-481A-8081-59DF170D0AE0}">
+																		<PropertyList>
+																			<Property Name="Flags" Type="int32" Value="3"/>
+																		</PropertyList>
+																		<PointList>
+																			<Point>
+																				<XPos>0</XPos>
+																				<YPos>0</YPos>
+																				<Flags>5</Flags>
+																			</Point>
+																			<Point>
+																				<XPos>20000</XPos>
+																				<YPos>0</YPos>
+																				<Flags>0</Flags>
+																				<SegmentShape>SCurve</SegmentShape>
+																			</Point>
+																			<Point>
+																				<XPos>30000</XPos>
+																				<YPos>-200</YPos>
+																				<Flags>37</Flags>
+																			</Point>
+																		</PointList>
+																	</Curve>
+																</RTPC>
+															</RTPCList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="LayerCrossFadeControlInput">
+															<ObjectRef Name="RTPC_WaterFallBigDistance" ID="{E44C6EE4-B46F-45ED-8B1E-1CE323B3070D}" WorkUnitID="{B33E0AE4-683A-4118-98EA-BBEFCBF7E5A5}"/>
+														</Reference>
+													</ReferenceList>
+													<BlendTrackAssocList>
+														<BlendTrackAssoc>
+															<ItemRef Name="AMB_SP_WaterFallBigDistant_LP" ID="{092C18C4-B18F-44F9-8A45-19111F7D9271}"/>
+															<CrossfadingInfo>
+																<LeftEdgePos>7500</LeftEdgePos>
+																<LeftFadingMode>Manual</LeftFadingMode>
+																<LeftFadingPos>20000</LeftFadingPos>
+																<RightEdgePos>30000</RightEdgePos>
 																<RightFadingMode>Automatic</RightFadingMode>
 															</CrossfadingInfo>
 														</BlendTrackAssoc>
@@ -7726,6 +8046,13 @@
 											<ObjectLists/>
 										</RandomSequenceContainer>
 										<RandomSequenceContainer Name="MC_FT_WallJump_MagicLayer" ID="{5F0430D8-4478-41E9-8C16-C7BE4F183CCD}" ShortID="210793967">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-3</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -7734,6 +8061,100 @@
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 												</Reference>
 											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="MC_FT_WallJump_MagicLayer_01" ID="{F2FFF239-DF42-4369-92C8-F314CB41B7C6}" ShortID="582605999">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="MC_FT_WallJump_MagicLayer_01" ID="{C5E6B2B0-E9A4-40B4-8BAC-55AC83919BCD}">
+															<Language>SFX</Language>
+															<AudioFile>MC_FT_WallJump_MagicLayer_01.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="296492558"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="MC_FT_WallJump_MagicLayer_01" ID="{C5E6B2B0-E9A4-40B4-8BAC-55AC83919BCD}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="MC_FT_WallJump_MagicLayer_02" ID="{5D829647-A1A8-48D8-A2F1-22B73A99553B}" ShortID="682125200">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="MC_FT_WallJump_MagicLayer_02" ID="{0D6978B8-22AB-453E-821A-DF3B1952BEA6}">
+															<Language>SFX</Language>
+															<AudioFile>MC_FT_WallJump_MagicLayer_02.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="527072885"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="MC_FT_WallJump_MagicLayer_02" ID="{0D6978B8-22AB-453E-821A-DF3B1952BEA6}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="MC_FT_WallJump_MagicLayer_03" ID="{E2B430C5-2542-4C1E-9309-7AEA7E90E3FF}" ShortID="585393094">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="MC_FT_WallJump_MagicLayer_03" ID="{A540CA1D-2042-429D-B84F-230DD64340B2}">
+															<Language>SFX</Language>
+															<AudioFile>MC_FT_WallJump_MagicLayer_03.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="190266913"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="MC_FT_WallJump_MagicLayer_03" ID="{A540CA1D-2042-429D-B84F-230DD64340B2}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="MC_FT_WallJump_MagicLayer_04" ID="{86DB8044-EEEF-4EB0-A05A-9ECBE9A590C9}" ShortID="537554156">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="MC_FT_WallJump_MagicLayer_04" ID="{F1A58548-E9C9-4498-B149-B952869D6369}">
+															<Language>SFX</Language>
+															<AudioFile>MC_FT_WallJump_MagicLayer_04.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="560282434"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="MC_FT_WallJump_MagicLayer_04" ID="{F1A58548-E9C9-4498-B149-B952869D6369}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
 											<ObjectLists/>
 										</RandomSequenceContainer>
 									</ChildrenList>
