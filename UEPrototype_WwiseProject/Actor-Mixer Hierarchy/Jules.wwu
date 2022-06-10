@@ -13,7 +13,7 @@
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master" ID="{79F8941E-A12D-453A-AF2B-6E06EF122136}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -28,7 +28,7 @@
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 								</Reference>
 								<Reference Name="OutputBus">
-									<ObjectRef Name="AMB" ID="{CDAACF0F-C751-406F-9073-3F6016218135}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+									<ObjectRef Name="AMB" ID="{CDAACF0F-C751-406F-9073-3F6016218135}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -43,6 +43,13 @@
 									</ReferenceList>
 									<ChildrenList>
 										<BlendContainer Name="AMB_SP_Waterfall_Blend" ID="{5F6A136D-D2E0-47BF-88E9-54225CDFE964}" ShortID="827444230">
+											<PropertyList>
+												<Property Name="Inclusion" Type="bool">
+													<ValueList>
+														<Value>False</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -217,6 +224,237 @@
 																<LeftFadingMode>Automatic</LeftFadingMode>
 																<RightEdgePos>15000</RightEdgePos>
 																<RightFadingMode>Automatic</RightFadingMode>
+															</CrossfadingInfo>
+														</BlendTrackAssoc>
+													</BlendTrackAssocList>
+												</BlendTrack>
+											</BlendTrackList>
+										</BlendContainer>
+										<BlendContainer Name="AMB_SP_WaterFallSmall_Blend" ID="{D753DC15-7C1A-45B5-9BA1-D2DF96400256}" ShortID="248975390">
+											<PropertyList>
+												<Property Name="3DSpatialization" Type="int16" Value="2"/>
+												<Property Name="EnableAttenuation" Type="bool" Value="False"/>
+												<Property Name="OverridePositioning" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="ATT_WaterFallSmall" ID="{49ED90B8-43F8-44B9-9998-9AD192B26ADB}" WorkUnitID="{9493D104-BDD0-462A-8CB7-A95DD41418B5}"/>
+												</Reference>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="AMB_SP_WaterFallSmallClose_LP" ID="{B7848B1B-FD70-4FC6-8392-4132A24BE51F}" ShortID="518923319">
+													<PropertyList>
+														<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+														<Property Name="IsStreamingEnabled" Type="bool">
+															<ValueList>
+																<Value>True</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="AMB_SP_WaterFallSmallClose_LP" ID="{70D09F03-3D49-4BAC-8176-2A5D0C17C21D}">
+															<Language>SFX</Language>
+															<AudioFile>AMB_SP_WaterFallSmallClose_LP.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="89149906"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="AMB_SP_WaterFallSmallClose_LP" ID="{70D09F03-3D49-4BAC-8176-2A5D0C17C21D}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="AMB_SP_WaterFallSmallDistant_LP" ID="{8AB920FB-4574-46A1-8D54-1766A94DEF87}" ShortID="403632430">
+													<PropertyList>
+														<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+														<Property Name="IsStreamingEnabled" Type="bool">
+															<ValueList>
+																<Value>True</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="AMB_SP_WaterFallSmallDistant_LP" ID="{A6A9A667-E305-441C-8D81-9BBDBB6C2BF0}">
+															<Language>SFX</Language>
+															<AudioFile>AMB_SP_WaterFallSmallDistant_LP.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="300715388"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="AMB_SP_WaterFallSmallDistant_LP" ID="{A6A9A667-E305-441C-8D81-9BBDBB6C2BF0}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="AMB_SP_WaterFallSmallMid_LP" ID="{B4D8E7E9-15D2-4E67-92A2-6CF57A7FA076}" ShortID="762771079">
+													<PropertyList>
+														<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+														<Property Name="IsStreamingEnabled" Type="bool">
+															<ValueList>
+																<Value>True</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="AMB_SP_WaterFallSmallMid_LP" ID="{F1FA129B-B3EE-4CC8-9DE6-A3825CC55E0D}">
+															<Language>SFX</Language>
+															<AudioFile>AMB_SP_WaterFallSmallMid_LP.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="119492835"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="AMB_SP_WaterFallSmallMid_LP" ID="{F1FA129B-B3EE-4CC8-9DE6-A3825CC55E0D}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="AMB_SP_WaterFallSmallVeryDistant_LP" ID="{DDFF85EB-F1E9-4C74-B093-223F3063AD14}" ShortID="634858762">
+													<PropertyList>
+														<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+														<Property Name="IsStreamingEnabled" Type="bool">
+															<ValueList>
+																<Value>True</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="AMB_SP_WaterFallSmallVeryDistant_LP" ID="{C1BA360D-8BC5-4986-B6D9-14205B4D14AE}">
+															<Language>SFX</Language>
+															<AudioFile>AMB_SP_WaterFallSmallVeryDistant_LP.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="101453379"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="AMB_SP_WaterFallSmallVeryDistant_LP" ID="{C1BA360D-8BC5-4986-B6D9-14205B4D14AE}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+											<ObjectLists/>
+											<BlendTrackList>
+												<BlendTrack Name="WaterFall_Blend" ID="{9773E604-92D5-4177-89C6-AC1FBD55ADED}" ShortID="192935168">
+													<PropertyList>
+														<Property Name="EnableCrossFading" Type="bool" Value="True"/>
+														<Property Name="Volume" Type="Real64">
+															<RTPCList>
+																<RTPC Name="" ID="{74DC47D4-02D2-4428-874E-5E622941CFC6}" ShortID="774313015">
+																	<ReferenceList>
+																		<Reference Name="ControlInput">
+																			<ObjectRef Name="RTPC_Distance" ID="{3EBDAF7B-F3C9-4BBD-B245-745987FDAE47}" WorkUnitID="{B33E0AE4-683A-4118-98EA-BBEFCBF7E5A5}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<Curve Name="" ID="{8EA0EAFE-7701-4303-9EB3-6FD2F04D1579}">
+																		<PropertyList>
+																			<Property Name="Flags" Type="int32" Value="3"/>
+																		</PropertyList>
+																		<PointList>
+																			<Point>
+																				<XPos>0</XPos>
+																				<YPos>-0</YPos>
+																				<Flags>5</Flags>
+																				<SegmentShape>SCurve</SegmentShape>
+																			</Point>
+																			<Point>
+																				<XPos>1000</XPos>
+																				<YPos>0</YPos>
+																				<Flags>0</Flags>
+																				<SegmentShape>SCurve</SegmentShape>
+																			</Point>
+																			<Point>
+																				<XPos>15000</XPos>
+																				<YPos>-6.1285</YPos>
+																				<Flags>37</Flags>
+																			</Point>
+																		</PointList>
+																	</Curve>
+																</RTPC>
+															</RTPCList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="LayerCrossFadeControlInput">
+															<ObjectRef Name="RTPC_Distance" ID="{3EBDAF7B-F3C9-4BBD-B245-745987FDAE47}" WorkUnitID="{B33E0AE4-683A-4118-98EA-BBEFCBF7E5A5}"/>
+														</Reference>
+													</ReferenceList>
+													<BlendTrackAssocList>
+														<BlendTrackAssoc>
+															<ItemRef Name="AMB_SP_WaterFallSmallClose_LP" ID="{B7848B1B-FD70-4FC6-8392-4132A24BE51F}"/>
+															<CrossfadingInfo>
+																<LeftEdgePos>0</LeftEdgePos>
+																<LeftFadingMode>Automatic</LeftFadingMode>
+																<RightEdgePos>5870.18756169793</RightEdgePos>
+																<RightFadingMode>Automatic</RightFadingMode>
+															</CrossfadingInfo>
+														</BlendTrackAssoc>
+														<BlendTrackAssoc>
+															<ItemRef Name="AMB_SP_WaterFallSmallMid_LP" ID="{B4D8E7E9-15D2-4E67-92A2-6CF57A7FA076}"/>
+															<CrossfadingInfo>
+																<LeftEdgePos>1005.42941757157</LeftEdgePos>
+																<LeftFadingMode>Automatic</LeftFadingMode>
+																<RightEdgePos>9370.18781169793</RightEdgePos>
+																<RightFadingMode>Automatic</RightFadingMode>
+															</CrossfadingInfo>
+														</BlendTrackAssoc>
+														<BlendTrackAssoc>
+															<ItemRef Name="AMB_SP_WaterFallSmallDistant_LP" ID="{8AB920FB-4574-46A1-8D54-1766A94DEF87}"/>
+															<CrossfadingInfo>
+																<LeftEdgePos>6133.26752221125</LeftEdgePos>
+																<LeftFadingMode>Automatic</LeftFadingMode>
+																<RightEdgePos>14314.7832607971</RightEdgePos>
+																<RightFadingMode>Automatic</RightFadingMode>
+															</CrossfadingInfo>
+														</BlendTrackAssoc>
+														<BlendTrackAssoc>
+															<ItemRef Name="AMB_SP_WaterFallSmallVeryDistant_LP" ID="{DDFF85EB-F1E9-4C74-B093-223F3063AD14}"/>
+															<CrossfadingInfo>
+																<LeftEdgePos>9577.49284624876</LeftEdgePos>
+																<LeftFadingMode>Automatic</LeftFadingMode>
+																<RightEdgePos>15000</RightEdgePos>
+																<RightFadingMode>Manual</RightFadingMode>
+																<RightFadingPos>14314.7832607971</RightFadingPos>
 															</CrossfadingInfo>
 														</BlendTrackAssoc>
 													</BlendTrackAssocList>
@@ -700,7 +938,7 @@
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 								</Reference>
 								<Reference Name="OutputBus">
-									<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+									<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -791,11 +1029,11 @@
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 																</Reference>
 																<Reference Name="OutputBus">
-																	<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+																	<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
-																<Sound Name="MC_FT_Stone_Walk_01" ID="{8DD6D11E-730D-45F3-B73E-275CF2B48853}" ShortID="15547760">
+																<Sound Name="MC_FT_Stone_Walk_01" ID="{937BE161-47B7-4B4E-A00D-B5257BF61C77}" ShortID="797230689">
 																	<ReferenceList>
 																		<Reference Name="Conversion">
 																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -805,7 +1043,7 @@
 																		</Reference>
 																	</ReferenceList>
 																	<ChildrenList>
-																		<AudioFileSource Name="MC_FT_Stone_Walk_01" ID="{1B874176-CA09-4A0E-A85B-AA34BD66C814}">
+																		<AudioFileSource Name="MC_FT_Stone_Walk_01" ID="{A03DEB91-B966-4C2B-A9C8-F73B7BBD08FF}">
 																			<Language>SFX</Language>
 																			<AudioFile>MC_FT_Stone_Walk_01.wav</AudioFile>
 																			<MediaIDList>
@@ -815,10 +1053,10 @@
 																	</ChildrenList>
 																	<ObjectLists/>
 																	<ActiveSourceList>
-																		<ActiveSource Name="MC_FT_Stone_Walk_01" ID="{1B874176-CA09-4A0E-A85B-AA34BD66C814}" Platform="Linked"/>
+																		<ActiveSource Name="MC_FT_Stone_Walk_01" ID="{A03DEB91-B966-4C2B-A9C8-F73B7BBD08FF}" Platform="Linked"/>
 																	</ActiveSourceList>
 																</Sound>
-																<Sound Name="MC_FT_Stone_Walk_02" ID="{83D924AA-C506-4E9E-8BE9-91778F2DF21B}" ShortID="690507189">
+																<Sound Name="MC_FT_Stone_Walk_02" ID="{CA1C8B80-F12C-447C-92CE-FA32C8C5A92A}" ShortID="626604751">
 																	<ReferenceList>
 																		<Reference Name="Conversion">
 																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -828,7 +1066,7 @@
 																		</Reference>
 																	</ReferenceList>
 																	<ChildrenList>
-																		<AudioFileSource Name="MC_FT_Stone_Walk_02" ID="{0E1C04C4-457F-4F4D-BB48-5F98201460E5}">
+																		<AudioFileSource Name="MC_FT_Stone_Walk_02" ID="{1368A2AA-0A6A-494E-B7DE-5937F7282210}">
 																			<Language>SFX</Language>
 																			<AudioFile>MC_FT_Stone_Walk_02.wav</AudioFile>
 																			<MediaIDList>
@@ -838,10 +1076,10 @@
 																	</ChildrenList>
 																	<ObjectLists/>
 																	<ActiveSourceList>
-																		<ActiveSource Name="MC_FT_Stone_Walk_02" ID="{0E1C04C4-457F-4F4D-BB48-5F98201460E5}" Platform="Linked"/>
+																		<ActiveSource Name="MC_FT_Stone_Walk_02" ID="{1368A2AA-0A6A-494E-B7DE-5937F7282210}" Platform="Linked"/>
 																	</ActiveSourceList>
 																</Sound>
-																<Sound Name="MC_FT_Stone_Walk_03" ID="{23CDED99-A6B0-493E-B30D-7A8AA702558D}" ShortID="503259794">
+																<Sound Name="MC_FT_Stone_Walk_03" ID="{9F7CDB2D-D388-4ADD-A93D-DE7A2277836C}" ShortID="778203395">
 																	<ReferenceList>
 																		<Reference Name="Conversion">
 																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -851,7 +1089,7 @@
 																		</Reference>
 																	</ReferenceList>
 																	<ChildrenList>
-																		<AudioFileSource Name="MC_FT_Stone_Walk_03" ID="{C1C80747-BAB1-41A7-995C-7EA8442BF29D}">
+																		<AudioFileSource Name="MC_FT_Stone_Walk_03" ID="{19E21132-BB2F-4FA7-9EFE-25C10B1765E7}">
 																			<Language>SFX</Language>
 																			<AudioFile>MC_FT_Stone_Walk_03.wav</AudioFile>
 																			<MediaIDList>
@@ -861,10 +1099,10 @@
 																	</ChildrenList>
 																	<ObjectLists/>
 																	<ActiveSourceList>
-																		<ActiveSource Name="MC_FT_Stone_Walk_03" ID="{C1C80747-BAB1-41A7-995C-7EA8442BF29D}" Platform="Linked"/>
+																		<ActiveSource Name="MC_FT_Stone_Walk_03" ID="{19E21132-BB2F-4FA7-9EFE-25C10B1765E7}" Platform="Linked"/>
 																	</ActiveSourceList>
 																</Sound>
-																<Sound Name="MC_FT_Stone_Walk_04" ID="{67E0690E-ED17-47F9-8C11-05E61CB944C3}" ShortID="848065905">
+																<Sound Name="MC_FT_Stone_Walk_04" ID="{FFC64D52-ECE0-4F0C-9AE8-E6E36BCC84FD}" ShortID="892446966">
 																	<ReferenceList>
 																		<Reference Name="Conversion">
 																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -874,7 +1112,7 @@
 																		</Reference>
 																	</ReferenceList>
 																	<ChildrenList>
-																		<AudioFileSource Name="MC_FT_Stone_Walk_04" ID="{050C8135-C013-45E4-946A-DE31BD74254E}">
+																		<AudioFileSource Name="MC_FT_Stone_Walk_04" ID="{1AA6571A-7A19-42ED-85B5-02D337868F4D}">
 																			<Language>SFX</Language>
 																			<AudioFile>MC_FT_Stone_Walk_04.wav</AudioFile>
 																			<MediaIDList>
@@ -884,10 +1122,10 @@
 																	</ChildrenList>
 																	<ObjectLists/>
 																	<ActiveSourceList>
-																		<ActiveSource Name="MC_FT_Stone_Walk_04" ID="{050C8135-C013-45E4-946A-DE31BD74254E}" Platform="Linked"/>
+																		<ActiveSource Name="MC_FT_Stone_Walk_04" ID="{1AA6571A-7A19-42ED-85B5-02D337868F4D}" Platform="Linked"/>
 																	</ActiveSourceList>
 																</Sound>
-																<Sound Name="MC_FT_Stone_Walk_05" ID="{39085168-AC69-4EC8-855E-38A43A53D74A}" ShortID="104007466">
+																<Sound Name="MC_FT_Stone_Walk_05" ID="{92F71629-E99E-4257-BE76-F52D33C7D034}" ShortID="743258200">
 																	<ReferenceList>
 																		<Reference Name="Conversion">
 																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -897,7 +1135,7 @@
 																		</Reference>
 																	</ReferenceList>
 																	<ChildrenList>
-																		<AudioFileSource Name="MC_FT_Stone_Walk_05" ID="{6CFF4785-62D6-4EFD-99B3-905FFC2939F4}">
+																		<AudioFileSource Name="MC_FT_Stone_Walk_05" ID="{00F4B329-253A-46C2-9362-298655B0BE96}">
 																			<Language>SFX</Language>
 																			<AudioFile>MC_FT_Stone_Walk_05.wav</AudioFile>
 																			<MediaIDList>
@@ -907,10 +1145,10 @@
 																	</ChildrenList>
 																	<ObjectLists/>
 																	<ActiveSourceList>
-																		<ActiveSource Name="MC_FT_Stone_Walk_05" ID="{6CFF4785-62D6-4EFD-99B3-905FFC2939F4}" Platform="Linked"/>
+																		<ActiveSource Name="MC_FT_Stone_Walk_05" ID="{00F4B329-253A-46C2-9362-298655B0BE96}" Platform="Linked"/>
 																	</ActiveSourceList>
 																</Sound>
-																<Sound Name="MC_FT_Stone_Walk_06" ID="{EB6104E0-61B7-4E99-9B69-4F9779AD89B9}" ShortID="443990682">
+																<Sound Name="MC_FT_Stone_Walk_06" ID="{499D1DC0-1B35-4890-99DC-F15DA733CB22}" ShortID="911365166">
 																	<ReferenceList>
 																		<Reference Name="Conversion">
 																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -920,7 +1158,7 @@
 																		</Reference>
 																	</ReferenceList>
 																	<ChildrenList>
-																		<AudioFileSource Name="MC_FT_Stone_Walk_06" ID="{CF731E99-156C-42BC-8CB0-958D2C5C1129}">
+																		<AudioFileSource Name="MC_FT_Stone_Walk_06" ID="{796A704F-FF87-4D1F-9AF3-A6B957119526}">
 																			<Language>SFX</Language>
 																			<AudioFile>MC_FT_Stone_Walk_06.wav</AudioFile>
 																			<MediaIDList>
@@ -930,10 +1168,10 @@
 																	</ChildrenList>
 																	<ObjectLists/>
 																	<ActiveSourceList>
-																		<ActiveSource Name="MC_FT_Stone_Walk_06" ID="{CF731E99-156C-42BC-8CB0-958D2C5C1129}" Platform="Linked"/>
+																		<ActiveSource Name="MC_FT_Stone_Walk_06" ID="{796A704F-FF87-4D1F-9AF3-A6B957119526}" Platform="Linked"/>
 																	</ActiveSourceList>
 																</Sound>
-																<Sound Name="MC_FT_Stone_Walk_07" ID="{7A42B430-D5CB-4174-B94E-112197283099}" ShortID="647411178">
+																<Sound Name="MC_FT_Stone_Walk_07" ID="{0FAFD949-80A4-456C-8A2C-D1F52126C4CE}" ShortID="347395845">
 																	<ReferenceList>
 																		<Reference Name="Conversion">
 																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -943,7 +1181,7 @@
 																		</Reference>
 																	</ReferenceList>
 																	<ChildrenList>
-																		<AudioFileSource Name="MC_FT_Stone_Walk_07" ID="{A1193BA9-9E9F-4876-A89E-C54D67C9B385}">
+																		<AudioFileSource Name="MC_FT_Stone_Walk_07" ID="{953423F1-AE24-4B5F-9FEE-7DD32BBD2996}">
 																			<Language>SFX</Language>
 																			<AudioFile>MC_FT_Stone_Walk_07.wav</AudioFile>
 																			<MediaIDList>
@@ -953,10 +1191,10 @@
 																	</ChildrenList>
 																	<ObjectLists/>
 																	<ActiveSourceList>
-																		<ActiveSource Name="MC_FT_Stone_Walk_07" ID="{A1193BA9-9E9F-4876-A89E-C54D67C9B385}" Platform="Linked"/>
+																		<ActiveSource Name="MC_FT_Stone_Walk_07" ID="{953423F1-AE24-4B5F-9FEE-7DD32BBD2996}" Platform="Linked"/>
 																	</ActiveSourceList>
 																</Sound>
-																<Sound Name="MC_FT_Stone_Walk_08" ID="{84E310FE-1633-4BB6-A7E9-4D0714D6E43E}" ShortID="259505289">
+																<Sound Name="MC_FT_Stone_Walk_08" ID="{8F348727-BE27-4A8C-ACD7-E0359FB42EA6}" ShortID="506306295">
 																	<ReferenceList>
 																		<Reference Name="Conversion">
 																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -966,7 +1204,7 @@
 																		</Reference>
 																	</ReferenceList>
 																	<ChildrenList>
-																		<AudioFileSource Name="MC_FT_Stone_Walk_08" ID="{2AF3DE86-8D5D-416C-AC2C-7A36CA8D2BAF}">
+																		<AudioFileSource Name="MC_FT_Stone_Walk_08" ID="{5BAC41A7-5A4E-4B23-A527-30009F1D14D8}">
 																			<Language>SFX</Language>
 																			<AudioFile>MC_FT_Stone_Walk_08.wav</AudioFile>
 																			<MediaIDList>
@@ -976,10 +1214,10 @@
 																	</ChildrenList>
 																	<ObjectLists/>
 																	<ActiveSourceList>
-																		<ActiveSource Name="MC_FT_Stone_Walk_08" ID="{2AF3DE86-8D5D-416C-AC2C-7A36CA8D2BAF}" Platform="Linked"/>
+																		<ActiveSource Name="MC_FT_Stone_Walk_08" ID="{5BAC41A7-5A4E-4B23-A527-30009F1D14D8}" Platform="Linked"/>
 																	</ActiveSourceList>
 																</Sound>
-																<Sound Name="MC_FT_Stone_Walk_09" ID="{BA10317D-59A4-4F3B-8522-418960F8A2E1}" ShortID="549619142">
+																<Sound Name="MC_FT_Stone_Walk_09" ID="{67280CF4-60B2-4C57-B82A-0A6D168ED189}" ShortID="600193429">
 																	<ReferenceList>
 																		<Reference Name="Conversion">
 																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -989,7 +1227,7 @@
 																		</Reference>
 																	</ReferenceList>
 																	<ChildrenList>
-																		<AudioFileSource Name="MC_FT_Stone_Walk_09" ID="{061B8B07-B3DB-42A4-A21F-C22DC1DF613E}">
+																		<AudioFileSource Name="MC_FT_Stone_Walk_09" ID="{2FE4D8C0-0493-429C-AB96-0C50E1F506C8}">
 																			<Language>SFX</Language>
 																			<AudioFile>MC_FT_Stone_Walk_09.wav</AudioFile>
 																			<MediaIDList>
@@ -999,10 +1237,10 @@
 																	</ChildrenList>
 																	<ObjectLists/>
 																	<ActiveSourceList>
-																		<ActiveSource Name="MC_FT_Stone_Walk_09" ID="{061B8B07-B3DB-42A4-A21F-C22DC1DF613E}" Platform="Linked"/>
+																		<ActiveSource Name="MC_FT_Stone_Walk_09" ID="{2FE4D8C0-0493-429C-AB96-0C50E1F506C8}" Platform="Linked"/>
 																	</ActiveSourceList>
 																</Sound>
-																<Sound Name="MC_FT_Stone_Walk_10" ID="{03B3BCFE-ECEA-4666-A45C-FCA943DD6648}" ShortID="757919921">
+																<Sound Name="MC_FT_Stone_Walk_10" ID="{7BCD7B1D-5858-445E-880A-D0CE11B36562}" ShortID="550019581">
 																	<ReferenceList>
 																		<Reference Name="Conversion">
 																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -1012,7 +1250,7 @@
 																		</Reference>
 																	</ReferenceList>
 																	<ChildrenList>
-																		<AudioFileSource Name="MC_FT_Stone_Walk_10" ID="{7DA3DA65-DEE6-4A0F-8865-C1DFD99D7997}">
+																		<AudioFileSource Name="MC_FT_Stone_Walk_10" ID="{25FC6D08-B9BE-4C9F-8564-D08B624E3564}">
 																			<Language>SFX</Language>
 																			<AudioFile>MC_FT_Stone_Walk_10.wav</AudioFile>
 																			<MediaIDList>
@@ -1022,7 +1260,7 @@
 																	</ChildrenList>
 																	<ObjectLists/>
 																	<ActiveSourceList>
-																		<ActiveSource Name="MC_FT_Stone_Walk_10" ID="{7DA3DA65-DEE6-4A0F-8865-C1DFD99D7997}" Platform="Linked"/>
+																		<ActiveSource Name="MC_FT_Stone_Walk_10" ID="{25FC6D08-B9BE-4C9F-8564-D08B624E3564}" Platform="Linked"/>
 																	</ActiveSourceList>
 																</Sound>
 															</ChildrenList>
@@ -1063,7 +1301,7 @@
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 																</Reference>
 																<Reference Name="OutputBus">
-																	<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+																	<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
@@ -1335,7 +1573,7 @@
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 																</Reference>
 																<Reference Name="OutputBus">
-																	<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+																	<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
@@ -1607,7 +1845,7 @@
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 																</Reference>
 																<Reference Name="OutputBus">
-																	<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+																	<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
@@ -2032,7 +2270,7 @@
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 																</Reference>
 																<Reference Name="OutputBus">
-																	<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+																	<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
@@ -2534,7 +2772,7 @@
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 																</Reference>
 																<Reference Name="OutputBus">
-																	<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+																	<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
@@ -2544,7 +2782,7 @@
 																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 																		</Reference>
 																		<Reference Name="OutputBus">
-																			<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+																			<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 																		</Reference>
 																	</ReferenceList>
 																	<ChildrenList>
@@ -2567,7 +2805,7 @@
 																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 																		</Reference>
 																		<Reference Name="OutputBus">
-																			<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+																			<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 																		</Reference>
 																	</ReferenceList>
 																	<ChildrenList>
@@ -2590,7 +2828,7 @@
 																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 																		</Reference>
 																		<Reference Name="OutputBus">
-																			<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+																			<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 																		</Reference>
 																	</ReferenceList>
 																	<ChildrenList>
@@ -2613,7 +2851,7 @@
 																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 																		</Reference>
 																		<Reference Name="OutputBus">
-																			<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+																			<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 																		</Reference>
 																	</ReferenceList>
 																	<ChildrenList>
@@ -2636,7 +2874,7 @@
 																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 																		</Reference>
 																		<Reference Name="OutputBus">
-																			<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+																			<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 																		</Reference>
 																	</ReferenceList>
 																	<ChildrenList>
@@ -2659,7 +2897,7 @@
 																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 																		</Reference>
 																		<Reference Name="OutputBus">
-																			<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+																			<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 																		</Reference>
 																	</ReferenceList>
 																	<ChildrenList>
@@ -2682,7 +2920,7 @@
 																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 																		</Reference>
 																		<Reference Name="OutputBus">
-																			<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+																			<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 																		</Reference>
 																	</ReferenceList>
 																	<ChildrenList>
@@ -2705,7 +2943,7 @@
 																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 																		</Reference>
 																		<Reference Name="OutputBus">
-																			<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+																			<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 																		</Reference>
 																	</ReferenceList>
 																	<ChildrenList>
@@ -2728,7 +2966,7 @@
 																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 																		</Reference>
 																		<Reference Name="OutputBus">
-																			<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+																			<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 																		</Reference>
 																	</ReferenceList>
 																	<ChildrenList>
@@ -2751,7 +2989,7 @@
 																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 																		</Reference>
 																		<Reference Name="OutputBus">
-																			<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+																			<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 																		</Reference>
 																	</ReferenceList>
 																	<ChildrenList>
@@ -2774,7 +3012,7 @@
 																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 																		</Reference>
 																		<Reference Name="OutputBus">
-																			<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+																			<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 																		</Reference>
 																	</ReferenceList>
 																	<ChildrenList>
@@ -2797,7 +3035,7 @@
 																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 																		</Reference>
 																		<Reference Name="OutputBus">
-																			<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+																			<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 																		</Reference>
 																	</ReferenceList>
 																	<ChildrenList>
@@ -2820,7 +3058,7 @@
 																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 																		</Reference>
 																		<Reference Name="OutputBus">
-																			<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+																			<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 																		</Reference>
 																	</ReferenceList>
 																	<ChildrenList>
@@ -2843,7 +3081,7 @@
 																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 																		</Reference>
 																		<Reference Name="OutputBus">
-																			<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+																			<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 																		</Reference>
 																	</ReferenceList>
 																	<ChildrenList>
@@ -2866,7 +3104,7 @@
 																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 																		</Reference>
 																		<Reference Name="OutputBus">
-																			<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+																			<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 																		</Reference>
 																	</ReferenceList>
 																	<ChildrenList>
@@ -2924,11 +3162,11 @@
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 																</Reference>
 																<Reference Name="OutputBus">
-																	<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+																	<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
-																<Sound Name="MC_FT_Stone_Run_01" ID="{44D2A376-9A0B-410C-83B6-73CDAB07E1F9}" ShortID="862677713">
+																<Sound Name="MC_FT_Stone_Run_01" ID="{944C694E-D0A6-4BB6-974E-368A0A3EC7AC}" ShortID="243836919">
 																	<ReferenceList>
 																		<Reference Name="Conversion">
 																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -2938,7 +3176,7 @@
 																		</Reference>
 																	</ReferenceList>
 																	<ChildrenList>
-																		<AudioFileSource Name="MC_FT_Stone_Run_01" ID="{A91B872C-B725-42C5-B19B-2B882CBBF464}">
+																		<AudioFileSource Name="MC_FT_Stone_Run_01" ID="{0545D780-A14C-4D91-98C1-FEB8A9422C03}">
 																			<Language>SFX</Language>
 																			<AudioFile>MC_FT_Stone_Run_01.wav</AudioFile>
 																			<MediaIDList>
@@ -2948,10 +3186,10 @@
 																	</ChildrenList>
 																	<ObjectLists/>
 																	<ActiveSourceList>
-																		<ActiveSource Name="MC_FT_Stone_Run_01" ID="{A91B872C-B725-42C5-B19B-2B882CBBF464}" Platform="Linked"/>
+																		<ActiveSource Name="MC_FT_Stone_Run_01" ID="{0545D780-A14C-4D91-98C1-FEB8A9422C03}" Platform="Linked"/>
 																	</ActiveSourceList>
 																</Sound>
-																<Sound Name="MC_FT_Stone_Run_02" ID="{271A6FDE-2DDF-4CBF-BA11-F1D5FDCF6D53}" ShortID="265353408">
+																<Sound Name="MC_FT_Stone_Run_02" ID="{F88D1353-B823-4A8C-9C12-F982396B6F5A}" ShortID="501586529">
 																	<ReferenceList>
 																		<Reference Name="Conversion">
 																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -2961,7 +3199,7 @@
 																		</Reference>
 																	</ReferenceList>
 																	<ChildrenList>
-																		<AudioFileSource Name="MC_FT_Stone_Run_02" ID="{1C0593F2-C4DA-4C4B-8E8E-EC259888B544}">
+																		<AudioFileSource Name="MC_FT_Stone_Run_02" ID="{1C15C708-03E9-4C2E-A358-A40362503B5D}">
 																			<Language>SFX</Language>
 																			<AudioFile>MC_FT_Stone_Run_02.wav</AudioFile>
 																			<MediaIDList>
@@ -2971,10 +3209,10 @@
 																	</ChildrenList>
 																	<ObjectLists/>
 																	<ActiveSourceList>
-																		<ActiveSource Name="MC_FT_Stone_Run_02" ID="{1C0593F2-C4DA-4C4B-8E8E-EC259888B544}" Platform="Linked"/>
+																		<ActiveSource Name="MC_FT_Stone_Run_02" ID="{1C15C708-03E9-4C2E-A358-A40362503B5D}" Platform="Linked"/>
 																	</ActiveSourceList>
 																</Sound>
-																<Sound Name="MC_FT_Stone_Run_03" ID="{BA8DF16B-919A-4091-80D7-D29DE77D4D3A}" ShortID="172620421">
+																<Sound Name="MC_FT_Stone_Run_03" ID="{FC7BFA4F-851F-4053-A766-4A5F272D5C63}" ShortID="890511999">
 																	<ReferenceList>
 																		<Reference Name="Conversion">
 																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -2984,7 +3222,7 @@
 																		</Reference>
 																	</ReferenceList>
 																	<ChildrenList>
-																		<AudioFileSource Name="MC_FT_Stone_Run_03" ID="{1E1C779F-5E27-4EB9-8E7C-B7A0A1E92390}">
+																		<AudioFileSource Name="MC_FT_Stone_Run_03" ID="{1ECF5B96-E7B3-47DA-839C-71F0891A9CB7}">
 																			<Language>SFX</Language>
 																			<AudioFile>MC_FT_Stone_Run_03.wav</AudioFile>
 																			<MediaIDList>
@@ -2994,10 +3232,10 @@
 																	</ChildrenList>
 																	<ObjectLists/>
 																	<ActiveSourceList>
-																		<ActiveSource Name="MC_FT_Stone_Run_03" ID="{1E1C779F-5E27-4EB9-8E7C-B7A0A1E92390}" Platform="Linked"/>
+																		<ActiveSource Name="MC_FT_Stone_Run_03" ID="{1ECF5B96-E7B3-47DA-839C-71F0891A9CB7}" Platform="Linked"/>
 																	</ActiveSourceList>
 																</Sound>
-																<Sound Name="MC_FT_Stone_Run_04" ID="{DFA4D6F3-F978-43C9-BADF-D69196E4084F}" ShortID="322503055">
+																<Sound Name="MC_FT_Stone_Run_04" ID="{4C7AF98B-0916-4FBA-B525-DAEB4AB145E4}" ShortID="994236296">
 																	<ReferenceList>
 																		<Reference Name="Conversion">
 																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -3007,7 +3245,7 @@
 																		</Reference>
 																	</ReferenceList>
 																	<ChildrenList>
-																		<AudioFileSource Name="MC_FT_Stone_Run_04" ID="{BA491444-4537-4F5D-82AB-4E1B24BB9021}">
+																		<AudioFileSource Name="MC_FT_Stone_Run_04" ID="{D8D05DB9-F874-4718-B301-31B40743CC95}">
 																			<Language>SFX</Language>
 																			<AudioFile>MC_FT_Stone_Run_04.wav</AudioFile>
 																			<MediaIDList>
@@ -3017,10 +3255,10 @@
 																	</ChildrenList>
 																	<ObjectLists/>
 																	<ActiveSourceList>
-																		<ActiveSource Name="MC_FT_Stone_Run_04" ID="{BA491444-4537-4F5D-82AB-4E1B24BB9021}" Platform="Linked"/>
+																		<ActiveSource Name="MC_FT_Stone_Run_04" ID="{D8D05DB9-F874-4718-B301-31B40743CC95}" Platform="Linked"/>
 																	</ActiveSourceList>
 																</Sound>
-																<Sound Name="MC_FT_Stone_Run_05" ID="{E1F653C2-2D6C-45F5-AF9C-8CDDA2686C85}" ShortID="890261694">
+																<Sound Name="MC_FT_Stone_Run_05" ID="{D8B6A7B2-CC98-4573-B4E9-1979059D36B9}" ShortID="1015808579">
 																	<ReferenceList>
 																		<Reference Name="Conversion">
 																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -3030,7 +3268,7 @@
 																		</Reference>
 																	</ReferenceList>
 																	<ChildrenList>
-																		<AudioFileSource Name="MC_FT_Stone_Run_05" ID="{3256F12C-E98F-4DD6-A860-A513D393A6B8}">
+																		<AudioFileSource Name="MC_FT_Stone_Run_05" ID="{E73ECA5B-8EA0-4F09-8998-565BE63C858D}">
 																			<Language>SFX</Language>
 																			<AudioFile>MC_FT_Stone_Run_05.wav</AudioFile>
 																			<MediaIDList>
@@ -3040,10 +3278,10 @@
 																	</ChildrenList>
 																	<ObjectLists/>
 																	<ActiveSourceList>
-																		<ActiveSource Name="MC_FT_Stone_Run_05" ID="{3256F12C-E98F-4DD6-A860-A513D393A6B8}" Platform="Linked"/>
+																		<ActiveSource Name="MC_FT_Stone_Run_05" ID="{E73ECA5B-8EA0-4F09-8998-565BE63C858D}" Platform="Linked"/>
 																	</ActiveSourceList>
 																</Sound>
-																<Sound Name="MC_FT_Stone_Run_06" ID="{D19848BC-A7C5-4E7D-A545-184225B2E794}" ShortID="828198958">
+																<Sound Name="MC_FT_Stone_Run_06" ID="{58F1F557-B48D-4FEE-A7E9-FC1633A60A3B}" ShortID="521469586">
 																	<ReferenceList>
 																		<Reference Name="Conversion">
 																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -3053,7 +3291,7 @@
 																		</Reference>
 																	</ReferenceList>
 																	<ChildrenList>
-																		<AudioFileSource Name="MC_FT_Stone_Run_06" ID="{9A15AA07-AEF0-47A1-808A-74596397F87A}">
+																		<AudioFileSource Name="MC_FT_Stone_Run_06" ID="{17515717-780B-486B-AC6A-B328D0C2E2B9}">
 																			<Language>SFX</Language>
 																			<AudioFile>MC_FT_Stone_Run_06.wav</AudioFile>
 																			<MediaIDList>
@@ -3063,10 +3301,10 @@
 																	</ChildrenList>
 																	<ObjectLists/>
 																	<ActiveSourceList>
-																		<ActiveSource Name="MC_FT_Stone_Run_06" ID="{9A15AA07-AEF0-47A1-808A-74596397F87A}" Platform="Linked"/>
+																		<ActiveSource Name="MC_FT_Stone_Run_06" ID="{17515717-780B-486B-AC6A-B328D0C2E2B9}" Platform="Linked"/>
 																	</ActiveSourceList>
 																</Sound>
-																<Sound Name="MC_FT_Stone_Run_07" ID="{1DAE4DB9-C260-466C-914E-E7293E77578F}" ShortID="317281004">
+																<Sound Name="MC_FT_Stone_Run_07" ID="{CA11E2DA-2F4C-4A15-BB15-FC8AA2EBBCBE}" ShortID="639201871">
 																	<ReferenceList>
 																		<Reference Name="Conversion">
 																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -3076,7 +3314,7 @@
 																		</Reference>
 																	</ReferenceList>
 																	<ChildrenList>
-																		<AudioFileSource Name="MC_FT_Stone_Run_07" ID="{DBD57651-1A66-4717-B82D-6292B89C2C00}">
+																		<AudioFileSource Name="MC_FT_Stone_Run_07" ID="{2D2814F9-3774-4098-9D2B-2031A25CAC9D}">
 																			<Language>SFX</Language>
 																			<AudioFile>MC_FT_Stone_Run_07.wav</AudioFile>
 																			<MediaIDList>
@@ -3086,10 +3324,10 @@
 																	</ChildrenList>
 																	<ObjectLists/>
 																	<ActiveSourceList>
-																		<ActiveSource Name="MC_FT_Stone_Run_07" ID="{DBD57651-1A66-4717-B82D-6292B89C2C00}" Platform="Linked"/>
+																		<ActiveSource Name="MC_FT_Stone_Run_07" ID="{2D2814F9-3774-4098-9D2B-2031A25CAC9D}" Platform="Linked"/>
 																	</ActiveSourceList>
 																</Sound>
-																<Sound Name="MC_FT_Stone_Run_08" ID="{6BFD0D43-180E-477E-879A-34AC5056BD27}" ShortID="284114409">
+																<Sound Name="MC_FT_Stone_Run_08" ID="{2240D3AA-C5B2-48B2-9F79-9E64003ACEB5}" ShortID="502225444">
 																	<ReferenceList>
 																		<Reference Name="Conversion">
 																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -3099,7 +3337,7 @@
 																		</Reference>
 																	</ReferenceList>
 																	<ChildrenList>
-																		<AudioFileSource Name="MC_FT_Stone_Run_08" ID="{128AD19A-6707-4658-9C93-4CD0B7C0CAE3}">
+																		<AudioFileSource Name="MC_FT_Stone_Run_08" ID="{69F93786-CDC8-4619-9B9D-8439EA1A8E53}">
 																			<Language>SFX</Language>
 																			<AudioFile>MC_FT_Stone_Run_08.wav</AudioFile>
 																			<MediaIDList>
@@ -3109,10 +3347,10 @@
 																	</ChildrenList>
 																	<ObjectLists/>
 																	<ActiveSourceList>
-																		<ActiveSource Name="MC_FT_Stone_Run_08" ID="{128AD19A-6707-4658-9C93-4CD0B7C0CAE3}" Platform="Linked"/>
+																		<ActiveSource Name="MC_FT_Stone_Run_08" ID="{69F93786-CDC8-4619-9B9D-8439EA1A8E53}" Platform="Linked"/>
 																	</ActiveSourceList>
 																</Sound>
-																<Sound Name="MC_FT_Stone_Run_09" ID="{1790F29B-436F-4203-BE2B-AD7C6EBFD2E2}" ShortID="872244576">
+																<Sound Name="MC_FT_Stone_Run_09" ID="{49100949-F298-4D3E-95BC-33B8EE9CA280}" ShortID="262401252">
 																	<ReferenceList>
 																		<Reference Name="Conversion">
 																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -3122,7 +3360,7 @@
 																		</Reference>
 																	</ReferenceList>
 																	<ChildrenList>
-																		<AudioFileSource Name="MC_FT_Stone_Run_09" ID="{F159D59F-99D4-4C2C-8DF4-EC613717A51F}">
+																		<AudioFileSource Name="MC_FT_Stone_Run_09" ID="{028D5C68-F285-4698-B829-E9FADC28555F}">
 																			<Language>SFX</Language>
 																			<AudioFile>MC_FT_Stone_Run_09.wav</AudioFile>
 																			<MediaIDList>
@@ -3132,10 +3370,10 @@
 																	</ChildrenList>
 																	<ObjectLists/>
 																	<ActiveSourceList>
-																		<ActiveSource Name="MC_FT_Stone_Run_09" ID="{F159D59F-99D4-4C2C-8DF4-EC613717A51F}" Platform="Linked"/>
+																		<ActiveSource Name="MC_FT_Stone_Run_09" ID="{028D5C68-F285-4698-B829-E9FADC28555F}" Platform="Linked"/>
 																	</ActiveSourceList>
 																</Sound>
-																<Sound Name="MC_FT_Stone_Run_10" ID="{E3F7BBE0-B3BC-442A-9DC4-70DD73177933}" ShortID="724678472">
+																<Sound Name="MC_FT_Stone_Run_10" ID="{304BBA9D-3119-4B68-9C8B-D078405D9511}" ShortID="826782065">
 																	<ReferenceList>
 																		<Reference Name="Conversion">
 																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -3145,7 +3383,7 @@
 																		</Reference>
 																	</ReferenceList>
 																	<ChildrenList>
-																		<AudioFileSource Name="MC_FT_Stone_Run_10" ID="{8D17DBCE-5438-420E-AB2B-2D2558D38E82}">
+																		<AudioFileSource Name="MC_FT_Stone_Run_10" ID="{3B7F5A78-DAB1-40F7-933E-2604B58C6479}">
 																			<Language>SFX</Language>
 																			<AudioFile>MC_FT_Stone_Run_10.wav</AudioFile>
 																			<MediaIDList>
@@ -3155,10 +3393,10 @@
 																	</ChildrenList>
 																	<ObjectLists/>
 																	<ActiveSourceList>
-																		<ActiveSource Name="MC_FT_Stone_Run_10" ID="{8D17DBCE-5438-420E-AB2B-2D2558D38E82}" Platform="Linked"/>
+																		<ActiveSource Name="MC_FT_Stone_Run_10" ID="{3B7F5A78-DAB1-40F7-933E-2604B58C6479}" Platform="Linked"/>
 																	</ActiveSourceList>
 																</Sound>
-																<Sound Name="MC_FT_Stone_Run_11" ID="{2B110810-FF1C-4FE5-BE59-E17FD9340058}" ShortID="803934679">
+																<Sound Name="MC_FT_Stone_Run_11" ID="{C7C9FB38-35F2-44AD-A32E-8B52CF8D6B03}" ShortID="925172376">
 																	<ReferenceList>
 																		<Reference Name="Conversion">
 																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -3168,7 +3406,7 @@
 																		</Reference>
 																	</ReferenceList>
 																	<ChildrenList>
-																		<AudioFileSource Name="MC_FT_Stone_Run_11" ID="{DFF8C285-8255-41B8-99A5-7EABF76455E7}">
+																		<AudioFileSource Name="MC_FT_Stone_Run_11" ID="{1F68419C-E9DC-4ABB-84E4-9C63006DCA79}">
 																			<Language>SFX</Language>
 																			<AudioFile>MC_FT_Stone_Run_11.wav</AudioFile>
 																			<MediaIDList>
@@ -3178,10 +3416,10 @@
 																	</ChildrenList>
 																	<ObjectLists/>
 																	<ActiveSourceList>
-																		<ActiveSource Name="MC_FT_Stone_Run_11" ID="{DFF8C285-8255-41B8-99A5-7EABF76455E7}" Platform="Linked"/>
+																		<ActiveSource Name="MC_FT_Stone_Run_11" ID="{1F68419C-E9DC-4ABB-84E4-9C63006DCA79}" Platform="Linked"/>
 																	</ActiveSourceList>
 																</Sound>
-																<Sound Name="MC_FT_Stone_Run_12" ID="{49F26237-E27D-40F6-A854-23536E151E9E}" ShortID="434999225">
+																<Sound Name="MC_FT_Stone_Run_12" ID="{EE054394-8540-44AB-B9AA-DCFC36118914}" ShortID="948941867">
 																	<ReferenceList>
 																		<Reference Name="Conversion">
 																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -3191,7 +3429,7 @@
 																		</Reference>
 																	</ReferenceList>
 																	<ChildrenList>
-																		<AudioFileSource Name="MC_FT_Stone_Run_12" ID="{097EC598-922A-487B-87F1-463D36E4B6F9}">
+																		<AudioFileSource Name="MC_FT_Stone_Run_12" ID="{755EC877-643A-494D-84D7-A27507B8857E}">
 																			<Language>SFX</Language>
 																			<AudioFile>MC_FT_Stone_Run_12.wav</AudioFile>
 																			<MediaIDList>
@@ -3201,10 +3439,10 @@
 																	</ChildrenList>
 																	<ObjectLists/>
 																	<ActiveSourceList>
-																		<ActiveSource Name="MC_FT_Stone_Run_12" ID="{097EC598-922A-487B-87F1-463D36E4B6F9}" Platform="Linked"/>
+																		<ActiveSource Name="MC_FT_Stone_Run_12" ID="{755EC877-643A-494D-84D7-A27507B8857E}" Platform="Linked"/>
 																	</ActiveSourceList>
 																</Sound>
-																<Sound Name="MC_FT_Stone_Run_13" ID="{59BAD98E-C4AB-420C-9A95-51C7688CDF42}" ShortID="189038119">
+																<Sound Name="MC_FT_Stone_Run_13" ID="{E2C15391-6903-499A-AA32-D5ED16AF2ED9}" ShortID="520412514">
 																	<ReferenceList>
 																		<Reference Name="Conversion">
 																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -3214,7 +3452,7 @@
 																		</Reference>
 																	</ReferenceList>
 																	<ChildrenList>
-																		<AudioFileSource Name="MC_FT_Stone_Run_13" ID="{26F76BA4-9A11-4ED8-A57F-F2D4B4F70200}">
+																		<AudioFileSource Name="MC_FT_Stone_Run_13" ID="{F0569D70-3806-4FAC-9001-9DACD7E5B8CD}">
 																			<Language>SFX</Language>
 																			<AudioFile>MC_FT_Stone_Run_13.wav</AudioFile>
 																			<MediaIDList>
@@ -3224,10 +3462,10 @@
 																	</ChildrenList>
 																	<ObjectLists/>
 																	<ActiveSourceList>
-																		<ActiveSource Name="MC_FT_Stone_Run_13" ID="{26F76BA4-9A11-4ED8-A57F-F2D4B4F70200}" Platform="Linked"/>
+																		<ActiveSource Name="MC_FT_Stone_Run_13" ID="{F0569D70-3806-4FAC-9001-9DACD7E5B8CD}" Platform="Linked"/>
 																	</ActiveSourceList>
 																</Sound>
-																<Sound Name="MC_FT_Stone_Run_14" ID="{EDA202FA-1A08-4C1D-B4DB-92D1B2983313}" ShortID="308193841">
+																<Sound Name="MC_FT_Stone_Run_14" ID="{BE4AB31A-7BAB-4879-A8BE-8ECD8ED65598}" ShortID="655305783">
 																	<ReferenceList>
 																		<Reference Name="Conversion">
 																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -3237,7 +3475,7 @@
 																		</Reference>
 																	</ReferenceList>
 																	<ChildrenList>
-																		<AudioFileSource Name="MC_FT_Stone_Run_14" ID="{B4D82DF4-D047-4BD9-9E7B-6A7F802BB109}">
+																		<AudioFileSource Name="MC_FT_Stone_Run_14" ID="{2B5D0169-413D-412D-BD5F-28057DA126C1}">
 																			<Language>SFX</Language>
 																			<AudioFile>MC_FT_Stone_Run_14.wav</AudioFile>
 																			<MediaIDList>
@@ -3247,10 +3485,10 @@
 																	</ChildrenList>
 																	<ObjectLists/>
 																	<ActiveSourceList>
-																		<ActiveSource Name="MC_FT_Stone_Run_14" ID="{B4D82DF4-D047-4BD9-9E7B-6A7F802BB109}" Platform="Linked"/>
+																		<ActiveSource Name="MC_FT_Stone_Run_14" ID="{2B5D0169-413D-412D-BD5F-28057DA126C1}" Platform="Linked"/>
 																	</ActiveSourceList>
 																</Sound>
-																<Sound Name="MC_FT_Stone_Run_15" ID="{94DD52E2-3643-49C9-873D-C65830E3E3B9}" ShortID="247316225">
+																<Sound Name="MC_FT_Stone_Run_15" ID="{87CF69FF-7223-4B9F-98E6-0B49D7486934}" ShortID="494957169">
 																	<ReferenceList>
 																		<Reference Name="Conversion">
 																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -3260,7 +3498,7 @@
 																		</Reference>
 																	</ReferenceList>
 																	<ChildrenList>
-																		<AudioFileSource Name="MC_FT_Stone_Run_15" ID="{99AAEF3E-11A6-4257-8618-EF55800FBE38}">
+																		<AudioFileSource Name="MC_FT_Stone_Run_15" ID="{903B1C14-D807-4A1D-ACBC-09F39F24991A}">
 																			<Language>SFX</Language>
 																			<AudioFile>MC_FT_Stone_Run_15.wav</AudioFile>
 																			<MediaIDList>
@@ -3270,10 +3508,10 @@
 																	</ChildrenList>
 																	<ObjectLists/>
 																	<ActiveSourceList>
-																		<ActiveSource Name="MC_FT_Stone_Run_15" ID="{99AAEF3E-11A6-4257-8618-EF55800FBE38}" Platform="Linked"/>
+																		<ActiveSource Name="MC_FT_Stone_Run_15" ID="{903B1C14-D807-4A1D-ACBC-09F39F24991A}" Platform="Linked"/>
 																	</ActiveSourceList>
 																</Sound>
-																<Sound Name="MC_FT_Stone_Run_16" ID="{C602FDB2-0DAB-45D1-A180-CE1DFF3E6C8C}" ShortID="255895744">
+																<Sound Name="MC_FT_Stone_Run_16" ID="{EEF53AB3-72DC-464E-86B7-E6D6399ADFE6}" ShortID="820992554">
 																	<ReferenceList>
 																		<Reference Name="Conversion">
 																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -3283,7 +3521,7 @@
 																		</Reference>
 																	</ReferenceList>
 																	<ChildrenList>
-																		<AudioFileSource Name="MC_FT_Stone_Run_16" ID="{7FEC1B81-F658-4545-A6B1-1180BCAE8EDB}">
+																		<AudioFileSource Name="MC_FT_Stone_Run_16" ID="{87C47B1B-5B2F-43DA-B476-CE7B6D7B270D}">
 																			<Language>SFX</Language>
 																			<AudioFile>MC_FT_Stone_Run_16.wav</AudioFile>
 																			<MediaIDList>
@@ -3293,10 +3531,10 @@
 																	</ChildrenList>
 																	<ObjectLists/>
 																	<ActiveSourceList>
-																		<ActiveSource Name="MC_FT_Stone_Run_16" ID="{7FEC1B81-F658-4545-A6B1-1180BCAE8EDB}" Platform="Linked"/>
+																		<ActiveSource Name="MC_FT_Stone_Run_16" ID="{87C47B1B-5B2F-43DA-B476-CE7B6D7B270D}" Platform="Linked"/>
 																	</ActiveSourceList>
 																</Sound>
-																<Sound Name="MC_FT_Stone_Run_17" ID="{D3BC417B-2C73-448C-96CD-D5E2610DF99E}" ShortID="729596584">
+																<Sound Name="MC_FT_Stone_Run_17" ID="{CE398835-4965-4DDA-A767-93ED200925EC}" ShortID="547028402">
 																	<ReferenceList>
 																		<Reference Name="Conversion">
 																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -3306,7 +3544,7 @@
 																		</Reference>
 																	</ReferenceList>
 																	<ChildrenList>
-																		<AudioFileSource Name="MC_FT_Stone_Run_17" ID="{4E4645C2-EDC0-4AB0-925B-F61A6EFC1208}">
+																		<AudioFileSource Name="MC_FT_Stone_Run_17" ID="{930AAF0E-1E2D-42D2-8511-4E7CA90D8143}">
 																			<Language>SFX</Language>
 																			<AudioFile>MC_FT_Stone_Run_17.wav</AudioFile>
 																			<MediaIDList>
@@ -3316,10 +3554,10 @@
 																	</ChildrenList>
 																	<ObjectLists/>
 																	<ActiveSourceList>
-																		<ActiveSource Name="MC_FT_Stone_Run_17" ID="{4E4645C2-EDC0-4AB0-925B-F61A6EFC1208}" Platform="Linked"/>
+																		<ActiveSource Name="MC_FT_Stone_Run_17" ID="{930AAF0E-1E2D-42D2-8511-4E7CA90D8143}" Platform="Linked"/>
 																	</ActiveSourceList>
 																</Sound>
-																<Sound Name="MC_FT_Stone_Run_18" ID="{57A7B8B7-D2CA-4479-8077-469AE01F5922}" ShortID="464278491">
+																<Sound Name="MC_FT_Stone_Run_18" ID="{A5BC136C-A9E5-4D0A-9C3B-57C99924AE55}" ShortID="332655565">
 																	<ReferenceList>
 																		<Reference Name="Conversion">
 																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -3329,7 +3567,7 @@
 																		</Reference>
 																	</ReferenceList>
 																	<ChildrenList>
-																		<AudioFileSource Name="MC_FT_Stone_Run_18" ID="{E8D54075-10E6-468C-B3DF-A3ACFAC7C895}">
+																		<AudioFileSource Name="MC_FT_Stone_Run_18" ID="{8F786C34-B258-4594-85A3-EBF3AC5CA32A}">
 																			<Language>SFX</Language>
 																			<AudioFile>MC_FT_Stone_Run_18.wav</AudioFile>
 																			<MediaIDList>
@@ -3339,10 +3577,10 @@
 																	</ChildrenList>
 																	<ObjectLists/>
 																	<ActiveSourceList>
-																		<ActiveSource Name="MC_FT_Stone_Run_18" ID="{E8D54075-10E6-468C-B3DF-A3ACFAC7C895}" Platform="Linked"/>
+																		<ActiveSource Name="MC_FT_Stone_Run_18" ID="{8F786C34-B258-4594-85A3-EBF3AC5CA32A}" Platform="Linked"/>
 																	</ActiveSourceList>
 																</Sound>
-																<Sound Name="MC_FT_Stone_Run_19" ID="{9B1D8A55-8D4D-4A42-8824-18D7C8F3D799}" ShortID="957480999">
+																<Sound Name="MC_FT_Stone_Run_19" ID="{2E44B32B-0EDC-49A0-BA71-E4970F1204E8}" ShortID="540426172">
 																	<ReferenceList>
 																		<Reference Name="Conversion">
 																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -3352,7 +3590,7 @@
 																		</Reference>
 																	</ReferenceList>
 																	<ChildrenList>
-																		<AudioFileSource Name="MC_FT_Stone_Run_19" ID="{B54F32D0-A5D7-4894-96FE-DC6C993AF964}">
+																		<AudioFileSource Name="MC_FT_Stone_Run_19" ID="{DDA38CF2-EFF1-48E6-8244-E73A6B3B11B1}">
 																			<Language>SFX</Language>
 																			<AudioFile>MC_FT_Stone_Run_19.wav</AudioFile>
 																			<MediaIDList>
@@ -3362,10 +3600,10 @@
 																	</ChildrenList>
 																	<ObjectLists/>
 																	<ActiveSourceList>
-																		<ActiveSource Name="MC_FT_Stone_Run_19" ID="{B54F32D0-A5D7-4894-96FE-DC6C993AF964}" Platform="Linked"/>
+																		<ActiveSource Name="MC_FT_Stone_Run_19" ID="{DDA38CF2-EFF1-48E6-8244-E73A6B3B11B1}" Platform="Linked"/>
 																	</ActiveSourceList>
 																</Sound>
-																<Sound Name="MC_FT_Stone_Run_20" ID="{11A3C014-2887-459B-B777-B36B81D12773}" ShortID="812711982">
+																<Sound Name="MC_FT_Stone_Run_20" ID="{902503DF-78B9-49F2-BA99-F7A5184D87A2}" ShortID="906208354">
 																	<ReferenceList>
 																		<Reference Name="Conversion">
 																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -3375,7 +3613,7 @@
 																		</Reference>
 																	</ReferenceList>
 																	<ChildrenList>
-																		<AudioFileSource Name="MC_FT_Stone_Run_20" ID="{DCAFA702-5A86-49F4-BC59-B64BF843DC53}">
+																		<AudioFileSource Name="MC_FT_Stone_Run_20" ID="{B041924E-1349-4479-B286-5B4825EC39BC}">
 																			<Language>SFX</Language>
 																			<AudioFile>MC_FT_Stone_Run_20.wav</AudioFile>
 																			<MediaIDList>
@@ -3385,7 +3623,7 @@
 																	</ChildrenList>
 																	<ObjectLists/>
 																	<ActiveSourceList>
-																		<ActiveSource Name="MC_FT_Stone_Run_20" ID="{DCAFA702-5A86-49F4-BC59-B64BF843DC53}" Platform="Linked"/>
+																		<ActiveSource Name="MC_FT_Stone_Run_20" ID="{B041924E-1349-4479-B286-5B4825EC39BC}" Platform="Linked"/>
 																	</ActiveSourceList>
 																</Sound>
 															</ChildrenList>
@@ -3426,7 +3664,7 @@
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 																</Reference>
 																<Reference Name="OutputBus">
-																	<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+																	<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
@@ -3919,7 +4157,7 @@
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 																</Reference>
 																<Reference Name="OutputBus">
-																	<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+																	<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
@@ -4276,6 +4514,9 @@
 												</Property>
 												<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="10"/>
 												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-16</Value>
+													</ValueList>
 													<ModifierList>
 														<ModifierInfo>
 															<Modifier Name="" ID="{B0B73A36-1C84-4A84-829F-55AC5566FA79}">
@@ -4543,7 +4784,7 @@
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 												</Reference>
 												<Reference Name="DefaultSwitchOrState">
-													<ObjectRef Name="Stone" ID="{FBA5D6FC-BB79-43BA-80B2-ABEA585C003B}" WorkUnitID="{FAF60658-236D-4A53-8DE3-BED411FEA1DF}"/>
+													<ObjectRef Name="Grass" ID="{AF0B5F0B-9DBE-4ADD-BBCA-EF6F1BD0E3B0}" WorkUnitID="{FAF60658-236D-4A53-8DE3-BED411FEA1DF}"/>
 												</Reference>
 												<Reference Name="OutputBus">
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
@@ -4588,7 +4829,7 @@
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 														</Reference>
 														<Reference Name="OutputBus">
-															<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+															<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
@@ -4750,7 +4991,7 @@
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 														</Reference>
 														<Reference Name="OutputBus">
-															<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+															<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
@@ -4760,7 +5001,7 @@
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 																</Reference>
 																<Reference Name="OutputBus">
-																	<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+																	<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
@@ -4783,7 +5024,7 @@
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 																</Reference>
 																<Reference Name="OutputBus">
-																	<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+																	<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
@@ -4806,7 +5047,7 @@
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 																</Reference>
 																<Reference Name="OutputBus">
-																	<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+																	<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
@@ -4824,12 +5065,19 @@
 															</ActiveSourceList>
 														</Sound>
 														<Sound Name="MC_FT_Grass_Jump_01" ID="{71D1458D-A9F2-4BC9-97D2-D19B9906AFE3}" ShortID="143359901">
+															<PropertyList>
+																<Property Name="Volume" Type="Real64">
+																	<ValueList>
+																		<Value>-4</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
 															<ReferenceList>
 																<Reference Name="Conversion">
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 																</Reference>
 																<Reference Name="OutputBus">
-																	<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+																	<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
@@ -4852,7 +5100,7 @@
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 																</Reference>
 																<Reference Name="OutputBus">
-																	<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+																	<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
@@ -4907,7 +5155,7 @@
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 														</Reference>
 														<Reference Name="OutputBus">
-															<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+															<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
@@ -5064,7 +5312,7 @@
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 														</Reference>
 														<Reference Name="OutputBus">
-															<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+															<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
@@ -5289,11 +5537,11 @@
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 														</Reference>
 														<Reference Name="OutputBus">
-															<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+															<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<Sound Name="MC_FT_Water_Land_01" ID="{CBAE653D-0474-4798-9CB3-0A3E68177559}" ShortID="614651609">
+														<Sound Name="MC_FT_Water_Land_01" ID="{703DD06D-8BF7-4209-B442-7155ED260036}" ShortID="400830418">
 															<ReferenceList>
 																<Reference Name="Conversion">
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -5303,7 +5551,7 @@
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
-																<AudioFileSource Name="MC_FT_Water_Land_01" ID="{C240F3E4-936F-4473-91AB-ECEE09F7DEF0}">
+																<AudioFileSource Name="MC_FT_Water_Land_01" ID="{9F94718C-D9BC-4729-9E54-1ACACB1506FB}">
 																	<Language>SFX</Language>
 																	<AudioFile>MC_FT_Water_Land_01.wav</AudioFile>
 																	<MediaIDList>
@@ -5313,10 +5561,10 @@
 															</ChildrenList>
 															<ObjectLists/>
 															<ActiveSourceList>
-																<ActiveSource Name="MC_FT_Water_Land_01" ID="{C240F3E4-936F-4473-91AB-ECEE09F7DEF0}" Platform="Linked"/>
+																<ActiveSource Name="MC_FT_Water_Land_01" ID="{9F94718C-D9BC-4729-9E54-1ACACB1506FB}" Platform="Linked"/>
 															</ActiveSourceList>
 														</Sound>
-														<Sound Name="MC_FT_Water_Land_02" ID="{FA1130EE-EFF3-4D6E-889A-19FE47290DA5}" ShortID="473554457">
+														<Sound Name="MC_FT_Water_Land_02" ID="{07DEDABD-5560-4ED1-A93B-9EFF9EE4BFDC}" ShortID="530822085">
 															<ReferenceList>
 																<Reference Name="Conversion">
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -5326,7 +5574,7 @@
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
-																<AudioFileSource Name="MC_FT_Water_Land_02" ID="{9FCD29B6-BC99-4DDC-A45E-2123FD313D91}">
+																<AudioFileSource Name="MC_FT_Water_Land_02" ID="{8E4D53EB-743B-45EE-B4A7-BC9C7358A3E3}">
 																	<Language>SFX</Language>
 																	<AudioFile>MC_FT_Water_Land_02.wav</AudioFile>
 																	<MediaIDList>
@@ -5336,10 +5584,10 @@
 															</ChildrenList>
 															<ObjectLists/>
 															<ActiveSourceList>
-																<ActiveSource Name="MC_FT_Water_Land_02" ID="{9FCD29B6-BC99-4DDC-A45E-2123FD313D91}" Platform="Linked"/>
+																<ActiveSource Name="MC_FT_Water_Land_02" ID="{8E4D53EB-743B-45EE-B4A7-BC9C7358A3E3}" Platform="Linked"/>
 															</ActiveSourceList>
 														</Sound>
-														<Sound Name="MC_FT_Water_Land_03" ID="{2C1CE75B-DC58-4268-8438-A36D6526B425}" ShortID="178390739">
+														<Sound Name="MC_FT_Water_Land_03" ID="{39E9DC02-6AB8-4997-8860-CB7B35BCFCE6}" ShortID="810994762">
 															<ReferenceList>
 																<Reference Name="Conversion">
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -5349,7 +5597,7 @@
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
-																<AudioFileSource Name="MC_FT_Water_Land_03" ID="{86061891-4E0A-437A-9ECF-D7783AAADE85}">
+																<AudioFileSource Name="MC_FT_Water_Land_03" ID="{363B17FD-F1A1-4FA8-B120-53A9199C60B4}">
 																	<Language>SFX</Language>
 																	<AudioFile>MC_FT_Water_Land_03.wav</AudioFile>
 																	<MediaIDList>
@@ -5359,10 +5607,10 @@
 															</ChildrenList>
 															<ObjectLists/>
 															<ActiveSourceList>
-																<ActiveSource Name="MC_FT_Water_Land_03" ID="{86061891-4E0A-437A-9ECF-D7783AAADE85}" Platform="Linked"/>
+																<ActiveSource Name="MC_FT_Water_Land_03" ID="{363B17FD-F1A1-4FA8-B120-53A9199C60B4}" Platform="Linked"/>
 															</ActiveSourceList>
 														</Sound>
-														<Sound Name="MC_FT_Water_Land_04" ID="{3718C019-006E-4B47-9862-6A7E4C145916}" ShortID="456451040">
+														<Sound Name="MC_FT_Water_Land_04" ID="{E4A3374D-B18D-4B4B-A591-9996BAED2941}" ShortID="367099701">
 															<ReferenceList>
 																<Reference Name="Conversion">
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -5372,7 +5620,7 @@
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
-																<AudioFileSource Name="MC_FT_Water_Land_04" ID="{0B894B7B-5F76-47B3-BFC0-8D0A1D45C84A}">
+																<AudioFileSource Name="MC_FT_Water_Land_04" ID="{8C98773A-341A-4772-A4B1-281B65366020}">
 																	<Language>SFX</Language>
 																	<AudioFile>MC_FT_Water_Land_04.wav</AudioFile>
 																	<MediaIDList>
@@ -5382,10 +5630,10 @@
 															</ChildrenList>
 															<ObjectLists/>
 															<ActiveSourceList>
-																<ActiveSource Name="MC_FT_Water_Land_04" ID="{0B894B7B-5F76-47B3-BFC0-8D0A1D45C84A}" Platform="Linked"/>
+																<ActiveSource Name="MC_FT_Water_Land_04" ID="{8C98773A-341A-4772-A4B1-281B65366020}" Platform="Linked"/>
 															</ActiveSourceList>
 														</Sound>
-														<Sound Name="MC_FT_Water_Land_05" ID="{EE77A11A-C238-4A30-8E13-554D88E02B52}" ShortID="812566409">
+														<Sound Name="MC_FT_Water_Land_05" ID="{B9E9E3D1-578F-44F1-8ED1-3F1E3E8E01CD}" ShortID="254847412">
 															<ReferenceList>
 																<Reference Name="Conversion">
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -5395,7 +5643,7 @@
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
-																<AudioFileSource Name="MC_FT_Water_Land_05" ID="{14AB772C-722B-4EC1-862C-E1D6327FE671}">
+																<AudioFileSource Name="MC_FT_Water_Land_05" ID="{9A3DAE05-9F73-455B-9DB6-4DFCF3E67BB7}">
 																	<Language>SFX</Language>
 																	<AudioFile>MC_FT_Water_Land_05.wav</AudioFile>
 																	<MediaIDList>
@@ -5405,7 +5653,7 @@
 															</ChildrenList>
 															<ObjectLists/>
 															<ActiveSourceList>
-																<ActiveSource Name="MC_FT_Water_Land_05" ID="{14AB772C-722B-4EC1-862C-E1D6327FE671}" Platform="Linked"/>
+																<ActiveSource Name="MC_FT_Water_Land_05" ID="{9A3DAE05-9F73-455B-9DB6-4DFCF3E67BB7}" Platform="Linked"/>
 															</ActiveSourceList>
 														</Sound>
 													</ChildrenList>
@@ -5446,7 +5694,7 @@
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 														</Reference>
 														<Reference Name="OutputBus">
-															<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+															<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
@@ -5456,7 +5704,7 @@
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 																</Reference>
 																<Reference Name="OutputBus">
-																	<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+																	<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
@@ -5479,7 +5727,7 @@
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 																</Reference>
 																<Reference Name="OutputBus">
-																	<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+																	<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
@@ -5502,7 +5750,7 @@
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 																</Reference>
 																<Reference Name="OutputBus">
-																	<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+																	<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
@@ -5525,7 +5773,7 @@
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 																</Reference>
 																<Reference Name="OutputBus">
-																	<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+																	<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
@@ -5548,7 +5796,7 @@
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 																</Reference>
 																<Reference Name="OutputBus">
-																	<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+																	<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
@@ -5603,11 +5851,11 @@
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 														</Reference>
 														<Reference Name="OutputBus">
-															<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+															<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<Sound Name="MC_FT_Stone_Land_01" ID="{CB70C26A-500A-42AB-BB9C-1E781E8CC79D}" ShortID="51825752">
+														<Sound Name="MC_FT_Stone_Land_01" ID="{40939BBC-C14A-4489-BF17-6FDE7976BBB0}" ShortID="354595913">
 															<ReferenceList>
 																<Reference Name="Conversion">
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -5617,7 +5865,7 @@
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
-																<AudioFileSource Name="MC_FT_Stone_Land_01" ID="{EE33F921-34B0-47ED-9831-4A9956462933}">
+																<AudioFileSource Name="MC_FT_Stone_Land_01" ID="{60CAF1BD-6C67-4C51-9F14-5F1DE406C599}">
 																	<Language>SFX</Language>
 																	<AudioFile>MC_FT_Stone_Land_01.wav</AudioFile>
 																	<MediaIDList>
@@ -5627,10 +5875,10 @@
 															</ChildrenList>
 															<ObjectLists/>
 															<ActiveSourceList>
-																<ActiveSource Name="MC_FT_Stone_Land_01" ID="{EE33F921-34B0-47ED-9831-4A9956462933}" Platform="Linked"/>
+																<ActiveSource Name="MC_FT_Stone_Land_01" ID="{60CAF1BD-6C67-4C51-9F14-5F1DE406C599}" Platform="Linked"/>
 															</ActiveSourceList>
 														</Sound>
-														<Sound Name="MC_FT_Stone_Land_02" ID="{163C329B-DA46-4802-8B21-764EEA2CA7E6}" ShortID="323431034">
+														<Sound Name="MC_FT_Stone_Land_02" ID="{8A294CFA-2FF8-4719-884B-4F19772B2743}" ShortID="156289112">
 															<ReferenceList>
 																<Reference Name="Conversion">
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -5640,7 +5888,7 @@
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
-																<AudioFileSource Name="MC_FT_Stone_Land_02" ID="{500A05FD-C9D9-47E0-8087-652A6A2835CC}">
+																<AudioFileSource Name="MC_FT_Stone_Land_02" ID="{8A3E4E7B-7EDD-43E3-93C7-CE0F5C72DC6B}">
 																	<Language>SFX</Language>
 																	<AudioFile>MC_FT_Stone_Land_02.wav</AudioFile>
 																	<MediaIDList>
@@ -5650,10 +5898,10 @@
 															</ChildrenList>
 															<ObjectLists/>
 															<ActiveSourceList>
-																<ActiveSource Name="MC_FT_Stone_Land_02" ID="{500A05FD-C9D9-47E0-8087-652A6A2835CC}" Platform="Linked"/>
+																<ActiveSource Name="MC_FT_Stone_Land_02" ID="{8A3E4E7B-7EDD-43E3-93C7-CE0F5C72DC6B}" Platform="Linked"/>
 															</ActiveSourceList>
 														</Sound>
-														<Sound Name="MC_FT_Stone_Land_03" ID="{E4602B4F-C7AB-4937-8A5D-029380180804}" ShortID="339507836">
+														<Sound Name="MC_FT_Stone_Land_03" ID="{B88DC565-093D-457A-9F54-8F1DB8AB5800}" ShortID="679826851">
 															<ReferenceList>
 																<Reference Name="Conversion">
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -5663,7 +5911,7 @@
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
-																<AudioFileSource Name="MC_FT_Stone_Land_03" ID="{5E774422-1F23-4838-8AAD-1EE53835DA01}">
+																<AudioFileSource Name="MC_FT_Stone_Land_03" ID="{53BCBF49-CC97-46B2-8C8A-B1CDD9ACEDCD}">
 																	<Language>SFX</Language>
 																	<AudioFile>MC_FT_Stone_Land_03.wav</AudioFile>
 																	<MediaIDList>
@@ -5673,10 +5921,10 @@
 															</ChildrenList>
 															<ObjectLists/>
 															<ActiveSourceList>
-																<ActiveSource Name="MC_FT_Stone_Land_03" ID="{5E774422-1F23-4838-8AAD-1EE53835DA01}" Platform="Linked"/>
+																<ActiveSource Name="MC_FT_Stone_Land_03" ID="{53BCBF49-CC97-46B2-8C8A-B1CDD9ACEDCD}" Platform="Linked"/>
 															</ActiveSourceList>
 														</Sound>
-														<Sound Name="MC_FT_Stone_Land_04" ID="{53F6F978-1494-4BBE-B1D4-17F75F57A02C}" ShortID="694579965">
+														<Sound Name="MC_FT_Stone_Land_04" ID="{B44B0AA8-D391-46ED-9FBA-25B09038104A}" ShortID="1029937443">
 															<ReferenceList>
 																<Reference Name="Conversion">
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -5686,7 +5934,7 @@
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
-																<AudioFileSource Name="MC_FT_Stone_Land_04" ID="{396ABBDD-422C-44E2-B54C-28197CA2B0D3}">
+																<AudioFileSource Name="MC_FT_Stone_Land_04" ID="{30702DF7-23E1-44AD-BA22-37AF8C989570}">
 																	<Language>SFX</Language>
 																	<AudioFile>MC_FT_Stone_Land_04.wav</AudioFile>
 																	<MediaIDList>
@@ -5696,10 +5944,10 @@
 															</ChildrenList>
 															<ObjectLists/>
 															<ActiveSourceList>
-																<ActiveSource Name="MC_FT_Stone_Land_04" ID="{396ABBDD-422C-44E2-B54C-28197CA2B0D3}" Platform="Linked"/>
+																<ActiveSource Name="MC_FT_Stone_Land_04" ID="{30702DF7-23E1-44AD-BA22-37AF8C989570}" Platform="Linked"/>
 															</ActiveSourceList>
 														</Sound>
-														<Sound Name="MC_FT_Stone_Land_05" ID="{08B6384D-607A-465A-AE66-14CD36890DF7}" ShortID="460736746">
+														<Sound Name="MC_FT_Stone_Land_05" ID="{7E260FE2-B9FF-4E0A-B1A9-F24D4B870139}" ShortID="124220022">
 															<ReferenceList>
 																<Reference Name="Conversion">
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -5709,7 +5957,7 @@
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
-																<AudioFileSource Name="MC_FT_Stone_Land_05" ID="{3A8CD8F1-374C-4394-B3B3-5225D3B66D53}">
+																<AudioFileSource Name="MC_FT_Stone_Land_05" ID="{61B4FE42-07D1-494D-9242-F6AE3E58F5BF}">
 																	<Language>SFX</Language>
 																	<AudioFile>MC_FT_Stone_Land_05.wav</AudioFile>
 																	<MediaIDList>
@@ -5719,7 +5967,7 @@
 															</ChildrenList>
 															<ObjectLists/>
 															<ActiveSourceList>
-																<ActiveSource Name="MC_FT_Stone_Land_05" ID="{3A8CD8F1-374C-4394-B3B3-5225D3B66D53}" Platform="Linked"/>
+																<ActiveSource Name="MC_FT_Stone_Land_05" ID="{61B4FE42-07D1-494D-9242-F6AE3E58F5BF}" Platform="Linked"/>
 															</ActiveSourceList>
 														</Sound>
 													</ChildrenList>
@@ -5760,11 +6008,11 @@
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 														</Reference>
 														<Reference Name="OutputBus">
-															<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+															<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<Sound Name="MC_FT_Dirt_Land_01" ID="{E1935009-B821-4193-B153-17FE8D987C05}" ShortID="269247095">
+														<Sound Name="MC_FT_Dirt_Land_01" ID="{AA68AA29-EFD3-4C40-96D1-3927026FAA6D}" ShortID="873983893">
 															<ReferenceList>
 																<Reference Name="Conversion">
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -5774,7 +6022,7 @@
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
-																<AudioFileSource Name="MC_FT_Dirt_Land_01" ID="{71313B4E-92D6-411B-9D94-D1CC45A7EB53}">
+																<AudioFileSource Name="MC_FT_Dirt_Land_01" ID="{13F0549A-2A98-4191-893F-BD3C04F9E40F}">
 																	<Language>SFX</Language>
 																	<AudioFile>MC_FT_Dirt_Land_01.wav</AudioFile>
 																	<MediaIDList>
@@ -5784,10 +6032,10 @@
 															</ChildrenList>
 															<ObjectLists/>
 															<ActiveSourceList>
-																<ActiveSource Name="MC_FT_Dirt_Land_01" ID="{71313B4E-92D6-411B-9D94-D1CC45A7EB53}" Platform="Linked"/>
+																<ActiveSource Name="MC_FT_Dirt_Land_01" ID="{13F0549A-2A98-4191-893F-BD3C04F9E40F}" Platform="Linked"/>
 															</ActiveSourceList>
 														</Sound>
-														<Sound Name="MC_FT_Dirt_Land_02" ID="{A6F9D43A-3BBF-42F7-9435-D99CFB08D8F4}" ShortID="753753598">
+														<Sound Name="MC_FT_Dirt_Land_02" ID="{9521C172-E5E4-4C01-947D-CCF30F7812EF}" ShortID="1014316763">
 															<ReferenceList>
 																<Reference Name="Conversion">
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -5797,7 +6045,7 @@
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
-																<AudioFileSource Name="MC_FT_Dirt_Land_02" ID="{F57BE4F8-20BB-4E10-B693-1D0C703A65B4}">
+																<AudioFileSource Name="MC_FT_Dirt_Land_02" ID="{97446291-4C05-434E-A6E9-69BD2DCF8C57}">
 																	<Language>SFX</Language>
 																	<AudioFile>MC_FT_Dirt_Land_02.wav</AudioFile>
 																	<MediaIDList>
@@ -5807,10 +6055,10 @@
 															</ChildrenList>
 															<ObjectLists/>
 															<ActiveSourceList>
-																<ActiveSource Name="MC_FT_Dirt_Land_02" ID="{F57BE4F8-20BB-4E10-B693-1D0C703A65B4}" Platform="Linked"/>
+																<ActiveSource Name="MC_FT_Dirt_Land_02" ID="{97446291-4C05-434E-A6E9-69BD2DCF8C57}" Platform="Linked"/>
 															</ActiveSourceList>
 														</Sound>
-														<Sound Name="MC_FT_Dirt_Land_03" ID="{A5592A0C-81C5-40E6-818D-3597723987A2}" ShortID="883777732">
+														<Sound Name="MC_FT_Dirt_Land_03" ID="{0F42FA4F-690B-484E-BC47-F0B45C20D364}" ShortID="616694642">
 															<ReferenceList>
 																<Reference Name="Conversion">
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -5820,7 +6068,7 @@
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
-																<AudioFileSource Name="MC_FT_Dirt_Land_03" ID="{A394373A-C05D-4D51-89A1-421B5BA5BBD7}">
+																<AudioFileSource Name="MC_FT_Dirt_Land_03" ID="{6B981473-AF90-4769-9F8C-A1890A1F5DF9}">
 																	<Language>SFX</Language>
 																	<AudioFile>MC_FT_Dirt_Land_03.wav</AudioFile>
 																	<MediaIDList>
@@ -5830,10 +6078,10 @@
 															</ChildrenList>
 															<ObjectLists/>
 															<ActiveSourceList>
-																<ActiveSource Name="MC_FT_Dirt_Land_03" ID="{A394373A-C05D-4D51-89A1-421B5BA5BBD7}" Platform="Linked"/>
+																<ActiveSource Name="MC_FT_Dirt_Land_03" ID="{6B981473-AF90-4769-9F8C-A1890A1F5DF9}" Platform="Linked"/>
 															</ActiveSourceList>
 														</Sound>
-														<Sound Name="MC_FT_Dirt_Land_04" ID="{2753806A-A47A-404E-8F71-4959CDC56B21}" ShortID="993236630">
+														<Sound Name="MC_FT_Dirt_Land_04" ID="{2D21C1FB-D6F9-478C-8E4C-00B90A620C3D}" ShortID="603200077">
 															<ReferenceList>
 																<Reference Name="Conversion">
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -5843,7 +6091,7 @@
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
-																<AudioFileSource Name="MC_FT_Dirt_Land_04" ID="{7783422A-12C6-45E9-9622-305F2567DA3E}">
+																<AudioFileSource Name="MC_FT_Dirt_Land_04" ID="{86BFA592-3729-4CD5-B753-771DDA6F888A}">
 																	<Language>SFX</Language>
 																	<AudioFile>MC_FT_Dirt_Land_04.wav</AudioFile>
 																	<MediaIDList>
@@ -5853,10 +6101,10 @@
 															</ChildrenList>
 															<ObjectLists/>
 															<ActiveSourceList>
-																<ActiveSource Name="MC_FT_Dirt_Land_04" ID="{7783422A-12C6-45E9-9622-305F2567DA3E}" Platform="Linked"/>
+																<ActiveSource Name="MC_FT_Dirt_Land_04" ID="{86BFA592-3729-4CD5-B753-771DDA6F888A}" Platform="Linked"/>
 															</ActiveSourceList>
 														</Sound>
-														<Sound Name="MC_FT_Dirt_Land_05" ID="{4CD7D08B-E3E3-4D12-8642-3DDA7831CD0E}" ShortID="686324798">
+														<Sound Name="MC_FT_Dirt_Land_05" ID="{F77DA646-C8AD-4DD8-8BF9-323BB12D1C91}" ShortID="710136686">
 															<ReferenceList>
 																<Reference Name="Conversion">
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -5866,7 +6114,7 @@
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
-																<AudioFileSource Name="MC_FT_Dirt_Land_05" ID="{F829877A-CE5B-4A50-8CCD-AE065D6C6DE2}">
+																<AudioFileSource Name="MC_FT_Dirt_Land_05" ID="{52701C48-41D5-4C48-BADD-A50E567EEADE}">
 																	<Language>SFX</Language>
 																	<AudioFile>MC_FT_Dirt_Land_05.wav</AudioFile>
 																	<MediaIDList>
@@ -5876,7 +6124,7 @@
 															</ChildrenList>
 															<ObjectLists/>
 															<ActiveSourceList>
-																<ActiveSource Name="MC_FT_Dirt_Land_05" ID="{F829877A-CE5B-4A50-8CCD-AE065D6C6DE2}" Platform="Linked"/>
+																<ActiveSource Name="MC_FT_Dirt_Land_05" ID="{52701C48-41D5-4C48-BADD-A50E567EEADE}" Platform="Linked"/>
 															</ActiveSourceList>
 														</Sound>
 													</ChildrenList>
@@ -5928,6 +6176,13 @@
 											</GroupingInfo>
 										</SwitchContainer>
 										<SwitchContainer Name="MC_FT_WallRun_GroundSwitch" ID="{261F0B73-8815-4C3B-A936-1E53A89942B5}" ShortID="1023433653">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-16</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -5978,7 +6233,7 @@
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 														</Reference>
 														<Reference Name="OutputBus">
-															<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+															<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
@@ -6250,7 +6505,7 @@
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 														</Reference>
 														<Reference Name="OutputBus">
-															<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+															<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
@@ -6260,7 +6515,7 @@
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 																</Reference>
 																<Reference Name="OutputBus">
-																	<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+																	<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
@@ -6283,7 +6538,7 @@
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 																</Reference>
 																<Reference Name="OutputBus">
-																	<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+																	<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
@@ -6306,7 +6561,7 @@
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 																</Reference>
 																<Reference Name="OutputBus">
-																	<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+																	<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
@@ -6329,7 +6584,7 @@
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 																</Reference>
 																<Reference Name="OutputBus">
-																	<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+																	<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
@@ -6352,7 +6607,7 @@
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 																</Reference>
 																<Reference Name="OutputBus">
-																	<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+																	<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
@@ -6375,7 +6630,7 @@
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 																</Reference>
 																<Reference Name="OutputBus">
-																	<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+																	<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
@@ -6398,7 +6653,7 @@
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 																</Reference>
 																<Reference Name="OutputBus">
-																	<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+																	<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
@@ -6421,7 +6676,7 @@
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 																</Reference>
 																<Reference Name="OutputBus">
-																	<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+																	<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
@@ -6444,7 +6699,7 @@
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 																</Reference>
 																<Reference Name="OutputBus">
-																	<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+																	<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
@@ -6467,7 +6722,7 @@
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 																</Reference>
 																<Reference Name="OutputBus">
-																	<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+																	<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
@@ -6490,7 +6745,7 @@
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 																</Reference>
 																<Reference Name="OutputBus">
-																	<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+																	<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
@@ -6513,7 +6768,7 @@
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 																</Reference>
 																<Reference Name="OutputBus">
-																	<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+																	<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
@@ -6568,7 +6823,7 @@
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 														</Reference>
 														<Reference Name="OutputBus">
-															<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+															<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
@@ -6841,6 +7096,506 @@
 												</GroupingList>
 											</GroupingInfo>
 										</SwitchContainer>
+										<RandomSequenceContainer Name="MC_FT_MagicLayer" ID="{53DD9E2D-9A76-4EDB-B309-11E2954146B5}" ShortID="433426513">
+											<PropertyList>
+												<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{06C124B7-FE36-4089-8572-9661F095A76F}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="25"/>
+																	<Property Name="Min" Type="Real64" Value="-25"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+												<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="8"/>
+												<Property Name="Volume" Type="Real64">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{9345E281-9EC7-4650-88AF-42492C2DF32F}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Min" Type="Real64" Value="-5"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="MC_FT_MagicLayer_01" ID="{9567F07E-68F7-4106-9E83-CB458B917E41}" ShortID="703550286">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="MC_FT_MagicLayer_01" ID="{1FC6D69E-7CF3-415B-B15E-F42CB9C75D91}">
+															<Language>SFX</Language>
+															<AudioFile>MC_FT_MagicLayer_01.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="767323193"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="MC_FT_MagicLayer_01" ID="{1FC6D69E-7CF3-415B-B15E-F42CB9C75D91}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="MC_FT_MagicLayer_02" ID="{055ED363-DE44-42BE-A806-CB7039CDD2C0}" ShortID="340124121">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="MC_FT_MagicLayer_02" ID="{D954DE47-A511-4A2B-8FD5-0E4929CD4B9A}">
+															<Language>SFX</Language>
+															<AudioFile>MC_FT_MagicLayer_02.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="490216797"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="MC_FT_MagicLayer_02" ID="{D954DE47-A511-4A2B-8FD5-0E4929CD4B9A}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="MC_FT_MagicLayer_03" ID="{C752D526-C1FC-4B0B-B59B-CCBD3519ADD2}" ShortID="849463446">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="MC_FT_MagicLayer_03" ID="{4F7B0A91-F56D-48C9-9B80-F3148E858EB1}">
+															<Language>SFX</Language>
+															<AudioFile>MC_FT_MagicLayer_03.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="729093755"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="MC_FT_MagicLayer_03" ID="{4F7B0A91-F56D-48C9-9B80-F3148E858EB1}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="MC_FT_MagicLayer_04" ID="{8D614483-D724-41F2-A131-DBCCBEE7D80A}" ShortID="728211231">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="MC_FT_MagicLayer_04" ID="{558365CF-7014-46F6-B45F-B9D145425080}">
+															<Language>SFX</Language>
+															<AudioFile>MC_FT_MagicLayer_04.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="1037060123"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="MC_FT_MagicLayer_04" ID="{558365CF-7014-46F6-B45F-B9D145425080}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="MC_FT_MagicLayer_05" ID="{E12C3023-F4B8-4E87-B08A-D6896B39712C}" ShortID="14930607">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="MC_FT_MagicLayer_05" ID="{90A65420-132E-42A2-A5B6-E0A34B73A1DA}">
+															<Language>SFX</Language>
+															<AudioFile>MC_FT_MagicLayer_05.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="573696104"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="MC_FT_MagicLayer_05" ID="{90A65420-132E-42A2-A5B6-E0A34B73A1DA}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="MC_FT_MagicLayer_06" ID="{C693F90C-81B2-42F3-AF6B-C1090A1C3183}" ShortID="491129227">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="MC_FT_MagicLayer_06" ID="{DDBCB5DE-1AD1-414B-9D49-44F485B68AB5}">
+															<Language>SFX</Language>
+															<AudioFile>MC_FT_MagicLayer_06.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="775399352"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="MC_FT_MagicLayer_06" ID="{DDBCB5DE-1AD1-414B-9D49-44F485B68AB5}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="MC_FT_MagicLayer_07" ID="{FBA52DEA-3662-4A60-A7BF-C5BB39E75EFC}" ShortID="888685270">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="MC_FT_MagicLayer_07" ID="{9EE91F4E-C174-4094-A02E-541D786BD4E3}">
+															<Language>SFX</Language>
+															<AudioFile>MC_FT_MagicLayer_07.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="725866459"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="MC_FT_MagicLayer_07" ID="{9EE91F4E-C174-4094-A02E-541D786BD4E3}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="MC_FT_MagicLayer_08" ID="{E5185A4D-D59F-4A47-AE04-82743BD16231}" ShortID="121245952">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="MC_FT_MagicLayer_08" ID="{7F0CF9AA-A8C4-4286-822B-D572EC81758F}">
+															<Language>SFX</Language>
+															<AudioFile>MC_FT_MagicLayer_08.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="4671407"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="MC_FT_MagicLayer_08" ID="{7F0CF9AA-A8C4-4286-822B-D572EC81758F}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+											<ObjectLists/>
+										</RandomSequenceContainer>
+										<RandomSequenceContainer Name="MC_FT_Jump_MagicLayer" ID="{4B6F1162-B6C1-4C8F-8C50-F60E7D67F068}" ShortID="560021208">
+											<PropertyList>
+												<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{CCEC62D5-A3DB-43EA-A501-AC398DC2EB81}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="25"/>
+																	<Property Name="Min" Type="Real64" Value="-25"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+												<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="4"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-2</Value>
+													</ValueList>
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{971F9A7B-7F4D-48C6-81CF-CBA86AFC1E47}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Min" Type="Real64" Value="-5"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="MC_FT_Jump_MagicLayer_01" ID="{11BE7ACA-39B3-48BE-AAB9-CB1E033F5418}" ShortID="695494531">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="MC_FT_Jump_MagicLayer_01" ID="{8912C8FA-BDD3-429E-B412-AB1E4931ABEA}">
+															<Language>SFX</Language>
+															<AudioFile>MC_FT_Jump_MagicLayer_01.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="30111412"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="MC_FT_Jump_MagicLayer_01" ID="{8912C8FA-BDD3-429E-B412-AB1E4931ABEA}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="MC_FT_Jump_MagicLayer_02" ID="{7507ACC9-69D9-44FD-9784-531D3152DD8C}" ShortID="8842437">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="MC_FT_Jump_MagicLayer_02" ID="{BCDD5B73-4374-4C1F-8850-B1DB45B2D231}">
+															<Language>SFX</Language>
+															<AudioFile>MC_FT_Jump_MagicLayer_02.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="164951802"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="MC_FT_Jump_MagicLayer_02" ID="{BCDD5B73-4374-4C1F-8850-B1DB45B2D231}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="MC_FT_Jump_MagicLayer_03" ID="{4BE3A59D-E0A4-43C0-A660-09C7117DC379}" ShortID="3519822">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="MC_FT_Jump_MagicLayer_03" ID="{DA112AB7-6473-41CC-A941-263F3D7E2B94}">
+															<Language>SFX</Language>
+															<AudioFile>MC_FT_Jump_MagicLayer_03.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="927941862"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="MC_FT_Jump_MagicLayer_03" ID="{DA112AB7-6473-41CC-A941-263F3D7E2B94}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="MC_FT_Jump_MagicLayer_04" ID="{3EF14E9C-4254-4BD6-86A6-D83FB6F1564C}" ShortID="251916064">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="MC_FT_Jump_MagicLayer_04" ID="{85C35ACE-9EBE-4AD5-AFAF-6ACA7B6F89BC}">
+															<Language>SFX</Language>
+															<AudioFile>MC_FT_Jump_MagicLayer_04.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="704074093"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="MC_FT_Jump_MagicLayer_04" ID="{85C35ACE-9EBE-4AD5-AFAF-6ACA7B6F89BC}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+											<ObjectLists/>
+										</RandomSequenceContainer>
+										<RandomSequenceContainer Name="MC_FT_Land_MagicLayer" ID="{053A5CA1-D6BB-450F-B38C-2E04BD5EDD6A}" ShortID="312874822">
+											<PropertyList>
+												<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{047D2B7E-CD46-416A-ABF5-672DFC974C7D}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="25"/>
+																	<Property Name="Min" Type="Real64" Value="-25"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+												<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="4"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-4</Value>
+													</ValueList>
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{FB30209B-33AE-40C0-830C-C58BE7D118E8}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Min" Type="Real64" Value="-5"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="MC_FT_Land_MagicLayer_01" ID="{CD79EA45-0DD0-4994-9DB3-EF4844000349}" ShortID="449512873">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="MC_FT_Land_MagicLayer_01" ID="{F26B3F3B-9DB4-453E-AE7E-769E4C2AC7F7}">
+															<Language>SFX</Language>
+															<AudioFile>MC_FT_Land_MagicLayer_01.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="216814225"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="MC_FT_Land_MagicLayer_01" ID="{F26B3F3B-9DB4-453E-AE7E-769E4C2AC7F7}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="MC_FT_Land_MagicLayer_02" ID="{1096D1BC-AA2C-485B-868A-FA7439015652}" ShortID="424472353">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="MC_FT_Land_MagicLayer_02" ID="{410E7BF1-C9AE-4613-85DF-E1684BE7D3FA}">
+															<Language>SFX</Language>
+															<AudioFile>MC_FT_Land_MagicLayer_02.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="976975929"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="MC_FT_Land_MagicLayer_02" ID="{410E7BF1-C9AE-4613-85DF-E1684BE7D3FA}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="MC_FT_Land_MagicLayer_03" ID="{248F6588-D591-4E5B-9E2B-E450B8DFFA93}" ShortID="101219743">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="MC_FT_Land_MagicLayer_03" ID="{CE124C54-3ACF-47A4-A48C-5B2AECC4137D}">
+															<Language>SFX</Language>
+															<AudioFile>MC_FT_Land_MagicLayer_03.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="483781239"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="MC_FT_Land_MagicLayer_03" ID="{CE124C54-3ACF-47A4-A48C-5B2AECC4137D}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="MC_FT_Land_MagicLayer_04" ID="{EBD8BF86-3E0E-4841-8B71-C821B9CE8536}" ShortID="751709207">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="MC_FT_Land_MagicLayer_04" ID="{608ABB00-7D4D-456F-B030-C76DAD909ACA}">
+															<Language>SFX</Language>
+															<AudioFile>MC_FT_Land_MagicLayer_04.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="822516184"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="MC_FT_Land_MagicLayer_04" ID="{608ABB00-7D4D-456F-B030-C76DAD909ACA}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+											<ObjectLists/>
+										</RandomSequenceContainer>
 									</ChildrenList>
 									<ObjectLists/>
 								</ActorMixer>
@@ -6858,7 +7613,7 @@
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 								</Reference>
 								<Reference Name="OutputBus">
-									<ObjectRef Name="NPC" ID="{B955C7C1-6C5F-4379-8FB3-DD13E36B5A38}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+									<ObjectRef Name="NPC" ID="{B955C7C1-6C5F-4379-8FB3-DD13E36B5A38}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 								</Reference>
 							</ReferenceList>
 							<ObjectLists/>
@@ -6874,7 +7629,7 @@
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 								</Reference>
 								<Reference Name="OutputBus">
-									<ObjectRef Name="SFX" ID="{F425DD9C-4B7D-40B0-B495-D58654E0B77E}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+									<ObjectRef Name="SFX" ID="{F425DD9C-4B7D-40B0-B495-D58654E0B77E}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -6883,7 +7638,7 @@
 										<Property Name="BlendBehavior" Type="int16" Value="1"/>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-11</Value>
+												<Value>-17</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -6965,7 +7720,7 @@
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 												</Reference>
 												<Reference Name="OutputBus">
-													<ObjectRef Name="SFX" ID="{F425DD9C-4B7D-40B0-B495-D58654E0B77E}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+													<ObjectRef Name="SFX" ID="{F425DD9C-4B7D-40B0-B495-D58654E0B77E}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
@@ -7623,6 +8378,52 @@
 									</ChildrenList>
 									<ObjectLists/>
 								</RandomSequenceContainer>
+								<Sound Name="SFX_SlowMoBackEffect" ID="{66E152AF-76D0-4A36-8DC3-D949154F55EA}" ShortID="198764641">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="SFX_SlowMoBackEffect" ID="{559497C3-B0E8-44F7-9F93-4A07A5AB43E5}">
+											<Language>SFX</Language>
+											<AudioFile>SFX_SlowMoBackEffect.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="130344194"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="SFX_SlowMoBackEffect" ID="{559497C3-B0E8-44F7-9F93-4A07A5AB43E5}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="SFX_SlowMoEffect" ID="{178B97D6-F58A-4210-9068-63FE556F5B9D}" ShortID="397668444">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="SFX_SlowMoEffect" ID="{A2D4E305-1A35-46AC-9D22-9E29D0E9E6B8}">
+											<Language>SFX</Language>
+											<AudioFile>SFX_SlowMoEffect_V2.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="265292219"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="SFX_SlowMoEffect" ID="{A2D4E305-1A35-46AC-9D22-9E29D0E9E6B8}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
 							</ChildrenList>
 							<ObjectLists/>
 						</ActorMixer>
@@ -7637,7 +8438,7 @@
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 								</Reference>
 								<Reference Name="OutputBus">
-									<ObjectRef Name="UI" ID="{810B9E20-27DC-44EE-82C9-184684B56A94}" WorkUnitID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}"/>
+									<ObjectRef Name="UI" ID="{810B9E20-27DC-44EE-82C9-184684B56A94}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 								</Reference>
 							</ReferenceList>
 							<ObjectLists/>

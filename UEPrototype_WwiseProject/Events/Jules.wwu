@@ -5,17 +5,6 @@
 			<ChildrenList>
 				<Folder Name="AMB" ID="{623629A1-9443-450C-BC77-C3554540C0E4}" ShortID="197270641">
 					<ChildrenList>
-						<Event Name="SP_Waterfall_Play" ID="{FF28433B-F9E6-4A5A-8E26-36E90AF89380}">
-							<ChildrenList>
-								<Action Name="" ID="{16DA060E-927B-461D-97C2-D0D09944C68A}" ShortID="721030382">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="AMB_SP_Waterfall_Blend" ID="{5F6A136D-D2E0-47BF-88E9-54225CDFE964}" WorkUnitID="{A90EA6B0-FD8B-46D3-9B35-71A92B2A6346}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
 						<Event Name="RFX_DirtFall" ID="{4422A52E-1B39-482E-9099-8E91601CFD0F}">
 							<ChildrenList>
 								<Action Name="" ID="{B1026053-9700-4781-A42D-0AD0C5AA8E07}" ShortID="868215280">
@@ -27,6 +16,19 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="SP_WaterFallSmall" ID="{B2A9D75A-C3C7-4C42-8DCA-B7A4D7AF9D33}">
+							<ChildrenList>
+								<Action Name="" ID="{A3B94BC4-2518-4088-B708-9574495B27E5}" ShortID="507924674">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="AMB_SP_WaterFallSmall_Blend" ID="{D753DC15-7C1A-45B5-9BA1-D2DF96400256}" WorkUnitID="{A90EA6B0-FD8B-46D3-9B35-71A92B2A6346}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="SP_WaterFallMed" ID="{44FD23A1-F917-4E26-8EF9-34E98C653B2B}"/>
+						<Event Name="SP_WaterFallBig" ID="{49FCB4E9-F4D9-4E9C-A9D9-B1B632F3F221}"/>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="MC" ID="{0FAE6D46-D663-41A9-8E75-E2ACF42A16B3}" ShortID="517842377">
@@ -37,6 +39,20 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="MC_FT_SpeedSwitch" ID="{2ED4D6B0-7770-4A7E-878D-EEC6F24E1278}" WorkUnitID="{A90EA6B0-FD8B-46D3-9B35-71A92B2A6346}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{CE3F3398-1235-484F-8DA0-964CC5CDC39F}" ShortID="553926938">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MC_FOL_Run" ID="{508FD4D3-C805-4B2C-9F65-914E40FC4914}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{92D4F225-66AE-46C2-A5F3-D6F8F6353DA2}" ShortID="657295453">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MC_FT_MagicLayer" ID="{53DD9E2D-9A76-4EDB-B309-11E2954146B5}" WorkUnitID="{A90EA6B0-FD8B-46D3-9B35-71A92B2A6346}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -62,6 +78,20 @@
 										</Reference>
 									</ReferenceList>
 								</Action>
+								<Action Name="" ID="{77145DE4-5E14-4AE7-816F-93745F401393}" ShortID="275199591">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MC_FOL_Jump" ID="{4F953C74-2A3F-4A73-A5CB-EC5E5B6ADD2A}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{BD1D8A2F-EE68-4E17-8BAA-EDEFF0970E41}" ShortID="278116233">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MC_FT_Jump_MagicLayer" ID="{4B6F1162-B6C1-4C8F-8C50-F60E7D67F068}" WorkUnitID="{A90EA6B0-FD8B-46D3-9B35-71A92B2A6346}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 							</ChildrenList>
 						</Event>
 						<Event Name="MC_FT_Land" ID="{488B1B77-8269-4FDB-8527-E9D60A8E5509}">
@@ -73,6 +103,13 @@
 										</Reference>
 									</ReferenceList>
 								</Action>
+								<Action Name="" ID="{4B780F51-7DC8-4938-887B-265303DF35C0}" ShortID="176521297">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MC_FT_Land_MagicLayer" ID="{053A5CA1-D6BB-450F-B38C-2E04BD5EDD6A}" WorkUnitID="{A90EA6B0-FD8B-46D3-9B35-71A92B2A6346}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 							</ChildrenList>
 						</Event>
 						<Event Name="MC_FT_WallRun" ID="{6D2EBAF7-DC3E-42C2-B75E-887F38161E51}">
@@ -81,6 +118,13 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="MC_FT_WallRun_GroundSwitch" ID="{261F0B73-8815-4C3B-A936-1E53A89942B5}" WorkUnitID="{A90EA6B0-FD8B-46D3-9B35-71A92B2A6346}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{C92ABD1E-C9ED-4815-B0A8-9367076BEE2E}" ShortID="321335214">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MC_FT_MagicLayer" ID="{53DD9E2D-9A76-4EDB-B309-11E2954146B5}" WorkUnitID="{A90EA6B0-FD8B-46D3-9B35-71A92B2A6346}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -107,6 +151,28 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="SFX_Waterfall_Impact" ID="{CEF1ACFE-A866-4CC0-8376-75DD28A6A336}" WorkUnitID="{A90EA6B0-FD8B-46D3-9B35-71A92B2A6346}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="SFX_SlowMoActivation" ID="{323FED34-9F62-4446-8080-5F88B57E7ACF}">
+							<ChildrenList>
+								<Action Name="" ID="{6FCFEEE8-F502-4864-8847-1ECE85025FAB}" ShortID="585730351">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_SlowMoEffect" ID="{178B97D6-F58A-4210-9068-63FE556F5B9D}" WorkUnitID="{A90EA6B0-FD8B-46D3-9B35-71A92B2A6346}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="SFX_SlowMoDesactivation" ID="{D889DB18-2A06-41A5-BB0E-8E346E963B4B}">
+							<ChildrenList>
+								<Action Name="" ID="{75307B72-ABFA-42FF-82D1-D4BFFE7752D3}" ShortID="980747683">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_SlowMoBackEffect" ID="{66E152AF-76D0-4A36-8DC3-D949154F55EA}" WorkUnitID="{A90EA6B0-FD8B-46D3-9B35-71A92B2A6346}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
