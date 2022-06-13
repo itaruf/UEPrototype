@@ -112,6 +112,16 @@
 										</Reference>
 									</ReferenceList>
 								</Action>
+								<Action Name="" ID="{70329C80-BD56-4F44-B889-A776E9A24545}" ShortID="75426387">
+									<PropertyList>
+										<Property Name="Probability" Type="Real64" Value="50"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="VO_MC_Jump" ID="{4D1659FB-974D-4285-82B9-163484CC300D}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 							</ChildrenList>
 						</Event>
 						<Event Name="MC_FT_Land" ID="{488B1B77-8269-4FDB-8527-E9D60A8E5509}">
@@ -127,6 +137,16 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="MC_FT_Land_MagicLayer" ID="{053A5CA1-D6BB-450F-B38C-2E04BD5EDD6A}" WorkUnitID="{A90EA6B0-FD8B-46D3-9B35-71A92B2A6346}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{4A2B01DD-62BE-4F7D-A0D6-D441B36A0DAE}" ShortID="25256813">
+									<PropertyList>
+										<Property Name="Probability" Type="Real64" Value="50"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="VO_MC_Land" ID="{A10F4189-125E-4354-8C10-830E833F0EB7}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -153,6 +173,9 @@
 						<Event Name="MC_FT_WallJump" ID="{27C1EB19-6DDA-4365-A9D0-4F95E986689B}">
 							<ChildrenList>
 								<Action Name="" ID="{037D31C9-4075-463E-BB0E-649C3C777D27}" ShortID="669856200">
+									<PropertyList>
+										<Property Name="Probability" Type="Real64" Value="50"/>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="MC_FT_Jump_GroundSwitch" ID="{4D3567D7-4DE4-4321-884C-4016EBA8976C}" WorkUnitID="{A90EA6B0-FD8B-46D3-9B35-71A92B2A6346}"/>
@@ -163,6 +186,13 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="MC_FT_WallJump_MagicLayer" ID="{5F0430D8-4478-41E9-8C16-C7BE4F183CCD}" WorkUnitID="{A90EA6B0-FD8B-46D3-9B35-71A92B2A6346}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{44EF2944-1FBC-417D-BC81-72B9C5CEDC70}" ShortID="545426685">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="VO_MC_Jump" ID="{4D1659FB-974D-4285-82B9-163484CC300D}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

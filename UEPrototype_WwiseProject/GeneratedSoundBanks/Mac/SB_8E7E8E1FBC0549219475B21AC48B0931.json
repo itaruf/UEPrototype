@@ -16,7 +16,7 @@
     "Id": "1115576461",
     "GUID": "{427E588D-588D-188D-8D8D-8D8D8D8D8D8D}",
     "Language": "SFX",
-    "Hash": "2561667593",
+    "Hash": "4036071028",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\SB_8E7E8E1FBC0549219475B21AC48B0931",
     "ShortName": "SB_8E7E8E1FBC0549219475B21AC48B0931",
     "Path": "SB_8E7E8E1FBC0549219475B21AC48B0931.bnk",
@@ -27,7 +27,7 @@
       "ObjectPath": "\\Events\\Default Work Unit\\Jules\\MC\\MC_FT",
       "GUID": "{8E7E8E1F-BC05-4921-9475-B21AC48B0931}",
       "DurationType": "OneShot",
-      "DurationMin": "0.164277",
+      "DurationMin": "0.713353",
       "DurationMax": "0.913091",
       "ExcludedMemoryFiles": [
        {
@@ -35,6 +35,12 @@
         "Language": "SFX",
         "ShortName": "MC_FOL_Run_05.wav",
         "Path": "SFX\\MC_FOL_Run_05_10C4C929.wem"
+       },
+       {
+        "Id": "4671407",
+        "Language": "SFX",
+        "ShortName": "MC_FT_MagicLayer_08.wav",
+        "Path": "SFX\\MC_FT_MagicLayer_08_10C4C929.wem"
        },
        {
         "Id": "7329310",
@@ -385,6 +391,12 @@
         "Path": "SFX\\MC_FT_Water_Walk_02_10C4C929.wem"
        },
        {
+        "Id": "490216797",
+        "Language": "SFX",
+        "ShortName": "MC_FT_MagicLayer_02.wav",
+        "Path": "SFX\\MC_FT_MagicLayer_02_10C4C929.wem"
+       },
+       {
         "Id": "514586140",
         "Language": "SFX",
         "ShortName": "MC_FT_Grass_Run_14.wav",
@@ -455,6 +467,12 @@
         "Language": "SFX",
         "ShortName": "MC_FT_Stone_Run_09.wav",
         "Path": "SFX\\MC_FT_Stone_Run_09_10C4C929.wem"
+       },
+       {
+        "Id": "573696104",
+        "Language": "SFX",
+        "ShortName": "MC_FT_MagicLayer_05.wav",
+        "Path": "SFX\\MC_FT_MagicLayer_05_10C4C929.wem"
        },
        {
         "Id": "577987929",
@@ -553,6 +571,18 @@
         "Path": "SFX\\MC_FT_Water_Run_02_10C4C929.wem"
        },
        {
+        "Id": "725866459",
+        "Language": "SFX",
+        "ShortName": "MC_FT_MagicLayer_07.wav",
+        "Path": "SFX\\MC_FT_MagicLayer_07_10C4C929.wem"
+       },
+       {
+        "Id": "729093755",
+        "Language": "SFX",
+        "ShortName": "MC_FT_MagicLayer_03.wav",
+        "Path": "SFX\\MC_FT_MagicLayer_03_10C4C929.wem"
+       },
+       {
         "Id": "744374554",
         "Language": "SFX",
         "ShortName": "MC_FT_Grass_Walk_02.wav",
@@ -593,6 +623,18 @@
         "Language": "SFX",
         "ShortName": "MC_FT_Water_Run_09.wav",
         "Path": "SFX\\MC_FT_Water_Run_09_10C4C929.wem"
+       },
+       {
+        "Id": "767323193",
+        "Language": "SFX",
+        "ShortName": "MC_FT_MagicLayer_01.wav",
+        "Path": "SFX\\MC_FT_MagicLayer_01_10C4C929.wem"
+       },
+       {
+        "Id": "775399352",
+        "Language": "SFX",
+        "ShortName": "MC_FT_MagicLayer_06.wav",
+        "Path": "SFX\\MC_FT_MagicLayer_06_10C4C929.wem"
        },
        {
         "Id": "785811332",
@@ -787,6 +829,12 @@
         "Path": "SFX\\MC_FT_Grass_Run_13_10C4C929.wem"
        },
        {
+        "Id": "1037060123",
+        "Language": "SFX",
+        "ShortName": "MC_FT_MagicLayer_04.wav",
+        "Path": "SFX\\MC_FT_MagicLayer_04_10C4C929.wem"
+       },
+       {
         "Id": "1050784248",
         "Language": "SFX",
         "ShortName": "MC_FT_Grass_Walk_13.wav",
@@ -821,25 +869,10 @@
           "SwitchValue": "{AF0B5F0B-9DBE-4ADD-BBCA-EF6F1BD0E3B0}",
           "Media": [
            {
-            "Id": "4517507"
-           },
-           {
-            "Id": "18357467"
-           },
-           {
-            "Id": "46352865"
-           },
-           {
-            "Id": "82661150"
-           },
-           {
             "Id": "163779893"
            },
            {
             "Id": "224621843"
-           },
-           {
-            "Id": "278841441"
            },
            {
             "Id": "287415833"
@@ -851,9 +884,6 @@
             "Id": "317208862"
            },
            {
-            "Id": "438143227"
-           },
-           {
             "Id": "467544841"
            },
            {
@@ -863,19 +893,10 @@
             "Id": "528311267"
            },
            {
-            "Id": "550854075"
-           },
-           {
             "Id": "577987929"
            },
            {
-            "Id": "587283826"
-           },
-           {
             "Id": "618374438"
-           },
-           {
-            "Id": "754107637"
            },
            {
             "Id": "829322123"
@@ -884,13 +905,7 @@
             "Id": "846822703"
            },
            {
-            "Id": "858620151"
-           },
-           {
             "Id": "859298484"
-           },
-           {
-            "Id": "859920807"
            },
            {
             "Id": "912841132"
@@ -904,15 +919,6 @@
           "SwitchValue": "{A008443E-3AE0-4101-9B6D-5F65FD589FD6}",
           "Media": [
            {
-            "Id": "4517507"
-           },
-           {
-            "Id": "18357467"
-           },
-           {
-            "Id": "46352865"
-           },
-           {
             "Id": "49263083"
            },
            {
@@ -922,31 +928,16 @@
             "Id": "58920415"
            },
            {
-            "Id": "82661150"
-           },
-           {
             "Id": "192396377"
-           },
-           {
-            "Id": "278841441"
            },
            {
             "Id": "436779069"
            },
            {
-            "Id": "438143227"
-           },
-           {
             "Id": "523153676"
            },
            {
-            "Id": "550854075"
-           },
-           {
             "Id": "580117795"
-           },
-           {
-            "Id": "587283826"
            },
            {
             "Id": "599332346"
@@ -959,9 +950,6 @@
            },
            {
             "Id": "747814663"
-           },
-           {
-            "Id": "754107637"
            },
            {
             "Id": "760978985"
@@ -977,12 +965,6 @@
            },
            {
             "Id": "853117455"
-           },
-           {
-            "Id": "858620151"
-           },
-           {
-            "Id": "859920807"
            },
            {
             "Id": "887628938"
@@ -1002,19 +984,7 @@
           "SwitchValue": "{C21DBD70-DDF8-408B-94DD-B9AD5A402C7F}",
           "Media": [
            {
-            "Id": "4517507"
-           },
-           {
-            "Id": "18357467"
-           },
-           {
-            "Id": "46352865"
-           },
-           {
             "Id": "58102682"
-           },
-           {
-            "Id": "82661150"
            },
            {
             "Id": "126321140"
@@ -1032,16 +1002,10 @@
             "Id": "260465128"
            },
            {
-            "Id": "278841441"
-           },
-           {
             "Id": "305030253"
            },
            {
             "Id": "425355384"
-           },
-           {
-            "Id": "438143227"
            },
            {
             "Id": "449933718"
@@ -1059,28 +1023,13 @@
             "Id": "520944928"
            },
            {
-            "Id": "550854075"
-           },
-           {
-            "Id": "587283826"
-           },
-           {
             "Id": "621084379"
            },
            {
             "Id": "687287647"
            },
            {
-            "Id": "754107637"
-           },
-           {
             "Id": "799481726"
-           },
-           {
-            "Id": "858620151"
-           },
-           {
-            "Id": "859920807"
            },
            {
             "Id": "874210445"
@@ -1100,18 +1049,6 @@
           "SwitchValue": "{FBA5D6FC-BB79-43BA-80B2-ABEA585C003B}",
           "Media": [
            {
-            "Id": "4517507"
-           },
-           {
-            "Id": "18357467"
-           },
-           {
-            "Id": "46352865"
-           },
-           {
-            "Id": "82661150"
-           },
-           {
             "Id": "125531543"
            },
            {
@@ -1124,16 +1061,10 @@
             "Id": "161000839"
            },
            {
-            "Id": "278841441"
-           },
-           {
             "Id": "317338293"
            },
            {
             "Id": "359574452"
-           },
-           {
-            "Id": "438143227"
            },
            {
             "Id": "475659663"
@@ -1145,16 +1076,10 @@
             "Id": "546525455"
            },
            {
-            "Id": "550854075"
-           },
-           {
             "Id": "550968531"
            },
            {
             "Id": "551085600"
-           },
-           {
-            "Id": "587283826"
            },
            {
             "Id": "604023641"
@@ -1169,19 +1094,10 @@
             "Id": "753608694"
            },
            {
-            "Id": "754107637"
-           },
-           {
             "Id": "788525555"
            },
            {
             "Id": "835725155"
-           },
-           {
-            "Id": "858620151"
-           },
-           {
-            "Id": "859920807"
            },
            {
             "Id": "931105833"

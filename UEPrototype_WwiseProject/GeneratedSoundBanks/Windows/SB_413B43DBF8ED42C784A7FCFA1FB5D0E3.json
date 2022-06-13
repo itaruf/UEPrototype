@@ -16,7 +16,7 @@
     "Id": "2590453847",
     "GUID": "{9A673057-3057-1057-5757-575757575757}",
     "Language": "SFX",
-    "Hash": "4264658865",
+    "Hash": "3940290062",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\SB_413B43DBF8ED42C784A7FCFA1FB5D0E3",
     "ShortName": "SB_413B43DBF8ED42C784A7FCFA1FB5D0E3",
     "Path": "SB_413B43DBF8ED42C784A7FCFA1FB5D0E3.bnk",
@@ -26,10 +26,29 @@
       "Name": "SFX_Freefall_Stop",
       "ObjectPath": "\\Events\\Default Work Unit\\Alexis\\SFX\\SFX_Freefall_Stop",
       "GUID": "{413B43DB-F8ED-42C7-84A7-FCFA1FB5D0E3}",
-      "MaxAttenuation": "0.",
       "DurationType": "OneShot",
       "DurationMin": "0.",
-      "DurationMax": "0."
+      "DurationMax": "0.585896",
+      "ExcludedMemoryFiles": [
+       {
+        "Id": "264805820",
+        "Language": "SFX",
+        "ShortName": "VO_MC_Glide_Stop_03.wav",
+        "Path": "SFX\\VO_MC_Glide_Stop_03_10C4C929.wem"
+       },
+       {
+        "Id": "803015969",
+        "Language": "SFX",
+        "ShortName": "VO_MC_Glide_Stop_01.wav",
+        "Path": "SFX\\VO_MC_Glide_Stop_01_10C4C929.wem"
+       },
+       {
+        "Id": "930261861",
+        "Language": "SFX",
+        "ShortName": "VO_MC_Glide_Stop_02.wav",
+        "Path": "SFX\\VO_MC_Glide_Stop_02_10C4C929.wem"
+       }
+      ]
      }
     ]
    }

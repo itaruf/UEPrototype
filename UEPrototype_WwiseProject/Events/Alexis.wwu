@@ -27,6 +27,28 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="MC_Death_Crash" ID="{03A938CB-E3B1-4E9F-89B2-82B40A6CFE67}">
+							<ChildrenList>
+								<Action Name="" ID="{313CD596-CDF5-4A28-8468-81526B13ADE7}" ShortID="457629402">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="VO_MC_Glide_Crash" ID="{D4EADAA9-DD2B-4EAE-B6EA-EA318075AFDB}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="MC_Death_FallingVoid" ID="{A7B12DBC-766B-4222-9459-8A33A879EB5D}">
+							<ChildrenList>
+								<Action Name="" ID="{97FB6BE2-5754-47F4-B085-52BC2B58679D}" ShortID="164747482">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="VO_MC_FallingVoid" ID="{199EF73C-301B-466F-B26C-662C87535C3D}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="SFX" ID="{3ABC570E-3936-4A48-AE41-A01984BA11BE}" ShortID="116214221">
@@ -37,6 +59,13 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="SFX_Freefall_Start" ID="{130CB51F-A96B-4F85-940E-16879C5A12B9}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{EA01B322-59DE-4AC2-8E7F-188D15A67336}" ShortID="294492154">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MC_FOL_FreeFall_LP" ID="{83440EC0-3E5F-4A4F-BE99-D13BDAECBF93}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -51,10 +80,24 @@
 										</Reference>
 									</ReferenceList>
 								</Action>
-								<Action Name="" ID="{EA01B322-59DE-4AC2-8E7F-188D15A67336}" ShortID="294492154">
+								<Action Name="" ID="{3B00A9E9-ABB3-496B-A69B-DDE6E0658896}" ShortID="137631837">
+									<PropertyList>
+										<Property Name="Delay" Type="Real64">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{8C964EC0-FE65-413F-96A1-27197F7E148F}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="0.2"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="MC_FOL_FreeFall_LP" ID="{83440EC0-3E5F-4A4F-BE99-D13BDAECBF93}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
+											<ObjectRef Name="VO_MC_Glide_Start" ID="{E96402B5-29E4-4AD3-AA68-BED040824D4D}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -70,6 +113,28 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="MC_FOL_FreeFall_LP" ID="{83440EC0-3E5F-4A4F-BE99-D13BDAECBF93}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{97524792-4F4C-4912-8695-CE00EE856D71}" ShortID="894257078">
+									<PropertyList>
+										<Property Name="FadeTime" Type="Real64" Value="0.2">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{0161C590-66B8-457E-B031-35846C018012}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="0.2"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="Probability" Type="Real64" Value="50"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="VO_MC_Glide_Stop" ID="{8CE145E2-2FF0-42C9-915D-B7B00F4E19F5}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

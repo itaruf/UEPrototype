@@ -1,0 +1,63 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "SchemaVersion": "12",
+  "SoundbankVersion": "140",
+  "RootPaths": {
+   "ProjectRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\",
+   "SourceFilesRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\.cache\\Mac\\",
+   "SoundBanksRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Mac\\",
+   "ExternalSourcesInputFile": "",
+   "ExternalSourcesOutputRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Mac"
+  },
+  "SoundBanks": [
+   {
+    "Id": "3924647971",
+    "GUID": "{E9ED6023-6023-1023-2323-232323232323}",
+    "Language": "SFX",
+    "Hash": "321147491",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\SB_A7B12DBC766B422294598A33A879EB5D",
+    "ShortName": "SB_A7B12DBC766B422294598A33A879EB5D",
+    "Path": "SB_A7B12DBC766B422294598A33A879EB5D.bnk",
+    "IncludedEvents": [
+     {
+      "Id": "3762855980",
+      "Name": "MC_Death_FallingVoid",
+      "ObjectPath": "\\Events\\Default Work Unit\\Alexis\\MC\\MC_Death_FallingVoid",
+      "GUID": "{A7B12DBC-766B-4222-9459-8A33A879EB5D}",
+      "DurationType": "OneShot",
+      "DurationMin": "2.9",
+      "DurationMax": "4.050729",
+      "ExcludedMemoryFiles": [
+       {
+        "Id": "455119203",
+        "Language": "SFX",
+        "ShortName": "VO_MC_Glide_FallingVoid_02.wav",
+        "Path": "SFX\\VO_MC_Glide_FallingVoid_02_10C4C929.wem"
+       },
+       {
+        "Id": "604730655",
+        "Language": "SFX",
+        "ShortName": "VO_MC_Glide_FallingVoid_03.wav",
+        "Path": "SFX\\VO_MC_Glide_FallingVoid_03_10C4C929.wem"
+       },
+       {
+        "Id": "771874064",
+        "Language": "SFX",
+        "ShortName": "VO_MC_Glide_FallingVoid_01.wav",
+        "Path": "SFX\\VO_MC_Glide_FallingVoid_01_10C4C929.wem"
+       },
+       {
+        "Id": "830761355",
+        "Language": "SFX",
+        "ShortName": "VO_MC_Glide_FallingVoid_04.wav",
+        "Path": "SFX\\VO_MC_Glide_FallingVoid_04_10C4C929.wem"
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

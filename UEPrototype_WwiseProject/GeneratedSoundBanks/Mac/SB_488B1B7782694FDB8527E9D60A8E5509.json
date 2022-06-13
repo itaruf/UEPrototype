@@ -16,7 +16,7 @@
     "Id": "1324060958",
     "GUID": "{4EEB911E-911E-111E-1E1E-1E1E1E1E1E1E}",
     "Language": "SFX",
-    "Hash": "515456542",
+    "Hash": "1670264113",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\SB_488B1B7782694FDB8527E9D60A8E5509",
     "ShortName": "SB_488B1B7782694FDB8527E9D60A8E5509",
     "Path": "SB_488B1B7782694FDB8527E9D60A8E5509.bnk",
@@ -27,14 +27,20 @@
       "ObjectPath": "\\Events\\Default Work Unit\\Jules\\MC\\MC_FT_Land",
       "GUID": "{488B1B77-8269-4FDB-8527-E9D60A8E5509}",
       "DurationType": "OneShot",
-      "DurationMin": "0.36141",
-      "DurationMax": "1.048363",
+      "DurationMin": "0.759454",
+      "DurationMax": "1.826182",
       "ExcludedMemoryFiles": [
        {
         "Id": "5906223",
         "Language": "SFX",
         "ShortName": "MC_FT_Stone_Land_01.wav",
         "Path": "SFX\\MC_FT_Stone_Land_01_10C4C929.wem"
+       },
+       {
+        "Id": "48957404",
+        "Language": "SFX",
+        "ShortName": "VO_MC_Land_05.wav",
+        "Path": "SFX\\VO_MC_Land_05_10C4C929.wem"
        },
        {
         "Id": "60212173",
@@ -49,10 +55,22 @@
         "Path": "SFX\\MC_FT_Dirt_Land_04_10C4C929.wem"
        },
        {
+        "Id": "216814225",
+        "Language": "SFX",
+        "ShortName": "MC_FT_Land_MagicLayer_01.wav",
+        "Path": "SFX\\MC_FT_Land_MagicLayer_01_10C4C929.wem"
+       },
+       {
         "Id": "243493831",
         "Language": "SFX",
         "ShortName": "MC_FT_Grass_Land_05.wav",
         "Path": "SFX\\MC_FT_Grass_Land_05_10C4C929.wem"
+       },
+       {
+        "Id": "320893239",
+        "Language": "SFX",
+        "ShortName": "VO_MC_Land_04.wav",
+        "Path": "SFX\\VO_MC_Land_04_10C4C929.wem"
        },
        {
         "Id": "333992609",
@@ -79,10 +97,22 @@
         "Path": "SFX\\MC_FT_Water_Land_02_10C4C929.wem"
        },
        {
+        "Id": "483781239",
+        "Language": "SFX",
+        "ShortName": "MC_FT_Land_MagicLayer_03.wav",
+        "Path": "SFX\\MC_FT_Land_MagicLayer_03_10C4C929.wem"
+       },
+       {
         "Id": "533253501",
         "Language": "SFX",
         "ShortName": "MC_FT_Dirt_Land_03.wav",
         "Path": "SFX\\MC_FT_Dirt_Land_03_10C4C929.wem"
+       },
+       {
+        "Id": "570666449",
+        "Language": "SFX",
+        "ShortName": "VO_MC_Land_02.wav",
+        "Path": "SFX\\VO_MC_Land_02_10C4C929.wem"
        },
        {
         "Id": "646921927",
@@ -103,6 +133,12 @@
         "Path": "SFX\\MC_FT_Water_Land_03_10C4C929.wem"
        },
        {
+        "Id": "767784180",
+        "Language": "SFX",
+        "ShortName": "VO_MC_Land_03.wav",
+        "Path": "SFX\\VO_MC_Land_03_10C4C929.wem"
+       },
+       {
         "Id": "794260679",
         "Language": "SFX",
         "ShortName": "MC_FT_Water_Land_05.wav",
@@ -113,6 +149,12 @@
         "Language": "SFX",
         "ShortName": "MC_FT_Dirt_Land_05.wav",
         "Path": "SFX\\MC_FT_Dirt_Land_05_10C4C929.wem"
+       },
+       {
+        "Id": "822516184",
+        "Language": "SFX",
+        "ShortName": "MC_FT_Land_MagicLayer_04.wav",
+        "Path": "SFX\\MC_FT_Land_MagicLayer_04_10C4C929.wem"
        },
        {
         "Id": "835552825",
@@ -145,10 +187,22 @@
         "Path": "SFX\\MC_FT_Water_Land_01_10C4C929.wem"
        },
        {
+        "Id": "933956410",
+        "Language": "SFX",
+        "ShortName": "VO_MC_Land_01.wav",
+        "Path": "SFX\\VO_MC_Land_01_10C4C929.wem"
+       },
+       {
         "Id": "946303868",
         "Language": "SFX",
         "ShortName": "MC_FT_Dirt_Land_02.wav",
         "Path": "SFX\\MC_FT_Dirt_Land_02_10C4C929.wem"
+       },
+       {
+        "Id": "976975929",
+        "Language": "SFX",
+        "ShortName": "MC_FT_Land_MagicLayer_02.wav",
+        "Path": "SFX\\MC_FT_Land_MagicLayer_02_10C4C929.wem"
        }
       ],
       "DefaultSwitchValue": "{FBA5D6FC-BB79-43BA-80B2-ABEA585C003B}",

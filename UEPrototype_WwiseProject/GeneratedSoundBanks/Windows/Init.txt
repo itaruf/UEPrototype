@@ -5,14 +5,16 @@ Switch	ID	Name	Switch Group			Notes
 	712161704	Run	PlayerSpeed			
 	2108779966	Walk	PlayerSpeed			
 
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	2918011349	MasterVolume			\Default Work Unit\Alexis\MasterVolume	
+
 Audio Bus	ID	Name			Wwise Object Path	Notes
-	393239870	SFX			\Default Work Unit\Jules\Master\SFX	
-	662417162	NPC			\Default Work Unit\Jules\Master\NPC	
-	1117531639	AMB			\Default Work Unit\Jules\Master\AMB	
-	1551306167	UI			\Default Work Unit\Jules\Master\UI	
-	1685527061	MC			\Default Work Unit\Jules\Master\MC	
+	393239870	SFX			\Default Work Unit\Master Audio Bus\SFX	
+	662417162	NPC			\Default Work Unit\Master Audio Bus\NPC	
+	1117531639	AMB			\Default Work Unit\Master Audio Bus\AMB	
+	1551306167	UI			\Default Work Unit\Master Audio Bus\UI	
+	1685527061	MC			\Default Work Unit\Master Audio Bus\MC	
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
-	4056684167	Master			\Default Work Unit\Jules\Master	
 
 Audio Devices	ID	Name	Type				Notes
 	2317455096	No_Output	No Output			
