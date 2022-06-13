@@ -4,15 +4,81 @@
 		<WorkUnit Name="Default Work Unit" ID="{1B6F5921-F647-4065-8004-B5EFE7036339}" PersistMode="Standalone">
 			<ChildrenList>
 				<Bus Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}">
+					<PropertyList>
+						<Property Name="BusVolume" Type="Real64">
+							<RTPCList>
+								<RTPC Name="" ID="{349262F4-AB5C-4F07-8028-8B8E7F61BC1D}" ShortID="142794907">
+									<ReferenceList>
+										<Reference Name="ControlInput">
+											<ObjectRef Name="MasterVolume" ID="{5B45EAC9-2C25-4E26-BE21-B7E898D85C87}" WorkUnitID="{2267CC50-2CB3-43FF-AD07-2C2C8FCF4501}"/>
+										</Reference>
+									</ReferenceList>
+									<Curve Name="" ID="{94E60A29-81EB-491E-B303-854501935913}">
+										<PropertyList>
+											<Property Name="Flags" Type="int32" Value="3"/>
+										</PropertyList>
+										<PointList>
+											<Point>
+												<XPos>0</XPos>
+												<YPos>-200</YPos>
+												<Flags>5</Flags>
+												<SegmentShape>Exp2</SegmentShape>
+											</Point>
+											<Point>
+												<XPos>1</XPos>
+												<YPos>0</YPos>
+												<Flags>37</Flags>
+											</Point>
+										</PointList>
+									</Curve>
+								</RTPC>
+							</RTPCList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="AudioDevice">
 							<ObjectRef Name="System" ID="{6B7432B9-C029-45FA-A9AB-3F872EC98FE0}" WorkUnitID="{5958FD67-625C-43DB-BE52-F7A0C375F380}"/>
 						</Reference>
 					</ReferenceList>
+					<ChildrenList>
+						<Bus Name="AMB" ID="{CDAACF0F-C751-406F-9073-3F6016218135}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="15"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ObjectLists/>
+						</Bus>
+						<Bus Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="9"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ObjectLists/>
+						</Bus>
+						<Bus Name="UI" ID="{810B9E20-27DC-44EE-82C9-184684B56A94}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="19"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ObjectLists/>
+						</Bus>
+						<Bus Name="NPC" ID="{B955C7C1-6C5F-4379-8FB3-DD13E36B5A38}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="25"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ObjectLists/>
+						</Bus>
+						<Bus Name="SFX" ID="{F425DD9C-4B7D-40B0-B495-D58654E0B77E}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="16"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ObjectLists/>
+						</Bus>
+					</ChildrenList>
 					<ObjectLists/>
 				</Bus>
-				<WorkUnit Name="Jules" ID="{4931AAAD-492C-4172-82D6-622C6FFFC0FF}" PersistMode="Reference"/>
-				<WorkUnit Name="Alexis" ID="{F7976E49-D36E-4DFE-A036-A0A91C0D3D47}" PersistMode="Reference"/>
 			</ChildrenList>
 		</WorkUnit>
 	</Busses>
