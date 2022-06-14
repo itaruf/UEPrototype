@@ -237,7 +237,7 @@
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Attenuation">
-													<ObjectRef Name="ATT_WaterFallSmall" ID="{49ED90B8-43F8-44B9-9998-9AD192B26ADB}" WorkUnitID="{9493D104-BDD0-462A-8CB7-A95DD41418B5}"/>
+													<ObjectRef Name="ATT_WaterFallSmall" ID="{49ED90B8-43F8-44B9-9998-9AD192B26ADB}" WorkUnitID="{C730687D-413E-4BFB-8D51-3089D8FA5CE2}"/>
 												</Reference>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -607,7 +607,7 @@
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Attenuation">
-													<ObjectRef Name="ATT_WaterFallMed" ID="{C3AB0A77-B120-4A1F-8750-AEB55B01ACFB}" WorkUnitID="{9493D104-BDD0-462A-8CB7-A95DD41418B5}"/>
+													<ObjectRef Name="ATT_WaterFallMed" ID="{C3AB0A77-B120-4A1F-8750-AEB55B01ACFB}" WorkUnitID="{C730687D-413E-4BFB-8D51-3089D8FA5CE2}"/>
 												</Reference>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -895,7 +895,7 @@
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Attenuation">
-													<ObjectRef Name="ATT_WaterFallBig" ID="{56CBB63A-03B5-4D7E-AA3C-35206E319F58}" WorkUnitID="{9493D104-BDD0-462A-8CB7-A95DD41418B5}"/>
+													<ObjectRef Name="ATT_WaterFallBig" ID="{56CBB63A-03B5-4D7E-AA3C-35206E319F58}" WorkUnitID="{C730687D-413E-4BFB-8D51-3089D8FA5CE2}"/>
 												</Reference>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -1180,7 +1180,7 @@
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Attenuation">
-													<ObjectRef Name="ATT_FireTorch" ID="{AF2E18C2-EE77-426D-AA8E-A1A286893804}" WorkUnitID="{9493D104-BDD0-462A-8CB7-A95DD41418B5}"/>
+													<ObjectRef Name="ATT_FireTorch" ID="{AF2E18C2-EE77-426D-AA8E-A1A286893804}" WorkUnitID="{C730687D-413E-4BFB-8D51-3089D8FA5CE2}"/>
 												</Reference>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -9347,6 +9347,10 @@
 									</ActiveSourceList>
 								</Sound>
 								<BlendContainer Name="SFX_MagicDoor_Blend" ID="{2DD9C8A2-E587-410A-B681-6490CF2104F6}" ShortID="642436224">
+									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="2"/>
+										<Property Name="OverridePositioning" Type="bool" Value="True"/>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>

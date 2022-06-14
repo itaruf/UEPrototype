@@ -52,7 +52,7 @@
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Attenuation">
-											<ObjectRef Name="ATT_Portals" ID="{7B20DE71-BA58-4AE3-949A-15FA63BE6C24}" WorkUnitID="{9493D104-BDD0-462A-8CB7-A95DD41418B5}"/>
+											<ObjectRef Name="ATT_Portals" ID="{7B20DE71-BA58-4AE3-949A-15FA63BE6C24}" WorkUnitID="{A2E70B8F-5F4D-4AA3-9EC7-CD0BEFA74353}"/>
 										</Reference>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -94,7 +94,7 @@
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Attenuation">
-											<ObjectRef Name="ATT_Portals" ID="{7B20DE71-BA58-4AE3-949A-15FA63BE6C24}" WorkUnitID="{9493D104-BDD0-462A-8CB7-A95DD41418B5}"/>
+											<ObjectRef Name="ATT_Portals" ID="{7B20DE71-BA58-4AE3-949A-15FA63BE6C24}" WorkUnitID="{A2E70B8F-5F4D-4AA3-9EC7-CD0BEFA74353}"/>
 										</Reference>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
