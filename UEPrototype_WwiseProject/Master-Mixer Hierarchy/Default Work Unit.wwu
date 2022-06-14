@@ -108,6 +108,28 @@
 							</ReferenceList>
 							<ObjectLists/>
 						</AuxBus>
+						<AuxBus Name="RVB_Cave" ID="{7188D707-1FC4-4ADC-866C-04526C3965DE}">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="BusVolume" Type="Real64">
+									<ValueList>
+										<Value>-3</Value>
+									</ValueList>
+								</Property>
+								<Property Name="EnableDiffraction" Type="bool" Value="True"/>
+								<Property Name="ListenerRelativeRouting" Type="bool" Value="True"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="ATT_RVB" ID="{71A8F4A7-BCCE-4BD4-8EE1-CC44A1F48EEC}" WorkUnitID="{9493D104-BDD0-462A-8CB7-A95DD41418B5}"/>
+								</Reference>
+								<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+									<ObjectRef Name="Room_Large" ID="{AD8EFAFC-7121-4D5F-BE4D-B13FBD6CEBAE}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+								</Reference>
+							</ReferenceList>
+							<ObjectLists/>
+						</AuxBus>
 					</ChildrenList>
 					<ObjectLists/>
 				</Bus>
