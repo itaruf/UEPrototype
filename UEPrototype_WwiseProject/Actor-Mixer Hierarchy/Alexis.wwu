@@ -88,7 +88,7 @@
 										<Property Name="OverridePositioning" Type="bool" Value="True"/>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-20</Value>
+												<Value>-9</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -104,17 +104,17 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<AudioFileSource Name="AMB_Bed_Temple_LP" ID="{97C0B744-3EB3-445A-8120-F22BDB99CB83}">
+										<AudioFileSource Name="AMB_Bed_lvl2_Temple_LP" ID="{9798D66D-664D-4921-A3B6-EA167D4AE8D5}">
 											<Language>SFX</Language>
-											<AudioFile>AMB_Bed_Temple_LP.wav</AudioFile>
+											<AudioFile>AMB_Bed_lvl2_Temple_LP.wav</AudioFile>
 											<MediaIDList>
-												<MediaID ID="294156398"/>
+												<MediaID ID="781522490"/>
 											</MediaIDList>
 										</AudioFileSource>
 									</ChildrenList>
 									<ObjectLists/>
 									<ActiveSourceList>
-										<ActiveSource Name="AMB_Bed_Temple_LP" ID="{97C0B744-3EB3-445A-8120-F22BDB99CB83}" Platform="Linked"/>
+										<ActiveSource Name="AMB_Bed_lvl2_Temple_LP" ID="{9798D66D-664D-4921-A3B6-EA167D4AE8D5}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
 							</ChildrenList>
