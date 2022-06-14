@@ -16,10 +16,24 @@
     "Id": "1355168291",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "1255402019",
+    "Hash": "2472503610",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
+    "IncludedAuxBusses": [
+     {
+      "Id": "3798299039",
+      "Name": "RVB_Temple",
+      "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\RVB_Temple",
+      "GUID": "{153304D8-442C-4DEE-8DC4-95365AC34075}"
+     },
+     {
+      "Id": "3801984506",
+      "Name": "RVB_Exterior",
+      "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\RVB_Exterior",
+      "GUID": "{9AA47515-D1F5-4B5E-B74C-B787C0B8B927}"
+     }
+    ],
     "GameParameters": [
      {
       "Id": "2918011349",

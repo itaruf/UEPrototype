@@ -16,7 +16,7 @@
     "Id": "3263404373",
     "GUID": "{C2839955-9955-1955-5555-555555555555}",
     "Language": "SFX",
-    "Hash": "3214616792",
+    "Hash": "842703387",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\SB_27C1EB196DDA4365A9D04F95E986689B",
     "ShortName": "SB_27C1EB196DDA4365A9D04F95E986689B",
     "Path": "SB_27C1EB196DDA4365A9D04F95E986689B.bnk",
@@ -27,8 +27,8 @@
       "ObjectPath": "\\Events\\Default Work Unit\\Jules\\MC\\MC_FT_WallJump",
       "GUID": "{27C1EB19-6DDA-4365-A9D0-4F95E986689B}",
       "DurationType": "OneShot",
-      "DurationMin": "0.68375",
-      "DurationMax": "0.875792",
+      "DurationMin": "0.673947",
+      "DurationMax": "0.88853",
       "ExcludedMemoryFiles": [
        {
         "Id": "47502075",

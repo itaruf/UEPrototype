@@ -2170,6 +2170,9 @@
 																</Property>
 																<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="10"/>
 																<Property Name="Volume" Type="Real64">
+																	<ValueList>
+																		<Value>-14</Value>
+																	</ValueList>
 																	<ModifierList>
 																		<ModifierInfo>
 																			<Modifier Name="" ID="{ADB00E92-80AE-4B0B-8E80-87001C60ABA4}">
@@ -2442,6 +2445,9 @@
 																</Property>
 																<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="10"/>
 																<Property Name="Volume" Type="Real64">
+																	<ValueList>
+																		<Value>-15</Value>
+																	</ValueList>
 																	<ModifierList>
 																		<ModifierInfo>
 																			<Modifier Name="" ID="{FB5ADE84-CDAC-4CB5-94E5-F64E8ECFBED3}">
@@ -2714,6 +2720,9 @@
 																</Property>
 																<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="10"/>
 																<Property Name="Volume" Type="Real64">
+																	<ValueList>
+																		<Value>-14</Value>
+																	</ValueList>
 																	<ModifierList>
 																		<ModifierInfo>
 																			<Modifier Name="" ID="{B5A045D7-921B-4160-81FA-542AA10FBBAF}">
@@ -3139,6 +3148,9 @@
 																</Property>
 																<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="20"/>
 																<Property Name="Volume" Type="Real64">
+																	<ValueList>
+																		<Value>-15</Value>
+																	</ValueList>
 																	<ModifierList>
 																		<ModifierInfo>
 																			<Modifier Name="" ID="{688FF593-8342-473D-9AFF-812C59038ABB}">
@@ -3641,6 +3653,9 @@
 																</Property>
 																<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="10"/>
 																<Property Name="Volume" Type="Real64">
+																	<ValueList>
+																		<Value>-12</Value>
+																	</ValueList>
 																	<ModifierList>
 																		<ModifierInfo>
 																			<Modifier Name="" ID="{B4A25798-1664-4653-A2C0-1C5C7E1C51DB}">
@@ -4530,6 +4545,9 @@
 																</Property>
 																<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="20"/>
 																<Property Name="Volume" Type="Real64">
+																	<ValueList>
+																		<Value>-13</Value>
+																	</ValueList>
 																	<ModifierList>
 																		<ModifierInfo>
 																			<Modifier Name="" ID="{07F9B03B-2E0E-410C-A8BB-F9DADEB3F4C2}">
