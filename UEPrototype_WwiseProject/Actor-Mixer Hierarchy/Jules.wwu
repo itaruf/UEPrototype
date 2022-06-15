@@ -9349,9 +9349,17 @@
 								<BlendContainer Name="SFX_MagicDoor_Blend" ID="{2DD9C8A2-E587-410A-B681-6490CF2104F6}" ShortID="642436224">
 									<PropertyList>
 										<Property Name="3DSpatialization" Type="int16" Value="2"/>
+										<Property Name="Inclusion" Type="bool">
+											<ValueList>
+												<Value>False</Value>
+											</ValueList>
+										</Property>
 										<Property Name="OverridePositioning" Type="bool" Value="True"/>
 									</PropertyList>
 									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="ATT_MagicDoor" ID="{196A324C-8169-4295-BB3B-D5AE96268377}" WorkUnitID="{C730687D-413E-4BFB-8D51-3089D8FA5CE2}"/>
+										</Reference>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 										</Reference>
@@ -9453,6 +9461,123 @@
 										</BlendTrack>
 									</BlendTrackList>
 								</BlendContainer>
+								<RandomSequenceContainer Name="SFX_MagicDoor_Sequence" ID="{7769D137-4234-46E5-9A3C-4F0895F9CF48}" ShortID="829879793">
+									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="2"/>
+										<Property Name="OverridePositioning" Type="bool" Value="True"/>
+										<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+										<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+										<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+										<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="ATT_MagicDoor" ID="{196A324C-8169-4295-BB3B-D5AE96268377}" WorkUnitID="{C730687D-413E-4BFB-8D51-3089D8FA5CE2}"/>
+										</Reference>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="SFX_MagicDoorBegin" ID="{234BFB48-E731-49AC-8884-742D78FF692F}" ShortID="917276111">
+											<PropertyList>
+												<Property Name="3DSpatialization" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="ATT_MagicDoor" ID="{196A324C-8169-4295-BB3B-D5AE96268377}" WorkUnitID="{C730687D-413E-4BFB-8D51-3089D8FA5CE2}"/>
+												</Reference>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="SFX" ID="{F425DD9C-4B7D-40B0-B495-D58654E0B77E}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="SFX_MagicDoorBegin" ID="{64FD1DBE-A86B-4BC3-8590-B96BECCA7229}">
+													<Language>SFX</Language>
+													<AudioFile>SFX_MagicDoorBegin.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="1022866745"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="SFX_MagicDoorBegin" ID="{64FD1DBE-A86B-4BC3-8590-B96BECCA7229}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="SFX_MagicDoorEnd" ID="{D95DA8B4-8B3F-418F-A76C-6B83C1923792}" ShortID="737179617">
+											<PropertyList>
+												<Property Name="3DSpatialization" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="ATT_MagicDoor" ID="{196A324C-8169-4295-BB3B-D5AE96268377}" WorkUnitID="{C730687D-413E-4BFB-8D51-3089D8FA5CE2}"/>
+												</Reference>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="SFX" ID="{F425DD9C-4B7D-40B0-B495-D58654E0B77E}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="SFX_MagicDoorEnd" ID="{5F576F28-C668-4035-B464-254CA281FDC3}">
+													<Language>SFX</Language>
+													<AudioFile>SFX_MagicDoorEnd.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="42847026"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="SFX_MagicDoorEnd" ID="{5F576F28-C668-4035-B464-254CA281FDC3}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="SFX_MagicDoor_LP" ID="{F547C08B-6DFE-45A6-A45A-3F4464FF4C59}" ShortID="875858685">
+											<PropertyList>
+												<Property Name="3DSpatialization" Type="int16" Value="2"/>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="ATT_MagicDoor" ID="{196A324C-8169-4295-BB3B-D5AE96268377}" WorkUnitID="{C730687D-413E-4BFB-8D51-3089D8FA5CE2}"/>
+												</Reference>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="SFX" ID="{F425DD9C-4B7D-40B0-B495-D58654E0B77E}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="SFX_MagicDoor_LP" ID="{1EEB8F93-4082-4956-85ED-71DE41267437}">
+													<Language>SFX</Language>
+													<AudioFile>SFX_MagicDoor_LP.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="196305151"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="SFX_MagicDoor_LP" ID="{1EEB8F93-4082-4956-85ED-71DE41267437}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+									<ObjectLists/>
+									<Playlist>
+										<ItemRef Name="SFX_MagicDoorBegin" ID="{234BFB48-E731-49AC-8884-742D78FF692F}"/>
+										<ItemRef Name="SFX_MagicDoor_LP" ID="{F547C08B-6DFE-45A6-A45A-3F4464FF4C59}"/>
+										<ItemRef Name="SFX_MagicDoorEnd" ID="{D95DA8B4-8B3F-418F-A76C-6B83C1923792}"/>
+									</Playlist>
+								</RandomSequenceContainer>
 							</ChildrenList>
 							<ObjectLists/>
 						</ActorMixer>
