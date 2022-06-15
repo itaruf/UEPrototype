@@ -16,7 +16,7 @@
     "Id": "4191783808",
     "GUID": "{F9D98B80-8B80-1B80-8080-808080808080}",
     "Language": "SFX",
-    "Hash": "3222582475",
+    "Hash": "4062777385",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\SB_A754753925584E76BAF997167B960FDA",
     "ShortName": "SB_A754753925584E76BAF997167B960FDA",
     "Path": "SB_A754753925584E76BAF997167B960FDA.bnk",
@@ -30,10 +30,10 @@
       "DurationType": "Infinite",
       "ReferencedStreamedFiles": [
        {
-        "Id": "294156398",
+        "Id": "781522490",
         "Language": "SFX",
-        "ShortName": "AMB_Bed_Temple_LP.wav",
-        "Path": "SFX\\AMB_Bed_Temple_LP_D79FB2B7.wem"
+        "ShortName": "AMB_Bed_lvl2_Temple_LP.wav",
+        "Path": "SFX\\AMB_Bed_lvl2_Temple_LP_D79FB2B7.wem"
        }
       ]
      }

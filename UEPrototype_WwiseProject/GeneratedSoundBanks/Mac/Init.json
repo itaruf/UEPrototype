@@ -16,7 +16,7 @@
     "Id": "1355168291",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "2472503610",
+    "Hash": "1442780604",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -32,6 +32,12 @@
       "Name": "RVB_Exterior",
       "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\RVB_Exterior",
       "GUID": "{9AA47515-D1F5-4B5E-B74C-B787C0B8B927}"
+     },
+     {
+      "Id": "4001587643",
+      "Name": "RVB_Cave",
+      "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\RVB_Cave",
+      "GUID": "{7188D707-1FC4-4ADC-866C-04526C3965DE}"
      }
     ],
     "GameParameters": [

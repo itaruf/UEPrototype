@@ -16,7 +16,7 @@
     "Id": "2433236884",
     "GUID": "{91083F94-3F94-1F94-9494-949494949494}",
     "Language": "SFX",
-    "Hash": "3116590298",
+    "Hash": "2121201893",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\SB_44FD23A1F9174E268EF934E98C653B2B",
     "ShortName": "SB_44FD23A1F9174E268EF934E98C653B2B",
     "Path": "SB_44FD23A1F9174E268EF934E98C653B2B.bnk",
@@ -26,6 +26,7 @@
       "Name": "SP_WaterFallMed",
       "ObjectPath": "\\Events\\Default Work Unit\\Jules\\AMB\\SP_WaterFallMed",
       "GUID": "{44FD23A1-F917-4E26-8EF9-34E98C653B2B}",
+      "MaxAttenuation": "20000.",
       "DurationType": "Infinite",
       "ReferencedStreamedFiles": [
        {

@@ -19,9 +19,11 @@ Audio Bus	ID	Name			Wwise Object Path	Notes
 Auxiliary Bus	ID	Name			Wwise Object Path	Notes
 	3798299039	RVB_Temple			\Default Work Unit\Master Audio Bus\RVB_Temple	
 	3801984506	RVB_Exterior			\Default Work Unit\Master Audio Bus\RVB_Exterior	
+	4001587643	RVB_Cave			\Default Work Unit\Master Audio Bus\RVB_Cave	
 
 Effect plug-ins	ID	Name	Type				Notes
 	48620415	Have_U_Ever_Been_Outside	Wwise RoomVerb			
+	602546716	Room_Large	Wwise RoomVerb			
 	3442768367	Hall_Large_Dark	Wwise RoomVerb			
 
 Audio Devices	ID	Name	Type				Notes

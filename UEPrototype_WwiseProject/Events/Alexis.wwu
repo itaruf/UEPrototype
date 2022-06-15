@@ -216,6 +216,17 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="Play_AMB_Bed_lvl1_Cave" ID="{F1D8AD49-403F-4499-A9F7-2C1C0870FA6F}">
+							<ChildrenList>
+								<Action Name="" ID="{789B680E-89C1-465D-AB71-F13FC3D0599E}" ShortID="72790596">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="AMB_Bed_lvl1_Cave_LP" ID="{3CE3BDD3-1ECD-4527-9075-7F1A2444ECA4}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="UI" ID="{887CFF1A-FD6F-42CE-BE4E-C77A43E5AC14}" ShortID="103939254">
