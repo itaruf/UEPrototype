@@ -106,6 +106,54 @@
 						</Event>
 					</ChildrenList>
 				</Folder>
+				<Folder Name="UI" ID="{887CFF1A-FD6F-42CE-BE4E-C77A43E5AC14}" ShortID="103939254">
+					<ChildrenList>
+						<Event Name="UI_Menu_Select" ID="{BC612A96-F0DF-474E-91B0-E0FD9AB6F4DB}">
+							<ChildrenList>
+								<Action Name="" ID="{77CE9878-4661-4C21-8095-AE08FB194B88}" ShortID="1051535721">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="UI_Menu_Select" ID="{591CCE5B-FF3C-473B-A8EE-A1BFF0F06556}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="UI_Menu_Hover" ID="{402C459E-ECAA-4A6B-965B-27BD861CD0F8}">
+							<ChildrenList>
+								<Action Name="" ID="{4AAD0205-E96B-42D6-8EF8-0B1D7F889F05}" ShortID="316205198">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="UI_Menu_Hover" ID="{E8C3DEEC-2183-4106-A02E-C4E82243BB6D}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="UI_Menu_Over_01" ID="{B1A596BB-85DC-4360-9373-415E0FC66271}">
+							<ChildrenList>
+								<Action Name="" ID="{C33511BF-506F-433B-8E3B-844A2C89C737}" ShortID="338558468">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="UI_Menu_Cancel" ID="{90C2276D-0F80-4AEB-9AC9-9343D33E7A05}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="UI_Menu_Cancel_01" ID="{3759F788-F115-487F-9DEA-F1F8551C87B1}">
+							<ChildrenList>
+								<Action Name="" ID="{4DC2D398-B0EA-4E63-8756-AA1A3A8BF6D2}" ShortID="63388038">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="UI_Menu_Slider" ID="{1C972AD9-9A29-41C0-A0C4-0E1224844954}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
