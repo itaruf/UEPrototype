@@ -1807,7 +1807,7 @@
 												<Property Name="OverrideGameAuxSends" Type="bool" Value="True"/>
 												<Property Name="Pitch" Type="int32">
 													<ValueList>
-														<Value>180</Value>
+														<Value>450</Value>
 													</ValueList>
 													<RTPCList>
 														<RTPC Name="" ID="{0C45FB71-C17D-4B3C-93D9-96E8B3CBE75B}" ShortID="964911345">
@@ -1828,7 +1828,7 @@
 																	</Point>
 																	<Point>
 																		<XPos>3000</XPos>
-																		<YPos>279</YPos>
+																		<YPos>232</YPos>
 																		<Flags>37</Flags>
 																	</Point>
 																</PointList>

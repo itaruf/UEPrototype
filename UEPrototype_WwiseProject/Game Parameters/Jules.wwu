@@ -39,7 +39,12 @@
 						<Property Name="Max" Type="Real64" Value="30000"/>
 					</PropertyList>
 				</GameParameter>
-				<GameParameter Name="RTPC_MagicDoorPosition" ID="{42B37403-7E20-45F1-BC55-D7706D029A1E}"/>
+				<GameParameter Name="RTPC_MagicDoorPosition" ID="{42B37403-7E20-45F1-BC55-D7706D029A1E}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+						<Property Name="Max" Type="Real64" Value="1"/>
+					</PropertyList>
+				</GameParameter>
 			</ChildrenList>
 		</WorkUnit>
 	</GameParameters>
