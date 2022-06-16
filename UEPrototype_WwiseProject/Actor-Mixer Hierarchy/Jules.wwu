@@ -177,13 +177,13 @@
 																				<Flags>5</Flags>
 																			</Point>
 																			<Point>
-																				<XPos>12535.4969574037</XPos>
+																				<XPos>8356.99797160247</XPos>
 																				<YPos>0</YPos>
 																				<Flags>0</Flags>
 																				<SegmentShape>Log2</SegmentShape>
 																			</Point>
 																			<Point>
-																				<XPos>15000</XPos>
+																				<XPos>10000</XPos>
 																				<YPos>-8.0667</YPos>
 																				<Flags>37</Flags>
 																			</Point>
@@ -204,25 +204,25 @@
 															<CrossfadingInfo>
 																<LeftEdgePos>0</LeftEdgePos>
 																<LeftFadingMode>Automatic</LeftFadingMode>
-																<RightEdgePos>7500</RightEdgePos>
+																<RightEdgePos>5000</RightEdgePos>
 																<RightFadingMode>Automatic</RightFadingMode>
 															</CrossfadingInfo>
 														</BlendTrackAssoc>
 														<BlendTrackAssoc>
 															<ItemRef Name="AMB_WaterFall_MidRange_ST_LP" ID="{4A70E5ED-7495-4711-95B8-FB1F744E6F56}"/>
 															<CrossfadingInfo>
-																<LeftEdgePos>2292.0892494929</LeftEdgePos>
+																<LeftEdgePos>1528.05949966193</LeftEdgePos>
 																<LeftFadingMode>Automatic</LeftFadingMode>
-																<RightEdgePos>12500</RightEdgePos>
+																<RightEdgePos>8333.33333333333</RightEdgePos>
 																<RightFadingMode>Automatic</RightFadingMode>
 															</CrossfadingInfo>
 														</BlendTrackAssoc>
 														<BlendTrackAssoc>
 															<ItemRef Name="AMB_WaterFall_Far_ST_LP" ID="{994ECD00-8A10-437C-9ADA-CF417D2E07C2}"/>
 															<CrossfadingInfo>
-																<LeftEdgePos>7560.85192697769</LeftEdgePos>
+																<LeftEdgePos>5040.56795131846</LeftEdgePos>
 																<LeftFadingMode>Automatic</LeftFadingMode>
-																<RightEdgePos>15000</RightEdgePos>
+																<RightEdgePos>10000</RightEdgePos>
 																<RightFadingMode>Automatic</RightFadingMode>
 															</CrossfadingInfo>
 														</BlendTrackAssoc>
@@ -233,7 +233,9 @@
 										<BlendContainer Name="AMB_SP_WaterFallSmall_Blend" ID="{D753DC15-7C1A-45B5-9BA1-D2DF96400256}" ShortID="248975390">
 											<PropertyList>
 												<Property Name="3DSpatialization" Type="int16" Value="2"/>
+												<Property Name="BelowThresholdBehavior" Type="int16" Value="2"/>
 												<Property Name="OverridePositioning" Type="bool" Value="True"/>
+												<Property Name="OverrideVirtualVoice" Type="bool" Value="True"/>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Attenuation">
@@ -407,7 +409,7 @@
 																				<SegmentShape>SCurve</SegmentShape>
 																			</Point>
 																			<Point>
-																				<XPos>15000</XPos>
+																				<XPos>10000</XPos>
 																				<YPos>-200</YPos>
 																				<Flags>37</Flags>
 																			</Point>
@@ -428,9 +430,9 @@
 															<CrossfadingInfo>
 																<LeftEdgePos>0</LeftEdgePos>
 																<LeftFadingMode>None</LeftFadingMode>
-																<RightEdgePos>7500</RightEdgePos>
+																<RightEdgePos>5000</RightEdgePos>
 																<RightFadingMode>Manual</RightFadingMode>
-																<RightFadingPos>5027.14708785785</RightFadingPos>
+																<RightFadingPos>3351.43139190523</RightFadingPos>
 															</CrossfadingInfo>
 														</BlendTrackAssoc>
 													</BlendTrackAssocList>
@@ -458,13 +460,13 @@
 																				<SegmentShape>SCurve</SegmentShape>
 																			</Point>
 																			<Point>
-																				<XPos>5000</XPos>
+																				<XPos>3333.33333333333</XPos>
 																				<YPos>-3.0522</YPos>
 																				<Flags>0</Flags>
 																				<SegmentShape>SCurve</SegmentShape>
 																			</Point>
 																			<Point>
-																				<XPos>15000</XPos>
+																				<XPos>10000</XPos>
 																				<YPos>-200</YPos>
 																				<Flags>37</Flags>
 																			</Point>
@@ -485,7 +487,7 @@
 															<CrossfadingInfo>
 																<LeftEdgePos>0</LeftEdgePos>
 																<LeftFadingMode>None</LeftFadingMode>
-																<RightEdgePos>15000</RightEdgePos>
+																<RightEdgePos>10000</RightEdgePos>
 																<RightFadingMode>None</RightFadingMode>
 															</CrossfadingInfo>
 														</BlendTrackAssoc>
@@ -513,7 +515,7 @@
 																				<Flags>5</Flags>
 																			</Point>
 																			<Point>
-																				<XPos>15000</XPos>
+																				<XPos>10000</XPos>
 																				<YPos>0</YPos>
 																				<Flags>37</Flags>
 																			</Point>
@@ -532,12 +534,12 @@
 														<BlendTrackAssoc>
 															<ItemRef Name="AMB_SP_WaterFallSmallDistant_LP" ID="{8AB920FB-4574-46A1-8D54-1766A94DEF87}"/>
 															<CrossfadingInfo>
-																<LeftEdgePos>2500</LeftEdgePos>
+																<LeftEdgePos>1666.66666666667</LeftEdgePos>
 																<LeftFadingMode>Manual</LeftFadingMode>
-																<LeftFadingPos>7176.70286278381</LeftFadingPos>
-																<RightEdgePos>15000</RightEdgePos>
+																<LeftFadingPos>4784.46857518921</LeftFadingPos>
+																<RightEdgePos>10000</RightEdgePos>
 																<RightFadingMode>Manual</RightFadingMode>
-																<RightFadingPos>7176.70286278381</RightFadingPos>
+																<RightFadingPos>4784.46857518921</RightFadingPos>
 															</CrossfadingInfo>
 														</BlendTrackAssoc>
 													</BlendTrackAssocList>
@@ -564,13 +566,13 @@
 																				<Flags>5</Flags>
 																			</Point>
 																			<Point>
-																				<XPos>10000</XPos>
+																				<XPos>6666.66666666667</XPos>
 																				<YPos>0</YPos>
 																				<Flags>0</Flags>
 																				<SegmentShape>SCurve</SegmentShape>
 																			</Point>
 																			<Point>
-																				<XPos>15000</XPos>
+																				<XPos>10000</XPos>
 																				<YPos>0</YPos>
 																				<Flags>37</Flags>
 																			</Point>
@@ -589,10 +591,10 @@
 														<BlendTrackAssoc>
 															<ItemRef Name="AMB_SP_WaterFallSmallVeryDistant_LP" ID="{DDFF85EB-F1E9-4C74-B093-223F3063AD14}"/>
 															<CrossfadingInfo>
-																<LeftEdgePos>5000</LeftEdgePos>
+																<LeftEdgePos>3333.33333333333</LeftEdgePos>
 																<LeftFadingMode>Manual</LeftFadingMode>
-																<LeftFadingPos>12492.5962487661</LeftFadingPos>
-																<RightEdgePos>15000</RightEdgePos>
+																<LeftFadingPos>8328.3974991774</LeftFadingPos>
+																<RightEdgePos>10000</RightEdgePos>
 																<RightFadingMode>None</RightFadingMode>
 															</CrossfadingInfo>
 														</BlendTrackAssoc>
@@ -603,7 +605,14 @@
 										<BlendContainer Name="AMB_SP_WaterFallMed_Blend" ID="{9BDACA8E-0A1A-476E-B000-F3ACE5F478FC}" ShortID="962171192">
 											<PropertyList>
 												<Property Name="3DSpatialization" Type="int16" Value="2"/>
+												<Property Name="BelowThresholdBehavior" Type="int16" Value="2"/>
 												<Property Name="OverridePositioning" Type="bool" Value="True"/>
+												<Property Name="OverrideVirtualVoice" Type="bool" Value="True"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>10</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Attenuation">
@@ -746,7 +755,7 @@
 																				<SegmentShape>SCurve</SegmentShape>
 																			</Point>
 																			<Point>
-																				<XPos>20000</XPos>
+																				<XPos>15000</XPos>
 																				<YPos>-200</YPos>
 																				<Flags>37</Flags>
 																			</Point>
@@ -767,9 +776,9 @@
 															<CrossfadingInfo>
 																<LeftEdgePos>0</LeftEdgePos>
 																<LeftFadingMode>None</LeftFadingMode>
-																<RightEdgePos>12500</RightEdgePos>
+																<RightEdgePos>9375</RightEdgePos>
 																<RightFadingMode>Manual</RightFadingMode>
-																<RightFadingPos>5000</RightFadingPos>
+																<RightFadingPos>3750</RightFadingPos>
 															</CrossfadingInfo>
 														</BlendTrackAssoc>
 													</BlendTrackAssocList>
@@ -797,13 +806,13 @@
 																				<SegmentShape>SCurve</SegmentShape>
 																			</Point>
 																			<Point>
-																				<XPos>10000</XPos>
+																				<XPos>7500</XPos>
 																				<YPos>0</YPos>
 																				<Flags>0</Flags>
 																				<SegmentShape>SCurve</SegmentShape>
 																			</Point>
 																			<Point>
-																				<XPos>20000</XPos>
+																				<XPos>15000</XPos>
 																				<YPos>0</YPos>
 																				<Flags>37</Flags>
 																			</Point>
@@ -824,7 +833,7 @@
 															<CrossfadingInfo>
 																<LeftEdgePos>0</LeftEdgePos>
 																<LeftFadingMode>None</LeftFadingMode>
-																<RightEdgePos>20000</RightEdgePos>
+																<RightEdgePos>15000</RightEdgePos>
 																<RightFadingMode>None</RightFadingMode>
 															</CrossfadingInfo>
 														</BlendTrackAssoc>
@@ -852,13 +861,13 @@
 																				<Flags>5</Flags>
 																			</Point>
 																			<Point>
-																				<XPos>15000</XPos>
+																				<XPos>11250</XPos>
 																				<YPos>0</YPos>
 																				<Flags>0</Flags>
 																				<SegmentShape>SCurve</SegmentShape>
 																			</Point>
 																			<Point>
-																				<XPos>20000</XPos>
+																				<XPos>15000</XPos>
 																				<YPos>0</YPos>
 																				<Flags>37</Flags>
 																			</Point>
@@ -877,10 +886,10 @@
 														<BlendTrackAssoc>
 															<ItemRef Name="AMB_SP_WaterFallMedDistant_LP" ID="{3174FCD2-CFCD-4D9E-A2C5-1C1DD2D31DD1}"/>
 															<CrossfadingInfo>
-																<LeftEdgePos>5000</LeftEdgePos>
+																<LeftEdgePos>3750</LeftEdgePos>
 																<LeftFadingMode>Manual</LeftFadingMode>
-																<LeftFadingPos>12500</LeftFadingPos>
-																<RightEdgePos>20000</RightEdgePos>
+																<LeftFadingPos>9375</LeftFadingPos>
+																<RightEdgePos>15000</RightEdgePos>
 																<RightFadingMode>None</RightFadingMode>
 															</CrossfadingInfo>
 														</BlendTrackAssoc>
@@ -891,7 +900,14 @@
 										<BlendContainer Name="AMB_SP_WaterFallBig_Blend" ID="{98A63FC9-7411-4144-A499-F119109E5059}" ShortID="577579625">
 											<PropertyList>
 												<Property Name="3DSpatialization" Type="int16" Value="2"/>
+												<Property Name="BelowThresholdBehavior" Type="int16" Value="2"/>
 												<Property Name="OverridePositioning" Type="bool" Value="True"/>
+												<Property Name="OverrideVirtualVoice" Type="bool" Value="True"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>7</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Attenuation">
@@ -1024,13 +1040,13 @@
 																				<SegmentShape>SCurve</SegmentShape>
 																			</Point>
 																			<Point>
-																				<XPos>25439.28923</XPos>
+																				<XPos>16959.5261533333</XPos>
 																				<YPos>-200</YPos>
 																				<Flags>0</Flags>
 																				<SegmentShape>SCurve</SegmentShape>
 																			</Point>
 																			<Point>
-																				<XPos>30000</XPos>
+																				<XPos>20000</XPos>
 																				<YPos>-200</YPos>
 																				<Flags>37</Flags>
 																			</Point>
@@ -1051,7 +1067,7 @@
 															<CrossfadingInfo>
 																<LeftEdgePos>0</LeftEdgePos>
 																<LeftFadingMode>Automatic</LeftFadingMode>
-																<RightEdgePos>20000</RightEdgePos>
+																<RightEdgePos>13333.3333333333</RightEdgePos>
 																<RightFadingMode>Automatic</RightFadingMode>
 															</CrossfadingInfo>
 														</BlendTrackAssoc>
@@ -1080,13 +1096,13 @@
 																				<SegmentShape>SCurve</SegmentShape>
 																			</Point>
 																			<Point>
-																				<XPos>12500</XPos>
+																				<XPos>8333.33333333333</XPos>
 																				<YPos>0</YPos>
 																				<Flags>0</Flags>
 																				<SegmentShape>SCurve</SegmentShape>
 																			</Point>
 																			<Point>
-																				<XPos>30000</XPos>
+																				<XPos>20000</XPos>
 																				<YPos>0</YPos>
 																				<Flags>37</Flags>
 																			</Point>
@@ -1107,7 +1123,7 @@
 															<CrossfadingInfo>
 																<LeftEdgePos>0</LeftEdgePos>
 																<LeftFadingMode>Automatic</LeftFadingMode>
-																<RightEdgePos>30000</RightEdgePos>
+																<RightEdgePos>20000</RightEdgePos>
 																<RightFadingMode>Automatic</RightFadingMode>
 															</CrossfadingInfo>
 														</BlendTrackAssoc>
@@ -1135,13 +1151,13 @@
 																				<Flags>5</Flags>
 																			</Point>
 																			<Point>
-																				<XPos>20000</XPos>
+																				<XPos>13333.3333333333</XPos>
 																				<YPos>0</YPos>
 																				<Flags>0</Flags>
 																				<SegmentShape>SCurve</SegmentShape>
 																			</Point>
 																			<Point>
-																				<XPos>30000</XPos>
+																				<XPos>20000</XPos>
 																				<YPos>0</YPos>
 																				<Flags>37</Flags>
 																			</Point>
@@ -1160,10 +1176,10 @@
 														<BlendTrackAssoc>
 															<ItemRef Name="AMB_SP_WaterFallBigDistant_LP" ID="{6A147F18-5EA4-4563-A920-8AEECF72B3BB}"/>
 															<CrossfadingInfo>
-																<LeftEdgePos>7500</LeftEdgePos>
+																<LeftEdgePos>5000</LeftEdgePos>
 																<LeftFadingMode>Manual</LeftFadingMode>
-																<LeftFadingPos>17500</LeftFadingPos>
-																<RightEdgePos>30000</RightEdgePos>
+																<LeftFadingPos>11666.6666666667</LeftFadingPos>
+																<RightEdgePos>20000</RightEdgePos>
 																<RightFadingMode>Automatic</RightFadingMode>
 															</CrossfadingInfo>
 														</BlendTrackAssoc>
@@ -1174,8 +1190,10 @@
 										<RandomSequenceContainer Name="AMB_SP_FireTorch" ID="{DF3FD0E6-E879-4587-A38F-E84115BF00D4}" ShortID="722514500">
 											<PropertyList>
 												<Property Name="3DSpatialization" Type="int16" Value="2"/>
+												<Property Name="BelowThresholdBehavior" Type="int16" Value="2"/>
 												<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
 												<Property Name="OverridePositioning" Type="bool" Value="True"/>
+												<Property Name="OverrideVirtualVoice" Type="bool" Value="True"/>
 												<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="3"/>
 											</PropertyList>
 											<ReferenceList>
@@ -1288,14 +1306,26 @@
 										</RandomSequenceContainer>
 										<Sound Name="AMB_SP_LavaPurpleBig_ST_LP" ID="{861ED3A4-4304-41D6-B448-0D10B4C3DA80}" ShortID="79912738">
 											<PropertyList>
+												<Property Name="3DSpatialization" Type="int16" Value="2"/>
+												<Property Name="BelowThresholdBehavior" Type="int16" Value="2"/>
 												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 												<Property Name="IsStreamingEnabled" Type="bool">
 													<ValueList>
 														<Value>True</Value>
 													</ValueList>
 												</Property>
+												<Property Name="OverridePositioning" Type="bool" Value="True"/>
+												<Property Name="OverrideVirtualVoice" Type="bool" Value="True"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>12</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="ATT_LavaBig" ID="{CDA7139C-1F69-47DE-AF3B-2095AD5A30D9}" WorkUnitID="{C730687D-413E-4BFB-8D51-3089D8FA5CE2}"/>
+												</Reference>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 												</Reference>
@@ -1319,14 +1349,26 @@
 										</Sound>
 										<Sound Name="AMB_SP_LavaPurpleSmall_LP" ID="{FEDE433F-37FA-418B-954F-E1B66F0681E6}" ShortID="922421436">
 											<PropertyList>
+												<Property Name="3DSpatialization" Type="int16" Value="2"/>
+												<Property Name="BelowThresholdBehavior" Type="int16" Value="2"/>
 												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 												<Property Name="IsStreamingEnabled" Type="bool">
 													<ValueList>
 														<Value>True</Value>
 													</ValueList>
 												</Property>
+												<Property Name="OverridePositioning" Type="bool" Value="True"/>
+												<Property Name="OverrideVirtualVoice" Type="bool" Value="True"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-4</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="ATT_LavaSmall" ID="{3E3C0E7A-42C2-4EA2-8C60-C658F16F3BE9}" WorkUnitID="{C730687D-413E-4BFB-8D51-3089D8FA5CE2}"/>
+												</Reference>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 												</Reference>
@@ -1436,6 +1478,9 @@
 										</RandomSequenceContainer>
 										<RandomSequenceContainer Name="AMB_RFX_DirtFall" ID="{1C3C8262-F5F9-49B1-9D0D-4059C97F6A8A}" ShortID="152598581">
 											<PropertyList>
+												<Property Name="3DPosition" Type="int16" Value="1"/>
+												<Property Name="3DSpatialization" Type="int16" Value="2"/>
+												<Property Name="HoldEmitterPositionOrientation" Type="bool" Value="True"/>
 												<Property Name="InitialDelay" Type="Real64">
 													<ValueList>
 														<Value>1</Value>
@@ -1453,6 +1498,8 @@
 													</ModifierList>
 												</Property>
 												<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+												<Property Name="OverrideGameAuxSends" Type="bool" Value="True"/>
+												<Property Name="OverridePositioning" Type="bool" Value="True"/>
 												<Property Name="Pitch" Type="int32">
 													<ModifierList>
 														<ModifierInfo>
@@ -1484,7 +1531,11 @@
 												</Property>
 												<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
 												<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="13"/>
+												<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-12</Value>
+													</ValueList>
 													<ModifierList>
 														<ModifierInfo>
 															<Modifier Name="" ID="{6CE3E6DF-E99E-49AD-8826-63E7DB210E44}">
@@ -1498,6 +1549,9 @@
 												</Property>
 											</PropertyList>
 											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="ATT_RFX_DustFall" ID="{48577D3E-C7D1-48CE-9B73-DE8DEEAB299E}" WorkUnitID="{C730687D-413E-4BFB-8D51-3089D8FA5CE2}"/>
+												</Reference>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 												</Reference>
@@ -1806,6 +1860,9 @@
 													</ActiveSourceList>
 												</Sound>
 											</ChildrenList>
+											<PositioningInfo>
+												<Position Name="" ID="{A419CD72-5FFE-41D4-99DF-948D888CF79C}"/>
+											</PositioningInfo>
 											<ObjectLists/>
 										</RandomSequenceContainer>
 									</ChildrenList>
@@ -9523,7 +9580,7 @@
 																	</Point>
 																	<Point>
 																		<XPos>0.2</XPos>
-																		<YPos>-0</YPos>
+																		<YPos>0</YPos>
 																		<Flags>0</Flags>
 																	</Point>
 																	<Point>

@@ -29,6 +29,29 @@
 						</Event>
 						<Event Name="SP_WaterFallMed" ID="{44FD23A1-F917-4E26-8EF9-34E98C653B2B}">
 							<ChildrenList>
+								<Action Name="" ID="{6A7D3A19-B5D6-4473-BFF3-EEB7E75C9CED}" ShortID="310402317">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="36"/>
+										<Property Name="SeekPercent" Type="Real64">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{83FD7985-16CB-487F-B49D-28DF9AFD89CD}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="100"/>
+															<Property Name="Min" Type="Real64" Value="-100"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="AMB_SP_WaterFallMed_Blend" ID="{9BDACA8E-0A1A-476E-B000-F3ACE5F478FC}" WorkUnitID="{A90EA6B0-FD8B-46D3-9B35-71A92B2A6346}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 								<Action Name="" ID="{F2B0222C-4589-49AF-A166-149F635B313F}" ShortID="322327946">
 									<ReferenceList>
 										<Reference Name="Target">
@@ -41,6 +64,29 @@
 						<Event Name="SP_WaterFallBig" ID="{49FCB4E9-F4D9-4E9C-A9D9-B1B632F3F221}">
 							<ChildrenList>
 								<Action Name="" ID="{224AC3D4-4E42-49B6-B947-5CE374252EC5}" ShortID="296821411">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="AMB_SP_WaterFallBig_Blend" ID="{98A63FC9-7411-4144-A499-F119109E5059}" WorkUnitID="{A90EA6B0-FD8B-46D3-9B35-71A92B2A6346}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{CA459D0E-4747-4518-A3A7-A85F7762FE4E}" ShortID="295760117">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="36"/>
+										<Property Name="SeekPercent" Type="Real64">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{7008E8CE-459C-4FF1-83A8-B738345CE08F}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="100"/>
+															<Property Name="Min" Type="Real64" Value="-100"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="AMB_SP_WaterFallBig_Blend" ID="{98A63FC9-7411-4144-A499-F119109E5059}" WorkUnitID="{A90EA6B0-FD8B-46D3-9B35-71A92B2A6346}"/>

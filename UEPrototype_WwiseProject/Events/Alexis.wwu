@@ -84,6 +84,17 @@
 										</Reference>
 									</ReferenceList>
 								</Action>
+								<Action Name="" ID="{4859C3E4-0370-46A6-A4C4-E56625497821}" ShortID="804212946">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeTime" Type="Real64" Value="0.3"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_Glide_Magic_LP" ID="{BD902CBD-D098-40E8-B9FF-37FEA5A4B0E3}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 							</ChildrenList>
 						</Event>
 					</ChildrenList>
@@ -318,6 +329,28 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="UI_Menu_Confirm" ID="{546E7EC1-8F61-402E-9218-EC09576BE38F}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="UI_PauseMenu_Select" ID="{1FD8540E-CB1C-439C-9499-E88298BDD20D}">
+							<ChildrenList>
+								<Action Name="" ID="{B0CDBDD9-79A7-4868-A7AC-DAA4E0759EE6}" ShortID="80341314">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="UI_PauseMenu_Select" ID="{0DE637C6-6F90-48A6-9E44-FEDCF65EFC4B}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="UI_PauseMenu_Cancel" ID="{B62EDCD4-F235-4434-A999-5C1ACF9FCEBA}">
+							<ChildrenList>
+								<Action Name="" ID="{4A8C0092-60C1-4244-8D53-FE49D54DA199}" ShortID="447630657">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="UI_PauseMenu_Cancel" ID="{F714C5BB-C52F-488B-9062-8985B1988AFF}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
