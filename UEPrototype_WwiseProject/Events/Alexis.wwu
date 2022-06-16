@@ -27,6 +27,28 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="MC_Death_Crash" ID="{03A938CB-E3B1-4E9F-89B2-82B40A6CFE67}">
+							<ChildrenList>
+								<Action Name="" ID="{313CD596-CDF5-4A28-8468-81526B13ADE7}" ShortID="457629402">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="VO_MC_Glide_Crash" ID="{D4EADAA9-DD2B-4EAE-B6EA-EA318075AFDB}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="MC_Death_FallingVoid" ID="{A7B12DBC-766B-4222-9459-8A33A879EB5D}">
+							<ChildrenList>
+								<Action Name="" ID="{97FB6BE2-5754-47F4-B085-52BC2B58679D}" ShortID="164747482">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="VO_MC_FallingVoid" ID="{199EF73C-301B-466F-B26C-662C87535C3D}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="SFX" ID="{3ABC570E-3936-4A48-AE41-A01984BA11BE}" ShortID="116214221">
@@ -37,6 +59,13 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="SFX_Freefall_Start" ID="{130CB51F-A96B-4F85-940E-16879C5A12B9}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{EA01B322-59DE-4AC2-8E7F-188D15A67336}" ShortID="294492154">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MC_FOL_FreeFall_LP" ID="{83440EC0-3E5F-4A4F-BE99-D13BDAECBF93}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -51,10 +80,43 @@
 										</Reference>
 									</ReferenceList>
 								</Action>
-								<Action Name="" ID="{EA01B322-59DE-4AC2-8E7F-188D15A67336}" ShortID="294492154">
+								<Action Name="" ID="{3B00A9E9-ABB3-496B-A69B-DDE6E0658896}" ShortID="137631837">
+									<PropertyList>
+										<Property Name="Delay" Type="Real64">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{8C964EC0-FE65-413F-96A1-27197F7E148F}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="0.2"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="FadeTime" Type="Real64" Value="0.3"/>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="MC_FOL_FreeFall_LP" ID="{83440EC0-3E5F-4A4F-BE99-D13BDAECBF93}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
+											<ObjectRef Name="VO_MC_Glide_Start" ID="{E96402B5-29E4-4AD3-AA68-BED040824D4D}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{F0D7FF56-AF8B-4830-900E-4076A7B09859}" ShortID="788146477">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_Glide_Magic_LP" ID="{BD902CBD-D098-40E8-B9FF-37FEA5A4B0E3}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{F68EBCE2-F7B8-4B1C-9A65-16B32F1A2FEF}" ShortID="1033005228">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="36"/>
+										<Property Name="SeekPercent" Type="Real64" Value="80"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_Glide_Magic_LP" ID="{BD902CBD-D098-40E8-B9FF-37FEA5A4B0E3}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -70,6 +132,45 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="MC_FOL_FreeFall_LP" ID="{83440EC0-3E5F-4A4F-BE99-D13BDAECBF93}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{97524792-4F4C-4912-8695-CE00EE856D71}" ShortID="894257078">
+									<PropertyList>
+										<Property Name="FadeTime" Type="Real64" Value="0.2">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{0161C590-66B8-457E-B031-35846C018012}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="0.2"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="Probability" Type="Real64" Value="50"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="VO_MC_Glide_Stop" ID="{8CE145E2-2FF0-42C9-915D-B7B00F4E19F5}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{0641CAEC-B294-4546-AD07-339B5F5AB2EF}" ShortID="722799421">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_Glide_Magic_LP" ID="{BD902CBD-D098-40E8-B9FF-37FEA5A4B0E3}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{755AFA4C-0987-423C-B371-42E4F2F8F87E}" ShortID="687376882">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_Freefall_Stop" ID="{37CB0EE1-C490-44AC-8271-FE307FF3ED90}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -104,6 +205,28 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="Play_AMB_Bed_lvl2_Temple" ID="{A7547539-2558-4E76-BAF9-97167B960FDA}">
+							<ChildrenList>
+								<Action Name="" ID="{8566A745-9B9C-427A-AEB1-A6462E27D8AA}" ShortID="935848400">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="AMB_Bed_Temple_LP" ID="{B9F6609A-1108-4C28-A4A0-979134A64730}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_AMB_Bed_lvl1_Cave" ID="{F1D8AD49-403F-4499-A9F7-2C1C0870FA6F}">
+							<ChildrenList>
+								<Action Name="" ID="{789B680E-89C1-465D-AB71-F13FC3D0599E}" ShortID="72790596">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="AMB_Bed_lvl1_Cave_LP" ID="{3CE3BDD3-1ECD-4527-9075-7F1A2444ECA4}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="UI" ID="{887CFF1A-FD6F-42CE-BE4E-C77A43E5AC14}" ShortID="103939254">
@@ -113,7 +236,7 @@
 								<Action Name="" ID="{77CE9878-4661-4C21-8095-AE08FB194B88}" ShortID="1051535721">
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="UI_Menu_Select" ID="{591CCE5B-FF3C-473B-A8EE-A1BFF0F06556}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
+											<ObjectRef Name="UI_Menu_Select" ID="{714C42B2-AB02-414B-8AC6-A85B92FC1AB5}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -124,29 +247,40 @@
 								<Action Name="" ID="{4AAD0205-E96B-42D6-8EF8-0B1D7F889F05}" ShortID="316205198">
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="UI_Menu_Hover" ID="{E8C3DEEC-2183-4106-A02E-C4E82243BB6D}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
+											<ObjectRef Name="UI_Menu_Hover" ID="{F871812F-D0BE-4868-A5B3-DB260A9F471C}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
 							</ChildrenList>
 						</Event>
-						<Event Name="UI_Menu_Over_01" ID="{B1A596BB-85DC-4360-9373-415E0FC66271}">
+						<Event Name="UI_Menu_Slider" ID="{B1A596BB-85DC-4360-9373-415E0FC66271}">
 							<ChildrenList>
 								<Action Name="" ID="{C33511BF-506F-433B-8E3B-844A2C89C737}" ShortID="338558468">
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="UI_Menu_Cancel" ID="{90C2276D-0F80-4AEB-9AC9-9343D33E7A05}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
+											<ObjectRef Name="UI_Menu_Slider" ID="{ED308565-7C5D-42AD-9E2D-6B7B24ECC769}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
 							</ChildrenList>
 						</Event>
-						<Event Name="UI_Menu_Cancel_01" ID="{3759F788-F115-487F-9DEA-F1F8551C87B1}">
+						<Event Name="UI_Menu_Cancel" ID="{3759F788-F115-487F-9DEA-F1F8551C87B1}">
 							<ChildrenList>
 								<Action Name="" ID="{4DC2D398-B0EA-4E63-8756-AA1A3A8BF6D2}" ShortID="63388038">
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="UI_Menu_Slider" ID="{1C972AD9-9A29-41C0-A0C4-0E1224844954}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
+											<ObjectRef Name="UI_Menu_Cancel" ID="{40FC9CE0-B564-454B-9F99-4D8F4B0FFBFA}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="UI_Menu_Confirm" ID="{8843FDA7-0D68-4C93-963F-92849B596110}">
+							<ChildrenList>
+								<Action Name="" ID="{FF1A39A9-059A-4AC8-9BD9-979918FA4ABC}" ShortID="125948612">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="UI_Menu_Confirm" ID="{546E7EC1-8F61-402E-9218-EC09576BE38F}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

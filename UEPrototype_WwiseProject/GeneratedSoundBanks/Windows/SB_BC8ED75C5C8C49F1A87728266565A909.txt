@@ -1,0 +1,3 @@
+Event	ID	Name			Wwise Object Path	Notes
+	2473867810	SFX_MagicDoor			\Default Work Unit\Jules\SFX\SFX_MagicDoor	
+

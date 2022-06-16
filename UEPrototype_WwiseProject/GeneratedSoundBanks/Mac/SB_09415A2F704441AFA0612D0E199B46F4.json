@@ -16,7 +16,7 @@
     "Id": "513013226",
     "GUID": "{1E93F5EA-F5EA-15EA-EAEA-EAEAEAEAEAEA}",
     "Language": "SFX",
-    "Hash": "3766770608",
+    "Hash": "1019628463",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\SB_09415A2F704441AFA0612D0E199B46F4",
     "ShortName": "SB_09415A2F704441AFA0612D0E199B46F4",
     "Path": "SB_09415A2F704441AFA0612D0E199B46F4.bnk",
@@ -27,9 +27,21 @@
       "ObjectPath": "\\Events\\Default Work Unit\\Jules\\MC\\MC_FT_Jump",
       "GUID": "{09415A2F-7044-41AF-A061-2D0E199B46F4}",
       "DurationType": "OneShot",
-      "DurationMin": "0.197133",
-      "DurationMax": "0.608727",
+      "DurationMin": "0.678667",
+      "DurationMax": "0.888509",
       "ExcludedMemoryFiles": [
+       {
+        "Id": "30111412",
+        "Language": "SFX",
+        "ShortName": "MC_FT_Jump_MagicLayer_01.wav",
+        "Path": "SFX\\MC_FT_Jump_MagicLayer_01_10C4C929.wem"
+       },
+       {
+        "Id": "43278628",
+        "Language": "SFX",
+        "ShortName": "MC_FOL_Jump_02.wav",
+        "Path": "SFX\\MC_FOL_Jump_02_10C4C929.wem"
+       },
        {
         "Id": "47502075",
         "Language": "SFX",
@@ -47,6 +59,18 @@
         "Language": "SFX",
         "ShortName": "MC_FT_Stone_Jump_03.wav",
         "Path": "SFX\\MC_FT_Stone_Jump_03_10C4C929.wem"
+       },
+       {
+        "Id": "134709595",
+        "Language": "SFX",
+        "ShortName": "MC_FOL_Jump_05.wav",
+        "Path": "SFX\\MC_FOL_Jump_05_10C4C929.wem"
+       },
+       {
+        "Id": "164951802",
+        "Language": "SFX",
+        "ShortName": "MC_FT_Jump_MagicLayer_02.wav",
+        "Path": "SFX\\MC_FT_Jump_MagicLayer_02_10C4C929.wem"
        },
        {
         "Id": "187087893",
@@ -79,6 +103,18 @@
         "Path": "SFX\\MC_FT_Water_Jump_04_10C4C929.wem"
        },
        {
+        "Id": "376246276",
+        "Language": "SFX",
+        "ShortName": "VO_MC_Jump_05.wav",
+        "Path": "SFX\\VO_MC_Jump_05_10C4C929.wem"
+       },
+       {
+        "Id": "485768681",
+        "Language": "SFX",
+        "ShortName": "VO_MC_Jump_04.wav",
+        "Path": "SFX\\VO_MC_Jump_04_10C4C929.wem"
+       },
+       {
         "Id": "500483297",
         "Language": "SFX",
         "ShortName": "MC_FT_Water_Jump_02.wav",
@@ -89,6 +125,24 @@
         "Language": "SFX",
         "ShortName": "MC_FT_Water_Jump_05.wav",
         "Path": "SFX\\MC_FT_Water_Jump_05_10C4C929.wem"
+       },
+       {
+        "Id": "606680872",
+        "Language": "SFX",
+        "ShortName": "MC_FOL_Jump_04.wav",
+        "Path": "SFX\\MC_FOL_Jump_04_10C4C929.wem"
+       },
+       {
+        "Id": "607497437",
+        "Language": "SFX",
+        "ShortName": "VO_MC_Jump_03.wav",
+        "Path": "SFX\\VO_MC_Jump_03_10C4C929.wem"
+       },
+       {
+        "Id": "613920068",
+        "Language": "SFX",
+        "ShortName": "MC_FOL_Jump_03.wav",
+        "Path": "SFX\\MC_FOL_Jump_03_10C4C929.wem"
        },
        {
         "Id": "635330870",
@@ -109,6 +163,18 @@
         "Path": "SFX\\MC_FT_Grass_Jump_04_10C4C929.wem"
        },
        {
+        "Id": "704074093",
+        "Language": "SFX",
+        "ShortName": "MC_FT_Jump_MagicLayer_04.wav",
+        "Path": "SFX\\MC_FT_Jump_MagicLayer_04_10C4C929.wem"
+       },
+       {
+        "Id": "705194839",
+        "Language": "SFX",
+        "ShortName": "VO_MC_Jump_02.wav",
+        "Path": "SFX\\VO_MC_Jump_02_10C4C929.wem"
+       },
+       {
         "Id": "717485702",
         "Language": "SFX",
         "ShortName": "MC_FT_Stone_Jump_05.wav",
@@ -127,6 +193,12 @@
         "Path": "SFX\\MC_FT_Grass_Jump_05_10C4C929.wem"
        },
        {
+        "Id": "840854268",
+        "Language": "SFX",
+        "ShortName": "VO_MC_Jump_01.wav",
+        "Path": "SFX\\VO_MC_Jump_01_10C4C929.wem"
+       },
+       {
         "Id": "888479496",
         "Language": "SFX",
         "ShortName": "MC_FT_Stone_Jump_04.wav",
@@ -137,6 +209,18 @@
         "Language": "SFX",
         "ShortName": "MC_FT_Dirt_Jump_01.wav",
         "Path": "SFX\\MC_FT_Dirt_Jump_01_10C4C929.wem"
+       },
+       {
+        "Id": "927941862",
+        "Language": "SFX",
+        "ShortName": "MC_FT_Jump_MagicLayer_03.wav",
+        "Path": "SFX\\MC_FT_Jump_MagicLayer_03_10C4C929.wem"
+       },
+       {
+        "Id": "1040240713",
+        "Language": "SFX",
+        "ShortName": "MC_FOL_Jump_01.wav",
+        "Path": "SFX\\MC_FOL_Jump_01_10C4C929.wem"
        },
        {
         "Id": "1043084669",
@@ -151,7 +235,7 @@
         "Path": "SFX\\MC_FT_Water_Jump_01_10C4C929.wem"
        }
       ],
-      "DefaultSwitchValue": "{FBA5D6FC-BB79-43BA-80B2-ABEA585C003B}",
+      "DefaultSwitchValue": "{AF0B5F0B-9DBE-4ADD-BBCA-EF6F1BD0E3B0}",
       "SwitchContainers": [
        {
         "SwitchValue": "{AF0B5F0B-9DBE-4ADD-BBCA-EF6F1BD0E3B0}",
