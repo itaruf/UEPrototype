@@ -49,6 +49,43 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="SFX_Freefall_Stop_NoEnergy" ID="{D56F931A-6E8A-4E68-AAB5-947606E7EC7B}">
+							<ChildrenList>
+								<Action Name="" ID="{89BE4726-64FD-4EA9-B3A4-F2D62613D5E2}" ShortID="135017974">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeTime" Type="Real64" Value="0.3"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MC_FOL_FreeFall_LP" ID="{83440EC0-3E5F-4A4F-BE99-D13BDAECBF93}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{431EA07B-59A8-4E57-AED2-8F6781C8546F}" ShortID="1006120064">
+									<PropertyList>
+										<Property Name="FadeTime" Type="Real64" Value="0.2">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{A88726E8-626E-4630-802A-B3FF12194E06}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="0.2"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="Probability" Type="Real64" Value="50"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="VO_MC_Glide_Stop_NoEnergy" ID="{81C767E3-3B94-4BA6-9551-0EB0966D646D}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="SFX" ID="{3ABC570E-3936-4A48-AE41-A01984BA11BE}" ShortID="116214221">
@@ -288,6 +325,17 @@
 						</Event>
 					</ChildrenList>
 				</Folder>
+				<Event Name="MUS_Level0" ID="{23188369-16F1-4F36-9CD7-E7380DB3D94A}">
+					<ChildrenList>
+						<Action Name="" ID="{45EBDC9B-D95A-45CD-8DB3-CA6671F76DF3}" ShortID="810005052">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Level0" ID="{BD4B3FC6-6510-4467-BF8D-B396EFFF9A28}" WorkUnitID="{A1C2F120-70F5-4932-9C1D-3546DE478B0F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
