@@ -17,6 +17,7 @@ Audio Bus	ID	Name			Wwise Object Path	Notes
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
 
 Auxiliary Bus	ID	Name			Wwise Object Path	Notes
+	2371211927	RVB_LittleCave			\Default Work Unit\Master Audio Bus\RVB_LittleCave	
 	3798299039	RVB_Temple			\Default Work Unit\Master Audio Bus\RVB_Temple	
 	3801984506	RVB_Exterior			\Default Work Unit\Master Audio Bus\RVB_Exterior	
 	4001587643	RVB_Cave			\Default Work Unit\Master Audio Bus\RVB_Cave	
