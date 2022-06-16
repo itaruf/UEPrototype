@@ -146,6 +146,13 @@
 							</ReferenceList>
 							<ObjectLists/>
 						</AuxBus>
+						<Bus Name="MUSIC" ID="{92D4BD93-56C0-4EE8-92B3-800C27F369E2}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="26"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ObjectLists/>
+						</Bus>
 					</ChildrenList>
 					<ObjectLists/>
 				</Bus>
