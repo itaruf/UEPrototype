@@ -375,7 +375,7 @@
 								<Action Name="" ID="{58756583-0EA1-44CD-B374-A243B403B504}" ShortID="382730632">
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="SFX_MagicDoor_Sequence" ID="{7769D137-4234-46E5-9A3C-4F0895F9CF48}" WorkUnitID="{A90EA6B0-FD8B-46D3-9B35-71A92B2A6346}"/>
+											<ObjectRef Name="SFX_MagicDoor_Blend" ID="{2DD9C8A2-E587-410A-B681-6490CF2104F6}" WorkUnitID="{A90EA6B0-FD8B-46D3-9B35-71A92B2A6346}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

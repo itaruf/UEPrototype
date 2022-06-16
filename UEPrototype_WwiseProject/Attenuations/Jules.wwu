@@ -376,7 +376,7 @@
 				</Attenuation>
 				<Attenuation Name="ATT_MagicDoor" ID="{196A324C-8169-4295-BB3B-D5AE96268377}" ShortID="359687512">
 					<PropertyList>
-						<Property Name="RadiusMax" Type="Real64" Value="10000"/>
+						<Property Name="RadiusMax" Type="Real64" Value="20000"/>
 					</PropertyList>
 					<CurveUsageInfoList>
 						<VolumeDryUsage>
@@ -392,13 +392,13 @@
 											<Flags>5</Flags>
 										</Point>
 										<Point>
-											<XPos>2004.3573</XPos>
-											<YPos>-0</YPos>
+											<XPos>4008.7146</XPos>
+											<YPos>0</YPos>
 											<Flags>0</Flags>
 											<SegmentShape>Log2</SegmentShape>
 										</Point>
 										<Point>
-											<XPos>10000</XPos>
+											<XPos>20000</XPos>
 											<YPos>-200</YPos>
 											<Flags>37</Flags>
 										</Point>
@@ -426,7 +426,7 @@
 											<SegmentShape>Exp2</SegmentShape>
 										</Point>
 										<Point>
-											<XPos>10000</XPos>
+											<XPos>20000</XPos>
 											<YPos>30</YPos>
 											<Flags>37</Flags>
 										</Point>
