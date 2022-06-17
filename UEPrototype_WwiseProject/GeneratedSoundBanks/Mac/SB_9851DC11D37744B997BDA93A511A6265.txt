@@ -2,7 +2,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	1956210531	SP_FireTorch			\Default Work Unit\Jules\AMB\SP_FireTorch	
 
 Streamed Audio	ID	Name	Audio source file	Generated audio file	Wwise Object Path	Notes
-	64181770	AMB_SP_FireTorch_03	D:\Sessions Unreal\Git\UEPrototype\UEPrototype_WwiseProject\.cache\Mac\SFX\AMB_SP_FireTorch_03_D79FB2B7.wem	64181770.wem	\Actor-Mixer Hierarchy\Default Work Unit\Jules\Master\AMB\SP\AMB_SP_FireTorch\AMB_SP_FireTorch_03	
-	183701573	AMB_SP_FireTorch_01	D:\Sessions Unreal\Git\UEPrototype\UEPrototype_WwiseProject\.cache\Mac\SFX\AMB_SP_FireTorch_01_D79FB2B7.wem	183701573.wem	\Actor-Mixer Hierarchy\Default Work Unit\Jules\Master\AMB\SP\AMB_SP_FireTorch\AMB_SP_FireTorch_01	
-	258814662	AMB_SP_FireTorch_02	D:\Sessions Unreal\Git\UEPrototype\UEPrototype_WwiseProject\.cache\Mac\SFX\AMB_SP_FireTorch_02_D79FB2B7.wem	258814662.wem	\Actor-Mixer Hierarchy\Default Work Unit\Jules\Master\AMB\SP\AMB_SP_FireTorch\AMB_SP_FireTorch_02	
+	64181770	AMB_SP_FireTorch_03	D:\Cours\Downfall Project\UEPrototype\UEPrototype_WwiseProject\.cache\Mac\SFX\AMB_SP_FireTorch_03_D79FB2B7.wem	64181770.wem	\Actor-Mixer Hierarchy\Default Work Unit\Jules\Master\AMB\SP\AMB_SP_FireTorch\AMB_SP_FireTorch_03	
+	183701573	AMB_SP_FireTorch_01	D:\Cours\Downfall Project\UEPrototype\UEPrototype_WwiseProject\.cache\Mac\SFX\AMB_SP_FireTorch_01_D79FB2B7.wem	183701573.wem	\Actor-Mixer Hierarchy\Default Work Unit\Jules\Master\AMB\SP\AMB_SP_FireTorch\AMB_SP_FireTorch_01	
+	258814662	AMB_SP_FireTorch_02	D:\Cours\Downfall Project\UEPrototype\UEPrototype_WwiseProject\.cache\Mac\SFX\AMB_SP_FireTorch_02_D79FB2B7.wem	258814662.wem	\Actor-Mixer Hierarchy\Default Work Unit\Jules\Master\AMB\SP\AMB_SP_FireTorch\AMB_SP_FireTorch_02	
 
