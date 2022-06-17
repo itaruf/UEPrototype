@@ -76,6 +76,83 @@
 							</PropertyList>
 							<ObjectLists/>
 						</Bus>
+						<AuxBus Name="RVB_Exterior" ID="{9AA47515-D1F5-4B5E-B74C-B787C0B8B927}">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="EnableDiffraction" Type="bool" Value="True"/>
+								<Property Name="ListenerRelativeRouting" Type="bool" Value="True"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+									<ObjectRef Name="Have_U_Ever_Been_Outside" ID="{FE29AE8D-FD86-4652-A95D-68D32F5760EC}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+								</Reference>
+							</ReferenceList>
+							<ObjectLists/>
+						</AuxBus>
+						<AuxBus Name="RVB_Temple" ID="{153304D8-442C-4DEE-8DC4-95365AC34075}">
+							<PropertyList>
+								<Property Name="BusVolume" Type="Real64">
+									<ValueList>
+										<Value>-5</Value>
+									</ValueList>
+								</Property>
+								<Property Name="EnableDiffraction" Type="bool" Value="True"/>
+								<Property Name="ListenerRelativeRouting" Type="bool" Value="True"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+									<ObjectRef Name="Hall_Large_Dark" ID="{0F6A7D6D-131C-4650-9561-FC05F5C7A37B}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+								</Reference>
+							</ReferenceList>
+							<ObjectLists/>
+						</AuxBus>
+						<AuxBus Name="RVB_Cave" ID="{7188D707-1FC4-4ADC-866C-04526C3965DE}">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="BusVolume" Type="Real64">
+									<ValueList>
+										<Value>-3</Value>
+									</ValueList>
+								</Property>
+								<Property Name="EnableDiffraction" Type="bool" Value="True"/>
+								<Property Name="ListenerRelativeRouting" Type="bool" Value="True"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+									<ObjectRef Name="Room_Large" ID="{AD8EFAFC-7121-4D5F-BE4D-B13FBD6CEBAE}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+								</Reference>
+							</ReferenceList>
+							<ObjectLists/>
+						</AuxBus>
+						<AuxBus Name="RVB_LittleCave" ID="{0328B0A3-01E7-4FBD-AE08-60B828BC3903}">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="BusVolume" Type="Real64">
+									<ValueList>
+										<Value>-3</Value>
+									</ValueList>
+								</Property>
+								<Property Name="EnableDiffraction" Type="bool" Value="True"/>
+								<Property Name="ListenerRelativeRouting" Type="bool" Value="True"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+									<ObjectRef Name="Room_Large" ID="{AD8EFAFC-7121-4D5F-BE4D-B13FBD6CEBAE}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+								</Reference>
+							</ReferenceList>
+							<ObjectLists/>
+						</AuxBus>
+						<Bus Name="MUSIC" ID="{92D4BD93-56C0-4EE8-92B3-800C27F369E2}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="26"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ObjectLists/>
+						</Bus>
 					</ChildrenList>
 					<ObjectLists/>
 				</Bus>

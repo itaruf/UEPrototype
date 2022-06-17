@@ -5,18 +5,18 @@
   "SchemaVersion": "12",
   "SoundbankVersion": "140",
   "RootPaths": {
-   "ProjectRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\",
-   "SourceFilesRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\.cache\\Windows\\",
-   "SoundBanksRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Windows\\",
+   "ProjectRoot": "D:\\Cours\\Downfall Project\\UEPrototype\\UEPrototype_WwiseProject\\",
+   "SourceFilesRoot": "D:\\Cours\\Downfall Project\\UEPrototype\\UEPrototype_WwiseProject\\.cache\\Windows\\",
+   "SoundBanksRoot": "D:\\Cours\\Downfall Project\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Windows\\",
    "ExternalSourcesInputFile": "",
-   "ExternalSourcesOutputRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Windows"
+   "ExternalSourcesOutputRoot": "D:\\Cours\\Downfall Project\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Windows"
   },
   "SoundBanks": [
    {
     "Id": "3727200558",
     "GUID": "{DE28912E-912E-112E-2E2E-2E2E2E2E2E2E}",
     "Language": "SFX",
-    "Hash": "2428504376",
+    "Hash": "3117996843",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\SB_4422A52E1B39482E90998E91601CFD0F",
     "ShortName": "SB_4422A52E1B39482E90998E91601CFD0F",
     "Path": "SB_4422A52E1B39482E90998E91601CFD0F.bnk",

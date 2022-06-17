@@ -1,0 +1,56 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "12",
+  "SoundbankVersion": "140",
+  "RootPaths": {
+   "ProjectRoot": "D:\\Cours\\Downfall Project\\UEPrototype\\UEPrototype_WwiseProject\\",
+   "SourceFilesRoot": "D:\\Cours\\Downfall Project\\UEPrototype\\UEPrototype_WwiseProject\\.cache\\Windows\\",
+   "SoundBanksRoot": "D:\\Cours\\Downfall Project\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Windows\\",
+   "ExternalSourcesInputFile": "",
+   "ExternalSourcesOutputRoot": "D:\\Cours\\Downfall Project\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Windows"
+  },
+  "SoundBanks": [
+   {
+    "Id": "903716692",
+    "GUID": "{35DD9F54-9F54-1F54-5454-545454545454}",
+    "Language": "SFX",
+    "Hash": "1227379893",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\SB_9851DC11D37744B997BDA93A511A6265",
+    "ShortName": "SB_9851DC11D37744B997BDA93A511A6265",
+    "Path": "SB_9851DC11D37744B997BDA93A511A6265.bnk",
+    "IncludedEvents": [
+     {
+      "Id": "1956210531",
+      "Name": "SP_FireTorch",
+      "ObjectPath": "\\Events\\Default Work Unit\\Jules\\AMB\\SP_FireTorch",
+      "GUID": "{9851DC11-D377-44B9-97BD-A93A511A6265}",
+      "MaxAttenuation": "10000.",
+      "DurationType": "Infinite",
+      "ReferencedStreamedFiles": [
+       {
+        "Id": "64181770",
+        "Language": "SFX",
+        "ShortName": "AMB_SP_FireTorch_03.wav",
+        "Path": "SFX\\AMB_SP_FireTorch_03_D79FB2B7.wem"
+       },
+       {
+        "Id": "183701573",
+        "Language": "SFX",
+        "ShortName": "AMB_SP_FireTorch_01.wav",
+        "Path": "SFX\\AMB_SP_FireTorch_01_D79FB2B7.wem"
+       },
+       {
+        "Id": "258814662",
+        "Language": "SFX",
+        "ShortName": "AMB_SP_FireTorch_02.wav",
+        "Path": "SFX\\AMB_SP_FireTorch_02_D79FB2B7.wem"
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

@@ -5,18 +5,18 @@
   "SchemaVersion": "12",
   "SoundbankVersion": "140",
   "RootPaths": {
-   "ProjectRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\",
-   "SourceFilesRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\.cache\\Windows\\",
-   "SoundBanksRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Windows\\",
+   "ProjectRoot": "D:\\Cours\\Downfall Project\\UEPrototype\\UEPrototype_WwiseProject\\",
+   "SourceFilesRoot": "D:\\Cours\\Downfall Project\\UEPrototype\\UEPrototype_WwiseProject\\.cache\\Windows\\",
+   "SoundBanksRoot": "D:\\Cours\\Downfall Project\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Windows\\",
    "ExternalSourcesInputFile": "",
-   "ExternalSourcesOutputRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Windows"
+   "ExternalSourcesOutputRoot": "D:\\Cours\\Downfall Project\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Windows"
   },
   "SoundBanks": [
    {
     "Id": "4250420512",
     "GUID": "{FD584520-4520-1520-2020-202020202020}",
     "Language": "SFX",
-    "Hash": "3542377574",
+    "Hash": "1710066240",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\SB_6D2EBAF7DC3E42C2B75E887F38161E51",
     "ShortName": "SB_6D2EBAF7DC3E42C2B75E887F38161E51",
     "Path": "SB_6D2EBAF7DC3E42C2B75E887F38161E51.bnk",
@@ -27,9 +27,15 @@
       "ObjectPath": "\\Events\\Default Work Unit\\Jules\\MC\\MC_FT_WallRun",
       "GUID": "{6D2EBAF7-DC3E-42C2-B75E-887F38161E51}",
       "DurationType": "OneShot",
-      "DurationMin": "0.164277",
-      "DurationMax": "0.267692",
+      "DurationMin": "0.713353",
+      "DurationMax": "0.856784",
       "ExcludedMemoryFiles": [
+       {
+        "Id": "4671407",
+        "Language": "SFX",
+        "ShortName": "MC_FT_MagicLayer_08.wav",
+        "Path": "SFX\\MC_FT_MagicLayer_08_10C4C929.wem"
+       },
        {
         "Id": "42553690",
         "Language": "SFX",
@@ -139,6 +145,12 @@
         "Path": "SFX\\MC_FT_Dirt_WallRun_10_10C4C929.wem"
        },
        {
+        "Id": "490216797",
+        "Language": "SFX",
+        "ShortName": "MC_FT_MagicLayer_02.wav",
+        "Path": "SFX\\MC_FT_MagicLayer_02_10C4C929.wem"
+       },
+       {
         "Id": "534472142",
         "Language": "SFX",
         "ShortName": "MC_FT_Stone_WallRun_09.wav",
@@ -155,6 +167,12 @@
         "Language": "SFX",
         "ShortName": "MC_FT_Dirt_WallRun_06.wav",
         "Path": "SFX\\MC_FT_Dirt_WallRun_06_10C4C929.wem"
+       },
+       {
+        "Id": "573696104",
+        "Language": "SFX",
+        "ShortName": "MC_FT_MagicLayer_05.wav",
+        "Path": "SFX\\MC_FT_MagicLayer_05_10C4C929.wem"
        },
        {
         "Id": "619321403",
@@ -179,6 +197,30 @@
         "Language": "SFX",
         "ShortName": "MC_FT_Grass_WallRun_05.wav",
         "Path": "SFX\\MC_FT_Grass_WallRun_05_10C4C929.wem"
+       },
+       {
+        "Id": "725866459",
+        "Language": "SFX",
+        "ShortName": "MC_FT_MagicLayer_07.wav",
+        "Path": "SFX\\MC_FT_MagicLayer_07_10C4C929.wem"
+       },
+       {
+        "Id": "729093755",
+        "Language": "SFX",
+        "ShortName": "MC_FT_MagicLayer_03.wav",
+        "Path": "SFX\\MC_FT_MagicLayer_03_10C4C929.wem"
+       },
+       {
+        "Id": "767323193",
+        "Language": "SFX",
+        "ShortName": "MC_FT_MagicLayer_01.wav",
+        "Path": "SFX\\MC_FT_MagicLayer_01_10C4C929.wem"
+       },
+       {
+        "Id": "775399352",
+        "Language": "SFX",
+        "ShortName": "MC_FT_MagicLayer_06.wav",
+        "Path": "SFX\\MC_FT_MagicLayer_06_10C4C929.wem"
        },
        {
         "Id": "844390923",
@@ -215,6 +257,12 @@
         "Language": "SFX",
         "ShortName": "MC_FT_Stone_WallRun_07.wav",
         "Path": "SFX\\MC_FT_Stone_WallRun_07_10C4C929.wem"
+       },
+       {
+        "Id": "1037060123",
+        "Language": "SFX",
+        "ShortName": "MC_FT_MagicLayer_04.wav",
+        "Path": "SFX\\MC_FT_MagicLayer_04_10C4C929.wem"
        },
        {
         "Id": "1047987746",

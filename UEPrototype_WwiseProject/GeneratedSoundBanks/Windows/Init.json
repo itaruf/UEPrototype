@@ -5,21 +5,55 @@
   "SchemaVersion": "12",
   "SoundbankVersion": "140",
   "RootPaths": {
-   "ProjectRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\",
-   "SourceFilesRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\.cache\\Windows\\",
-   "SoundBanksRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Windows\\",
+   "ProjectRoot": "D:\\Cours\\Downfall Project\\UEPrototype\\UEPrototype_WwiseProject\\",
+   "SourceFilesRoot": "D:\\Cours\\Downfall Project\\UEPrototype\\UEPrototype_WwiseProject\\.cache\\Windows\\",
+   "SoundBanksRoot": "D:\\Cours\\Downfall Project\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Windows\\",
    "ExternalSourcesInputFile": "",
-   "ExternalSourcesOutputRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Windows"
+   "ExternalSourcesOutputRoot": "D:\\Cours\\Downfall Project\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Windows"
   },
   "SoundBanks": [
    {
     "Id": "1355168291",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "1986935437",
+    "Hash": "1186924405",
     "ObjectPath": "Init",
     "ShortName": "Init",
-    "Path": "Init.bnk"
+    "Path": "Init.bnk",
+    "IncludedAuxBusses": [
+     {
+      "Id": "2371211927",
+      "Name": "RVB_LittleCave",
+      "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\RVB_LittleCave",
+      "GUID": "{0328B0A3-01E7-4FBD-AE08-60B828BC3903}"
+     },
+     {
+      "Id": "3798299039",
+      "Name": "RVB_Temple",
+      "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\RVB_Temple",
+      "GUID": "{153304D8-442C-4DEE-8DC4-95365AC34075}"
+     },
+     {
+      "Id": "3801984506",
+      "Name": "RVB_Exterior",
+      "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\RVB_Exterior",
+      "GUID": "{9AA47515-D1F5-4B5E-B74C-B787C0B8B927}"
+     },
+     {
+      "Id": "4001587643",
+      "Name": "RVB_Cave",
+      "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\RVB_Cave",
+      "GUID": "{7188D707-1FC4-4ADC-866C-04526C3965DE}"
+     }
+    ],
+    "GameParameters": [
+     {
+      "Id": "2918011349",
+      "Name": "MasterVolume",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Alexis\\MasterVolume",
+      "GUID": "{5B45EAC9-2C25-4E26-BE21-B7E898D85C87}"
+     }
+    ]
    }
   ]
  }

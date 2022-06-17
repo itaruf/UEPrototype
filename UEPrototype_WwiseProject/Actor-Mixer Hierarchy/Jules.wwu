@@ -177,13 +177,13 @@
 																				<Flags>5</Flags>
 																			</Point>
 																			<Point>
-																				<XPos>12535.4969574037</XPos>
+																				<XPos>8356.99797160247</XPos>
 																				<YPos>0</YPos>
 																				<Flags>0</Flags>
 																				<SegmentShape>Log2</SegmentShape>
 																			</Point>
 																			<Point>
-																				<XPos>15000</XPos>
+																				<XPos>10000</XPos>
 																				<YPos>-8.0667</YPos>
 																				<Flags>37</Flags>
 																			</Point>
@@ -204,25 +204,25 @@
 															<CrossfadingInfo>
 																<LeftEdgePos>0</LeftEdgePos>
 																<LeftFadingMode>Automatic</LeftFadingMode>
-																<RightEdgePos>7500</RightEdgePos>
+																<RightEdgePos>5000</RightEdgePos>
 																<RightFadingMode>Automatic</RightFadingMode>
 															</CrossfadingInfo>
 														</BlendTrackAssoc>
 														<BlendTrackAssoc>
 															<ItemRef Name="AMB_WaterFall_MidRange_ST_LP" ID="{4A70E5ED-7495-4711-95B8-FB1F744E6F56}"/>
 															<CrossfadingInfo>
-																<LeftEdgePos>2292.0892494929</LeftEdgePos>
+																<LeftEdgePos>1528.05949966193</LeftEdgePos>
 																<LeftFadingMode>Automatic</LeftFadingMode>
-																<RightEdgePos>12500</RightEdgePos>
+																<RightEdgePos>8333.33333333333</RightEdgePos>
 																<RightFadingMode>Automatic</RightFadingMode>
 															</CrossfadingInfo>
 														</BlendTrackAssoc>
 														<BlendTrackAssoc>
 															<ItemRef Name="AMB_WaterFall_Far_ST_LP" ID="{994ECD00-8A10-437C-9ADA-CF417D2E07C2}"/>
 															<CrossfadingInfo>
-																<LeftEdgePos>7560.85192697769</LeftEdgePos>
+																<LeftEdgePos>5040.56795131846</LeftEdgePos>
 																<LeftFadingMode>Automatic</LeftFadingMode>
-																<RightEdgePos>15000</RightEdgePos>
+																<RightEdgePos>10000</RightEdgePos>
 																<RightFadingMode>Automatic</RightFadingMode>
 															</CrossfadingInfo>
 														</BlendTrackAssoc>
@@ -233,12 +233,13 @@
 										<BlendContainer Name="AMB_SP_WaterFallSmall_Blend" ID="{D753DC15-7C1A-45B5-9BA1-D2DF96400256}" ShortID="248975390">
 											<PropertyList>
 												<Property Name="3DSpatialization" Type="int16" Value="2"/>
-												<Property Name="EnableAttenuation" Type="bool" Value="False"/>
+												<Property Name="BelowThresholdBehavior" Type="int16" Value="2"/>
 												<Property Name="OverridePositioning" Type="bool" Value="True"/>
+												<Property Name="OverrideVirtualVoice" Type="bool" Value="True"/>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Attenuation">
-													<ObjectRef Name="ATT_WaterFallSmall" ID="{49ED90B8-43F8-44B9-9998-9AD192B26ADB}" WorkUnitID="{9493D104-BDD0-462A-8CB7-A95DD41418B5}"/>
+													<ObjectRef Name="ATT_WaterFallSmall" ID="{49ED90B8-43F8-44B9-9998-9AD192B26ADB}" WorkUnitID="{C730687D-413E-4BFB-8D51-3089D8FA5CE2}"/>
 												</Reference>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -408,7 +409,7 @@
 																				<SegmentShape>SCurve</SegmentShape>
 																			</Point>
 																			<Point>
-																				<XPos>15000</XPos>
+																				<XPos>10000</XPos>
 																				<YPos>-200</YPos>
 																				<Flags>37</Flags>
 																			</Point>
@@ -429,9 +430,9 @@
 															<CrossfadingInfo>
 																<LeftEdgePos>0</LeftEdgePos>
 																<LeftFadingMode>None</LeftFadingMode>
-																<RightEdgePos>7500</RightEdgePos>
+																<RightEdgePos>5000</RightEdgePos>
 																<RightFadingMode>Manual</RightFadingMode>
-																<RightFadingPos>5027.14708785785</RightFadingPos>
+																<RightFadingPos>3351.43139190523</RightFadingPos>
 															</CrossfadingInfo>
 														</BlendTrackAssoc>
 													</BlendTrackAssocList>
@@ -459,13 +460,13 @@
 																				<SegmentShape>SCurve</SegmentShape>
 																			</Point>
 																			<Point>
-																				<XPos>5000</XPos>
-																				<YPos>0</YPos>
+																				<XPos>3333.33333333333</XPos>
+																				<YPos>-3.0522</YPos>
 																				<Flags>0</Flags>
 																				<SegmentShape>SCurve</SegmentShape>
 																			</Point>
 																			<Point>
-																				<XPos>15000</XPos>
+																				<XPos>10000</XPos>
 																				<YPos>-200</YPos>
 																				<Flags>37</Flags>
 																			</Point>
@@ -486,7 +487,7 @@
 															<CrossfadingInfo>
 																<LeftEdgePos>0</LeftEdgePos>
 																<LeftFadingMode>None</LeftFadingMode>
-																<RightEdgePos>15000</RightEdgePos>
+																<RightEdgePos>10000</RightEdgePos>
 																<RightFadingMode>None</RightFadingMode>
 															</CrossfadingInfo>
 														</BlendTrackAssoc>
@@ -514,7 +515,7 @@
 																				<Flags>5</Flags>
 																			</Point>
 																			<Point>
-																				<XPos>15000</XPos>
+																				<XPos>10000</XPos>
 																				<YPos>0</YPos>
 																				<Flags>37</Flags>
 																			</Point>
@@ -533,12 +534,12 @@
 														<BlendTrackAssoc>
 															<ItemRef Name="AMB_SP_WaterFallSmallDistant_LP" ID="{8AB920FB-4574-46A1-8D54-1766A94DEF87}"/>
 															<CrossfadingInfo>
-																<LeftEdgePos>5000</LeftEdgePos>
+																<LeftEdgePos>1666.66666666667</LeftEdgePos>
 																<LeftFadingMode>Manual</LeftFadingMode>
-																<LeftFadingPos>7500</LeftFadingPos>
-																<RightEdgePos>12500</RightEdgePos>
+																<LeftFadingPos>4784.46857518921</LeftFadingPos>
+																<RightEdgePos>10000</RightEdgePos>
 																<RightFadingMode>Manual</RightFadingMode>
-																<RightFadingPos>7500</RightFadingPos>
+																<RightFadingPos>4784.46857518921</RightFadingPos>
 															</CrossfadingInfo>
 														</BlendTrackAssoc>
 													</BlendTrackAssocList>
@@ -565,14 +566,14 @@
 																				<Flags>5</Flags>
 																			</Point>
 																			<Point>
-																				<XPos>10000</XPos>
+																				<XPos>6666.66666666667</XPos>
 																				<YPos>0</YPos>
 																				<Flags>0</Flags>
 																				<SegmentShape>SCurve</SegmentShape>
 																			</Point>
 																			<Point>
-																				<XPos>15000</XPos>
-																				<YPos>-200</YPos>
+																				<XPos>10000</XPos>
+																				<YPos>0</YPos>
 																				<Flags>37</Flags>
 																			</Point>
 																		</PointList>
@@ -590,10 +591,10 @@
 														<BlendTrackAssoc>
 															<ItemRef Name="AMB_SP_WaterFallSmallVeryDistant_LP" ID="{DDFF85EB-F1E9-4C74-B093-223F3063AD14}"/>
 															<CrossfadingInfo>
-																<LeftEdgePos>5000</LeftEdgePos>
+																<LeftEdgePos>3333.33333333333</LeftEdgePos>
 																<LeftFadingMode>Manual</LeftFadingMode>
-																<LeftFadingPos>12492.5962487661</LeftFadingPos>
-																<RightEdgePos>15000</RightEdgePos>
+																<LeftFadingPos>8328.3974991774</LeftFadingPos>
+																<RightEdgePos>10000</RightEdgePos>
 																<RightFadingMode>None</RightFadingMode>
 															</CrossfadingInfo>
 														</BlendTrackAssoc>
@@ -604,12 +605,18 @@
 										<BlendContainer Name="AMB_SP_WaterFallMed_Blend" ID="{9BDACA8E-0A1A-476E-B000-F3ACE5F478FC}" ShortID="962171192">
 											<PropertyList>
 												<Property Name="3DSpatialization" Type="int16" Value="2"/>
-												<Property Name="EnableAttenuation" Type="bool" Value="False"/>
+												<Property Name="BelowThresholdBehavior" Type="int16" Value="2"/>
 												<Property Name="OverridePositioning" Type="bool" Value="True"/>
+												<Property Name="OverrideVirtualVoice" Type="bool" Value="True"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>10</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Attenuation">
-													<ObjectRef Name="ATT_WaterFallSmall" ID="{49ED90B8-43F8-44B9-9998-9AD192B26ADB}" WorkUnitID="{9493D104-BDD0-462A-8CB7-A95DD41418B5}"/>
+													<ObjectRef Name="ATT_WaterFallMed" ID="{C3AB0A77-B120-4A1F-8750-AEB55B01ACFB}" WorkUnitID="{C730687D-413E-4BFB-8D51-3089D8FA5CE2}"/>
 												</Reference>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -748,7 +755,7 @@
 																				<SegmentShape>SCurve</SegmentShape>
 																			</Point>
 																			<Point>
-																				<XPos>20000</XPos>
+																				<XPos>15000</XPos>
 																				<YPos>-200</YPos>
 																				<Flags>37</Flags>
 																			</Point>
@@ -769,9 +776,9 @@
 															<CrossfadingInfo>
 																<LeftEdgePos>0</LeftEdgePos>
 																<LeftFadingMode>None</LeftFadingMode>
-																<RightEdgePos>12500</RightEdgePos>
+																<RightEdgePos>9375</RightEdgePos>
 																<RightFadingMode>Manual</RightFadingMode>
-																<RightFadingPos>5000</RightFadingPos>
+																<RightFadingPos>3750</RightFadingPos>
 															</CrossfadingInfo>
 														</BlendTrackAssoc>
 													</BlendTrackAssocList>
@@ -799,14 +806,14 @@
 																				<SegmentShape>SCurve</SegmentShape>
 																			</Point>
 																			<Point>
-																				<XPos>10000</XPos>
+																				<XPos>7500</XPos>
 																				<YPos>0</YPos>
 																				<Flags>0</Flags>
 																				<SegmentShape>SCurve</SegmentShape>
 																			</Point>
 																			<Point>
-																				<XPos>20000</XPos>
-																				<YPos>-200</YPos>
+																				<XPos>15000</XPos>
+																				<YPos>0</YPos>
 																				<Flags>37</Flags>
 																			</Point>
 																		</PointList>
@@ -826,9 +833,8 @@
 															<CrossfadingInfo>
 																<LeftEdgePos>0</LeftEdgePos>
 																<LeftFadingMode>None</LeftFadingMode>
-																<RightEdgePos>20000</RightEdgePos>
-																<RightFadingMode>Manual</RightFadingMode>
-																<RightFadingPos>12500</RightFadingPos>
+																<RightEdgePos>15000</RightEdgePos>
+																<RightFadingMode>None</RightFadingMode>
 															</CrossfadingInfo>
 														</BlendTrackAssoc>
 													</BlendTrackAssocList>
@@ -855,14 +861,14 @@
 																				<Flags>5</Flags>
 																			</Point>
 																			<Point>
-																				<XPos>15000</XPos>
-																				<YPos>-0</YPos>
+																				<XPos>11250</XPos>
+																				<YPos>0</YPos>
 																				<Flags>0</Flags>
 																				<SegmentShape>SCurve</SegmentShape>
 																			</Point>
 																			<Point>
-																				<XPos>20000</XPos>
-																				<YPos>-9.87023</YPos>
+																				<XPos>15000</XPos>
+																				<YPos>0</YPos>
 																				<Flags>37</Flags>
 																			</Point>
 																		</PointList>
@@ -880,12 +886,11 @@
 														<BlendTrackAssoc>
 															<ItemRef Name="AMB_SP_WaterFallMedDistant_LP" ID="{3174FCD2-CFCD-4D9E-A2C5-1C1DD2D31DD1}"/>
 															<CrossfadingInfo>
-																<LeftEdgePos>5000</LeftEdgePos>
+																<LeftEdgePos>3750</LeftEdgePos>
 																<LeftFadingMode>Manual</LeftFadingMode>
-																<LeftFadingPos>12500</LeftFadingPos>
-																<RightEdgePos>20000</RightEdgePos>
-																<RightFadingMode>Manual</RightFadingMode>
-																<RightFadingPos>17500</RightFadingPos>
+																<LeftFadingPos>9375</LeftFadingPos>
+																<RightEdgePos>15000</RightEdgePos>
+																<RightFadingMode>None</RightFadingMode>
 															</CrossfadingInfo>
 														</BlendTrackAssoc>
 													</BlendTrackAssocList>
@@ -895,12 +900,18 @@
 										<BlendContainer Name="AMB_SP_WaterFallBig_Blend" ID="{98A63FC9-7411-4144-A499-F119109E5059}" ShortID="577579625">
 											<PropertyList>
 												<Property Name="3DSpatialization" Type="int16" Value="2"/>
-												<Property Name="EnableAttenuation" Type="bool" Value="False"/>
+												<Property Name="BelowThresholdBehavior" Type="int16" Value="2"/>
 												<Property Name="OverridePositioning" Type="bool" Value="True"/>
+												<Property Name="OverrideVirtualVoice" Type="bool" Value="True"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>7</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Attenuation">
-													<ObjectRef Name="ATT_WaterFallSmall" ID="{49ED90B8-43F8-44B9-9998-9AD192B26ADB}" WorkUnitID="{9493D104-BDD0-462A-8CB7-A95DD41418B5}"/>
+													<ObjectRef Name="ATT_WaterFallBig" ID="{56CBB63A-03B5-4D7E-AA3C-35206E319F58}" WorkUnitID="{C730687D-413E-4BFB-8D51-3089D8FA5CE2}"/>
 												</Reference>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -910,17 +921,12 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<Sound Name="AMB_SP_WaterFallBigClose_LP" ID="{5A106B11-6C32-4802-BC53-8E6BF6A2D547}" ShortID="500207339">
+												<Sound Name="AMB_SP_WaterFallBigClose_LP" ID="{09AE6F62-BA36-4E62-8DB4-6300456FA748}" ShortID="684668520">
 													<PropertyList>
 														<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 														<Property Name="IsStreamingEnabled" Type="bool">
 															<ValueList>
 																<Value>True</Value>
-															</ValueList>
-														</Property>
-														<Property Name="Lowpass" Type="int16">
-															<ValueList>
-																<Value>16</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -933,7 +939,7 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="AMB_SP_WaterFallBigClose_LP" ID="{3D0EF141-B9A7-4078-A5FE-6E2F6EDBA6CC}">
+														<AudioFileSource Name="AMB_SP_WaterFallBigClose_LP" ID="{E333B720-9075-43A6-84D2-FDF64593DDA4}">
 															<Language>SFX</Language>
 															<AudioFile>AMB_SP_WaterFallBigClose_LP.wav</AudioFile>
 															<MediaIDList>
@@ -943,25 +949,15 @@
 													</ChildrenList>
 													<ObjectLists/>
 													<ActiveSourceList>
-														<ActiveSource Name="AMB_SP_WaterFallBigClose_LP" ID="{3D0EF141-B9A7-4078-A5FE-6E2F6EDBA6CC}" Platform="Linked"/>
+														<ActiveSource Name="AMB_SP_WaterFallBigClose_LP" ID="{E333B720-9075-43A6-84D2-FDF64593DDA4}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
-												<Sound Name="AMB_SP_WaterFallBigDistant_LP" ID="{092C18C4-B18F-44F9-8A45-19111F7D9271}" ShortID="668349290">
+												<Sound Name="AMB_SP_WaterFallBigDistant_LP" ID="{6A147F18-5EA4-4563-A920-8AEECF72B3BB}" ShortID="1014013894">
 													<PropertyList>
 														<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 														<Property Name="IsStreamingEnabled" Type="bool">
 															<ValueList>
 																<Value>True</Value>
-															</ValueList>
-														</Property>
-														<Property Name="Lowpass" Type="int16">
-															<ValueList>
-																<Value>20</Value>
-															</ValueList>
-														</Property>
-														<Property Name="Volume" Type="Real64">
-															<ValueList>
-																<Value>-3</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -974,7 +970,7 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="AMB_SP_WaterFallBigDistant_LP" ID="{F1838A9D-8CD0-4DD3-9C7F-E1CEEEFB8CAF}">
+														<AudioFileSource Name="AMB_SP_WaterFallBigDistant_LP" ID="{6E45B2D1-1399-4A9A-BC15-0A1CCDFC5CA7}">
 															<Language>SFX</Language>
 															<AudioFile>AMB_SP_WaterFallBigDistant_LP.wav</AudioFile>
 															<MediaIDList>
@@ -984,10 +980,10 @@
 													</ChildrenList>
 													<ObjectLists/>
 													<ActiveSourceList>
-														<ActiveSource Name="AMB_SP_WaterFallBigDistant_LP" ID="{F1838A9D-8CD0-4DD3-9C7F-E1CEEEFB8CAF}" Platform="Linked"/>
+														<ActiveSource Name="AMB_SP_WaterFallBigDistant_LP" ID="{6E45B2D1-1399-4A9A-BC15-0A1CCDFC5CA7}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
-												<Sound Name="AMB_SP_WaterFallBigMid_LP" ID="{4F4E393E-A73B-49F3-8F33-9565E08DF213}" ShortID="347347440">
+												<Sound Name="AMB_SP_WaterFallBigMid_LP" ID="{B0247CF1-A947-4BCE-863A-D4C15344115E}" ShortID="144237876">
 													<PropertyList>
 														<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 														<Property Name="IsStreamingEnabled" Type="bool">
@@ -1005,7 +1001,7 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="AMB_SP_WaterFallBigMid_LP" ID="{E9B18964-BF60-40D1-AAE7-9339CD582CC9}">
+														<AudioFileSource Name="AMB_SP_WaterFallBigMid_LP" ID="{636D5463-AC30-4D7F-B3BC-F7BFBF19B6AF}">
 															<Language>SFX</Language>
 															<AudioFile>AMB_SP_WaterFallBigMid_LP.wav</AudioFile>
 															<MediaIDList>
@@ -1015,7 +1011,7 @@
 													</ChildrenList>
 													<ObjectLists/>
 													<ActiveSourceList>
-														<ActiveSource Name="AMB_SP_WaterFallBigMid_LP" ID="{E9B18964-BF60-40D1-AAE7-9339CD582CC9}" Platform="Linked"/>
+														<ActiveSource Name="AMB_SP_WaterFallBigMid_LP" ID="{636D5463-AC30-4D7F-B3BC-F7BFBF19B6AF}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
 											</ChildrenList>
@@ -1044,13 +1040,13 @@
 																				<SegmentShape>SCurve</SegmentShape>
 																			</Point>
 																			<Point>
-																				<XPos>25439.28923</XPos>
+																				<XPos>16959.5261533333</XPos>
 																				<YPos>-200</YPos>
 																				<Flags>0</Flags>
 																				<SegmentShape>SCurve</SegmentShape>
 																			</Point>
 																			<Point>
-																				<XPos>30000</XPos>
+																				<XPos>20000</XPos>
 																				<YPos>-200</YPos>
 																				<Flags>37</Flags>
 																			</Point>
@@ -1067,13 +1063,12 @@
 													</ReferenceList>
 													<BlendTrackAssocList>
 														<BlendTrackAssoc>
-															<ItemRef Name="AMB_SP_WaterFallBigClose_LP" ID="{5A106B11-6C32-4802-BC53-8E6BF6A2D547}"/>
+															<ItemRef Name="AMB_SP_WaterFallBigClose_LP" ID="{09AE6F62-BA36-4E62-8DB4-6300456FA748}"/>
 															<CrossfadingInfo>
 																<LeftEdgePos>0</LeftEdgePos>
-																<LeftFadingMode>None</LeftFadingMode>
-																<RightEdgePos>17500</RightEdgePos>
-																<RightFadingMode>Manual</RightFadingMode>
-																<RightFadingPos>7500</RightFadingPos>
+																<LeftFadingMode>Automatic</LeftFadingMode>
+																<RightEdgePos>13333.3333333333</RightEdgePos>
+																<RightFadingMode>Automatic</RightFadingMode>
 															</CrossfadingInfo>
 														</BlendTrackAssoc>
 													</BlendTrackAssocList>
@@ -1101,14 +1096,14 @@
 																				<SegmentShape>SCurve</SegmentShape>
 																			</Point>
 																			<Point>
-																				<XPos>12500</XPos>
+																				<XPos>8333.33333333333</XPos>
 																				<YPos>0</YPos>
 																				<Flags>0</Flags>
 																				<SegmentShape>SCurve</SegmentShape>
 																			</Point>
 																			<Point>
-																				<XPos>30000</XPos>
-																				<YPos>-200</YPos>
+																				<XPos>20000</XPos>
+																				<YPos>0</YPos>
 																				<Flags>37</Flags>
 																			</Point>
 																		</PointList>
@@ -1124,11 +1119,11 @@
 													</ReferenceList>
 													<BlendTrackAssocList>
 														<BlendTrackAssoc>
-															<ItemRef Name="AMB_SP_WaterFallBigMid_LP" ID="{4F4E393E-A73B-49F3-8F33-9565E08DF213}"/>
+															<ItemRef Name="AMB_SP_WaterFallBigMid_LP" ID="{B0247CF1-A947-4BCE-863A-D4C15344115E}"/>
 															<CrossfadingInfo>
 																<LeftEdgePos>0</LeftEdgePos>
 																<LeftFadingMode>Automatic</LeftFadingMode>
-																<RightEdgePos>30000</RightEdgePos>
+																<RightEdgePos>20000</RightEdgePos>
 																<RightFadingMode>Automatic</RightFadingMode>
 															</CrossfadingInfo>
 														</BlendTrackAssoc>
@@ -1156,14 +1151,14 @@
 																				<Flags>5</Flags>
 																			</Point>
 																			<Point>
-																				<XPos>20000</XPos>
+																				<XPos>13333.3333333333</XPos>
 																				<YPos>0</YPos>
 																				<Flags>0</Flags>
 																				<SegmentShape>SCurve</SegmentShape>
 																			</Point>
 																			<Point>
-																				<XPos>30000</XPos>
-																				<YPos>-200</YPos>
+																				<XPos>20000</XPos>
+																				<YPos>0</YPos>
 																				<Flags>37</Flags>
 																			</Point>
 																		</PointList>
@@ -1179,12 +1174,12 @@
 													</ReferenceList>
 													<BlendTrackAssocList>
 														<BlendTrackAssoc>
-															<ItemRef Name="AMB_SP_WaterFallBigDistant_LP" ID="{092C18C4-B18F-44F9-8A45-19111F7D9271}"/>
+															<ItemRef Name="AMB_SP_WaterFallBigDistant_LP" ID="{6A147F18-5EA4-4563-A920-8AEECF72B3BB}"/>
 															<CrossfadingInfo>
-																<LeftEdgePos>7500</LeftEdgePos>
+																<LeftEdgePos>5000</LeftEdgePos>
 																<LeftFadingMode>Manual</LeftFadingMode>
-																<LeftFadingPos>20000</LeftFadingPos>
-																<RightEdgePos>30000</RightEdgePos>
+																<LeftFadingPos>11666.6666666667</LeftFadingPos>
+																<RightEdgePos>20000</RightEdgePos>
 																<RightFadingMode>Automatic</RightFadingMode>
 															</CrossfadingInfo>
 														</BlendTrackAssoc>
@@ -1192,6 +1187,209 @@
 												</BlendTrack>
 											</BlendTrackList>
 										</BlendContainer>
+										<RandomSequenceContainer Name="AMB_SP_FireTorch" ID="{DF3FD0E6-E879-4587-A38F-E84115BF00D4}" ShortID="722514500">
+											<PropertyList>
+												<Property Name="3DSpatialization" Type="int16" Value="2"/>
+												<Property Name="BelowThresholdBehavior" Type="int16" Value="2"/>
+												<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+												<Property Name="OverridePositioning" Type="bool" Value="True"/>
+												<Property Name="OverrideVirtualVoice" Type="bool" Value="True"/>
+												<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="3"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="ATT_FireTorch" ID="{AF2E18C2-EE77-426D-AA8E-A1A286893804}" WorkUnitID="{C730687D-413E-4BFB-8D51-3089D8FA5CE2}"/>
+												</Reference>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="AMB_SP_FireTorch_01" ID="{FC7E64CA-581A-474B-B1DB-3579C7B8AF25}" ShortID="667906353">
+													<PropertyList>
+														<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+														<Property Name="IsStreamingEnabled" Type="bool">
+															<ValueList>
+																<Value>True</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="AMB_SP_FireTorch_01" ID="{0EBFFF68-D5AE-4E32-AAF3-81E89EC3F7AA}">
+															<Language>SFX</Language>
+															<AudioFile>AMB_SP_FireTorch_01.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="183701573"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="AMB_SP_FireTorch_01" ID="{0EBFFF68-D5AE-4E32-AAF3-81E89EC3F7AA}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="AMB_SP_FireTorch_02" ID="{4A06AE5B-5942-4316-A3CC-FE11312E75B0}" ShortID="887458029">
+													<PropertyList>
+														<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+														<Property Name="IsStreamingEnabled" Type="bool">
+															<ValueList>
+																<Value>True</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="AMB_SP_FireTorch_02" ID="{B7E05EB9-72AB-4B09-88C4-559E183AE707}">
+															<Language>SFX</Language>
+															<AudioFile>AMB_SP_FireTorch_02.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="258814662"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="AMB_SP_FireTorch_02" ID="{B7E05EB9-72AB-4B09-88C4-559E183AE707}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="AMB_SP_FireTorch_03" ID="{DA0D8000-E616-4513-BDDA-3E8E1D599531}" ShortID="9377269">
+													<PropertyList>
+														<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+														<Property Name="IsStreamingEnabled" Type="bool">
+															<ValueList>
+																<Value>True</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="AMB_SP_FireTorch_03" ID="{95B5984E-1FEA-413F-84E6-82B44E9946D6}">
+															<Language>SFX</Language>
+															<AudioFile>AMB_SP_FireTorch_03.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="64181770"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="AMB_SP_FireTorch_03" ID="{95B5984E-1FEA-413F-84E6-82B44E9946D6}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+											<ObjectLists/>
+										</RandomSequenceContainer>
+										<Sound Name="AMB_SP_LavaPurpleBig_ST_LP" ID="{861ED3A4-4304-41D6-B448-0D10B4C3DA80}" ShortID="79912738">
+											<PropertyList>
+												<Property Name="3DSpatialization" Type="int16" Value="2"/>
+												<Property Name="BelowThresholdBehavior" Type="int16" Value="2"/>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+												<Property Name="IsStreamingEnabled" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
+												<Property Name="OverridePositioning" Type="bool" Value="True"/>
+												<Property Name="OverrideVirtualVoice" Type="bool" Value="True"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>12</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="ATT_LavaBig" ID="{CDA7139C-1F69-47DE-AF3B-2095AD5A30D9}" WorkUnitID="{C730687D-413E-4BFB-8D51-3089D8FA5CE2}"/>
+												</Reference>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="AMB_SP_PurpleLavaBig_ST_LP" ID="{4451F36C-D2C4-498C-904E-11F3ADDE641A}">
+													<Language>SFX</Language>
+													<AudioFile>AMB_SP_PurpleLavaBig_ST_LP.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="1119328"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="AMB_SP_PurpleLavaBig_ST_LP" ID="{4451F36C-D2C4-498C-904E-11F3ADDE641A}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="AMB_SP_LavaPurpleSmall_LP" ID="{FEDE433F-37FA-418B-954F-E1B66F0681E6}" ShortID="922421436">
+											<PropertyList>
+												<Property Name="3DSpatialization" Type="int16" Value="2"/>
+												<Property Name="BelowThresholdBehavior" Type="int16" Value="2"/>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+												<Property Name="IsStreamingEnabled" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
+												<Property Name="OverridePositioning" Type="bool" Value="True"/>
+												<Property Name="OverrideVirtualVoice" Type="bool" Value="True"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-4</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="ATT_LavaSmall" ID="{3E3C0E7A-42C2-4EA2-8C60-C658F16F3BE9}" WorkUnitID="{C730687D-413E-4BFB-8D51-3089D8FA5CE2}"/>
+												</Reference>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="AMB_SP_PurpleLavaSmall_LP" ID="{1824E39B-FD31-46BE-A123-D3C534EC0570}">
+													<Language>SFX</Language>
+													<AudioFile>AMB_SP_PurpleLavaSmall_LP.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="1000175725"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="AMB_SP_PurpleLavaSmall_LP" ID="{1824E39B-FD31-46BE-A123-D3C534EC0570}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
 									</ChildrenList>
 									<ObjectLists/>
 								</ActorMixer>
@@ -1280,6 +1478,9 @@
 										</RandomSequenceContainer>
 										<RandomSequenceContainer Name="AMB_RFX_DirtFall" ID="{1C3C8262-F5F9-49B1-9D0D-4059C97F6A8A}" ShortID="152598581">
 											<PropertyList>
+												<Property Name="3DPosition" Type="int16" Value="1"/>
+												<Property Name="3DSpatialization" Type="int16" Value="2"/>
+												<Property Name="HoldEmitterPositionOrientation" Type="bool" Value="True"/>
 												<Property Name="InitialDelay" Type="Real64">
 													<ValueList>
 														<Value>1</Value>
@@ -1297,6 +1498,8 @@
 													</ModifierList>
 												</Property>
 												<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+												<Property Name="OverrideGameAuxSends" Type="bool" Value="True"/>
+												<Property Name="OverridePositioning" Type="bool" Value="True"/>
 												<Property Name="Pitch" Type="int32">
 													<ModifierList>
 														<ModifierInfo>
@@ -1328,7 +1531,11 @@
 												</Property>
 												<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
 												<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="13"/>
+												<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-12</Value>
+													</ValueList>
 													<ModifierList>
 														<ModifierInfo>
 															<Modifier Name="" ID="{6CE3E6DF-E99E-49AD-8826-63E7DB210E44}">
@@ -1342,6 +1549,9 @@
 												</Property>
 											</PropertyList>
 											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="ATT_RFX_DustFall" ID="{48577D3E-C7D1-48CE-9B73-DE8DEEAB299E}" WorkUnitID="{C730687D-413E-4BFB-8D51-3089D8FA5CE2}"/>
+												</Reference>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 												</Reference>
@@ -1650,6 +1860,9 @@
 													</ActiveSourceList>
 												</Sound>
 											</ChildrenList>
+											<PositioningInfo>
+												<Position Name="" ID="{A419CD72-5FFE-41D4-99DF-948D888CF79C}"/>
+											</PositioningInfo>
 											<ObjectLists/>
 										</RandomSequenceContainer>
 									</ChildrenList>
@@ -1662,7 +1875,9 @@
 							<PropertyList>
 								<Property Name="Color" Type="int16" Value="9"/>
 								<Property Name="OverrideColor" Type="bool" Value="True"/>
+								<Property Name="OverrideGameAuxSends" Type="bool" Value="True"/>
 								<Property Name="OverrideOutput" Type="bool" Value="True"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -2012,6 +2227,9 @@
 																</Property>
 																<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="10"/>
 																<Property Name="Volume" Type="Real64">
+																	<ValueList>
+																		<Value>-14</Value>
+																	</ValueList>
 																	<ModifierList>
 																		<ModifierInfo>
 																			<Modifier Name="" ID="{ADB00E92-80AE-4B0B-8E80-87001C60ABA4}">
@@ -2284,6 +2502,9 @@
 																</Property>
 																<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="10"/>
 																<Property Name="Volume" Type="Real64">
+																	<ValueList>
+																		<Value>-15</Value>
+																	</ValueList>
 																	<ModifierList>
 																		<ModifierInfo>
 																			<Modifier Name="" ID="{FB5ADE84-CDAC-4CB5-94E5-F64E8ECFBED3}">
@@ -2556,6 +2777,9 @@
 																</Property>
 																<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="10"/>
 																<Property Name="Volume" Type="Real64">
+																	<ValueList>
+																		<Value>-14</Value>
+																	</ValueList>
 																	<ModifierList>
 																		<ModifierInfo>
 																			<Modifier Name="" ID="{B5A045D7-921B-4160-81FA-542AA10FBBAF}">
@@ -2981,6 +3205,9 @@
 																</Property>
 																<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="20"/>
 																<Property Name="Volume" Type="Real64">
+																	<ValueList>
+																		<Value>-15</Value>
+																	</ValueList>
 																	<ModifierList>
 																		<ModifierInfo>
 																			<Modifier Name="" ID="{688FF593-8342-473D-9AFF-812C59038ABB}">
@@ -3483,6 +3710,9 @@
 																</Property>
 																<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="10"/>
 																<Property Name="Volume" Type="Real64">
+																	<ValueList>
+																		<Value>-12</Value>
+																	</ValueList>
 																	<ModifierList>
 																		<ModifierInfo>
 																			<Modifier Name="" ID="{B4A25798-1664-4653-A2C0-1C5C7E1C51DB}">
@@ -4372,6 +4602,9 @@
 																</Property>
 																<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="20"/>
 																<Property Name="Volume" Type="Real64">
+																	<ValueList>
+																		<Value>-13</Value>
+																	</ValueList>
 																	<ModifierList>
 																		<ModifierInfo>
 																			<Modifier Name="" ID="{07F9B03B-2E0E-410C-A8BB-F9DADEB3F4C2}">
@@ -5207,7 +5440,7 @@
 											<PropertyList>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-9</Value>
+														<Value>-7</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -8047,10 +8280,35 @@
 										</RandomSequenceContainer>
 										<RandomSequenceContainer Name="MC_FT_WallJump_MagicLayer" ID="{5F0430D8-4478-41E9-8C16-C7BE4F183CCD}" ShortID="210793967">
 											<PropertyList>
+												<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{4641DC39-6B49-45A8-9EB7-92BBB7202E84}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="25"/>
+																	<Property Name="Min" Type="Real64" Value="-25"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+												<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="4"/>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-3</Value>
+														<Value>-6</Value>
 													</ValueList>
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{614930C6-BB05-43A4-88D7-10DA17B81027}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Min" Type="Real64" Value="-5"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
 												</Property>
 											</PropertyList>
 											<ReferenceList>
@@ -8058,7 +8316,7 @@
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 												</Reference>
 												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+													<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
@@ -8152,6 +8410,166 @@
 													<ObjectLists/>
 													<ActiveSourceList>
 														<ActiveSource Name="MC_FT_WallJump_MagicLayer_04" ID="{F1A58548-E9C9-4498-B149-B952869D6369}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+											<ObjectLists/>
+										</RandomSequenceContainer>
+										<RandomSequenceContainer Name="MC_FT_WallZap_MagicLayer" ID="{9AE511FD-4DBB-4D44-86EF-CDBACFEB4975}" ShortID="1035467552">
+											<PropertyList>
+												<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{072E995E-3B1A-43E7-8E8E-307FB7498B76}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="25"/>
+																	<Property Name="Min" Type="Real64" Value="-25"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+												<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="5"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-6</Value>
+													</ValueList>
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{D9A2D0AB-8B6C-4BF0-AAB6-B6469DE9A781}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Min" Type="Real64" Value="-5"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="MC" ID="{85FDBF6E-125A-4553-8D26-BE71B76B2425}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="MC_FT_WallZap_MagicLayer_01" ID="{B22F545D-E8F1-4E1D-8B17-9B7DA6D2F235}" ShortID="547271647">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="MC_FT_WallZap_MagicLayer_01" ID="{A0FDF07F-B641-40A6-850E-5DBB47C97E63}">
+															<Language>SFX</Language>
+															<AudioFile>MC_FT_WallZap_MagicLayer_01.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="925276120"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="MC_FT_WallZap_MagicLayer_01" ID="{A0FDF07F-B641-40A6-850E-5DBB47C97E63}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="MC_FT_WallZap_MagicLayer_02" ID="{D2F5A6B1-F4CC-4411-A34D-9F9E6E96FD20}" ShortID="891539260">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="MC_FT_WallZap_MagicLayer_02" ID="{029C11DE-7A77-47FD-AC76-4C82EA5DE859}">
+															<Language>SFX</Language>
+															<AudioFile>MC_FT_WallZap_MagicLayer_02.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="480979403"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="MC_FT_WallZap_MagicLayer_02" ID="{029C11DE-7A77-47FD-AC76-4C82EA5DE859}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="MC_FT_WallZap_MagicLayer_03" ID="{54E6F076-350D-4FAA-BB05-26CC47E9D4CE}" ShortID="277883883">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="MC_FT_WallZap_MagicLayer_03" ID="{A95B7FA6-699E-4C9B-8C4E-E88CC8D29E03}">
+															<Language>SFX</Language>
+															<AudioFile>MC_FT_WallZap_MagicLayer_03.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="721989425"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="MC_FT_WallZap_MagicLayer_03" ID="{A95B7FA6-699E-4C9B-8C4E-E88CC8D29E03}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="MC_FT_WallZap_MagicLayer_04" ID="{F5E4C82B-6BDC-47D4-8068-FECA40D9D782}" ShortID="901273266">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="MC_FT_WallZap_MagicLayer_04" ID="{0398644E-D4F2-4123-B133-259A2EE93823}">
+															<Language>SFX</Language>
+															<AudioFile>MC_FT_WallZap_MagicLayer_04.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="644317171"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="MC_FT_WallZap_MagicLayer_04" ID="{0398644E-D4F2-4123-B133-259A2EE93823}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="MC_FT_WallZap_MagicLayer_05" ID="{652ADDD8-53A7-4744-B67D-5D0DC9D38072}" ShortID="500615154">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="MC_FT_WallZap_MagicLayer_05" ID="{7CF31473-134D-4A61-A895-28EBB260B2B8}">
+															<Language>SFX</Language>
+															<AudioFile>MC_FT_WallZap_MagicLayer_05.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="453171199"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="MC_FT_WallZap_MagicLayer_05" ID="{7CF31473-134D-4A61-A895-28EBB260B2B8}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
 											</ChildrenList>
@@ -8985,6 +9403,368 @@
 										<ActiveSource Name="SFX_SlowMoEffect" ID="{A2D4E305-1A35-46AC-9D22-9E29D0E9E6B8}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
+								<BlendContainer Name="SFX_MagicDoor_Blend" ID="{2DD9C8A2-E587-410A-B681-6490CF2104F6}" ShortID="642436224">
+									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="2"/>
+										<Property Name="BlendBehavior" Type="int16" Value="1"/>
+										<Property Name="OverridePositioning" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="ATT_MagicDoor" ID="{196A324C-8169-4295-BB3B-D5AE96268377}" WorkUnitID="{C730687D-413E-4BFB-8D51-3089D8FA5CE2}"/>
+										</Reference>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="SFX_MagicDoor_LP" ID="{A10AC27D-FCC2-4E37-9078-64AFCBC63B12}" ShortID="704188852">
+											<PropertyList>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+												<Property Name="Pitch" Type="int32">
+													<RTPCList>
+														<RTPC Name="" ID="{8BF759A3-DDB5-41E5-AC12-AF3E5C464BC6}" ShortID="389286312">
+															<ReferenceList>
+																<Reference Name="ControlInput">
+																	<ObjectRef Name="RTPC_MagicDoorPosition" ID="{42B37403-7E20-45F1-BC55-D7706D029A1E}" WorkUnitID="{B33E0AE4-683A-4118-98EA-BBEFCBF7E5A5}"/>
+																</Reference>
+															</ReferenceList>
+															<Curve Name="" ID="{E08E1F08-574D-457C-9218-226E7B1E313A}">
+																<PropertyList>
+																	<Property Name="Flags" Type="int32" Value="65537"/>
+																</PropertyList>
+																<PointList>
+																	<Point>
+																		<XPos>0</XPos>
+																		<YPos>-250</YPos>
+																		<Flags>5</Flags>
+																		<SegmentShape>SCurve</SegmentShape>
+																	</Point>
+																	<Point>
+																		<XPos>0.200247218788628</XPos>
+																		<YPos>0</YPos>
+																		<Flags>0</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>0.8</XPos>
+																		<YPos>0</YPos>
+																		<Flags>0</Flags>
+																		<SegmentShape>SCurve</SegmentShape>
+																	</Point>
+																	<Point>
+																		<XPos>1</XPos>
+																		<YPos>-250</YPos>
+																		<Flags>37</Flags>
+																	</Point>
+																</PointList>
+															</Curve>
+														</RTPC>
+													</RTPCList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="SFX_MagicDoor_LP" ID="{7A7E5C4C-FA06-4671-85C0-0C7B943B41FD}">
+													<Language>SFX</Language>
+													<AudioFile>SFX_MagicDoor_LP.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="196305151"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="SFX_MagicDoor_LP" ID="{7A7E5C4C-FA06-4671-85C0-0C7B943B41FD}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="SFX_MagicDoorBegin" ID="{24FB29BB-B009-4BBE-A9D0-D7834BECF43B}" ShortID="525365417">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-7</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="SFX_MagicDoorBegin" ID="{64BF0CC8-6A26-4485-BFED-DC676ED1CC2A}">
+													<Language>SFX</Language>
+													<AudioFile>SFX_MagicDoorBegin.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="1022866745"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="SFX_MagicDoorBegin" ID="{64BF0CC8-6A26-4485-BFED-DC676ED1CC2A}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="SFX_MagicDoorEnd" ID="{33619FD1-EE3A-46C8-A28B-A02695403C45}" ShortID="73239554">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-5</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="SFX_MagicDoorEnd" ID="{C4801ED3-552E-431D-8436-7F7E1294FE95}">
+													<Language>SFX</Language>
+													<AudioFile>SFX_MagicDoorEnd.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="42847026"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="SFX_MagicDoorEnd" ID="{C4801ED3-552E-431D-8436-7F7E1294FE95}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+									<ObjectLists/>
+									<BlendTrackList>
+										<BlendTrack Name="MagicDoor_Blend_System" ID="{B65D03F4-A433-4D2E-9A9F-A589B69C419E}" ShortID="588778361">
+											<PropertyList>
+												<Property Name="EnableCrossFading" Type="bool" Value="True"/>
+												<Property Name="Volume" Type="Real64">
+													<RTPCList>
+														<RTPC Name="" ID="{E0A39327-A319-4015-9691-EFAB5E9517DC}" ShortID="204505405">
+															<ReferenceList>
+																<Reference Name="ControlInput">
+																	<ObjectRef Name="RTPC_MagicDoorPosition" ID="{42B37403-7E20-45F1-BC55-D7706D029A1E}" WorkUnitID="{B33E0AE4-683A-4118-98EA-BBEFCBF7E5A5}"/>
+																</Reference>
+															</ReferenceList>
+															<Curve Name="" ID="{86816562-6087-4188-BDAA-CEE4CE80BB59}">
+																<PropertyList>
+																	<Property Name="Flags" Type="int32" Value="3"/>
+																</PropertyList>
+																<PointList>
+																	<Point>
+																		<XPos>0</XPos>
+																		<YPos>-5</YPos>
+																		<Flags>5</Flags>
+																		<SegmentShape>Exp2</SegmentShape>
+																	</Point>
+																	<Point>
+																		<XPos>0.02</XPos>
+																		<YPos>-10</YPos>
+																		<Flags>0</Flags>
+																		<SegmentShape>SCurve</SegmentShape>
+																	</Point>
+																	<Point>
+																		<XPos>0.2</XPos>
+																		<YPos>0</YPos>
+																		<Flags>0</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>0.8</XPos>
+																		<YPos>0</YPos>
+																		<Flags>0</Flags>
+																		<SegmentShape>SCurve</SegmentShape>
+																	</Point>
+																	<Point>
+																		<XPos>0.98</XPos>
+																		<YPos>-10</YPos>
+																		<Flags>0</Flags>
+																		<SegmentShape>Log2</SegmentShape>
+																	</Point>
+																	<Point>
+																		<XPos>1</XPos>
+																		<YPos>-3</YPos>
+																		<Flags>37</Flags>
+																	</Point>
+																</PointList>
+															</Curve>
+														</RTPC>
+													</RTPCList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="LayerCrossFadeControlInput">
+													<ObjectRef Name="RTPC_MagicDoorPosition" ID="{42B37403-7E20-45F1-BC55-D7706D029A1E}" WorkUnitID="{B33E0AE4-683A-4118-98EA-BBEFCBF7E5A5}"/>
+												</Reference>
+											</ReferenceList>
+											<BlendTrackAssocList>
+												<BlendTrackAssoc>
+													<ItemRef Name="SFX_MagicDoorBegin" ID="{24FB29BB-B009-4BBE-A9D0-D7834BECF43B}"/>
+													<CrossfadingInfo>
+														<LeftEdgePos>0</LeftEdgePos>
+														<LeftFadingMode>None</LeftFadingMode>
+														<RightEdgePos>0.0185093780848963</RightEdgePos>
+														<RightFadingMode>Automatic</RightFadingMode>
+													</CrossfadingInfo>
+												</BlendTrackAssoc>
+												<BlendTrackAssoc>
+													<ItemRef Name="SFX_MagicDoor_LP" ID="{A10AC27D-FCC2-4E37-9078-64AFCBC63B12}"/>
+													<CrossfadingInfo>
+														<LeftEdgePos>0.00535303989686746</LeftEdgePos>
+														<LeftFadingMode>Automatic</LeftFadingMode>
+														<RightEdgePos>0.994903623479243</RightEdgePos>
+														<RightFadingMode>Automatic</RightFadingMode>
+													</CrossfadingInfo>
+												</BlendTrackAssoc>
+												<BlendTrackAssoc>
+													<ItemRef Name="SFX_MagicDoorEnd" ID="{33619FD1-EE3A-46C8-A28B-A02695403C45}"/>
+													<CrossfadingInfo>
+														<LeftEdgePos>0.981490621915104</LeftEdgePos>
+														<LeftFadingMode>Automatic</LeftFadingMode>
+														<RightEdgePos>1</RightEdgePos>
+														<RightFadingMode>Automatic</RightFadingMode>
+													</CrossfadingInfo>
+												</BlendTrackAssoc>
+											</BlendTrackAssocList>
+										</BlendTrack>
+									</BlendTrackList>
+								</BlendContainer>
+								<RandomSequenceContainer Name="SFX_MagicDoor_Sequence" ID="{7769D137-4234-46E5-9A3C-4F0895F9CF48}" ShortID="829879793">
+									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="2"/>
+										<Property Name="Inclusion" Type="bool">
+											<ValueList>
+												<Value>False</Value>
+											</ValueList>
+										</Property>
+										<Property Name="OverridePositioning" Type="bool" Value="True"/>
+										<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+										<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+										<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+										<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="ATT_MagicDoor" ID="{196A324C-8169-4295-BB3B-D5AE96268377}" WorkUnitID="{C730687D-413E-4BFB-8D51-3089D8FA5CE2}"/>
+										</Reference>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="SFX_MagicDoorBegin" ID="{234BFB48-E731-49AC-8884-742D78FF692F}" ShortID="917276111">
+											<PropertyList>
+												<Property Name="3DSpatialization" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="ATT_MagicDoor" ID="{196A324C-8169-4295-BB3B-D5AE96268377}" WorkUnitID="{C730687D-413E-4BFB-8D51-3089D8FA5CE2}"/>
+												</Reference>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="SFX" ID="{F425DD9C-4B7D-40B0-B495-D58654E0B77E}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="SFX_MagicDoorBegin" ID="{64FD1DBE-A86B-4BC3-8590-B96BECCA7229}">
+													<Language>SFX</Language>
+													<AudioFile>SFX_MagicDoorBegin.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="1022866745"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="SFX_MagicDoorBegin" ID="{64FD1DBE-A86B-4BC3-8590-B96BECCA7229}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="SFX_MagicDoorEnd" ID="{D95DA8B4-8B3F-418F-A76C-6B83C1923792}" ShortID="737179617">
+											<PropertyList>
+												<Property Name="3DSpatialization" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="ATT_MagicDoor" ID="{196A324C-8169-4295-BB3B-D5AE96268377}" WorkUnitID="{C730687D-413E-4BFB-8D51-3089D8FA5CE2}"/>
+												</Reference>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="SFX" ID="{F425DD9C-4B7D-40B0-B495-D58654E0B77E}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="SFX_MagicDoorEnd" ID="{5F576F28-C668-4035-B464-254CA281FDC3}">
+													<Language>SFX</Language>
+													<AudioFile>SFX_MagicDoorEnd.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="42847026"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="SFX_MagicDoorEnd" ID="{5F576F28-C668-4035-B464-254CA281FDC3}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="SFX_MagicDoor_LP" ID="{F547C08B-6DFE-45A6-A45A-3F4464FF4C59}" ShortID="875858685">
+											<PropertyList>
+												<Property Name="3DSpatialization" Type="int16" Value="2"/>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="ATT_MagicDoor" ID="{196A324C-8169-4295-BB3B-D5AE96268377}" WorkUnitID="{C730687D-413E-4BFB-8D51-3089D8FA5CE2}"/>
+												</Reference>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="SFX" ID="{F425DD9C-4B7D-40B0-B495-D58654E0B77E}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="SFX_MagicDoor_LP" ID="{1EEB8F93-4082-4956-85ED-71DE41267437}">
+													<Language>SFX</Language>
+													<AudioFile>SFX_MagicDoor_LP.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="196305151"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="SFX_MagicDoor_LP" ID="{1EEB8F93-4082-4956-85ED-71DE41267437}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+									<ObjectLists/>
+									<Playlist>
+										<ItemRef Name="SFX_MagicDoorBegin" ID="{234BFB48-E731-49AC-8884-742D78FF692F}"/>
+										<ItemRef Name="SFX_MagicDoor_LP" ID="{F547C08B-6DFE-45A6-A45A-3F4464FF4C59}"/>
+										<ItemRef Name="SFX_MagicDoorEnd" ID="{D95DA8B4-8B3F-418F-A76C-6B83C1923792}"/>
+									</Playlist>
+								</RandomSequenceContainer>
 							</ChildrenList>
 							<ObjectLists/>
 						</ActorMixer>
