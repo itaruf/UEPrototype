@@ -688,7 +688,7 @@
 										</Point>
 										<Point>
 											<XPos>539.2155</XPos>
-											<YPos>-0</YPos>
+											<YPos>0</YPos>
 											<Flags>0</Flags>
 											<SegmentShape>Log2</SegmentShape>
 										</Point>
@@ -742,7 +742,7 @@
 				</Attenuation>
 				<Attenuation Name="ATT_WaterFLowSmall" ID="{3A43B676-4E77-445B-AF92-8E5AD642EF96}" ShortID="210909205">
 					<PropertyList>
-						<Property Name="RadiusMax" Type="Real64" Value="10000"/>
+						<Property Name="RadiusMax" Type="Real64" Value="5000"/>
 					</PropertyList>
 					<CurveUsageInfoList>
 						<VolumeDryUsage>
@@ -758,13 +758,13 @@
 											<Flags>5</Flags>
 										</Point>
 										<Point>
-											<XPos>1045.75163</XPos>
-											<YPos>-0</YPos>
+											<XPos>522.875815</XPos>
+											<YPos>0</YPos>
 											<Flags>0</Flags>
 											<SegmentShape>SCurve</SegmentShape>
 										</Point>
 										<Point>
-											<XPos>10000</XPos>
+											<XPos>5000</XPos>
 											<YPos>-200</YPos>
 											<Flags>37</Flags>
 										</Point>
@@ -789,11 +789,11 @@
 											<XPos>0</XPos>
 											<YPos>0</YPos>
 											<Flags>5</Flags>
-											<SegmentShape>Exp3</SegmentShape>
+											<SegmentShape>Exp2</SegmentShape>
 										</Point>
 										<Point>
-											<XPos>10000</XPos>
-											<YPos>44</YPos>
+											<XPos>5000</XPos>
+											<YPos>60</YPos>
 											<Flags>37</Flags>
 										</Point>
 									</PointList>
@@ -816,18 +816,18 @@
 											<Flags>5</Flags>
 										</Point>
 										<Point>
-											<XPos>1000</XPos>
+											<XPos>500</XPos>
 											<YPos>100</YPos>
 											<Flags>0</Flags>
 											<SegmentShape>SCurve</SegmentShape>
 										</Point>
 										<Point>
-											<XPos>3000</XPos>
-											<YPos>-0</YPos>
+											<XPos>1500</XPos>
+											<YPos>0</YPos>
 											<Flags>0</Flags>
 										</Point>
 										<Point>
-											<XPos>10000</XPos>
+											<XPos>5000</XPos>
 											<YPos>0</YPos>
 											<Flags>37</Flags>
 										</Point>
@@ -842,7 +842,7 @@
 				</Attenuation>
 				<Attenuation Name="ATT_WaterFlowMed" ID="{2C4A4217-C7F0-403A-AFCD-3897A61840A4}" ShortID="679130494">
 					<PropertyList>
-						<Property Name="RadiusMax" Type="Real64" Value="15000"/>
+						<Property Name="RadiusMax" Type="Real64" Value="7500"/>
 					</PropertyList>
 					<CurveUsageInfoList>
 						<VolumeDryUsage>
@@ -858,13 +858,13 @@
 											<Flags>5</Flags>
 										</Point>
 										<Point>
-											<XPos>2500</XPos>
-											<YPos>-0</YPos>
+											<XPos>1250</XPos>
+											<YPos>0</YPos>
 											<Flags>0</Flags>
 											<SegmentShape>SCurve</SegmentShape>
 										</Point>
 										<Point>
-											<XPos>15000</XPos>
+											<XPos>7500</XPos>
 											<YPos>-200</YPos>
 											<Flags>37</Flags>
 										</Point>
@@ -892,7 +892,7 @@
 											<SegmentShape>Exp3</SegmentShape>
 										</Point>
 										<Point>
-											<XPos>15000</XPos>
+											<XPos>7500</XPos>
 											<YPos>46</YPos>
 											<Flags>37</Flags>
 										</Point>
@@ -916,18 +916,18 @@
 											<Flags>5</Flags>
 										</Point>
 										<Point>
-											<XPos>1500</XPos>
+											<XPos>750</XPos>
 											<YPos>100</YPos>
 											<Flags>0</Flags>
 											<SegmentShape>SCurve</SegmentShape>
 										</Point>
 										<Point>
-											<XPos>4000</XPos>
+											<XPos>2000</XPos>
 											<YPos>0</YPos>
 											<Flags>0</Flags>
 										</Point>
 										<Point>
-											<XPos>15000</XPos>
+											<XPos>7500</XPos>
 											<YPos>0</YPos>
 											<Flags>37</Flags>
 										</Point>
@@ -942,7 +942,7 @@
 				</Attenuation>
 				<Attenuation Name="ATT_WaterFlowBig" ID="{48C7418A-07AC-4C7A-A7F5-111D73F87233}" ShortID="505665754">
 					<PropertyList>
-						<Property Name="RadiusMax" Type="Real64" Value="20000"/>
+						<Property Name="RadiusMax" Type="Real64" Value="10000"/>
 					</PropertyList>
 					<CurveUsageInfoList>
 						<VolumeDryUsage>
@@ -958,13 +958,13 @@
 											<Flags>5</Flags>
 										</Point>
 										<Point>
-											<XPos>2500</XPos>
+											<XPos>1250</XPos>
 											<YPos>0</YPos>
 											<Flags>0</Flags>
 											<SegmentShape>SCurve</SegmentShape>
 										</Point>
 										<Point>
-											<XPos>20000</XPos>
+											<XPos>10000</XPos>
 											<YPos>-200</YPos>
 											<Flags>37</Flags>
 										</Point>
@@ -992,7 +992,7 @@
 											<SegmentShape>Exp3</SegmentShape>
 										</Point>
 										<Point>
-											<XPos>20000</XPos>
+											<XPos>10000</XPos>
 											<YPos>44</YPos>
 											<Flags>37</Flags>
 										</Point>
@@ -1016,18 +1016,18 @@
 											<Flags>5</Flags>
 										</Point>
 										<Point>
-											<XPos>2500</XPos>
+											<XPos>1250</XPos>
 											<YPos>100</YPos>
 											<Flags>0</Flags>
 											<SegmentShape>SCurve</SegmentShape>
 										</Point>
 										<Point>
-											<XPos>6000</XPos>
-											<YPos>-0</YPos>
+											<XPos>3000</XPos>
+											<YPos>0</YPos>
 											<Flags>0</Flags>
 										</Point>
 										<Point>
-											<XPos>20000</XPos>
+											<XPos>10000</XPos>
 											<YPos>0</YPos>
 											<Flags>37</Flags>
 										</Point>
