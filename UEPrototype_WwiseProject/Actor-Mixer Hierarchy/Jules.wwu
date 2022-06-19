@@ -1187,7 +1187,7 @@
 												</BlendTrack>
 											</BlendTrackList>
 										</BlendContainer>
-										<RandomSequenceContainer Name="AMB_SP_FireTorch" ID="{DF3FD0E6-E879-4587-A38F-E84115BF00D4}" ShortID="722514500">
+										<RandomSequenceContainer Name="AMB_SP_FireStatue" ID="{DF3FD0E6-E879-4587-A38F-E84115BF00D4}" ShortID="722514500">
 											<PropertyList>
 												<Property Name="3DSpatialization" Type="int16" Value="2"/>
 												<Property Name="BelowThresholdBehavior" Type="int16" Value="2"/>
@@ -1198,7 +1198,7 @@
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Attenuation">
-													<ObjectRef Name="ATT_FireTorch" ID="{AF2E18C2-EE77-426D-AA8E-A1A286893804}" WorkUnitID="{C730687D-413E-4BFB-8D51-3089D8FA5CE2}"/>
+													<ObjectRef Name="ATT_FireTStatue" ID="{AF2E18C2-EE77-426D-AA8E-A1A286893804}" WorkUnitID="{C730687D-413E-4BFB-8D51-3089D8FA5CE2}"/>
 												</Reference>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -1208,7 +1208,7 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<Sound Name="AMB_SP_FireTorch_01" ID="{FC7E64CA-581A-474B-B1DB-3579C7B8AF25}" ShortID="667906353">
+												<Sound Name="AMB_SP_FireStatue_01" ID="{15DAD543-77BB-445F-ABEE-CCBD04909CBA}" ShortID="797540939">
 													<PropertyList>
 														<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 														<Property Name="IsStreamingEnabled" Type="bool">
@@ -1226,20 +1226,20 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="AMB_SP_FireTorch_01" ID="{0EBFFF68-D5AE-4E32-AAF3-81E89EC3F7AA}">
+														<AudioFileSource Name="AMB_SP_FireStatue_01" ID="{37A337EB-9A43-4B0C-B381-C8D5F9780825}">
 															<Language>SFX</Language>
-															<AudioFile>AMB_SP_FireTorch_01.wav</AudioFile>
+															<AudioFile>AMB_SP_FireStatue_01.wav</AudioFile>
 															<MediaIDList>
-																<MediaID ID="183701573"/>
+																<MediaID ID="23140063"/>
 															</MediaIDList>
 														</AudioFileSource>
 													</ChildrenList>
 													<ObjectLists/>
 													<ActiveSourceList>
-														<ActiveSource Name="AMB_SP_FireTorch_01" ID="{0EBFFF68-D5AE-4E32-AAF3-81E89EC3F7AA}" Platform="Linked"/>
+														<ActiveSource Name="AMB_SP_FireStatue_01" ID="{37A337EB-9A43-4B0C-B381-C8D5F9780825}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
-												<Sound Name="AMB_SP_FireTorch_02" ID="{4A06AE5B-5942-4316-A3CC-FE11312E75B0}" ShortID="887458029">
+												<Sound Name="AMB_SP_FireStatue_02" ID="{DADB790D-62A4-4FDB-B779-9251DEA74876}" ShortID="110212257">
 													<PropertyList>
 														<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 														<Property Name="IsStreamingEnabled" Type="bool">
@@ -1257,20 +1257,20 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="AMB_SP_FireTorch_02" ID="{B7E05EB9-72AB-4B09-88C4-559E183AE707}">
+														<AudioFileSource Name="AMB_SP_FireStatue_02" ID="{1F248122-D43C-4C13-B180-C356EC4436C0}">
 															<Language>SFX</Language>
-															<AudioFile>AMB_SP_FireTorch_02.wav</AudioFile>
+															<AudioFile>AMB_SP_FireStatue_02.wav</AudioFile>
 															<MediaIDList>
-																<MediaID ID="258814662"/>
+																<MediaID ID="419866259"/>
 															</MediaIDList>
 														</AudioFileSource>
 													</ChildrenList>
 													<ObjectLists/>
 													<ActiveSourceList>
-														<ActiveSource Name="AMB_SP_FireTorch_02" ID="{B7E05EB9-72AB-4B09-88C4-559E183AE707}" Platform="Linked"/>
+														<ActiveSource Name="AMB_SP_FireStatue_02" ID="{1F248122-D43C-4C13-B180-C356EC4436C0}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
-												<Sound Name="AMB_SP_FireTorch_03" ID="{DA0D8000-E616-4513-BDDA-3E8E1D599531}" ShortID="9377269">
+												<Sound Name="AMB_SP_FireStatue_03" ID="{418DBFF0-A51B-4494-99F5-AE9E47B84538}" ShortID="383468331">
 													<PropertyList>
 														<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 														<Property Name="IsStreamingEnabled" Type="bool">
@@ -1288,17 +1288,17 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="AMB_SP_FireTorch_03" ID="{95B5984E-1FEA-413F-84E6-82B44E9946D6}">
+														<AudioFileSource Name="AMB_SP_FireStatue_03" ID="{EB8367DD-7EFD-4FE3-A54E-D7F8A92DF36C}">
 															<Language>SFX</Language>
-															<AudioFile>AMB_SP_FireTorch_03.wav</AudioFile>
+															<AudioFile>AMB_SP_FireStatue_03.wav</AudioFile>
 															<MediaIDList>
-																<MediaID ID="64181770"/>
+																<MediaID ID="887923690"/>
 															</MediaIDList>
 														</AudioFileSource>
 													</ChildrenList>
 													<ObjectLists/>
 													<ActiveSourceList>
-														<ActiveSource Name="AMB_SP_FireTorch_03" ID="{95B5984E-1FEA-413F-84E6-82B44E9946D6}" Platform="Linked"/>
+														<ActiveSource Name="AMB_SP_FireStatue_03" ID="{EB8367DD-7EFD-4FE3-A54E-D7F8A92DF36C}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
 											</ChildrenList>
@@ -1316,6 +1316,11 @@
 												</Property>
 												<Property Name="OverridePositioning" Type="bool" Value="True"/>
 												<Property Name="OverrideVirtualVoice" Type="bool" Value="True"/>
+												<Property Name="Pitch" Type="int32">
+													<ValueList>
+														<Value>1200</Value>
+													</ValueList>
+												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
 														<Value>12</Value>
@@ -1359,6 +1364,11 @@
 												</Property>
 												<Property Name="OverridePositioning" Type="bool" Value="True"/>
 												<Property Name="OverrideVirtualVoice" Type="bool" Value="True"/>
+												<Property Name="Pitch" Type="int32">
+													<ValueList>
+														<Value>1200</Value>
+													</ValueList>
+												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
 														<Value>-4</Value>
@@ -1388,6 +1398,155 @@
 											<ObjectLists/>
 											<ActiveSourceList>
 												<ActiveSource Name="AMB_SP_PurpleLavaSmall_LP" ID="{1824E39B-FD31-46BE-A123-D3C534EC0570}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="AMB_SP_FireTorch_LP" ID="{113A0DBF-E233-4841-A501-655F3B3C9017}" ShortID="145292270">
+											<PropertyList>
+												<Property Name="3DSpatialization" Type="int16" Value="2"/>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+												<Property Name="IsStreamingEnabled" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
+												<Property Name="OverridePositioning" Type="bool" Value="True"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-6</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="ATT_Torch" ID="{981983FC-3E4E-4B45-964C-0456F134B326}" WorkUnitID="{C730687D-413E-4BFB-8D51-3089D8FA5CE2}"/>
+												</Reference>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="AMB_SP_FireTorch_LP" ID="{A7BA15E0-26BD-4179-9A65-90656CF5892E}">
+													<Language>SFX</Language>
+													<AudioFile>AMB_SP_FireTorch_LP.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="91485875"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="AMB_SP_FireTorch_LP" ID="{A7BA15E0-26BD-4179-9A65-90656CF5892E}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="AMB_SP_WaterFlowBig_ST_LP" ID="{D473CA52-5C53-44F9-8706-B87D4ECCC0A9}" ShortID="776008248">
+											<PropertyList>
+												<Property Name="3DSpatialization" Type="int16" Value="2"/>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+												<Property Name="IsStreamingEnabled" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
+												<Property Name="OverridePositioning" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="ATT_WaterFlowBig" ID="{48C7418A-07AC-4C7A-A7F5-111D73F87233}" WorkUnitID="{C730687D-413E-4BFB-8D51-3089D8FA5CE2}"/>
+												</Reference>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="AMB_SP_WaterFlowBig_ST_LP" ID="{C6C9A95F-91C0-449F-94D7-19F4FB0D9BFC}">
+													<Language>SFX</Language>
+													<AudioFile>AMB_SP_WaterFlowBig_ST_LP.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="784759116"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="AMB_SP_WaterFlowBig_ST_LP" ID="{C6C9A95F-91C0-449F-94D7-19F4FB0D9BFC}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="AMB_SP_WaterFlowMed_ST_LP" ID="{28C012A5-DD38-4725-A46D-0ABEF823CB47}" ShortID="191786775">
+											<PropertyList>
+												<Property Name="3DSpatialization" Type="int16" Value="2"/>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+												<Property Name="IsStreamingEnabled" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
+												<Property Name="OverridePositioning" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="ATT_WaterFlowMed" ID="{2C4A4217-C7F0-403A-AFCD-3897A61840A4}" WorkUnitID="{C730687D-413E-4BFB-8D51-3089D8FA5CE2}"/>
+												</Reference>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="AMB_SP_WaterFlowMed_ST_LP" ID="{74B64A4F-991D-4806-B1E6-48F62CD10607}">
+													<Language>SFX</Language>
+													<AudioFile>AMB_SP_WaterFlowMed_ST_LP.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="1041200681"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="AMB_SP_WaterFlowMed_ST_LP" ID="{74B64A4F-991D-4806-B1E6-48F62CD10607}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="AMB_SP_WaterFlowSmall_ST_LP" ID="{1F811A0C-98C3-4911-9329-62C7B7068AB7}" ShortID="303041871">
+											<PropertyList>
+												<Property Name="3DSpatialization" Type="int16" Value="2"/>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+												<Property Name="IsStreamingEnabled" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
+												<Property Name="OverridePositioning" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="ATT_WaterFLowSmall" ID="{3A43B676-4E77-445B-AF92-8E5AD642EF96}" WorkUnitID="{C730687D-413E-4BFB-8D51-3089D8FA5CE2}"/>
+												</Reference>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="AMB_SP_WaterFlowSmall_ST_LP" ID="{9FB69647-96F4-41C3-9AB4-85189E205288}">
+													<Language>SFX</Language>
+													<AudioFile>AMB_SP_WaterFlowSmall_ST_LP.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="655677380"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="AMB_SP_WaterFlowSmall_ST_LP" ID="{9FB69647-96F4-41C3-9AB4-85189E205288}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
 									</ChildrenList>
@@ -8297,7 +8456,7 @@
 												<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="4"/>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-6</Value>
+														<Value>-8</Value>
 													</ValueList>
 													<ModifierList>
 														<ModifierInfo>
@@ -8434,7 +8593,7 @@
 												<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="5"/>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-6</Value>
+														<Value>-12</Value>
 													</ValueList>
 													<ModifierList>
 														<ModifierInfo>
