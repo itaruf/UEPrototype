@@ -63,6 +63,11 @@
 														<Value>False</Value>
 													</ValueList>
 												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-14</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
@@ -251,6 +256,11 @@
 												<Property Name="OverridePositioning" Type="bool" Value="True"/>
 												<Property Name="OverridePriority" Type="bool" Value="True"/>
 												<Property Name="OverrideVirtualVoice" Type="bool" Value="True"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-18</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Attenuation">
@@ -631,7 +641,7 @@
 												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>5</Value>
+														<Value>-16</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -932,7 +942,7 @@
 												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>3</Value>
+														<Value>-16</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -1810,7 +1820,7 @@
 												<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-12</Value>
+														<Value>-23</Value>
 													</ValueList>
 													<ModifierList>
 														<ModifierInfo>
@@ -6421,13 +6431,6 @@
 											</GroupingInfo>
 										</SwitchContainer>
 										<SwitchContainer Name="MC_FT_Land_GroundSwitch" ID="{86C8D5AC-D304-42FF-B3B3-42774BF0423D}" ShortID="1014263997">
-											<PropertyList>
-												<Property Name="Volume" Type="Real64">
-													<ValueList>
-														<Value>-5</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -6618,6 +6621,9 @@
 														</Property>
 														<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="5"/>
 														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-12</Value>
+															</ValueList>
 															<ModifierList>
 																<ModifierInfo>
 																	<Modifier Name="" ID="{27ECCABB-6037-416E-BEE4-7E22503C12E6}">
@@ -7120,7 +7126,7 @@
 											<PropertyList>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-16</Value>
+														<Value>-11</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
