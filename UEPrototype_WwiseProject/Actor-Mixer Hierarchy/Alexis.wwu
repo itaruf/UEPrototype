@@ -1807,7 +1807,7 @@
 												<Property Name="OverrideGameAuxSends" Type="bool" Value="True"/>
 												<Property Name="Pitch" Type="int32">
 													<ValueList>
-														<Value>180</Value>
+														<Value>450</Value>
 													</ValueList>
 													<RTPCList>
 														<RTPC Name="" ID="{0C45FB71-C17D-4B3C-93D9-96E8B3CBE75B}" ShortID="964911345">
@@ -1828,7 +1828,7 @@
 																	</Point>
 																	<Point>
 																		<XPos>3000</XPos>
-																		<YPos>279</YPos>
+																		<YPos>232</YPos>
 																		<Flags>37</Flags>
 																	</Point>
 																</PointList>
@@ -2065,6 +2065,13 @@
 							</ReferenceList>
 							<ChildrenList>
 								<Sound Name="UI_Menu_Cancel" ID="{40FC9CE0-B564-454B-9F99-4D8F4B0FFBFA}" ShortID="199599222">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-3</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -2088,6 +2095,13 @@
 									</ActiveSourceList>
 								</Sound>
 								<Sound Name="UI_Menu_Confirm" ID="{546E7EC1-8F61-402E-9218-EC09576BE38F}" ShortID="631545172">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-11</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -2098,6 +2112,11 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="UI_Menu_Confirm" ID="{62204306-3D60-4CA1-AB52-2CAA73F8BFDE}">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.382562620423892"/>
+												<Property Name="LoopBegin" Type="Real64" Value="0"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>UI_Menu_Confirm.wav</AudioFile>
 											<MediaIDList>
@@ -2111,6 +2130,13 @@
 									</ActiveSourceList>
 								</Sound>
 								<Sound Name="UI_Menu_Hover" ID="{F871812F-D0BE-4868-A5B3-DB260A9F471C}" ShortID="533962063">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-15</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -2157,6 +2183,13 @@
 									</ActiveSourceList>
 								</Sound>
 								<Sound Name="UI_Menu_Slider" ID="{ED308565-7C5D-42AD-9E2D-6B7B24ECC769}" ShortID="275596572">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-5</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -2177,6 +2210,66 @@
 									<ObjectLists/>
 									<ActiveSourceList>
 										<ActiveSource Name="UI_Menu_Slider" ID="{E173173B-5EF1-42BC-A3A7-C096F2AC0193}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="UI_PauseMenu_Cancel" ID="{F714C5BB-C52F-488B-9062-8985B1988AFF}" ShortID="895074496">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-9</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_PauseMenu_Cancel" ID="{470AC9FF-4EB5-4A36-96B9-640552B8FF39}">
+											<Language>SFX</Language>
+											<AudioFile>UI_PauseMenu_Cancel.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="231398081"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_PauseMenu_Cancel" ID="{470AC9FF-4EB5-4A36-96B9-640552B8FF39}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="UI_PauseMenu_Select" ID="{0DE637C6-6F90-48A6-9E44-FEDCF65EFC4B}" ShortID="866808173">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-10</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_PauseMenu_Select" ID="{1152D208-A7B8-4E49-80CC-FB40DC254994}">
+											<Language>SFX</Language>
+											<AudioFile>UI_PauseMenu_Select.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="402713652"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_PauseMenu_Select" ID="{1152D208-A7B8-4E49-80CC-FB40DC254994}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
 							</ChildrenList>
