@@ -1839,7 +1839,7 @@
 																	</Point>
 																	<Point>
 																		<XPos>3000</XPos>
-																		<YPos>232</YPos>
+																		<YPos>39</YPos>
 																		<Flags>37</Flags>
 																	</Point>
 																</PointList>
@@ -1850,7 +1850,7 @@
 												<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-20</Value>
+														<Value>-26</Value>
 													</ValueList>
 													<RTPCList>
 														<RTPC Name="" ID="{B2596FC3-3193-4741-8316-94D11CF0C9FF}" ShortID="270825209">
@@ -1896,10 +1896,17 @@
 														<MediaID ID="53437263"/>
 													</MediaIDList>
 												</AudioFileSource>
+												<AudioFileSource Name="SFX_Glide_Magic_LP_V2" ID="{E397168F-572E-4A30-9A16-3217EBC8DBB8}">
+													<Language>SFX</Language>
+													<AudioFile>SFX_Glide_Magic_LP_V2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="246842186"/>
+													</MediaIDList>
+												</AudioFileSource>
 											</ChildrenList>
 											<ObjectLists/>
 											<ActiveSourceList>
-												<ActiveSource Name="SFX_Glide_Magic_LP" ID="{310D57BC-FC37-46A0-AC60-2CBAF7417766}" Platform="Linked"/>
+												<ActiveSource Name="SFX_Glide_Magic_LP_V2" ID="{E397168F-572E-4A30-9A16-3217EBC8DBB8}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
 										<RandomSequenceContainer Name="SFX_Freefall_Stop" ID="{37CB0EE1-C490-44AC-8271-FE307FF3ED90}" ShortID="257310837">
@@ -1924,7 +1931,7 @@
 												<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-26</Value>
+														<Value>-18</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -2055,6 +2062,148 @@
 											</ChildrenList>
 											<ObjectLists/>
 										</RandomSequenceContainer>
+										<Sound Name="SFX_Glide_Wind_LP" ID="{C051383B-7E5A-4990-A18C-0FAD97380A88}" ShortID="862211883">
+											<PropertyList>
+												<Property Name="Highpass" Type="int16">
+													<ValueList>
+														<Value>42</Value>
+													</ValueList>
+													<RTPCList>
+														<RTPC Name="" ID="{51D29341-2471-4113-A630-7709AFF0ED9D}" ShortID="687647345">
+															<ReferenceList>
+																<Reference Name="ControlInput">
+																	<ObjectRef Name="RTPC_DiveSpeed" ID="{B98CCC5A-4AF4-4F1E-B1E1-E0E932C8530E}" WorkUnitID="{2267CC50-2CB3-43FF-AD07-2C2C8FCF4501}"/>
+																</Reference>
+															</ReferenceList>
+															<Curve Name="" ID="{F92AB2BB-7BA9-43D8-9DAC-A1EAF78C7CA2}">
+																<PropertyList>
+																	<Property Name="Flags" Type="int32" Value="65537"/>
+																</PropertyList>
+																<PointList>
+																	<Point>
+																		<XPos>0</XPos>
+																		<YPos>2</YPos>
+																		<Flags>5</Flags>
+																		<SegmentShape>Exp3</SegmentShape>
+																	</Point>
+																	<Point>
+																		<XPos>1718.62348</XPos>
+																		<YPos>-10</YPos>
+																		<Flags>0</Flags>
+																		<SegmentShape>Log3</SegmentShape>
+																	</Point>
+																	<Point>
+																		<XPos>3000</XPos>
+																		<YPos>-23</YPos>
+																		<Flags>37</Flags>
+																	</Point>
+																</PointList>
+															</Curve>
+														</RTPC>
+													</RTPCList>
+												</Property>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+												<Property Name="OverrideGameAuxSends" Type="bool" Value="True"/>
+												<Property Name="Pitch" Type="int32">
+													<ValueList>
+														<Value>450</Value>
+													</ValueList>
+													<RTPCList>
+														<RTPC Name="" ID="{F28B8C5A-5B2C-4AFD-8C2A-66D820C4ED9E}" ShortID="884566833">
+															<ReferenceList>
+																<Reference Name="ControlInput">
+																	<ObjectRef Name="RTPC_DiveSpeed" ID="{B98CCC5A-4AF4-4F1E-B1E1-E0E932C8530E}" WorkUnitID="{2267CC50-2CB3-43FF-AD07-2C2C8FCF4501}"/>
+																</Reference>
+															</ReferenceList>
+															<Curve Name="" ID="{1E565B44-EC3D-4B90-9EDD-2A3CB0FB2D52}">
+																<PropertyList>
+																	<Property Name="Flags" Type="int32" Value="65537"/>
+																</PropertyList>
+																<PointList>
+																	<Point>
+																		<XPos>0</XPos>
+																		<YPos>-222</YPos>
+																		<Flags>5</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>3000</XPos>
+																		<YPos>232</YPos>
+																		<Flags>37</Flags>
+																	</Point>
+																</PointList>
+															</Curve>
+														</RTPC>
+													</RTPCList>
+												</Property>
+												<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-16</Value>
+													</ValueList>
+													<RTPCList>
+														<RTPC Name="" ID="{D11F2E50-2378-4F8E-A9C1-758619EBDAAD}" ShortID="644806455">
+															<ReferenceList>
+																<Reference Name="ControlInput">
+																	<ObjectRef Name="RTPC_DiveSpeed" ID="{B98CCC5A-4AF4-4F1E-B1E1-E0E932C8530E}" WorkUnitID="{2267CC50-2CB3-43FF-AD07-2C2C8FCF4501}"/>
+																</Reference>
+															</ReferenceList>
+															<Curve Name="" ID="{C646E542-7AEB-486A-8D10-1C44CCC3DBED}">
+																<PropertyList>
+																	<Property Name="Flags" Type="int32" Value="3"/>
+																</PropertyList>
+																<PointList>
+																	<Point>
+																		<XPos>0</XPos>
+																		<YPos>-200</YPos>
+																		<Flags>5</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>3000</XPos>
+																		<YPos>0</YPos>
+																		<Flags>37</Flags>
+																	</Point>
+																</PointList>
+															</Curve>
+														</RTPC>
+													</RTPCList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="SFX" ID="{F425DD9C-4B7D-40B0-B495-D58654E0B77E}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="SFX_Glide_Magic_LP" ID="{3DD7D407-5EE1-4FF4-A6D8-37F8FF645A7E}">
+													<Language>SFX</Language>
+													<AudioFile>SFX_Glide_Magic_LP.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="53437263"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="SFX_Glide_Magic_LP_V2" ID="{8DD2A2C6-38B7-406A-9DA4-B8995DE74C6C}">
+													<Language>SFX</Language>
+													<AudioFile>SFX_Glide_Magic_LP_V2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="246842186"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="SFX_Glide_Wind_LP_V2" ID="{A7454C68-3DFB-4A9A-BDAD-A846B761A0D0}">
+													<Language>SFX</Language>
+													<AudioFile>SFX_Glide_Wind_LP_V2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="730614254"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="SFX_Glide_Wind_LP_V2" ID="{A7454C68-3DFB-4A9A-BDAD-A846B761A0D0}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
 									</ChildrenList>
 								</Folder>
 								<Sound Name="SFX_Checkpoint" ID="{4C6CF91A-DC73-4533-B940-0346431A488C}" ShortID="547437283">
