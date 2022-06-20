@@ -20,8 +20,22 @@
 						<ActorMixer Name="AMB" ID="{26568A3B-6A77-4BD6-BC3F-E2C29C4577B3}" ShortID="388164429">
 							<PropertyList>
 								<Property Name="Color" Type="int16" Value="15"/>
+								<Property Name="IgnoreParentMaxSoundInstance" Type="bool" Value="True"/>
+								<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
+								<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+								<Property Name="MaxSoundPerInstance" Type="int16">
+									<ValueList>
+										<Value>16</Value>
+									</ValueList>
+								</Property>
+								<Property Name="OverLimitBehavior" Type="int16" Value="1"/>
 								<Property Name="OverrideColor" Type="bool" Value="True"/>
 								<Property Name="OverrideOutput" Type="bool" Value="True"/>
+								<Property Name="UseMaxSoundPerInstance" Type="bool">
+									<ValueList>
+										<Value>True</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -47,6 +61,11 @@
 												<Property Name="Inclusion" Type="bool">
 													<ValueList>
 														<Value>False</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-14</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -177,13 +196,13 @@
 																				<Flags>5</Flags>
 																			</Point>
 																			<Point>
-																				<XPos>12535.4969574037</XPos>
+																				<XPos>8356.99797160247</XPos>
 																				<YPos>0</YPos>
 																				<Flags>0</Flags>
 																				<SegmentShape>Log2</SegmentShape>
 																			</Point>
 																			<Point>
-																				<XPos>15000</XPos>
+																				<XPos>10000</XPos>
 																				<YPos>-8.0667</YPos>
 																				<Flags>37</Flags>
 																			</Point>
@@ -204,25 +223,25 @@
 															<CrossfadingInfo>
 																<LeftEdgePos>0</LeftEdgePos>
 																<LeftFadingMode>Automatic</LeftFadingMode>
-																<RightEdgePos>7500</RightEdgePos>
+																<RightEdgePos>5000</RightEdgePos>
 																<RightFadingMode>Automatic</RightFadingMode>
 															</CrossfadingInfo>
 														</BlendTrackAssoc>
 														<BlendTrackAssoc>
 															<ItemRef Name="AMB_WaterFall_MidRange_ST_LP" ID="{4A70E5ED-7495-4711-95B8-FB1F744E6F56}"/>
 															<CrossfadingInfo>
-																<LeftEdgePos>2292.0892494929</LeftEdgePos>
+																<LeftEdgePos>1528.05949966193</LeftEdgePos>
 																<LeftFadingMode>Automatic</LeftFadingMode>
-																<RightEdgePos>12500</RightEdgePos>
+																<RightEdgePos>8333.33333333333</RightEdgePos>
 																<RightFadingMode>Automatic</RightFadingMode>
 															</CrossfadingInfo>
 														</BlendTrackAssoc>
 														<BlendTrackAssoc>
 															<ItemRef Name="AMB_WaterFall_Far_ST_LP" ID="{994ECD00-8A10-437C-9ADA-CF417D2E07C2}"/>
 															<CrossfadingInfo>
-																<LeftEdgePos>7560.85192697769</LeftEdgePos>
+																<LeftEdgePos>5040.56795131846</LeftEdgePos>
 																<LeftFadingMode>Automatic</LeftFadingMode>
-																<RightEdgePos>15000</RightEdgePos>
+																<RightEdgePos>10000</RightEdgePos>
 																<RightFadingMode>Automatic</RightFadingMode>
 															</CrossfadingInfo>
 														</BlendTrackAssoc>
@@ -233,7 +252,15 @@
 										<BlendContainer Name="AMB_SP_WaterFallSmall_Blend" ID="{D753DC15-7C1A-45B5-9BA1-D2DF96400256}" ShortID="248975390">
 											<PropertyList>
 												<Property Name="3DSpatialization" Type="int16" Value="2"/>
+												<Property Name="BelowThresholdBehavior" Type="int16" Value="2"/>
 												<Property Name="OverridePositioning" Type="bool" Value="True"/>
+												<Property Name="OverridePriority" Type="bool" Value="True"/>
+												<Property Name="OverrideVirtualVoice" Type="bool" Value="True"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-18</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Attenuation">
@@ -407,7 +434,7 @@
 																				<SegmentShape>SCurve</SegmentShape>
 																			</Point>
 																			<Point>
-																				<XPos>15000</XPos>
+																				<XPos>10000</XPos>
 																				<YPos>-200</YPos>
 																				<Flags>37</Flags>
 																			</Point>
@@ -428,9 +455,9 @@
 															<CrossfadingInfo>
 																<LeftEdgePos>0</LeftEdgePos>
 																<LeftFadingMode>None</LeftFadingMode>
-																<RightEdgePos>7500</RightEdgePos>
+																<RightEdgePos>5000</RightEdgePos>
 																<RightFadingMode>Manual</RightFadingMode>
-																<RightFadingPos>5027.14708785785</RightFadingPos>
+																<RightFadingPos>3351.43139190523</RightFadingPos>
 															</CrossfadingInfo>
 														</BlendTrackAssoc>
 													</BlendTrackAssocList>
@@ -458,13 +485,13 @@
 																				<SegmentShape>SCurve</SegmentShape>
 																			</Point>
 																			<Point>
-																				<XPos>5000</XPos>
+																				<XPos>3333.33333333333</XPos>
 																				<YPos>-3.0522</YPos>
 																				<Flags>0</Flags>
 																				<SegmentShape>SCurve</SegmentShape>
 																			</Point>
 																			<Point>
-																				<XPos>15000</XPos>
+																				<XPos>10000</XPos>
 																				<YPos>-200</YPos>
 																				<Flags>37</Flags>
 																			</Point>
@@ -485,7 +512,7 @@
 															<CrossfadingInfo>
 																<LeftEdgePos>0</LeftEdgePos>
 																<LeftFadingMode>None</LeftFadingMode>
-																<RightEdgePos>15000</RightEdgePos>
+																<RightEdgePos>10000</RightEdgePos>
 																<RightFadingMode>None</RightFadingMode>
 															</CrossfadingInfo>
 														</BlendTrackAssoc>
@@ -513,7 +540,7 @@
 																				<Flags>5</Flags>
 																			</Point>
 																			<Point>
-																				<XPos>15000</XPos>
+																				<XPos>10000</XPos>
 																				<YPos>0</YPos>
 																				<Flags>37</Flags>
 																			</Point>
@@ -532,12 +559,12 @@
 														<BlendTrackAssoc>
 															<ItemRef Name="AMB_SP_WaterFallSmallDistant_LP" ID="{8AB920FB-4574-46A1-8D54-1766A94DEF87}"/>
 															<CrossfadingInfo>
-																<LeftEdgePos>2500</LeftEdgePos>
+																<LeftEdgePos>1666.66666666667</LeftEdgePos>
 																<LeftFadingMode>Manual</LeftFadingMode>
-																<LeftFadingPos>7176.70286278381</LeftFadingPos>
-																<RightEdgePos>15000</RightEdgePos>
+																<LeftFadingPos>4784.46857518921</LeftFadingPos>
+																<RightEdgePos>10000</RightEdgePos>
 																<RightFadingMode>Manual</RightFadingMode>
-																<RightFadingPos>7176.70286278381</RightFadingPos>
+																<RightFadingPos>4784.46857518921</RightFadingPos>
 															</CrossfadingInfo>
 														</BlendTrackAssoc>
 													</BlendTrackAssocList>
@@ -564,13 +591,13 @@
 																				<Flags>5</Flags>
 																			</Point>
 																			<Point>
-																				<XPos>10000</XPos>
+																				<XPos>6666.66666666667</XPos>
 																				<YPos>0</YPos>
 																				<Flags>0</Flags>
 																				<SegmentShape>SCurve</SegmentShape>
 																			</Point>
 																			<Point>
-																				<XPos>15000</XPos>
+																				<XPos>10000</XPos>
 																				<YPos>0</YPos>
 																				<Flags>37</Flags>
 																			</Point>
@@ -589,10 +616,10 @@
 														<BlendTrackAssoc>
 															<ItemRef Name="AMB_SP_WaterFallSmallVeryDistant_LP" ID="{DDFF85EB-F1E9-4C74-B093-223F3063AD14}"/>
 															<CrossfadingInfo>
-																<LeftEdgePos>5000</LeftEdgePos>
+																<LeftEdgePos>3333.33333333333</LeftEdgePos>
 																<LeftFadingMode>Manual</LeftFadingMode>
-																<LeftFadingPos>12492.5962487661</LeftFadingPos>
-																<RightEdgePos>15000</RightEdgePos>
+																<LeftFadingPos>8328.3974991774</LeftFadingPos>
+																<RightEdgePos>10000</RightEdgePos>
 																<RightFadingMode>None</RightFadingMode>
 															</CrossfadingInfo>
 														</BlendTrackAssoc>
@@ -603,7 +630,20 @@
 										<BlendContainer Name="AMB_SP_WaterFallMed_Blend" ID="{9BDACA8E-0A1A-476E-B000-F3ACE5F478FC}" ShortID="962171192">
 											<PropertyList>
 												<Property Name="3DSpatialization" Type="int16" Value="2"/>
+												<Property Name="BelowThresholdBehavior" Type="int16" Value="2"/>
 												<Property Name="OverridePositioning" Type="bool" Value="True"/>
+												<Property Name="OverridePriority" Type="bool" Value="True"/>
+												<Property Name="OverrideVirtualVoice" Type="bool" Value="True"/>
+												<Property Name="Priority" Type="int16">
+													<ValueList>
+														<Value>60</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-16</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Attenuation">
@@ -746,7 +786,7 @@
 																				<SegmentShape>SCurve</SegmentShape>
 																			</Point>
 																			<Point>
-																				<XPos>20000</XPos>
+																				<XPos>15000</XPos>
 																				<YPos>-200</YPos>
 																				<Flags>37</Flags>
 																			</Point>
@@ -767,9 +807,9 @@
 															<CrossfadingInfo>
 																<LeftEdgePos>0</LeftEdgePos>
 																<LeftFadingMode>None</LeftFadingMode>
-																<RightEdgePos>12500</RightEdgePos>
+																<RightEdgePos>9375</RightEdgePos>
 																<RightFadingMode>Manual</RightFadingMode>
-																<RightFadingPos>5000</RightFadingPos>
+																<RightFadingPos>3750</RightFadingPos>
 															</CrossfadingInfo>
 														</BlendTrackAssoc>
 													</BlendTrackAssocList>
@@ -797,13 +837,13 @@
 																				<SegmentShape>SCurve</SegmentShape>
 																			</Point>
 																			<Point>
-																				<XPos>10000</XPos>
+																				<XPos>7500</XPos>
 																				<YPos>0</YPos>
 																				<Flags>0</Flags>
 																				<SegmentShape>SCurve</SegmentShape>
 																			</Point>
 																			<Point>
-																				<XPos>20000</XPos>
+																				<XPos>15000</XPos>
 																				<YPos>0</YPos>
 																				<Flags>37</Flags>
 																			</Point>
@@ -824,7 +864,7 @@
 															<CrossfadingInfo>
 																<LeftEdgePos>0</LeftEdgePos>
 																<LeftFadingMode>None</LeftFadingMode>
-																<RightEdgePos>20000</RightEdgePos>
+																<RightEdgePos>15000</RightEdgePos>
 																<RightFadingMode>None</RightFadingMode>
 															</CrossfadingInfo>
 														</BlendTrackAssoc>
@@ -852,13 +892,13 @@
 																				<Flags>5</Flags>
 																			</Point>
 																			<Point>
-																				<XPos>15000</XPos>
+																				<XPos>11250</XPos>
 																				<YPos>0</YPos>
 																				<Flags>0</Flags>
 																				<SegmentShape>SCurve</SegmentShape>
 																			</Point>
 																			<Point>
-																				<XPos>20000</XPos>
+																				<XPos>15000</XPos>
 																				<YPos>0</YPos>
 																				<Flags>37</Flags>
 																			</Point>
@@ -877,10 +917,10 @@
 														<BlendTrackAssoc>
 															<ItemRef Name="AMB_SP_WaterFallMedDistant_LP" ID="{3174FCD2-CFCD-4D9E-A2C5-1C1DD2D31DD1}"/>
 															<CrossfadingInfo>
-																<LeftEdgePos>5000</LeftEdgePos>
+																<LeftEdgePos>3750</LeftEdgePos>
 																<LeftFadingMode>Manual</LeftFadingMode>
-																<LeftFadingPos>12500</LeftFadingPos>
-																<RightEdgePos>20000</RightEdgePos>
+																<LeftFadingPos>9375</LeftFadingPos>
+																<RightEdgePos>15000</RightEdgePos>
 																<RightFadingMode>None</RightFadingMode>
 															</CrossfadingInfo>
 														</BlendTrackAssoc>
@@ -891,7 +931,20 @@
 										<BlendContainer Name="AMB_SP_WaterFallBig_Blend" ID="{98A63FC9-7411-4144-A499-F119109E5059}" ShortID="577579625">
 											<PropertyList>
 												<Property Name="3DSpatialization" Type="int16" Value="2"/>
+												<Property Name="BelowThresholdBehavior" Type="int16" Value="2"/>
 												<Property Name="OverridePositioning" Type="bool" Value="True"/>
+												<Property Name="OverridePriority" Type="bool" Value="True"/>
+												<Property Name="OverrideVirtualVoice" Type="bool" Value="True"/>
+												<Property Name="Priority" Type="int16">
+													<ValueList>
+														<Value>75</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-16</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Attenuation">
@@ -1024,13 +1077,13 @@
 																				<SegmentShape>SCurve</SegmentShape>
 																			</Point>
 																			<Point>
-																				<XPos>25439.28923</XPos>
+																				<XPos>16959.5261533333</XPos>
 																				<YPos>-200</YPos>
 																				<Flags>0</Flags>
 																				<SegmentShape>SCurve</SegmentShape>
 																			</Point>
 																			<Point>
-																				<XPos>30000</XPos>
+																				<XPos>20000</XPos>
 																				<YPos>-200</YPos>
 																				<Flags>37</Flags>
 																			</Point>
@@ -1051,7 +1104,7 @@
 															<CrossfadingInfo>
 																<LeftEdgePos>0</LeftEdgePos>
 																<LeftFadingMode>Automatic</LeftFadingMode>
-																<RightEdgePos>20000</RightEdgePos>
+																<RightEdgePos>13333.3333333333</RightEdgePos>
 																<RightFadingMode>Automatic</RightFadingMode>
 															</CrossfadingInfo>
 														</BlendTrackAssoc>
@@ -1080,13 +1133,13 @@
 																				<SegmentShape>SCurve</SegmentShape>
 																			</Point>
 																			<Point>
-																				<XPos>12500</XPos>
+																				<XPos>8333.33333333333</XPos>
 																				<YPos>0</YPos>
 																				<Flags>0</Flags>
 																				<SegmentShape>SCurve</SegmentShape>
 																			</Point>
 																			<Point>
-																				<XPos>30000</XPos>
+																				<XPos>20000</XPos>
 																				<YPos>0</YPos>
 																				<Flags>37</Flags>
 																			</Point>
@@ -1107,7 +1160,7 @@
 															<CrossfadingInfo>
 																<LeftEdgePos>0</LeftEdgePos>
 																<LeftFadingMode>Automatic</LeftFadingMode>
-																<RightEdgePos>30000</RightEdgePos>
+																<RightEdgePos>20000</RightEdgePos>
 																<RightFadingMode>Automatic</RightFadingMode>
 															</CrossfadingInfo>
 														</BlendTrackAssoc>
@@ -1135,13 +1188,13 @@
 																				<Flags>5</Flags>
 																			</Point>
 																			<Point>
-																				<XPos>20000</XPos>
+																				<XPos>13333.3333333333</XPos>
 																				<YPos>0</YPos>
 																				<Flags>0</Flags>
 																				<SegmentShape>SCurve</SegmentShape>
 																			</Point>
 																			<Point>
-																				<XPos>30000</XPos>
+																				<XPos>20000</XPos>
 																				<YPos>0</YPos>
 																				<Flags>37</Flags>
 																			</Point>
@@ -1160,10 +1213,10 @@
 														<BlendTrackAssoc>
 															<ItemRef Name="AMB_SP_WaterFallBigDistant_LP" ID="{6A147F18-5EA4-4563-A920-8AEECF72B3BB}"/>
 															<CrossfadingInfo>
-																<LeftEdgePos>7500</LeftEdgePos>
+																<LeftEdgePos>5000</LeftEdgePos>
 																<LeftFadingMode>Manual</LeftFadingMode>
-																<LeftFadingPos>17500</LeftFadingPos>
-																<RightEdgePos>30000</RightEdgePos>
+																<LeftFadingPos>11666.6666666667</LeftFadingPos>
+																<RightEdgePos>20000</RightEdgePos>
 																<RightFadingMode>Automatic</RightFadingMode>
 															</CrossfadingInfo>
 														</BlendTrackAssoc>
@@ -1171,16 +1224,19 @@
 												</BlendTrack>
 											</BlendTrackList>
 										</BlendContainer>
-										<RandomSequenceContainer Name="AMB_SP_FireTorch" ID="{DF3FD0E6-E879-4587-A38F-E84115BF00D4}" ShortID="722514500">
+										<RandomSequenceContainer Name="AMB_SP_FireStatue" ID="{DF3FD0E6-E879-4587-A38F-E84115BF00D4}" ShortID="722514500">
 											<PropertyList>
 												<Property Name="3DSpatialization" Type="int16" Value="2"/>
+												<Property Name="BelowThresholdBehavior" Type="int16" Value="2"/>
 												<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
 												<Property Name="OverridePositioning" Type="bool" Value="True"/>
+												<Property Name="OverridePriority" Type="bool" Value="True"/>
+												<Property Name="OverrideVirtualVoice" Type="bool" Value="True"/>
 												<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="3"/>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Attenuation">
-													<ObjectRef Name="ATT_FireTorch" ID="{AF2E18C2-EE77-426D-AA8E-A1A286893804}" WorkUnitID="{C730687D-413E-4BFB-8D51-3089D8FA5CE2}"/>
+													<ObjectRef Name="ATT_FireTStatue" ID="{AF2E18C2-EE77-426D-AA8E-A1A286893804}" WorkUnitID="{C730687D-413E-4BFB-8D51-3089D8FA5CE2}"/>
 												</Reference>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -1190,7 +1246,7 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<Sound Name="AMB_SP_FireTorch_01" ID="{FC7E64CA-581A-474B-B1DB-3579C7B8AF25}" ShortID="667906353">
+												<Sound Name="AMB_SP_FireStatue_01" ID="{15DAD543-77BB-445F-ABEE-CCBD04909CBA}" ShortID="797540939">
 													<PropertyList>
 														<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 														<Property Name="IsStreamingEnabled" Type="bool">
@@ -1208,20 +1264,20 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="AMB_SP_FireTorch_01" ID="{0EBFFF68-D5AE-4E32-AAF3-81E89EC3F7AA}">
+														<AudioFileSource Name="AMB_SP_FireStatue_01" ID="{37A337EB-9A43-4B0C-B381-C8D5F9780825}">
 															<Language>SFX</Language>
-															<AudioFile>AMB_SP_FireTorch_01.wav</AudioFile>
+															<AudioFile>AMB_SP_FireStatue_01.wav</AudioFile>
 															<MediaIDList>
-																<MediaID ID="183701573"/>
+																<MediaID ID="23140063"/>
 															</MediaIDList>
 														</AudioFileSource>
 													</ChildrenList>
 													<ObjectLists/>
 													<ActiveSourceList>
-														<ActiveSource Name="AMB_SP_FireTorch_01" ID="{0EBFFF68-D5AE-4E32-AAF3-81E89EC3F7AA}" Platform="Linked"/>
+														<ActiveSource Name="AMB_SP_FireStatue_01" ID="{37A337EB-9A43-4B0C-B381-C8D5F9780825}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
-												<Sound Name="AMB_SP_FireTorch_02" ID="{4A06AE5B-5942-4316-A3CC-FE11312E75B0}" ShortID="887458029">
+												<Sound Name="AMB_SP_FireStatue_02" ID="{DADB790D-62A4-4FDB-B779-9251DEA74876}" ShortID="110212257">
 													<PropertyList>
 														<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 														<Property Name="IsStreamingEnabled" Type="bool">
@@ -1239,20 +1295,20 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="AMB_SP_FireTorch_02" ID="{B7E05EB9-72AB-4B09-88C4-559E183AE707}">
+														<AudioFileSource Name="AMB_SP_FireStatue_02" ID="{1F248122-D43C-4C13-B180-C356EC4436C0}">
 															<Language>SFX</Language>
-															<AudioFile>AMB_SP_FireTorch_02.wav</AudioFile>
+															<AudioFile>AMB_SP_FireStatue_02.wav</AudioFile>
 															<MediaIDList>
-																<MediaID ID="258814662"/>
+																<MediaID ID="419866259"/>
 															</MediaIDList>
 														</AudioFileSource>
 													</ChildrenList>
 													<ObjectLists/>
 													<ActiveSourceList>
-														<ActiveSource Name="AMB_SP_FireTorch_02" ID="{B7E05EB9-72AB-4B09-88C4-559E183AE707}" Platform="Linked"/>
+														<ActiveSource Name="AMB_SP_FireStatue_02" ID="{1F248122-D43C-4C13-B180-C356EC4436C0}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
-												<Sound Name="AMB_SP_FireTorch_03" ID="{DA0D8000-E616-4513-BDDA-3E8E1D599531}" ShortID="9377269">
+												<Sound Name="AMB_SP_FireStatue_03" ID="{418DBFF0-A51B-4494-99F5-AE9E47B84538}" ShortID="383468331">
 													<PropertyList>
 														<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 														<Property Name="IsStreamingEnabled" Type="bool">
@@ -1270,17 +1326,17 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="AMB_SP_FireTorch_03" ID="{95B5984E-1FEA-413F-84E6-82B44E9946D6}">
+														<AudioFileSource Name="AMB_SP_FireStatue_03" ID="{EB8367DD-7EFD-4FE3-A54E-D7F8A92DF36C}">
 															<Language>SFX</Language>
-															<AudioFile>AMB_SP_FireTorch_03.wav</AudioFile>
+															<AudioFile>AMB_SP_FireStatue_03.wav</AudioFile>
 															<MediaIDList>
-																<MediaID ID="64181770"/>
+																<MediaID ID="887923690"/>
 															</MediaIDList>
 														</AudioFileSource>
 													</ChildrenList>
 													<ObjectLists/>
 													<ActiveSourceList>
-														<ActiveSource Name="AMB_SP_FireTorch_03" ID="{95B5984E-1FEA-413F-84E6-82B44E9946D6}" Platform="Linked"/>
+														<ActiveSource Name="AMB_SP_FireStatue_03" ID="{EB8367DD-7EFD-4FE3-A54E-D7F8A92DF36C}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
 											</ChildrenList>
@@ -1288,14 +1344,32 @@
 										</RandomSequenceContainer>
 										<Sound Name="AMB_SP_LavaPurpleBig_ST_LP" ID="{861ED3A4-4304-41D6-B448-0D10B4C3DA80}" ShortID="79912738">
 											<PropertyList>
+												<Property Name="3DSpatialization" Type="int16" Value="2"/>
+												<Property Name="BelowThresholdBehavior" Type="int16" Value="2"/>
 												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 												<Property Name="IsStreamingEnabled" Type="bool">
 													<ValueList>
 														<Value>True</Value>
 													</ValueList>
 												</Property>
+												<Property Name="OverridePositioning" Type="bool" Value="True"/>
+												<Property Name="OverridePriority" Type="bool" Value="True"/>
+												<Property Name="OverrideVirtualVoice" Type="bool" Value="True"/>
+												<Property Name="Pitch" Type="int32">
+													<ValueList>
+														<Value>1200</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>12</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="ATT_LavaBig" ID="{CDA7139C-1F69-47DE-AF3B-2095AD5A30D9}" WorkUnitID="{C730687D-413E-4BFB-8D51-3089D8FA5CE2}"/>
+												</Reference>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 												</Reference>
@@ -1319,14 +1393,38 @@
 										</Sound>
 										<Sound Name="AMB_SP_LavaPurpleSmall_LP" ID="{FEDE433F-37FA-418B-954F-E1B66F0681E6}" ShortID="922421436">
 											<PropertyList>
+												<Property Name="3DSpatialization" Type="int16" Value="2"/>
+												<Property Name="BelowThresholdBehavior" Type="int16" Value="2"/>
 												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 												<Property Name="IsStreamingEnabled" Type="bool">
 													<ValueList>
 														<Value>True</Value>
 													</ValueList>
 												</Property>
+												<Property Name="OverridePositioning" Type="bool" Value="True"/>
+												<Property Name="OverridePriority" Type="bool" Value="True"/>
+												<Property Name="OverrideVirtualVoice" Type="bool" Value="True"/>
+												<Property Name="Pitch" Type="int32">
+													<ValueList>
+														<Value>1200</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Priority" Type="int16">
+													<ValueList>
+														<Value>45</Value>
+													</ValueList>
+												</Property>
+												<Property Name="PriorityDistanceFactor" Type="bool" Value="True"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-4</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="ATT_LavaSmall" ID="{3E3C0E7A-42C2-4EA2-8C60-C658F16F3BE9}" WorkUnitID="{C730687D-413E-4BFB-8D51-3089D8FA5CE2}"/>
+												</Reference>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 												</Reference>
@@ -1348,10 +1446,240 @@
 												<ActiveSource Name="AMB_SP_PurpleLavaSmall_LP" ID="{1824E39B-FD31-46BE-A123-D3C534EC0570}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
+										<Sound Name="AMB_SP_FireTorch_LP" ID="{113A0DBF-E233-4841-A501-655F3B3C9017}" ShortID="145292270">
+											<PropertyList>
+												<Property Name="3DSpatialization" Type="int16" Value="2"/>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+												<Property Name="IsStreamingEnabled" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
+												<Property Name="OverridePositioning" Type="bool" Value="True"/>
+												<Property Name="OverridePriority" Type="bool" Value="True"/>
+												<Property Name="Priority" Type="int16">
+													<ValueList>
+														<Value>45</Value>
+													</ValueList>
+												</Property>
+												<Property Name="PriorityDistanceFactor" Type="bool" Value="True"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-6</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="ATT_Torch" ID="{981983FC-3E4E-4B45-964C-0456F134B326}" WorkUnitID="{C730687D-413E-4BFB-8D51-3089D8FA5CE2}"/>
+												</Reference>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="AMB_SP_FireTorch_LP" ID="{A7BA15E0-26BD-4179-9A65-90656CF5892E}">
+													<Language>SFX</Language>
+													<AudioFile>AMB_SP_FireTorch_LP.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="91485875"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="AMB_SP_FireTorch_LP" ID="{A7BA15E0-26BD-4179-9A65-90656CF5892E}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="AMB_SP_WaterFlowBig_ST_LP" ID="{D473CA52-5C53-44F9-8706-B87D4ECCC0A9}" ShortID="776008248">
+											<PropertyList>
+												<Property Name="3DSpatialization" Type="int16" Value="2"/>
+												<Property Name="BelowThresholdBehavior" Type="int16" Value="2"/>
+												<Property Name="IgnoreParentMaxSoundInstance" Type="bool" Value="True"/>
+												<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+												<Property Name="IsStreamingEnabled" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
+												<Property Name="MaxSoundPerInstance" Type="int16">
+													<ValueList>
+														<Value>2</Value>
+													</ValueList>
+												</Property>
+												<Property Name="OverLimitBehavior" Type="int16" Value="1"/>
+												<Property Name="OverridePositioning" Type="bool" Value="True"/>
+												<Property Name="OverridePriority" Type="bool" Value="True"/>
+												<Property Name="OverrideVirtualVoice" Type="bool" Value="True"/>
+												<Property Name="Priority" Type="int16">
+													<ValueList>
+														<Value>70</Value>
+													</ValueList>
+												</Property>
+												<Property Name="PriorityDistanceFactor" Type="bool" Value="True"/>
+												<Property Name="UseMaxSoundPerInstance" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>6</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="ATT_WaterFlowBig" ID="{48C7418A-07AC-4C7A-A7F5-111D73F87233}" WorkUnitID="{C730687D-413E-4BFB-8D51-3089D8FA5CE2}"/>
+												</Reference>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="AMB_SP_WaterFlowBig_ST_LP" ID="{C6C9A95F-91C0-449F-94D7-19F4FB0D9BFC}">
+													<Language>SFX</Language>
+													<AudioFile>AMB_SP_WaterFlowBig_ST_LP.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="784759116"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="AMB_SP_WaterFlowBig_ST_LP" ID="{C6C9A95F-91C0-449F-94D7-19F4FB0D9BFC}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="AMB_SP_WaterFlowMed_ST_LP" ID="{28C012A5-DD38-4725-A46D-0ABEF823CB47}" ShortID="191786775">
+											<PropertyList>
+												<Property Name="3DSpatialization" Type="int16" Value="2"/>
+												<Property Name="BelowThresholdBehavior" Type="int16" Value="2"/>
+												<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+												<Property Name="IsStreamingEnabled" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
+												<Property Name="MaxSoundPerInstance" Type="int16">
+													<ValueList>
+														<Value>3</Value>
+													</ValueList>
+												</Property>
+												<Property Name="OverLimitBehavior" Type="int16" Value="1"/>
+												<Property Name="OverridePositioning" Type="bool" Value="True"/>
+												<Property Name="OverridePriority" Type="bool" Value="True"/>
+												<Property Name="OverrideVirtualVoice" Type="bool" Value="True"/>
+												<Property Name="Priority" Type="int16">
+													<ValueList>
+														<Value>65</Value>
+													</ValueList>
+												</Property>
+												<Property Name="PriorityDistanceFactor" Type="bool" Value="True"/>
+												<Property Name="UseMaxSoundPerInstance" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>4</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="ATT_WaterFlowMed" ID="{2C4A4217-C7F0-403A-AFCD-3897A61840A4}" WorkUnitID="{C730687D-413E-4BFB-8D51-3089D8FA5CE2}"/>
+												</Reference>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="AMB_SP_WaterFlowMed_ST_LP" ID="{74B64A4F-991D-4806-B1E6-48F62CD10607}">
+													<Language>SFX</Language>
+													<AudioFile>AMB_SP_WaterFlowMed_ST_LP.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="1041200681"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="AMB_SP_WaterFlowMed_ST_LP" ID="{74B64A4F-991D-4806-B1E6-48F62CD10607}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="AMB_SP_WaterFlowSmall_ST_LP" ID="{1F811A0C-98C3-4911-9329-62C7B7068AB7}" ShortID="303041871">
+											<PropertyList>
+												<Property Name="3DSpatialization" Type="int16" Value="2"/>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+												<Property Name="IsStreamingEnabled" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
+												<Property Name="OverridePositioning" Type="bool" Value="True"/>
+												<Property Name="OverridePriority" Type="bool" Value="True"/>
+												<Property Name="Priority" Type="int16">
+													<ValueList>
+														<Value>60</Value>
+													</ValueList>
+												</Property>
+												<Property Name="PriorityDistanceFactor" Type="bool" Value="True"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-6</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="ATT_WaterFLowSmall" ID="{3A43B676-4E77-445B-AF92-8E5AD642EF96}" WorkUnitID="{C730687D-413E-4BFB-8D51-3089D8FA5CE2}"/>
+												</Reference>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="AMB_SP_WaterFlowSmall_ST_LP" ID="{9FB69647-96F4-41C3-9AB4-85189E205288}">
+													<Language>SFX</Language>
+													<AudioFile>AMB_SP_WaterFlowSmall_ST_LP.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="655677380"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="AMB_SP_WaterFlowSmall_ST_LP" ID="{9FB69647-96F4-41C3-9AB4-85189E205288}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
 									</ChildrenList>
 									<ObjectLists/>
 								</ActorMixer>
 								<ActorMixer Name="RFX" ID="{9C82110A-8C7D-4783-8A31-08D74D4918CE}" ShortID="519075607">
+									<PropertyList>
+										<Property Name="OverridePriority" Type="bool" Value="True"/>
+										<Property Name="Priority" Type="int16">
+											<ValueList>
+												<Value>30</Value>
+											</ValueList>
+										</Property>
+										<Property Name="PriorityDistanceFactor" Type="bool" Value="True"/>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -1436,6 +1764,9 @@
 										</RandomSequenceContainer>
 										<RandomSequenceContainer Name="AMB_RFX_DirtFall" ID="{1C3C8262-F5F9-49B1-9D0D-4059C97F6A8A}" ShortID="152598581">
 											<PropertyList>
+												<Property Name="3DPosition" Type="int16" Value="1"/>
+												<Property Name="3DSpatialization" Type="int16" Value="2"/>
+												<Property Name="HoldEmitterPositionOrientation" Type="bool" Value="True"/>
 												<Property Name="InitialDelay" Type="Real64">
 													<ValueList>
 														<Value>1</Value>
@@ -1453,6 +1784,8 @@
 													</ModifierList>
 												</Property>
 												<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+												<Property Name="OverrideGameAuxSends" Type="bool" Value="True"/>
+												<Property Name="OverridePositioning" Type="bool" Value="True"/>
 												<Property Name="Pitch" Type="int32">
 													<ModifierList>
 														<ModifierInfo>
@@ -1484,7 +1817,11 @@
 												</Property>
 												<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
 												<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="13"/>
+												<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-23</Value>
+													</ValueList>
 													<ModifierList>
 														<ModifierInfo>
 															<Modifier Name="" ID="{6CE3E6DF-E99E-49AD-8826-63E7DB210E44}">
@@ -1498,6 +1835,9 @@
 												</Property>
 											</PropertyList>
 											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="ATT_RFX_DustFall" ID="{48577D3E-C7D1-48CE-9B73-DE8DEEAB299E}" WorkUnitID="{C730687D-413E-4BFB-8D51-3089D8FA5CE2}"/>
+												</Reference>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
 												</Reference>
@@ -1806,6 +2146,9 @@
 													</ActiveSourceList>
 												</Sound>
 											</ChildrenList>
+											<PositioningInfo>
+												<Position Name="" ID="{A419CD72-5FFE-41D4-99DF-948D888CF79C}"/>
+											</PositioningInfo>
 											<ObjectLists/>
 										</RandomSequenceContainer>
 									</ChildrenList>
@@ -6088,13 +6431,6 @@
 											</GroupingInfo>
 										</SwitchContainer>
 										<SwitchContainer Name="MC_FT_Land_GroundSwitch" ID="{86C8D5AC-D304-42FF-B3B3-42774BF0423D}" ShortID="1014263997">
-											<PropertyList>
-												<Property Name="Volume" Type="Real64">
-													<ValueList>
-														<Value>-5</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -6285,6 +6621,9 @@
 														</Property>
 														<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="5"/>
 														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-12</Value>
+															</ValueList>
 															<ModifierList>
 																<ModifierInfo>
 																	<Modifier Name="" ID="{27ECCABB-6037-416E-BEE4-7E22503C12E6}">
@@ -6787,7 +7126,7 @@
 											<PropertyList>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-16</Value>
+														<Value>-11</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -8240,7 +8579,7 @@
 												<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="4"/>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-6</Value>
+														<Value>-8</Value>
 													</ValueList>
 													<ModifierList>
 														<ModifierInfo>
@@ -8377,7 +8716,7 @@
 												<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="5"/>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-6</Value>
+														<Value>-12</Value>
 													</ValueList>
 													<ModifierList>
 														<ModifierInfo>
@@ -9523,7 +9862,7 @@
 																	</Point>
 																	<Point>
 																		<XPos>0.2</XPos>
-																		<YPos>-0</YPos>
+																		<YPos>0</YPos>
 																		<Flags>0</Flags>
 																	</Point>
 																	<Point>
