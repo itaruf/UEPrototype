@@ -2281,6 +2281,11 @@
 												<Sound Name="SFX_BigDoor_Sustain_LP" ID="{581F876C-E30B-4F2D-8FCE-7764D07332DB}" ShortID="186441917">
 													<PropertyList>
 														<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>6</Value>
+															</ValueList>
+														</Property>
 													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Conversion">

@@ -134,7 +134,7 @@
 				</Attenuation>
 				<Attenuation Name="ATT_BigDoor" ID="{8AF7D0BE-C551-4433-9851-051DC1332082}" ShortID="401294440">
 					<PropertyList>
-						<Property Name="RadiusMax" Type="Real64" Value="3000"/>
+						<Property Name="RadiusMax" Type="Real64" Value="200000"/>
 					</PropertyList>
 					<CurveUsageInfoList>
 						<VolumeDryUsage>
@@ -151,7 +151,7 @@
 											<SegmentShape>Log3</SegmentShape>
 										</Point>
 										<Point>
-											<XPos>3000</XPos>
+											<XPos>200000</XPos>
 											<YPos>-200</YPos>
 											<Flags>37</Flags>
 										</Point>
@@ -185,7 +185,7 @@
 											<SegmentShape>Log3</SegmentShape>
 										</Point>
 										<Point>
-											<XPos>3000</XPos>
+											<XPos>200000</XPos>
 											<YPos>18.27957</YPos>
 											<Flags>37</Flags>
 										</Point>

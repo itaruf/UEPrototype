@@ -1,0 +1,45 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "SchemaVersion": "12",
+  "SoundbankVersion": "140",
+  "RootPaths": {
+   "ProjectRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\",
+   "SourceFilesRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\.cache\\Mac\\",
+   "SoundBanksRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Mac\\",
+   "ExternalSourcesInputFile": "",
+   "ExternalSourcesOutputRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Mac"
+  },
+  "SoundBanks": [
+   {
+    "Id": "420408117",
+    "GUID": "{190EEB35-EB35-1B35-3535-353535353535}",
+    "Language": "SFX",
+    "Hash": "2973233654",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\SB_1FD8540ECB1C439C9499E88298BDD20D",
+    "ShortName": "SB_1FD8540ECB1C439C9499E88298BDD20D",
+    "Path": "SB_1FD8540ECB1C439C9499E88298BDD20D.bnk",
+    "IncludedEvents": [
+     {
+      "Id": "1336299576",
+      "Name": "UI_PauseMenu_Select",
+      "ObjectPath": "\\Events\\Default Work Unit\\Alexis\\UI\\UI_PauseMenu_Select",
+      "GUID": "{1FD8540E-CB1C-439C-9499-E88298BDD20D}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.566667",
+      "DurationMax": "0.566667",
+      "ExcludedMemoryFiles": [
+       {
+        "Id": "402713652",
+        "Language": "SFX",
+        "ShortName": "UI_PauseMenu_Select.wav",
+        "Path": "SFX\\UI_PauseMenu_Select_10C4C929.wem"
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}
