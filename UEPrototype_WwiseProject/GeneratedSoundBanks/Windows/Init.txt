@@ -28,6 +28,26 @@ Custom State	ID	Name	State Group	Owner		Notes
 	834661551	Dead	Player	\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\MC		
 	946076613	Dead	Player	\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\AMB		
 
+State Group	ID	Name			Wwise Object Path	Notes
+	1069431850	Player			\Default Work Unit\Alexis\Player	
+	3823289177	Level0_state			\Default Work Unit\Alexis\Level0_state	
+
+State	ID	Name	State Group			Notes
+	655265632	Alive	Player			
+	748895195	None	Player			
+	2044049779	Dead	Player			
+	198183322	Level1_Island	Level0_state			
+	748895195	None	Level0_state			
+	793378327	Level1_Tuto	Level0_state			
+	1268370483	Level2_Temple	Level0_state			
+	3269752065	Level3_Tube	Level0_state			
+
+Custom State	ID	Name	State Group	Owner		Notes
+	403346557	Dead	Player	\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX		
+	704198304	Dead	Player	\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\MUSIC		
+	834661551	Dead	Player	\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\MC		
+	946076613	Dead	Player	\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\AMB		
+
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	2918011349	MasterVolume			\Default Work Unit\Alexis\MasterVolume	
 
