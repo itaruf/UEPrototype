@@ -92,6 +92,7 @@
 						</AuxBus>
 						<AuxBus Name="RVB_Temple" ID="{153304D8-442C-4DEE-8DC4-95365AC34075}">
 							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
 								<Property Name="BusVolume" Type="Real64">
 									<ValueList>
 										<Value>-5</Value>
@@ -148,6 +149,11 @@
 						</AuxBus>
 						<Bus Name="MUSIC" ID="{92D4BD93-56C0-4EE8-92B3-800C27F369E2}">
 							<PropertyList>
+								<Property Name="BusVolume" Type="Real64">
+									<ValueList>
+										<Value>5</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Color" Type="int16" Value="26"/>
 								<Property Name="OverrideColor" Type="bool" Value="True"/>
 							</PropertyList>
