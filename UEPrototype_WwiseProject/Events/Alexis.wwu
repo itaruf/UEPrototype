@@ -168,6 +168,13 @@
 										</Reference>
 									</ReferenceList>
 								</Action>
+								<Action Name="" ID="{FD54BAE4-28AF-4844-A70B-A7319BCA21D7}" ShortID="433054377">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_Glide_Wind_LP" ID="{C051383B-7E5A-4990-A18C-0FAD97380A88}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 							</ChildrenList>
 						</Event>
 						<Event Name="SFX_Freefall_Stop" ID="{413B43DB-F8ED-42C7-84A7-FCFA1FB5D0E3}">
@@ -208,6 +215,7 @@
 								<Action Name="" ID="{0641CAEC-B294-4546-AD07-339B5F5AB2EF}" ShortID="722799421">
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeTime" Type="Real64" Value="0.3"/>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
@@ -219,6 +227,17 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="SFX_Freefall_Stop" ID="{37CB0EE1-C490-44AC-8271-FE307FF3ED90}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{20C8A282-F0EB-4DE0-9ECF-4DA55F8FC362}" ShortID="620792950">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeTime" Type="Real64" Value="0.3"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_Glide_Wind_LP" ID="{C051383B-7E5A-4990-A18C-0FAD97380A88}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
