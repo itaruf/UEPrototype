@@ -362,17 +362,6 @@
 								</Action>
 							</ChildrenList>
 						</Event>
-						<Event Name="MC_FT_Wet" ID="{D7FBE7C3-0C36-4EB3-AA8F-DA518BB8EBD9}">
-							<ChildrenList>
-								<Action Name="" ID="{5FFB328E-FA13-4E18-A5A5-8FD09E7D7074}" ShortID="245898">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="MC_FT_WetStep" ID="{9FD445B9-B973-4183-BCEF-ACBBF2A569CF}" WorkUnitID="{A90EA6B0-FD8B-46D3-9B35-71A92B2A6346}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
 						<Event Name="MC_FT_Jump" ID="{09415A2F-7044-41AF-A061-2D0E199B46F4}">
 							<ChildrenList>
 								<Action Name="" ID="{55CD0A36-219D-45DA-AB62-BE2D8F5FE8DC}" ShortID="952848522">
