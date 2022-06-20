@@ -5,18 +5,18 @@
   "SchemaVersion": "12",
   "SoundbankVersion": "140",
   "RootPaths": {
-   "ProjectRoot": "D:\\Cours\\Downfall Project\\UEPrototype\\UEPrototype_WwiseProject\\",
-   "SourceFilesRoot": "D:\\Cours\\Downfall Project\\UEPrototype\\UEPrototype_WwiseProject\\.cache\\Mac\\",
-   "SoundBanksRoot": "D:\\Cours\\Downfall Project\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Mac\\",
+   "ProjectRoot": "C:\\2021 Formation\\Projet\\IIM4 - Yin Yang\\01. Projet\\UEPrototype\\UEPrototype_WwiseProject\\",
+   "SourceFilesRoot": "C:\\2021 Formation\\Projet\\IIM4 - Yin Yang\\01. Projet\\UEPrototype\\UEPrototype_WwiseProject\\.cache\\Mac\\",
+   "SoundBanksRoot": "C:\\2021 Formation\\Projet\\IIM4 - Yin Yang\\01. Projet\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Mac\\",
    "ExternalSourcesInputFile": "",
-   "ExternalSourcesOutputRoot": "D:\\Cours\\Downfall Project\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Mac"
+   "ExternalSourcesOutputRoot": "C:\\2021 Formation\\Projet\\IIM4 - Yin Yang\\01. Projet\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Mac"
   },
   "SoundBanks": [
    {
     "Id": "3976072347",
     "GUID": "{ECFE0C9B-0C9B-1C9B-9B9B-9B9B9B9B9B9B}",
     "Language": "SFX",
-    "Hash": "250534353",
+    "Hash": "1012575878",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\SB_03ADCF4DB9524408B64EA3E96A842B36",
     "ShortName": "SB_03ADCF4DB9524408B64EA3E96A842B36",
     "Path": "SB_03ADCF4DB9524408B64EA3E96A842B36.bnk",

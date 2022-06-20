@@ -1,0 +1,6 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1959968033	SP_WaterFlowSmall			\Default Work Unit\Jules\AMB\SP_WaterFlowSmall	
+
+Streamed Audio	ID	Name	Audio source file	Generated audio file	Wwise Object Path	Notes
+	655677380	AMB_SP_WaterFlowSmall_ST_LP	C:\2021 Formation\Projet\IIM4 - Yin Yang\01. Projet\UEPrototype\UEPrototype_WwiseProject\.cache\Mac\SFX\AMB_SP_WaterFlowSmall_ST_LP_D79FB2B7.wem	655677380.wem	\Actor-Mixer Hierarchy\Default Work Unit\Jules\Master\AMB\SP\AMB_SP_WaterFlowSmall_ST_LP	
+

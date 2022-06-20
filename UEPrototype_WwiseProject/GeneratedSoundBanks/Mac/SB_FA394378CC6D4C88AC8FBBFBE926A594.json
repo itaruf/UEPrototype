@@ -1,0 +1,26 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "SchemaVersion": "12",
+  "SoundbankVersion": "140",
+  "RootPaths": {
+   "ProjectRoot": "C:\\2021 Formation\\Projet\\IIM4 - Yin Yang\\01. Projet\\UEPrototype\\UEPrototype_WwiseProject\\",
+   "SourceFilesRoot": "C:\\2021 Formation\\Projet\\IIM4 - Yin Yang\\01. Projet\\UEPrototype\\UEPrototype_WwiseProject\\.cache\\Mac\\",
+   "SoundBanksRoot": "C:\\2021 Formation\\Projet\\IIM4 - Yin Yang\\01. Projet\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Mac\\",
+   "ExternalSourcesInputFile": "",
+   "ExternalSourcesOutputRoot": "C:\\2021 Formation\\Projet\\IIM4 - Yin Yang\\01. Projet\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Mac"
+  },
+  "SoundBanks": [
+   {
+    "Id": "813890734",
+    "GUID": "{3082FCAE-FCAE-1CAE-AEAE-AEAEAEAEAEAE}",
+    "Language": "SFX",
+    "Hash": "717651023",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\SB_FA394378CC6D4C88AC8FBBFBE926A594",
+    "ShortName": "SB_FA394378CC6D4C88AC8FBBFBE926A594",
+    "Path": "SB_FA394378CC6D4C88AC8FBBFBE926A594.bnk"
+   }
+  ]
+ }
+}

@@ -5,18 +5,18 @@
   "SchemaVersion": "12",
   "SoundbankVersion": "140",
   "RootPaths": {
-   "ProjectRoot": "D:\\Cours\\Downfall Project\\UEPrototype\\UEPrototype_WwiseProject\\",
-   "SourceFilesRoot": "D:\\Cours\\Downfall Project\\UEPrototype\\UEPrototype_WwiseProject\\.cache\\Mac\\",
-   "SoundBanksRoot": "D:\\Cours\\Downfall Project\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Mac\\",
+   "ProjectRoot": "C:\\2021 Formation\\Projet\\IIM4 - Yin Yang\\01. Projet\\UEPrototype\\UEPrototype_WwiseProject\\",
+   "SourceFilesRoot": "C:\\2021 Formation\\Projet\\IIM4 - Yin Yang\\01. Projet\\UEPrototype\\UEPrototype_WwiseProject\\.cache\\Mac\\",
+   "SoundBanksRoot": "C:\\2021 Formation\\Projet\\IIM4 - Yin Yang\\01. Projet\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Mac\\",
    "ExternalSourcesInputFile": "",
-   "ExternalSourcesOutputRoot": "D:\\Cours\\Downfall Project\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Mac"
+   "ExternalSourcesOutputRoot": "C:\\2021 Formation\\Projet\\IIM4 - Yin Yang\\01. Projet\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Mac"
   },
   "SoundBanks": [
    {
     "Id": "1581026778",
     "GUID": "{5E3C8DDA-8DDA-1DDA-DADA-DADADADADADA}",
     "Language": "SFX",
-    "Hash": "3114365208",
+    "Hash": "2727164092",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\SB_49FCB4E9F4D94E9CA9D9B1B632F3F221",
     "ShortName": "SB_49FCB4E9F4D94E9CA9D9B1B632F3F221",
     "Path": "SB_49FCB4E9F4D94E9CA9D9B1B632F3F221.bnk",
@@ -26,7 +26,7 @@
       "Name": "SP_WaterFallBig",
       "ObjectPath": "\\Events\\Default Work Unit\\Jules\\AMB\\SP_WaterFallBig",
       "GUID": "{49FCB4E9-F4D9-4E9C-A9D9-B1B632F3F221}",
-      "MaxAttenuation": "30000.",
+      "MaxAttenuation": "20000.",
       "DurationType": "Infinite",
       "ReferencedStreamedFiles": [
        {

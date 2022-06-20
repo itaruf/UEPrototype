@@ -258,7 +258,7 @@
 												<Property Name="OverrideVirtualVoice" Type="bool" Value="True"/>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-18</Value>
+														<Value>-4</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -2182,6 +2182,11 @@
 																<Value>True</Value>
 															</ValueList>
 														</Property>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-7</Value>
+															</ValueList>
+														</Property>
 													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Conversion">
@@ -2211,6 +2216,16 @@
 														<Property Name="IsStreamingEnabled" Type="bool">
 															<ValueList>
 																<Value>True</Value>
+															</ValueList>
+														</Property>
+														<Property Name="Lowpass" Type="int16">
+															<ValueList>
+																<Value>24</Value>
+															</ValueList>
+														</Property>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-13</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -2244,6 +2259,11 @@
 																<Value>True</Value>
 															</ValueList>
 														</Property>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-10</Value>
+															</ValueList>
+														</Property>
 													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Conversion">
@@ -2269,6 +2289,77 @@
 												</Sound>
 											</ChildrenList>
 											<ObjectLists/>
+											<BlendTrackList>
+												<BlendTrack Name="VegetationProportion" ID="{D32FD289-4C97-4AF4-B641-15FFBB240EF0}" ShortID="566893986">
+													<PropertyList>
+														<Property Name="EnableCrossFading" Type="bool" Value="True"/>
+														<Property Name="Volume" Type="Real64">
+															<RTPCList>
+																<RTPC Name="" ID="{BED5BD72-9461-44B0-A53F-216604230739}" ShortID="384004727">
+																	<ReferenceList>
+																		<Reference Name="ControlInput">
+																			<ObjectRef Name="RTPC_Vegetation" ID="{AE9E92CD-9763-4B65-9735-3567D41C582E}" WorkUnitID="{B33E0AE4-683A-4118-98EA-BBEFCBF7E5A5}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<Curve Name="" ID="{3BB53D91-5EF7-42EC-90B6-7CC195002BAB}">
+																		<PropertyList>
+																			<Property Name="Flags" Type="int32" Value="3"/>
+																		</PropertyList>
+																		<PointList>
+																			<Point>
+																				<XPos>0</XPos>
+																				<YPos>-3.36245</YPos>
+																				<Flags>5</Flags>
+																				<SegmentShape>Exp1</SegmentShape>
+																			</Point>
+																			<Point>
+																				<XPos>15</XPos>
+																				<YPos>0</YPos>
+																				<Flags>37</Flags>
+																			</Point>
+																		</PointList>
+																	</Curve>
+																</RTPC>
+															</RTPCList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="LayerCrossFadeControlInput">
+															<ObjectRef Name="RTPC_Vegetation" ID="{AE9E92CD-9763-4B65-9735-3567D41C582E}" WorkUnitID="{B33E0AE4-683A-4118-98EA-BBEFCBF7E5A5}"/>
+														</Reference>
+													</ReferenceList>
+													<BlendTrackAssocList>
+														<BlendTrackAssoc>
+															<ItemRef Name="AMB_VegetationLow_ST_LP" ID="{C6C98B30-5B8F-429C-B1D7-2E6A310171F7}"/>
+															<CrossfadingInfo>
+																<LeftEdgePos>0</LeftEdgePos>
+																<LeftFadingMode>Manual</LeftFadingMode>
+																<LeftFadingPos>1</LeftFadingPos>
+																<RightEdgePos>6</RightEdgePos>
+																<RightFadingMode>Automatic</RightFadingMode>
+															</CrossfadingInfo>
+														</BlendTrackAssoc>
+														<BlendTrackAssoc>
+															<ItemRef Name="AMB_VegetationMed_ST_LP" ID="{EA60B5FD-5050-4AE7-AAE7-B230A0857E92}"/>
+															<CrossfadingInfo>
+																<LeftEdgePos>1.51480750246792</LeftEdgePos>
+																<LeftFadingMode>Automatic</LeftFadingMode>
+																<RightEdgePos>12.0148075024679</RightEdgePos>
+																<RightFadingMode>Automatic</RightFadingMode>
+															</CrossfadingInfo>
+														</BlendTrackAssoc>
+														<BlendTrackAssoc>
+															<ItemRef Name="AMB_VegetationHigh_ST_LP" ID="{778DE908-444E-47BA-A284-5FE560CB0E8A}"/>
+															<CrossfadingInfo>
+																<LeftEdgePos>7.5</LeftEdgePos>
+																<LeftFadingMode>Automatic</LeftFadingMode>
+																<RightEdgePos>15</RightEdgePos>
+																<RightFadingMode>None</RightFadingMode>
+															</CrossfadingInfo>
+														</BlendTrackAssoc>
+													</BlendTrackAssocList>
+												</BlendTrack>
+											</BlendTrackList>
 										</BlendContainer>
 									</ChildrenList>
 									<ObjectLists/>
@@ -8708,13 +8799,6 @@
 											<ObjectLists/>
 										</RandomSequenceContainer>
 										<SwitchContainer Name="MC_FT_WetStep_Switch" ID="{DDA592E0-5DD3-4B01-B747-13A26FAB57BB}" ShortID="23140924">
-											<PropertyList>
-												<Property Name="Inclusion" Type="bool">
-													<ValueList>
-														<Value>False</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -8750,7 +8834,7 @@
 														<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 														<Property Name="Volume" Type="Real64">
 															<ValueList>
-																<Value>-13</Value>
+																<Value>-25</Value>
 															</ValueList>
 															<ModifierList>
 																<ModifierInfo>

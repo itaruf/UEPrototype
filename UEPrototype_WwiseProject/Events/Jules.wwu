@@ -333,6 +333,17 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="ST_Vegetation" ID="{0CE58AE0-148A-4C0E-92C7-DD9C20E06E29}">
+							<ChildrenList>
+								<Action Name="" ID="{2E446F95-2FB0-4C9A-A8D5-A1699BBF8F0D}" ShortID="1039486779">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="AMB_Vegetation_Blend" ID="{39A54498-F4FA-4A9B-9350-5E20205B9B2A}" WorkUnitID="{A90EA6B0-FD8B-46D3-9B35-71A92B2A6346}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="MC" ID="{0FAE6D46-D663-41A9-8E75-E2ACF42A16B3}" ShortID="517842377">
@@ -343,6 +354,13 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="MC_FT_SpeedSwitch" ID="{2ED4D6B0-7770-4A7E-878D-EEC6F24E1278}" WorkUnitID="{A90EA6B0-FD8B-46D3-9B35-71A92B2A6346}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{24871226-A4BE-4F8C-A3F6-CDFFC1F08F1F}" ShortID="959084112">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MC_FT_WetStep_Switch" ID="{DDA592E0-5DD3-4B01-B747-13A26FAB57BB}" WorkUnitID="{A90EA6B0-FD8B-46D3-9B35-71A92B2A6346}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
