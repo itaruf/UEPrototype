@@ -45,6 +45,40 @@
 						</Curve>
 					</SwitchOnRTPC>
 				</SwitchGroup>
+				<SwitchGroup Name="WetStep" ID="{FCBF479E-1C76-439B-AF07-200D06DE2FD8}">
+					<PropertyList>
+						<Property Name="UseGameParameter" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Switch Name="Wet" ID="{2130E39D-D67A-4F0C-98C4-E549921C1B82}"/>
+						<Switch Name="NotWet" ID="{1256BF53-F28D-4EEE-9BA9-C252748C38BD}"/>
+					</ChildrenList>
+					<SwitchOnRTPC>
+						<GameParameterRef Name="RTPC_WetStep" ID="{08ED85F7-768B-4B4A-89B4-4A408112FD50}"/>
+						<Curve Name="" ID="{597DCF12-1FDE-4437-9AB1-4F44921574DA}">
+							<PropertyList>
+								<Property Name="Flags" Type="int32" Value="65537"/>
+							</PropertyList>
+							<PointList>
+								<Point>
+									<XPos>0</XPos>
+									<YPos>2</YPos>
+									<Flags>5</Flags>
+								</Point>
+								<Point>
+									<XPos>0.925</XPos>
+									<YPos>1</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>5</XPos>
+									<YPos>1</YPos>
+									<Flags>37</Flags>
+								</Point>
+							</PointList>
+						</Curve>
+					</SwitchOnRTPC>
+				</SwitchGroup>
 			</ChildrenList>
 		</WorkUnit>
 	</Switches>
