@@ -36,6 +36,49 @@
 										</Reference>
 									</ReferenceList>
 								</Action>
+								<Action Name="" ID="{E8EC07D2-89D3-4425-A3FF-AAB0305676C4}" ShortID="1023055346">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeTime" Type="Real64" Value="0.3"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_Glide_Magic_LP" ID="{BD902CBD-D098-40E8-B9FF-37FEA5A4B0E3}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{BA4F0527-365B-4CAA-9482-E85B93E3801B}" ShortID="143209807">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeTime" Type="Real64" Value="0.3"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_Glide_Wind_LP" ID="{C051383B-7E5A-4990-A18C-0FAD97380A88}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{A3A9414D-1F0F-49E9-98A9-B8F5E69ACB1F}" ShortID="968888022">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="22"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Dead" ID="{CB238342-84ED-4395-815B-912C29F7CDBB}" WorkUnitID="{C74913D5-01F3-42A1-989E-6FA374259590}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{C02CB376-01EA-43EF-AAB8-8E1D9036C50D}" ShortID="352549850">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="22"/>
+										<Property Name="Delay" Type="Real64" Value="2.5"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Alive" ID="{E8CC3D28-0F71-43A1-8071-556C82C64DB2}" WorkUnitID="{C74913D5-01F3-42A1-989E-6FA374259590}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 							</ChildrenList>
 						</Event>
 						<Event Name="MC_Death_FallingVoid" ID="{A7B12DBC-766B-4222-9459-8A33A879EB5D}">
@@ -44,6 +87,47 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="VO_MC_FallingVoid" ID="{199EF73C-301B-466F-B26C-662C87535C3D}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{846E2E3D-1076-496A-818A-BCB6218B6D81}" ShortID="799513508">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_Glide_Magic_LP" ID="{BD902CBD-D098-40E8-B9FF-37FEA5A4B0E3}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{3133FF9F-00F4-44E0-9321-F76CEFC993AF}" ShortID="246810867">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_Glide_Wind_LP" ID="{C051383B-7E5A-4990-A18C-0FAD97380A88}" WorkUnitID="{E090A960-3367-4E05-9383-0105951ED460}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{53AE3495-E550-4C7B-9343-A2CDE8521916}" ShortID="883831105">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="22"/>
+										<Property Name="Delay" Type="Real64" Value="2.5"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Alive" ID="{E8CC3D28-0F71-43A1-8071-556C82C64DB2}" WorkUnitID="{C74913D5-01F3-42A1-989E-6FA374259590}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{01C0B933-5AF4-4291-9CC8-3CE0436B0429}" ShortID="757942508">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="22"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Dead" ID="{CB238342-84ED-4395-815B-912C29F7CDBB}" WorkUnitID="{C74913D5-01F3-42A1-989E-6FA374259590}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -388,12 +472,41 @@
 						</Event>
 					</ChildrenList>
 				</Folder>
-				<Event Name="MUS_Level0" ID="{23188369-16F1-4F36-9CD7-E7380DB3D94A}">
+				<Event Name="MUS_Level0_Start" ID="{23188369-16F1-4F36-9CD7-E7380DB3D94A}">
 					<ChildrenList>
 						<Action Name="" ID="{45EBDC9B-D95A-45CD-8DB3-CA6671F76DF3}" ShortID="810005052">
+							<PropertyList>
+								<Property Name="FadeTime" Type="Real64" Value="0.3"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Level0" ID="{BD4B3FC6-6510-4467-BF8D-B396EFFF9A28}" WorkUnitID="{A1C2F120-70F5-4932-9C1D-3546DE478B0F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="MUS_MenuStart_Play" ID="{17338B33-3C8F-4EA8-981E-4395F7F6937E}">
+					<ChildrenList>
+						<Action Name="" ID="{51DCD01B-7F33-4297-A1AD-D156A00C8DA7}" ShortID="1801574">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MenuStart" ID="{254A522A-0EBD-4DAF-A9BB-BB4AFA0E34A9}" WorkUnitID="{A1C2F120-70F5-4932-9C1D-3546DE478B0F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="MUS_MenuStart_Stop" ID="{662B1549-5E63-4C2E-9A5F-E7CF088798FE}">
+					<ChildrenList>
+						<Action Name="" ID="{7DA2B5E6-6B57-4BCD-9D15-1AC7DF040AA8}" ShortID="233067480">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="FadeTime" Type="Real64" Value="0.3"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MenuStart" ID="{254A522A-0EBD-4DAF-A9BB-BB4AFA0E34A9}" WorkUnitID="{A1C2F120-70F5-4932-9C1D-3546DE478B0F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
