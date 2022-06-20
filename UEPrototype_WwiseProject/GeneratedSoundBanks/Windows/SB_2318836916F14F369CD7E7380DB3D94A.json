@@ -16,7 +16,7 @@
     "Id": "1969987367",
     "GUID": "{756B9F27-9F27-1F27-2727-272727272727}",
     "Language": "SFX",
-    "Hash": "526878986",
+    "Hash": "1396499014",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\SB_2318836916F14F369CD7E7380DB3D94A",
     "ShortName": "SB_2318836916F14F369CD7E7380DB3D94A",
     "Path": "SB_2318836916F14F369CD7E7380DB3D94A.bnk",
@@ -39,6 +39,12 @@
         "Language": "SFX",
         "ShortName": "UPM_GMS127_8_Treasure_Hunt_Instrumental_Quignon_1681549.wav",
         "Path": "SFX\\UPM_GMS127_8_Treasure_Hunt_Instrumental_Quignon_1681549_D79FB2B7.wem"
+       },
+       {
+        "Id": "674814560",
+        "Language": "SFX",
+        "ShortName": "musiqueDebutDeJeu2Loops-glued.wav",
+        "Path": "SFX\\musiqueDebutDeJeu2Loops-glued_D79FB2B7.wem"
        },
        {
         "Id": "711932613",
@@ -97,6 +103,14 @@
           "Id": "554629577"
          }
         ]
+       },
+       {
+        "SwitchValue": "{B3FF19C2-F492-4C90-BA33-3ABAE92F6B58}",
+        "Media": [
+         {
+          "Id": "674814560"
+         }
+        ]
        }
       ]
      }
@@ -137,6 +151,12 @@
         "Name": "Level1_Tuto",
         "ObjectPath": "\\States\\Default Work Unit\\Alexis\\Level0_state\\Level1_Tuto",
         "GUID": "{6C9B29B5-58DC-4C6A-8508-BA9473018BCD}"
+       },
+       {
+        "Id": "529726532",
+        "Name": "End",
+        "ObjectPath": "\\States\\Default Work Unit\\Alexis\\Level0_state\\End",
+        "GUID": "{B3FF19C2-F492-4C90-BA33-3ABAE92F6B58}"
        }
       ]
      }

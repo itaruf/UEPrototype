@@ -5,7 +5,7 @@ Game Parameter	ID	Name			Wwise Object Path	Notes
 	298772159	RTPC_Vegetation			\Default Work Unit\Jules\RTPC_Vegetation	
 
 Streamed Audio	ID	Name	Audio source file	Generated audio file	Wwise Object Path	Notes
-	55723591	AMB_VegetationHigh_ST_LP	C:\2021 Formation\Projet\IIM4 - Yin Yang\01. Projet\UEPrototype\UEPrototype_WwiseProject\.cache\Mac\SFX\AMB_VegetationHigh_ST_LP_D79FB2B7.wem	55723591.wem	\Actor-Mixer Hierarchy\Default Work Unit\Jules\Master\AMB\ST\AMB_Vegetation_Blend\AMB_VegetationHigh_ST_LP	
-	341514032	AMB_VegetationMed_ST_LP	C:\2021 Formation\Projet\IIM4 - Yin Yang\01. Projet\UEPrototype\UEPrototype_WwiseProject\.cache\Mac\SFX\AMB_VegetationMed_ST_LP_D79FB2B7.wem	341514032.wem	\Actor-Mixer Hierarchy\Default Work Unit\Jules\Master\AMB\ST\AMB_Vegetation_Blend\AMB_VegetationMed_ST_LP	
-	485390150	AMB_VegetationLow_ST_LP	C:\2021 Formation\Projet\IIM4 - Yin Yang\01. Projet\UEPrototype\UEPrototype_WwiseProject\.cache\Mac\SFX\AMB_VegetationLow_ST_LP_D79FB2B7.wem	485390150.wem	\Actor-Mixer Hierarchy\Default Work Unit\Jules\Master\AMB\ST\AMB_Vegetation_Blend\AMB_VegetationLow_ST_LP	
+	55723591	AMB_VegetationHigh_ST_LP	D:\Sessions Unreal\Git\UEPrototype\UEPrototype_WwiseProject\.cache\Mac\SFX\AMB_VegetationHigh_ST_LP_D79FB2B7.wem	55723591.wem	\Actor-Mixer Hierarchy\Default Work Unit\Jules\Master\AMB\ST\AMB_Vegetation_Blend\AMB_VegetationHigh_ST_LP	
+	341514032	AMB_VegetationMed_ST_LP	D:\Sessions Unreal\Git\UEPrototype\UEPrototype_WwiseProject\.cache\Mac\SFX\AMB_VegetationMed_ST_LP_D79FB2B7.wem	341514032.wem	\Actor-Mixer Hierarchy\Default Work Unit\Jules\Master\AMB\ST\AMB_Vegetation_Blend\AMB_VegetationMed_ST_LP	
+	485390150	AMB_VegetationLow_ST_LP	D:\Sessions Unreal\Git\UEPrototype\UEPrototype_WwiseProject\.cache\Mac\SFX\AMB_VegetationLow_ST_LP_D79FB2B7.wem	485390150.wem	\Actor-Mixer Hierarchy\Default Work Unit\Jules\Master\AMB\ST\AMB_Vegetation_Blend\AMB_VegetationLow_ST_LP	
 
