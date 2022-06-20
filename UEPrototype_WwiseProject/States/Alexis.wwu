@@ -10,6 +10,7 @@
 						<State Name="Level2_Temple" ID="{EADA8553-28C8-474C-9B89-43EA00336368}"/>
 						<State Name="Level3_Tube" ID="{F2919E44-FF34-486E-B6FF-609474A6E1CB}"/>
 						<State Name="Level1_Tuto" ID="{6C9B29B5-58DC-4C6A-8508-BA9473018BCD}"/>
+						<State Name="End" ID="{B3FF19C2-F492-4C90-BA33-3ABAE92F6B58}"/>
 					</ChildrenList>
 				</StateGroup>
 				<StateGroup Name="Player" ID="{A35C2FA7-3FB8-4308-B646-C70734A65B5B}">

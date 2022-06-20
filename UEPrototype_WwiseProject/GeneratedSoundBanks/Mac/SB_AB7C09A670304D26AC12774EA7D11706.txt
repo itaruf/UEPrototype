@@ -2,5 +2,5 @@ Event	ID	Name			Wwise Object Path	Notes
 	251990468	SP_LavaPurpleSmall			\Default Work Unit\Jules\AMB\SP_LavaPurpleSmall	
 
 Streamed Audio	ID	Name	Audio source file	Generated audio file	Wwise Object Path	Notes
-	1000175725	AMB_SP_LavaPurpleSmall_LP	C:\2021 Formation\Projet\IIM4 - Yin Yang\01. Projet\UEPrototype\UEPrototype_WwiseProject\.cache\Mac\SFX\AMB_SP_PurpleLavaSmall_LP_D79FB2B7.wem	1000175725.wem	\Actor-Mixer Hierarchy\Default Work Unit\Jules\Master\AMB\SP\AMB_SP_LavaPurpleSmall_LP	
+	1000175725	AMB_SP_LavaPurpleSmall_LP	D:\Sessions Unreal\Git\UEPrototype\UEPrototype_WwiseProject\.cache\Mac\SFX\AMB_SP_PurpleLavaSmall_LP_D79FB2B7.wem	1000175725.wem	\Actor-Mixer Hierarchy\Default Work Unit\Jules\Master\AMB\SP\AMB_SP_LavaPurpleSmall_LP	
 

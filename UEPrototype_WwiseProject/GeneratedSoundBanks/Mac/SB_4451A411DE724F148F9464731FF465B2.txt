@@ -2,5 +2,5 @@ Event	ID	Name			Wwise Object Path	Notes
 	729786298	Play_AMB_Bed_lvl1			\Default Work Unit\Alexis\AMB\Play_AMB_Bed_lvl1	
 
 Streamed Audio	ID	Name	Audio source file	Generated audio file	Wwise Object Path	Notes
-	876070072	AMB_Bed_lvl1_LP	C:\2021 Formation\Projet\IIM4 - Yin Yang\01. Projet\UEPrototype\UEPrototype_WwiseProject\.cache\Mac\SFX\AMB_Bed_lvl1_LP_D79FB2B7.wem	876070072.wem	\Actor-Mixer Hierarchy\Default Work Unit\Alexis\Master\AMB\AMB_Bed_lvl1_LP	
+	876070072	AMB_Bed_lvl1_LP	D:\Sessions Unreal\Git\UEPrototype\UEPrototype_WwiseProject\.cache\Mac\SFX\AMB_Bed_lvl1_LP_D79FB2B7.wem	876070072.wem	\Actor-Mixer Hierarchy\Default Work Unit\Alexis\Master\AMB\AMB_Bed_lvl1_LP	
 

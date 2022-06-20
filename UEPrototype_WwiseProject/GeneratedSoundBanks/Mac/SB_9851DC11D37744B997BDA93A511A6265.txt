@@ -2,7 +2,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	228188507	SP_FireStatue			\Default Work Unit\Jules\AMB\SP_FireStatue	
 
 Streamed Audio	ID	Name	Audio source file	Generated audio file	Wwise Object Path	Notes
-	23140063	AMB_SP_FireStatue_01	C:\2021 Formation\Projet\IIM4 - Yin Yang\01. Projet\UEPrototype\UEPrototype_WwiseProject\.cache\Mac\SFX\AMB_SP_FireStatue_01_D79FB2B7.wem	23140063.wem	\Actor-Mixer Hierarchy\Default Work Unit\Jules\Master\AMB\SP\AMB_SP_FireStatue\AMB_SP_FireStatue_01	
-	419866259	AMB_SP_FireStatue_02	C:\2021 Formation\Projet\IIM4 - Yin Yang\01. Projet\UEPrototype\UEPrototype_WwiseProject\.cache\Mac\SFX\AMB_SP_FireStatue_02_D79FB2B7.wem	419866259.wem	\Actor-Mixer Hierarchy\Default Work Unit\Jules\Master\AMB\SP\AMB_SP_FireStatue\AMB_SP_FireStatue_02	
-	887923690	AMB_SP_FireStatue_03	C:\2021 Formation\Projet\IIM4 - Yin Yang\01. Projet\UEPrototype\UEPrototype_WwiseProject\.cache\Mac\SFX\AMB_SP_FireStatue_03_D79FB2B7.wem	887923690.wem	\Actor-Mixer Hierarchy\Default Work Unit\Jules\Master\AMB\SP\AMB_SP_FireStatue\AMB_SP_FireStatue_03	
+	23140063	AMB_SP_FireStatue_01	D:\Sessions Unreal\Git\UEPrototype\UEPrototype_WwiseProject\.cache\Mac\SFX\AMB_SP_FireStatue_01_D79FB2B7.wem	23140063.wem	\Actor-Mixer Hierarchy\Default Work Unit\Jules\Master\AMB\SP\AMB_SP_FireStatue\AMB_SP_FireStatue_01	
+	419866259	AMB_SP_FireStatue_02	D:\Sessions Unreal\Git\UEPrototype\UEPrototype_WwiseProject\.cache\Mac\SFX\AMB_SP_FireStatue_02_D79FB2B7.wem	419866259.wem	\Actor-Mixer Hierarchy\Default Work Unit\Jules\Master\AMB\SP\AMB_SP_FireStatue\AMB_SP_FireStatue_02	
+	887923690	AMB_SP_FireStatue_03	D:\Sessions Unreal\Git\UEPrototype\UEPrototype_WwiseProject\.cache\Mac\SFX\AMB_SP_FireStatue_03_D79FB2B7.wem	887923690.wem	\Actor-Mixer Hierarchy\Default Work Unit\Jules\Master\AMB\SP\AMB_SP_FireStatue\AMB_SP_FireStatue_03	
 
