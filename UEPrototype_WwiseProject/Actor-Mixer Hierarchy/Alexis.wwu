@@ -2236,6 +2236,107 @@
 										<ActiveSource Name="SFX_Checkpoint" ID="{D226DEE5-A8D1-4B40-9A46-5DEE67C59228}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
+								<Folder Name="BigDoor" ID="{CD3FC48C-919E-40DC-8E79-8E7F7CD40819}" ShortID="144718140">
+									<ChildrenList>
+										<ActorMixer Name="BigDoor_AM" ID="{3E010909-89A5-4E19-829A-AECAAE3BD938}" ShortID="425158857">
+											<PropertyList>
+												<Property Name="3DSpatialization" Type="int16" Value="1"/>
+												<Property Name="OverridePositioning" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="ATT_BigDoor" ID="{8AF7D0BE-C551-4433-9851-051DC1332082}" WorkUnitID="{A2E70B8F-5F4D-4AA3-9EC7-CD0BEFA74353}"/>
+												</Reference>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="SFX_BigDoor_End" ID="{D47BD854-C861-48CF-B0B3-2C36718F37E6}" ShortID="114989789">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="SFX_BigDoor_End" ID="{39473C91-0176-4EC3-8880-76A6E7CF94D2}">
+															<Language>SFX</Language>
+															<AudioFile>SFX_BigDoor_End.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="441847143"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="SFX_BigDoor_End" ID="{39473C91-0176-4EC3-8880-76A6E7CF94D2}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="SFX_BigDoor_Sustain_LP" ID="{581F876C-E30B-4F2D-8FCE-7764D07332DB}" ShortID="186441917">
+													<PropertyList>
+														<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>6</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="SFX_BigDoor_Sustain_LP" ID="{CB40382E-82E4-4654-88EB-AFDA5E646EFC}">
+															<Language>SFX</Language>
+															<AudioFile>SFX_BigDoor_Sustain_LP.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="594541188"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="SFX_BigDoor_Sustain_LP" ID="{CB40382E-82E4-4654-88EB-AFDA5E646EFC}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="SFX_BigDoor_Start" ID="{33A8C2F5-DF5F-4B4F-88CD-45777D4B7597}" ShortID="828821737">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1B6F5921-F647-4065-8004-B5EFE7036339}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="SFX_BigDoor_Start" ID="{45F5DCEC-F9A9-41EA-8EB1-6A67358B68FD}">
+															<Language>SFX</Language>
+															<AudioFile>SFX_BigDoor_Start.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="975195804"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="SFX_BigDoor_Start" ID="{45F5DCEC-F9A9-41EA-8EB1-6A67358B68FD}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+											<ObjectLists/>
+										</ActorMixer>
+									</ChildrenList>
+								</Folder>
 							</ChildrenList>
 							<ObjectLists/>
 						</ActorMixer>

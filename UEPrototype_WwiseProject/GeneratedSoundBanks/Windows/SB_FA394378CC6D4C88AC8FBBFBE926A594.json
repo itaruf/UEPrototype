@@ -1,0 +1,26 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "12",
+  "SoundbankVersion": "140",
+  "RootPaths": {
+   "ProjectRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\",
+   "SourceFilesRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\.cache\\Windows\\",
+   "SoundBanksRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Windows\\",
+   "ExternalSourcesInputFile": "",
+   "ExternalSourcesOutputRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Windows"
+  },
+  "SoundBanks": [
+   {
+    "Id": "813890734",
+    "GUID": "{3082FCAE-FCAE-1CAE-AEAE-AEAEAEAEAEAE}",
+    "Language": "SFX",
+    "Hash": "717651023",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\SB_FA394378CC6D4C88AC8FBBFBE926A594",
+    "ShortName": "SB_FA394378CC6D4C88AC8FBBFBE926A594",
+    "Path": "SB_FA394378CC6D4C88AC8FBBFBE926A594.bnk"
+   }
+  ]
+ }
+}

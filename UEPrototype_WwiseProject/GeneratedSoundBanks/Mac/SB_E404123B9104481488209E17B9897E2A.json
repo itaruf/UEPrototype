@@ -1,0 +1,44 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "SchemaVersion": "12",
+  "SoundbankVersion": "140",
+  "RootPaths": {
+   "ProjectRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\",
+   "SourceFilesRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\.cache\\Mac\\",
+   "SoundBanksRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Mac\\",
+   "ExternalSourcesInputFile": "",
+   "ExternalSourcesOutputRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Mac"
+  },
+  "SoundBanks": [
+   {
+    "Id": "3298461764",
+    "GUID": "{C49A8844-8844-1844-4444-444444444444}",
+    "Language": "SFX",
+    "Hash": "1660040119",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\SB_E404123B9104481488209E17B9897E2A",
+    "ShortName": "SB_E404123B9104481488209E17B9897E2A",
+    "Path": "SB_E404123B9104481488209E17B9897E2A.bnk",
+    "IncludedEvents": [
+     {
+      "Id": "1959968033",
+      "Name": "SP_WaterFlowSmall",
+      "ObjectPath": "\\Events\\Default Work Unit\\Jules\\AMB\\SP_WaterFlowSmall",
+      "GUID": "{E404123B-9104-4814-8820-9E17B9897E2A}",
+      "MaxAttenuation": "5000.",
+      "DurationType": "Infinite",
+      "ReferencedStreamedFiles": [
+       {
+        "Id": "655677380",
+        "Language": "SFX",
+        "ShortName": "AMB_SP_WaterFlowSmall_ST_LP.wav",
+        "Path": "SFX\\AMB_SP_WaterFlowSmall_ST_LP_D79FB2B7.wem"
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

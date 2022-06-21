@@ -1,0 +1,45 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "12",
+  "SoundbankVersion": "140",
+  "RootPaths": {
+   "ProjectRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\",
+   "SourceFilesRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\.cache\\Windows\\",
+   "SoundBanksRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Windows\\",
+   "ExternalSourcesInputFile": "",
+   "ExternalSourcesOutputRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Windows"
+  },
+  "SoundBanks": [
+   {
+    "Id": "696821575",
+    "GUID": "{2988A747-A747-1747-4747-474747474747}",
+    "Language": "SFX",
+    "Hash": "3693415087",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\SB_B62EDCD4F2354434A9995C1ACF9FCEBA",
+    "ShortName": "SB_B62EDCD4F2354434A9995C1ACF9FCEBA",
+    "Path": "SB_B62EDCD4F2354434A9995C1ACF9FCEBA.bnk",
+    "IncludedEvents": [
+     {
+      "Id": "1027515006",
+      "Name": "UI_PauseMenu_Cancel",
+      "ObjectPath": "\\Events\\Default Work Unit\\Alexis\\UI\\UI_PauseMenu_Cancel",
+      "GUID": "{B62EDCD4-F235-4434-A999-5C1ACF9FCEBA}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.466667",
+      "DurationMax": "0.466667",
+      "ExcludedMemoryFiles": [
+       {
+        "Id": "231398081",
+        "Language": "SFX",
+        "ShortName": "UI_PauseMenu_Cancel.wav",
+        "Path": "SFX\\UI_PauseMenu_Cancel_10C4C929.wem"
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

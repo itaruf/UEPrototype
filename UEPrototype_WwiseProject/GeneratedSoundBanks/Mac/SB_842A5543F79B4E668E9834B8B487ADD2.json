@@ -5,18 +5,18 @@
   "SchemaVersion": "12",
   "SoundbankVersion": "140",
   "RootPaths": {
-   "ProjectRoot": "D:\\Cours\\Downfall Project\\UEPrototype\\UEPrototype_WwiseProject\\",
-   "SourceFilesRoot": "D:\\Cours\\Downfall Project\\UEPrototype\\UEPrototype_WwiseProject\\.cache\\Mac\\",
-   "SoundBanksRoot": "D:\\Cours\\Downfall Project\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Mac\\",
+   "ProjectRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\",
+   "SourceFilesRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\.cache\\Mac\\",
+   "SoundBanksRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Mac\\",
    "ExternalSourcesInputFile": "",
-   "ExternalSourcesOutputRoot": "D:\\Cours\\Downfall Project\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Mac"
+   "ExternalSourcesOutputRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Mac"
   },
   "SoundBanks": [
    {
     "Id": "3721089159",
     "GUID": "{DDCB5087-5087-1087-8787-878787878787}",
     "Language": "SFX",
-    "Hash": "210425421",
+    "Hash": "2755779965",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\SB_842A5543F79B4E668E9834B8B487ADD2",
     "ShortName": "SB_842A5543F79B4E668E9834B8B487ADD2",
     "Path": "SB_842A5543F79B4E668E9834B8B487ADD2.bnk",
@@ -35,10 +35,10 @@
         "Path": "SFX\\VO_MC_Glide_Start_02_10C4C929.wem"
        },
        {
-        "Id": "53437263",
+        "Id": "246842186",
         "Language": "SFX",
-        "ShortName": "SFX_Glide_Magic_LP.wav",
-        "Path": "SFX\\SFX_Glide_Magic_LP_D79FB2B7.wem"
+        "ShortName": "SFX_Glide_Magic_LP_V2.wav",
+        "Path": "SFX\\SFX_Glide_Magic_LP_V2_D79FB2B7.wem"
        },
        {
         "Id": "455645569",
@@ -69,6 +69,12 @@
         "Language": "SFX",
         "ShortName": "VO_MC_Glide_Start_03.wav",
         "Path": "SFX\\VO_MC_Glide_Start_03_10C4C929.wem"
+       },
+       {
+        "Id": "730614254",
+        "Language": "SFX",
+        "ShortName": "SFX_Glide_Wind_LP_V2.wav",
+        "Path": "SFX\\SFX_Glide_Wind_LP_V2_D79FB2B7.wem"
        },
        {
         "Id": "901264287",
