@@ -44,6 +44,8 @@
 						<Bus Name="AMB" ID="{CDAACF0F-C751-406F-9073-3F6016218135}">
 							<PropertyList>
 								<Property Name="Color" Type="int16" Value="15"/>
+								<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+								<Property Name="OverLimitBehavior" Type="int16" Value="1"/>
 								<Property Name="OverrideColor" Type="bool" Value="True"/>
 							</PropertyList>
 							<StateInfo>
