@@ -5,18 +5,18 @@
   "SchemaVersion": "12",
   "SoundbankVersion": "140",
   "RootPaths": {
-   "ProjectRoot": "D:\\Cours\\Downfall Project\\UEPrototype\\UEPrototype_WwiseProject\\",
-   "SourceFilesRoot": "D:\\Cours\\Downfall Project\\UEPrototype\\UEPrototype_WwiseProject\\.cache\\Windows\\",
-   "SoundBanksRoot": "D:\\Cours\\Downfall Project\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Windows\\",
+   "ProjectRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\",
+   "SourceFilesRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\.cache\\Windows\\",
+   "SoundBanksRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Windows\\",
    "ExternalSourcesInputFile": "",
-   "ExternalSourcesOutputRoot": "D:\\Cours\\Downfall Project\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Windows"
+   "ExternalSourcesOutputRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Windows"
   },
   "SoundBanks": [
    {
     "Id": "1115576461",
     "GUID": "{427E588D-588D-188D-8D8D-8D8D8D8D8D8D}",
     "Language": "SFX",
-    "Hash": "2514648554",
+    "Hash": "1505846867",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\SB_8E7E8E1FBC0549219475B21AC48B0931",
     "ShortName": "SB_8E7E8E1FBC0549219475B21AC48B0931",
     "Path": "SB_8E7E8E1FBC0549219475B21AC48B0931.bnk",
@@ -28,7 +28,7 @@
       "GUID": "{8E7E8E1F-BC05-4921-9475-B21AC48B0931}",
       "DurationType": "OneShot",
       "DurationMin": "0.713353",
-      "DurationMax": "0.913091",
+      "DurationMax": "1.",
       "ExcludedMemoryFiles": [
        {
         "Id": "4517507",
@@ -53,6 +53,12 @@
         "Language": "SFX",
         "ShortName": "MC_FOL_Run_03.wav",
         "Path": "SFX\\MC_FOL_Run_03_10C4C929.wem"
+       },
+       {
+        "Id": "35543373",
+        "Language": "SFX",
+        "ShortName": "MC_FT_WetStep_07.wav",
+        "Path": "SFX\\MC_FT_WetStep_07_10C4C929.wem"
        },
        {
         "Id": "46128115",
@@ -307,6 +313,18 @@
         "Path": "SFX\\MC_FT_Stone_Walk_01_10C4C929.wem"
        },
        {
+        "Id": "333675992",
+        "Language": "SFX",
+        "ShortName": "MC_FT_WetStep_02.wav",
+        "Path": "SFX\\MC_FT_WetStep_02_10C4C929.wem"
+       },
+       {
+        "Id": "339539667",
+        "Language": "SFX",
+        "ShortName": "MC_FT_WetStep_05.wav",
+        "Path": "SFX\\MC_FT_WetStep_05_10C4C929.wem"
+       },
+       {
         "Id": "354504937",
         "Language": "SFX",
         "ShortName": "MC_FT_Stone_Walk_09.wav",
@@ -323,6 +341,12 @@
         "Language": "SFX",
         "ShortName": "MC_FT_Dirt_Walk_10.wav",
         "Path": "SFX\\MC_FT_Dirt_Walk_10_10C4C929.wem"
+       },
+       {
+        "Id": "381775902",
+        "Language": "SFX",
+        "ShortName": "MC_FT_WetStep_10.wav",
+        "Path": "SFX\\MC_FT_WetStep_10_10C4C929.wem"
        },
        {
         "Id": "401986991",
@@ -511,6 +535,12 @@
         "Path": "SFX\\MC_FT_Stone_Run_17_10C4C929.wem"
        },
        {
+        "Id": "615955123",
+        "Language": "SFX",
+        "ShortName": "MC_FT_WetStep_04.wav",
+        "Path": "SFX\\MC_FT_WetStep_04_10C4C929.wem"
+       },
+       {
         "Id": "618374438",
         "Language": "SFX",
         "ShortName": "MC_FT_Grass_Run_01.wav",
@@ -667,6 +697,12 @@
         "Path": "SFX\\MC_FT_Dirt_Run_01_10C4C929.wem"
        },
        {
+        "Id": "807317424",
+        "Language": "SFX",
+        "ShortName": "MC_FT_WetStep_08.wav",
+        "Path": "SFX\\MC_FT_WetStep_08_10C4C929.wem"
+       },
+       {
         "Id": "809613772",
         "Language": "SFX",
         "ShortName": "MC_FT_Water_Run_14.wav",
@@ -781,10 +817,28 @@
         "Path": "SFX\\MC_FT_Dirt_Walk_05_10C4C929.wem"
        },
        {
+        "Id": "922683831",
+        "Language": "SFX",
+        "ShortName": "MC_FT_WetStep_01.wav",
+        "Path": "SFX\\MC_FT_WetStep_01_10C4C929.wem"
+       },
+       {
         "Id": "931105833",
         "Language": "SFX",
         "ShortName": "MC_FT_Stone_Run_15.wav",
         "Path": "SFX\\MC_FT_Stone_Run_15_10C4C929.wem"
+       },
+       {
+        "Id": "938684526",
+        "Language": "SFX",
+        "ShortName": "MC_FT_WetStep_03.wav",
+        "Path": "SFX\\MC_FT_WetStep_03_10C4C929.wem"
+       },
+       {
+        "Id": "950217733",
+        "Language": "SFX",
+        "ShortName": "MC_FT_WetStep_09.wav",
+        "Path": "SFX\\MC_FT_WetStep_09_10C4C929.wem"
        },
        {
         "Id": "968869659",
@@ -841,6 +895,12 @@
         "Path": "SFX\\MC_FT_Grass_Walk_13_10C4C929.wem"
        },
        {
+        "Id": "1055673814",
+        "Language": "SFX",
+        "ShortName": "MC_FT_WetStep_06.wav",
+        "Path": "SFX\\MC_FT_WetStep_06_10C4C929.wem"
+       },
+       {
         "Id": "1063480693",
         "Language": "SFX",
         "ShortName": "MC_FT_Dirt_Walk_06.wav",
@@ -859,7 +919,7 @@
         "Path": "SFX\\MC_FT_Water_Run_04_10C4C929.wem"
        }
       ],
-      "DefaultSwitchValue": "{D3358156-8287-45E1-B229-DE4AF5C38541}",
+      "DefaultSwitchValue": "{1256BF53-F28D-4EEE-9BA9-C252748C38BD}",
       "SwitchContainers": [
        {
         "SwitchValue": "{957E5E0D-5BDC-45B0-922E-A83CFC456697}",
@@ -1269,6 +1329,41 @@
           ]
          }
         ]
+       },
+       {
+        "SwitchValue": "{2130E39D-D67A-4F0C-98C4-E549921C1B82}",
+        "Media": [
+         {
+          "Id": "35543373"
+         },
+         {
+          "Id": "333675992"
+         },
+         {
+          "Id": "339539667"
+         },
+         {
+          "Id": "381775902"
+         },
+         {
+          "Id": "615955123"
+         },
+         {
+          "Id": "807317424"
+         },
+         {
+          "Id": "922683831"
+         },
+         {
+          "Id": "938684526"
+         },
+         {
+          "Id": "950217733"
+         },
+         {
+          "Id": "1055673814"
+         }
+        ]
        }
       ]
      }
@@ -1331,6 +1426,26 @@
         "Name": "Grass",
         "ObjectPath": "\\Switches\\Default Work Unit\\Jules\\GroundMaterial\\Grass",
         "GUID": "{AF0B5F0B-9DBE-4ADD-BBCA-EF6F1BD0E3B0}"
+       }
+      ]
+     },
+     {
+      "Id": "3713320225",
+      "Name": "WetStep",
+      "ObjectPath": "\\Switches\\Default Work Unit\\Jules\\WetStep",
+      "GUID": "{FCBF479E-1C76-439B-AF07-200D06DE2FD8}",
+      "Switches": [
+       {
+        "Id": "1181096339",
+        "Name": "Wet",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Jules\\WetStep\\Wet",
+        "GUID": "{2130E39D-D67A-4F0C-98C4-E549921C1B82}"
+       },
+       {
+        "Id": "2206795156",
+        "Name": "NotWet",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Jules\\WetStep\\NotWet",
+        "GUID": "{1256BF53-F28D-4EEE-9BA9-C252748C38BD}"
        }
       ]
      }

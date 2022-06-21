@@ -5,18 +5,18 @@
   "SchemaVersion": "12",
   "SoundbankVersion": "140",
   "RootPaths": {
-   "ProjectRoot": "D:\\Cours\\Downfall Project\\UEPrototype\\UEPrototype_WwiseProject\\",
-   "SourceFilesRoot": "D:\\Cours\\Downfall Project\\UEPrototype\\UEPrototype_WwiseProject\\.cache\\Mac\\",
-   "SoundBanksRoot": "D:\\Cours\\Downfall Project\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Mac\\",
+   "ProjectRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\",
+   "SourceFilesRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\.cache\\Mac\\",
+   "SoundBanksRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Mac\\",
    "ExternalSourcesInputFile": "",
-   "ExternalSourcesOutputRoot": "D:\\Cours\\Downfall Project\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Mac"
+   "ExternalSourcesOutputRoot": "D:\\Sessions Unreal\\Git\\UEPrototype\\UEPrototype_WwiseProject\\GeneratedSoundBanks\\Mac"
   },
   "SoundBanks": [
    {
     "Id": "2031696926",
     "GUID": "{79193C1E-3C1E-1C1E-1E1E-1E1E1E1E1E1E}",
     "Language": "SFX",
-    "Hash": "4068873423",
+    "Hash": "489194115",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\SB_03A938CBE3B14E9F89B282B40A6CFE67",
     "ShortName": "SB_03A938CBE3B14E9F89B282B40A6CFE67",
     "Path": "SB_03A938CBE3B14E9F89B282B40A6CFE67.bnk",
@@ -54,7 +54,37 @@
         "ShortName": "VO_MC_Glide_Crash_01.wav",
         "Path": "SFX\\VO_MC_Glide_Crash_01_10C4C929.wem"
        }
+      ],
+      "ActionSetState": [
+       {
+        "Id": "655265632",
+        "Name": "Alive",
+        "ObjectPath": "\\States\\Default Work Unit\\Alexis\\Player\\Alive",
+        "GUID": "{E8CC3D28-0F71-43A1-8071-556C82C64DB2}"
+       },
+       {
+        "Id": "2044049779",
+        "Name": "Dead",
+        "ObjectPath": "\\States\\Default Work Unit\\Alexis\\Player\\Dead",
+        "GUID": "{CB238342-84ED-4395-815B-912C29F7CDBB}"
+       }
       ]
+     }
+    ],
+    "StateGroups": [
+     {
+      "Id": "655265632",
+      "Name": "Alive",
+      "ObjectPath": "\\States\\Default Work Unit\\Alexis\\Player\\Alive",
+      "GUID": "{E8CC3D28-0F71-43A1-8071-556C82C64DB2}",
+      "States": []
+     },
+     {
+      "Id": "2044049779",
+      "Name": "Dead",
+      "ObjectPath": "\\States\\Default Work Unit\\Alexis\\Player\\Dead",
+      "GUID": "{CB238342-84ED-4395-815B-912C29F7CDBB}",
+      "States": []
      }
     ]
    }
