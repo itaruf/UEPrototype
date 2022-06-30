@@ -2317,11 +2317,6 @@
 											<PropertyList>
 												<Property Name="BelowThresholdBehavior" Type="int16" Value="2"/>
 												<Property Name="BlendBehavior" Type="int16" Value="1"/>
-												<Property Name="Inclusion" Type="bool">
-													<ValueList>
-														<Value>False</Value>
-													</ValueList>
-												</Property>
 												<Property Name="OverridePriority" Type="bool" Value="True"/>
 												<Property Name="OverrideVirtualVoice" Type="bool" Value="True"/>
 												<Property Name="Priority" Type="int16">
@@ -2509,7 +2504,7 @@
 															<CrossfadingInfo>
 																<LeftEdgePos>0</LeftEdgePos>
 																<LeftFadingMode>Manual</LeftFadingMode>
-																<LeftFadingPos>3.01056051990252</LeftFadingPos>
+																<LeftFadingPos>4</LeftFadingPos>
 																<RightEdgePos>9</RightEdgePos>
 																<RightFadingMode>Automatic</RightFadingMode>
 															</CrossfadingInfo>
@@ -2517,7 +2512,7 @@
 														<BlendTrackAssoc>
 															<ItemRef Name="AMB_VegetationMed_ST_LP" ID="{EA60B5FD-5050-4AE7-AAE7-B230A0857E92}"/>
 															<CrossfadingInfo>
-																<LeftEdgePos>4</LeftEdgePos>
+																<LeftEdgePos>6</LeftEdgePos>
 																<LeftFadingMode>Automatic</LeftFadingMode>
 																<RightEdgePos>14</RightEdgePos>
 																<RightFadingMode>Automatic</RightFadingMode>
