@@ -20,8 +20,21 @@
 						<ActorMixer Name="AMB" ID="{8389F826-78E1-4E03-B994-E2DF4572D838}" ShortID="806503721">
 							<PropertyList>
 								<Property Name="Color" Type="int16" Value="15"/>
+								<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
+								<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+								<Property Name="MaxSoundPerInstance" Type="int16">
+									<ValueList>
+										<Value>2</Value>
+									</ValueList>
+								</Property>
+								<Property Name="OverLimitBehavior" Type="int16" Value="1"/>
 								<Property Name="OverrideColor" Type="bool" Value="True"/>
 								<Property Name="OverrideOutput" Type="bool" Value="True"/>
+								<Property Name="UseMaxSoundPerInstance" Type="bool">
+									<ValueList>
+										<Value>True</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -35,6 +48,7 @@
 								<Sound Name="AMB_Bed_lvl1_LP" ID="{A411F9C6-A752-46AF-ABA9-C4603C74214C}" ShortID="319663824">
 									<PropertyList>
 										<Property Name="3DSpatialization" Type="int16" Value="1"/>
+										<Property Name="BelowThresholdBehavior" Type="int16" Value="2"/>
 										<Property Name="EnableDiffraction" Type="bool" Value="True"/>
 										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 										<Property Name="IsStreamingEnabled" Type="bool">
@@ -44,10 +58,22 @@
 										</Property>
 										<Property Name="OverrideGameAuxSends" Type="bool" Value="True"/>
 										<Property Name="OverridePositioning" Type="bool" Value="True"/>
+										<Property Name="OverridePriority" Type="bool" Value="True"/>
+										<Property Name="OverrideVirtualVoice" Type="bool" Value="True"/>
+										<Property Name="Priority" Type="int16">
+											<ValueList>
+												<Value>90</Value>
+											</ValueList>
+										</Property>
+										<Property Name="PriorityDistanceOffset" Type="int16">
+											<ValueList>
+												<Value>-40</Value>
+											</ValueList>
+										</Property>
 										<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-20</Value>
+												<Value>-10</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -79,6 +105,7 @@
 								<Sound Name="AMB_Bed_Temple_LP" ID="{B9F6609A-1108-4C28-A4A0-979134A64730}" ShortID="1011996660">
 									<PropertyList>
 										<Property Name="3DSpatialization" Type="int16" Value="1"/>
+										<Property Name="BelowThresholdBehavior" Type="int16" Value="2"/>
 										<Property Name="EnableDiffraction" Type="bool" Value="True"/>
 										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 										<Property Name="IsStreamingEnabled" Type="bool">
@@ -88,10 +115,22 @@
 										</Property>
 										<Property Name="OverrideGameAuxSends" Type="bool" Value="True"/>
 										<Property Name="OverridePositioning" Type="bool" Value="True"/>
+										<Property Name="OverridePriority" Type="bool" Value="True"/>
+										<Property Name="OverrideVirtualVoice" Type="bool" Value="True"/>
+										<Property Name="Priority" Type="int16">
+											<ValueList>
+												<Value>90</Value>
+											</ValueList>
+										</Property>
+										<Property Name="PriorityDistanceOffset" Type="int16">
+											<ValueList>
+												<Value>-40</Value>
+											</ValueList>
+										</Property>
 										<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-9</Value>
+												<Value>-5</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -123,6 +162,7 @@
 								<Sound Name="AMB_Bed_lvl1_Cave_LP" ID="{3CE3BDD3-1ECD-4527-9075-7F1A2444ECA4}" ShortID="55881510">
 									<PropertyList>
 										<Property Name="3DSpatialization" Type="int16" Value="1"/>
+										<Property Name="BelowThresholdBehavior" Type="int16" Value="2"/>
 										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 										<Property Name="IsStreamingEnabled" Type="bool">
 											<ValueList>
@@ -130,10 +170,22 @@
 											</ValueList>
 										</Property>
 										<Property Name="OverridePositioning" Type="bool" Value="True"/>
+										<Property Name="OverridePriority" Type="bool" Value="True"/>
+										<Property Name="OverrideVirtualVoice" Type="bool" Value="True"/>
+										<Property Name="Priority" Type="int16">
+											<ValueList>
+												<Value>90</Value>
+											</ValueList>
+										</Property>
+										<Property Name="PriorityDistanceOffset" Type="int16">
+											<ValueList>
+												<Value>-40</Value>
+											</ValueList>
+										</Property>
 										<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-16</Value>
+												<Value>-12</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -2210,7 +2262,7 @@
 									<PropertyList>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-5</Value>
+												<Value>-7</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -2359,7 +2411,7 @@
 									<PropertyList>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-3</Value>
+												<Value>-12</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -2424,7 +2476,7 @@
 									<PropertyList>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-15</Value>
+												<Value>-21</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -2451,6 +2503,13 @@
 									</ActiveSourceList>
 								</Sound>
 								<Sound Name="UI_Menu_Select" ID="{714C42B2-AB02-414B-8AC6-A85B92FC1AB5}" ShortID="196346562">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-9</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{38FA1994-7668-4E6F-9137-666267031946}"/>
@@ -2477,7 +2536,7 @@
 									<PropertyList>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-5</Value>
+												<Value>-14</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
