@@ -103,6 +103,11 @@
 						</Bus>
 						<Bus Name="UI" ID="{810B9E20-27DC-44EE-82C9-184684B56A94}">
 							<PropertyList>
+								<Property Name="BusVolume" Type="Real64">
+									<ValueList>
+										<Value>8</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Color" Type="int16" Value="19"/>
 								<Property Name="OverrideColor" Type="bool" Value="True"/>
 							</PropertyList>
