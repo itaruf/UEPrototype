@@ -29,15 +29,13 @@ SAkWaapiFieldNames
 #include "Widgets/Input/SSearchBox.h"
 #include "AkWaapiFieldNames.generated.h"
 
-DECLARE_LOG_CATEGORY_EXTERN(LogAkFieldNames, Log, All);
-
 /**
 * Structure for Field Names
 */
 USTRUCT(BlueprintType)
 struct AKAUDIO_API FAkWaapiFieldNames
 {
-	GENERATED_USTRUCT_BODY()
+	GENERATED_BODY()
 		
 	/**
 	* The Field Name
@@ -52,7 +50,10 @@ USAkWaapiFieldNamesConv
 UCLASS()
 class AKAUDIO_API USAkWaapiFieldNamesConv : public UBlueprintFunctionLibrary
 {
-	GENERATED_UCLASS_BODY()
+	GENERATED_BODY()
+
+public:
+	USAkWaapiFieldNamesConv(const class FObjectInitializer& ObjectInitializer);
 
 	/** Converts an AkWaapiFieldName value to a string */
 	UFUNCTION(BlueprintPure, meta = (DisplayName = "ToString (FAkWaapiFieldNames)", CompactNodeTitle = "->", BlueprintAutocast), Category = "Utilities|String")

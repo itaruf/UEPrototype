@@ -32,7 +32,10 @@ UAkAudioInputComponent
 UCLASS(ClassGroup = Audiokinetic, abstract, BlueprintType, hidecategories = (Transform, Rendering, Mobility, LOD, Component, Activation), meta = (BlueprintSpawnableComponent))
 class AKAUDIO_API UAkAudioInputComponent : public UAkComponent
 {
-    GENERATED_UCLASS_BODY()
+    GENERATED_BODY()
+
+public:
+	UAkAudioInputComponent(const class FObjectInitializer& ObjectInitializer);
 
     /**
     * Posts this component's AkAudioEvent to Wwise along with associated AudioSamples callback and AudioFormat callback, using this component as the game object source

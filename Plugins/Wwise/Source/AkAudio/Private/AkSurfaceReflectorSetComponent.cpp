@@ -28,7 +28,6 @@ Copyright (c) 2021 Audiokinetic Inc.
 #include "GameFramework/Volume.h"
 #include "AkSettings.h"
 #include "EngineUtils.h"
-#include <AK/SpatialAudio/Common/AkSpatialAudio.h>
 
 #if WITH_EDITOR
 #include "CameraController.h"
@@ -40,13 +39,8 @@ Copyright (c) 2021 Audiokinetic Inc.
 #include "Kismet/KismetMathLibrary.h"
 #include "LevelEditorViewport.h"
 
-#if UE_4_25_OR_LATER
 #include "EditorGeometry.h"
 #include "GeometryEdMode.h"
-#else
-#include "Editor/GeometryMode/Public/EditorGeometry.h"
-#include "Editor/GeometryMode/Public/GeometryEdMode.h"
-#endif
 
 #endif
 
@@ -231,6 +225,7 @@ void UAkSurfaceReflectorSetComponent::OnRegister()
 	Super::OnRegister();
 	InitializeParentBrush();
 	SendSurfaceReflectorSet();
+	UpdateSurfaceReflectorSet();
 }
 
 void UAkSurfaceReflectorSetComponent::InitializeParentBrush(bool fromTick /* = false */)
@@ -293,41 +288,35 @@ TSet<int> UAkSurfaceReflectorSetComponent::GetSelectedFaceIndices() const
 		// in RecomputePoly
 		if (ABrush* ownerBrush = Cast<ABrush>(GetOwner()))
 		{
-			USceneComponent* parentComp = GetAttachParent();
-			if (ParentBrush != nullptr)
+			FEdModeGeometry* GeomMode = (FEdModeGeometry*)GLevelEditorModeTools().GetActiveMode(FEditorModeID(TEXT("EM_Geometry")));
+			FEdModeGeometry::TGeomObjectIterator GeomModeIt = GeomMode->GeomObjectItor();
+			const float tolerance = 0.001f;
+			for (; GeomModeIt; ++GeomModeIt)
 			{
-				FEdModeGeometry* GeomMode = (FEdModeGeometry*)GLevelEditorModeTools().GetActiveMode(FEditorModeID(TEXT("EM_Geometry")));
-				FEdModeGeometry::TGeomObjectIterator GeomModeIt = GeomMode->GeomObjectItor();
-				const float tolerance = 0.001f;
-				const FTransform& attachTransform = parentComp->GetComponentTransform();
-				for (; GeomModeIt; ++GeomModeIt)
+				FGeomObjectPtr Object = *GeomModeIt;
+				if (Object->GetActualBrush() == ownerBrush)
 				{
-					FGeomObjectPtr Object = *GeomModeIt;
-					if (Object->GetActualBrush() == ownerBrush)
+					// selectedGeometry is a list of selected geometry elements. They can be vertices, edges, or polys
+					TArray<FGeomBase*> selectedGeometry = Object->SelectionOrder;
+					for (FGeomBase* selection : selectedGeometry)
 					{
-						// selectedGeometry is a list of selected geometry elements. They can be vertices, edges, or polys
-						TArray<FGeomBase*> selectedGeometry = Object->SelectionOrder;
-						for (FGeomBase* selection : selectedGeometry)
+						if (!selection->IsVertex())
 						{
-							if (!selection->IsVertex())
+							// There is no way to distinguish an edge from a poly, and we are unable to downcast.
+							// Check the normal and mid point against the normal and mid point of each face in our model.
+							// If we find the corresponding face, add its index to the selectedFaceIndices list.
+							for (int32 NodeIdx = 0; NodeIdx < ParentBrush->Nodes.Num() && NodeIdx < AcousticPolys.Num(); ++NodeIdx)
 							{
-								// There is no way to distinguish an edge from a poly, and we are unable to downcast.
-								// Check the normal and mid point against the normal and mid point of each face in our model.
-								// If we find the corresponding face, add its index to the selectedFaceIndices list.
-								for (int32 NodeIdx = 0; NodeIdx < ParentBrush->Nodes.Num() && NodeIdx < AcousticPolys.Num(); ++NodeIdx)
+								if (FMath::IsNearlyEqual((selection->GetNormal() - FPlane(ParentBrush->Nodes[NodeIdx].Plane)).Size(), 0.0f, tolerance)
+									&& FMath::IsNearlyEqual((selection->GetMid() - AcousticPolys[NodeIdx].MidPoint).Size(), 0.0f, tolerance))
 								{
-									FVector localPolyMidPoint = attachTransform.InverseTransformPosition(AcousticPolys[NodeIdx].MidPoint);
-									if (FMath::IsNearlyEqual((selection->GetNormal() - ParentBrush->Nodes[NodeIdx].Plane).Size(), 0.0f, tolerance)
-										&& FMath::IsNearlyEqual((selection->GetMid() - localPolyMidPoint).Size(), 0.0f, tolerance))
-									{
-										selectedFaceIndices.Add(NodeIdx);
-										break;
-									}
+									selectedFaceIndices.Add(NodeIdx);
+									break;
 								}
 							}
 						}
-						break;
 					}
+					break;
 				}
 			}
 		}
@@ -350,20 +339,6 @@ void UAkSurfaceReflectorSetComponent::CacheAcousticProperties()
 void UAkSurfaceReflectorSetComponent::CacheLocalSpaceSurfaceGeometry()
 {
 	PreviousPolys = AcousticPolys;
-	USceneComponent* ParentComp = GetAttachParent();
-	if (ParentComp == nullptr)
-		return;
-	const FTransform AttachTransformInverse = ParentComp->GetComponentTransform().Inverse();
-	for (FAkSurfacePoly& Face : PreviousPolys)
-	{
-		Face.MidPoint = AttachTransformInverse.TransformPositionNoScale(Face.MidPoint);
-		Face.Normal = AttachTransformInverse.TransformVectorNoScale(Face.Normal);
-		Face.Normal.Normalize();
-		for (FAkSurfaceEdgeVerts& EdgeVerts : Face.Edges)
-		{
-			EdgeVerts.TransformEdge(AttachTransformInverse);
-		}
-	}
 }
 
 void UAkSurfaceReflectorSetComponent::SkipNextTexturesUpdate()
@@ -542,31 +517,30 @@ void UAkSurfaceReflectorSetComponent::UpdatePolys(bool bPreserveTextures /*= fal
 		AcousticPolys.RemoveAt(NumBrushFaces, NumFaces - NumBrushFaces);
 	}
 
-	FTransform ToWorld = GetOwner()->ActorToWorld();
-
+	const auto WorldScale = GetOwner()->ActorToWorld().GetScale3D();
 	for (int32 NodeIdx = 0; NodeIdx < ParentBrush->Nodes.Num(); ++NodeIdx)
 	{
 		if (ParentBrush->Nodes[NodeIdx].NumVertices > 2)
 		{
-			TArray<FVector> WorldVertices;
+			TArray<FVector> ScaledVertices;
 
-			int32 VertStartIndex = ParentBrush->Nodes[NodeIdx].iVertPool;
+			const int32 VertStartIndex = ParentBrush->Nodes[NodeIdx].iVertPool;
 
-			FVector centroidPosition = FVector::ZeroVector;
+			FVector CentroidPosition = FVector::ZeroVector;
 			for (int32 VertIdx = 0; VertIdx < ParentBrush->Nodes[NodeIdx].NumVertices; ++VertIdx)
 			{
-				FVector vert = ToWorld.TransformPosition(ParentBrush->Points[ParentBrush->Verts[VertStartIndex + VertIdx].pVertex]);
-				centroidPosition += vert;
-				WorldVertices.Emplace(vert);
+				auto Vert = FVector(ParentBrush->Points[ParentBrush->Verts[VertStartIndex + VertIdx].pVertex]) * WorldScale;
+				CentroidPosition += Vert;
+				ScaledVertices.Emplace(Vert);
 			}
-			centroidPosition /= (float)ParentBrush->Nodes[NodeIdx].NumVertices;
-			float area = 0.0f;
-			for (int vIndex = 0; vIndex < WorldVertices.Num() - 1; ++vIndex)
+			CentroidPosition /= (float)ParentBrush->Nodes[NodeIdx].NumVertices;
+			double Area = 0.0f;
+			for (int vIndex = 0; vIndex < ScaledVertices.Num() - 1; ++vIndex)
 			{
-				area += FAkReverbDescriptor::TriangleArea(centroidPosition, WorldVertices[vIndex], WorldVertices[vIndex + 1]);
+				Area += FAkReverbDescriptor::TriangleArea(CentroidPosition, ScaledVertices[vIndex], ScaledVertices[vIndex + 1]);
 			}
-			area += FAkReverbDescriptor::TriangleArea(centroidPosition, WorldVertices[WorldVertices.Num() - 1], WorldVertices[0]);
-			AcousticPolys[NodeIdx].SetSurfaceArea(area);
+			Area += FAkReverbDescriptor::TriangleArea(CentroidPosition, ScaledVertices[ScaledVertices.Num() - 1], ScaledVertices[0]);
+			AcousticPolys[NodeIdx].SetSurfaceArea(Area);
 		}
 	}
 
@@ -608,18 +582,18 @@ void UAkSurfaceReflectorSetComponent::UpdatePolys(bool bPreserveTextures /*= fal
 		OnRefreshDetails.ExecuteIfBound();
 }
 
-FVector GetModelCenter(const UModel& Model)
+FUnrealFloatVector GetModelCenter(const UModel& Model)
 {
-	FVector Center(0.f);
+	FUnrealFloatVector Center(0.f);
 	uint32 Count = 0;
 	for (int32 NodeIndex = 0; NodeIndex < Model.Nodes.Num(); NodeIndex++)
 	{
 		const FBspNode& Node = Model.Nodes[NodeIndex];
-		uint32 NumVerts = (Node.NodeFlags & PF_TwoSided) ? Node.NumVertices / 2 : Node.NumVertices;
+		const uint32 NumVerts = (Node.NodeFlags & PF_TwoSided) ? Node.NumVertices / 2 : Node.NumVertices;
 		for (uint32 VertexIndex = 0; VertexIndex < NumVerts; VertexIndex++)
 		{
 			const FVert& Vert = Model.Verts[Node.iVertPool + VertexIndex];
-			const FVector& Position = Model.Points[Vert.pVertex];
+			const auto& Position = Model.Points[Vert.pVertex];
 			Center += Position;
 			Count++;
 		}
@@ -672,11 +646,9 @@ void UAkSurfaceReflectorSetComponent::UpdateFaceNormals(int FaceIndex)
 		return;
 	Face.Normal = FVector::CrossProduct(E0, E1);
 	Face.Normal.Normalize();
-	USceneComponent* ParentComp = GetAttachParent();
-	if (ParentBrush != nullptr && ParentComp != nullptr)
+	if (ParentBrush != nullptr)
 	{
-		const FTransform AttachTransform = ParentComp->GetComponentTransform();
-		const FVector BrushCentre = AttachTransform.TransformPosition(GetModelCenter(*ParentBrush));
+		const FVector BrushCentre = FVector(GetModelCenter(*ParentBrush));
 		FVector VToCentre = BrushCentre - Face.Edges[0].V0;
 		VToCentre.Normalize();
 		if (FVector::DotProduct(VToCentre, Face.Normal) > 0.0f)
@@ -696,36 +668,42 @@ void UAkSurfaceReflectorSetComponent::UpdateEdgeMap(bool bUpdateTextures)
 {
 	EdgeMap.Empty();
 	const AAkSpatialAudioVolume* SpatialAudioVolume = Cast<const AAkSpatialAudioVolume>(GetOwner());
-	USceneComponent* parentComp = GetAttachParent();
-	if (ParentBrush != nullptr && SpatialAudioVolume != nullptr && parentComp != nullptr)
+	if (ParentBrush != nullptr && SpatialAudioVolume != nullptr)
 	{
-		const FTransform AttachTransform = parentComp->GetComponentTransform();
 		for (int32 NodeIdx = 0; NodeIdx < ParentBrush->Nodes.Num() && NodeIdx < AcousticPolys.Num(); ++NodeIdx)
 		{
 			AcousticPolys[NodeIdx].ClearEdgeInfo();
 			FVector PolyMidPoint(0, 0, 0);
+
+			int32 NumVertices = ParentBrush->Nodes[NodeIdx].NumVertices;
+			// from the unreal doc: If the node has zero vertices, it's only used for splitting and doesn't contain a polygon (this happens in the editor).
+			if (NumVertices == 0)
+			{
+				AcousticPolys[NodeIdx].MidPoint = PolyMidPoint;
+				continue;
+			}
+
 			FVector PolyWorldSpaceNormal(0, 0, 0);
 			FAkSurfaceEdgeInfo EdgeInfo;
 			FUnrealFloatPlane& Plane = ParentBrush->Nodes[NodeIdx].Plane;
 			EdgeInfo.Normal = FVector(Plane.X, Plane.Y, Plane.Z);
 			EdgeInfo.IsEnabled = AcousticPolys[NodeIdx].EnableSurface;
 			int32 VertStartIndex = ParentBrush->Nodes[NodeIdx].iVertPool;
-			FVert BurshVert0 = ParentBrush->Verts[VertStartIndex];
+			FVert BrushVert0 = ParentBrush->Verts[VertStartIndex];
 			FVert BrushVert1 = ParentBrush->Verts[VertStartIndex + 1];
 
 			// Add edges to map for edges visualization
-			int32 NumVertices = ParentBrush->Nodes[NodeIdx].NumVertices;
 			for (int32 Idx0 = NumVertices - 1, Idx1 = 0;
 				Idx1 < NumVertices;
 				Idx0 = Idx1, Idx1++)
 			{
-				BurshVert0 = ParentBrush->Verts[VertStartIndex + Idx0];
+				BrushVert0 = ParentBrush->Verts[VertStartIndex + Idx0];
 				BrushVert1 = ParentBrush->Verts[VertStartIndex + Idx1];
 
-				PolyMidPoint += AttachTransform.TransformPosition(ParentBrush->Points[BrushVert1.pVertex]);
+				PolyMidPoint += FVector(ParentBrush->Points[BrushVert1.pVertex]);
 
-				EdgeInfo.SetV0(AttachTransform.TransformPosition(ParentBrush->Points[BurshVert0.pVertex]));
-				EdgeInfo.SetV1(AttachTransform.TransformPosition(ParentBrush->Points[BrushVert1.pVertex]));
+				EdgeInfo.SetV0(FVector(ParentBrush->Points[BrushVert0.pVertex]));
+				EdgeInfo.SetV1(FVector(ParentBrush->Points[BrushVert1.pVertex]));
 
 				int64 EdgeHash = EdgeInfo.GetHash();
 				FAkSurfaceEdgeInfo* Found = EdgeMap.Find(EdgeHash);
@@ -746,7 +724,7 @@ void UAkSurfaceReflectorSetComponent::UpdateEdgeMap(bool bUpdateTextures)
 					AcousticPolys[NodeIdx].Edges.Add(EdgeInfo.EdgeVerts);
 				}
 			}
-			PolyMidPoint /= (float)ParentBrush->Nodes[NodeIdx].NumVertices;
+			PolyMidPoint /= (float)NumVertices;
 			AcousticPolys[NodeIdx].MidPoint = PolyMidPoint;
 			SortFaceEdges(NodeIdx);
 			// Non-uniform scaling of dimensions will skew the normals stored in the brush, so we need to recaluclate them here
@@ -754,22 +732,26 @@ void UAkSurfaceReflectorSetComponent::UpdateEdgeMap(bool bUpdateTextures)
 			UpdateFaceNormals(NodeIdx);
 		}
 		if (bUpdateTextures)
-			EdgeMapChanged(AttachTransform);
+			EdgeMapChanged();
 	}
 	CacheLocalSpaceSurfaceGeometry();
 }
 
-void UAkSurfaceReflectorSetComponent::EdgeMapChanged(const FTransform& AttachTransform)
+void UAkSurfaceReflectorSetComponent::EdgeMapChanged()
 {
 	if (PreviousPolys.Num() <= 0)
 		return;
 	for (int FaceIndex = 0; FaceIndex < AcousticPolys.Num(); ++FaceIndex)
 	{
 		FAkSurfacePoly& Face = AcousticPolys[FaceIndex];
+
+		if (Face.Edges.Num() == 0)
+			continue;
+
 		Face.Texture = nullptr;
 		Face.Occlusion = 0.0f;
 		Face.EnableSurface = true;
-		FVector ComponentNormal = AttachTransform.Inverse().TransformVectorNoScale(Face.Normal);
+		FVector ComponentNormal = Face.Normal;
 		ComponentNormal.Normalize();
 		const float Thresh = AkSurfaceReflectorUtils::EQUALITY_THRESHOLD;
 		for (int OtherFaceIndex = 0; OtherFaceIndex < PreviousPolys.Num(); ++OtherFaceIndex)
@@ -781,7 +763,7 @@ void UAkSurfaceReflectorSetComponent::EdgeMapChanged(const FTransform& AttachTra
 			int EdgeIndex = 0;
 			while (NumSharedEdges < 2 && EdgeIndex < Face.Edges.Num())
 			{
-				FAkSurfaceEdgeVerts Edge = Face.Edges[EdgeIndex].GetTransformedEdge(AttachTransform.Inverse());
+				FAkSurfaceEdgeVerts Edge = Face.Edges[EdgeIndex];
 				for (int OtherEdgeIndex = 0; OtherEdgeIndex < PreviousFace.Edges.Num(); ++OtherEdgeIndex)
 				{
 					const FAkSurfaceEdgeVerts& PreviousEdge = PreviousFace.Edges[OtherEdgeIndex];
@@ -869,13 +851,14 @@ FVector UAkSurfaceReflectorSetComponent::GetTextAnchorPosition(int FaceIndex, co
 	return AlignmentEdge.V0() + Shift;
 }
 
-void UAkSurfaceReflectorSetComponent::SetTextScale(int FaceIndex, int AlignmentEdgeIndex, const FVector& TextAnchorPosition, const FFacePlane& FacePlane) const
+void UAkSurfaceReflectorSetComponent::SetTextScale(UTextRenderComponent* TextComp, int FaceIndex, int AlignmentEdgeIndex, const FVector& TextAnchorPosition, const FFacePlane& FacePlane, const FTransform& AttachTransform) const
 {
-	UTextRenderComponent* TextComp = TextVisualizers[FaceIndex];
-	const FVector WorldTextSize = TextComp->GetTextWorldSize();
+	const FAkSurfacePoly& Face = AcousticPolys[FaceIndex];
+	if (Face.Edges.Num() == 0)
+		return;
+
 	float Scale = TextAlignmentHelpers::GetDistanceScaling(TextComp);
 	bool IntersectionFound = true;
-	const FAkSurfacePoly& Face = AcousticPolys[FaceIndex];
 	// Look for intersections between the edges of the text visualizer and the edges of the face.
 	// Scale down by the smallest amount until no more intersections are found.
 	while (IntersectionFound)
@@ -889,8 +872,8 @@ void UAkSurfaceReflectorSetComponent::SetTextScale(int FaceIndex, int AlignmentE
 			{
 				if (EdgeIndex != AlignmentEdgeIndex)
 				{
-					FVector BrushEdgeV0 = Face.Edges[EdgeIndex].V0;
-					FVector BrushEdgeV1 = Face.Edges[EdgeIndex].V1;
+					FVector BrushEdgeV0 = AttachTransform.TransformPosition(Face.Edges[EdgeIndex].V0);
+					FVector BrushEdgeV1 = AttachTransform.TransformPosition(Face.Edges[EdgeIndex].V1);
 
 					FAkSurfaceEdgeInfo brushEdge(BrushEdgeV0, BrushEdgeV1);
 					FVector intersection = FVector::ZeroVector;
@@ -917,27 +900,45 @@ void UAkSurfaceReflectorSetComponent::AlignTextWithEdge(int FaceIndex) const
 		&& FaceIndex < ParentBrush->Nodes.Num()
 		&& FaceIndex < AcousticPolys.Num())
 	{
-		int EdgeIndex = ChooseAlignmentEdge(FaceIndex);
-		UTextRenderComponent* TextComp = TextVisualizers[FaceIndex];
-		const FAkSurfacePoly& Face = AcousticPolys[FaceIndex];
-		FVector AlignmentV0 = Face.Edges[EdgeIndex].V0;
-		FVector AlignmentV1 = Face.Edges[EdgeIndex].V1;
-		if (TextComp != nullptr)
+		USceneComponent* ParentComp = GetAttachParent();
+		if (ParentComp != nullptr)
 		{
-			FVector Normal = Face.Normal;
-			FVector Edge = AlignmentV1 - AlignmentV0;
-			FVector Tangent = Edge;
-			Normal.Normalize();
-			Tangent.Normalize();
-			FVector CamToCentre = GCurrentLevelEditingViewportClient->GetViewLocation() - AlignmentV0 + Edge * 0.5f;
-			FVector Up = TextAlignmentHelpers::DetermineUpVector(Tangent, Normal, CamToCentre);
-			TextComp->SetWorldRotation(UKismetMathLibrary::MakeRotFromXZ(Normal, Up));
-			FVector MidPoint = Face.MidPoint;
-			TextAlignmentHelpers::SetTextAlignment(TextComp, FAkSurfaceEdgeInfo(AlignmentV0, AlignmentV1), MidPoint);
-			FVector TextAnchorPosition = GetTextAnchorPosition(FaceIndex, FAkSurfaceEdgeInfo(AlignmentV0, AlignmentV1), EdgeIndex);
-			TextComp->SetWorldLocation(TextAnchorPosition);
-			FFacePlane FacePlane(AlignmentV0, TextComp->VerticalAlignment == EVRTA_TextBottom ? Up : -Up, Edge.GetSafeNormal());
-			SetTextScale(FaceIndex, EdgeIndex, TextAnchorPosition, FacePlane);
+			UTextRenderComponent* TextComp = TextVisualizers[FaceIndex];
+
+			if (TextComp != nullptr)
+			{
+				const FAkSurfacePoly& Face = AcousticPolys[FaceIndex];
+				if (Face.Edges.Num() == 0)
+					return;
+
+				const FTransform& AttachTransform = ParentComp->GetComponentTransform();
+				const FRotator& Rotation = ParentComp->GetComponentRotation();
+
+				int EdgeIndex = ChooseAlignmentEdge(FaceIndex);
+
+				FVector TextAnchorPosition = AttachTransform.TransformPosition(GetTextAnchorPosition(FaceIndex, FAkSurfaceEdgeInfo(Face.Edges[EdgeIndex].V0, Face.Edges[EdgeIndex].V1), EdgeIndex));
+				TextComp->SetWorldLocation(TextAnchorPosition);
+
+				FVector AlignmentV0 = AttachTransform.TransformPosition(Face.Edges[EdgeIndex].V0);
+				FVector AlignmentV1 = AttachTransform.TransformPosition(Face.Edges[EdgeIndex].V1);
+				FVector MidPoint = AttachTransform.TransformPosition(Face.MidPoint);
+
+				FVector Normal = Rotation.RotateVector(Face.Normal);
+				Normal.Normalize();
+
+				FVector Edge = AlignmentV1 - AlignmentV0;
+				FVector Tangent = Edge;
+				Tangent.Normalize();
+
+				FVector CamToCentre = GCurrentLevelEditingViewportClient->GetViewLocation() - AlignmentV0 + Edge * 0.5f;
+				FVector Up = TextAlignmentHelpers::DetermineUpVector(Tangent, Normal, CamToCentre);
+				TextComp->SetWorldRotation(UKismetMathLibrary::MakeRotFromXZ(Normal, Up));
+
+				TextAlignmentHelpers::SetTextAlignment(TextComp, FAkSurfaceEdgeInfo(AlignmentV0, AlignmentV1), MidPoint);
+
+				FFacePlane FacePlane(AlignmentV0, TextComp->VerticalAlignment == EVRTA_TextBottom ? Up : -Up, Edge.GetSafeNormal());
+				SetTextScale(TextComp, FaceIndex, EdgeIndex, TextAnchorPosition, FacePlane, AttachTransform);
+			}
 		}
 	}
 }
@@ -1007,7 +1008,6 @@ bool UAkSurfaceReflectorSetComponent::MoveComponentImpl(
 void UAkSurfaceReflectorSetComponent::OnUpdateTransform(EUpdateTransformFlags UpdateTransformFlags, ETeleportType Teleport)
 {
 	Super::OnUpdateTransform(UpdateTransformFlags, Teleport);
-
 	UpdateSurfaceReflectorSet();
 #if WITH_EDITOR
 	UpdateEdgeMap(false);
@@ -1027,7 +1027,7 @@ void UAkSurfaceReflectorSetComponent::GetTexturesAndSurfaceAreas(TArray<FAkAcous
 				if (Poly.Texture)
 				{
 					surfaceAreas.Add(Poly.GetSurfaceArea() / AkComponentHelpers::UnrealUnitsPerSquaredMeter(this));
-					const FAkAcousticTextureParams* params = AkSettings->GetTextureParams(Poly.Texture->ShortID);
+					const FAkAcousticTextureParams* params = AkSettings->GetTextureParams(Poly.Texture->AcousticTextureCookedData.ShortId);
 					if (params != nullptr)
 					{
 						textures.Add(*params);
@@ -1065,7 +1065,7 @@ void UAkSurfaceReflectorSetComponent::SendSurfaceReflectorSet()
 		TArray<AkVertex> VertsToSend;
 		TArray<AkAcousticSurface> SurfacesToSend;
 		TArray<AkTriangle> TrianglesToSend;
-		TArray<AK::SpatialAudio::String> triangleNames;
+		TArray< TSharedPtr< decltype(StringCast<ANSICHAR>(TEXT(""))) > > SurfaceNames;
 		FString ParentName = GetOwner()->GetName();
 		// Some clarifications: 
 		// - All of the brush's vertices are held in the UModel->Verts array (elements of type FVert)
@@ -1091,12 +1091,11 @@ void UAkSurfaceReflectorSetComponent::SendSurfaceReflectorSet()
 				wwiseIdx = VertsToSend.Num();
 				UnrealToWwiseIndex[UnrealIdx] = wwiseIdx;
 
-				const FVector& VertexInActorSpace = ParentBrush->Points[UnrealIdx];
-				FVector v = GetOwner()->ActorToWorld().TransformPosition(VertexInActorSpace);
+				const auto& VertexInActorSpace = ParentBrush->Points[UnrealIdx];
 				AkVertex akvtx;
-				akvtx.X = v.X;
-				akvtx.Y = v.Y;
-				akvtx.Z = v.Z;
+				akvtx.X = VertexInActorSpace.X;
+				akvtx.Y = VertexInActorSpace.Y;
+				akvtx.Z = VertexInActorSpace.Z;
 				VertsToSend.Add(akvtx);
 
 			}
@@ -1108,28 +1107,25 @@ void UAkSurfaceReflectorSetComponent::SendSurfaceReflectorSet()
 		{
 			if (AcousticPolys.Num() > NodeIdx)
 			{
-				FAkSurfacePoly AcosuticSurface = AcousticPolys[NodeIdx];
-				if (ParentBrush->Nodes[NodeIdx].NumVertices > 2 && (AcosuticSurface.EnableSurface || !bEnableSurfaceReflectors))
+				FAkSurfacePoly AcousticSurface = AcousticPolys[NodeIdx];
+				if (ParentBrush->Nodes[NodeIdx].NumVertices > 2 && (AcousticSurface.EnableSurface || !bEnableSurfaceReflectors))
 				{
-					AkAcousticSurface NewSurface;
 					FString TriangleName;
-					if (AcosuticSurface.Texture != nullptr)
+					if (AcousticSurface.Texture != nullptr)
 					{
-						TriangleName = ParentName + GetName() + FString(TEXT("_")) + AcosuticSurface.Texture->GetName() + FString::FromInt(NodeIdx);
+						TriangleName = ParentName + GetName() + FString(TEXT("_")) + AcousticSurface.Texture->GetName() + FString::FromInt(NodeIdx);
 					}
 					else
 					{
 						TriangleName = ParentName + GetName() + FString(TEXT("_")) + FString::FromInt(NodeIdx);
 					}
+					SurfaceNames.Add(MakeShareable(new decltype(StringCast<ANSICHAR>(TEXT("")))(*TriangleName)));
 
-					NewSurface.textureID = AcosuticSurface.Texture != nullptr ? FAkAudioDevice::Get()->GetIDFromString(AcosuticSurface.Texture->GetName()) : 0;
-					NewSurface.transmissionLoss = AcosuticSurface.Occlusion;
-					int32 newIdx = triangleNames.Add(TCHAR_TO_ANSI(*TriangleName));
-					triangleNames[newIdx].AllocCopy(); //the conversion macro TCHAR_TO_ANSI will reuse the same buffer, so we need a local copy.
-					NewSurface.strName = triangleNames[newIdx].Get();
+					AkAcousticSurface NewSurface;
+					NewSurface.textureID = AcousticSurface.Texture != nullptr ? FAkAudioDevice::Get()->GetShortIDFromString(AcousticSurface.Texture->GetName()) : 0;
+					NewSurface.transmissionLoss = AcousticSurface.Occlusion;
+					NewSurface.strName = SurfaceNames.Last()->Get();
 					SurfacesToSend.Add(NewSurface);
-
-					//
 
 					int32 VertStartIndex = ParentBrush->Nodes[NodeIdx].iVertPool;
 
@@ -1166,14 +1162,6 @@ void UAkSurfaceReflectorSetComponent::SendSurfaceReflectorSet()
 			params.EnableDiffractionOnBoundaryEdges = bEnableDiffractionOnBoundaryEdges;
 			params.EnableTriangles = bEnableSurfaceReflectors;
 
-			if (AssociatedRoom)
-			{
-				UAkRoomComponent* room = Cast<UAkRoomComponent>(AssociatedRoom->GetComponentByClass(UAkRoomComponent::StaticClass()));
-
-				if (room != nullptr)
-					params.RoomID = room->GetRoomID();
-			}
-
 			SendGeometryToWwise(params);
 		}
 	}
@@ -1186,7 +1174,17 @@ void UAkSurfaceReflectorSetComponent::RemoveSurfaceReflectorSet()
 
 void UAkSurfaceReflectorSetComponent::UpdateSurfaceReflectorSet()
 {
-	SendSurfaceReflectorSet();
+	AkRoomID roomID = AkRoomID();
+	if (AssociatedRoom)
+	{
+		UAkRoomComponent* room = Cast<UAkRoomComponent>(AssociatedRoom->GetComponentByClass(UAkRoomComponent::StaticClass()));
+
+		if (room != nullptr)
+			roomID = room->GetRoomID();
+	}
+
+	SendGeometryInstanceToWwise(GetOwner()->ActorToWorld().Rotator(), GetOwner()->GetActorLocation(), GetOwner()->ActorToWorld().GetScale3D(), roomID);
+
 	if (ReverbDescriptor != nullptr)
 	{
 		DampingEstimationNeedsUpdate = true;
@@ -1200,14 +1198,14 @@ void UAkSurfaceReflectorSetComponent::HandleObjectsReplaced(const TMap<UObject*,
 	if (ReplacementMap.Contains(ParentBrush))
 	{
 		InitializeParentBrush();
-		SendSurfaceReflectorSet();
+		UpdateSurfaceReflectorSet();
 	}
 }
 
 bool UAkSurfaceReflectorSetComponent::ContainsTexture(const FGuid& textureID)
 {
 	for (const FAkSurfacePoly& Poly : AcousticPolys)
-		if (Poly.Texture != nullptr && Poly.Texture->ID == textureID)
+		if (Poly.Texture != nullptr && Poly.Texture->AcousticTextureInfo.AssetGuid == textureID)
 			return true;
 	return false;
 }
@@ -1215,8 +1213,8 @@ bool UAkSurfaceReflectorSetComponent::ContainsTexture(const FGuid& textureID)
 void UAkSurfaceReflectorSetComponent::RegisterAllTextureParamCallbacks()
 {
 	for (const FAkSurfacePoly& Poly : AcousticPolys)
-		if (Poly.Texture != nullptr && TextureDelegateHandles.Find(Poly.Texture->ID) == nullptr)
-			RegisterTextureParamChangeCallback(Poly.Texture->ID);
+		if (Poly.Texture != nullptr && TextureDelegateHandles.Find(Poly.Texture->AcousticTextureInfo.AssetGuid) == nullptr)
+			RegisterTextureParamChangeCallback(Poly.Texture->AcousticTextureInfo.AssetGuid);
 }
 
 TWeakObjectPtr<UPhysicalMaterial> AssignPolygonTexturesFromSamples(const TArray<FVector>& Vertices, const TArray<FVector>& Points, const TArray<FVector>& Normals, const TArray< TWeakObjectPtr<UPhysicalMaterial> >& Materials, int Num)
@@ -1333,11 +1331,11 @@ void UAkSurfaceReflectorSetComponent::AssignAcousticTexturesFromSamples(const TA
 		{
 			TArray<FVector> WorldVertices;
 
-			int32 VertStartIndex = ParentBrush->Nodes[NodeIdx].iVertPool;
+			const int32 VertStartIndex = ParentBrush->Nodes[NodeIdx].iVertPool;
 
 			for (int32 VertIdx = 0; VertIdx < ParentBrush->Nodes[NodeIdx].NumVertices; ++VertIdx)
 			{
-				WorldVertices.Emplace(ToWorld.TransformPosition(ParentBrush->Points[ParentBrush->Verts[VertStartIndex + VertIdx].pVertex]));
+				WorldVertices.Emplace(ToWorld.TransformPosition(FVector(ParentBrush->Points[ParentBrush->Verts[VertStartIndex + VertIdx].pVertex])));
 			}
 
 			TWeakObjectPtr<UPhysicalMaterial> Material = AssignPolygonTexturesFromSamples(WorldVertices, Points, Normals, Materials, Num);
@@ -1350,11 +1348,12 @@ void UAkSurfaceReflectorSetComponent::AssignAcousticTexturesFromSamples(const TA
 			}
 		}
 		if (AcousticPolys[NodeIdx].Texture != nullptr)
-			RegisterTextureParamChangeCallback(AcousticPolys[NodeIdx].Texture->ID);
+			RegisterTextureParamChangeCallback(AcousticPolys[NodeIdx].Texture->AcousticTextureInfo.AssetGuid);
 	}
 
 	OnRefreshDetails.ExecuteIfBound();
 	// Update text visualizers.
+	SkipNextTexturesUpdate();
 	SchedulePolysUpdate();
 }
 

@@ -24,6 +24,7 @@ Copyright (c) 2021 Audiokinetic Inc.
 #include "Engine/LatentActionManager.h"
 #include "HAL/ThreadSafeBool.h"
 #include "LatentActions.h"
+#include "AkDeprecated.h"
 #include "AkGameplayTypes.generated.h"
 
 UENUM(BlueprintType)
@@ -366,8 +367,10 @@ public:
 UCLASS(BlueprintType)
 class AKAUDIO_API UAkCallbackInfo : public UObject
 {
-	GENERATED_UCLASS_BODY()
+	GENERATED_BODY()
 public:
+	UAkCallbackInfo( class FObjectInitializer const & ObjectInitializer);
+
 	static UAkCallbackInfo* Create(AkGameObjectID GameObjectID);
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Audiokinetic|AkCallbackInfo")
@@ -379,7 +382,7 @@ public:
 USTRUCT(BlueprintType)
 struct FAkChannelMask
 {
-	GENERATED_USTRUCT_BODY()
+	GENERATED_BODY()
 public:
 	UPROPERTY(EditAnywhere, Category="Channel Mask", BlueprintReadWrite, meta = (Bitmask, BitmaskEnum = AkSpeakerConfiguration))
 	int32 ChannelMask;
@@ -388,7 +391,7 @@ public:
 USTRUCT(BlueprintType)
 struct FAkOutputSettings
 {
-	GENERATED_USTRUCT_BODY()
+	GENERATED_BODY()
 public:
 	UPROPERTY(EditAnywhere, Category = "Output Settings", BlueprintReadWrite)
 	FString AudioDeviceSharesetName;
@@ -410,8 +413,10 @@ public:
 UCLASS(BlueprintType)
 class AKAUDIO_API UAkEventCallbackInfo : public UAkCallbackInfo
 {
-	GENERATED_UCLASS_BODY()
+	GENERATED_BODY()
 public:
+	UAkEventCallbackInfo(class FObjectInitializer const & ObjectInitializer);
+
 	static UAkEventCallbackInfo* Create(AkEventCallbackInfo* AkEventCallbackInfo);
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Audiokinetic|AkCallbackInfo|AkEvent")
@@ -420,7 +425,6 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Audiokinetic|AkCallbackInfo|AkEvent")
 	int32 EventID = 0;		///< Unique ID of Event, passed to PostEvent()
 };
-
 
 
 // List of MIDI event types
@@ -576,7 +580,7 @@ struct FAkMidiEventBase
 USTRUCT(BlueprintType)
 struct FAkMidiGeneric : public FAkMidiEventBase
 {
-	GENERATED_USTRUCT_BODY()
+	GENERATED_BODY()
 	
 	FAkMidiGeneric() {}
 	FAkMidiGeneric(AkMIDIEvent MIDIEvent)
@@ -709,9 +713,10 @@ struct FAkMidiProgramChange : public FAkMidiEventBase
 UCLASS(BlueprintType)
 class UAkMIDIEventCallbackInfo : public UAkEventCallbackInfo
 {
-	GENERATED_UCLASS_BODY()
+	GENERATED_BODY()
 	
 public:
+	UAkMIDIEventCallbackInfo(class FObjectInitializer const & ObjectInitializer);
 	static UAkMIDIEventCallbackInfo* Create(AkMIDIEventCallbackInfo* akCallbackInfo);
 
 	UFUNCTION(BlueprintCallable, Category = "Audiokinetic|AkCallbackInfo|MIDI")
@@ -756,8 +761,9 @@ private:
 UCLASS(BlueprintType)
 class UAkMarkerCallbackInfo : public UAkEventCallbackInfo
 {
-	GENERATED_UCLASS_BODY()
+	GENERATED_BODY()
 public:
+	UAkMarkerCallbackInfo(class FObjectInitializer const & ObjectInitializer);
 	static UAkMarkerCallbackInfo* Create(AkMarkerCallbackInfo* akCallbackInfo);
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Audiokinetic|AkCallbackInfo|Marker")
@@ -777,8 +783,9 @@ public:
 UCLASS(BlueprintType)
 class UAkDurationCallbackInfo : public UAkEventCallbackInfo
 {
-	GENERATED_UCLASS_BODY()
+	GENERATED_BODY()
 public:
+	UAkDurationCallbackInfo(class FObjectInitializer const & ObjectInitializer);
 	static UAkDurationCallbackInfo* Create(AkDurationCallbackInfo* akCallbackInfo);
 	
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Audiokinetic|AkCallbackInfo|Duration")
@@ -847,9 +854,10 @@ struct FAkSegmentInfo
 UCLASS(BlueprintType)
 class UAkMusicSyncCallbackInfo : public UAkCallbackInfo
 {
-	GENERATED_UCLASS_BODY()
+	GENERATED_BODY()
 
 public:
+	UAkMusicSyncCallbackInfo(class FObjectInitializer const & ObjectInitializer);
 	static UAkMusicSyncCallbackInfo* Create(AkMusicSyncCallbackInfo* akCallbackInfo);
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Audiokinetic|AkCallbackInfo|Music")
@@ -1011,9 +1019,6 @@ enum class AkCodecId : uint8
 	///< Vorbis encoding
 	Vorbis = AKCODECID_VORBIS,
 
-	///< AAC encoding (only available on Apple devices) -- see AkAACFactory.h
-	AAC = AKCODECID_AAC,
-
 	///< ATRAC-9 encoding
 	ATRAC9 = AKCODECID_ATRAC9,
 	
@@ -1038,7 +1043,7 @@ struct FAkExternalSourceInfo
 	
 	/// Codec ID for the file. 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Audiokinetic|AkExternalSourceInfo")
-	AkCodecId CodecID;
+	AkCodecId CodecID = AkCodecId::None;
 	
 	/// File path for the source. (Relative to ExternalSources folder in your sound bank folder)
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Audiokinetic|AkExternalSourceInfo")
@@ -1046,7 +1051,7 @@ struct FAkExternalSourceInfo
 
 	/// Hard link to the media asset to use, it can be either streamed or not using IsStreamed
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Audiokinetic|AkExternalSourceInfo")
-	class UAkExternalMediaAsset* ExternalSourceAsset;
+	UAkExternalMediaAsset* ExternalSourceAsset = nullptr;
 
 	/// Is the ExternalSourceAsset streamed or not
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Audiokinetic|AkExternalSourceInfo")
@@ -1068,7 +1073,6 @@ class FWaitEndOfEventAsyncAction : public FWaitEndOfEventAction
 public:
 	int32* PlayingID = nullptr;
 	TFuture<AkPlayingID> FuturePlayingID;
-	TArray<FAkExternalSourceInfo> ExternalSources;
 	UAkAudioEvent* AkEvent = nullptr;
 	bool bStopWhenAttachedToDestroyed = true;
 
@@ -1078,10 +1082,9 @@ public:
 	{
 	}
 
-	FWaitEndOfEventAsyncAction(const FLatentActionInfo& LatentInfo, int32* PlayingID, const TArray<FAkExternalSourceInfo>& ExtSrc, UAkAudioEvent* Event, bool StopWhenAttachedToDestroyed)
+	FWaitEndOfEventAsyncAction(const FLatentActionInfo& LatentInfo, int32* PlayingID, UAkAudioEvent* Event, bool StopWhenAttachedToDestroyed)
 		: FWaitEndOfEventAction(LatentInfo)
 		, PlayingID(PlayingID)
-		, ExternalSources(ExtSrc)
 		, AkEvent(Event)
 		, bStopWhenAttachedToDestroyed(StopWhenAttachedToDestroyed)
 	{
@@ -1114,3 +1117,37 @@ struct AkDeviceAndWorld
 
 	bool IsValid() const;
 };
+
+
+USTRUCT(BlueprintType, Meta = (Category = "Wwise|Types", DisplayName = "AkUint64"))
+struct FAkUInt64Wrapper
+{
+	GENERATED_BODY()
+
+public:
+	UPROPERTY(EditAnywhere, Category = "Value",  DisplayName = "UInt64 Value")
+	uint64 UInt64Value;
+};
+
+USTRUCT(BlueprintType, Meta = (Category = "Wwise|Types", DisplayName = "AkUInt32"))
+struct FAkUInt32Wrapper
+{
+	GENERATED_BODY()
+
+public:
+	UPROPERTY(EditAnywhere, Category = "Value", DisplayName = "UInt32 Value")
+	uint32 UInt32Value;
+};
+
+USTRUCT(BlueprintType, Meta = (Category = "Wwise|Types", DisplayName = "AkOutputDeviceID"))
+struct FAkOutputDeviceID : public FAkUInt64Wrapper
+{
+	GENERATED_BODY()
+};
+
+USTRUCT(BlueprintType, Meta = (Category = "Wwise|Types", DisplayName = "AkUniqueID"))
+struct FAkUniqueID : public FAkUInt32Wrapper
+{
+	GENERATED_BODY()
+};
+

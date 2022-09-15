@@ -30,8 +30,8 @@ public:
 		Architecture = "iOS";
 		bUsesStaticLibraries = true;
 
-#if WITH_EDITOR
-		UAkPlatformInfo::UnrealNameToWwiseName.Add("IOS", "iOS");
+#if WITH_EDITORONLY_DATA
+		UAkPlatformInfo::UnrealNameToPlatformInfo.Add("IOS", this);
 #endif
 	}
 };

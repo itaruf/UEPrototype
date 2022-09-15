@@ -15,66 +15,55 @@ Copyright (c) 2021 Audiokinetic Inc.
 
 #pragma once
 
-#include "AkAssetBase.h"
+#include "AkAudioType.h"
+#include "Wwise/CookedData/WwiseInitBankCookedData.h"
+#include "Wwise/Loaded/WwiseLoadedInitBank.h"
+
+#if WITH_EDITORONLY_DATA
+#include "Wwise/Info/WwiseAssetInfo.h"
+#endif
+
 #include "AkInitBank.generated.h"
 
 
-DECLARE_DELEGATE_OneParam(FOnInitBankChanged, UAkInitBank*)
-
-USTRUCT()
-struct AKAUDIO_API FAkPluginInfo
-{
-	GENERATED_BODY()
-
-public:
-	FAkPluginInfo() = default;
-
-	FAkPluginInfo(const FString& InName, uint32 InPluginID, const FString& InDLL)
-	: Name(InName)
-	, PluginID(InPluginID)
-	, DLL(InDLL)
-	{
-	}
-
-	UPROPERTY(VisibleAnywhere, Category = "AkInitBank")
-	FString Name;
-
-	UPROPERTY(VisibleAnywhere, Category = "AkInitBank")
-	uint32 PluginID;
-
-	UPROPERTY(VisibleAnywhere, Category = "AkInitBank")
-	FString DLL;
-};
-
 UCLASS()
-class AKAUDIO_API UAkInitBankAssetData : public UAkAssetDataWithMedia
+class AKAUDIO_API UAkInitBank : public UAkAudioType
 {
 	GENERATED_BODY()
 
 public:
-	UPROPERTY(VisibleAnywhere, Category = "AkInitBank")
-	TArray<FAkPluginInfo> PluginInfos;
-};
+	UPROPERTY(Transient)
+	FWwiseInitBankCookedData InitBankCookedData;
 
-UCLASS()
-class AKAUDIO_API UAkInitBank : public UAkAssetBase
-{
-	GENERATED_BODY()
-	UAkInitBank();
-public:
-	UPROPERTY(VisibleAnywhere, Category = "AkInitBank")
-	TArray<FString> AvailableAudioCultures;
-
-	UPROPERTY(VisibleAnywhere, Category = "AkInitBank")
-	FString DefaultLanguage;
-
-	virtual void Load() override;
-
-#if WITH_EDITOR
-	void Reset() override;
-	static FOnInitBankChanged OnInitBankChanged;
+#if WITH_EDITORONLY_DATA
+	void PrepareCookedData();
 #endif
 
+	TArray<FWwiseLanguageCookedData> GetLanguages();
+
+protected :
+	FWwiseLoadedInitBankListNode* LoadedInitBank;
+
+
+public:
+	UAkInitBank():LoadedInitBank(nullptr){}
+
+#if WITH_EDITORONLY_DATA
+	void CookAdditionalFilesOverride(const TCHAR* PackageFilename, const ITargetPlatform* TargetPlatform,
+		TFunctionRef<void(const TCHAR* Filename, void* Data, int64 Size)> WriteAdditionalFile) override;
+	virtual void BeginCacheForCookedPlatformData(const ITargetPlatform* TargetPlatform) override;
+	virtual FWwiseBasicInfo* GetInfoMutable() override;
+
+#endif
+
+	void LoadInitBank(bool bReload);
+	void UnloadInitBank();
+
 protected:
-	UAkAssetData* createAssetData(UObject* parent) const override;
+	void BeginDestroy() override;
+	void Serialize(FArchive& Ar) override;
+	
+#if WITH_EDITORONLY_DATA
+	virtual void MigrateIds() override;
+#endif
 };

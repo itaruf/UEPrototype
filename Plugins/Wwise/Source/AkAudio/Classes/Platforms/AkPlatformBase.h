@@ -14,8 +14,7 @@ Copyright (c) 2021 Audiokinetic Inc.
 *******************************************************************************/
 
 #pragma once
-
-#include "AkInclude.h"
+#include "Containers/UnrealString.h"
 
 struct FAkInitializationStructure;
 

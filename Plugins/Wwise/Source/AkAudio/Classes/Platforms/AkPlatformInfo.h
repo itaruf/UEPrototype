@@ -16,6 +16,13 @@ Copyright (c) 2021 Audiokinetic Inc.
 #pragma once
 
 #include "Engine/GameEngine.h"
+#include "AkAudioDevice.h"
+
+#if WITH_EDITORONLY_DATA
+#include "Wwise/WwiseProjectDatabase.h"
+#include "Wwise/WwiseSharedPlatformId.h"
+#endif
+
 #include "AkPlatformInfo.generated.h"
 
 UCLASS()
@@ -24,19 +31,79 @@ class AKAUDIO_API UAkPlatformInfo : public UObject
 	GENERATED_BODY()
 
 public:
-#if WITH_EDITOR
-	static TMap<FString, FString> UnrealNameToWwiseName;
-#endif
-	static UAkPlatformInfo* GetAkPlatformInfo(const FString& PlatformName)
+#if WITH_EDITORONLY_DATA
+	static TMap<FString, FWwiseSharedPlatformId> UnrealTargetNameToSharedPlatformId;
+	static TMap<FString, UAkPlatformInfo*> UnrealNameToPlatformInfo;
+
+	virtual FString GetWwiseBankPlatformName(const TArray<FString>& AvailableWwisePlatforms) const
 	{
-		FString PlatformInfoClassName = FString::Format(TEXT("Ak{0}PlatformInfo"), { *PlatformName });
-		auto* PlatformInfoClass = FindObject<UClass>(ANY_PACKAGE, *PlatformInfoClassName);
-		if (!PlatformInfoClass)
+		if (AvailableWwisePlatforms.Contains(WwisePlatform))
 		{
-			return nullptr;
+			return WwisePlatform;
+		}
+		return {};
+	}
+
+	static FWwiseSharedPlatformId GetSharedPlatformInfo(const FString& PlatformName)
+	{
+		if (UnrealTargetNameToSharedPlatformId.Contains(PlatformName))
+		{
+			return UnrealTargetNameToSharedPlatformId[PlatformName];
 		}
 
-		return PlatformInfoClass->GetDefaultObject<UAkPlatformInfo>();
+		const auto ProjectDatabase = UWwiseProjectDatabase::Get();
+		if (UNLIKELY(!ProjectDatabase))
+		{
+			UE_LOG(LogAkAudio, Warning, TEXT("ProjectDatabase is not initialized"));
+			return {};
+		}
+		
+		const FWwiseDataStructureScopeLock DataStructure(*ProjectDatabase);
+		auto Platforms = DataStructure.GetPlatforms();
+
+		if (const auto* CurrentPlatformInfo = GetAkPlatformInfo(PlatformName))
+		{
+			TArray<FString> AvailablePlatforms;
+			for (auto WwisePlatform : Platforms)
+			{
+				AvailablePlatforms.Add(WwisePlatform.GetPlatformName());
+			}
+			const FString WwisePlatformName = CurrentPlatformInfo->GetWwiseBankPlatformName(AvailablePlatforms);
+			for (auto WwisePlatform : Platforms)
+			{
+				if (WwisePlatform.GetPlatformName() == WwisePlatformName)
+				{
+					UnrealTargetNameToSharedPlatformId.Add(PlatformName, WwisePlatform);
+					return UnrealTargetNameToSharedPlatformId[PlatformName];
+				}
+			}
+			UE_LOG(LogAkAudio, Warning, TEXT("Could not find parsed platform that matches %s"), *CurrentPlatformInfo->WwisePlatform);
+			return {};
+		}
+
+		UE_LOG(LogAkAudio, Warning, TEXT("Could not find platform info for %s"), *PlatformName)
+		return {};
+	}
+#endif
+
+	static UAkPlatformInfo* GetAkPlatformInfo(const FString& PlatformName)
+	{
+		UAkPlatformInfo* RetVal = nullptr;
+#if WITH_EDITORONLY_DATA
+		auto** FoundInfo = UnrealNameToPlatformInfo.Find(PlatformName);
+		RetVal = FoundInfo ? *FoundInfo : nullptr;
+#endif
+		if (!RetVal)
+		{
+			const FString PlatformInfoClassName = FString::Format(TEXT("Ak{0}PlatformInfo"), { *PlatformName });
+			auto* PlatformInfoClass = FindObject<UClass>(ANY_PACKAGE, *PlatformInfoClassName);
+			if (PlatformInfoClass)
+			{
+				RetVal = PlatformInfoClass->GetDefaultObject<UAkPlatformInfo>();
+			}
+		}
+
+		return RetVal;
 	}
 
 	FString WwisePlatform;

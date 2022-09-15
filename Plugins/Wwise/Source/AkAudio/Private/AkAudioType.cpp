@@ -15,106 +15,106 @@ Copyright (c) 2021 Audiokinetic Inc.
 
 #include "AkAudioType.h"
 
-#include "Async/Async.h"
-#include "AkAudioModule.h"
+#include "AkCustomVersion.h"
 #include "AkAudioDevice.h"
-#include "AkGroupValue.h"
-#include "AkFolder.h"
-#include "Core/Public/Modules/ModuleManager.h"
+#include "Platforms/AkPlatformInfo.h"
 
-void UAkAudioType::PostLoad()
+#if WITH_EDITORONLY_DATA
+#include "Wwise/WwiseResourceCooker.h"
+#endif
+
+void UAkAudioType::Serialize(FArchive& Ar)
 {
-	Super::PostLoad();
+	Super::Serialize(Ar);
+
 	if (HasAnyFlags(RF_ClassDefaultObject))
 	{
 		return;
 	}
-	
-	if (FModuleManager::Get().IsModuleLoaded(TEXT("AkAudio")))
-	{
-		Load();
-	}
-	else
-	{
-		FAkAudioDevice::DelayAssetLoad(this);
-	}
-}
 
-void UAkAudioType::MarkDirtyInGameThread()
-{
-#if WITH_EDITOR
-	AsyncTask(ENamedThreads::GameThread, [this] 
-		{
-			MarkPackageDirty();
-		});
+	Ar.UsingCustomVersion(FAkCustomVersion::GUID);
+
+#if WITH_EDITORONLY_DATA
+	if (ID_DEPRECATED.IsValid() || ShortID_DEPRECATED != 0)
+	{
+		MigrateIds();
+	}
+
+	if (FWwiseBasicInfo* WwiseInfo = GetInfoMutable())
+	{
+		WwiseGuid = WwiseInfo->AssetGuid;
+	}
+
 #endif
+	LogSerializationState(Ar);
 }
 
-bool UAkAudioType::ShortIdMatchesName(AkUInt32& OutIdFromName)
+void UAkAudioType::LogSerializationState(const FArchive& Ar)
 {
-	if (auto AudioDevice = FAkAudioDevice::Get())
+	FString SerializationState = TEXT("");
+	if (Ar.IsLoading())
 	{
-		if (IsA<UAkGroupValue>())
+		SerializationState += TEXT("Loading");
+	}
+
+	if (Ar.IsSaving())
+	{
+		SerializationState += TEXT("Saving");
+	}
+
+	if (Ar.IsCooking())
+	{
+		SerializationState += TEXT("Cooking");
+	}
+
+	UE_LOG(LogAkAudio, VeryVerbose, TEXT("%s - Serialization - %s"), *GetName(), *SerializationState);
+
+}
+
+#if WITH_EDITORONLY_DATA
+void UAkAudioType::MigrateIds()
+{
+	if (FWwiseBasicInfo* Info = GetInfoMutable())
+	{
+		Info->AssetGuid = ID_DEPRECATED;
+		Info->AssetShortId = ShortID_DEPRECATED;
+		Info->AssetName = GetName();
+		MarkPackageDirty();
+	}
+}
+
+FWwiseBasicInfo* UAkAudioType::GetInfoMutable()
+{
+	UE_LOG(LogAkAudio, Error, TEXT("GetInfoMutable not implemented"));
+	check(false);
+	return nullptr;
+}
+
+void UAkAudioType::ValidateShortID(FWwiseBasicInfo& WwiseInfo) const
+{
+	if (WwiseInfo.AssetShortId == AK_INVALID_UNIQUE_ID)
+	{
+		if (!WwiseInfo.AssetName.IsEmpty())
 		{
-			FString ValueName;
-			GetName().Split(TEXT("-"), nullptr, &ValueName);
-			OutIdFromName = AudioDevice->GetIDFromString(ValueName);
+			WwiseInfo.AssetShortId = FAkAudioDevice::GetShortIDFromString(WwiseInfo.AssetName);
 		}
 		else
 		{
-			OutIdFromName = AudioDevice->GetIDFromString(GetName());
-		}
-
-		if (ShortID != OutIdFromName)
-		{
-			//Folder asset name does not correspond to actual wwise object name and we don't use the short ID anyway
-			if (IsA<UAkFolder>())
-			{
-				return true;
-			}
-			if (ShortID != 0) 
-			{
-				UE_LOG(LogAkAudio, Warning, TEXT("%s - Current Short ID '%u' is different from expected ID '%u'"), *GetName(), ShortID, OutIdFromName);
-			}
-			return false;
-		}
-	}
-	return true;
-}
-
-void UAkAudioType::Load()
-{
-	ValidateShortId(false);
-}
-
-void UAkAudioType::ValidateShortId(bool bMarkAsDirty)
-{
-	AkUInt32 IdFromName;
-	if (!ShortIdMatchesName(IdFromName))
-	{
-		UE_LOG(LogAkAudio, Log, TEXT("%s - Updating Short ID from '%u' to '%u'"), *GetName(), ShortID, IdFromName);
-
-		ShortID = IdFromName;
-		if (bMarkAsDirty)
-		{
-			MarkDirtyInGameThread();
+			WwiseInfo.AssetShortId = FAkAudioDevice::GetShortIDFromString(GetName());
+			UE_LOG(LogAkAudio, Warning, TEXT("UAkAudioType::ValidateShortID : Using ShortID based on asset name for %s."), *GetName());
 		}
 	}
 }
 
-#if WITH_EDITOR
-void UAkAudioType::Reset()
+void UAkAudioType::BeginCacheForCookedPlatformData(const ITargetPlatform* TargetPlatform)
 {
-	if (ShortID != 0)
+	UObject::BeginCacheForCookedPlatformData(TargetPlatform);
+	if (HasAnyFlags(RF_ClassDefaultObject))
 	{
-		ShortID = 0;
-		bChangedDuringReset = true;
+		return;
 	}
-
-	if (bChangedDuringReset)
-	{
-		bChangedDuringReset = false;
-		MarkDirtyInGameThread();
-	}
+	auto PlatformID = UAkPlatformInfo::GetSharedPlatformInfo(TargetPlatform->PlatformName());
+	UWwiseResourceCooker::CreateForPlatform(TargetPlatform, PlatformID, EWwiseExportDebugNameRule::Name);
 }
+
 #endif

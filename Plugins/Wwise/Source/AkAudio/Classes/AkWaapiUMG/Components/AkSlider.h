@@ -36,7 +36,7 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnPropertyDropDetected, FString, Pr
 USTRUCT(BlueprintType)
 struct AKAUDIO_API FAkWwiseObjectDetails
 {
-	GENERATED_USTRUCT_BODY()
+	GENERATED_BODY()
 
 	/**
 	* The name of the item to control
@@ -63,7 +63,7 @@ struct AKAUDIO_API FAkWwiseObjectDetails
 USTRUCT(BlueprintType)
 struct AKAUDIO_API FAkWwiseItemToControl //: public UObject
 {
-	GENERATED_USTRUCT_BODY()
+	GENERATED_BODY()
 
 	/**
 	* The item to control
@@ -87,9 +87,11 @@ UAkSlider
 UCLASS(config = Editor, defaultconfig)
 class AKAUDIO_API UAkSlider : public UWidget
 {
-	GENERATED_UCLASS_BODY()
+	GENERATED_BODY()
 
 public:
+	UAkSlider(const FObjectInitializer& ObjectInitializer);
+
 	/** The volume value to display. */
 	UPROPERTY(EditAnywhere, Category=Appearance, meta=(ClampMin = "0", ClampMax = "1", UIMin = "0", UIMax = "1"))
 	float Value;

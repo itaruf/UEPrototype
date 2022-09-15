@@ -27,7 +27,11 @@ public:
 	FAkMixerPlatform();
 	~FAkMixerPlatform();
 
+#if UE_5_0_OR_LATER
+	virtual FString GetPlatformApi() const override { return TEXT("AkMixerPlatform"); }
+#else
 	virtual Audio::EAudioMixerPlatformApi::Type GetPlatformApi() const override { return Audio::EAudioMixerPlatformApi::Other; }
+#endif
 	virtual bool InitializeHardware() override;
 	virtual bool TeardownHardware() override;
 	virtual bool IsInitialized() const override;

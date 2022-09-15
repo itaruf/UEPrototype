@@ -28,18 +28,18 @@ Copyright (c) 2021 Audiokinetic Inc.
 
 AkDrawBounds::AkDrawBounds(const FTransform& T, const FVector& Extent) : Transform(T), BoxExtent(Extent) {}
 
-FUnrealFloatVector AkDrawBounds::FRU() { return Transform.TransformPosition(BoxExtent); }
-FUnrealFloatVector AkDrawBounds::BLD() { return Transform.TransformPosition(-BoxExtent); }
-FUnrealFloatVector AkDrawBounds::FLD() { return Transform.TransformPosition(FVector(BoxExtent.X, -BoxExtent.Y, -BoxExtent.Z)); }
-FUnrealFloatVector AkDrawBounds::BRU() { return Transform.TransformPosition(FVector(-BoxExtent.X, BoxExtent.Y, BoxExtent.Z)); }
-FUnrealFloatVector AkDrawBounds::FLU() { return Transform.TransformPosition(FVector(BoxExtent.X, -BoxExtent.Y, BoxExtent.Z)); }
-FUnrealFloatVector AkDrawBounds::BLU() { return Transform.TransformPosition(FVector(-BoxExtent.X, -BoxExtent.Y, BoxExtent.Z)); }
-FUnrealFloatVector AkDrawBounds::FRD() { return Transform.TransformPosition(FVector(BoxExtent.X, BoxExtent.Y, -BoxExtent.Z)); }
-FUnrealFloatVector AkDrawBounds::BRD() { return Transform.TransformPosition(FVector(-BoxExtent.X, BoxExtent.Y, -BoxExtent.Z)); }
-FUnrealFloatVector AkDrawBounds::RU() { return Transform.TransformPosition(FVector(0.0f, BoxExtent.Y, BoxExtent.Z)); }
-FUnrealFloatVector AkDrawBounds::LU() { return Transform.TransformPosition(FVector(0.0f, -BoxExtent.Y, BoxExtent.Z)); }
-FUnrealFloatVector AkDrawBounds::RD() { return Transform.TransformPosition(FVector(0.0f, BoxExtent.Y, -BoxExtent.Z)); }
-FUnrealFloatVector AkDrawBounds::LD() { return Transform.TransformPosition(FVector(0.0f, -BoxExtent.Y, -BoxExtent.Z)); }
+FVector AkDrawBounds::FRU() const { return Transform.TransformPosition(FVector(BoxExtent)); }
+FVector AkDrawBounds::BLD() const { return Transform.TransformPosition(FVector(-BoxExtent)); }
+FVector AkDrawBounds::FLD() const { return Transform.TransformPosition(FVector(BoxExtent.X, -BoxExtent.Y, -BoxExtent.Z)); }
+FVector AkDrawBounds::BRU() const { return Transform.TransformPosition(FVector(-BoxExtent.X, BoxExtent.Y, BoxExtent.Z)); }
+FVector AkDrawBounds::FLU() const { return Transform.TransformPosition(FVector(BoxExtent.X, -BoxExtent.Y, BoxExtent.Z)); }
+FVector AkDrawBounds::BLU() const { return Transform.TransformPosition(FVector(-BoxExtent.X, -BoxExtent.Y, BoxExtent.Z)); }
+FVector AkDrawBounds::FRD() const { return Transform.TransformPosition(FVector(BoxExtent.X, BoxExtent.Y, -BoxExtent.Z)); }
+FVector AkDrawBounds::BRD() const { return Transform.TransformPosition(FVector(-BoxExtent.X, BoxExtent.Y, -BoxExtent.Z)); }
+FVector AkDrawBounds::RU()  const { return Transform.TransformPosition(FVector(0.0, BoxExtent.Y, BoxExtent.Z)); }
+FVector AkDrawBounds::LU()  const { return Transform.TransformPosition(FVector(0.0, -BoxExtent.Y, BoxExtent.Z)); }
+FVector AkDrawBounds::RD()  const { return Transform.TransformPosition(FVector(0.0, BoxExtent.Y, -BoxExtent.Z)); }
+FVector AkDrawBounds::LD()  const { return Transform.TransformPosition(FVector(0.0, -BoxExtent.Y, -BoxExtent.Z)); }
 
 namespace AkSpatialAudioColors
 {	

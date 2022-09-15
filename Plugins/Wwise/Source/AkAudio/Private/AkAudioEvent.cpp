@@ -21,844 +21,193 @@ Copyright (c) 2021 Audiokinetic Inc.
 #include "AkAudioEvent.h"
 #include "AkAudioBank.h"
 #include "AkAudioDevice.h"
-#include "AkGroupValue.h"
-#include "AkMediaAsset.h"
-#include "AkUnrealHelper.h"
-#include "AssetRegistry/Public/AssetRegistryModule.h"
-#include "HAL/PlatformProperties.h"
-#include "IntegrationBehavior/AkIntegrationBehavior.h"
+#include "Wwise/WwiseResourceLoader.h"
 
-#if WITH_EDITOR
-#include "AssetTools/Public/AssetToolsModule.h"
-#include "UnrealEd/Public/ObjectTools.h"
+
+#if WITH_EDITORONLY_DATA
+#include "Wwise/WwiseResourceCooker.h"
 #endif
 
-bool UAkAssetDataSwitchContainerData::IsReadyForAsyncPostLoad() const
-{
-	for(auto child : Children)
-	{
-		if (!child->IsReadyForAsyncPostLoad())
-		{
-			return false;
-		}
-	}
-
-	for (auto entry : MediaList)
-	{
-		if (!entry->IsReadyForAsyncPostLoad())
-		{
-			return false;
-		}
-	}
-
-	return true;
-}
-
-#if WITH_EDITOR
-void UAkAssetDataSwitchContainerData::FillTempMediaList()
-{
-	TempMediaList.Empty();
-
-	for (auto entry : MediaList)
-	{
-		TempMediaList.Emplace(entry);
-	}
-
-	for (auto child : Children)
-	{
-		child->FillTempMediaList();
-	}
-}
-
-void UAkAssetDataSwitchContainerData::FillFinalMediaList()
-{
-	MediaList.Empty();
-
-	for (auto& tempMedia : TempMediaList)
-	{
-		MediaList.Add(tempMedia.LoadSynchronous());
-	}
-
-	for (auto child : Children)
-	{
-		child->FillFinalMediaList();
-	}
-}
-
-void UAkAssetDataSwitchContainerData::GetMediaList(TArray<TSoftObjectPtr<UAkMediaAsset>>& mediaList) const
-{
-	internalGetMediaList(this, mediaList);
-}
-
-void UAkAssetDataSwitchContainerData::internalGetMediaList(const UAkAssetDataSwitchContainerData* data, TArray<TSoftObjectPtr<UAkMediaAsset>>& mediaList) const
-{
-	for (auto& media : data->MediaList)
-	{
-		mediaList.AddUnique(media);
-	}
-
-	for (auto* child : data->Children)
-	{
-		internalGetMediaList(child, mediaList);
-	}
-}
-#endif
-
-void UAkAssetDataSwitchContainer::Serialize(FArchive& Ar)
+void UAkAudioEvent::Serialize(FArchive& Ar)
 {
 	Super::Serialize(Ar);
-	LoadSwitchContainer(SwitchContainers);
-}
 
-bool UAkAssetDataSwitchContainer::IsReadyForAsyncPostLoad() const
-{
-	for (auto* switchContainer : SwitchContainers)
+	if (HasAnyFlags(RF_ClassDefaultObject))
 	{
-		if (!switchContainer->IsReadyForAsyncPostLoad())
-		{
-			return false;
-		}
+		return;
 	}
 
-	return true;
+#if WITH_EDITORONLY_DATA
+	auto* ResourceCooker = UWwiseResourceCooker::GetForArchive(Ar);
+	if (UNLIKELY(!ResourceCooker))
+	{
+		return;
+	}
+
+	if (ResourceCooker->PrepareCookedData(EventCookedData, GetValidatedInfo(EventInfo)))
+	{
+		EventCookedData.Serialize(Ar);
+	}
+
+	FillMetadata(ResourceCooker->GetProjectDatabase());
+
+	if (Ar.IsCooking() && Ar.IsSaving())
+	{
+		Ar << MaximumDuration;
+		Ar << MinimumDuration;
+		Ar << IsInfinite;
+		Ar << MaxAttenuationRadius;
+	}
+
+#else
+	EventCookedData.Serialize(Ar);
+	Ar << MaximumDuration;
+	Ar << MinimumDuration;
+	Ar << IsInfinite;
+	Ar << MaxAttenuationRadius;
+#endif
 }
 
-void UAkAssetDataSwitchContainer::LoadSwitchContainer(const TArray<UAkAssetDataSwitchContainerData*>& SwitchContainersToLoad)
+#if WITH_EDITORONLY_DATA
+void UAkAudioEvent::FillMetadata(UWwiseProjectDatabase * ProjectDatabase)
 {
-	for (auto* Container : SwitchContainersToLoad)
+	const TSet<FWwiseRefEvent> EventRef = FWwiseDataStructureScopeLock(*ProjectDatabase).GetEvent(GetValidatedInfo(EventInfo));
+	if (UNLIKELY(EventRef.Num() == 0))
 	{
-		LoadSwitchContainer(Container);
+		UE_LOG(LogAkAudio, Log, TEXT("AkAudioEvent (%s): Cannot fill Metadata - Event is not loaded"), *GetName());
+		return;
 	}
-}
-
-void UAkAssetDataSwitchContainer::LoadSwitchContainer(UAkAssetDataSwitchContainerData* SwitchContainer)
-{
-	if (SwitchContainer)
-	{
-		//Check the group value is loaded in memory before attempting to access the container's children or load its media
-		bool bIsGroupValueValid = IsValid(SwitchContainer->GroupValue.Get());
-		//If the group value is not set, we are dealing with a generic path in a music container.
-		//In this case we want to continue stepping in children and load any media associated with the generic path.
-		bool bIsGroupValueUnset = SwitchContainer->GroupValue.IsNull();
-		if (bIsGroupValueValid || bIsGroupValueUnset)
-		{
-			TArray<UAkMediaAsset*> InvalidMedia;
-			for (UAkMediaAsset* media : SwitchContainer->MediaList)
-			{
-				if (IsValid(media))
-				{
-					media->Load();
-				}
-				else
-				{
-					InvalidMedia.Add(media);
-				}
-			}
-
-			for (UAkMediaAsset* media : InvalidMedia)
-			{
-				SwitchContainer->MediaList.Remove(media);
-			}
-
-			LoadSwitchContainer(SwitchContainer->Children);
-		}
-		else
-		{
-			if (FAkAudioDevice* AkAudioDevice = FAkAudioDevice::Get())
-			{
-				FString FullName = SwitchContainer->GroupValue.GetAssetName();
-
-				int32 Position;
-				if (FullName.FindLastChar('-', Position))
-				{
-					FString ValueName = FullName.RightChop(Position+1);
-					uint32 SwitchID = AkAudioDevice->GetIDFromString(ValueName);
-					AkAudioDevice->GetOnSwitchValueLoaded(SwitchID).AddUObject(this, &UAkAssetDataSwitchContainer::OnSwitchValueLoaded);
-					UAkAssetDataSwitchContainerData*& PendingSwitchAssetData = PendingSwitchLoads.Add(SwitchID, SwitchContainer);
-				}
-			}
-		}
-	}
-}
-
-void UAkAssetDataSwitchContainer::OnSwitchValueLoaded(UAkGroupValue* NewGroupValue)
-{
-	if (NewGroupValue && NewGroupValue->IsValidLowLevelFast())
-	{
-		UAkAssetDataSwitchContainerData* PendingAssetData;
-		if(PendingSwitchLoads.RemoveAndCopyValue(NewGroupValue->ShortID, PendingAssetData))
-		{
-			LoadSwitchContainer(PendingAssetData);
-		}
-
-		if (FAkAudioDevice* AkAudioDevice = FAkAudioDevice::Get())
-		{
-			AkAudioDevice->GetOnSwitchValueLoaded(NewGroupValue->ShortID).RemoveAll(this);
-		}
-	}
-}
-
-void UAkAssetDataSwitchContainer::BeginDestroy()
-{
-	for (auto Pair : PendingSwitchLoads)
-	{
-		uint32 SwitchValueID = Pair.Key;
-		if (FAkAudioDevice* AkAudioDevice = FAkAudioDevice::Get())
-		{
-			AkAudioDevice->GetOnSwitchValueLoaded(SwitchValueID).RemoveAll(this);
-		}
-	}
-	PendingSwitchLoads.Reset();
-	Super::BeginDestroy();
-}
-
-void UAkAssetDataSwitchContainer::unloadSwitchContainerMedia(const TArray<UAkAssetDataSwitchContainerData*>& switchContainers)
-{
-	for (auto* container : switchContainers)
-	{
-		unloadSwitchContainerMedia(container);
-	}
-}
-
-void UAkAssetDataSwitchContainer::unloadSwitchContainerMedia(UAkAssetDataSwitchContainerData* switchContainer)
-{
-	if (switchContainer)
-	{
-		for (UAkMediaAsset* media : switchContainer->MediaList)
-		{
-			if (IsValid(media))
-			{
-				media->Unload();
-			}
-		}
-
-		unloadSwitchContainerMedia(switchContainer->Children);
-	}
-}
-
-void UAkAssetDataSwitchContainer::GetPreloadDependencies(TArray<UObject*>& OutDeps)
-{
-	Super::GetPreloadDependencies(OutDeps);
-
-	for (auto* container : SwitchContainers)
-	{
-		if (container != nullptr)
-		{
-			OutDeps.Add(container);
-		}
-	}
-}
-
-#if WITH_EDITOR
-void UAkAssetDataSwitchContainer::FillTempMediaList()
-{
-	Super::FillTempMediaList();
-
-	for (auto* switchContainer : SwitchContainers)
-	{
-		switchContainer->FillTempMediaList();
-	}
-}
-
-void UAkAssetDataSwitchContainer::FillFinalMediaList()
-{
-	Super::FillFinalMediaList();
-
-	for (auto* switchContainer : SwitchContainers)
-	{
-		switchContainer->FillFinalMediaList();
-	}
-}
-
-void UAkAssetDataSwitchContainer::GetMediaList(TArray<TSoftObjectPtr<UAkMediaAsset>>& mediaList) const
-{
-	Super::GetMediaList(mediaList);
-
-	for (auto* switchContainer : SwitchContainers)
-	{
-		switchContainer->GetMediaList(mediaList);
-	}
+	const FWwiseMetadataEvent* EventMetadata = EventRef.Array()[0].GetEvent();
+	MaximumDuration = EventMetadata->DurationMax;
+	MinimumDuration = EventMetadata->DurationMin;
+	IsInfinite = EventMetadata->DurationType == EWwiseMetadataEventDurationType::Infinite;
+	MaxAttenuationRadius = EventMetadata->MaxAttenuation;
 }
 #endif
 
-UAkAssetDataSwitchContainer* UAkAudioEventData::FindOrAddLocalizedData(const FString& language)
+
+void UAkAudioEvent::LoadEventData(bool bReload)
 {
-	FScopeLock autoLock(&LocalizedMediaLock);
-
-	auto* localizedData = LocalizedMedia.Find(language);
-	if (localizedData)
+	auto* ResourceLoader = UWwiseResourceLoader::Get();
+	if (UNLIKELY(!ResourceLoader))
 	{
-		return *localizedData;
+		return;
 	}
-	else
-	{
-		auto* newLocalizedData = NewObject<UAkAssetDataSwitchContainer>(this);
-		LocalizedMedia.Add(language, newLocalizedData);
-		return newLocalizedData;
-	}
-}
 
-#if WITH_EDITOR
-void UAkAudioEventData::GetMediaList(TArray<TSoftObjectPtr<UAkMediaAsset>>& mediaList) const
-{
-	Super::GetMediaList(mediaList);
-
-	for (auto& entry : LocalizedMedia)
+	if (bReload)
 	{
-		entry.Value->GetMediaList(mediaList);
+		UnloadEventData();
 	}
-}
+	
+#if WITH_EDITORONLY_DATA
+	if (IWwiseProjectDatabaseModule::IsInACookingCommandlet())
+	{
+		return;
+	}
+	auto* ResourceCooker = UWwiseResourceCooker::GetDefault();
+	if (UNLIKELY(!ResourceCooker))
+	{
+		return;
+	}
+	if (UNLIKELY(!ResourceCooker->PrepareCookedData(EventCookedData, GetValidatedInfo(EventInfo))))
+	{
+		return;
+	}
+	FillMetadata(ResourceCooker->GetProjectDatabase());
 #endif
 
-float UAkAudioEvent::GetMaxAttenuationRadius() const
-{
-	if (auto* eventData = Cast<UAkAudioEventData>(getAssetData()))
-	{
-		return eventData->MaxAttenuationRadius;
-	}
-
-	return 0.f;
+	UE_LOG(LogAkAudio, Verbose, TEXT("%s - LoadEventData"), *GetName());
+	LoadedEventData = ResourceLoader->LoadEvent(EventCookedData);
 }
 
-bool UAkAudioEvent::GetIsInfinite() const
+void UAkAudioEvent::PostLoad()
 {
-	if (auto* eventData = Cast<UAkAudioEventData>(getAssetData()))
-	{
-		return eventData->IsInfinite;
-	}
-
-	return false;
-}
-
-float UAkAudioEvent::GetMinimumDuration() const
-{
-	if (auto* eventData = Cast<UAkAudioEventData>(getAssetData()))
-	{
-		return eventData->MinimumDuration;
-	}
-
-	return 0.f;
-}
-
-void UAkAudioEvent::SetMinimumDuration(float value)
-{
-	if (auto* eventData = Cast<UAkAudioEventData>(getAssetData()))
-	{
-		eventData->MinimumDuration = value;
-	}
-}
-
-float UAkAudioEvent::GetMaximumDuration() const
-{
-	if (auto* eventData = Cast<UAkAudioEventData>(getAssetData()))
-	{
-		return eventData->MaximumDuration;
-	}
-
-	return 0.f;
-}
-
-void UAkAudioEvent::SetMaximumDuration(float value)
-{
-	if (auto* eventData = Cast<UAkAudioEventData>(getAssetData()))
-	{
-		eventData->MaximumDuration = value;
-	}
-}
-
-bool UAkAudioEvent::SwitchLanguage(const FString& newAudioCulture, const SwitchLanguageCompletedFunction& Function)
-{
-	bool switchLanguage = false;
-
-	TSoftObjectPtr<UAkAssetPlatformData>* eventDataSoftObjectPtr = LocalizedPlatformAssetDataMap.Find(newAudioCulture);
-
-	if (eventDataSoftObjectPtr)
-	{
-		auto& assetRegistryModule = FModuleManager::LoadModuleChecked<FAssetRegistryModule>("AssetRegistry");
-		auto assetData = assetRegistryModule.Get().GetAssetByObjectPath(*eventDataSoftObjectPtr->ToSoftObjectPath().ToString(), true);
-
-		if (assetData.IsValid() && !assetData.PackagePath.IsNone())
-		{
-			switchLanguage = true;
-		}
-		else
-		{
-			if (auto* audioDevice = FAkAudioDevice::Get())
-			{
-				FString pathWithDefaultLanguage = eventDataSoftObjectPtr->ToSoftObjectPath().ToString().Replace(*newAudioCulture, *audioDevice->GetDefaultLanguage());
-				assetData = assetRegistryModule.Get().GetAssetByObjectPath(FName(*pathWithDefaultLanguage), true);
-				if (assetData.IsValid() && !assetData.PackagePath.IsNone())
-				{
-					switchLanguage = true;
-				}
-			}
-		}
-	}
-	else
-	{
-		if (auto* eventData = Cast<UAkAudioEventData>(getAssetData()))
-		{
-			if (eventData->LocalizedMedia.Contains(newAudioCulture))
-			{
-				switchLanguage = true;
-			}
-		}
-	}
-
-	if (switchLanguage)
-	{
-		if (auto* audioDevice = FAkAudioDevice::Get())
-		{
-			if (audioDevice->IsEventIDActive(ShortID))
-			{
-				UE_LOG(LogAkAudio, Warning, TEXT("Stopping all instances of the \"%s\" event because it is being unloaded during a language change."), *GetName());
-				audioDevice->StopEventID(ShortID);
-			}
-		}
-
-		unloadLocalizedData();
-
-		loadLocalizedData(newAudioCulture, Function);
-	}
-
-	return switchLanguage;
-}
-
-void UAkAudioEvent::Load()
-{
-	AkIntegrationBehavior::Get()->AkAudioEvent_Load(this);
+	Super::PostLoad();
+	LoadEventData(true);
 }
 
 void UAkAudioEvent::BeginDestroy()
 {
-	if (auto* audioDevice = FAkAudioDevice::Get())
-	{
-		if (audioDevice->IsEventIDActive(ShortID))
-		{
-			UE_LOG(LogAkAudio, Warning, TEXT("Stopping all instances of the \"%s\" event because it is being unloaded."), *GetName());
-			audioDevice->StopEventID(ShortID);
-		}
-	}
-
 	Super::BeginDestroy();
+
+	if (HasAnyFlags(RF_ClassDefaultObject))
+	{
+		return;
+	}
+
+	UE_LOG(LogAkAudio, Verbose, TEXT("%s - Event BeginDestroy"), *GetName());
+	
+	UnloadEventData();
 }
 
-bool UAkAudioEvent::IsReadyForFinishDestroy()
+void UAkAudioEvent::UnloadEventData()
 {
-	bool IsReady = true;
-	if (auto* AudioDevice = FAkAudioDevice::Get())
+	if (LoadedEventData)
 	{
-		IsReady = !AudioDevice->IsEventIDActive(ShortID);
-		if (!IsReady)
+		auto* ResourceLoader = UWwiseResourceLoader::Get();
+		if (UNLIKELY(!ResourceLoader))
 		{
-			AudioDevice->Update(0.0);
+			return;
 		}
-	}
-
-	return IsReady;
-}
-
-void UAkAudioEvent::Unload()
-{
-	if (IsLocalized())
-	{
-		unloadLocalizedData();
-	}
-	else
-	{
-		Super::Unload();
+		UE_LOG(LogAkAudio, Verbose, TEXT("%s - UnloadEventData"), *GetName());
+		ResourceLoader->UnloadEvent(LoadedEventData);
+		LoadedEventData=nullptr;
 	}
 }
 
-bool UAkAudioEvent::IsLocalized() const
+bool UAkAudioEvent::IsDataFullyLoaded() const
 {
-	if (RequiredBank)
+	if (!LoadedEventData)
 	{
 		return false;
 	}
 
-	if (LocalizedPlatformAssetDataMap.Num() > 0)
-	{
-		return true;
-	}
+	return LoadedEventData->GetValue().bLoaded;
+}
 
-	if (auto* eventData = Cast<UAkAudioEventData>(getAssetData()))
+TArray<FWwiseExternalSourceCookedData> UAkAudioEvent::GetExternalSources() const
+{
+	auto* ResourceLoader = FWwiseResourceLoaderModule::GetModule()->GetResourceLoader();
+	if (LIKELY(ResourceLoader))
 	{
-		if (eventData->LocalizedMedia.Num() > 0)
+		const FWwiseResourceLoaderImplScopeLock ResourceLoaderImpl(ResourceLoader);
+		auto CurrentLanguage = ResourceLoaderImpl->GetLanguageMapKey(EventCookedData.EventLanguageMap, nullptr, EventCookedData.DebugName );
+		if (LIKELY(CurrentLanguage))
 		{
-			return true;
-		}
-	}
-
-	return false;
-}
-
-void UAkAudioEvent::PinInGarbageCollector(uint32 PlayingID)
-{
-	if (TimesPinnedToGC.GetValue() == 0)
-	{
-		AddToRoot();
-	}
-	TimesPinnedToGC.Increment();
-
-	if (auto* AudioDevice = FAkAudioDevice::Get())
-	{
-		AudioDevice->AddToPinnedEventsMap(PlayingID, this);
-	}
-}
-
-void UAkAudioEvent::UnpinFromGarbageCollector(uint32 PlayingID)
-{
-	TimesPinnedToGC.Decrement();
-	if (TimesPinnedToGC.GetValue() == 0)
-	{
-		RemoveFromRoot();
-	}
-}
-
-UAkAssetData* UAkAudioEvent::createAssetData(UObject* parent) const
-{
-	return NewObject<UAkAudioEventData>(parent);
-}
-
-UAkAssetData* UAkAudioEvent::getAssetData() const
-{
-#if WITH_EDITORONLY_DATA
-	if (LocalizedPlatformAssetDataMap.Num() > 0 && CurrentLocalizedPlatformData)
-	{
-		const FString runningPlatformName(FPlatformProperties::IniPlatformName());
-
-		if (auto platformEventData = CurrentLocalizedPlatformData->AssetDataPerPlatform.Find(runningPlatformName))
-		{
-			return *platformEventData;
-		}
-	}
-
-	return Super::getAssetData();
-#else
-	if (LocalizedPlatformAssetDataMap.Num() > 0 && CurrentLocalizedPlatformData)
-	{
-		return CurrentLocalizedPlatformData->CurrentAssetData;
-	}
-
-	return Super::getAssetData();
-#endif
-}
-
-void UAkAudioEvent::loadLocalizedData(const FString& audioCulture, const SwitchLanguageCompletedFunction& Function)
-{
-	if (auto* audioDevice = FAkAudioDevice::Get())
-	{
-		if (auto* eventData = Cast<UAkAudioEventData>(getAssetData()))
-		{
-			if (eventData->LocalizedMedia.Num() > 0)
+			const FWwiseEventCookedData* CookedData = EventCookedData.EventLanguageMap.Find(*CurrentLanguage);
+			if(LIKELY(CookedData))
 			{
-				if (auto* localizedData = eventData->LocalizedMedia.Find(audioCulture))
-				{
-					(*localizedData)->Load();
-
-					if (Function)
-					{
-						Function(true);
-					}
-					return;
-				}
-			}
-		}
-
-		TSoftObjectPtr<UAkAssetPlatformData>* eventDataSoftObjectPtr = LocalizedPlatformAssetDataMap.Find(audioCulture);
-		if (eventDataSoftObjectPtr)
-		{
-			auto& assetRegistryModule = FModuleManager::LoadModuleChecked<FAssetRegistryModule>("AssetRegistry");
-
-			FSoftObjectPath localizedDataPath = eventDataSoftObjectPtr->ToSoftObjectPath();
-
-			if (!assetRegistryModule.Get().GetAssetByObjectPath(*localizedDataPath.ToString(), true).IsValid())
-			{
-				FString pathWithDefaultLanguage = eventDataSoftObjectPtr->ToSoftObjectPath().ToString().Replace(*audioCulture, *audioDevice->GetDefaultLanguage());
-				auto assetData = assetRegistryModule.Get().GetAssetByObjectPath(FName(*pathWithDefaultLanguage), true);
-				if (assetRegistryModule.Get().GetAssetByObjectPath(FName(*pathWithDefaultLanguage), true).IsValid())
-				{
-					localizedDataPath = FSoftObjectPath(pathWithDefaultLanguage);
-				}
-			}
-
-			TWeakObjectPtr<UAkAudioEvent> weakThis(this);
-			localizedStreamHandle = audioDevice->GetStreamableManager().RequestAsyncLoad(localizedDataPath, [weakThis, Function] {
-				if (weakThis.IsValid())
-				{
-					weakThis->onLocalizedDataLoaded();
-
-					if (Function)
-					{
-						Function(weakThis->localizedStreamHandle.IsValid());
-					}
-				}
-			});
-		}
-	}
-}
-
-void UAkAudioEvent::onLocalizedDataLoaded()
-{
-	if (localizedStreamHandle.IsValid())
-	{
-		CurrentLocalizedPlatformData = Cast<UAkAssetPlatformData>(localizedStreamHandle->GetLoadedAsset());
-
-		Super::Load();
-	}
-}
-
-void UAkAudioEvent::unloadLocalizedData()
-{
-	if (auto* eventData = Cast<UAkAudioEventData>(getAssetData()))
-	{
-		if (eventData->LocalizedMedia.Num() > 0)
-		{
-			if (auto* audioDevice = FAkAudioDevice::Get())
-			{
-				if (auto* localizedData = eventData->LocalizedMedia.Find(audioDevice->GetCurrentAudioCulture()))
-				{
-					(*localizedData)->Unload();
-				}
-			}
-		}
-		else
-		{
-			if (localizedStreamHandle.IsValid())
-			{
-				Super::Unload();
-
-				CurrentLocalizedPlatformData = nullptr;
-
-				localizedStreamHandle->CancelHandle();
-				localizedStreamHandle.Reset();
+				return CookedData->ExternalSources;
 			}
 		}
 	}
-}
 
-void UAkAudioEvent::superLoad()
-{
-	Super::Load();
+	return {};
 }
 
 #if WITH_EDITOR
-UAkAssetData* UAkAudioEvent::FindOrAddAssetData(const FString& platform, const FString& language)
+void UAkAudioEvent::PostEditChangeProperty(struct FPropertyChangedEvent& PropertyChangedEvent)
 {
-	check(IsInGameThread());
-
-	UAkAssetPlatformData* eventData = nullptr;
-	UObject* parent = this;
-
-	if (language.Len() > 0)
-	{
-		auto* languageIt = LocalizedPlatformAssetDataMap.Find(language);
-		if (languageIt)
-		{
-			eventData = languageIt->LoadSynchronous();
-
-			if (eventData)
-			{
-				parent = eventData;
-			}
-			else
-			{
-				LocalizedPlatformAssetDataMap.Remove(language);
-			}
-		}
-
-		if (!eventData)
-		{
-			auto& assetRegistryModule = FModuleManager::LoadModuleChecked<FAssetRegistryModule>("AssetRegistry");
-			auto& assetToolModule = FModuleManager::LoadModuleChecked<FAssetToolsModule>("AssetTools");
-
-			FSoftObjectPath objectPath(this);
-
-			auto basePackagePath = AkUnrealHelper::GetBaseAssetPackagePath();
-
-			auto packagePath = objectPath.GetLongPackageName();
-			packagePath.RemoveFromStart(basePackagePath);
-			packagePath.RemoveFromEnd(objectPath.GetAssetName());
-			packagePath = ObjectTools::SanitizeObjectPath(FPaths::Combine(AkUnrealHelper::GetLocalizedAssetPackagePath(), language, packagePath));
-
-			auto assetName = GetName();
-
-			auto foundAssetData = assetRegistryModule.Get().GetAssetByObjectPath(*FPaths::Combine(packagePath, FString::Printf(TEXT("%s.%s"), *assetName, *assetName)));
-			if (foundAssetData.IsValid())
-			{
-				eventData = Cast<UAkAssetPlatformData>(foundAssetData.GetAsset());
-			}
-			else
-			{
-				eventData = Cast<UAkAssetPlatformData>(assetToolModule.Get().CreateAsset(assetName, packagePath, UAkAssetPlatformData::StaticClass(), nullptr));
-			}
-
-			if (eventData)
-			{
-				parent = eventData;
-
-				LocalizedPlatformAssetDataMap.Add(language, eventData);
-			}
-		}
-
-		if (eventData)
-		{
-			return internalFindOrAddAssetData(eventData, platform, parent);
-		}
-	}
-
-	return UAkAssetBase::FindOrAddAssetData(platform, language);
-}
-
-void UAkAudioEvent::Reset()
-{
-	if (LocalizedPlatformAssetDataMap.Num() > 0)
-	{
-		bChangedDuringReset = true;
-	}
-	LocalizedPlatformAssetDataMap.Empty();
-
-	// ALWAYS call Super::Reset() last, since it will check if things have been modified
-	// before marking as dirty.
-	Super::Reset();
-}
-
-bool UAkAudioEvent::NeedsRebuild(const TSet<FString>& PlatformsToBuild, const TSet<FString>& LanguagesToBuild, const ISoundBankInfoCache* SoundBankInfoCache) const
-{
-	bool result = Super::NeedsRebuild(PlatformsToBuild, LanguagesToBuild, SoundBankInfoCache);
-
-	if (!PlatformAssetData)
-	{
-		result = false;
-
-		TArray<TSoftObjectPtr<UAkMediaAsset>> mediaList;
-		GetMediaList(mediaList);
-
-		for (auto& media : mediaList)
-		{
-			if (media.ToSoftObjectPath().IsValid() && !media.IsValid())
-			{
-				result = true;
-			}
-		}
-	}
-
-	if (!result)
-	{
-		TSet<FString> availableLanguages;
-		for (auto& entry : LocalizedPlatformAssetDataMap)
-		{
-			availableLanguages.Add(entry.Key);
-
-			if (LanguagesToBuild.Contains(entry.Key))
-			{
-				if (auto assetData = entry.Value.Get())
-				{
-					result |= assetData->NeedsRebuild(PlatformsToBuild, entry.Key, ID, SoundBankInfoCache);
-				}
-				else
-				{
-					result = true;
-				}
-			}
-		}
-
-		if (!PlatformAssetData && !availableLanguages.Includes(LanguagesToBuild))
-		{
-			result = true;
-		}
-	}
-
-	return result;
-}
-
-void UAkAudioEvent::PreEditUndo()
-{
-	UndoCompareBank = RequiredBank;
-	Super::PreEditUndo();
-}
-
-void UAkAudioEvent::PostEditUndo()
-{
-	if (UndoCompareBank != RequiredBank) {
-		UndoFlag = true;
-	}
-	Super::PostEditUndo();
-	UndoFlag = false;
-}
-
-#if UE_4_25_OR_LATER
-void UAkAudioEvent::PreEditChange(FProperty* PropertyAboutToChange)
-#else
-void UAkAudioEvent::PreEditChange(UProperty* PropertyAboutToChange)
-#endif
-{
-	if (PropertyAboutToChange->GetFName() == GET_MEMBER_NAME_CHECKED(UAkAudioEvent, RequiredBank))
-	{
-		LastRequiredBank = RequiredBank;
-	}
-	Super::PreEditChange(PropertyAboutToChange);
-}
-
-void UAkAudioEvent::PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent)
-{
-	if (PropertyChangedEvent.Property)
-	{
-		if (PropertyChangedEvent.Property->GetFName() == GET_MEMBER_NAME_CHECKED(UAkAudioEvent, RequiredBank))
-		{
-			UpdateRequiredBanks();
-		}
-	}
-	else if (UndoFlag)
-	{
-		LastRequiredBank = UndoCompareBank;
-		UpdateRequiredBanks();
-	}
 	Super::PostEditChangeProperty(PropertyChangedEvent);
-
-}
-
-void UAkAudioEvent::ClearRequiredBank()
-{
-	if (RequiredBank->IsValidLowLevel())
-	{
-		RequiredBank->RemoveAkAudioEvent(this);
-	}
-	LastRequiredBank = RequiredBank;
-	RequiredBank = nullptr;
-}
-
-void UAkAudioEvent::UpdateRequiredBanks()
-{
-	if (LastRequiredBank->IsValidLowLevel())
-	{
-		LastRequiredBank->RemoveAkAudioEvent(this);
-	}
-
-	if (RequiredBank->IsValidLowLevel())
-	{
-		RequiredBank->AddAkAudioEvent(this);
-	}
+	LoadEventData(true);
 }
 #endif
 
-bool UAkAudioEvent::IsReadyForAsyncPostLoad() const
+#if WITH_EDITORONLY_DATA
+void UAkAudioEvent::CookAdditionalFilesOverride(const TCHAR* PackageFilename, const ITargetPlatform* TargetPlatform,
+	TFunctionRef<void(const TCHAR* Filename, void* Data, int64 Size)> WriteAdditionalFile)
 {
-	if (auto assetData = getAssetData())
+	if (HasAnyFlags(RF_ClassDefaultObject))
 	{
-		return assetData->IsReadyForAsyncPostLoad();
+		return;
 	}
 
-	return true;
-}
-
-bool UAkAudioEvent::IsLocalizationReady() const
-{
-	if (localizedStreamHandle)
+	UWwiseResourceCooker* ResourceCooker = UWwiseResourceCooker::GetForPlatform(TargetPlatform);
+	if (UNLIKELY(!ResourceCooker))
 	{
-		return localizedStreamHandle->HasLoadCompleted();
+		return;
 	}
-
-	return true;
+	ResourceCooker->SetSandboxRootPath(PackageFilename);
+	ResourceCooker->CookEvent(GetValidatedInfo(EventInfo), WriteAdditionalFile);
 }
+#endif

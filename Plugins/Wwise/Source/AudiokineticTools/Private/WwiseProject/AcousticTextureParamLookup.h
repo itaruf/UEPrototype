@@ -12,26 +12,11 @@ written agreement between you and Audiokinetic Inc.
 
 Copyright (c) 2021 Audiokinetic Inc.
 *******************************************************************************/
-
 #pragma once
-#include "WorkUnitXmlVisitor.h"
-#include "WwiseWorkUnitParser.h"
-
-class WwiseWorkUnitParser;
-
-class AcousticTextureVisitor : public WorkUnitXmlVisitor
-{
-public:
-	virtual void EnterAcousticTexture(const FGuid& Id, const FXmlNode* CurrentNode, const FString& Name, const FString& RelativePath) override;
-};
 
 class AkAcousticTextureParamLookup
 {
 public:
-	AkAcousticTextureParamLookup();
-	void UpdateParamsMap();
-
-private:
-	AcousticTextureVisitor Visitor;
-	WwiseWorkUnitParser Parser;
+	static void LoadAllTextures();
+	void UpdateParamsMap() const;
 };

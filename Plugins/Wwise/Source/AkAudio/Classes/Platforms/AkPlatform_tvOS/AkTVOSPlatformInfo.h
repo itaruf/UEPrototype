@@ -30,8 +30,8 @@ public:
 		Architecture = "tvOS";
 		bUsesStaticLibraries = true;
 
-#if WITH_EDITOR
-		UAkPlatformInfo::UnrealNameToWwiseName.Add("TVOS", "tvOS");
+#if WITH_EDITORONLY_DATA
+		UAkPlatformInfo::UnrealNameToPlatformInfo.Add("TVOS", this);
 #endif
 	}
 };

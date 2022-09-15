@@ -18,7 +18,6 @@ Copyright (c) 2021 Audiokinetic Inc.
 
 #include "AkAudioDevice.h"
 #include "AkComponent.h"
-#include "UObject/ObjectMacros.h"
 
 /** This can be used to track a Wwise event as it is triggered and stopped.
  *  Maintains a collection of playing IDs and a collection of IDs that have scheduled stop calls.

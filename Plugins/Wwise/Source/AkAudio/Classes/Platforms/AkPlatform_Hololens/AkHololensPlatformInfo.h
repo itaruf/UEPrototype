@@ -31,13 +31,13 @@ public:
 #ifdef AK_HOLOLENS_VS_VERSION
 		Architecture = "UWP_ARM64_" AK_HOLOLENS_VS_VERSION;
 #else
-		Architecture = "UWP_ARM64_vc150";
+		Architecture = "UWP_ARM64_vc160";
 #endif
 
 		LibraryFileNameFormat = "{0}.dll";
 		DebugFileNameFormat = "{0}.pdb";
-#if WITH_EDITOR
-		UAkPlatformInfo::UnrealNameToWwiseName.Add("Hololens", "Hololens");
+#if WITH_EDITORONLY_DATA
+		UAkPlatformInfo::UnrealNameToPlatformInfo.Add("Hololens", this);
 #endif
 	}
 };

@@ -37,11 +37,11 @@ FAkGeometryComponentDetailsCustomization::FAkGeometryComponentDetailsCustomizati
 
 FAkGeometryComponentDetailsCustomization::~FAkGeometryComponentDetailsCustomization()
 {
-	if (ComponentBeingCustomized && ComponentBeingCustomized->IsValidLowLevelFast() && ComponentBeingCustomized->GetOnMeshTypeChanged())
+	if (ComponentBeingCustomized && IsValid(ComponentBeingCustomized) && ComponentBeingCustomized->GetOnRefreshDetails())
 	{
-		if (ComponentBeingCustomized->GetOnMeshTypeChanged()->IsBoundToObject(this))
+		if (ComponentBeingCustomized->GetOnRefreshDetails()->IsBoundToObject(this))
 		{
-			ComponentBeingCustomized->ClearOnMeshTypeChanged();
+			ComponentBeingCustomized->ClearOnRefreshDetails();
 		}
 		ComponentBeingCustomized = nullptr;
 	}
@@ -113,11 +113,8 @@ void FAkGeometryComponentDetailsCustomization::CustomizeDetails(IDetailLayoutBui
 		auto meshTypeChangedHandle = MyDetailLayout->GetProperty("MeshType");
 		meshTypeChangedHandle->SetOnPropertyValueChanged(FSimpleDelegate::CreateSP(this, &FAkGeometryComponentDetailsCustomization::RefreshDetails));
 
-		FOnMeshTypeChanged meshTypeChanged = FOnMeshTypeChanged::CreateRaw(this, &FAkGeometryComponentDetailsCustomization::RefreshDetails);
-		ComponentBeingCustomized->SetOnMeshTypeChanged(meshTypeChanged);
-
-		FOnMeshMaterialChanged meshMatChanged = FOnMeshMaterialChanged::CreateRaw(this, &FAkGeometryComponentDetailsCustomization::RefreshDetails);
-		ComponentBeingCustomized->SetOnMeshMaterialChanged(meshMatChanged);
+		FOnRefreshDetails refreshDetails = FOnRefreshDetails::CreateSP(this, &FAkGeometryComponentDetailsCustomization::RefreshDetails);
+		ComponentBeingCustomized->SetOnRefreshDetails(refreshDetails);
 
 		if (ComponentBeingCustomized->MeshType == AkMeshType::StaticMesh)
 		{
@@ -164,6 +161,7 @@ void FAkGeometryComponentDetailsCustomization::CustomizeDetails(IDetailLayoutBui
 							})
 					]
 				);
+				ComponentBeingCustomized->UpdateStaticMeshOverride();
 				TArray<UMaterialInterface*> Materials;
 				ComponentBeingCustomized->StaticMeshSurfaceOverride.GetKeys(Materials);
 				for (UMaterialInterface* Material : Materials)
@@ -255,10 +253,8 @@ void FAkGeometryComponentDetailsCustomization::CustomizeDetails(IDetailLayoutBui
 void FAkGeometryComponentDetailsCustomization::RefreshDetails()
 {
 	if (ComponentBeingCustomized)
-	{
-		ComponentBeingCustomized->ClearOnMeshTypeChanged();
-		ComponentBeingCustomized->ClearOnMeshMaterialChanged();
-	}
+		ComponentBeingCustomized->ClearOnRefreshDetails();
+
 	if (MyDetailLayout)
 		MyDetailLayout->ForceRefreshDetails();
 }

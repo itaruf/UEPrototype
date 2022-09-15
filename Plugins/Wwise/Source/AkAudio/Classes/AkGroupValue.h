@@ -16,9 +16,10 @@ Copyright (c) 2021 Audiokinetic Inc.
 #pragma once
 
 #include "AkAudioType.h"
+#include "Wwise/CookedData/WwiseGroupValueCookedData.h"
+#include "Wwise/Loaded/WwiseLoadedGroupValue.h"
+#include "Wwise/Info/WwiseGroupValueInfo.h"
 #include "AkGroupValue.generated.h"
-
-class UAkMediaAsset;
 
 UCLASS()
 class AKAUDIO_API UAkGroupValue : public UAkAudioType
@@ -26,24 +27,43 @@ class AKAUDIO_API UAkGroupValue : public UAkAudioType
 	GENERATED_BODY()
 
 public:
+	UPROPERTY(Transient, VisibleAnywhere, Category = "AkGroupValue")
+	FWwiseGroupValueCookedData GroupValueCookedData;
+
 #if WITH_EDITORONLY_DATA
-	UPROPERTY(VisibleAnywhere, AssetRegistrySearchable, Category = "AkGroupValue")
-	FGuid GroupID;
+	UPROPERTY(EditAnywhere, Category = "AkGroupValue")
+	FWwiseGroupValueInfo GroupValueInfo;
 #endif
+
+	UPROPERTY(meta =(Deprecated,  DeprecationMessage="Use Group ID from Load Data. Used for migration from older versions."))
+	uint32 GroupShortID_DEPRECATED;
 	
-	UPROPERTY(VisibleAnywhere, Category = "AkGroupValue")
-	TArray<TSoftObjectPtr<UAkMediaAsset>> MediaDependencies;
-
-	UPROPERTY(VisibleAnywhere, AssetRegistrySearchable, Category = "AkGroupValue")
-	uint32 GroupShortID;
-
 public:
+	virtual void LoadGroupValue(bool bReload){};
+	void UnloadGroupValue();
+	void BeginDestroy() override;
+
+	virtual void LoadData()   override {LoadGroupValue(false);}
+	virtual void ReloadData() override {LoadGroupValue(true); }
+	virtual void UnloadData() override {UnloadGroupValue();}
+	virtual AkUInt32 GetShortID() override {return GroupValueCookedData.Id;}
+	AkUInt32 GetGroupID() {return GroupValueCookedData.GroupId;}
+
+#if WITH_EDITOR
+	void PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent) override;
+#endif
+
 	void PostLoad() override;
 
-	void BeginDestroy() override;
-	void Serialize(FArchive& Ar) override;
-	bool IsReadyForAsyncPostLoad() const override;
+#if WITH_EDITORONLY_DATA
+	virtual FWwiseBasicInfo* GetInfoMutable() override {return &GroupValueInfo;}
+#endif
 
-private:
-	TArray<TWeakObjectPtr<UAkMediaAsset>> LoadedMediaDependencies;
+protected :
+	FWwiseLoadedGroupValueListNode* LoadedGroupValue;
+
+#if WITH_EDITORONLY_DATA
+	virtual void MigrateIds() override;
+#endif
+
 };

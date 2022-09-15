@@ -14,92 +14,48 @@ Copyright (c) 2021 Audiokinetic Inc.
 *******************************************************************************/
 
 #include "AkGroupValue.h"
+#include "Wwise/WwiseResourceLoader.h"
 
-#include "AkAudioDevice.h"
-#include "AkMediaAsset.h"
-#include "Core/Public/Modules/ModuleManager.h"
-
-
-void UAkGroupValue::Serialize(FArchive& Ar)
+#if WITH_EDITOR
+void UAkGroupValue::PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent)
 {
-	Super::Serialize(Ar);
-	if (HasAnyFlags(RF_ClassDefaultObject))
-	{
-		return;
-	}
-	for (auto& entry : MediaDependencies)
-	{
-		if (auto* media = entry.Get())
-		{
-			LoadedMediaDependencies.Add(media);
-			media->Load(true);
-		}
-	}
-
-	if (!FModuleManager::Get().IsModuleLoaded(TEXT("AkAudio")))
-	{
-		FAkAudioDevice::DelaySwitchValueBroadcast(this);
-	}
-	else if (FAkAudioDevice* AkAudioDevice = FAkAudioDevice::Get())
-	{
-		AkAudioDevice->BroadcastOnSwitchValueLoaded(this);
-	}
-
+	LoadGroupValue(true);
+	Super::PostEditChangeProperty(PropertyChangedEvent);
 }
+#endif
 
-bool UAkGroupValue::IsReadyForAsyncPostLoad() const
+#if WITH_EDITORONLY_DATA
+void UAkGroupValue::MigrateIds()
 {
-	if (HasAnyFlags(RF_ClassDefaultObject))
-	{
-		return true;
-	}
-	for (auto& entry : LoadedMediaDependencies)
-	{
-		if (entry.IsValid())
-		{
-			if (!entry->IsReadyForAsyncPostLoad())
-			{
-				return false;
-			}
-		}
-	}
-
-	return true;
+	Super::MigrateIds();
+	this->GroupValueInfo.GroupShortId = GroupShortID_DEPRECATED;
 }
+#endif
 
 void UAkGroupValue::PostLoad()
 {
 	Super::PostLoad();
-	if (HasAnyFlags(RF_ClassDefaultObject))
+	LoadGroupValue(false);
+}
+
+void UAkGroupValue::UnloadGroupValue()
+{
+	if (LoadedGroupValue)
 	{
-		return;
-	}
-	if (GroupShortID == 0)
-	{
-		if (auto AudioDevice = FAkAudioDevice::Get())
+		auto* ResourceLoader = UWwiseResourceLoader::Get();
+		if (UNLIKELY(!ResourceLoader))
 		{
-			FString GroupName;
-			GetName().Split(TEXT("-"), &GroupName, nullptr);
-			auto idFromName = AudioDevice->GetIDFromString(GroupName);
-			GroupShortID = idFromName;
+			return;
 		}
+		ResourceLoader->UnloadGroupValue(LoadedGroupValue);
+		LoadedGroupValue=nullptr;
 	}
 }
 
 void UAkGroupValue::BeginDestroy()
 {
 	Super::BeginDestroy();
-
-	if (HasAnyFlags(RF_ClassDefaultObject))
-	{
-		return;
-	}
-	for (auto& entry : LoadedMediaDependencies)
-	{
-		if (entry.IsValid(true))
-		{
-			entry->Unload();
-		}
-	}
-	LoadedMediaDependencies.Empty();
+	UnloadGroupValue();
 }
+
+

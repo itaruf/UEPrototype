@@ -27,7 +27,7 @@ namespace AkDrawConstants
 {
 	const float CullDepth = 100.0f;
 	const float PortalOutlineThickness = 5.0f;
-	const float PortalRoomConnectionThickness = 1.0f;
+	const float PortalRoomConnectionThickness = 3.0f;
 	const float RoomIconThickness = 2.0f;
 	const float RoomIconRadius = 10.0f;
 	const int	RoomIconSides = 16;
@@ -39,7 +39,7 @@ namespace AkDrawConstants
 	const float DiffractionEdgeThickness = 2.5f;
 }
 
-/** A utility struct to transfom the points on a local axis-aligned bounding box to world space using the given transform.
+/** A utility struct to transform the points on a local axis-aligned bounding box to world space using the given transform.
 	Used for drawing rotated bounding boxes around portals.
 */
 struct AKAUDIO_API AkDrawBounds
@@ -51,18 +51,18 @@ private:
 	const FVector& BoxExtent;
 
 public:
-	/** FrontRightUp */		FUnrealFloatVector FRU();
-	/** BackLeftDown */		FUnrealFloatVector BLD();
-	/** FrontLeftDown */	FUnrealFloatVector FLD();
-	/** BackRightUp */		FUnrealFloatVector BRU();
-	/** FrontLeftDown */	FUnrealFloatVector FLU();
-	/** BackLeftUp */		FUnrealFloatVector BLU();
-	/** FrontRightDown */	FUnrealFloatVector FRD();
-	/** BackRightDown */	FUnrealFloatVector BRD();
-	/** RightUp */			FUnrealFloatVector RU();
-	/** LeftUp */			FUnrealFloatVector LU();
-	/** RightDown */		FUnrealFloatVector RD();
-	/** LeftDown */			FUnrealFloatVector LD();
+	/** FrontRightUp */		FVector FRU() const;
+	/** BackLeftDown */		FVector BLD() const;
+	/** FrontLeftDown */	FVector FLD() const;
+	/** BackRightUp */		FVector BRU() const;
+	/** FrontLeftDown */	FVector FLU() const;
+	/** BackLeftUp */		FVector BLU() const;
+	/** FrontRightDown */	FVector FRD() const;
+	/** BackRightDown */	FVector BRD() const;
+	/** RightUp */			FVector RU() const;
+	/** LeftUp */			FVector LU() const;
+	/** RightDown */		FVector RD() const;
+	/** LeftDown */			FVector LD() const;
 };
 
 class UAkPortalComponent;

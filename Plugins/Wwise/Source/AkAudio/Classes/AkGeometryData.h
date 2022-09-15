@@ -17,7 +17,7 @@ Copyright (c) 2021 Audiokinetic Inc.
 	AkGeometryData.h:
 =============================================================================*/
 #pragma once
-#include <AkInclude.h>
+#include "AkInclude.h"
 
 #include "AkAcousticTexture.h"
 
@@ -26,10 +26,10 @@ Copyright (c) 2021 Audiokinetic Inc.
 USTRUCT()
 struct FAkAcousticSurface
 {
-	GENERATED_USTRUCT_BODY()
+	GENERATED_BODY()
 
 	UPROPERTY()
-	uint32 Texture;
+	uint32 Texture = AK_INVALID_UNIQUE_ID;
 
 	UPROPERTY(DisplayName = "Transmission Loss")
 	float Occlusion;
@@ -41,7 +41,7 @@ struct FAkAcousticSurface
 USTRUCT()
 struct FAkTriangle
 {
-	GENERATED_USTRUCT_BODY()
+	GENERATED_BODY()
 
 	UPROPERTY()
 	uint16 Point0;
@@ -59,7 +59,7 @@ struct FAkTriangle
 USTRUCT()
 struct FAkGeometryData
 {
-	GENERATED_USTRUCT_BODY()
+	GENERATED_BODY()
 
 	void Clear()
 	{

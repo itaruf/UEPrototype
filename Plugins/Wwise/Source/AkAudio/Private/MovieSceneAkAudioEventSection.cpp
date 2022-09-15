@@ -13,7 +13,6 @@ written agreement between you and Audiokinetic Inc.
 Copyright (c) 2021 Audiokinetic Inc.
 *******************************************************************************/
 
-
 #include "MovieSceneAkAudioEventSection.h"
 #include "AkAudioDevice.h"
 #include "AkAudioEvent.h"
@@ -21,14 +20,11 @@ Copyright (c) 2021 Audiokinetic Inc.
 #include "MovieSceneAkAudioEventTrack.h"
 
 #include "Misc/Base64.h"
-#include "KeyParams.h"
 #include "MovieScene.h"
 #include "MovieSceneCommonHelpers.h"
 #include "MovieSceneSection.h"
 #include "MovieSceneAkAudioEventTemplate.h"
 #include "Async/Async.h"
-
-DEFINE_LOG_CATEGORY(LogAkAudioEventSection);
 
 /** Default values and helper used by UMovieSceneAkAudioEventSection when querying event information. */
 namespace AkAudioEventSectionHelper
@@ -48,16 +44,15 @@ namespace AkAudioEventSectionHelper
 	{
 		if (Event == nullptr)
 		{
-			// TODO: attempt to determine the length of an AkEvent by its name.
 			return FFloatRange(DefaultDurationForEventSpecifiedByName);
 		}
 
-		if (Event->GetIsInfinite())
+		if (Event->IsInfinite)
 		{
 			return FFloatRange(FMath::Min((float)GetMaxDurationForFrameRate(FrameRate), MaximumDuration));
 		}
 
-		return FFloatRange(Event->GetMinimumDuration(), TRangeBound<float>::Inclusive(FMath::Clamp(Event->GetMaximumDuration(), MinimumDuration, MaximumDuration)));
+		return FFloatRange(Event->MinimumDuration, TRangeBound<float>::Inclusive(FMath::Clamp(Event->MaximumDuration, MinimumDuration, MaximumDuration)));
 	}
 }
 
@@ -80,7 +75,7 @@ void UMovieSceneAkAudioEventSection::Initialize()
         {
             if (InitState == AkEventSectionState::EUninitialized && iChildAddedInitializeSubscriptionID == 0 && pWaapiClient->IsConnected())
             {
-                UE_LOG(LogAkAudioEventSection, Warning,
+                UE_LOG(LogAkAudio, Warning,
                     TEXT("Failed to initialize Section for Event: %s"),
                     Event == nullptr ? *EventName : *(Event->GetName()));
 
@@ -101,7 +96,7 @@ void UMovieSceneAkAudioEventSection::Initialize()
                         iCallbackCounter.Decrement();
                     });
                 });
-
+#if AK_SUPPORT_WAAPI
                 const auto addedUri = ak::wwise::core::object::childAdded;
                 TSharedRef<FJsonObject> emptyOptions = MakeShareable(new FJsonObject());
                 TSharedPtr<FJsonObject> subscriptionResult = MakeShareable(new FJsonObject());
@@ -109,6 +104,7 @@ void UMovieSceneAkAudioEventSection::Initialize()
                 // Child Added 
                 //===========================================================
                 pWaapiClient->Subscribe(addedUri, emptyOptions, updateAudioSourceInfoCallback, iChildAddedInitializeSubscriptionID, subscriptionResult);
+#endif
             }
         }
 #endif //WITH_EDITOR
@@ -127,8 +123,13 @@ void UMovieSceneAkAudioEventSection::BeginDestroy()
 		SoundbanksLoadedHandle.Reset();
 	}
 
-	FAkAudioDevice::Get()->CancelEventCallbackCookie(EventTracker.Get());
-
+    if (auto* TrackerPtr = EventTracker.Get())
+    {
+        if (TrackerPtr->IsPlaying())
+        {
+            FAkAudioDevice::Get()->CancelEventCallbackCookie(EventTracker.Get());
+        }
+    }
 	Super::BeginDestroy();
 }
 
@@ -200,6 +201,7 @@ void UMovieSceneAkAudioEventSection::SubscribeToChildAddedRemoved(FString in_sPa
             });
         });
 
+#if AK_SUPPORT_WAAPI
         const auto addedUri   = ak::wwise::core::object::childAdded;
         const auto removedUri = ak::wwise::core::object::childRemoved;
         TSharedRef<FJsonObject> emptyOptions = MakeShareable(new FJsonObject());
@@ -213,6 +215,7 @@ void UMovieSceneAkAudioEventSection::SubscribeToChildAddedRemoved(FString in_sPa
         //===========================================================
         subscriptionResult = MakeShareable(new FJsonObject());
         pWaapiClient->Subscribe(removedUri, emptyOptions, updateAudioSourceInfoCallback, in_iRemovedSubID, subscriptionResult);
+#endif
     }
 }
 
@@ -249,9 +252,9 @@ void UMovieSceneAkAudioEventSection::SubscribeToTrimChanges()
             trimEndChangedOptions->SetStringField(FAkWaapiClient::PropertyChangedStrings::RequiredOptions::OBJECT, MaxDurationSourceID);
             trimEndChangedOptions->SetStringField(FAkWaapiClient::PropertyChangedStrings::RequiredOptions::PROPERTY, FAkWaapiClient::AudioSourceProperties::TRIM_END);
         }
-
+#if AK_SUPPORT_WAAPI
         pWaapiClient->Subscribe(ak::wwise::core::object::propertyChanged, trimEndChangedOptions, updateTrimCallback, iTrimEndSubscriptionID, trimEndSubscriptionResult);
-
+#endif
         //===========================================================
         // TrimBegin 
         //===========================================================
@@ -261,8 +264,9 @@ void UMovieSceneAkAudioEventSection::SubscribeToTrimChanges()
             trimBeginChangedOptions->SetStringField(FAkWaapiClient::PropertyChangedStrings::RequiredOptions::OBJECT, MaxDurationSourceID);
             trimBeginChangedOptions->SetStringField(FAkWaapiClient::PropertyChangedStrings::RequiredOptions::PROPERTY, FAkWaapiClient::AudioSourceProperties::TRIM_BEGIN);
         }
-
+#if AK_SUPPORT_WAAPI
         pWaapiClient->Subscribe(ak::wwise::core::object::propertyChanged, trimBeginChangedOptions, updateTrimCallback, iTrimBeginSubscriptionID, trimBeginSubscriptionResult);
+#endif
     }
 }
 
@@ -326,7 +330,8 @@ void UMovieSceneAkAudioEventSection::SubscribeToEventChildren()
                         TArray<TSharedPtr<FJsonValue>> StructJsonArray;
                         StructJsonArray.Add(MakeShareable(new FJsonValueString("@Target")));
                         options->SetArrayField(FAkWaapiClient::WAAPIStrings::RETURN, StructJsonArray);
-
+                    
+#if AK_SUPPORT_WAAPI
                         if (pWaapiClient->Call(ak::wwise::core::object::get, args, options, outJsonResult, 500))
                         {
                             if (outJsonResult->HasField(FAkWaapiClient::WAAPIStrings::RETURN))
@@ -351,6 +356,7 @@ void UMovieSceneAkAudioEventSection::SubscribeToEventChildren()
                                 }
                             }
                         }
+#endif
                     }
                 }
             }
@@ -459,7 +465,7 @@ void UMovieSceneAkAudioEventSection::WAAPIGetPeaks(const char* in_uri,
         }
         else
         {
-            UE_LOG(LogAkAudioEventSection, Warning, TEXT("Failed to get audio source peak data from WAAPI"));
+            UE_LOG(LogAkAudio, Warning, TEXT("Failed to get audio source peak data from WAAPI"));
         }
     }
 }
@@ -475,8 +481,9 @@ FMovieSceneEvalTemplatePtr UMovieSceneAkAudioEventSection::GenerateTemplate() co
 #endif
 
 /** Associate a new AK audio event with this section. Also updates section time and audio source info. */
-void UMovieSceneAkAudioEventSection::SetEvent(UAkAudioEvent* AudioEvent, const FString& Name) 
+bool UMovieSceneAkAudioEventSection::SetEvent(UAkAudioEvent* AudioEvent, const FString& Name) 
 {
+    bool dataLoaded = true;
     // Update the event details.
     if (AudioEvent != nullptr)
     {
@@ -487,19 +494,27 @@ void UMovieSceneAkAudioEventSection::SetEvent(UAkAudioEvent* AudioEvent, const F
     {
         EventName = Name;
     }
-    
-    UpdateAkEventInfo();
+    return UpdateAkEventInfo();
 }
 
-void UMovieSceneAkAudioEventSection::UpdateAkEventInfo()
+bool UMovieSceneAkAudioEventSection::UpdateAkEventInfo()
 {
     UpdateAudioSourceInfo();
-    MatchSectionLengthToEventLength();
+    if (Event && Event->MaximumDuration != FLT_MAX && Event->MinimumDuration != FLT_MAX)
+    {
+        MatchSectionLengthToEventLength();
 
 #if WITH_EDITOR
-    RegisterSoundbanksLoadedCallback();
+        RegisterSoundbanksLoadedCallback();
 #endif
-    SubscribeToEventChildAddedRemoved();
+        SubscribeToEventChildAddedRemoved();
+        return true;
+    }
+    else if(Event)
+    {
+        UE_LOG(LogAkAudio, Error, TEXT("%s Event doesn't have a defined duration."), *Event->GetFName().ToString());
+    }
+    return false;
 }
 
 void UMovieSceneAkAudioEventSection::MatchSectionLengthToEventLength()
@@ -520,8 +535,9 @@ void UMovieSceneAkAudioEventSection::UpdateAudioSourcePeaks(int in_iNumPeaks)
 	getPeaksArgs->SetStringField(FAkWaapiClient::AudioPeaksStrings::Args::OBJECT, MaxDurationSourceID);
 	getPeaksArgs->SetNumberField(FAkWaapiClient::AudioPeaksStrings::Args::NUM_PEAKS, in_iNumPeaks);
     getPeaksArgs->SetBoolField(FAkWaapiClient::AudioPeaksStrings::Args::CROSS_CHANNEL_PEAKS, true);
-
+#if AK_SUPPORT_WAAPI
     WAAPIGetPeaks(ak::wwise::core::audioSourcePeaks::getMinMaxPeaksInTrimmedRegion, getPeaksArgs, getPeaksOptions, getPeaksResult);
+#endif
 }
 
 /** Get the audio peaks data (min max magnitude pairs) for the current MaxDurationSourceID, using WAAPI.
@@ -541,8 +557,9 @@ void UMovieSceneAkAudioEventSection::UpdateAudioSourcePeaks(int in_iNumPeaks, do
     getPeaksArgs->SetNumberField(FAkWaapiClient::AudioPeaksStrings::Args::TIME_FROM, in_dTimeFrom);
     getPeaksArgs->SetNumberField(FAkWaapiClient::AudioPeaksStrings::Args::TIME_TO, in_dTimeTo);
     getPeaksArgs->SetBoolField(FAkWaapiClient::AudioPeaksStrings::Args::CROSS_CHANNEL_PEAKS, true);
-
+#if AK_SUPPORT_WAAPI
     WAAPIGetPeaks(ak::wwise::core::audioSourcePeaks::getMinMaxPeaksInRegion, getPeaksArgs, getPeaksOptions, getPeaksResult);
+#endif
 }
 
 /** Update the trim data for the longest audio source used by the Wwise event that this section triggers. */
@@ -605,8 +622,8 @@ void UMovieSceneAkAudioEventSection::UpdateAudioSourceInfo()
                 auto playbackDurationJson = jsonObj->GetObjectField(playbackDurationString);
                 if (Event != nullptr)
                 {
-                    Event->SetMinimumDuration(playbackDurationJson->GetNumberField(FAkWaapiClient::PlaybackDurationStrings::MIN));
-					Event->SetMaximumDuration(playbackDurationJson->GetNumberField(FAkWaapiClient::PlaybackDurationStrings::MAX));
+                    Event->MinimumDuration = playbackDurationJson->GetNumberField(FAkWaapiClient::PlaybackDurationStrings::MIN);
+					Event->MaximumDuration = playbackDurationJson->GetNumberField(FAkWaapiClient::PlaybackDurationStrings::MAX);
                 }
 
                 UpdateTrimData();
@@ -619,7 +636,7 @@ void UMovieSceneAkAudioEventSection::UpdateAudioSourceInfo()
         }
         else
         {
-            UE_LOG(LogAkAudioEventSection, Warning, TEXT("WAAPI call ak.wwise.core.object.get failed"));
+            UE_LOG(LogAkAudio, Warning, TEXT("WAAPI call ak.wwise.core.object.get failed"));
         }
         CheckForWorkunitChanges(true);
 	}

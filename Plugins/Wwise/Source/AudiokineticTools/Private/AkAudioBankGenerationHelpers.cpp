@@ -20,15 +20,14 @@ Copyright (c) 2021 Audiokinetic Inc.
 
 #include "AkAudioBankGenerationHelpers.h"
 
-#include "AkAudioBank.h"
-#include "AkAudioType.h"
-#include "AkMediaAsset.h"
+#include "AkAudioDevice.h"
 #include "AkSettings.h"
 #include "AkSettingsPerUser.h"
 #include "AkUnrealHelper.h"
-#include "AssetRegistry/Public/AssetRegistryModule.h"
+#include "IAudiokineticTools.h"
+#include "AssetManagement/AkAssetDatabase.h"
+
 #include "Editor/UnrealEd/Public/ObjectTools.h"
-#include "HAL/FileManager.h"
 #if UE_5_0_OR_LATER
 #include "HAL/PlatformFileManager.h"
 #else
@@ -38,19 +37,12 @@ Copyright (c) 2021 Audiokinetic Inc.
 #include "Misc/Paths.h"
 #include "Misc/ScopedSlowTask.h"
 #include "Slate/Public/Framework/Application/SlateApplication.h"
-#include "Slate/Public/Widgets/Input/SButton.h"
-#include "Slate/Public/Widgets/Layout/SSpacer.h"
-#include "Slate/Public/Widgets/Text/STextBlock.h"
-#include "SlateCore/Public/Widgets/SBoxPanel.h"
 #include "SlateCore/Public/Widgets/SWindow.h"
-#include "ToolBehavior/AkToolBehavior.h"
 #include "UI/SClearSoundData.h"
-#include "UObject/UObjectIterator.h"
-#include "WwiseProject/WwiseProjectInfo.h"
+#include "AssetManagement/WwiseProjectInfo.h"
+#include "UI/SGenerateSoundBanks.h"
 
 #define LOCTEXT_NAMESPACE "AkAudio"
-
-DEFINE_LOG_CATEGORY(LogAkSoundData);
 
 namespace AkAudioBankGenerationHelper
 {
@@ -95,25 +87,31 @@ namespace AkAudioBankGenerationHelper
 		return ApplicationToRun;
 	}
 
-	void CreateGenerateSoundDataWindow(TArray<TWeakObjectPtr<UAkAudioBank>>* SoundBanks, bool ProjectSave)
+	void CreateGenerateSoundDataWindow(bool ProjectSave)
 	{
-		auto& AssetRegistryModule = FModuleManager::LoadModuleChecked<FAssetRegistryModule>("AssetRegistry");
-		if (AssetRegistryModule.Get().IsLoadingAssets())
+		if (AkAssetDatabase::Get().CheckIfLoadingAssets())
 		{
 			return;
 		}
 
 		TSharedRef<SWindow> WidgetWindow = SNew(SWindow)
-			.Title(LOCTEXT("AkAudioGenerateSoundData", "Generate Sound Data"))
+			.Title(LOCTEXT("AkAudioGenerateSoundData", "Generate SoundBanks"))
 			.ClientSize(FVector2D(600.f, 332.f))
 			.SupportsMaximize(false).SupportsMinimize(false)
 			.SizingRule(ESizingRule::FixedSize)
 			.FocusWhenFirstShown(true);
 
-		if (!AkToolBehavior::Get()->CreateSoundDataWidget(WidgetWindow, SoundBanks, ProjectSave))
+		TSharedRef<SGenerateSoundBanks> WindowContent = SNew(SGenerateSoundBanks);
+		if (!WindowContent->ShouldDisplayWindow())
 		{
 			return;
 		}
+
+		// Add our SGenerateSoundBanks to the window
+		WidgetWindow->SetContent(WindowContent);
+
+		// Set focus to our SGenerateSoundBanks widget, so our keyboard keys work right away
+		WidgetWindow->SetWidgetToFocusOnActivate(WindowContent);
 
 		// This creates a windows that blocks the rest of the UI. You can only interact with the "Generate SoundBanks" window.
 		// If you choose to use this, comment the rest of the function.
@@ -142,8 +140,7 @@ namespace AkAudioBankGenerationHelper
 
 	void CreateClearSoundDataWindow()
 	{
-		auto& AssetRegistryModule = FModuleManager::LoadModuleChecked<FAssetRegistryModule>("AssetRegistry");
-		if (AssetRegistryModule.Get().IsLoadingAssets())
+		if (AkAssetDatabase::Get().CheckIfLoadingAssets())
 		{
 			return;
 		}
@@ -183,12 +180,6 @@ namespace AkAudioBankGenerationHelper
 
 	void DoClearSoundData(AkSoundDataClearFlags ClearFlags)
 	{
-		if (!AkUnrealHelper::IsUsingEventBased())
-		{
-			return;
-		}
-
-		auto& AssetRegistryModule = FModuleManager::LoadModuleChecked<FAssetRegistryModule>("AssetRegistry");
 
 		WwiseProjectInfo wwiseProjectInfo;
 		wwiseProjectInfo.Parse();
@@ -199,54 +190,6 @@ namespace AkAudioBankGenerationHelper
 		SlowTask.MakeDialog();
 
 		TArray<FString> clearCommands;
-
-		if ((ClearFlags & AkSoundDataClearFlags::AssetData) == AkSoundDataClearFlags::AssetData)
-		{
-			if (FAkAudioDevice* AkAudioDevice = FAkAudioDevice::Get())
-			{
-				AkAudioDevice->UnloadAllSoundData();
-			}
-
-			TArray<FAssetData> allAudioTypeAssets;
-			AssetRegistryModule.Get().GetAssetsByClass(UAkAudioType::StaticClass()->GetFName(), allAudioTypeAssets, true);
-			for (auto& assetData : allAudioTypeAssets)
-			{
-				SlowTask.EnterProgressFrame(0.f, FText::FormatOrdered(LOCTEXT("AK_ClearAssetData", "Clearing data from asset {0}"), FText::FromName(assetData.AssetName)));
-				if (auto* akAssetInstance = Cast<UAkAudioType>(assetData.GetAsset()))
-				{
-					akAssetInstance->Reset();
-				}
-			}
-
-			TArray<FAssetData> allMediaAssets;
-			AssetRegistryModule.Get().GetAssetsByClass(UAkMediaAsset::StaticClass()->GetFName(), allMediaAssets, true);
-
-			for (auto& mediaData : allMediaAssets)
-			{
-				SlowTask.EnterProgressFrame(0.f, FText::FormatOrdered(LOCTEXT("AK_ClearAssetData", "Clearing data from asset {0}"), FText::FromName(mediaData.AssetName)));
-
-				if (auto mediaInstance = Cast<UAkMediaAsset>(mediaData.GetAsset()))
-				{
-					mediaInstance->Reset();
-				}
-			}
-
-			TArray<FAssetData> allPlatformData;
-			AssetRegistryModule.Get().GetAssetsByClass(UAkAssetPlatformData::StaticClass()->GetFName(), allPlatformData);
-
-			for (auto& platformData : allPlatformData)
-			{
-				SlowTask.EnterProgressFrame(0.f, FText::FormatOrdered(LOCTEXT("AK_ClearAssetData", "Clearing data from asset {0}"), FText::FromName(platformData.AssetName)));
-
-				if (auto platformInstance = Cast<UAkAssetPlatformData>(platformData.GetAsset()))
-				{
-					platformInstance->Reset();
-				}
-			}
-
-			clearCommands.Add(TEXT("Asset Data"));
-		}
-
 		if ((ClearFlags & AkSoundDataClearFlags::SoundBankInfoCache) == AkSoundDataClearFlags::SoundBankInfoCache)
 		{
 			SlowTask.EnterProgressFrame(0.f, LOCTEXT("AK_ClearSoundBankInfoCache", "Clearing SoundBankInfoCache.dat"));
@@ -282,69 +225,9 @@ namespace AkAudioBankGenerationHelper
 			clearCommands.Add(TEXT("Media Cache"));
 		}
 
-		if ((ClearFlags & AkSoundDataClearFlags::ExternalSource) == AkSoundDataClearFlags::ExternalSource)
-		{
-			auto externalSourceFolder = AkUnrealHelper::GetExternalSourceDirectory();
-			TArray<FString> foldersInExternalSource;
-
-			auto& platformFile = FPlatformFileManager::Get().GetPlatformFile();
-			platformFile.IterateDirectory(*externalSourceFolder, [&foldersInExternalSource](const TCHAR* Path, bool IsDir) {
-				if (IsDir)
-				{
-					foldersInExternalSource.Add(Path);
-				}
-
-				return true;
-			});
-
-			for (auto& folder : foldersInExternalSource)
-			{
-				SlowTask.EnterProgressFrame(0.f, FText::FormatOrdered(LOCTEXT("AK_ClearAssetData", "Clearing external source cache folder {0}"), FText::FromString(folder)));
-
-				platformFile.DeleteDirectoryRecursively(*folder);
-			}
-
-			clearCommands.Add(TEXT("External Source"));
-		}
-
-		if ((ClearFlags & AkSoundDataClearFlags::OrphanMedia) == AkSoundDataClearFlags::OrphanMedia)
-		{
-			TArray<FAssetData> mediaToDelete;
-
-			TArray<FAssetData> allMediaAssets;
-			AssetRegistryModule.Get().GetAssetsByClass(UAkMediaAsset::StaticClass()->GetFName(), allMediaAssets);
-
-			for (auto& mediaData : allMediaAssets)
-			{
-				SlowTask.EnterProgressFrame(0.f, FText::FormatOrdered(LOCTEXT("AK_ClearAssetData", "Checking if media asset {0} is an orphan"), FText::FromName(mediaData.AssetName)));
-
-				if (mediaData.GetClass()->IsChildOf<UAkExternalMediaAsset>())
-				{
-					continue;
-				}
-
-				TArray<FName> dependencies;
-#if UE_4_26_OR_LATER
-				AssetRegistryModule.Get().GetReferencers(mediaData.PackageName, dependencies, UE::AssetRegistry::EDependencyCategory::All);
-#else
-				AssetRegistryModule.Get().GetReferencers(mediaData.PackageName, dependencies, EAssetRegistryDependencyType::All);
-#endif
-				if (dependencies.Num() == 0)
-				{
-					mediaToDelete.Add(mediaData);
-				}
-			}
-
-			if (mediaToDelete.Num() > 0)
-			{
-				clearCommands.Add(TEXT("Orphan Media"));
-				ObjectTools::DeleteAssets(mediaToDelete, true);
-			}
-		}
-
 		auto end = FPlatformTime::Cycles64();
 
-		UE_LOG(LogAkSoundData, Display, TEXT("Clear Wwise Sound Data(%s) took %f seconds."), *FString::Join(clearCommands, TEXT(", ")), FPlatformTime::ToSeconds64(end - start));
+		UE_LOG(LogAudiokineticTools, Display, TEXT("Clear Wwise Sound Data(%s) took %f seconds."), *FString::Join(clearCommands, TEXT(", ")), FPlatformTime::ToSeconds64(end - start));
 	}
 }
 

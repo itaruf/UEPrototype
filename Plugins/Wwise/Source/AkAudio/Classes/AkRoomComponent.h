@@ -14,7 +14,6 @@ Copyright (c) 2021 Audiokinetic Inc.
 *******************************************************************************/
 
 #pragma once
-#include "AkAudioDevice.h"
 #include "AkReverbDescriptor.h"
 #include "GameFramework/Volume.h"
 #include "AkGameObject.h"
@@ -25,7 +24,10 @@ class UAkLateReverbComponent;
 UCLASS(ClassGroup = Audiokinetic, BlueprintType, hidecategories = (Transform, Rendering, Mobility, LOD, Component, Activation, Tags), meta = (BlueprintSpawnableComponent))
 class AKAUDIO_API UAkRoomComponent : public UAkGameObject
 {
-	GENERATED_UCLASS_BODY()
+	GENERATED_BODY()
+
+public:
+	UAkRoomComponent(const class FObjectInitializer& ObjectInitializer);
 
 	/** 
 	* Enable room transmission feature. Additional properties are available in the Room category. 
@@ -75,8 +77,7 @@ class AKAUDIO_API UAkRoomComponent : public UAkGameObject
 	/** Posts this game object's AkAudioEvent to Wwise, using this as the game object source */
 	virtual int32 PostAssociatedAkEvent(
 		UPARAM(meta = (Bitmask, BitmaskEnum = EAkCallbackType)) int32 CallbackMask,
-		const FOnAkPostEventCallback& PostEventCallback,
-		const TArray<FAkExternalSourceInfo>& ExternalSources
+		const FOnAkPostEventCallback& PostEventCallback
 	);
 
 	UFUNCTION(BlueprintCallable, Category = "Audiokinetic|AkRoomComponent")
@@ -119,10 +120,9 @@ class AKAUDIO_API UAkRoomComponent : public UAkGameObject
 	FName GetName() const;
 
 	virtual AkPlayingID PostAkEventByNameWithDelegate(
+		UAkAudioEvent* AkEvent,
 		const FString& in_EventName,
-		int32 CallbackMask,
-		const FOnAkPostEventCallback& PostEventCallback,
-		const TArray<FAkExternalSourceInfo>& ExternalSources = TArray<FAkExternalSourceInfo>());
+		int32 CallbackMask, const FOnAkPostEventCallback& PostEventCallback);
 
 	// Begin USceneComponent Interface
 	virtual void BeginPlay() override;
@@ -137,6 +137,8 @@ class AKAUDIO_API UAkRoomComponent : public UAkGameObject
 	 */
 	UFUNCTION(BlueprintCallable, Category = "Audiokinetic|AkRoomComponent")
 	void SetGeometryComponent(UAkAcousticTextureSetComponent* textureSetComponent);
+
+	FString GetRoomName();
 
 private:
 	class UPrimitiveComponent* Parent;

@@ -24,7 +24,6 @@ includes.
 #include "AkWaapiBlueprints/AkWaapiUri.h"
 #include "AkAudioDevice.h"
 #include "Widgets/Input/SSearchBox.h"
-#include "Widgets/Input/SButton.h"
 #include "Misc/ScopedSlowTask.h"
 #include "Framework/Application/SlateApplication.h"
 #include "AkAudioStyle.h"
@@ -33,8 +32,6 @@ includes.
 Defines
 ------------------------------------------------------------------------------------*/
 #define LOCTEXT_NAMESPACE "AkAudio"
-
-DEFINE_LOG_CATEGORY(LogAkUri);
 
 /*------------------------------------------------------------------------------------
 Statics and Globals

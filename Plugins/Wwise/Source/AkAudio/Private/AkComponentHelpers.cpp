@@ -14,6 +14,7 @@ Copyright (c) 2021 Audiokinetic Inc.
 *******************************************************************************/
 
 #include "AkComponentHelpers.h"
+#include "Components/PrimitiveComponent.h"
 #include "AkAudioDevice.h"
 #include "GameFramework/WorldSettings.h"
 
@@ -106,7 +107,7 @@ namespace AkComponentHelpers
 		return Primitive.CalcBounds(Transform);
 	}
 
-	void GetPrimitiveTransformAndExtent(const UPrimitiveComponent& Primitive, AkTransform& transform, AkExtent& extent)
+	void GetPrimitiveTransformAndExtent(const UPrimitiveComponent& Primitive, AkWorldTransform& transform, AkExtent& extent)
 	{
 		FRotator rotation = Primitive.GetComponentRotation();
 
@@ -119,11 +120,11 @@ namespace AkComponentHelpers
 		transform.SetOrientation(Front, Up);
 
 		FBoxSphereBounds primitiveBounds = GetPrimitiveBoundsNoRotation(Primitive);
-		extent = FAkAudioDevice::FVectorToAkExtent(primitiveBounds.BoxExtent);
-		AkVector Center;
+		extent = FAkAudioDevice::FVectorToAkExtent(primitiveBounds.BoxExtent); // Potential loss of precision here
+		AkVector64 Center;
 		// For uniformly shaped primitives, primitiveBounds.Origin will be the same as the component position.
 		// For complex meshes and brushes, there will be an offset.
-		FAkAudioDevice::FVectorToAKVector(Primitive.Bounds.Origin, Center);
+		FAkAudioDevice::FVectorToAKVector64(Primitive.Bounds.Origin, Center);
 		transform.SetPosition(Center);
 	}
 

@@ -22,6 +22,7 @@ Copyright (c) 2021 Audiokinetic Inc.
 #include "AkAudioDevice.h"
 #include "AkComponent.h"
 #include "AkAudioEvent.h"
+#include "Wwise/WwiseExternalSourceManager.h"
 
 /*------------------------------------------------------------------------------------
 	AAkAmbientSound
@@ -44,11 +45,7 @@ Super(ObjectInitializer)
 	AkComponent->AttenuationScalingFactor = 1.f;
 
 	//bNoDelete = true;
-#if UE_4_24_OR_LATER
 	SetHidden(true);
-#else
-	bHidden = false;
-#endif
 	AutoPost = false;
 }
 
@@ -112,11 +109,13 @@ void AAkAmbientSound::StartPlaying()
 		if (AkAudioDevice)
 		{
 			AkAudioDevice->SetAttenuationScalingFactor(this, AkComponent->AttenuationScalingFactor);
-			AkPlayingID pID = AkAudioDevice->PostEvent(GET_AK_EVENT_NAME(AkComponent->AkAudioEvent, AkComponent->EventName), this, 0, NULL, NULL, StopWhenOwnerIsDestroyed);
-			if (AkComponent->AkAudioEvent && pID != AK_INVALID_PLAYING_ID)
+
+			TArray<AkExternalSourceInfo> ExternalSources;
+			if (AkComponent->AkAudioEvent )
 			{
-				AkComponent->AkAudioEvent->PinInGarbageCollector(pID);
+				IWwiseExternalSourceManager::Get()->GetExternalSourceInfos(ExternalSources, AkComponent->AkAudioEvent->GetExternalSources());
 			}
+			AkPlayingID pID = AkAudioDevice->PostEventOnActor(AkAudioDevice->GetShortID(AkComponent->AkAudioEvent, AkComponent->EventName), this, 0, NULL, NULL, StopWhenOwnerIsDestroyed, ExternalSources);
 		}
 	}
 }

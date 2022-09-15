@@ -67,21 +67,21 @@ void FAkSurfaceReflectorSetComponentVisualizer::DrawVisualization(const UActorCo
 			FDynamicMeshBuilder MeshBuilder(ERHIFeatureLevel::Type::ES3_1);
 			int32 VertStartIndex = SurfaceReflectorSet->ParentBrush->Nodes[NodeIdx].iVertPool;
 
-			FVector normal(ModelBrush->Nodes[NodeIdx].Plane);
+			FUnrealFloatVector normal(ModelBrush->Nodes[NodeIdx].Plane);
 			if (SurfaceReflectorSet->AcousticPolys.Num() > NodeIdx)
 			{
 				if (SurfaceReflectorSet->AcousticPolys[NodeIdx].EnableSurface &&
 					ModelBrush->Nodes[NodeIdx].NumVertices > 2)
 				{
 					// Shift the vertices in towards the center (negatively along the normal) so that they don't obstruct face selection in geometry mode / brush editing mode.
-					FVector offset = normal * 0.1f;
+					FUnrealFloatVector offset = normal * 0.1f;
 
 					const FVert& Vert0 = ModelBrush->Verts[VertStartIndex + 0];
 					const FVert& Vert1 = ModelBrush->Verts[VertStartIndex + 1];
 					const FVert& Vert2 = ModelBrush->Verts[VertStartIndex + 2];
-					FVector Vertex0 = ModelBrush->Points[Vert0.pVertex] - offset;
-					FVector Vertex1 = ModelBrush->Points[Vert1.pVertex] - offset;
-					FVector Vertex2 = ModelBrush->Points[Vert2.pVertex] - offset;
+					FUnrealFloatVector Vertex0 = ModelBrush->Points[Vert0.pVertex] - offset;
+					FUnrealFloatVector Vertex1 = ModelBrush->Points[Vert1.pVertex] - offset;
+					FUnrealFloatVector Vertex2 = ModelBrush->Points[Vert2.pVertex] - offset;
 
 					MeshBuilder.AddVertex(Vertex0, FUnrealFloatVector2D::ZeroVector, FUnrealFloatVector(1, 0, 0), FUnrealFloatVector(0, 1, 0), FUnrealFloatVector(0, 0, 1), FColor::White);
 					MeshBuilder.AddVertex(Vertex1, FUnrealFloatVector2D::ZeroVector, FUnrealFloatVector(1, 0, 0), FUnrealFloatVector(0, 1, 0), FUnrealFloatVector(0, 0, 1), FColor::White);
@@ -92,7 +92,7 @@ void FAkSurfaceReflectorSetComponentVisualizer::DrawVisualization(const UActorCo
 					for (int32 VertexIdx = 3; VertexIdx < ModelBrush->Nodes[NodeIdx].NumVertices; ++VertexIdx)
 					{
 						const FVert& Vert3 = ModelBrush->Verts[VertStartIndex + VertexIdx];
-						FVector Vertex3 = ModelBrush->Points[Vert3.pVertex] - offset;
+						FUnrealFloatVector Vertex3 = ModelBrush->Points[Vert3.pVertex] - offset;
 
 						MeshBuilder.AddVertex(Vertex3, FUnrealFloatVector2D::ZeroVector, FUnrealFloatVector(1, 0, 0), FUnrealFloatVector(0, 1, 0), FUnrealFloatVector(0, 0, 1), FColor::White);
 						MeshBuilder.AddTriangle(0, VertexIdx, VertexIdx - 1);
@@ -100,11 +100,7 @@ void FAkSurfaceReflectorSetComponentVisualizer::DrawVisualization(const UActorCo
 					}
 
 					FLinearColor SurfaceColor = AkSpatialAudioColors::GetSurfaceReflectorColor(SurfaceReflectorSet, NodeIdx, SpatialAudioVolume->IsDragging);
-#if UE_4_22_OR_LATER
 					auto* renderProxy = GEngine->GeomMaterial->GetRenderProxy();
-#else
-					auto* renderProxy = GEngine->GeomMaterial->GetRenderProxy(false);
-#endif
 					// Limit the color's value (in HSV space) so that it doesn't obscure the text.
 					// In the new color, R = H, G = S, B = V, A = A (From Color.cpp line ~271)
 					FLinearColor hsv = SurfaceColor.LinearRGBToHSV();
@@ -185,11 +181,11 @@ void FAkSurfaceReflectorSetComponentVisualizer::DrawVisualization(const UActorCo
 						int32 NumVerts = Brush->Nodes[NodeIdx].NumVertices;
 						for (int32 j = NumVerts - 1, i = 0; i < NumVerts; j = i, ++i)
 						{
-							FVector V0 = Brush->Points[Brush->Verts[VertStartIndex + i].pVertex];
-							FVector V1 = Brush->Points[Brush->Verts[VertStartIndex + j].pVertex];
+							auto V0 = Brush->Points[Brush->Verts[VertStartIndex + i].pVertex];
+							auto V1 = Brush->Points[Brush->Verts[VertStartIndex + j].pVertex];
 
-							FVector WorldV0 = SpatialAudioVolume->GetActorTransform().TransformPosition(V0);
-							FVector WorldV1 = SpatialAudioVolume->GetActorTransform().TransformPosition(V1);
+							FVector WorldV0 = SpatialAudioVolume->GetActorTransform().TransformPosition(FVector(V0));
+							FVector WorldV1 = SpatialAudioVolume->GetActorTransform().TransformPosition(FVector(V1));
 
 							PDI->DrawLine(WorldV0, WorldV1, AkSpatialAudioColors::GetBadFitSpatialAudioVolumeOutlineColor(), SDPG_Foreground, 7.0f);
 						}
@@ -197,7 +193,11 @@ void FAkSurfaceReflectorSetComponentVisualizer::DrawVisualization(const UActorCo
 				}
 			}
 
+#if UE_5_0_OR_LATER
+			FlashTimer += View->Family->Time.GetDeltaWorldTimeSeconds();
+#else
 			FlashTimer += View->Family->DeltaWorldTime;
+#endif
 		}
 		else
 		{

@@ -24,7 +24,7 @@ Copyright (c) 2021 Audiokinetic Inc.
 USTRUCT()
 struct FAkHololensAdvancedInitializationSettings : public FAkAdvancedInitializationSettingsWithMultiCoreRendering
 {
-	GENERATED_USTRUCT_BODY()
+	GENERATED_BODY()
 
 	UPROPERTY(EditAnywhere, Category = "Ak Initialization Settings")
 	bool UseHeadMountedDisplayAudioDevice = false;
@@ -36,9 +36,10 @@ struct FAkHololensAdvancedInitializationSettings : public FAkAdvancedInitializat
 UCLASS(config = Game, defaultconfig)
 class AKAUDIO_API UAkHololensInitializationSettings : public UObject, public IAkPlatformInitialisationSettingsBase
 {
-	GENERATED_UCLASS_BODY()
+	GENERATED_BODY()
 
 public:
+	UAkHololensInitializationSettings(const FObjectInitializer& ObjectInitializer);
 	void FillInitializationStructure(FAkInitializationStructure& InitializationStructure) const override;
 
 	UPROPERTY(Config, EditAnywhere, Category = "Initialization")

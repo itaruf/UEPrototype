@@ -31,7 +31,7 @@ Copyright (c) 2021 Audiokinetic Inc.
 USTRUCT(BlueprintType)
 struct AKAUDIO_API FAKWaapiJsonObject
 {
-	GENERATED_USTRUCT_BODY()
+	GENERATED_BODY()
 	FAKWaapiJsonObject()
 	{
 		WaapiJsonObj = MakeShareable(new FJsonObject());	
@@ -42,8 +42,11 @@ struct AKAUDIO_API FAKWaapiJsonObject
 UCLASS()
 class AKAUDIO_API UAkWaapiJsonManager : public UBlueprintFunctionLibrary
 {
-	GENERATED_UCLASS_BODY()
-	
+	GENERATED_BODY()
+
+public:
+	UAkWaapiJsonManager(const class FObjectInitializer& ObjectInitializer);
+
 	/** Add a String field named FieldName with value of FieldValue */
 	UFUNCTION(BlueprintCallable, Category = "Audiokinetic|WaapiJsonManager")
 	static FAKWaapiJsonObject SetStringField(const FAkWaapiFieldNames& FieldName, const FString& FieldValue, FAKWaapiJsonObject target);

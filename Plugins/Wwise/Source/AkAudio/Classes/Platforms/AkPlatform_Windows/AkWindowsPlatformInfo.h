@@ -31,13 +31,13 @@ public:
 #ifdef AK_WINDOWS_VS_VERSION
 		Architecture = "Win32_" AK_WINDOWS_VS_VERSION;
 #else
-		Architecture = "Win32_vc150";
+		Architecture = "Win32_vc160";
 #endif
 
 		LibraryFileNameFormat = "{0}.dll";
 		DebugFileNameFormat = "{0}.pdb";
-#if WITH_EDITOR
-		UAkPlatformInfo::UnrealNameToWwiseName.Add("Win32", "Windows");
+#if WITH_EDITORONLY_DATA
+		UAkPlatformInfo::UnrealNameToPlatformInfo.Add("Win32", this);
 #endif
 	}
 };
@@ -55,14 +55,14 @@ public:
 #ifdef AK_WINDOWS_VS_VERSION
 		Architecture = "x64_" AK_WINDOWS_VS_VERSION;
 #else
-		Architecture = "x64_vc150";
+		Architecture = "x64_vc160";
 #endif
 
 		LibraryFileNameFormat = "{0}.dll";
 		DebugFileNameFormat = "{0}.pdb";
 
-#if WITH_EDITOR
-		UAkPlatformInfo::UnrealNameToWwiseName.Add("Win64", "Windows");
+#if WITH_EDITORONLY_DATA
+		UAkPlatformInfo::UnrealNameToPlatformInfo.Add("Win64", this);
 #endif
 	}
 };
@@ -71,4 +71,11 @@ UCLASS()
 class UAkWindowsPlatformInfo : public UAkWin64PlatformInfo
 {
 	GENERATED_BODY()
+	UAkWindowsPlatformInfo()
+	{
+#if WITH_EDITORONLY_DATA
+		UAkPlatformInfo::UnrealNameToPlatformInfo.Add("Windows", this);
+		UAkPlatformInfo::UnrealNameToPlatformInfo.Add("WindowsNoEditor", this);
+#endif
+	}
 };

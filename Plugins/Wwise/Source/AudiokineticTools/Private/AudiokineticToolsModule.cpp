@@ -19,7 +19,6 @@ Copyright (c) 2021 Audiokinetic Inc.
 =============================================================================*/
 #include "AudiokineticToolsPrivatePCH.h"
 
-// @todo sequencer uobjects: The *.generated.inl should auto-include required headers (they should always have #pragma once anyway)
 #include "AkAcousticPortal.h"
 #include "AkAudioBankGenerationHelpers.h"
 #include "AkAudioDevice.h"
@@ -34,10 +33,8 @@ Copyright (c) 2021 Audiokinetic Inc.
 #include "AkSurfaceReflectorSetComponent.h"
 #include "AkUnrealHelper.h"
 #include "AssetManagement/AkAssetDatabase.h"
-#include "AssetManagement/AkAssetManagementManager.h"
-#include "AssetManagement/CookAkSoundDataTask.h"
-#include "AssetManagement/CreateAkAssetsVisitor.h"
-#include "AssetManagement/WaapiAssetSynchronizer.h"
+#include "AssetManagement/AkAssetMigrationManager.h"
+#include "AssetManagement/AkGenerateSoundBanksTask.h"
 #include "AssetRegistryModule.h"
 #include "AssetToolsModule.h"
 #include "ComponentAssetBroker.h"
@@ -64,6 +61,7 @@ Copyright (c) 2021 Audiokinetic Inc.
 #include "ISequencerModule.h"
 #include "ISettingsModule.h"
 #include "ISettingsSection.h"
+#include "IAudiokineticTools.h"
 #include "Misc/MessageDialog.h"
 #include "Modules/ModuleManager.h"
 #include "MovieScene.h"
@@ -74,38 +72,34 @@ Copyright (c) 2021 Audiokinetic Inc.
 #include "Sequencer/MovieSceneAkAudioRTPCTrackEditor.h"
 #include "Settings/ProjectPackagingSettings.h"
 #include "SettingsEditor/Public/ISettingsEditorModule.h"
+#include "AkUnrealEditorHelper.h"
 #include "UnrealEd/Public/EditorBuildUtils.h"
 #include "UnrealEdGlobals.h"
 #include "UnrealEdMisc.h"
 #include "Visualizer/AkAcousticPortalVisualizer.h"
 #include "Visualizer/AkComponentVisualizer.h"
 #include "Visualizer/AkSurfaceReflectorSetComponentVisualizer.h"
-#include "WaapiPicker/SWaapiPicker.h"
 #include "WaapiPicker/WwiseTreeItem.h"
 #include "Widgets/Docking/SDockTab.h"
 #include "Widgets/Input/SButton.h"
 #include "Widgets/Input/SCheckBox.h"
 #include "Widgets/Input/SHyperlink.h"
 #include "Widgets/Layout/SSpacer.h"
-#include "Widgets/Layout/SExpandableArea.h"
 #include "WorkspaceMenuStructure.h"
 #include "WorkspaceMenuStructureModule.h"
-
-#include "ToolBehavior/AkToolBehavior.h"
-
-#include "WwisePicker/SWwisePicker.h"
-#include "WwiseProject/WwiseProjectInfo.h"
-#include "WwiseProject/WwiseWorkUnitParser.h"
+#include "AssetManagement/GeneratedSoundBanksDirectoryWatcher.h"
+#include "AssetManagement/WwiseProjectInfo.h"
+#include "WwisePicker/SWwisePickerGroup.h"
 #include "WwiseProject/AcousticTextureParamLookup.h"
-#if UE_4_24_OR_LATER
 #include "Developer/ToolMenus/Public/ToolMenu.h"
 #include "Developer/ToolMenus/Public/ToolMenus.h"
-#endif
-
+#include "Wwise/WwiseProjectDatabase.h"
+#include "Wwise/WwiseProjectDatabaseDelegates.h"
+#include "AkAudioModule.h"
+#include "AssetManagement/WaapiRenameWatcher.h"
 
 #define LOCTEXT_NAMESPACE "AkAudio"
-
-DEFINE_LOG_CATEGORY_STATIC(LogAudiokineticTools, Log, All);
+DEFINE_LOG_CATEGORY(LogAudiokineticTools);
 
 namespace
 {
@@ -159,46 +153,114 @@ namespace
 
 class FAudiokineticToolsModule : public IAudiokineticTools
 {
-	TSharedRef<SDockTab> CreateWaapiPickerWindow(const FSpawnTabArgs& Args)
+	/**
+ * Creates a new WwisePickerGroup tab.
+ *
+ * @param SpawnTabArgs The arguments for the tab to spawn.
+ * @return The spawned tab.
+ */
+	TSharedRef<SDockTab> CreateWwisePickerGroupTab(const FSpawnTabArgs& SpawnTabArgs)
 	{
-		TSharedRef<SDockTab> NewTab = SNew(SDockTab)
-			.Label(LOCTEXT("AkAudioWaapiPickerTabTitle", "Waapi Picker"))
-			.TabRole(ETabRole::NomadTab)
-			.ContentPadding(5)
-			[
-				SAssignNew(AkWaapiPicker, SWaapiPicker)
-				.ShowGenerateSoundBanksButton(true)
-			.OnDragDetected(FOnDragDetected::CreateRaw(this, &FAudiokineticToolsModule::HandleOnDragDetected))
-			.OnGenerateSoundBanksClicked_Lambda([] {
-			AkAudioBankGenerationHelper::CreateGenerateSoundDataWindow();
-				})
-			];
-		NewTab->SetTabIcon(FSlateIcon(FAkAudioStyle::GetStyleSetName(), "AudiokineticTools.AkPickerTabIcon").GetIcon());
-		return NewTab;
+		const TSharedRef<SDockTab> DockTab = SNew(SDockTab)
+			.TabRole(ETabRole::NomadTab);
+
+		TSharedRef<SWwisePickerGroup> PickerGroup = SNew(SWwisePickerGroup, DockTab, SpawnTabArgs.GetOwnerWindow());
+		WeakPickerGroup = PickerGroup;
+
+		DockTab->SetContent(PickerGroup);
+
+		return DockTab;
 	}
 
-	TSharedRef<SDockTab> CreateWwisePickerWindow(const FSpawnTabArgs& Args)
+	void RefreshWwiseProject() override
 	{
-		TSharedRef<SDockTab> NewTab = SNew(SDockTab)
-			.Label(LOCTEXT("AkAudioWwisePickerTabTitle", "Wwise Picker"))
-			.TabRole(ETabRole::NomadTab)
-			.ContentPadding(5)
-			[
-				SAssignNew(AkWwisePicker, SWwisePicker)
-			];
-		NewTab->SetTabIcon(FSlateIcon(FAkAudioStyle::GetStyleSetName(), "AudiokineticTools.AkPickerTabIcon").GetIcon());
-		return NewTab;
-			
+		SoundBanksDirectoryWatcher.RestartWatchers();
+		if (auto* ProjectDatabase = UWwiseProjectDatabase::Get())
+		{
+			ProjectDatabase->UpdateDataStructure();
+		}
 	}
 
-	FReply HandleOnDragDetected(const FGeometry& Geometry, const FPointerEvent& MouseEvent)
-	{
-		return SWwisePicker::DoDragDetected(MouseEvent, AkWaapiPicker->GetSelectedItems());
-	}
-	
 	void OpenOnlineHelp()
 	{
 		FPlatformProcess::LaunchFileInDefaultExternalApplication(TEXT("https://www.audiokinetic.com/library/?source=UE4&id=index.html"));
+	}
+
+	static void ToggleVisualizeRoomsAndPortals()
+	{
+		UAkSettings* AkSettings = GetMutableDefault<UAkSettings>();
+		if (AkSettings != nullptr)
+		{
+			AkSettings->ToggleVisualizeRoomsAndPortals();
+		}
+	}
+
+	static bool IsVisualizeRoomsAndPortalsEnabled()
+	{
+		const UAkSettings* AkSettings = GetDefault<UAkSettings>();
+		if (AkSettings == nullptr)
+			return false;
+		return AkSettings->VisualizeRoomsAndPortals;
+	}
+
+	static ECheckBoxState GetVisualizeRoomsAndPortalsCheckBoxState()
+	{
+		return IsVisualizeRoomsAndPortalsEnabled() ? ECheckBoxState::Checked : ECheckBoxState::Unchecked;
+	}
+
+	static void ToggleShowReverbInfo()
+	{
+		UAkSettings* AkSettings = GetMutableDefault<UAkSettings>();
+		if (AkSettings != nullptr)
+		{
+			AkSettings->ToggleShowReverbInfo();
+		}
+	}
+
+	static bool IsReverbInfoEnabled()
+	{
+		const UAkSettings* AkSettings = GetDefault<UAkSettings>();
+		if (AkSettings == nullptr)
+			return false;
+		return AkSettings->bShowReverbInfo;
+	}
+
+	static ECheckBoxState GetReverbInfoCheckBoxState()
+	{
+		return IsReverbInfoEnabled() ? ECheckBoxState::Checked : ECheckBoxState::Unchecked;
+	}
+
+	void CreateAkViewportCommands()
+	{
+		// Extend the viewport menu and add the Audiokinetic commands
+		{
+			UToolMenu* ViewportMenu = UToolMenus::Get()->ExtendMenu("LevelEditor.LevelViewportToolBar.Options");
+			FToolMenuSection& AkSection = ViewportMenu->AddSection("Audiokinetic", LOCTEXT("AkLabel", "Audiokinetic"), FToolMenuInsert("Audiokinetic", EToolMenuInsertType::Default));
+
+			ToggleVizRoomsPortalsAction.ExecuteAction.BindStatic(&FAudiokineticToolsModule::ToggleVisualizeRoomsAndPortals);
+			ToggleVizRoomsPortalsAction.GetActionCheckState.BindStatic(&FAudiokineticToolsModule::GetVisualizeRoomsAndPortalsCheckBoxState);
+
+			AkSection.AddMenuEntry(
+				NAME_None,
+				LOCTEXT("ToggleVizRoomsAndPortals_Label", "Visualize Rooms And Portals"),
+				LOCTEXT("ToggleVizRoomsAndPortals_Tip", "Toggles the visualization of rooms and portals in the viewport. This requires 'realtime' to be enabled in the viewport."),
+				FSlateIcon(),
+				ToggleVizRoomsPortalsAction,
+				EUserInterfaceActionType::ToggleButton
+			);
+
+			ToggleReverbInfoAction.ExecuteAction.BindStatic(&FAudiokineticToolsModule::ToggleShowReverbInfo);
+			ToggleReverbInfoAction.GetActionCheckState.BindStatic(&FAudiokineticToolsModule::GetReverbInfoCheckBoxState);
+
+			AkSection.AddMenuEntry(
+				NAME_None,
+				LOCTEXT("ToggleReverbInfo_Label", "Show Reverb Info"),
+				LOCTEXT("ToggleReverbInfo_Tip", "When enabled, information about AkReverbComponents will be displayed in viewports, above the component's UPrimitiveComponent parent. This requires 'realtime' to be enabled in the viewport."),
+				FSlateIcon(),
+				ToggleReverbInfoAction,
+				EUserInterfaceActionType::ToggleButton
+			);
+		}
 	}
 
 	void RegisterWwiseMenus()
@@ -210,38 +272,34 @@ class FAudiokineticToolsModule : public IAudiokineticTools
 			FToolMenuSection& WwiseBuildSection = BuildMenu->AddSection("AkBuild", LOCTEXT("AkBuildLabel", "Audiokinetic"), FToolMenuInsert("LevelEditorGeometry", EToolMenuInsertType::Default));
 
 			FUIAction GenerateSoundDataUIAction;
-			GenerateSoundDataUIAction.ExecuteAction.BindStatic(&AkAudioBankGenerationHelper::CreateGenerateSoundDataWindow, (TArray<TWeakObjectPtr<UAkAudioBank>>*)nullptr, false);
+			GenerateSoundDataUIAction.ExecuteAction.BindStatic(&AkAudioBankGenerationHelper::CreateGenerateSoundDataWindow, false);
 			WwiseBuildSection.AddMenuEntry(
 				NAME_None,
-				LOCTEXT("AkAudioBank_GenerateSoundBanks", "Generate Sound Data..."),
-				LOCTEXT("AkAudioBank_GenerateSoundBanksTooltip", "Generates Wwise Sound Data."),
+				LOCTEXT("AkAudioBank_GenerateSoundBanks", "Generate SoundBanks..."),
+				LOCTEXT("AkAudioBank_GenerateSoundBanksTooltip", "Generates Wwise SoundBanks."),
 				FSlateIcon(),
 				GenerateSoundDataUIAction
+			);
+
+			FUIAction RefreshProjectUIAction;
+			RefreshProjectUIAction.ExecuteAction.BindRaw(this, &FAudiokineticToolsModule::RefreshWwiseProject);
+			WwiseBuildSection.AddMenuEntry(
+				NAME_None,
+				LOCTEXT("RefreshWwiseProject", "Refresh Project Database"),
+				LOCTEXT("RefreshWwiseProjectTooltip", "Reparse the the Wwise Project in GeneratedSoundBanks and reload Wwise assets."),
+				FSlateIcon(),
+				RefreshProjectUIAction
 			);
 
 			FUIAction ClearSoundDataUIAction;
 			ClearSoundDataUIAction.ExecuteAction.BindStatic(&AkAudioBankGenerationHelper::CreateClearSoundDataWindow);
 			WwiseBuildSection.AddMenuEntry(
 				NAME_None,
-				LOCTEXT("AkAudioBank_ClearSoundData", "Clear Sound Data..."),
-				LOCTEXT("AkAudioBank_ClearSoundDataTooltip", "Clear Wwise Sound Data."),
+				LOCTEXT("AkAudioBank_ClearSoundData", "Clear Wwise Cache..."),
+				LOCTEXT("AkAudioBank_ClearSoundDataTooltip", "Clear the Wwise cache folder."),
 				FSlateIcon(),
 				ClearSoundDataUIAction
 			);
-
-			if (AkUnrealHelper::IsUsingEventBased())
-			{
-				FUIAction ForceAssetSynchronizationUIAction;
-				ForceAssetSynchronizationUIAction.ExecuteAction.BindRaw(&assetManagementManager, &AkAssetManagementManager::DoAssetSynchronization);
-
-				WwiseBuildSection.AddMenuEntry(
-					NAME_None,
-					LOCTEXT("AkAudioMenu_ForceAssetSynchronization", "Force Asset Synchronization"),
-					LOCTEXT("AkAudioMenu_ForceAssetSynchronizationTooltip", "Force synchronization of assets from the Wwise project by parsing the work units"),
-					FSlateIcon(),
-					ForceAssetSynchronizationUIAction
-				);
-			}
 		}
 #else
 		FLevelEditorModule& LevelEditorModule = FModuleManager::GetModuleChecked<FLevelEditorModule>(TEXT("LevelEditor"));
@@ -253,37 +311,34 @@ class FAudiokineticToolsModule : public IAudiokineticTools
 						MenuBuilder.BeginSection("Audiokinetic", LOCTEXT("Audiokinetic", "Audiokinetic"));
 						{
 							FUIAction GenerateSoundDataUIAction;
-							GenerateSoundDataUIAction.ExecuteAction.BindStatic(&AkAudioBankGenerationHelper::CreateGenerateSoundDataWindow, (TArray<TWeakObjectPtr<UAkAudioBank>>*)nullptr, false);
+							GenerateSoundDataUIAction.ExecuteAction.BindStatic(&AkAudioBankGenerationHelper::CreateGenerateSoundDataWindow, false);
 							MenuBuilder.AddMenuEntry(
-								LOCTEXT("AkAudioBank_GenerateSoundBanks", "Generate Sound Data..."),
-								LOCTEXT("AkAudioBank_GenerateSoundBanksTooltip", "Generates Wwise Sound Data."),
+								LOCTEXT("AkAudioBank_GenerateSoundBanks", "Generate SoundBanks..."),
+								LOCTEXT("AkAudioBank_GenerateSoundBanksTooltip", "Generates Wwise SoundBanks."),
 								FSlateIcon(),
 								GenerateSoundDataUIAction
+							);
+
+							FUIAction RefreshProjectUIAction;
+							RefreshProjectUIAction.ExecuteAction.BindRaw(this, &FAudiokineticToolsModule::RefreshWwiseProject);
+							MenuBuilder.AddMenuEntry(
+								LOCTEXT("AkAudioBank_RefreshProject", "Refresh Project"),
+								LOCTEXT("AkAudioBank_RefreshProjectTooltip", "Refresh the Wwise Project"),
+								FSlateIcon(),
+								RefreshProjectUIAction
 							);
 
 							FUIAction ClearSoundDataUIAction;
 							ClearSoundDataUIAction.ExecuteAction.BindStatic(&AkAudioBankGenerationHelper::CreateClearSoundDataWindow);
 							MenuBuilder.AddMenuEntry(
-								LOCTEXT("AkAudioBank_ClearSoundData", "Clear Sound Data..."),
-								LOCTEXT("AkAudioBank_ClearSoundDataTooltip", "Clear Wwise Sound Data."),
+								LOCTEXT("AkAudioBank_ClearSoundData", "Clear Wwise Cache..."),
+								LOCTEXT("AkAudioBank_ClearSoundDataTooltip", "Clear the Wwise cache folder."),
 								FSlateIcon(),
 								ClearSoundDataUIAction
 							);
 						}
 						MenuBuilder.EndSection();
 
-						if (AkUnrealHelper::IsUsingEventBased())
-						{
-							FUIAction ForceAssetSynchronizationUIAction;
-							ForceAssetSynchronizationUIAction.ExecuteAction.BindRaw(&assetManagementManager, &AkAssetManagementManager::DoAssetSynchronization);
-
-							MenuBuilder.AddMenuEntry(
-								LOCTEXT("AkAudioMenu_ForceAssetSynchronization", "Force Asset Synchronization"),
-								LOCTEXT("AkAudioMenu_ForceAssetSynchronizationTooltip", "Force synchronization of assets from the Wwise project by parsing the work units"),
-								FSlateIcon(),
-								ForceAssetSynchronizationUIAction
-							);
-						}
 					}));
 
 				return Extender.ToSharedRef();
@@ -313,10 +368,6 @@ class FAudiokineticToolsModule : public IAudiokineticTools
 
 		UAkSettings* AkSettings = GetMutableDefault<UAkSettings>();
 		if (!AkSettings)
-		{
-			return;
-		}
-		if (!AkSettings->UseEventBasedPackaging)
 		{
 			return;
 		}
@@ -529,74 +580,8 @@ class FAudiokineticToolsModule : public IAudiokineticTools
 				if (AkSettings->WwiseProjectPath.FilePath != TempPath)
 				{
 					AkSettings->WwiseProjectPath.FilePath = TempPath;
-					AkUnrealHelper::SaveConfigFile(AkSettings);
+					AkUnrealEditorHelper::SaveConfigFile(AkSettings);
 				}
-			}
-		}
-	}
-
-	void AskToUseNewAssetManagement(bool& doAssetSync, bool& doModifyProject, UAkSettings* AkSettings, const FString& CacheDirectory)
-	{
-		if (!AkSettings->AskedToUseNewAssetManagement)
-		{
-			auto doEnableNewAssetManagement = [this, &doAssetSync, &AkSettings, &CacheDirectory] {
-				if (!assetManagementManager.IsInited())
-				{
-					assetManagementManager.Init();
-				}
-
-				AkSettings->AskedToUseNewAssetManagement = true;
-				AkSettings->UseEventBasedPackaging = true;
-				UAkSettingsPerUser* AkSettingsPerUser = GetMutableDefault<UAkSettingsPerUser>();
-				if (AkSettingsPerUser)
-				{
-					AkSettingsPerUser->bAutoConnectToWAAPI = true;
-				}
-				AkSettings->RemoveSoundDataFromAlwaysStageAsUFS(AkSettings->WwiseSoundDataFolder.Path);
-				AkUnrealHelper::SaveConfigFile(AkSettings);
-
-				if (AkSettingsPerUser) 
-				{
-					AkSettingsPerUser->OnAutoConnectChanged.Broadcast();
-				}
-
-				FPlatformFileManager::Get().GetPlatformFile().DeleteDirectoryRecursively(*CacheDirectory);
-				AkUnrealHelper::DeleteOldSoundBanks();
-
-				doAssetSync = false;
-			};
-
-			TArray<FAssetData> akAudioTypes;
-			FAssetRegistryModule& AssetRegistryModule = FModuleManager::LoadModuleChecked<FAssetRegistryModule>("AssetRegistry");
-			AssetRegistryModule.Get().GetAssetsByClass(UAkAudioType::StaticClass()->GetFName(), akAudioTypes, true);
-
-			if (akAudioTypes.Num() > 0)
-			{
-				auto YesDelegate = FOnButtonClickedMigration::CreateLambda([this, &doEnableNewAssetManagement, &AkSettings]() -> FReply {
-					doEnableNewAssetManagement();
-					assetManagementManager.DoAssetMigration();
-					return FReply::Handled();
-				});
-
-				auto NoDelegate = FOnButtonClickedMigration::CreateLambda([&AkSettings, &doModifyProject]() -> FReply {
-					AkSettings->AskedToUseNewAssetManagement = true;
-					AkSettings->UseEventBasedPackaging = false;
-					AkSettings->SplitSwitchContainerMedia = false;
-					AkUnrealHelper::SaveConfigFile(AkSettings);
-					doModifyProject = false;
-
-					FMessageDialog::Open(EAppMsgType::Ok, LOCTEXT("MigrationDone", "Unreal Editor must be restarted for migration changes to take effect."));
-					ISettingsEditorModule& SettingsEditorModule = FModuleManager::GetModuleChecked<ISettingsEditorModule>("SettingsEditor");
-					SettingsEditorModule.OnApplicationRestartRequired();
-					return FReply::Handled();
-				});
-
-				AkUnrealHelper::ShowEventBasedPackagingMigrationDialog(YesDelegate, NoDelegate);
-			}
-			else
-			{
-				doEnableNewAssetManagement();
-				assetManagementManager.DoAssetMigration();
 			}
 		}
 	}
@@ -607,7 +592,6 @@ class FAudiokineticToolsModule : public IAudiokineticTools
 		UAkSettingsPerUser* AkSettingsPerUser = GetMutableDefault<UAkSettingsPerUser>();
 		auto* CurrentProject = IProjectManager::Get().GetCurrentProject();
 
-		bool doAssetSync = true;
 		bool doModifyProject = true;
 
 		WwiseProjectInfo wwiseProjectInfo;
@@ -619,20 +603,12 @@ class FAudiokineticToolsModule : public IAudiokineticTools
 		{
 			VerifyWwiseProjectPath(AkSettings, AkSettingsPerUser);
 
-#if 0 // Disable the migration prompt until EBP stability improves
-			AskToUseNewAssetManagement(doAssetSync, doModifyProject, AkSettings, wwiseProjectInfo.CacheDirectory());
-#endif
-
 			if (doModifyProject)
 			{
-				assetManagementManager.ModifyProjectSettings();
+				AssetMigrationManager.SetStandardProjectSettings();
 			}
-		}
 
-		if (!AkSettings || !CurrentProject || (AkSettings && !AkSettings->UseEventBasedPackaging) || (AkSettingsPerUser && !AkSettingsPerUser->EnableAutomaticAssetSynchronization))
-		{
-			assetManagementManager.Uninit();
-			doAssetSync = false;
+
 		}
 
 		UpdateUnrealCultureToWwiseCultureMap(wwiseProjectInfo);
@@ -645,25 +621,16 @@ class FAudiokineticToolsModule : public IAudiokineticTools
 		}
 
 		AkSettings->InitAkGeometryMap();
-		AkSettings->EnsureSoundDataPathIsInAlwaysCook();
 		AkSettings->EnsurePluginContentIsInAlwaysCook();
-		auto& AssetDatabase = AkAssetDatabase::Get();
-		AssetDatabase.ScanForAkAssets();
-
-		if (doAssetSync)
-		{
-			assetManagementManager.DoAssetSynchronization();
-		}
 
 		AkAcousticTextureParamLookup AcousticTextureParamLookup;
 		AcousticTextureParamLookup.UpdateParamsMap();
-	}
 
-	void OnActivatedNewAssetManagement()
-	{
-		AkToolBehavior::ForceEventBasedToolBehavior();
-		assetManagementManager.ModifyProjectSettings();
-		assetManagementManager.DoAssetMigration();
+
+		AssetMigrationManager.CreateMigrationMenuOption();
+		AssetMigrationManager.TryMigration();
+
+		SoundBanksDirectoryWatcher.Initialize();
 	}
 
 	virtual void StartupModule() override
@@ -675,11 +642,9 @@ class FAudiokineticToolsModule : public IAudiokineticTools
 
 			AkAssetTypeActionsArray =
 			{
-				MakeShared<FAssetTypeActions_AkAudioBank>(AudiokineticAssetCategoryBit),
 				MakeShared<FAssetTypeActions_AkAudioEvent>(AudiokineticAssetCategoryBit),
 				MakeShared<FAssetTypeActions_AkAcousticTexture>(AudiokineticAssetCategoryBit),
 				MakeShared<FAssetTypeActions_AkAuxBus>(AudiokineticAssetCategoryBit),
-				MakeShared<FAssetTypeActions_AkMediaAsset>(AudiokineticAssetCategoryBit),
 				MakeShared<FAssetTypeActions_AkRtpc>(AudiokineticAssetCategoryBit),
 				MakeShared<FAssetTypeActions_AkTrigger>(AudiokineticAssetCategoryBit),
 			};
@@ -691,6 +656,7 @@ class FAudiokineticToolsModule : public IAudiokineticTools
 		if (FModuleManager::Get().IsModuleLoaded("LevelEditor") && !IsRunningCommandlet())
 		{
 			RegisterWwiseMenus();
+			CreateAkViewportCommands();
 		}
 
 		RegisterSettings();
@@ -698,11 +664,9 @@ class FAudiokineticToolsModule : public IAudiokineticTools
 		AkEventBroker = MakeShared<FAkEventAssetBroker>();
 		FComponentAssetBrokerage::RegisterBroker(AkEventBroker, UAkComponent::StaticClass(), true, true);
 
-		FGlobalTabmanager::Get()->RegisterNomadTabSpawner(SWaapiPicker::WaapiPickerTabName, FOnSpawnTab::CreateRaw(this, &FAudiokineticToolsModule::CreateWaapiPickerWindow))
-			.SetGroup(WorkspaceMenu::GetMenuStructure().GetLevelEditorCategory())
-			.SetIcon(FSlateIcon(FAkAudioStyle::GetStyleSetName(), "AudiokineticTools.AkPickerTabIcon"));
-
-		FGlobalTabmanager::Get()->RegisterNomadTabSpawner(SWwisePicker::WwisePickerTabName, FOnSpawnTab::CreateRaw(this, &FAudiokineticToolsModule::CreateWwisePickerWindow))
+		auto& TabSpawnerEntry = FGlobalTabmanager::Get()->RegisterNomadTabSpawner(SWwisePickerGroup::WwisePickerGroupTabName, FOnSpawnTab::CreateRaw(this, &FAudiokineticToolsModule::CreateWwisePickerGroupTab))
+			.SetDisplayName(NSLOCTEXT("FAudiokineticToolsModule", "PickerTabTitle", "Wwise Pickers"))
+			.SetTooltipText(NSLOCTEXT("FAudiokineticToolsModule", "PickerTooltipText", "Open the Wwise Pickers tab."))
 			.SetGroup(WorkspaceMenu::GetMenuStructure().GetLevelEditorCategory())
 			.SetIcon(FSlateIcon(FAkAudioStyle::GetStyleSetName(), "AudiokineticTools.AkPickerTabIcon"));
 
@@ -730,23 +694,13 @@ class FAudiokineticToolsModule : public IAudiokineticTools
 		PropertyModule.RegisterCustomClassLayout(UAkGeometryComponent::StaticClass()->GetFName(), FOnGetDetailCustomizationInstance::CreateStatic(&FAkGeometryComponentDetailsCustomization::MakeInstance));
 		PropertyModule.RegisterCustomClassLayout(UAkSettings::StaticClass()->GetFName(), FOnGetDetailCustomizationInstance::CreateStatic(&FAkSettingsDetailsCustomization::MakeInstance));
 
-		if (auto akSettings = GetDefault<UAkSettings>())
+		if (IWwiseProjectDatabaseModule::IsInACookingCommandlet())
 		{
-			akSettings->OnActivatedNewAssetManagement.AddLambda([this]() {
-				OnActivatedNewAssetManagement();
-			});
-
-			akSettings->OnSoundDataFolderChanged.AddLambda([](const FString& OldBasePackagePath, const FString& NewBasePackagePath) {
-				AkAssetDatabase::Get().MoveAllAssets(OldBasePackagePath, NewBasePackagePath);
-			});
-			auto akSettingsPerUser = GetDefault<UAkSettingsPerUser>();
-			if (akSettings->UseEventBasedPackaging || (akSettingsPerUser && akSettingsPerUser->EnableAutomaticAssetSynchronization))
-			{
-				assetManagementManager.Init();
-			}
+			return;
 		}
 
 		AkAssetDatabase::Get().Init();
+		WaapiRenameWatcher::Get().Init();
 	}
 
 	virtual void ShutdownModule() override
@@ -766,9 +720,9 @@ class FAudiokineticToolsModule : public IAudiokineticTools
 		{
 			auto& LevelEditorModule = FModuleManager::GetModuleChecked<FLevelEditorModule>("LevelEditor");
 			LevelEditorModule.GetAllLevelEditorToolbarBuildMenuExtenders().RemoveAll([=](const FLevelEditorModule::FLevelEditorMenuExtender& Extender)
-			{
-				return Extender.GetHandle() == LevelViewportToolbarBuildMenuExtenderAkHandle;
-			});
+				{
+					return Extender.GetHandle() == LevelViewportToolbarBuildMenuExtenderAkHandle;
+				});
 
 			if (MainMenuExtender.IsValid())
 			{
@@ -784,8 +738,7 @@ class FAudiokineticToolsModule : public IAudiokineticTools
 			GUnrealEd->UnregisterComponentVisualizer(UAkComponent::StaticClass()->GetFName());
 		}
 
-		FGlobalTabmanager::Get()->UnregisterTabSpawner(SWaapiPicker::WaapiPickerTabName);
-		FGlobalTabmanager::Get()->UnregisterTabSpawner(SWwisePicker::WwisePickerTabName);
+		FGlobalTabmanager::Get()->UnregisterTabSpawner(SWwisePickerGroup::WwisePickerGroupTabName);
 
 		if (FModuleManager::Get().IsModuleLoaded(TEXT("Sequencer")))
 		{
@@ -798,25 +751,30 @@ class FAudiokineticToolsModule : public IAudiokineticTools
 		if (IsValid(GUnrealEd))
 		{
 #if UE_4_26_OR_LATER
-			auto WaapiPickerTab = FGlobalTabmanager::Get()->TryInvokeTab(SWaapiPicker::WaapiPickerTabName);
-			if (WaapiPickerTab.IsValid())
+			auto WwisePickerGroupTab = FGlobalTabmanager::Get()->TryInvokeTab(SWwisePickerGroup::WwisePickerGroupTabName);
+			if (WwisePickerGroupTab.IsValid())
 			{
-				WaapiPickerTab->RequestCloseTab();
-			}
-
-			auto WwisePickerTab = FGlobalTabmanager::Get()->TryInvokeTab(SWwisePicker::WwisePickerTabName);
-			if (WwisePickerTab.IsValid())
-			{
-				WwisePickerTab->RequestCloseTab();
+				WwisePickerGroupTab->RequestCloseTab();
+				if (WeakPickerGroup.IsValid())
+				{
+					WeakPickerGroup.Pin()->RequestClosePickerTabs();
+				}
 			}
 #else
-			FGlobalTabmanager::Get()->InvokeTab(SWaapiPicker::WaapiPickerTabName)->RequestCloseTab();
-			FGlobalTabmanager::Get()->InvokeTab(SWwisePicker::WwisePickerTabName)->RequestCloseTab();
+			if (WeakPickerGroup.IsValid())
+			{
+				WeakPickerGroup.Pin()->RequestClosePickerTabs();
+			}
+			FGlobalTabmanager::Get()->InvokeTab(SWwisePickerGroup::WwisePickerGroupTabName)->RequestCloseTab();
 #endif
 		}
 
-		FGlobalTabmanager::Get()->UnregisterNomadTabSpawner(SWaapiPicker::WaapiPickerTabName);
-		FGlobalTabmanager::Get()->UnregisterNomadTabSpawner(SWwisePicker::WwisePickerTabName);
+		if (WeakPickerGroup.IsValid())
+		{
+			WeakPickerGroup.Pin()->UnregisterPickerTabs();
+		}
+
+		FGlobalTabmanager::Get()->UnregisterNomadTabSpawner(SWwisePickerGroup::WwisePickerGroupTabName);
 
 		if (UObjectInitialized())
 		{
@@ -828,15 +786,22 @@ class FAudiokineticToolsModule : public IAudiokineticTools
 		PropertyModule.UnregisterCustomClassLayout(UAkLateReverbComponent::StaticClass()->GetFName());
 		PropertyModule.UnregisterCustomClassLayout(UAkRoomComponent::StaticClass()->GetFName());
 
-		assetManagementManager.Uninit();
+		if (IWwiseProjectDatabaseModule::IsInACookingCommandlet())
+		{
+			return;
+		}
+
+		AkAssetDatabase::Get().UnInit();
+		WaapiRenameWatcher::Get().UnInit();
+		SoundBanksDirectoryWatcher.Uninitialize(true);
+
 	}
 
 	static EEditorBuildResult BuildAkEventData(UWorld* world, FName name)
 	{
-		auto& AssetRegistryModule = FModuleManager::LoadModuleChecked<FAssetRegistryModule>("AssetRegistry");
-		if (!AssetRegistryModule.Get().IsLoadingAssets())
+		if (!AkAssetDatabase::Get().CheckIfLoadingAssets())
 		{
-			CookAkSoundDataTask::ExecuteForEditorPlatform();
+			AkGenerateSoundBanksTask::ExecuteForEditorPlatform();
 			return EEditorBuildResult::InProgress;
 		}
 		else
@@ -900,7 +865,7 @@ private:
 					FString DescriptionText = FString::Format(TEXT("Configure the Wwise {0} Initialization Settings"), { *AvailablePlatform });
 					FText PlatformNameText = FText::FromString(*AvailablePlatform);
 					FString AdditionalDescriptionText = TEXT("");
-					if (AkUnrealPlatformHelper::IsEditorPlatform(AvailablePlatform)) 
+					if (AkUnrealPlatformHelper::IsEditorPlatform(AvailablePlatform))
 					{
 						AdditionalDescriptionText = TEXT("\nYou must restart the Unreal Editor for changes to be applied to the Wwise Sound Engine running in the Editor");
 					}
@@ -926,7 +891,7 @@ private:
 				auto SettingsRegistrationMap = GetWwisePlatformNameToSettingsRegistrationMap();
 
 				TSet<FString> SettingsThatShouldBeRegistered = { FString("Integration"), FString("User") };
-				
+
 				for (const auto& AvailablePlatform : AkUnrealPlatformHelper::GetAllSupportedUnrealPlatformsForProject())
 				{
 					if (SettingsRegistrationMap.Contains(AvailablePlatform))
@@ -973,6 +938,10 @@ private:
 		}
 	}
 
+	/** Ak-specific viewport actions */
+	FUIAction ToggleVizRoomsPortalsAction; 
+	FUIAction ToggleReverbInfoAction;
+
 	TArray<TSharedPtr<FAssetTypeActions_Base>> AkAssetTypeActionsArray;
 	TSharedPtr<FExtender> MainMenuExtender;
 	FLevelEditorModule::FLevelEditorMenuExtender LevelViewportToolbarBuildMenuExtenderAk;
@@ -984,11 +953,11 @@ private:
 	/** Allow to create an AkComponent when Drag & Drop of an AkEvent */
 	TSharedPtr<IComponentAssetBroker> AkEventBroker;
 
-	TSharedPtr<SWaapiPicker> AkWaapiPicker;
-	TSharedPtr<SWwisePicker> AkWwisePicker;
+	TWeakPtr<SWwisePickerGroup> WeakPickerGroup;
 
 	FDoEditorBuildDelegate buildDelegate;
-	AkAssetManagementManager assetManagementManager;
+	AkAssetMigrationManager AssetMigrationManager;
+	GeneratedSoundBanksDirectoryWatcher SoundBanksDirectoryWatcher;
 };
 
 IMPLEMENT_MODULE(FAudiokineticToolsModule, AudiokineticTools);

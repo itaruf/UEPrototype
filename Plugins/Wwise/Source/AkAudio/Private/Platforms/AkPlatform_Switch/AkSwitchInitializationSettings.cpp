@@ -18,13 +18,6 @@ Copyright (c) 2021 Audiokinetic Inc.
 #include "AkAudioDevice.h"
 #include "Misc/Paths.h"
 
-#if PLATFORM_SWITCH
-#include "Generated/AkSwitchPlugins.h"
-#if AK_SUPPORT_OPUS
-#include <AK/Plugin/AkOpusNXFactory.h>
-#endif
-#endif
-
 //////////////////////////////////////////////////////////////////////////
 // Memory hooks
 
@@ -52,7 +45,6 @@ UAkSwitchInitializationSettings::UAkSwitchInitializationSettings(const FObjectIn
 {
 	CommunicationSettings.DiscoveryBroadcastPort = FAkCommunicationSettings::DefaultDiscoveryBroadcastPort;
 	CommunicationSettings.CommandPort = FAkCommunicationSettings::DefaultDiscoveryBroadcastPort + 1;
-	CommunicationSettings.NotificationPort = FAkCommunicationSettings::DefaultDiscoveryBroadcastPort + 2;
 }
 
 void UAkSwitchInitializationSettings::FillInitializationStructure(FAkInitializationStructure& InitializationStructure) const

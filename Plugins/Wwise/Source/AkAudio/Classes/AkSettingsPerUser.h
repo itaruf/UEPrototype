@@ -20,24 +20,28 @@ Copyright (c) 2021 Audiokinetic Inc.
 #include "AkSettingsPerUser.generated.h"
 
 DECLARE_EVENT(UAkSettingsPerUser, AutoConnectChanged);
+DECLARE_EVENT(UAkSettingsPerUser, AutoSyncWaapiNamesChanged);
+DECLARE_MULTICAST_DELEGATE(FOnSoundBanksPathChangedDelegate);
 
 UCLASS(config = EditorPerProjectUserSettings)
 class AKAUDIO_API UAkSettingsPerUser : public UObject
 {
-	GENERATED_UCLASS_BODY()
+	GENERATED_BODY()
 
-	// Wwise Installation Path (Windows Authoring tool)
+public:
+	UAkSettingsPerUser(const FObjectInitializer& ObjectInitializer);
+
+	// Wwise Installation Path (Root folder containing the Authoring, SDK, etc folders)
 	UPROPERTY(Config, EditAnywhere, Category = "Installation")
 	FDirectoryPath WwiseWindowsInstallationPath;
 
-	// Wwise Installation Path (Mac Authoring tool)
+	// Wwise Installation Path (Root folder containing the Authoring, SDK, etc folders)
 	UPROPERTY(Config, EditAnywhere, Category = "Installation", meta = (FilePathFilter = "app", AbsolutePath))
 	FFilePath WwiseMacInstallationPath;
 
-	// Enable automatic asset synchronization with the new asset management system
-	// Changes to this settings will only reflect after restarting the editor
-	UPROPERTY(Config, EditAnywhere, Category = "Sound Data")
-	bool EnableAutomaticAssetSynchronization = false;
+	//Override the Generated Soundbanks Path in the project settings
+	UPROPERTY(Config, EditAnywhere, Category = "Installation")
+	FDirectoryPath GeneratedSoundBanksFolderUserOverride;
 
 	// IP Address used to connect to WAAPI. Changing this requires Editor restart
 	UPROPERTY(Config, EditAnywhere, Category = "WAAPI")
@@ -55,26 +59,43 @@ class AKAUDIO_API UAkSettingsPerUser : public UObject
 	UPROPERTY(Config, EditAnywhere, Category = "WAAPI")
 	bool AutoSyncSelection = true;
 
+	//Synchronize name changes made in the Wwise project over WAAPI (will only make changes when both projects are open)
+	UPROPERTY(Config, EditAnywhere, Category = "WAAPI")
+	bool bAutoSyncWwiseAssetNames = false;
+
+	// Time out value for the xml error message translator to translate an error message (in ms). If set to 0, disable the translator entirely
+	UPROPERTY(Config, EditAnywhere, Category = "Error Message Translator")
+	uint32 XmlTranslatorTimeout = 10;
+
+	// Time out value for the waapi error message translator to translate an error message (in ms). If set to 0, disable the translator entirely
+	UPROPERTY(Config, EditAnywhere, Category = "Error Message Translator")
+	uint32 WaapiTranslatorTimeout = 0;
+
 	UPROPERTY(Config)
 	bool SuppressWwiseProjectPathWarnings = false;
 
 	UPROPERTY(Config)
 	bool SoundDataGenerationSkipLanguage = false;
 
-public:
-	mutable AutoConnectChanged OnAutoConnectChanged;
+	//Will open a notification that must be accepted before reloading Wwise Asset Data
+	UPROPERTY(Config, EditAnywhere, Category = "Assets Reload")
+	bool AskForWwiseAssetsReload = false;
+
 
 #if WITH_EDITOR
+
+	public:
+	mutable AutoConnectChanged OnAutoConnectToWaapiChanged;
+	mutable AutoSyncWaapiNamesChanged OnAutoSyncWwiseAssetNamesChanged;
+
+	FOnSoundBanksPathChangedDelegate OnGeneratedSoundBanksPathChanged;
 protected:
 	void PostEditChangeProperty(struct FPropertyChangedEvent& PropertyChangedEvent) override;
-#if UE_4_25_OR_LATER
 	void PreEditChange(FProperty* PropertyAboutToChange) override;
-#else
-	void PreEditChange(UProperty* PropertyAboutToChange) override;
-#endif
 
 private:
 	FString PreviousWwiseWindowsInstallationPath;
 	FString PreviousWwiseMacInstallationPath;
+	FString PreviousGeneratedSoundBanksFolder;
 #endif
 };

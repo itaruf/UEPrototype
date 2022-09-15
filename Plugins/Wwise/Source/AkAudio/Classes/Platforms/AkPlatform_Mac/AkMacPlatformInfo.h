@@ -30,8 +30,8 @@ public:
 		Architecture = "Mac";
 		LibraryFileNameFormat = "lib{0}.dylib";
 
-#if WITH_EDITOR
-		UAkPlatformInfo::UnrealNameToWwiseName.Add("Mac", "Mac");
+#if WITH_EDITORONLY_DATA
+		UAkPlatformInfo::UnrealNameToPlatformInfo.Add("Mac", this);
 #endif
 	}
 };

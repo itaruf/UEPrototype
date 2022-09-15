@@ -29,8 +29,8 @@ public:
 		WwisePlatform = "Android";
 		bSupportsUPL = true;
 
-#if WITH_EDITOR
-		UAkPlatformInfo::UnrealNameToWwiseName.Add("Android", "Android");
+#if WITH_EDITORONLY_DATA
+		UAkPlatformInfo::UnrealNameToPlatformInfo.Add("Android", this);
 #endif
 	}
 };

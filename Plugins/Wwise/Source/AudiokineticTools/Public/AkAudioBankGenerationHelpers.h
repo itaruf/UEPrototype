@@ -20,8 +20,6 @@ Copyright (c) 2021 Audiokinetic Inc.
 #include "Logging/LogMacros.h"
 #include "Core/Public/UObject/WeakObjectPtrTemplates.h"
 
-DECLARE_LOG_CATEGORY_EXTERN(LogAkSoundData, Log, All);
-
 class UAkAudioBank;
 
 namespace AkAudioBankGenerationHelper
@@ -37,7 +35,7 @@ namespace AkAudioBankGenerationHelper
 	 * @param pSoundBanks				List of SoundBanks to be pre-selected
 	 * @paramin_bShouldSaveWwiseProject	Whether the Wwise project should be saved or not
 	 */
-	void CreateGenerateSoundDataWindow(TArray<TWeakObjectPtr<UAkAudioBank>>* SoundBanks = nullptr, bool ProjectSave = false);
+	void CreateGenerateSoundDataWindow(bool ProjectSave = false);
 
 	void CreateClearSoundDataWindow();
 
@@ -47,8 +45,7 @@ namespace AkAudioBankGenerationHelper
 		AssetData = 1 << 0,
 		SoundBankInfoCache = 1 << 1,
 		MediaCache = 1 << 2,
-		OrphanMedia = 1 << 3,
-		ExternalSource = 1 << 4
+		ExternalSource = 1 << 3
 	};
 
 	ENUM_CLASS_FLAGS(AkSoundDataClearFlags)

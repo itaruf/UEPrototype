@@ -30,8 +30,7 @@ void UAkLinuxInitializationSettings::FillInitializationStructure(FAkInitializati
 #if PLATFORM_64BITS
 	InitializationStructure.SetPluginDllPath("Linux_x64");
 #else
-	ensure(!"The Wwise Unreal Engine 4 integration does not support 32-bit Linux distributions.");
-	InitializationStructure.SetPluginDllPath("Linux_x32");
+	ensure(!"The Wwise Unreal Engine integration does not support 32-bit Linux distributions.");
 #endif
 
 	InitializationStructure.SetupLLMAllocFunctions();

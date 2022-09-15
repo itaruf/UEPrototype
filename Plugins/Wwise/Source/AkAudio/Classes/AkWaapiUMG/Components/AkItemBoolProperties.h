@@ -18,6 +18,7 @@ Copyright (c) 2021 Audiokinetic Inc.
 #include "Components/Widget.h"
 #include "SAkItemBoolProperties.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
+#include "Widgets/Text/STextBlock.h"
 #include "AkItemBoolProperties.generated.h"
 
 
@@ -40,7 +41,7 @@ FAkBoolPropertyToControl
 USTRUCT(BlueprintType)
 struct AKAUDIO_API FAkBoolPropertyToControl
 {
-	GENERATED_USTRUCT_BODY()
+	GENERATED_BODY()
 
 		/**
 		* The name of the item to control
@@ -56,7 +57,10 @@ UAkItemBoolPropertiesConv
 UCLASS()
 class AKAUDIO_API UAkItemBoolPropertiesConv : public UBlueprintFunctionLibrary
 {
-	GENERATED_UCLASS_BODY()
+	GENERATED_BODY()
+
+public:
+	UAkItemBoolPropertiesConv(const class FObjectInitializer& ObjectInitializer);
 
 	/** Converts an AkBoolPropertyToControl value to a string */
 	UFUNCTION(BlueprintPure, meta = (DisplayName = "ToString (FAkBoolPropertyToControl)", CompactNodeTitle = "->", BlueprintAutocast), Category = "Utilities|String")
@@ -77,11 +81,11 @@ UAkItemBoolProperties
 UCLASS(config = Editor, defaultconfig)
 class AKAUDIO_API UAkItemBoolProperties : public UWidget
 {
-	GENERATED_UCLASS_BODY()
+	GENERATED_BODY()
 public:
-	typedef TSlateDelegates< TSharedPtr< FString > >::FOnSelectionChanged FOnSelectionChanged;
+	UAkItemBoolProperties(const FObjectInitializer& ObjectInitializer);
 
-public:	
+	typedef TSlateDelegates< TSharedPtr< FString > >::FOnSelectionChanged FOnSelectionChanged;
 
 	/** Called when the property selection changes. */
 	UPROPERTY(BlueprintAssignable, Category = "Widget Event")

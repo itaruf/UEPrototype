@@ -34,13 +34,13 @@ Copyright (c) 2021 Audiokinetic Inc.
 // Geometric Tools
 #if WITH_EDITOR
 #include "AkAudioStyle.h"
-#include <Mathematics/Math.h>
-#include <Mathematics/UIntegerAP32.h>
-#include <Mathematics/BSRational.h>
-#include <Mathematics/MinimumVolumeBox3.h>
+#include "Mathematics/Math.h"
+#include "Mathematics/UIntegerAP32.h"
+#include "Mathematics/BSRational.h"
+#include "Mathematics/MinimumVolumeBox3.h"
 #endif
 
-#include <algorithm>
+//#include <algorithm>
 
 static const float kScaleEpsilon = 0.001;
 static const float kConvexHullEpsilon = 0.001;
@@ -106,15 +106,7 @@ AAkSpatialAudioVolume::AAkSpatialAudioVolume(const class FObjectInitializer& Obj
 	BrushColor = FColor(109, 187, 255, 255);
 
 #if WITH_EDITOR
-	const UAkSettings* AkSettings = GetDefault<UAkSettings>();
-	if (AkSettings)
-	{
-		CollisionChannel = AkSettings->DefaultFitToGeometryCollisionChannel;
-	}
-	else
-	{
-		CollisionChannel = ECollisionChannel::ECC_WorldStatic;
-	}
+	CollisionChannel = EAkCollisionChannel::EAKCC_UseIntegrationSettingsDefault;
 
 	PrimaryActorTick.bCanEverTick = true;
 	PrimaryActorTick.bStartWithTickEnabled = true;
@@ -123,6 +115,11 @@ AAkSpatialAudioVolume::AAkSpatialAudioVolume(const class FObjectInitializer& Obj
 }
 
 #if WITH_EDITOR
+ECollisionChannel AAkSpatialAudioVolume::GetCollisionChannel()
+{
+	return UAkSettings::ConvertFitToGeomCollisionChannel(CollisionChannel.GetValue());
+}
+
 void AAkSpatialAudioVolume::FitRaycast()
 {
 	UWorld* World = GEngine->GetWorldFromContextObjectChecked(this);
@@ -156,7 +153,7 @@ void AAkSpatialAudioVolume::FitRaycast()
 
 		TArray< FHitResult > OutHits;
 		OutHits.Empty();
-		World->LineTraceMultiByObjectType(OutHits, RaycastOrigin, to, (int)CollisionChannel, CollisionParams);
+		World->LineTraceMultiByObjectType(OutHits, RaycastOrigin, to, (int)GetCollisionChannel(), CollisionParams);
 
 		for (auto& res : OutHits)
 		{

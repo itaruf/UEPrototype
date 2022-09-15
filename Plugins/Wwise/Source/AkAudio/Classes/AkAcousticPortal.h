@@ -15,10 +15,13 @@ Copyright (c) 2021 Audiokinetic Inc.
 
 #pragma once
 
+#include "Components/TextRenderComponent.h"
 #include "GameFramework/Volume.h"
 #include "OcclusionObstructionService/AkPortalOcclusionObstructionService.h"
 #include "AkGameplayTypes.h"
-
+#if WITH_EDITOR
+#include "AkSettings.h"
+#endif
 #include "AkAcousticPortal.generated.h"
 
 class UAkRoomComponent;
@@ -27,9 +30,11 @@ class UAkLateReverbComponent;
 UCLASS(ClassGroup = Audiokinetic, hidecategories = (Advanced, Attachment, Volume), BlueprintType, meta = (BlueprintSpawnableComponent))
 class AKAUDIO_API UAkPortalComponent : public USceneComponent
 {
-	GENERATED_UCLASS_BODY()
+	GENERATED_BODY()
 
 public:
+	UAkPortalComponent(const class FObjectInitializer& ObjectInitializer);
+
 	UFUNCTION(BlueprintCallable, Category = "Audiokinetic|AkPortalComponent")
 	void OpenPortal();
 
@@ -82,6 +87,7 @@ public:
 	virtual void OnComponentCreated() override;
 	virtual void PostLoad() override;
 	virtual void OnComponentDestroyed(bool bDestroyingHierarchy) override;
+	void UpdateTextRotations() const;
 #endif // WITH_EDITOR
 	virtual void TickComponent(float DeltaTime, enum ELevelTick TickType, FActorComponentTickFunction * ThisTickFunction) override;
 	virtual void OnRegister() override;
@@ -99,6 +105,7 @@ private:
 	class UPrimitiveComponent* Parent;
 
 	void InitializeParent();
+	void SetSpatialAudioPortal();
 
 	template <typename tComponent>
 	void FindConnectedComponents(FAkEnvironmentIndex& RoomQuery, tComponent*& out_pFront, tComponent*& out_pBack);
@@ -116,7 +123,7 @@ private:
 	FVector PreviousLocation;
 	FRotator PreviousRotation;
 
-	bool RoomConnectionsNeedUpdated = false;
+	bool PortalNeedUpdated = false;
 	UAkRoomComponent* FrontRoom;
 	UAkRoomComponent* BackRoom;
 
@@ -129,15 +136,34 @@ private:
 	void InitializeDrawComponent();
 	void DestroyDrawComponent();
 	FDelegateHandle ShowPortalsChangedHandle;
+
+	bool AreTextVisualizersInitialized() const;
+	void InitTextVisualizers();
+	void DestroyTextVisualizers();
+	void UpdateRoomNames();
+	void UpdateTextVisibility();
+	// Updates the location, rotation and visibility of the text visualizers
+	void UpdateTextLocRotVis();
+	bool bWasSelected = false;
+#endif
+
+#if WITH_EDITORONLY_DATA
+	UPROPERTY(SkipSerialization, NonTransactional)
+	mutable UTextRenderComponent* FrontRoomText = nullptr;
+
+	UPROPERTY(SkipSerialization, NonTransactional)
+	mutable UTextRenderComponent* BackRoomText = nullptr;
 #endif
 };
 
 UCLASS(ClassGroup = Audiokinetic, hidecategories = (Advanced, Attachment, Volume), BlueprintType)
 class AKAUDIO_API AAkAcousticPortal : public AVolume
 {
-	GENERATED_UCLASS_BODY()
+	GENERATED_BODY()
 
 public:
+	AAkAcousticPortal(const class FObjectInitializer& ObjectInitializer);
+
 	UFUNCTION(BlueprintCallable, Category = "Audiokinetic|AkAcousticPortal")
 	void OpenPortal();
 
@@ -202,10 +228,18 @@ protected:
 	bool FitToGeometry = false;
 
 	/**
-	Set the collision channel for the ray traces performed to fit the portal to the surrounding geometry. The default value for the collision channel is specified in the Wwise integration settings.
+	Sets the collision channel for the ray traces performed to fit the portal to the surrounding geometry. When set to 'Use Integration Settings Default', the value will be taken from the DefaultFitToGeometryCollisionChannel in the Wwise Integration Settings.
 	*/
 	UPROPERTY(EditAnywhere, Category = "Fit to Geometry")
-	TEnumAsByte<ECollisionChannel> CollisionChannel;
+	TEnumAsByte<EAkCollisionChannel> CollisionChannel;
+
+#if WITH_EDITOR
+	/**
+	Converts between EAkCollisionChannel and ECollisionChannel. Returns Wwise Integration Settings default if CollisionChannel == UseIntegrationSettingsDefault. Otherwise, casts CollisionChannel to ECollisionChannel.
+	*/
+	UFUNCTION(BlueprintCallable, Category = "Fit to Geometry")
+	ECollisionChannel GetCollisionChannel();
+#endif
 
 	/**
 	Limits the effective portal opening size that can be detected when fitting the portal to surrounding geometry.

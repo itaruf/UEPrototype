@@ -28,7 +28,10 @@ Copyright (c) 2021 Audiokinetic Inc.
 UCLASS(hidecategories=Object)
 class UAkJsonFactory : public UFactory
 {
-	GENERATED_UCLASS_BODY()
+	GENERATED_BODY()
+
+public:
+	UAkJsonFactory(const class FObjectInitializer& ObjectInitializer);
 
 #if CPP
 	/*------------------------------------------------------------------------------------

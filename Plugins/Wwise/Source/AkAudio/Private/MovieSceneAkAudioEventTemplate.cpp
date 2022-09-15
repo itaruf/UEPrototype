@@ -49,6 +49,7 @@ struct FMovieSceneAkAudioEventSectionData
 
 		switch (Player.GetPlaybackStatus())
 		{
+		    case EMovieScenePlayerStatus::Paused:
 		    case EMovieScenePlayerStatus::Stopped:
             {
                 ResetTracker(AudioDevice);

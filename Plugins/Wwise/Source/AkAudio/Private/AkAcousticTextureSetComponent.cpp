@@ -203,12 +203,47 @@ void UAkAcousticTextureSetComponent::SendGeometryToWwise(const AkGeometryParams&
 	}
 }
 
+void UAkAcousticTextureSetComponent::SendGeometryInstanceToWwise(const FRotator& rotation, const FVector& location, const FVector& scale, const AkRoomID roomID)
+{
+	if (ShouldSendGeometry() && GeometryHasBeenSent)
+	{
+		AkVector front, up;
+		AkVector64 position;
+		FAkAudioDevice::FVectorToAKVector(rotation.RotateVector(FVector::ForwardVector), front);
+		FAkAudioDevice::FVectorToAKVector(rotation.RotateVector(FVector::UpVector), up); 
+		FAkAudioDevice::FVectorToAKVector64(location, position);
+
+		AkGeometryInstanceParams params;
+		params.PositionAndOrientation.Set(position, front, up);
+		FAkAudioDevice::FVectorToAKVector(scale, params.Scale);
+		params.GeometrySetID = GetGeometrySetID();
+		params.RoomID = roomID;
+
+		FAkAudioDevice* AkAudioDevice = FAkAudioDevice::Get();
+		if (AkAudioDevice != nullptr && AkAudioDevice->SetGeometryInstance(GetGeometrySetID(), params) == AK_Success)
+			GeometryInstanceHasBeenSent = true;
+	}
+}
+
 void UAkAcousticTextureSetComponent::RemoveGeometryFromWwise()
 {
 	if (ShouldSendGeometry() && GeometryHasBeenSent)
 	{
 		FAkAudioDevice* AkAudioDevice = FAkAudioDevice::Get();
 		if (AkAudioDevice != nullptr && AkAudioDevice->RemoveGeometrySet(GetGeometrySetID()) == AK_Success)
+		{
 			GeometryHasBeenSent = false;
+			GeometryInstanceHasBeenSent = false;
+		}
+	}
+}
+
+void UAkAcousticTextureSetComponent::RemoveGeometryInstanceFromWwise()
+{
+	if (ShouldSendGeometry() && GeometryInstanceHasBeenSent)
+	{
+		FAkAudioDevice* AkAudioDevice = FAkAudioDevice::Get();
+		if (AkAudioDevice != nullptr && AkAudioDevice->RemoveGeometrySet(GetGeometrySetID()) == AK_Success)
+			GeometryInstanceHasBeenSent = false;
 	}
 }

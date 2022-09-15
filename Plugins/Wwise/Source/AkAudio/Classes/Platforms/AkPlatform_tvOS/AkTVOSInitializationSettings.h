@@ -25,9 +25,10 @@ Copyright (c) 2021 Audiokinetic Inc.
 UCLASS(config = Game, defaultconfig)
 class AKAUDIO_API UAkTVOSInitializationSettings : public UObject, public IAkPlatformInitialisationSettingsBase
 {
-	GENERATED_UCLASS_BODY()
+	GENERATED_BODY()
 
 public:
+	UAkTVOSInitializationSettings(const FObjectInitializer& ObjectInitializer);
 	void FillInitializationStructure(FAkInitializationStructure& InitializationStructure) const override;
 
 	UPROPERTY(Config, EditAnywhere, Category = "Initialization")

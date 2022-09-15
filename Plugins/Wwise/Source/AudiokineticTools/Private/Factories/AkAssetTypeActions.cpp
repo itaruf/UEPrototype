@@ -15,9 +15,6 @@ Copyright (c) 2021 Audiokinetic Inc.
 
 
 #include "AkAssetTypeActions.h"
-
-#include "AkAudioBank.h"
-#include "AkAudioBankGenerationHelpers.h"
 #include "AkAudioDevice.h"
 #include "AkAudioEvent.h"
 #include "Framework/Application/SlateApplication.h"
@@ -26,7 +23,6 @@ Copyright (c) 2021 Audiokinetic Inc.
 #include "Interfaces/IMainFrameModule.h"
 #include "Misc/ScopeLock.h"
 #include "Toolkits/SimpleAssetEditor.h"
-#include "UI/SAkAudioBankPicker.h"
 #include "UObject/Package.h"
 
 #define LOCTEXT_NAMESPACE "AkAssetTypeActions"
@@ -78,7 +74,7 @@ namespace FAkAssetTypeActions_Helpers
 			}
 			else
 			{
-				auto CurrentPlayingID = AudioDevice->PostEvent(Event, nullptr, AK_EndOfEvent, &AkEventPreviewCallback);
+				auto CurrentPlayingID = AudioDevice->PostAkAudioEventOnActor(Event, nullptr, AK_EndOfEvent, &AkEventPreviewCallback);
 				if (CurrentPlayingID != AK_INVALID_PLAYING_ID)
 				{
 					FScopeLock Lock(&CriticalSection);
@@ -98,100 +94,6 @@ namespace FAkAssetTypeActions_Helpers
 void FAssetTypeActions_AkAcousticTexture::OpenAssetEditor(const TArray<UObject*>& InObjects, TSharedPtr<IToolkitHost> EditWithinLevelEditor)
 {
 	FSimpleAssetEditor::CreateEditor(EToolkitMode::Standalone, EditWithinLevelEditor, InObjects);
-}
-
-
-//////////////////////////////////////////////////////////////////////////
-// FAssetTypeActions_AkAudioBank
-
-void FAssetTypeActions_AkAudioBank::GetActions(const TArray<UObject*>& InObjects, FMenuBuilder& MenuBuilder)
-{
-	auto Banks = GetTypedWeakObjectPtrs<UAkAudioBank>(InObjects);
-
-	if (Banks.Num() > 1)
-	{
-		MenuBuilder.AddMenuEntry(
-			LOCTEXT("AkAudioBank_GenerateSelectedSoundBanks", "Generate Selected SoundBanks..."),
-			LOCTEXT("AkAudioBank_GenerateSelectedSoundBanksTooltip", "Generates the selected SoundBanks."),
-			FSlateIcon(),
-			FUIAction(
-				FExecuteAction::CreateSP(this, &FAssetTypeActions_AkAudioBank::CreateGenerateSoundDataWindow, Banks),
-				FCanExecuteAction()
-			)
-		);
-	}
-	else
-	{
-		MenuBuilder.AddMenuEntry(
-			LOCTEXT("AkAudioBank_GenerateSelectedSoundBank", "Generate Selected SoundBank..."),
-			LOCTEXT("AkAudioBank_GenerateSelectedSoundBankTooltip", "Generates the selected SoundBank."),
-			FSlateIcon(),
-			FUIAction(
-				FExecuteAction::CreateSP(this, &FAssetTypeActions_AkAudioBank::CreateGenerateSoundDataWindow, Banks),
-				FCanExecuteAction()
-			)
-		);
-	}
-
-	MenuBuilder.AddMenuEntry(
-		LOCTEXT("AkAudioBank_RefreshAllBanks", "Refresh All Banks"),
-		LOCTEXT("AkAudioBank_RefreshAllBanksTooltip", "Refresh all the selected banks."),
-		FSlateIcon(),
-		FUIAction(
-			FExecuteAction::CreateSP(this, &FAssetTypeActions_AkAudioBank::RefreshAllBanks, Banks),
-			FCanExecuteAction()
-		)
-	);
-}
-
-void FAssetTypeActions_AkAudioBank::OpenAssetEditor(const TArray<UObject*>& InObjects, TSharedPtr<IToolkitHost> EditWithinLevelEditor)
-{
-	FSimpleAssetEditor::CreateEditor(EToolkitMode::Standalone, EditWithinLevelEditor, InObjects);
-}
-
-#if UE_4_24_OR_LATER
-bool FAssetTypeActions_AkAudioBank::AssetsActivatedOverride(const TArray<UObject*>& InObjects, EAssetTypeActivationMethod::Type ActivationType)
-#else
-void FAssetTypeActions_AkAudioBank::AssetsActivated(const TArray<UObject*>& InObjects, EAssetTypeActivationMethod::Type ActivationType)
-#endif
-{
-	if (ActivationType == EAssetTypeActivationMethod::DoubleClicked || ActivationType == EAssetTypeActivationMethod::Opened)
-	{
-		if (InObjects.Num() == 1)
-		{
-#if UE_4_24_OR_LATER
-			return GEditor->GetEditorSubsystem<UAssetEditorSubsystem>()->OpenEditorForAsset(InObjects[0]);
-#else
-			FAssetEditorManager::Get().OpenEditorForAsset(InObjects[0]);
-#endif
-		}
-		else if (InObjects.Num() > 1)
-		{
-#if UE_4_24_OR_LATER
-			return GEditor->GetEditorSubsystem<UAssetEditorSubsystem>()->OpenEditorForAssets(InObjects);
-#else
-			FAssetEditorManager::Get().OpenEditorForAssets(InObjects);
-#endif
-		}
-	}
-
-#if UE_4_24_OR_LATER
-	return true;
-#endif
-}
-
-void FAssetTypeActions_AkAudioBank::CreateGenerateSoundDataWindow(TArray<TWeakObjectPtr<UAkAudioBank>> Objects)
-{
-	AkAudioBankGenerationHelper::CreateGenerateSoundDataWindow(&Objects);
-}
-
-void FAssetTypeActions_AkAudioBank::RefreshAllBanks(TArray<TWeakObjectPtr<UAkAudioBank>> Objects)
-{
-	FAkAudioDevice* AudioDevice = FAkAudioDevice::Get();
-	if (AudioDevice)
-	{
-		AudioDevice->ReloadAllSoundData();
-	}
 }
 
 
@@ -221,16 +123,6 @@ void FAssetTypeActions_AkAudioEvent::GetActions(const TArray<UObject*>& InObject
 			FCanExecuteAction()
 		)
 	);
-
-	MenuBuilder.AddMenuEntry(
-		LOCTEXT("AkAudioEvent_GroupIntoSoundBank", "Group Into Sound Bank"),
-		LOCTEXT("AkAudioEvent_GroupIntoSoundBankTooltip", "Group the selected events into a sound bank."),
-		FSlateIcon(),
-		FUIAction(
-			FExecuteAction::CreateSP(this, &FAssetTypeActions_AkAudioEvent::GroupIntoSoundBank, Events),
-			FCanExecuteAction()
-		)
-	);
 }
 
 void FAssetTypeActions_AkAudioEvent::OpenAssetEditor(const TArray<UObject*>& InObjects, TSharedPtr<IToolkitHost> EditWithinLevelEditor)
@@ -238,29 +130,17 @@ void FAssetTypeActions_AkAudioEvent::OpenAssetEditor(const TArray<UObject*>& InO
 	FSimpleAssetEditor::CreateEditor(EToolkitMode::Standalone, EditWithinLevelEditor, InObjects);
 }
 
-#if UE_4_24_OR_LATER
 bool FAssetTypeActions_AkAudioEvent::AssetsActivatedOverride(const TArray<UObject*>& InObjects, EAssetTypeActivationMethod::Type ActivationType)
-#else
-void FAssetTypeActions_AkAudioEvent::AssetsActivated(const TArray<UObject*>& InObjects, EAssetTypeActivationMethod::Type ActivationType)
-#endif
 {
 	if (ActivationType == EAssetTypeActivationMethod::DoubleClicked || ActivationType == EAssetTypeActivationMethod::Opened)
 	{
 		if (InObjects.Num() == 1)
 		{
-#if UE_4_24_OR_LATER
 			return GEditor->GetEditorSubsystem<UAssetEditorSubsystem>()->OpenEditorForAsset(InObjects[0]);
-#else
-			FAssetEditorManager::Get().OpenEditorForAsset(InObjects[0]);
-#endif
 		}
 		else if (InObjects.Num() > 1)
 		{
-#if UE_4_24_OR_LATER
 			return GEditor->GetEditorSubsystem<UAssetEditorSubsystem>()->OpenEditorForAssets(InObjects);
-#else
-			FAssetEditorManager::Get().OpenEditorForAssets(InObjects);
-#endif
 		}
 	}
 	else if (ActivationType == EAssetTypeActivationMethod::Previewed)
@@ -269,9 +149,7 @@ void FAssetTypeActions_AkAudioEvent::AssetsActivated(const TArray<UObject*>& InO
 		FAkAssetTypeActions_Helpers::PlayEvents<true>(Events);
 	}
 
-#if UE_4_24_OR_LATER
 	return true;
-#endif
 }
 
 void FAssetTypeActions_AkAudioEvent::PlayEvent(TArray<TWeakObjectPtr<UAkAudioEvent>> Objects)
@@ -288,49 +166,6 @@ void FAssetTypeActions_AkAudioEvent::StopEvent(TArray<TWeakObjectPtr<UAkAudioEve
 	}
 }
 
-void FAssetTypeActions_AkAudioEvent::GroupIntoSoundBank(TArray<TWeakObjectPtr<UAkAudioEvent>> Objects)
-{
-	TSharedPtr<SAkAudioBankPicker> WindowContent;
-
-	TSharedRef<SWindow> Window = SNew(SWindow)
-		.Title(LOCTEXT("WindowTitle", "Select Sound Bank"))
-		.SizingRule(ESizingRule::Autosized)
-		;
-
-	Window->SetContent
-	(
-		SAssignNew(WindowContent, SAkAudioBankPicker)
-		.WidgetWindow(Window)
-	);
-
-	TSharedPtr<SWindow> ParentWindow;
-
-	if (FModuleManager::Get().IsModuleLoaded("MainFrame"))
-	{
-		IMainFrameModule& MainFrame = FModuleManager::LoadModuleChecked<IMainFrameModule>("MainFrame");
-		ParentWindow = MainFrame.GetParentWindow();
-	}
-
-	FSlateApplication::Get().AddModalWindow(Window, ParentWindow, false);
-
-	if (WindowContent->SelectedAkEventGroup.IsValid())
-	{
-		for (TWeakObjectPtr<UAkAudioEvent> WeakEventPtr : Objects)
-		{
-			if (!WeakEventPtr.IsValid()) continue;
-
-			UAkAudioBank* Bank = Cast<UAkAudioBank>(WindowContent->SelectedAkEventGroup.GetAsset());
-			if (Bank != WeakEventPtr->RequiredBank)
-			{
-				WeakEventPtr->LastRequiredBank = WeakEventPtr->RequiredBank;
-				WeakEventPtr->RequiredBank = Bank;
-				WeakEventPtr->UpdateRequiredBanks();
-				WeakEventPtr->MarkPackageDirty();
-			}
-		}
-	}
-}
-
 //////////////////////////////////////////////////////////////////////////
 // FAssetTypeActions_AkAuxBus
 
@@ -342,63 +177,5 @@ void FAssetTypeActions_AkAuxBus::OpenAssetEditor(const TArray<UObject*>& InObjec
 void FAssetTypeActions_AkAuxBus::GetActions(const TArray<UObject*>& InObjects, FMenuBuilder& MenuBuilder)
 {
 	auto AuxBusses = GetTypedWeakObjectPtrs<UAkAuxBus>(InObjects);
-
-	MenuBuilder.AddMenuEntry(
-		LOCTEXT("AkAuxBus_GroupIntoSoundBank", "Group Into Sound Bank"),
-		LOCTEXT("AkAuxBus_GroupIntoSoundBankTooltip", "Group the selected aux busses into a sound bank."),
-		FSlateIcon(),
-		FUIAction(
-			FExecuteAction::CreateSP(this, &FAssetTypeActions_AkAuxBus::GroupIntoSoundBank, AuxBusses),
-			FCanExecuteAction()
-		)
-	);
 }
-
-void FAssetTypeActions_AkAuxBus::GroupIntoSoundBank(TArray<TWeakObjectPtr<UAkAuxBus>> Objects)
-{
-	TSharedPtr<SAkAudioBankPicker> WindowContent;
-
-	TSharedRef<SWindow> Window = SNew(SWindow)
-		.Title(LOCTEXT("WindowTitle", "Select Sound Bank"))
-		.SizingRule(ESizingRule::Autosized)
-		;
-
-	Window->SetContent
-	(
-		SAssignNew(WindowContent, SAkAudioBankPicker)
-		.WidgetWindow(Window)
-	);
-
-	TSharedPtr<SWindow> ParentWindow;
-
-	if (FModuleManager::Get().IsModuleLoaded("MainFrame"))
-	{
-		IMainFrameModule& MainFrame = FModuleManager::LoadModuleChecked<IMainFrameModule>("MainFrame");
-		ParentWindow = MainFrame.GetParentWindow();
-	}
-
-	FSlateApplication::Get().AddModalWindow(Window, ParentWindow, false);
-
-	if (WindowContent->SelectedAkEventGroup.IsValid())
-	{
-		for (auto& weakEventPtr : Objects)
-		{
-			weakEventPtr->RequiredBank = Cast<UAkAudioBank>(WindowContent->SelectedAkEventGroup.GetAsset());
-		}
-	}
-}
-
-//////////////////////////////////////////////////////////////////////////
-// FAssetTypeActions_AkMediaAsset
-
-FText FAssetTypeActions_AkMediaAsset::GetAssetDescription(const FAssetData& AssetData) const
-{
-	if (auto mediaAsset = Cast<UAkMediaAsset>(AssetData.GetAsset()))
-	{
-		return FText::FromString(mediaAsset->MediaName);
-	}
-
-	return FText();
-}
-
 #undef LOCTEXT_NAMESPACE

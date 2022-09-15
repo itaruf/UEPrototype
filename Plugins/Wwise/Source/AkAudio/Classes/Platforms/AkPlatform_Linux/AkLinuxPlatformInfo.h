@@ -31,8 +31,9 @@ public:
 		LibraryFileNameFormat = "lib{0}.so";
 		bForceReleaseConfig = true;
 
-#if WITH_EDITOR
-		UAkPlatformInfo::UnrealNameToWwiseName.Add("Linux", "Linux");
+#if WITH_EDITORONLY_DATA
+		UAkPlatformInfo::UnrealNameToPlatformInfo.Add("Linux", this);
+		UAkPlatformInfo::UnrealNameToPlatformInfo.Add("LinuxNoEditor", this);
 #endif
 	}
 };

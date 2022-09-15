@@ -246,6 +246,14 @@ void FAkSettingsDetailsCustomization::CustomizeDetails(IDetailLayoutBuilder& Det
 			+ SHorizontalBox::Slot().FillWidth(8)
 		]
 	];
+
+	TArray<TSharedRef<IPropertyHandle>> Properties;
+	CategoryBuilder.GetDefaultProperties(Properties);
+
+	for (TSharedRef<IPropertyHandle> Property : Properties)
+	{
+		CategoryBuilder.AddProperty(Property);
+	}
 }
 
 FReply FAkSettingsDetailsCustomization::ClearAkSettingsRoomDecayAuxBusMap()

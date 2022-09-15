@@ -29,15 +29,13 @@ SAkWaapiUri
 #include "Misc/TextFilter.h"
 #include "AkWaapiUri.generated.h"
 
-DECLARE_LOG_CATEGORY_EXTERN(LogAkUri, Log, All);
-
 /**
 * Structure for Uri
 */
 USTRUCT(BlueprintType)
 struct AKAUDIO_API FAkWaapiUri
 {
-	GENERATED_USTRUCT_BODY()
+	GENERATED_BODY()
 		
 	/**
 	* The Uri
@@ -52,7 +50,10 @@ UAkWaapiUriConv
 UCLASS()
 class AKAUDIO_API UAkWaapiUriConv : public UBlueprintFunctionLibrary
 {
-	GENERATED_UCLASS_BODY()
+	GENERATED_BODY()
+
+public:
+	UAkWaapiUriConv(const class FObjectInitializer& ObjectInitializer);
 
 	/** Converts an AkWaapiUri value to a string */
 	UFUNCTION(BlueprintPure, meta = (DisplayName = "ToString (FAkWaapiUri)", CompactNodeTitle = "->", BlueprintAutocast), Category = "Utilities|String")

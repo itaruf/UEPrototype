@@ -29,9 +29,11 @@ class UAkAcousticTextureSetComponent;
 UCLASS(ClassGroup = Audiokinetic, BlueprintType, hidecategories = (Transform, Rendering, Mobility, LOD, Component, Activation, Tags), meta = (BlueprintSpawnableComponent))
 class AKAUDIO_API UAkLateReverbComponent : public USceneComponent
 {
-	GENERATED_UCLASS_BODY()
+	GENERATED_BODY()
 
 public:
+	UAkLateReverbComponent(const class FObjectInitializer& ObjectInitializer);
+
 	/**
 	 * Enable usage of the late reverb inside a volume. Additional properties are available in the Late Reverb category.
 	 * The number of simultaneous AkReverbVolumes is configurable in the Unreal Editor Project Settings under Plugins > Wwise
@@ -102,6 +104,13 @@ public:
 	virtual void OnAttachmentChanged() override;
 	void UpdateHFDampingEstimation(float hfDamping);
 	void UpdatePredelayEstimation(float predelay);
+
+	virtual void OnComponentDestroyed(bool bDestroyingHierarchy) override;
+	virtual void InitializeComponent() override;
+	virtual void OnComponentCreated() override;
+
+	void RegisterReverbInfoEnabledCallback();
+	FDelegateHandle ShowReverbInfoChangedHandle;
 #endif
 
 	void UpdateDecayEstimation(float decay, float volume, float surfaceArea);
@@ -119,7 +128,7 @@ private:
 	class UPrimitiveComponent* Parent;
 	
 	/** Save the manually assigned aux bus so we can recall it if auto-assign is disabled. */
-	UPROPERTY(VisibleAnywhere, Category="Audiokinetic|LateReverb")
+	UPROPERTY()
 	class UAkAuxBus* AuxBusManual;
 
 	/** The component that will be used to estimate the HFDamping value. This will usually be an AkGeometryComponent.
@@ -152,6 +161,7 @@ private:
 #endif
 #if WITH_EDITORONLY_DATA
 	static float TextVisualizerHeightOffset;
+	bool bTextStatusNeedsUpdate = false;
 	// The text visualizers display the values of the parameter estimations directly in the level (or blueprint editor).
 	UPROPERTY(SkipSerialization, NonTransactional)
 	UTextRenderComponent* TextVisualizerLabels = nullptr;

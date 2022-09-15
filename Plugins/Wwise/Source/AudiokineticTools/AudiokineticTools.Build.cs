@@ -39,9 +39,7 @@ public class AudiokineticTools : ModuleRules
             { 
                 "AssetTools",
                 "ContentBrowser",
-#if UE_4_24_OR_LATER
                 "ToolMenus"
-#endif
             });
 
         PublicDependencyModuleNames.AddRange(
@@ -65,6 +63,8 @@ public class AudiokineticTools : ModuleRules
                 "PropertyEditor",
                 "SharedSettingsWidgets",
                 "ContentBrowser",
+                "WwiseResourceLoader",
+                "WwiseProjectDatabase",
 #if UE_5_0_OR_LATER
                 "DeveloperToolSettings",
 #endif
@@ -72,21 +72,23 @@ public class AudiokineticTools : ModuleRules
 #if UE_4_26_OR_LATER
                 "ContentBrowserData",
 #endif
-#if UE_4_24_OR_LATER
                 "ToolMenus"
-#endif
             });
 
         PrivateDependencyModuleNames.AddRange(
             new string[]
 			{
-				"MovieScene",
+                "MovieScene",
 				"DesktopPlatform",
 				"MovieSceneTools",
 				"MovieSceneTracks",
 				"RenderCore",
 				"SourceControl",
                 "LevelEditor",
+                "WwiseProjectDatabase",
+                "WwiseResourceLoader",
+                "WwiseSoundEngine",
+
 #if UE_5_0_OR_LATER
                 "EditorFramework"
 #endif

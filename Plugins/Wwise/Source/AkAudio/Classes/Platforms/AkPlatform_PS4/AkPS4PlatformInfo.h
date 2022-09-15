@@ -30,8 +30,8 @@ public:
 		Architecture = "PS4";
 		LibraryFileNameFormat = "{0}.prx";
 
-#if WITH_EDITOR
-		UAkPlatformInfo::UnrealNameToWwiseName.Add("PS4", "PS4");
+#if WITH_EDITORONLY_DATA
+		UAkPlatformInfo::UnrealNameToPlatformInfo.Add("PS4", this);
 #endif
 	}
 };

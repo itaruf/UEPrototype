@@ -122,19 +122,6 @@ void SClearSoundData::Construct(const FArguments& InArgs)
 							.ToolTipText(LOCTEXT("AkClearAssetTooltip", "Inside the Wwise Unreal assets, we store bank data, media data and more. This allows to clean all those for a fresh restart. You should also clear all wwise project data before regenerating the sound data."))
 						]
 					]
-					+ SVerticalBox::Slot()
-					.AutoHeight()
-					.Padding(0, 4)
-					.HAlign(HAlign_Left)
-					[
-						SAssignNew(ClearOrphanMedia, SCheckBox)
-						.Content()
-						[
-							SNew(STextBlock)
-							.Text(LOCTEXT("AkDeleteOrphanMedia", "Clear orphaned Unreal Wwise Media assets"))
-							.ToolTipText(LOCTEXT("AkDeleteOrphanMediaTooltip", "Delete all Unreal Wwise Media assets that doesn't reference to anything anymore"))
-						]
-					]
 				]
 			]
 			+ SVerticalBox::Slot()
@@ -181,10 +168,6 @@ FReply SClearSoundData::OnClearButtonClicked()
 	if (ClearMediaCache && ClearMediaCache->IsChecked())
 	{
 		clearFlags |= AkAudioBankGenerationHelper::AkSoundDataClearFlags::MediaCache;
-	}
-	if (ClearOrphanMedia && ClearOrphanMedia->IsChecked())
-	{
-		clearFlags |= AkAudioBankGenerationHelper::AkSoundDataClearFlags::OrphanMedia;
 	}
 	if (ClearExternalSource && ClearExternalSource->IsChecked())
 	{

@@ -23,8 +23,7 @@ Copyright (c) 2021 Audiokinetic Inc.
 #include "AkAudioBankGenerationHelpers.h"
 #include "AkAudioDevice.h"
 #include "AkSettingsPerUser.h"
-#include "AssetManagement/AkSoundDataBuilder.h"
-#include "AssetManagement/CookAkSoundDataTask.h"
+#include "AssetManagement/AkGenerateSoundBanksTask.h"
 #include "AssetRegistryModule.h"
 #include "Dialogs/Dialogs.h"
 #include "Dom/JsonObject.h"
@@ -46,7 +45,7 @@ Copyright (c) 2021 Audiokinetic Inc.
 #include "Serialization/JsonSerializer.h"
 #include "Widgets/Input/SButton.h"
 #include "Widgets/Input/SCheckBox.h"
-#include "WwiseProject/WwiseProjectInfo.h"
+#include "AssetManagement/WwiseProjectInfo.h"
 
 #define LOCTEXT_NAMESPACE "AkAudio"
 
@@ -179,6 +178,12 @@ void SGenerateSoundBanks::PopulateList(void)
 	// Get available platforms
 	PlatformNames.Empty();
 	auto AvailablePlatformNames = AkUnrealPlatformHelper::GetAllSupportedWwisePlatforms(true);
+	TArray<FString> AvailablePlatformsInWwiseProject;
+	for (auto SupportedPlatform : wwiseProjectInfo.GetSupportedPlatforms())
+	{
+		AvailablePlatformsInWwiseProject.Add(SupportedPlatform.Name);
+	}
+
 	for (const auto& Platform : AvailablePlatformNames)
 	{
 		auto* PlatformInfo = UAkPlatformInfo::GetAkPlatformInfo(*Platform);
@@ -187,10 +192,12 @@ void SGenerateSoundBanks::PopulateList(void)
 			continue;
 		}
 
-		if (!PlatformNames.ContainsByPredicate([PlatformInfo](TSharedPtr<FString> Platform) { return PlatformInfo->WwisePlatform == *Platform; })
-			&& wwiseProjectInfo.GetSupportedPlatforms().ContainsByPredicate([PlatformInfo](auto& x) { return x.Name == PlatformInfo->WwisePlatform; }))
+		FString WwisePlatformName = PlatformInfo->GetWwiseBankPlatformName(AvailablePlatformsInWwiseProject);
+
+		if (!WwisePlatformName.IsEmpty() &&
+			!PlatformNames.ContainsByPredicate([WwisePlatformName](TSharedPtr<FString> Platform) { return WwisePlatformName == *Platform; }))
 		{
-			PlatformNames.Add(MakeShared<FString>(PlatformInfo->WwisePlatform));
+			PlatformNames.Add(MakeShared<FString>(WwisePlatformName));
 		}
 	}
 
@@ -226,11 +233,11 @@ FReply SGenerateSoundBanks::OnGenerateButtonClicked()
 		return FReply::Handled();
 	}
 
-	AkSoundDataBuilder::InitParameters initParameters;
+	AkSoundBankGenerationManager::FInitParameters InitParameters;
 
 	for (auto& platform : PlatformsToGenerate)
 	{
-		initParameters.Platforms.Add(*platform.Get());
+		InitParameters.Platforms.Add(*platform.Get());
 	}
 
 	TArray<TSharedPtr<FString>> languagesToGenerate = LanguageList->GetSelectedItems();
@@ -241,21 +248,26 @@ FReply SGenerateSoundBanks::OnGenerateButtonClicked()
 		{
 			if (*selectedLanguage == entry.Name)
 			{
-				initParameters.Languages.Add(entry);
+				InitParameters.Languages.Add(entry.Name);
 				break;
 			}
 		}
 	}
 
-	initParameters.SkipLanguages = SkipLanguagesCheckBox->IsChecked();
+	InitParameters.SkipLanguages = SkipLanguagesCheckBox->IsChecked();
 
 	if (auto* akSettingsPerUser = GetMutableDefault<UAkSettingsPerUser>())
 	{
-		akSettingsPerUser->SoundDataGenerationSkipLanguage = initParameters.SkipLanguages;
+		akSettingsPerUser->SoundDataGenerationSkipLanguage = InitParameters.SkipLanguages;
 		akSettingsPerUser->SaveConfig();
 	}
 
-	CookAkSoundDataTask::ExecuteTask(initParameters);
+	if (FAkWaapiClient::IsProjectLoaded())
+	{
+		InitParameters.GenerationMode = AkSoundBankGenerationManager::ESoundBankGenerationMode::WAAPI;
+	}
+	
+	AkGenerateSoundBanksTask::CreateAndExecuteTask(InitParameters);
 
 	TSharedPtr<SWindow> ParentWindow = FSlateApplication::Get().FindWidgetWindow(AsShared());
 	ParentWindow->RequestDestroyWindow();

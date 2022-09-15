@@ -35,16 +35,31 @@ void UAkPortalComponentVisualizer::DrawVisualization(const UActorComponent* Comp
 	{
 		const UPrimitiveComponent* PrimitiveParent = Cast<UPrimitiveComponent>(PortalComponent->GetPrimitiveParent());
 		// Calculate the unscaled, unrotated box extent of the primitive parent component, at origin.
-		FVector BoxExtent = PrimitiveParent->CalcBounds(FTransform()).BoxExtent;
+		FVector BoxExtent = PrimitiveParent->CalcLocalBounds().BoxExtent;
 		FDynamicMeshBuilder MeshBuilderFront(ERHIFeatureLevel::Type::ES3_1);
 		FDynamicMeshBuilder MeshBuilderBack(ERHIFeatureLevel::Type::ES3_1);
 
-		const FTransform T = PrimitiveParent->GetComponentTransform();
-		AkDrawBounds DrawBounds(T, BoxExtent);
-		MeshBuilderFront.AddVertices({ DrawBounds.FRU(), DrawBounds.FRD(), DrawBounds.RD(), DrawBounds.RU(),
-										DrawBounds.FLU(), DrawBounds.FLD(), DrawBounds.LD(), DrawBounds.LU() });
-		MeshBuilderBack.AddVertices({ DrawBounds.BLU(), DrawBounds.BLD(), DrawBounds.LD(), DrawBounds.LU(),
-										DrawBounds.BRU(), DrawBounds.BRD(), DrawBounds.RD(), DrawBounds.RU() });
+		MeshBuilderFront.AddVertices({
+			FUnrealFloatVector(BoxExtent),									// FRU
+			FUnrealFloatVector(BoxExtent.X, BoxExtent.Y, -BoxExtent.Z),		// FRD
+			FUnrealFloatVector(0.0f, BoxExtent.Y, -BoxExtent.Z),			// RD
+			FUnrealFloatVector(0.0f, BoxExtent.Y, BoxExtent.Z),				// RU
+			FUnrealFloatVector(BoxExtent.X, -BoxExtent.Y, BoxExtent.Z),		// FLU
+			FUnrealFloatVector(BoxExtent.X, -BoxExtent.Y, -BoxExtent.Z),	// FLD
+			FUnrealFloatVector(0.0f, -BoxExtent.Y, -BoxExtent.Z),			// LD
+			FUnrealFloatVector(0.0f, -BoxExtent.Y, BoxExtent.Z)				// LU
+		});
+
+		MeshBuilderBack.AddVertices({
+			FUnrealFloatVector(-BoxExtent.X, -BoxExtent.Y, BoxExtent.Z),	// BLU
+			FUnrealFloatVector(-BoxExtent),									// BLD
+			FUnrealFloatVector(0.0f, -BoxExtent.Y, -BoxExtent.Z),			// LD
+			FUnrealFloatVector(0.0f, -BoxExtent.Y, BoxExtent.Z),			// LU
+			FUnrealFloatVector(-BoxExtent.X, BoxExtent.Y, BoxExtent.Z),		// BRU
+			FUnrealFloatVector(-BoxExtent.X, BoxExtent.Y, -BoxExtent.Z),	// BRD
+			FUnrealFloatVector(0.0f, BoxExtent.Y, -BoxExtent.Z),			// RD
+			FUnrealFloatVector(0.0f, BoxExtent.Y, BoxExtent.Z)				// RU
+		});
 
 		// add vertices using front - back, right - left, up - down winding.
 		MeshBuilderFront.AddTriangles
@@ -64,11 +79,7 @@ void UAkPortalComponentVisualizer::DrawVisualization(const UActorComponent* Comp
 			});
 
 		// Allocate the material proxy and register it so it can be deleted properly once the rendering is done with it.
-#if UE_4_22_OR_LATER
 		auto* renderProxy = GEngine->GeomMaterial->GetRenderProxy();
-#else
-		auto* renderProxy = GEngine->GeomMaterial->GetRenderProxy(false);
-#endif
 		FLinearColor FrontDrawColor;
 		FLinearColor BackDrawColor;
 		AkSpatialAudioColors::GetPortalColors(PortalComponent, FrontDrawColor, BackDrawColor);
@@ -76,24 +87,22 @@ void UAkPortalComponentVisualizer::DrawVisualization(const UActorComponent* Comp
 		FDynamicColoredMaterialRenderProxy* ColorInstanceFront = new FDynamicColoredMaterialRenderProxy(renderProxy, FrontDrawColor);
 		PDI->RegisterDynamicResource(ColorInstanceFront);
 
-		MeshBuilderFront.Draw(PDI, FMatrix::Identity, ColorInstanceFront, SDPG_World, true, false);
+		MeshBuilderFront.Draw(PDI, PrimitiveParent->GetComponentToWorld().ToMatrixWithScale(), ColorInstanceFront, SDPG_World, true, false);
 
 		FDynamicColoredMaterialRenderProxy* ColorInstanceBack = new FDynamicColoredMaterialRenderProxy(renderProxy, BackDrawColor);
 		PDI->RegisterDynamicResource(ColorInstanceBack);
 
-		MeshBuilderBack.Draw(PDI, FMatrix::Identity, ColorInstanceBack, SDPG_World, true, false);
+		MeshBuilderBack.Draw(PDI, PrimitiveParent->GetComponentToWorld().ToMatrixWithScale(), ColorInstanceBack, SDPG_World, true, false);
 
 		// Draw an outline around the centre of the portal, to distinguish front and back
-		FVector RightTop = FVector(0.0f, BoxExtent.Y, BoxExtent.Z);
-		FVector LeftBottom = -RightTop;
-		FVector LeftTop = FVector(0.0f, -BoxExtent.Y, BoxExtent.Z);
-		FVector RightBottom = -LeftTop;
+		const FTransform& T = PrimitiveParent->GetComponentTransform();
+		AkDrawBounds DrawBounds(T, BoxExtent);
 		const float Thickness = AkDrawConstants::PortalRoomConnectionThickness;
 		const FLinearColor OutlineColor = AkSpatialAudioColors::GetPortalOutlineColor(PortalComponent);
-		PDI->DrawLine(T.TransformPosition(RightTop), T.TransformPosition(LeftTop), OutlineColor, SDPG_Foreground, Thickness);
-		PDI->DrawLine(T.TransformPosition(LeftTop), T.TransformPosition(LeftBottom), OutlineColor, SDPG_Foreground, Thickness);
-		PDI->DrawLine(T.TransformPosition(LeftBottom), T.TransformPosition(RightBottom), OutlineColor, SDPG_Foreground, Thickness);
-		PDI->DrawLine(T.TransformPosition(RightBottom), T.TransformPosition(RightTop), OutlineColor, SDPG_Foreground, Thickness);
+		PDI->DrawLine(DrawBounds.RU(), DrawBounds.LU(), OutlineColor, SDPG_Foreground, Thickness);
+		PDI->DrawLine(DrawBounds.LU(), DrawBounds.LD(), OutlineColor, SDPG_Foreground, Thickness);
+		PDI->DrawLine(DrawBounds.LD(), DrawBounds.RD(), OutlineColor, SDPG_Foreground, Thickness);
+		PDI->DrawLine(DrawBounds.RD(), DrawBounds.RU(), OutlineColor, SDPG_Foreground, Thickness);
 		// Draw a line from back room to front room.
 		FVector Front = FVector(BoxExtent.X, 0.0f, 0.0f);
 		FVector Back = FVector(-BoxExtent.X, 0.0f, 0.0f);
@@ -105,6 +114,8 @@ void UAkPortalComponentVisualizer::DrawVisualization(const UActorComponent* Comp
 			PDI->DrawLine(DrawBounds.FRU(), DrawBounds.BRD(), FrontDrawColor, SDPG_Foreground, Thickness);
 			PDI->DrawLine(DrawBounds.FLD(), DrawBounds.BLU(), BackDrawColor, SDPG_Foreground, Thickness);
 		}
+
+		PortalComponent->UpdateTextRotations();
 	}
 
 	if (GEditor->GetSelectedActorCount() == 1 && IsValid(PortalComponent))

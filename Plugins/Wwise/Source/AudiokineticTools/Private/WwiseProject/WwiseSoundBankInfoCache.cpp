@@ -24,7 +24,7 @@ Copyright (c) 2021 Audiokinetic Inc.
 #include "HAL/PlatformFilemanager.h"
 #endif
 #include "Misc/Paths.h"
-#include "WwiseProjectInfo.h"
+#include "AssetManagement/WwiseProjectInfo.h"
 
 namespace WwiseSoundBankInfoCacheHelpers
 {

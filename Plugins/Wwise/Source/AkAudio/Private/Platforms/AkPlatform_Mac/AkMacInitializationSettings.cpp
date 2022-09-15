@@ -17,10 +17,6 @@ Copyright (c) 2021 Audiokinetic Inc.
 #include "Platforms/AkPlatform_Mac/AkMacInitializationSettings.h"
 #include "AkAudioDevice.h"
 
-#if PLATFORM_MAC
-#include <AK/Plugin/AkAACFactory.h>
-#endif
-
 //////////////////////////////////////////////////////////////////////////
 // UAkMacInitializationSettings
 

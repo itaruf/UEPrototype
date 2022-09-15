@@ -20,32 +20,19 @@ Copyright (c) 2021 Audiokinetic Inc.
 #include "HAL/PlatformMemory.h"
 
 #include "AkAudioDevice.h"
-#include "AkUnrealHelper.h"
-#include "IAkUnrealIOHook.h"
-#include "Async/ParallelFor.h"
-#include "Platforms/AkUEPlatform.h"
+#include "Wwise/WwiseIOHook.h"
+#include "Wwise/LowLevel/WwiseLowLevelComm.h"
+#include "Wwise/LowLevel/WwiseLowLevelMemoryMgr.h"
+#include "Wwise/LowLevel/WwiseLowLevelMonitor.h"
+#include "Wwise/LowLevel/WwiseLowLevelMusicEngine.h"
+#include "Wwise/LowLevel/WwiseLowLevelSoundEngine.h"
+#include "Wwise/LowLevel/WwiseLowLevelSpatialAudio.h"
+#include "Wwise/LowLevel/WwiseLowLevelStreamMgr.h"
+#include "Wwise/WwiseGlobalCallbacks.h"
 
 namespace AkInitializationSettings_Helpers
 {
 	enum { IsLoggingInitialization = true };
-
-	void ParallelFor(void* data, AkUInt32 beginIndex, AkUInt32 endIndex, AkUInt32 /*tileSize*/, AkParallelForFunc func, void* userData, const char* in_szDebugName)
-	{
-		check(func);
-		check(endIndex >= beginIndex);
-
-		if (func != nullptr && endIndex - beginIndex > 0)
-		{
-			::ParallelFor(endIndex - beginIndex, [data, beginIndex, func, userData](int32 Index)
-			{
-				check(data);
-
-				AkTaskContext ctx; // Unused in the SoundEngine right now.
-				ctx.uIdxThread = 0;
-				func(data, beginIndex + Index, beginIndex + Index + 1, ctx, userData);
-			});
-		}
-	}
 
 	void AssertHook(const char* expression, const char* fileName, int lineNumber)
 	{
@@ -79,25 +66,32 @@ namespace AkInitializationSettings_Helpers
 
 FAkInitializationStructure::FAkInitializationStructure()
 {
-	AK::MemoryMgr::GetDefaultSettings(MemSettings);
+	auto* Comm = FWwiseLowLevelComm::Get();
+	auto* MemoryMgr = FWwiseLowLevelMemoryMgr::Get();
+	auto* MusicEngine = FWwiseLowLevelMusicEngine::Get();
+	auto* SoundEngine = FWwiseLowLevelSoundEngine::Get();
+	auto* StreamMgr = FWwiseLowLevelStreamMgr::Get();
+	if (UNLIKELY(!Comm || !MemoryMgr || !MusicEngine || !SoundEngine || !StreamMgr)) return;
 
-	AK::StreamMgr::GetDefaultSettings(StreamManagerSettings);
+	MemoryMgr->GetDefaultSettings(MemSettings);
 
-	AK::StreamMgr::GetDefaultDeviceSettings(DeviceSettings);
+	StreamMgr->GetDefaultSettings(StreamManagerSettings);
+
+	StreamMgr->GetDefaultDeviceSettings(DeviceSettings);
 	DeviceSettings.uSchedulerTypeFlags = AK_SCHEDULER_DEFERRED_LINED_UP;
 	DeviceSettings.uMaxConcurrentIO = AK_UNREAL_MAX_CONCURRENT_IO;
 
-	AK::SoundEngine::GetDefaultInitSettings(InitSettings);
+	SoundEngine->GetDefaultInitSettings(InitSettings);
 	InitSettings.pfnAssertHook = AkInitializationSettings_Helpers::AssertHook;
 	InitSettings.eFloorPlane = AkFloorPlane_XY;
 	InitSettings.fGameUnitsToMeters = 100.f;
 
-	AK::SoundEngine::GetDefaultPlatformInitSettings(PlatformInitSettings);
+	SoundEngine->GetDefaultPlatformInitSettings(PlatformInitSettings);
 
-	AK::MusicEngine::GetDefaultInitSettings(MusicSettings);
+	MusicEngine->GetDefaultInitSettings(MusicSettings);
 
 #if AK_ENABLE_COMMUNICATION
-	AK::Comm::GetDefaultInitSettings(CommSettings);
+	Comm->GetDefaultInitSettings(CommSettings);
 #endif
 }
 
@@ -150,9 +144,12 @@ void FAkInitializationStructure::SetupLLMAllocFunctions(MemoryAllocFunction allo
 
 void FAkMainOutputSettings::FillInitializationStructure(FAkInitializationStructure& InitializationStructure) const
 {
+	auto* SoundEngine = FWwiseLowLevelSoundEngine::Get();
+	if (UNLIKELY(!SoundEngine)) return;
+
 	auto& OutputSettings = InitializationStructure.InitSettings.settingsMainOutput;
 
-	auto sharesetID = !AudioDeviceShareset.IsEmpty() ? AK::SoundEngine::GetIDFromString(TCHAR_TO_ANSI(*AudioDeviceShareset)) : AK_INVALID_UNIQUE_ID;
+	auto sharesetID = !AudioDeviceShareset.IsEmpty() ? SoundEngine->GetIDFromString(TCHAR_TO_ANSI(*AudioDeviceShareset)) : AK_INVALID_UNIQUE_ID;
 	OutputSettings.audioDeviceShareset = sharesetID;
 
 	switch (ChannelConfigType)
@@ -185,13 +182,13 @@ void FAkSpatialAudioSettings::FillInitializationStructure(FAkInitializationStruc
 	SpatialAudioInitSettings.fMovementThreshold = MovementThreshold;
 	SpatialAudioInitSettings.uNumberOfPrimaryRays = NumberOfPrimaryRays;
 	SpatialAudioInitSettings.uMaxReflectionOrder = ReflectionOrder;
+	SpatialAudioInitSettings.uMaxDiffractionOrder = DiffractionOrder;
+	SpatialAudioInitSettings.uDiffractionOnReflectionsOrder = DiffractionOnReflectionsOrder;
 	SpatialAudioInitSettings.fMaxPathLength = MaximumPathLength;
 	SpatialAudioInitSettings.fCPULimitPercentage = CPULimitPercentage;
-	SpatialAudioInitSettings.bEnableDiffractionOnReflection = EnableDiffractionOnReflections;
+	SpatialAudioInitSettings.uLoadBalancingSpread = LoadBalancingSpread;
 	SpatialAudioInitSettings.bEnableGeometricDiffractionAndTransmission = EnableGeometricDiffractionAndTransmission;
 	SpatialAudioInitSettings.bCalcEmitterVirtualPosition = CalcEmitterVirtualPosition;
-	SpatialAudioInitSettings.bUseObstruction = UseObstruction;
-	SpatialAudioInitSettings.bUseOcclusion = UseOcclusion;
 }
 
 
@@ -204,7 +201,6 @@ void FAkCommunicationSettings::FillInitializationStructure(FAkInitializationStru
 	auto& CommSettings = InitializationStructure.CommSettings;
 	CommSettings.ports.uDiscoveryBroadcast = DiscoveryBroadcastPort;
 	CommSettings.ports.uCommand = CommandPort;
-	CommSettings.ports.uNotification = NotificationPort;
 
 	const FString GameName = GetCommsNetworkName();
 	FCStringAnsi::Strcpy(CommSettings.szAppNetworkName, AK_COMM_SETTINGS_MAX_STRING_SIZE, TCHAR_TO_ANSI(*GameName));
@@ -304,23 +300,46 @@ void FAkAdvancedInitializationSettingsWithMultiCoreRendering::FillInitialization
 
 	if (EnableMultiCoreRendering)
 	{
-		check(FTaskGraphInterface::Get().IsRunning());
-		check(FPlatformProcess::SupportsMultithreading());
-		check(ENamedThreads::bHasHighPriorityThreads);
+		FAkAudioDevice* pDevice = FAkAudioDevice::Get();
+		check(pDevice != nullptr);
+
+		FAkJobWorkerScheduler* pScheduler = pDevice->GetAkJobWorkerScheduler();
+		check(pScheduler != nullptr);
 
 		auto& InitSettings = InitializationStructure.InitSettings;
-		InitSettings.taskSchedulerDesc.fcnParallelFor = AkInitializationSettings_Helpers::ParallelFor;
-		InitSettings.taskSchedulerDesc.uNumSchedulerWorkerThreads = FTaskGraphInterface::Get().GetNumWorkerThreads();
+		pScheduler->InstallJobWorkerScheduler(JobWorkerMaxExecutionTimeUSec, InitSettings.settingsJobManager);
+	}
+}
+
+static void UELocalOutputFunc(
+	AK::Monitor::ErrorCode in_eErrorCode,
+	const AkOSChar* in_pszError,
+	AK::Monitor::ErrorLevel in_eErrorLevel,
+	AkPlayingID in_playingID,
+	AkGameObjectID in_gameObjID)
+{
+	FString AkError(in_pszError);
+
+	if (!IsRunningCommandlet())
+	{
+		if (in_eErrorLevel == AK::Monitor::ErrorLevel_Message)
+		{
+			UE_LOG(LogAkAudio, Log, TEXT("%s"), *AkError);
+		}
+		else
+		{
+			UE_LOG(LogAkAudio, Error, TEXT("%s"), *AkError);
+		}
 	}
 }
 
 namespace FAkSoundEngineInitialization
 {
-	bool Initialize(IAkUnrealIOHook* IOHook)
+	bool Initialize(FWwiseIOHook* IOHook)
 	{
 		if (!IOHook)
 		{
-			UE_LOG(LogAkAudio, Error, TEXT("FAkUnrealIOHook is null."));
+			UE_LOG(LogAkAudio, Error, TEXT("IOHook is null."));
 			return false;
 		}
 
@@ -334,23 +353,50 @@ namespace FAkSoundEngineInitialization
 		FAkInitializationStructure InitializationStructure;
 		InitializationSettings->FillInitializationStructure(InitializationStructure);
 
+		UE_CLOG(AkInitializationSettings_Helpers::IsLoggingInitialization, LogAkAudio, Verbose, TEXT("Initializing Platform"));
 		FAkPlatform::PreInitialize(InitializationStructure);
 
-		if (AK::MemoryMgr::Init(&InitializationStructure.MemSettings) != AK_Success)
+		auto* Comm = FWwiseLowLevelComm::Get();
+		auto* MemoryMgr = FWwiseLowLevelMemoryMgr::Get();
+		auto* Monitor = FWwiseLowLevelMonitor::Get();
+		auto* MusicEngine = FWwiseLowLevelMusicEngine::Get();
+		auto* SoundEngine = FWwiseLowLevelSoundEngine::Get();
+		auto* SpatialAudio = FWwiseLowLevelSpatialAudio::Get();
+		auto* StreamMgr = FWwiseLowLevelStreamMgr::Get();
+		auto* GlobalCallbacks = FWwiseGlobalCallbacks::Get();
+
+		// Enable AK error redirection to UE log.
+		if (LIKELY(Monitor))
+		{
+			UE_CLOG(AkInitializationSettings_Helpers::IsLoggingInitialization, LogAkAudio, Verbose, TEXT("Initializing Monitor's Output"));
+			Monitor->SetLocalOutput(AK::Monitor::ErrorLevel_All, UELocalOutputFunc);
+		}
+
+		UE_CLOG(AkInitializationSettings_Helpers::IsLoggingInitialization, LogAkAudio, Verbose, TEXT("Initializing Memory Manager"));
+		if (UNLIKELY(!MemoryMgr) || MemoryMgr->Init(&InitializationStructure.MemSettings) != AK_Success)
 		{
 			UE_LOG(LogAkAudio, Error, TEXT("Failed to initialize AK::MemoryMgr."));
 			return false;
 		}
 
-		if (!AK::StreamMgr::Create(InitializationStructure.StreamManagerSettings))
+		UE_CLOG(AkInitializationSettings_Helpers::IsLoggingInitialization, LogAkAudio, Verbose, TEXT("Initializing Global Callbacks"));
+		if (UNLIKELY(!GlobalCallbacks) || !GlobalCallbacks->Init())
+		{
+			UE_LOG(LogAkAudio, Error, TEXT("Failed to initialize Global Callbacks."));
+			return false;
+		}
+
+		UE_CLOG(AkInitializationSettings_Helpers::IsLoggingInitialization, LogAkAudio, Verbose, TEXT("Initializing Stream Manager"));
+		if (UNLIKELY(!StreamMgr) || !StreamMgr->Create(InitializationStructure.StreamManagerSettings))
 		{
 			UE_LOG(LogAkAudio, Error, TEXT("Failed to initialize AK::StreamMgr."));
 			return false;
 		}
 
+		UE_CLOG(AkInitializationSettings_Helpers::IsLoggingInitialization, LogAkAudio, Verbose, TEXT("Initializing IOHook"));
 		if (!IOHook->Init(InitializationStructure.DeviceSettings))
 		{
-			UE_LOG(LogAkAudio, Error, TEXT("Failed to initialize IOHookDeferred."));
+			UE_LOG(LogAkAudio, Error, TEXT("Failed to initialize IOHook."));
 			return false;
 		}
 
@@ -360,53 +406,102 @@ namespace FAkSoundEngineInitialization
 			UE_LOG(LogAkAudio, Log, TEXT("Wwise plug-in DLL path: %s"), *DllPath);
 		}
 
-		if (AK::SoundEngine::Init(&InitializationStructure.InitSettings, &InitializationStructure.PlatformInitSettings) != AK_Success)
+		UE_CLOG(AkInitializationSettings_Helpers::IsLoggingInitialization, LogAkAudio, Verbose, TEXT("Initializing Sound Engine"));
+		if (UNLIKELY(!SoundEngine) || SoundEngine->Init(&InitializationStructure.InitSettings, &InitializationStructure.PlatformInitSettings) != AK_Success)
 		{
 			UE_LOG(LogAkAudio, Error, TEXT("Failed to initialize AK::SoundEngine."));
 			return false;
 		}
 
-		if (AK::MusicEngine::Init(&InitializationStructure.MusicSettings) != AK_Success)
+		UE_CLOG(AkInitializationSettings_Helpers::IsLoggingInitialization, LogAkAudio, Verbose, TEXT("Initializing Music Engine"));
+		if (UNLIKELY(!MusicEngine) || MusicEngine->Init(&InitializationStructure.MusicSettings) != AK_Success)
 		{
 			UE_LOG(LogAkAudio, Error, TEXT("Failed to initialize AK::MusicEngine."));
 			return false;
 		}
 
-		if (AK::SpatialAudio::Init(InitializationStructure.SpatialAudioInitSettings) != AK_Success)
+		UE_CLOG(AkInitializationSettings_Helpers::IsLoggingInitialization, LogAkAudio, Verbose, TEXT("Initializing Spatial Audio"));
+		if (UNLIKELY(!SpatialAudio) || SpatialAudio->Init(InitializationStructure.SpatialAudioInitSettings) != AK_Success)
 		{
 			UE_LOG(LogAkAudio, Error, TEXT("Failed to initialize AK::SpatialAudio."));
 			return false;
 		}
 
 #if AK_ENABLE_COMMUNICATION
-		if (AK::Comm::Init(InitializationStructure.CommSettings) != AK_Success)
+		UE_CLOG(AkInitializationSettings_Helpers::IsLoggingInitialization, LogAkAudio, Verbose, TEXT("Initializing Communication"));
+		if (UNLIKELY(!Comm) || Comm->Init(InitializationStructure.CommSettings) != AK_Success)
 		{
 			UE_LOG(LogAkAudio, Warning, TEXT("Could not initialize Wwise communication."));
 		}
-		else if (AkInitializationSettings_Helpers::IsLoggingInitialization)
+		else
 		{
-			UE_LOG(LogAkAudio, Log, TEXT("Wwise remote connection application name: %s"), ANSI_TO_TCHAR(InitializationStructure.CommSettings.szAppNetworkName));
+			UE_CLOG(AkInitializationSettings_Helpers::IsLoggingInitialization, LogAkAudio, Log, TEXT("Wwise remote connection application name: %s"), ANSI_TO_TCHAR(InitializationStructure.CommSettings.szAppNetworkName));
 		}
 #endif
 
 		return true;
 	}
 
-	void Finalize()
+	void Finalize(FWwiseIOHook* IOHook)
 	{
+		auto* Comm = FWwiseLowLevelComm::Get();
+		auto* MemoryMgr = FWwiseLowLevelMemoryMgr::Get();
+		auto* Monitor = FWwiseLowLevelMonitor::Get();
+		auto* MusicEngine = FWwiseLowLevelMusicEngine::Get();
+		auto* SoundEngine = FWwiseLowLevelSoundEngine::Get();
+		auto* StreamMgr = FWwiseLowLevelStreamMgr::GetAkStreamMgr();
+		auto* GlobalCallbacks = FWwiseGlobalCallbacks::Get();
+
 #if AK_ENABLE_COMMUNICATION
-		AK::Comm::Term();
+		if (LIKELY(Comm))
+		{
+			UE_CLOG(AkInitializationSettings_Helpers::IsLoggingInitialization, LogAkAudio, Verbose, TEXT("Terminating Communication"));
+			Comm->Term();
+		}
 #endif
 
-		AK::MusicEngine::Term();
+		// Note: No Spatial Audio Term
 
-		if (AK::SoundEngine::IsInitialized())
-			AK::SoundEngine::Term();
+		if (LIKELY(MusicEngine))
+		{
+			UE_CLOG(AkInitializationSettings_Helpers::IsLoggingInitialization, LogAkAudio, Verbose, TEXT("Terminating Music Engine"));
+			MusicEngine->Term();
+		}
 
-		if (auto* StreamManager = AK::IAkStreamMgr::Get())
-			StreamManager->Destroy();
+		if (LIKELY(SoundEngine && SoundEngine->IsInitialized()))
+		{
+			UE_CLOG(AkInitializationSettings_Helpers::IsLoggingInitialization, LogAkAudio, Verbose, TEXT("Terminating Sound Engine"));
+			SoundEngine->Term();
+		}
 
-		if (AK::MemoryMgr::IsInitialized())
-			AK::MemoryMgr::Term();
+		if (LIKELY(IOHook))
+		{
+			UE_CLOG(AkInitializationSettings_Helpers::IsLoggingInitialization, LogAkAudio, Verbose, TEXT("Terminating IOHook"));
+			IOHook->Term();
+		}
+
+		if (LIKELY(StreamMgr))
+		{
+			UE_CLOG(AkInitializationSettings_Helpers::IsLoggingInitialization, LogAkAudio, Verbose, TEXT("Terminating Stream Manager"));
+			StreamMgr->Destroy();
+		}
+
+		if (LIKELY(GlobalCallbacks))
+		{
+			UE_CLOG(AkInitializationSettings_Helpers::IsLoggingInitialization, LogAkAudio, Verbose, TEXT("Terminating Global Callbacks"));
+			GlobalCallbacks->Term();
+		}
+
+		if (LIKELY(MemoryMgr && MemoryMgr->IsInitialized()))
+		{
+			UE_CLOG(AkInitializationSettings_Helpers::IsLoggingInitialization, LogAkAudio, Verbose, TEXT("Terminating Memory Manager"));
+			MemoryMgr->Term();
+		}
+
+		if (LIKELY(Monitor))
+		{
+			UE_CLOG(AkInitializationSettings_Helpers::IsLoggingInitialization, LogAkAudio, Verbose, TEXT("Resetting Monitor's Output"));
+			Monitor->SetLocalOutput(0, nullptr);
+		}
 	}
 }

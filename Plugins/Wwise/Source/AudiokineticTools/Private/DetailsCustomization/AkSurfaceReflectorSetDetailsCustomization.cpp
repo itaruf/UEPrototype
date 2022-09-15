@@ -59,7 +59,7 @@ FAkSurfaceReflectorSetDetailsCustomization::~FAkSurfaceReflectorSetDetailsCustom
 	FCoreUObjectDelegates::OnObjectModified.RemoveAll(this);
 	FEditorSupportDelegates::RedrawAllViewports.RemoveAll(this);
 
-	if (ReflectorSetBeingCustomized && ReflectorSetBeingCustomized->IsValidLowLevelFast() && ReflectorSetBeingCustomized->GetOnRefreshDetails() )
+	if (ReflectorSetBeingCustomized && IsValid(ReflectorSetBeingCustomized) && ReflectorSetBeingCustomized->GetOnRefreshDetails() )
 	{
 		if (ReflectorSetBeingCustomized->GetOnRefreshDetails()->IsBoundToObject(this))
 		{

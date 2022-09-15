@@ -16,6 +16,7 @@ Copyright (c) 2021 Audiokinetic Inc.
 
 #include "AkEnvironmentIndex.h"
 #include "AkAudioDevice.h"
+#include "AkUEFeatures.h"
 
 void FAkEnvironmentOctreeSemantics::SetElementId(AK_OCTREE_TYPE<FAkEnvironmentOctreeElement, FAkEnvironmentOctreeSemantics>& OctreeOwner, const FAkEnvironmentOctreeElement& Element, AK_OCTREE_ELEMENT_ID Id)
 {

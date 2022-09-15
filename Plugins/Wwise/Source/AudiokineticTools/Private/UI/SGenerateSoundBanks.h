@@ -21,7 +21,7 @@ Copyright (c) 2021 Audiokinetic Inc.
 #include "Widgets/SCompoundWidget.h"
 #include "Widgets/Views/SListView.h"
 #include "Widgets/Views/STableRow.h"
-#include "WwiseProject/WwiseProjectInfo.h"
+#include "AssetManagement/WwiseProjectInfo.h"
 
 class SCheckBox;
 

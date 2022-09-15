@@ -34,10 +34,12 @@ Copyright (c) 2021 Audiokinetic Inc.
 UCLASS(collapsecategories, hidecategories = Object, editinlinenew, MinimalAPI)
 class UDrawRoomComponent : public UPrimitiveComponent
 {
-	GENERATED_UCLASS_BODY()
+	GENERATED_BODY()
+
+public:
+	UDrawRoomComponent(const FObjectInitializer& ObjectInitializer);
 
 #if WITH_EDITOR
-public:
 	void DrawRoom(const FSceneView* View, FPrimitiveDrawInterface* PDI, FMeshElementCollector& Collector, int32 ViewIndex) const;
 	const UAkRoomComponent* GetRoomParent() const;
 

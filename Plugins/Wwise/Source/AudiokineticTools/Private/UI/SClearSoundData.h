@@ -49,5 +49,4 @@ private:
 	TSharedPtr<SCheckBox> ClearSoundBankInfoCache;
 	TSharedPtr<SCheckBox> ClearMediaCache;
 	TSharedPtr<SCheckBox> ClearExternalSource;
-	TSharedPtr<SCheckBox> ClearOrphanMedia;
 };

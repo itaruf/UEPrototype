@@ -30,8 +30,8 @@ public:
 		Architecture = "NX64";
 		bUsesStaticLibraries = true;
 
-#if WITH_EDITOR
-		UAkPlatformInfo::UnrealNameToWwiseName.Add("Switch", "Switch");
+#if WITH_EDITORONLY_DATA
+		UAkPlatformInfo::UnrealNameToPlatformInfo.Add("Switch", this);
 #endif
 	}
 };

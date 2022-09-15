@@ -37,8 +37,8 @@ public:
 		LibraryFileNameFormat = "{0}.dll";
 		DebugFileNameFormat = "{0}.pdb";
 
-#if WITH_EDITOR
-		UAkPlatformInfo::UnrealNameToWwiseName.Add("XboxOne", "XboxOne");
+#if WITH_EDITORONLY_DATA
+		UAkPlatformInfo::UnrealNameToPlatformInfo.Add("XboxOne", this);
 #endif
 	}
 };

@@ -23,8 +23,6 @@ Copyright (c) 2021 Audiokinetic Inc.
 #include "Engine/Texture2D.h"
 #include "Components/BillboardComponent.h"
 
-#include <AK/SpatialAudio/Common/AkSpatialAudio.h>
-
 AAkSpotReflector::WorldToSpotReflectorsMap AAkSpotReflector::sWorldToSpotReflectors;
 
 // Sets default values
@@ -49,13 +47,8 @@ AAkSpotReflector::AAkSpotReflector(const FObjectInitializer& ObjectInitializer)
 #endif
 
 	// AActor properties 
-#if UE_4_24_OR_LATER
 	SetHidden(true);
 	SetCanBeDamaged(false);
-#else
-	bHidden = true;
-	bCanBeDamaged = true;
-#endif
 }
 
 void AAkSpotReflector::PostInitializeComponents()
@@ -107,22 +100,7 @@ AkImageSourceID AAkSpotReflector::GetImageSourceID() const
 
 AkAuxBusID AAkSpotReflector::GetAuxBusID() const
 {
-	if (EarlyReflectionAuxBus)
-	{
-		return EarlyReflectionAuxBus->ShortID;
-	}
-
-	if (EarlyReflectionAuxBusName.IsEmpty())
-	{
-		return AK_INVALID_UNIQUE_ID;
-	}
-
-	if (auto AkAudioDevice = FAkAudioDevice::Get())
-	{
-		return AkAudioDevice->GetIDFromString(EarlyReflectionAuxBusName);
-	}
-
-	return AK_INVALID_UNIQUE_ID;
+	return FAkAudioDevice::GetShortID(EarlyReflectionAuxBus, EarlyReflectionAuxBusName);
 }
 
 void AAkSpotReflector::SetImageSource(UAkComponent* AkComponent)
@@ -133,24 +111,15 @@ void AAkSpotReflector::SetImageSource(UAkComponent* AkComponent)
 
 	const auto& RootTransform = RootComponent->GetComponentTransform();
 	AkImageSourceSettings sourceInfo = AkImageSourceSettings(
-		FAkAudioDevice::FVectorToAKVector(RootTransform.GetTranslation()),
+		FAkAudioDevice::FVectorToAKVector64(RootTransform.GetTranslation()),
 		DistanceScalingFactor, Level);
-
-#if WITH_EDITOR
-	sourceInfo.SetName(TCHAR_TO_ANSI(*GetActorLabel()));
-#endif // WITH_EDITOR
 
 	if (AcousticTexture)
 	{
-		sourceInfo.SetOneTexture(FAkAudioDevice::Get()->GetIDFromString(AcousticTexture->GetName()));
+		sourceInfo.SetOneTexture(AcousticTexture->GetShortID());
 	}
 
-	AkRoomID roomID;
-	TArray<UAkRoomComponent*> AkRooms = pDev->FindRoomComponentsAtLocation(RootTransform.GetTranslation(), GetWorld());
-	if (AkRooms.Num() > 0)
-		roomID = AkRooms[0]->GetRoomID();
-
-	pDev->SetImageSource(this, sourceInfo, GetAuxBusID(), roomID, AkComponent);
+	pDev->SetImageSource(this, sourceInfo, GetAuxBusID(), AkComponent);
 }
 
 void AAkSpotReflector::SetSpotReflectors(UAkComponent* AkComponent)

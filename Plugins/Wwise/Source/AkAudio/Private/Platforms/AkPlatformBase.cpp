@@ -27,7 +27,9 @@ FString FAkPlatformBase::GetWwisePluginDirectory()
 
 FString FAkPlatformBase::GetDSPPluginsDirectory(const FString& PlatformArchitecture)
 {
-#if UE_BUILD_SHIPPING
+#ifdef AK_CONFIGURATION
+	auto* Configuration = AK_CONFIGURATION;
+#elif UE_BUILD_SHIPPING
 	auto* Configuration = "Release";
 #elif UE_BUILD_DEBUG
 	auto* Configuration = "Debug";

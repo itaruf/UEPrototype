@@ -34,11 +34,11 @@ UAkSlider
 UCLASS(config = Editor, defaultconfig)
 class AKAUDIO_API UAkWwiseTreeSelector : public UWidget
 {
-	GENERATED_UCLASS_BODY()
+	GENERATED_BODY()
 public:
-	typedef TSlateDelegates< TSharedPtr< FWwiseTreeItem > >::FOnSelectionChanged FOnSelectionChanged;
+	UAkWwiseTreeSelector(const FObjectInitializer& ObjectInitializer);
 
-public:
+	typedef TSlateDelegates< TSharedPtr< FWwiseTreeItem > >::FOnSelectionChanged FOnSelectionChanged;
 
 	/** Called when the item selection changes. */
 	UPROPERTY(BlueprintAssignable, Category = "Widget Event")

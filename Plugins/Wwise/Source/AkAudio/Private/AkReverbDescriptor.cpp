@@ -14,13 +14,13 @@ Copyright (c) 2021 Audiokinetic Inc.
 *******************************************************************************/
 
 #include "AkReverbDescriptor.h"
-#include <AK/SpatialAudio/Common/AkReverbEstimation.h>
 #include "AkAudioDevice.h"
 #include "AkAcousticTextureSetComponent.h"
 #include "AkLateReverbComponent.h"
 #include "AkRoomComponent.h"
 #include "AkComponentHelpers.h"
 #include "AkSettings.h"
+#include "Wwise/LowLevel/WwiseLowLevelSpatialAudio.h"
 
 #include "Components/PrimitiveComponent.h"
 #include "Rendering/PositionVertexBuffer.h"
@@ -34,15 +34,6 @@ Copyright (c) 2021 Audiokinetic Inc.
 
 #if PHYSICS_INTERFACE_PHYSX
 #include "PhysXIncludes.h"
-#endif
-
-#if WITH_CHAOS
-#include "Chaos/Convex.h"
-#include "Chaos/Particles.h"
-#include "Chaos/Plane.h"
-#include "Chaos/AABB.h"
-#include "Chaos/CollisionConvexMesh.h"
-#include "ChaosLog.h"
 #endif
 
 /*=============================================================================
@@ -79,104 +70,6 @@ float CapsuleSurfaceArea(const FKSphylElem& capsule, const FVector& scale)
 	return 2.0f * PI * r * (2.0f * r + capsule.Length * scale.Z);
 }
 
-#if PHYSICS_INTERFACE_PHYSX
-FVector PxToFVector(const PxVec3& pVec) { return FVector(pVec.x, pVec.y, pVec.z); }
-
-float ConvexHullSurfaceArea(const FKConvexElem& convexElem, const FVector& scale)
-{
-	float area = 0.0f;
-	physx::PxConvexMesh* mesh = convexElem.GetConvexMesh();
-	if (mesh != nullptr)
-	{
-		const physx::PxVec3* vertices = mesh->getVertices();
-		int numPolygons = mesh->getNbPolygons();
-		physx::PxHullPolygon polygonData;
-		for (int polygon = 0; polygon < numPolygons; ++polygon)
-		{
-			if (mesh->getPolygonData(polygon, polygonData))
-			{
-				int numVerts = polygonData.mNbVerts;
-				FVector centroidPosition = FVector::ZeroVector;
-				for (int v = 0; v < numVerts; ++v)
-				{
-					FVector vert = PxToFVector(vertices[polygonData.mIndexBase + v]) * scale;
-					centroidPosition += vert;
-				}
-				centroidPosition /= (float)numVerts;
-				FVector v1 = FVector::ZeroVector;
-				FVector v2 = FVector::ZeroVector;
-				for (int v = 0; v < numVerts - 1; ++v)
-				{
-					v1 = PxToFVector(vertices[polygonData.mIndexBase + v]) * scale;
-					v2 = PxToFVector(vertices[polygonData.mIndexBase + v + 1]) * scale;
-					area += FAkReverbDescriptor::TriangleArea(centroidPosition, v1, v2);
-				}
-				v1 = PxToFVector(vertices[polygonData.mIndexBase + (numVerts - 1)]) * scale;
-				v2 = PxToFVector(vertices[polygonData.mIndexBase]) * scale;
-				area += FAkReverbDescriptor::TriangleArea(centroidPosition, v1, v2);
-			}
-		}
-	}
-	else
-	{
-		FVector max = convexElem.ElemBox.Max;
-		FVector min = convexElem.ElemBox.Min;
-		FVector dims = FVector(scale.X * (max.X - min.X), scale.Y * (max.Y - min.Y), scale.Z * (max.Z - min.Z));
-		area = dims.X * dims.Y * 2.0f + dims.X * dims.Z * 2.0f + dims.Y * dims.Z * 2.0f;
-	}
-	return area;
-}
-#elif WITH_CHAOS
-float ConvexHullSurfaceArea(const FKConvexElem& convexElem, const FVector& scale)
-{
-	float area = 0.0f;
-	auto mesh = convexElem.GetChaosConvexMesh();
-	if (mesh.IsValid())
-	{
-		const auto& Vertices = mesh->GetVertices();
-		TArray<TArray<int32>> FaceIndices;
-		TArray<Chaos::TPlaneConcrete<Chaos::FRealSingle, 3>> Planes;
-		TArray<Chaos::TVec3<Chaos::FRealSingle>> SurfaceVertices;
-		Chaos::TAABB<Chaos::FRealSingle, 3> LocalBoundingBox;
-		Chaos::FConvexBuilder::Build(Vertices, Planes, FaceIndices, SurfaceVertices, LocalBoundingBox);
-
-		for (int32 faceIdx = 0; faceIdx < FaceIndices.Num(); faceIdx++)
-		{
-			auto face = FaceIndices[faceIdx];
-			int numVerts = face.Num();
-			FVector centroidPosition = FVector::ZeroVector;
-			for (int v = 0; v < numVerts; ++v)
-			{
-				FVector vert = Vertices[face[v]] * scale;
-				centroidPosition += vert;
-			}
-			centroidPosition /= (float)numVerts;
-			FVector v1 = FVector::ZeroVector;
-			FVector v2 = FVector::ZeroVector;
-			for (int v = 0; v < numVerts - 1; ++v)
-			{
-				v1 = Vertices[face[v]] * scale;
-				v2 = Vertices[face[v+1]] * scale;
-				area += FAkReverbDescriptor::TriangleArea(centroidPosition, v1, v2);
-			}
-			v1 = Vertices[face[numVerts - 1]] * scale;
-			v1 = Vertices[face[0]] * scale;
-			area += FAkReverbDescriptor::TriangleArea(centroidPosition, v1, v2);
-		}
-	}
-	else
-	{
-		FVector max = convexElem.ElemBox.Max;
-		FVector min = convexElem.ElemBox.Min;
-		FVector dims = FVector(scale.X * (max.X - min.X), scale.Y * (max.Y - min.Y), scale.Z * (max.Z - min.Z));
-		area = dims.X * dims.Y * 2.0f + dims.X * dims.Z * 2.0f + dims.Y * dims.Z * 2.0f;
-	}
-	return area;
-}
-#else
-#error "The Wwise Unreal integration is only compatible with PhysX or Chaos physics engines"
-#endif
-
 bool HasSimpleCollisionGeometry(UBodySetup* bodySetup)
 {
 	FKAggregateGeom geometry = bodySetup->AggGeom;
@@ -184,12 +77,23 @@ bool HasSimpleCollisionGeometry(UBodySetup* bodySetup)
 
 }
 
+#if WITH_CHAOS
+// Copied from BodySetup.cpp
+// References: 
+// http://amp.ece.cmu.edu/Publication/Cha/icip01_Cha.pdf
+// http://stackoverflow.com/questions/1406029/how-to-calculate-the-volume-of-a-3d-mesh-object-the-surface-of-which-is-made-up
+float SignedVolumeOfTriangle(const FVector& p1, const FVector& p2, const FVector& p3)
+{
+	return FVector::DotProduct(p1, FVector::CrossProduct(p2, p3)) / 6.0f;
+}
+#endif
+
 void UpdateVolumeAndArea(UBodySetup* bodySetup, const FVector& scale, float& volume, float& surfaceArea)
 {
 	surfaceArea = 0.0f;
 	// Initially use the Unreal UBodySetup::GetVolume function to calculate volume...
 	volume = bodySetup->GetVolume(scale);
-	FKAggregateGeom geometry = bodySetup->AggGeom;
+	FKAggregateGeom& geometry = bodySetup->AggGeom;
 
 	for (const FKBoxElem& box : geometry.BoxElems)
 	{
@@ -202,7 +106,22 @@ void UpdateVolumeAndArea(UBodySetup* bodySetup, const FVector& scale, float& vol
 	}
 	for (const FKConvexElem& convexElem : geometry.ConvexElems)
 	{
-		surfaceArea += ConvexHullSurfaceArea(convexElem, scale);
+		FTransform ScaleTransform = FTransform(FQuat::Identity, FVector::ZeroVector, scale);
+
+		int32 numTriangles = convexElem.IndexData.Num() / 3;
+		for (int32 triIdx = 0; triIdx < numTriangles; ++triIdx)
+		{
+			FVector v0 = ScaleTransform.TransformPosition(convexElem.VertexData[convexElem.IndexData[3 * triIdx]]);
+			FVector v1 = ScaleTransform.TransformPosition(convexElem.VertexData[convexElem.IndexData[3 * triIdx + 1]]);
+			FVector v2 = ScaleTransform.TransformPosition(convexElem.VertexData[convexElem.IndexData[3 * triIdx + 2]]);
+
+			surfaceArea += FAkReverbDescriptor::TriangleArea(v0, v1, v2);
+#if WITH_CHAOS
+			// FKConvexElem::GetVolume is not implemented with Chaos
+			// TODO: Remove the following when it is implemented in the future
+			volume += SignedVolumeOfTriangle(v0, v1, v2);
+#endif
+		}
 	}
 	for (const FKSphereElem& sphere : geometry.SphereElems)
 	{
@@ -217,13 +136,16 @@ void UpdateVolumeAndArea(UBodySetup* bodySetup, const FVector& scale, float& vol
 /*=============================================================================
 	FAkReverbDescriptor:
 =============================================================================*/
-
-float FAkReverbDescriptor::TriangleArea(const FVector& v1, const FVector& v2, const FVector& v3)
+double FAkReverbDescriptor::TriangleArea(const FVector& v1, const FVector& v2, const FVector& v3)
 {
-	float mag = 0.0f;
-	FVector dir;
-	FVector::CrossProduct(v2 - v1, v3 - v1).ToDirectionAndLength(dir, mag);
-	return 0.5f * mag;
+#if UE_5_0_OR_LATER
+	double Mag = 0.0;
+#else
+	float Mag = 0.0f;
+#endif
+	FVector Dir;
+	FVector::CrossProduct(v2 - v1, v3 - v1).ToDirectionAndLength(Dir, Mag);
+	return 0.5 * Mag;
 }
 
 bool FAkReverbDescriptor::ShouldEstimateDecay() const
@@ -327,14 +249,15 @@ void FAkReverbDescriptor::CalculateT60()
 			PrimitiveVolume = FMath::Abs(PrimitiveVolume) / AkComponentHelpers::UnrealUnitsPerCubicMeter(Primitive);
 			PrimitiveSurfaceArea /= AkComponentHelpers::UnrealUnitsPerSquaredMeter(Primitive);
 
-			if (PrimitiveVolume > 0.0f && PrimitiveSurfaceArea > 0.0f)
+			auto* SpatialAudio = FWwiseLowLevelSpatialAudio::Get();
+			if (SpatialAudio && PrimitiveVolume > 0.0f && PrimitiveSurfaceArea > 0.0f)
 			{
 				float absorption = 0.5f;
 				UAkSettings* AkSettings = GetMutableDefault<UAkSettings>();
 				if (AkSettings != nullptr)
 					absorption = AkSettings->GlobalDecayAbsorption;
 				//calcuate t60 using the Sabine equation
-				AK::SpatialAudio::ReverbEstimation::EstimateT60Decay(PrimitiveVolume, PrimitiveSurfaceArea, absorption, T60Decay);
+				SpatialAudio->ReverbEstimation.EstimateT60Decay(PrimitiveVolume, PrimitiveSurfaceArea, absorption, T60Decay);
 			}
 		}
 	}
@@ -347,14 +270,15 @@ void FAkReverbDescriptor::CalculateT60()
 
 void FAkReverbDescriptor::CalculateTimeToFirstReflection()
 {
-	if (IsValid(Primitive))
+	auto* SpatialAudio = FWwiseLowLevelSpatialAudio::Get();
+	if (SpatialAudio && IsValid(Primitive))
 	{
 		FTransform transform = Primitive->GetComponentTransform();
 		transform.SetRotation(FQuat::Identity);
 		transform.SetLocation(FVector::ZeroVector);
 		FBoxSphereBounds bounds = Primitive->CalcBounds(transform);
 		AkVector extentMeters = FAkAudioDevice::FVectorToAKVector(bounds.BoxExtent / AkComponentHelpers::UnrealUnitsPerMeter(Primitive));
-		AK::SpatialAudio::ReverbEstimation::EstimateTimeToFirstReflection(extentMeters, TimeToFirstReflection);
+		SpatialAudio->ReverbEstimation.EstimateTimeToFirstReflection(extentMeters, TimeToFirstReflection);
 	}
 #if WITH_EDITOR
 	if (IsValid(ReverbComponent))
@@ -366,10 +290,12 @@ void FAkReverbDescriptor::CalculateTimeToFirstReflection()
 void FAkReverbDescriptor::CalculateHFDamping(const UAkAcousticTextureSetComponent* acousticTextureSetComponent)
 {
 	HFDamping = 0.0f;
+
 	if (IsValid(Primitive))
 	{
+		auto* SpatialAudio = FWwiseLowLevelSpatialAudio::Get();
 		const UAkSettings* AkSettings = GetDefault<UAkSettings>();
-		if (AkSettings != nullptr)
+		if (SpatialAudio && AkSettings)
 		{
 			TArray<FAkAcousticTextureParams> texturesParams;
 			TArray<float> surfaceAreas;
@@ -388,7 +314,7 @@ void FAkReverbDescriptor::CalculateHFDamping(const UAkAcousticTextureSetComponen
 			if (numTextures == 0)
 				HFDamping = 0.0f;
 			else
-				AK::SpatialAudio::ReverbEstimation::EstimateHFDamping(&textures[0], &surfaceAreas[0], textures.Num(), HFDamping);
+				SpatialAudio->ReverbEstimation.EstimateHFDamping(&textures[0], &surfaceAreas[0], textures.Num(), HFDamping);
 		}
 	}
 #if WITH_EDITOR

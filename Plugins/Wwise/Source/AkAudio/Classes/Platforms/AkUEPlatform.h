@@ -41,9 +41,9 @@ Copyright (c) 2021 Audiokinetic Inc.
 #include "AkPlatform_WinGC/AkWinGCPlatform.h"
 #elif PLATFORM_WINDOWS
 #include "AkPlatform_Windows/AkWindowsPlatform.h"
-#elif PLATFORM_XBOXONE && !(defined(PLATFORM_XBOXONEGDK) && PLATFORM_XBOXONEGDK)
+#elif PLATFORM_XBOXONE && !((defined(PLATFORM_XBOXONEGDK) && PLATFORM_XBOXONEGDK) || (defined(PLATFORM_XB1) && PLATFORM_XB1))
 #include "AkPlatform_XboxOne/AkXboxOnePlatform.h"
-#elif defined(PLATFORM_XBOXONEGDK) && PLATFORM_XBOXONEGDK
+#elif ((defined(PLATFORM_XBOXONEGDK) && PLATFORM_XBOXONEGDK) || (defined(PLATFORM_XB1) && PLATFORM_XB1))
 #include "AkPlatform_XboxOneGC/AkXboxOneGDKPlatform.h"
 #elif defined(PLATFORM_XSX) && PLATFORM_XSX
 #include "AkPlatform_XboxSeriesX/AkXboxSeriesXPlatform.h"

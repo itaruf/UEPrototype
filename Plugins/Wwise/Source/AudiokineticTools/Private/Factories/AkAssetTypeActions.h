@@ -21,7 +21,6 @@ Copyright (c) 2021 Audiokinetic Inc.
 #include "AkAudioBank.h"
 #include "AkAudioEvent.h"
 #include "AkAuxBus.h"
-#include "AkMediaAsset.h"
 #include "AkTrigger.h"
 #include "AkRtpc.h"
 
@@ -51,30 +50,6 @@ public:
 	virtual void OpenAssetEditor(const TArray<UObject*>& InObjects, TSharedPtr<class IToolkitHost> EditWithinLevelEditor = TSharedPtr<IToolkitHost>());
 };
 
-
-class FAssetTypeActions_AkAudioBank : public FAkAssetTypeActions_Base<UAkAudioBank>
-{
-public:
-	FAssetTypeActions_AkAudioBank(EAssetTypeCategories::Type InAssetCategory) : FAkAssetTypeActions_Base(InAssetCategory) {}
-
-	// IAssetTypeActions Implementation
-	virtual FText GetName() const override { return NSLOCTEXT("AkAssetTypeActions", "AssetTypeActions_AkAudioBank", "Audiokinetic Bank"); }
-	virtual FColor GetTypeColor() const override { return FColor(0, 192, 128); }
-	virtual bool HasActions(const TArray<UObject*>& InObjects) const override { return true; }
-	virtual void GetActions(const TArray<UObject*>& InObjects, FMenuBuilder& MenuBuilder) override;
-	virtual void OpenAssetEditor(const TArray<UObject*>& InObjects, TSharedPtr<class IToolkitHost> EditWithinLevelEditor = TSharedPtr<IToolkitHost>());
-#if UE_4_24_OR_LATER
-	bool AssetsActivatedOverride(const TArray<UObject*>& InObjects, EAssetTypeActivationMethod::Type ActivationType) override;
-#else
-	virtual void AssetsActivated(const TArray<UObject*>& InObjects, EAssetTypeActivationMethod::Type ActivationType);
-#endif
-
-private:
-	void CreateGenerateSoundDataWindow(TArray<TWeakObjectPtr<UAkAudioBank>> Objects);
-	void RefreshAllBanks(TArray<TWeakObjectPtr<UAkAudioBank>> Objects);
-};
-
-
 class FAssetTypeActions_AkAudioEvent : public FAkAssetTypeActions_Base<UAkAudioEvent>
 {
 public:
@@ -86,16 +61,11 @@ public:
 	virtual bool HasActions(const TArray<UObject*>& InObjects) const override { return true; }
 	virtual void GetActions(const TArray<UObject*>& InObjects, FMenuBuilder& MenuBuilder) override;
 	virtual void OpenAssetEditor(const TArray<UObject*>& InObjects, TSharedPtr<class IToolkitHost> EditWithinLevelEditor = TSharedPtr<IToolkitHost>());
-#if UE_4_24_OR_LATER
 	bool AssetsActivatedOverride(const TArray<UObject*>& InObjects, EAssetTypeActivationMethod::Type ActivationType) override;
-#else
-	virtual void AssetsActivated(const TArray<UObject*>& InObjects, EAssetTypeActivationMethod::Type ActivationType);
-#endif
 
 private:
 	void PlayEvent(TArray<TWeakObjectPtr<UAkAudioEvent>> Objects);
 	void StopEvent(TArray<TWeakObjectPtr<UAkAudioEvent>> Objects);
-	void GroupIntoSoundBank(TArray<TWeakObjectPtr<UAkAudioEvent>> Objects);
 }; 
 
 
@@ -110,20 +80,8 @@ public:
 	virtual bool HasActions ( const TArray<UObject*>& InObjects ) const override { return true; }
 	virtual void GetActions(const TArray<UObject*>& InObjects, FMenuBuilder& MenuBuilder) override;
 	virtual void OpenAssetEditor( const TArray<UObject*>& InObjects, TSharedPtr<class IToolkitHost> EditWithinLevelEditor = TSharedPtr<IToolkitHost>() );
-
-private:
-	void GroupIntoSoundBank(TArray<TWeakObjectPtr<UAkAuxBus>> Objects);
 };
 
-class FAssetTypeActions_AkMediaAsset : public FAkAssetTypeActions_Base<UAkMediaAsset>
-{
-public:
-	FAssetTypeActions_AkMediaAsset(EAssetTypeCategories::Type InAssetCategory) : FAkAssetTypeActions_Base(InAssetCategory) {}
-
-	virtual FText GetName() const override { return NSLOCTEXT("AkAssetTypeActions", "AssetTypeActions_AkMediaAsset", "Audiokinetic Media Asset"); }
-	virtual FColor GetTypeColor() const override { return FColor(128, 150, 128); }
-	virtual FText GetAssetDescription(const FAssetData& AssetData) const override;
-};
 
 class FAssetTypeActions_AkRtpc : public FAkAssetTypeActions_Base<UAkRtpc>
 {

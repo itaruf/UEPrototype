@@ -21,8 +21,7 @@ under the Apache License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES
 OR CONDITIONS OF ANY KIND, either express or implied. See the Apache License for
 the specific language governing permissions and limitations under the License.
 
-  Version: v2021.1.7  Build: 7796
-  Copyright (c) 2006-2022 Audiokinetic Inc.
+  Copyright (c) 2022 Audiokinetic Inc.
 *******************************************************************************/
 
 /// \file 
@@ -620,7 +619,7 @@ namespace AK
 			///     - AK_FileNotFound:  File was not found.
 			///     - AK_Fail:          File could not be open for any other reason.
 			/// \return 
-			///		- A file descriptor, which contains 
+			///		- A file descriptor, that contains 
 			///         - an unique identifier to be used with functions of the low-level IO 
 			///           interface.
 			///         - the total stream size in bytes.
@@ -669,12 +668,6 @@ namespace AK
 			///     - AK_FileNotFound:  File was not found.
 			///     - AK_Fail:          File could not be open for any other reason.
 			/// \return 
-			///		- A file descriptor, which contains 
-			///         - an unique identifier to be used with functions of the low-level IO 
-			///           interface.
-			///         - the total stream size in bytes.
-			///         - the offset of the beginning of the file (in blocks). 
-			///         - a device ID, that was obtained through AK::StreamMgr::CreateDevice().
 			///		- A file descriptor, that contains 
 			///         - an unique identifier to be used with functions of the low-level IO 
 			///           interface.
@@ -711,6 +704,27 @@ namespace AK
 				bool &					io_bSyncOpen,		///< If true, the file must be opened synchronously. Otherwise it is left at the File Location Resolver's discretion. Return false if Open needs to be deferred.
 				AkFileDesc &			io_fileDesc         ///< Returned file descriptor.
 				) = 0;
+
+			/// <summary>
+			/// This function is called to provide information when file related errors occur. The base paths known by this Resolver should be returned in out_searchedPath.
+			/// </summary>			
+			virtual AKRESULT OutputSearchedPaths(
+				const AKRESULT& in_result,				///< Result of the open call
+				const AkOSChar* in_pszFileName,			///< File name that was accessed
+				AkFileSystemFlags* in_pFlags,			///< Special flags. Can be NULL.
+				AkOpenMode in_eOpenMode,				///< File open mode (read, write, ...).
+				AkOSChar* out_searchedPath,				///< Pre-allocated string buffer to be filled with all searched paths searched for the file.
+				AkInt32 in_pathSize						///< The maximum size of the string
+			) {	return AK_NotImplemented; };
+
+			virtual AKRESULT OutputSearchedPaths(
+				const AKRESULT& in_result,				///< Result of the open call
+				const AkFileID in_fileID,				///< File ID that was accessed
+				AkFileSystemFlags* in_pFlags,			///< Special flags. Can be NULL.
+				AkOpenMode in_eOpenMode,				///< File open mode (read, write, ...).
+				AkOSChar* out_searchedPath,				///< Pre-allocated string buffer to be filled with all searched paths searched for the file.
+				AkInt32 in_pathSize		   				///< The maximum size of the string
+			) {	return AK_NotImplemented; };
 		};
 
 		/// \name Audiokinetic implementation-specific Stream Manager factory.
@@ -786,6 +800,13 @@ namespace AK
 		AK_EXTERNAPIFUNC( AKRESULT, DestroyDevice )(
 			AkDeviceID					in_deviceID         ///< Device ID of the device to destroy.
 			);
+		
+		/// Execute pending I/O operations on all created I/O devices.
+		/// This should only be called in single-threaded environments where an I/O device cannot spawn a thread.
+		/// \return AK_Success when called from an appropriate environment, AK_NotCompatible otherwise.
+		/// \sa 
+		/// - AK::StreamMgr::CreateDevice()
+		AK_EXTERNAPIFUNC( AKRESULT, PerformIO )();
 
 		/// Get the default values for the streaming device's settings. Recommended usage
 		/// is to call this function first, then pass the settings to AK::StreamMgr::CreateDevice().

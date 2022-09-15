@@ -28,8 +28,11 @@ Copyright (c) 2021 Audiokinetic Inc.
 UCLASS(config=Editor, collapsecategories, hidecategories=Object, MinimalAPI)
 class UActorFactoryAkAmbientSound : public UActorFactory
 {
-	GENERATED_UCLASS_BODY()
-	
+	GENERATED_BODY()
+
+public:
+	UActorFactoryAkAmbientSound(const class FObjectInitializer& ObjectInitializer);
+
 	// Begin UActorFactory Interface
 	virtual void PostSpawnActor( UObject* Asset, AActor* NewActor ) override;
 	virtual void PostCreateBlueprint( UObject* Asset, AActor* CDO ) override;
